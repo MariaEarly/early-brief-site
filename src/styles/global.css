@@ -1162,6 +1162,22 @@ hr {
   margin-top: 0.75rem;
 }
 
+/* ─── AMLA pages — étapes numérotées ─── */
+.amla-etape {
+  border-left: 2px solid #2D5A3D;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.amla-etape-titre {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2D5A3D;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
 /* ─── AMLA pages — first h2 no top margin ─── */
 .fiche-content > h2:first-child {
   margin-top: 0;

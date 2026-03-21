@@ -102,34 +102,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <p><strong>Méthode en 3 étapes :</strong></p>
 
-<h4>Étape 1 : Mesurer le risque inhérent</h4>
-<ul>
-    <li><strong>Définition :</strong> Risque de BC/FT avant contrôles</li>
-    <li><strong>4 familles de facteurs :</strong>
-        <ol>
-            <li>Clients</li>
-            <li>Produits/services/transactions</li>
-            <li>Canaux de distribution</li>
-            <li>Zones géographiques</li>
-        </ol>
-    </li>
-    <li><strong>Scoring :</strong> 1 (faible) à 4 (élevé)</li>
-    <li><strong>Classification finale :</strong> Faible, Moyen, Substantiel, Élevé</li>
-    <li><strong>Ajustement possible :</strong> ±1 niveau maximum (encadré strictement)</li>
-</ul>
+<div class="amla-etape">
+    <div class="amla-etape-titre">Étape 1 — Mesurer le risque inhérent</div>
+    <ul>
+        <li><strong>Définition :</strong> Risque de BC/FT avant contrôles</li>
+        <li><strong>4 familles de facteurs :</strong> Clients · Produits/services/transactions · Canaux de distribution · Zones géographiques</li>
+        <li><strong>Scoring :</strong> 1 (faible) à 4 (élevé) — Classification : Faible, Moyen, Substantiel, Élevé</li>
+        <li><strong>Ajustement possible :</strong> ±1 niveau maximum (encadré strictement)</li>
+    </ul>
+</div>
 
-<h4>Étape 2 : Noter la qualité des contrôles</h4>
-<ul>
-    <li><strong>Éléments évalués :</strong> Gouvernance, monitoring, KYC, formation, audits</li>
-    <li><strong>Scoring inversé :</strong> 1 (très bonne qualité) à 4 (faible)</li>
-    <li><strong>Classification :</strong> A (très bonne), B (bonne), C (modérée), D (faible)</li>
-    <li><strong>Preuves requises :</strong> Inspections, examens thématiques, rapports d'audit</li>
-</ul>
+<div class="amla-etape">
+    <div class="amla-etape-titre">Étape 2 — Noter la qualité des contrôles</div>
+    <ul>
+        <li><strong>Éléments évalués :</strong> Gouvernance, monitoring, KYC, formation, audits</li>
+        <li><strong>Scoring inversé :</strong> 1 (très bonne qualité) à 4 (faible)</li>
+        <li><strong>Classification :</strong> A (très bonne), B (bonne), C (modérée), D (faible)</li>
+        <li><strong>Preuves requises :</strong> Inspections, examens thématiques, rapports d'audit</li>
+    </ul>
+</div>
 
-<h4>Étape 3 : Déterminer le risque résiduel</h4>
-<ul>
-    <li><strong>Règle de calcul (RTS) :</strong> Si qualité contrôles = 4 (faible), le risque résiduel ne peut pas descendre en dessous du risque inhérent. Sinon, risque résiduel = moyenne arithmétique des deux scores.</li>
-</ul>
+<div class="amla-etape">
+    <div class="amla-etape-titre">Étape 3 — Déterminer le risque résiduel</div>
+    <ul>
+        <li><strong>Règle de calcul (RTS) :</strong> Si qualité contrôles = 4 (faible), le risque résiduel ne peut pas descendre en dessous du risque inhérent. Sinon, risque résiduel = moyenne arithmétique des deux scores.</li>
+    </ul>
+</div>
 
 <div class="scope-grid">
     <div class="scope-card">
