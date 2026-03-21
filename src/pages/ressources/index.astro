@@ -3,11 +3,98 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Ressources — Early Brief"
-  description="Articles, guides et ressources sur la conformité financière, la LCB-FT et les sanctions."
+  title="Ressources — Early Brief | Outils et fiches de conformité réglementaire"
+  description="Tracker réglementaire, roadmap 2026-2028, liste des pays à risque LCB-FT et fiches opérationnelles — KYC, TRACFIN, gel des avoirs."
+  canonicalUrl="https://early-brief.com/ressources"
 >
-  <section>
+<div class="page">
+
+  <div class="ressources-hero">
     <h1>Ressources</h1>
-    <p>Retrouvez nos articles et guides sur la conformité réglementaire.</p>
-  </section>
+    <p class="ressources-intro">Outils et fiches opérationnelles pour les équipes conformité — en accès libre.</p>
+  </div>
+
+  <div class="ressources-section">
+    <div class="ressources-section-label">Outils interactifs</div>
+    <div class="ressources-grid">
+      <a href="/ressources/tracker/" class="ressources-card" target="_blank" rel="noopener">
+        <div class="ressources-card-tag">Outil</div>
+        <h2 class="ressources-card-title">Tracker réglementaire</h2>
+        <p class="ressources-card-desc">Tableau de bord des reportings prudentiels et réglementaires — filtrable par entité, fréquence et thème.</p>
+        <div class="ressources-card-link">Ouvrir →</div>
+      </a>
+      <a href="/ressources/roadmap/" class="ressources-card" target="_blank" rel="noopener">
+        <div class="ressources-card-tag">Outil</div>
+        <h2 class="ressources-card-title">Roadmap réglementaire 2026–2028</h2>
+        <p class="ressources-card-desc">Calendrier des échéances réglementaires à venir — MiCA, DORA, AMLA, PSD3, AI Act. Mis à jour régulièrement.</p>
+        <div class="ressources-card-link">Ouvrir →</div>
+      </a>
+      <a href="/ressources/liste-pays/" class="ressources-card" target="_blank" rel="noopener">
+        <div class="ressources-card-tag">Outil</div>
+        <h2 class="ressources-card-title">Liste pays à risque LCB-FT</h2>
+        <p class="ressources-card-desc">Cartographie des pays à haut risque — listes GAFI, PTHR UE, sanctions. Export Excel disponible.</p>
+        <div class="ressources-card-link">Ouvrir →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="ressources-section">
+    <div class="ressources-section-label">Fiches opérationnelles</div>
+    <div class="ressources-grid">
+      <a href="/ressources/fiches/kyc/" class="ressources-card">
+        <div class="ressources-card-tag">KYC / KYB</div>
+        <h2 class="ressources-card-title">Fiches KYC &amp; KYB</h2>
+        <p class="ressources-card-desc">Fréquence de revue, pack documentaire personne morale, identification UBO et cas opaques.</p>
+        <div class="ressources-card-link">Voir les fiches →</div>
+      </a>
+      <a href="/ressources/fiches/tracfin/" class="ressources-card">
+        <div class="ressources-card-tag">TRACFIN</div>
+        <h2 class="ressources-card-title">Fiches TRACFIN &amp; DS</h2>
+        <p class="ressources-card-desc">Quand déclarer, comment rédiger le narratif, tipping-off et confidentialité.</p>
+        <div class="ressources-card-link">Voir les fiches →</div>
+      </a>
+      <a href="/ressources/fiches/gel-avoirs/" class="ressources-card">
+        <div class="ressources-card-tag">Gel des avoirs</div>
+        <h2 class="ressources-card-title">Fiches Gel des avoirs</h2>
+        <p class="ressources-card-desc">Délais de mise en œuvre, conditions de blocage et reporting obligatoire.</p>
+        <div class="ressources-card-link">Voir les fiches →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="ressources-section">
+    <div class="ressources-section-label">Références</div>
+    <div class="ressources-grid">
+      <a href="/ressources/glossaire/" class="ressources-card">
+        <div class="ressources-card-tag">Référence</div>
+        <h2 class="ressources-card-title">Glossaire LCB-FT</h2>
+        <p class="ressources-card-desc">Les termes clés de la conformité anti-blanchiment définis de façon opérationnelle.</p>
+        <div class="ressources-card-link">Consulter →</div>
+      </a>
+      <a href="/ressources/faq/" class="ressources-card">
+        <div class="ressources-card-tag">Référence</div>
+        <h2 class="ressources-card-title">FAQ LCB-FT</h2>
+        <p class="ressources-card-desc">Les questions fréquentes sur le dispositif LCB-FT, répondues de façon opérationnelle.</p>
+        <div class="ressources-card-link">Consulter →</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Ressources — Early Brief",
+  "url": "https://early-brief.com/ressources",
+  "description": "Outils et fiches opérationnelles de conformité réglementaire — KYC, TRACFIN, gel des avoirs, roadmap, liste pays.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Early Brief",
+    "url": "https://early-brief.com"
+  }
+}
+</script>
 </BaseLayout>

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracker réglementaire LCB-FT, sanctions & conformité 2026 — Early Brief</title>
+<meta name="description" content="Veille réglementaire LCB-FT, sanctions internationales et conformité financière. 53 textes suivis, 18 échéances, sources officielles (AMLA, AMF, ACPR, EBA, ESMA, GAFI). Mis à jour mensuellement.">
+<meta name="keywords" content="LCB-FT, conformité, sanctions, AML, AMLA, MiCA, GAFI, FATF, AMF, ACPR, EBA, ESMA, veille réglementaire, compliance, blanchiment, financement du terrorisme, crypto-actifs, PSAN, CASP">
+<meta name="author" content="Early Brief — Maria Garcia">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://early-brief-tracker.netlify.app/">
+<meta name="theme-color" content="#F5F2EB">
+
+<!-- Open Graph (LinkedIn, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tracker réglementaire LCB-FT & conformité 2026 — Early Brief">
+<meta property="og:description" content="53 textes suivis, 18 échéances actives. Veille LCB-FT, sanctions, MiCA, AMLA — sources officielles, filtrable par mois, source et statut.">
+<meta property="og:url" content="https://early-brief-tracker.netlify.app/">
+<meta property="og:site_name" content="Early Brief">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tracker réglementaire LCB-FT & conformité 2026 — Early Brief">
+<meta name="twitter:description" content="53 textes suivis, 18 échéances actives. Veille LCB-FT, sanctions, MiCA, AMLA — sources officielles.">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Early Brief — Tracker Réglementaire 2026",
+  "description": "Tracker de veille réglementaire en conformité financière, LCB-FT et sanctions internationales. Sources officielles : AMLA, AMF, ACPR, EBA, ESMA, GAFI.",
+  "url": "https://early-brief-tracker.netlify.app/",
+  "applicationCategory": "RegulatoryCompliance",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Person",
+    "name": "Maria Garcia",
+    "url": "https://www.linkedin.com/in/maria-garcia-5481808b"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Early Brief",
+    "email": "maria@early.consulting"
+  },
+  "dateModified": "2026-03-02",
+  "inLanguage": "fr",
+  "isAccessibleForFree": true,
+  "keywords": ["LCB-FT", "conformité financière", "sanctions internationales", "AML", "AMLA", "MiCA", "GAFI", "veille réglementaire"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette Early Brief */
+    --ecru: #F5F2EB;
+    --sage: #BDCFCB;
+    --sage-light: #D9E6E0;
+    --rose: #C48B9F;
+    --white: #FFFFFF;
+    /* Échelle de gris — 6 tokens */
+    --gray-50:  #FAF8F5;
+    --gray-100: #F5F2EB;
+    --gray-200: #E8E4DC;
+    --gray-400: #A8A29E;
+    --gray-600: #5A5651;
+    --gray-900: #2D2B28;
+    /* Aliases sémantiques */
+    --dark:   #2D2B28;
+    --mid:    #5A5651;
+    --light:  #A8A29E;
+    --border: #E8E4DC;
+    --font-display: 'Inter', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+    --font-serif:   'Spectral', Georgia, serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--font-body); background:#F0EDE6; color:var(--dark); padding:24px; padding-bottom:72px; }
+
+  /* CTA BAR (sticky bottom) */
+  .cta-bar { position:fixed; bottom:0; left:0; right:0; background:var(--gray-100); border-top:1px solid var(--gray-200); padding:10px 32px; display:flex; align-items:center; gap:16px; z-index:900; }
+  .cta-bar p { font-family:var(--font-body); font-size:12px; color:var(--gray-600); margin:0; }
+  .cta-bar p strong { color:var(--gray-900); }
+  .cta-bar a.cta-btn { font-family:var(--font-display); font-size:12px; font-weight:700; color:var(--white); background:var(--gray-900); padding:7px 16px; border-radius:4px; text-decoration:none; letter-spacing:.02em; white-space:nowrap; margin-left:auto; }
+  .cta-bar a.cta-btn:hover { background:#4A4845; }
+  .cta-dismiss { background:none; border:none; color:var(--gray-400); font-size:18px; cursor:pointer; padding:0 0 0 8px; line-height:1; }
+  .cta-dismiss:hover { color:var(--gray-900); }
+  /* DASHBOARD RETROSPECTIVE */
+  .events-list { display:flex; flex-direction:column; gap:0; margin-bottom:4px; }
+  .event-item { display:flex; align-items:flex-start; gap:16px; padding:12px 0; border-bottom:1px solid #F0EDE6; }
+  .event-item:last-child { border-bottom:none; }
+  .event-num { font-family:var(--font-display); font-size:10px; font-weight:700; color:var(--light); width:24px; flex-shrink:0; padding-top:2px; letter-spacing:.05em; }
+  .event-titre { font-size:12px; font-weight:600; color:var(--dark); width:220px; flex-shrink:0; line-height:1.4; }
+  .event-texte { font-size:12px; color:var(--mid); line-height:1.5; }
+
+  .signal-list { display:flex; flex-direction:column; gap:0; }
+  .signal-item { display:flex; align-items:flex-start; gap:16px; padding:10px 0; border-bottom:1px solid #F0EDE6; }
+  .signal-item:last-child { border-bottom:none; }
+  .signal-date { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--light); width:70px; flex-shrink:0; padding-top:1px; }
+  .signal-source { font-size:12px; font-weight:700; color:var(--dark); width:80px; flex-shrink:0; }
+  .signal-text { font-size:12px; color:var(--mid); line-height:1.45; }
+  .source-bars { display:flex; flex-direction:column; gap:8px; }
+  .source-bar-row { display:flex; align-items:center; gap:12px; }
+  .source-bar-label { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--dark); width:100px; flex-shrink:0; }
+  .source-bar-track { flex:1; background:var(--gray-200); border-radius:2px; height:6px; overflow:hidden; }
+  .source-bar-fill { height:100%; background:var(--sage); border-radius:2px; transition:width .4s ease; }
+  .source-bar-count { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--gray-600); width:64px; text-align:right; flex-shrink:0; }
+  .statut-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .statut-cell { background:var(--white); border:1px solid var(--gray-200); border-radius:4px; padding:16px 20px; text-align:center; border-left:3px solid var(--cell-dot, var(--gray-200)); }
+  .statut-cell .num { font-family:var(--font-display); font-size:24px; font-weight:700; color:var(--dark); line-height:1; margin-bottom:4px; }
+  .statut-cell .lbl { font-size:12px; color:var(--light); }
+
+  .cta-dashboard { background:var(--ecru); border:1px solid var(--border); border-radius:4px; padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .cta-dashboard p { font-size:12px; color:var(--mid); line-height:1.5; margin:0; }
+  .cta-dashboard p strong { color:var(--dark); }
+  .cta-dashboard a { font-family:var(--font-display); font-size:12px; font-weight:700; color:var(--white); background:var(--dark); padding:10px 28px; border-radius:4px; text-decoration:none; text-transform:uppercase; letter-spacing:.04em; transition:all .2s; white-space:nowrap; flex-shrink:0; }
+  .cta-dashboard a:hover { background:#4A4A4A; }
+
+  .brand-bar { padding:20px 32px 0; background:var(--ecru); }
+  .brand-inner { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+  .brand-title-wrap { display:flex; align-items:baseline; gap:16px; }
+  .brand-title { font-family:var(--font-serif); font-size:18px; font-weight:600; color:var(--gray-900); letter-spacing:0; }
+  .brand-sep { width:1px; height:14px; background:var(--gray-200); flex-shrink:0; align-self:center; }
+  .brand-sub { font-size:12px; color:var(--gray-400); line-height:1.4; }
+  .header-metrics { display:flex; gap:32px; align-items:center; }
+  .metric { text-align:right; }
+  .metric-value { font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--gray-900); line-height:1; font-variant-numeric:tabular-nums; }
+  .metric-label { font-size:10px; color:var(--gray-400); text-transform:uppercase; letter-spacing:.09em; margin-top:3px; }
+
+  .tab-switcher { display:flex; gap:0; border-bottom:1px solid var(--border); padding:0 32px; }
+  .tab-btn { font-family:var(--font-display); font-size:12px; font-weight:500; padding:10px 18px; border:none; background:transparent; cursor:pointer; letter-spacing:.03em; color:var(--light); position:relative; transition:color .15s; outline:none; }
+  .tab-btn.active { color:var(--dark); font-weight:600; } .tab-btn.active::after { content:""; position:absolute; bottom:-1px; left:0; right:0; height:2px; background:var(--dark); border-radius:2px 2px 0 0; }
+  .tab-btn:not(.active) { background:transparent; }
+  .tab-btn:not(.active):hover { color:var(--mid); }
+  .tab-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+
+  .tab-content { display:none; background:#FCFAF6; border-radius:0 0 10px 10px; overflow:hidden; border:1px solid #E6DED2; border-top:none; }
+  .tab-content.active { display:block; }
+
+  /* DASHBOARD */
+  .dash-header { background:var(--ecru); padding:32px 40px 28px; border-bottom:1px solid var(--border); }
+  .dash-header h1 { font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--dark); margin-bottom:4px; }
+  .dash-header .subtitle { font-size:12px; color:var(--mid); }
+  .dash-body { padding:32px 40px 40px; max-width:960px; }
+  .stats-row { display:flex; gap:20px; margin-bottom:32px; }
+  .stat-card { flex:1; background:var(--ecru); border-radius:4px; padding:20px 24px; text-align:center; border:1px solid var(--border); }
+  .stat-card .number { font-family:var(--font-display); font-size:24px; font-weight:700; color:var(--dark); line-height:1; margin-bottom:6px; }
+  .stat-card .label { font-size:12px; color:var(--light); font-weight:500; }
+  .section-title { font-family:var(--font-display); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--gray-900); margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+  .action-item { display:flex; align-items:flex-start; padding:12px 0; border-bottom:1px solid #F0EDE6; }
+  .action-item:last-child { border-bottom:none; }
+  .action-num { font-family:var(--font-display); font-size:14px; font-weight:700; color:var(--light); width:28px; flex-shrink:0; }
+  .action-cat { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--dark); width:160px; flex-shrink:0; }
+  .action-desc { font-size:12px; color:var(--mid); line-height:1.45; }
+  .deadline-item { display:flex; align-items:flex-start; padding:10px 0; border-bottom:1px solid #F0EDE6; }
+  .deadline-item:last-child { border-bottom:none; }
+  .deadline-date { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--dark); width:100px; flex-shrink:0; }
+  .deadline-cat { font-size:12px; font-weight:600; color:var(--mid); width:130px; flex-shrink:0; }
+  .deadline-desc { font-size:12px; color:var(--light); line-height:1.4; }
+  .urgent { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--sage); margin-right:6px; vertical-align:middle; }
+
+  /* VEILLE */
+  .veille-header { padding: 18px 28px 10px; }
+  .veille-header h1 { font-family:var(--font-display); font-size:14px; font-weight:600; color:var(--dark); margin-bottom:2px; }
+  .veille-wrapper { overflow-x:auto; overflow-y:auto; max-height:calc(100vh - 280px); padding:0 0 6px; }
+  .veille-table { width:100%; border-collapse:separate; border-spacing:0; font-size:14px; background:#FCFAF6; table-layout:fixed; }
+  .veille-table thead th { font-family:var(--font-display); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--gray-400); background:var(--gray-100); border-bottom:1px solid var(--gray-200); padding:10px 12px; text-align:left; position:sticky; top:0; white-space:nowrap; z-index:2; }
+  .veille-table thead th:first-child { padding-left:28px; }
+  .veille-table thead th:last-child { text-align:left; }
+  .veille-table tbody tr { background:var(--white); transition:background .12s; }
+  /* D1: no zebra — fond uniforme */
+  .veille-table tbody tr:hover { background:#F1EBE1; }
+  .veille-table td { padding:12px 12px; vertical-align:middle; border-bottom:1px solid var(--gray-200); line-height:1.45; }
+  .veille-table td:first-child { padding-left:28px; }
+  .col-date { font-family:var(--font-display); font-size:12px; font-weight:500; color:var(--gray-400); width:110px; white-space:nowrap; font-variant-numeric:tabular-nums lining-nums; }
+  .col-source { font-size:12px; font-weight:700; color:var(--gray-900); width:110px; line-height:1.35; }
+  .col-sujet { font-size:14px; font-weight:700; color:var(--gray-900); width:260px; line-height:1.35; }
+  .col-statut { width:110px; text-align:center; vertical-align:middle; white-space:nowrap; }
+  .col-change { font-size:12px; color:var(--gray-600); line-height:1.5; width:260px; overflow:hidden; }
+  .col-concerne { display:none; }
+  .col-action { display:none; }
+  .col-lien { width:110px; text-align:left; vertical-align:middle; white-space:nowrap; }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 8px; border-radius: 4px;
+    font-family: var(--font-display); font-size: 10px;
+    font-weight: 500; letter-spacing: .01em; white-space: nowrap;
+    background: var(--gray-50); color: var(--gray-600);
+    font-variant-numeric: tabular-nums;
+  }
+  .badge::before {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  }
+  .badge-en-vigueur  { color: var(--gray-900); font-weight: 600; }
+  .badge-en-vigueur::before  { background: #7BA896; }
+  .badge-applicable::before  { background: #7CB4C4; }
+  .badge-decision::before    { background: #D4A053; }
+  .badge-consultation::before { background: #9B8EC4; }
+  .badge-rapport::before     { background: #A8A29E; }
+  .badge-programme::before   { background: #8E9BAE; }
+
+  .link-btn { display:inline-block; font-size:12px; font-weight:600; color:#4A4A46; text-decoration:none; }
+  .link-btn:hover { color:#111; text-decoration:underline; }
+
+  /* MODE D'EMPLOI */
+  .mode-header { background:var(--ecru); padding:28px 40px 20px; border-bottom:1px solid var(--border); }
+  .mode-header h1 { font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--dark); }
+  .mode-body { padding:32px 40px; max-width:680px; }
+  .mode-body h2 { font-family:var(--font-display); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--gray-900); margin-top:28px; margin-bottom:12px; }
+  .mode-body h2:first-child { margin-top:0; }
+  .mode-body p { font-size:12px; color:var(--mid); line-height:1.6; margin-bottom:6px; }
+  .legend-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
+  .legend-item { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--mid); }
+  .legend-item .badge { font-size:10px; flex-shrink:0; }
+  .glossary-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px 24px; margin-top:8px; }
+  .glossary-item { font-size:12px; color:var(--mid); padding:2px 0; }
+  .glossary-item strong { color:var(--dark); font-weight:600; }
+  .footer-block { margin-top:32px; padding-top:20px; border-top:1px solid var(--border); font-size:12px; color:var(--light); }
+  .footer-block strong { color:var(--dark); font-weight:600; display:block; margin-bottom:4px; }
+
+  @media print {
+    body { background:white; padding:0; }
+    .tab-switcher, .brand-bar, .cta-bar, .cta-dashboard { display:none; }
+    .tab-content { display:block !important; border-radius:0; box-shadow:none; page-break-after:always; }
+    .veille-table tbody tr:hover { background:inherit; }
+  }
+
+
+  /* FILTER BAR */
+  .filter-bar { display:flex; gap:16px; padding:16px 28px 16px; align-items:center; border-bottom:1px solid #E3DDD2; background:#FCFAF6; }
+  .filter-bar select { font-family:var(--font-display); font-size:12px; font-weight:500; border:1px solid #DDD6CA; background:#F8F4ED; color:var(--dark); outline:none; cursor:pointer; padding:8px 12px; border-radius:10px; min-width:160px; }
+  .filter-bar select:focus { border-color:#AAA095; background:#FFFDF9; }
+  .filter-results { font-size:12px; color:var(--gray-400); margin-left:auto; }
+  .export-btn { font-family:var(--font-display); font-size:12px; font-weight:600; color:#4E4A45; background:transparent; border:1px solid #DDD6CA; padding:8px 12px; border-radius:10px; cursor:pointer; }
+  .export-btn:hover { background:#F3EEE6; color:#1A1A1A; }
+  .filter-reset { font-family:var(--font-display); font-size:12px; color:var(--mid); cursor:pointer; border:none; background:none; text-decoration:underline; align-self:flex-end; padding-bottom:4px; }
+  .filter-reset:hover { color:var(--dark); }
+  .row-hidden { display:none !important; }
+
+  /* MODE D'EMPLOI — redesign */
+  .mode-body-wrap { max-width:720px; margin:0 auto; padding:40px 40px 56px; }
+  .mode-intro { margin-bottom:40px; }
+  .mode-intro-text { font-size:14px; color:var(--gray-600); line-height:1.7; }
+  .mode-intro-text strong { color:var(--gray-900); }
+
+  .mode-section { margin-bottom:40px; }
+  .mode-section-title { font-family:var(--font-display); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--gray-400); margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--gray-200); }
+
+  /* Navigation */
+  .mode-nav-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .mode-nav-item { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:6px; padding:16px; }
+  .mode-nav-label { font-size:12px; font-weight:700; color:var(--gray-900); margin-bottom:6px; }
+  .mode-nav-desc { font-size:12px; color:var(--gray-600); line-height:1.5; }
+
+  /* Statuts */
+  .mode-statut-list { display:flex; flex-direction:column; gap:0; }
+  .mode-statut-row { display:flex; align-items:flex-start; gap:16px; padding:12px 0; border-bottom:1px solid var(--gray-200); }
+  .mode-statut-row:last-child { border-bottom:none; }
+  .mode-statut-row .badge { flex-shrink:0; margin-top:1px; min-width:100px; }
+  .mode-statut-desc { font-size:12px; color:var(--gray-600); line-height:1.55; }
+
+  /* Sources */
+  .mode-sources-grid { display:flex; flex-direction:column; gap:0; }
+  .mode-source-group { display:flex; align-items:baseline; gap:20px; padding:10px 0; border-bottom:1px solid var(--gray-200); }
+  .mode-source-group:last-child { border-bottom:none; }
+  .mode-source-geo { font-size:12px; font-weight:700; color:var(--gray-900); width:160px; flex-shrink:0; }
+  .mode-source-names { font-size:12px; color:var(--gray-600); line-height:1.5; }
+
+  /* Glossaire */
+  .mode-glossary { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+  .mode-glossary .glossary-item { font-size:12px; color:var(--gray-600); padding:7px 16px 7px 0; border-bottom:1px solid var(--gray-200); line-height:1.45; }
+  .mode-glossary .glossary-item:nth-last-child(-n+2) { border-bottom:none; }
+  .mode-glossary .glossary-item strong { color:var(--gray-900); font-weight:700; }
+
+  /* Footer */
+  .mode-footer { display:flex; align-items:center; justify-content:space-between; margin-top:48px; padding-top:24px; border-top:1px solid var(--gray-200); gap:24px; }
+  .mode-footer-brand { font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
+  .mode-footer-sub { font-size:12px; color:var(--gray-400); line-height:1.5; }
+  .mode-footer-cta { font-family:var(--font-display); font-size:12px; font-weight:700; color:var(--white); background:var(--gray-900); padding:10px 20px; border-radius:4px; text-decoration:none; white-space:nowrap; flex-shrink:0; }
+  .mode-footer-cta:hover { background:#4A4845; }
+</style>
+</head>
+<body>
+
+<div class="brand-bar">
+  <div class="brand-inner">
+    <div class="brand-title-wrap">
+      <div class="brand-title">Early Brief</div>
+      <div class="brand-sep"></div>
+      <div class="brand-sub">Veille réglementaire LCB-FT, sanctions &amp; conformité — 2026</div>
+    </div>
+    <div class="header-metrics" style="display:none">
+      <div class="metric"><div class="metric-value" id="metric-count">—</div><div class="metric-label">Entrées</div></div>
+      <div class="metric"><div class="metric-value" id="metric-sources">—</div><div class="metric-label">Sources</div></div>
+      <div class="metric"><div class="metric-value" id="metric-period">—</div><div class="metric-label">Période</div></div>
+    </div>
+  </div>
+
+<div class="tab-switcher">
+  <button class="tab-btn active" onclick="switchTab('dashboard', event)"><span class="tab-dot" style="background:var(--dark)"></span>Dashboard</button>
+  <button class="tab-btn" onclick="switchTab('veille', event)"><span class="tab-dot" style="background:var(--sage)"></span><span id="tab-veille-label">Tracker</span></button>
+  <button class="tab-btn" onclick="switchTab('mode', event)"><span class="tab-dot" style="background:var(--ecru);border:1px solid var(--border)"></span>Mode d'emploi</button>
+</div>
+
+<div class="tab-content active" id="tab-dashboard">
+  <div class="dash-header">
+    <h1>Bilan Février 2026</h1>
+    <div class="subtitle">Rétrospective réglementaire — janvier–février 2026 cumulé</div>
+  </div>
+  <div class="dash-body">
+
+    <!-- Événements marquants — éditorial -->
+    <div class="section-title" id="dash-mois-titre"></div>
+    <div class="events-list" id="dash-events"></div>
+
+    <!-- Stats auto-générées -->
+    <div class="stats-row" id="dash-stats"></div>
+
+    <!-- Répartition par statut -->
+    <div class="section-title">Textes entrés en vigueur — Février 2026</div>
+    <div id="dash-applicable" class="signal-list"></div>
+
+    <!-- Répartition par source -->
+    <div class="section-title" style="margin-top:32px;">Activité par source</div>
+    <div id="dash-sources" class="source-bars"></div>
+
+    <!-- Répartition par statut (bilan) -->
+    <div class="section-title" style="margin-top:32px;">Répartition par type de publication</div>
+    <div id="dash-statuts" class="statut-grid"></div>
+
+    <div class="cta-dashboard">
+      <p><strong>Ce tracker est mis à jour chaque mois.</strong> Recevez l'analyse complète — brèves quotidiennes, focus hebdo, bilan mensuel — directement dans votre boîte mail.</p>
+      <a href="https://substack.com/@maryagar" target="_blank" rel="noopener">S'abonner à Early Brief</a>
+    </div>
+
+  </div>
+</div></div>
+
+<div class="tab-content" id="tab-veille">
+
+  <div class="filter-bar" id="filter-bar">
+    <select id="filter-month"><option value="all">Mois — tous</option></select>
+    <select id="filter-source"><option value="all">Source — toutes</option></select>
+    <select id="filter-statut"><option value="all">Statut — tous</option></select>
+    <input type="search" id="filter-search" placeholder="Rechercher…" style="font-family:var(--font-display);font-size:12px;border:1px solid var(--gray-200);border-radius:10px;padding:8px 12px;outline:none;background:var(--gray-50);color:var(--dark);min-width:180px;">
+    <button class="export-btn" onclick="exportCSV()">↓ Excel</button>
+    <button type="button" class="filter-reset" onclick="resetFilters()">Réinitialiser</button>
+    <div class="filter-results" id="filter-results"></div>
+  </div>
+  <div class="veille-wrapper">
+    <table class="veille-table">
+      <colgroup>
+        <col style="width:110px">
+        <col style="width:110px">
+        <col style="width:260px">
+        <col style="width:110px">
+        <col style="width:260px">
+        <col style="width:110px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Source</th>
+          <th>Sujet</th>
+          <th>Statut</th>
+          <th>Synthèse</th>
+          <th>Lien</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr class="odd">
+  <td class="col-date">08/01</td>
+  <td class="col-source">EBA</td>
+  <td class="col-sujet">Draft RTS — coopération/colleges TCBs (CRD art. 48p(7))</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Final draft RTS transmis à la Commission : règles de coopération/échange d'info + fonctionnement des collèges pour succursales de pays tiers.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-final-draft-technical-standards-strengthen-supervisory-cooperation-third-country" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">13/01</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Programme de travail 2026 (priorités d'action et de supervision)</td>
+  <td class="col-statut"><span class="badge badge-programme">Programme</span></td>
+  <td class="col-change">Publication du programme de travail AMF 2026 (axes/priorités de supervision).</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/lamf/notre-strategie/nos-priorites-daction-et-de-supervision" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">14/01</td>
+  <td class="col-source">ESAs / UK Regulators</td>
+  <td class="col-sujet">MoU DORA — oversight des CTPPs</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Accord de coopération ESAs ↔ régulateurs UK pour l'oversight des prestataires TIC critiques (CTPPs) sous DORA.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/press-news/esma-news/european-supervisory-authorities-and-uk-financial-regulators-sign-memorandum" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">14/01</td>
+  <td class="col-source">Egmont Group</td>
+  <td class="col-sujet">Horizontal Analysis IO2 &amp; IO6 (EUII Group)</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Rapport de bonnes pratiques/constats FIU sur l'efficacité (IO2/IO6) : coopération et utilisation du renseignement financier.</td>
+  <td class="col-lien"><a href="https://egmontgroup.org/wp-content/uploads/2026/01/EUII-Group-Horizontal-Analysis-of-IO2-and-IO6-Final-version.pdf" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">16/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Hamas / PIJ — prorogation mesures restrictives</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Prorogation d'un an du cadre de mesures restrictives (→ 20/01/2027) — décision + acte d'exécution.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/dec/2026/122/oj/eng" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">01/01</td>
+  <td class="col-source">EBA / AMLA</td>
+  <td class="col-sujet">Transfert mandats AML/CFT — EBA → AMLA</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">L'EBA a officiellement transféré ses mandats AML/CFT à l'AMLA. Les standards EBA existants restent applicables jusqu'à remplacement progressif par l'AMLA.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-and-amla-complete-handover-amlcft-mandates" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">19/01</td>
+  <td class="col-source">ACPR</td>
+  <td class="col-sujet">Programme de travail 2026</td>
+  <td class="col-statut"><span class="badge badge-programme">Programme</span></td>
+  <td class="col-change">Publication des axes 2026 (supervision, gouvernance, risques, résilience, simplification…).</td>
+  <td class="col-lien"><a href="https://acpr.banque-france.fr/fr/actualites/lautorite-de-controle-prudentiel-et-de-resolution-presente-son-programme-de-travail-pour-lannee-2026" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+
+<tr class="odd">
+  <td class="col-date">19/01</td>
+  <td class="col-source">Conseil UE (JOUE C)</td>
+  <td class="col-sujet">Hamas / PIJ — avis procédures autorisation fonds gelés</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Publication d'un avis au JOUE série C : information des personnes concernées, voies de recours et traitement des données dans le cadre des mesures restrictives.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AC_202600388" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">20/01</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">SPOT — enseignements contrôles fonction conformité PSI</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Absence d'éléments probants attestant l'effectivité du conseil sur rémunérations, faiblesses accès données, suivi insuffisant transactions personnelles.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/en/news-publications/news-releases/amf-news-releases/amf-publishes-findings-its-inspections-role-and-involvement-compliance-function-investment-services" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">22/01</td>
+  <td class="col-source">ACPR</td>
+  <td class="col-sujet">Instruction 2026-I-01 — reporting frais virements / instantanés</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Nouvelle instruction ACPR : reporting annuel (frais, volumes, rejets) virements &amp; virements instantanés ; dépôt ONEGATE (XBRL-CSV).</td>
+  <td class="col-lien"><a href="https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/instruction-ndeg-2026-i-01-relative-aux-informations-transmettre-lacpr-par-les-prestataires-de" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">23/01</td>
+  <td class="col-source">ACPR</td>
+  <td class="col-sujet">Webinaire DORA — Registre d'informations (RoI)</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Points opérationnels RoI (format, erreurs fréquentes, attendus) + supports. 3 causes de rejet identifiées (date, ZIP, encodage).</td>
+  <td class="col-lien"><a href="https://acpr.banque-france.fr/fr/actualites/remise-des-registres-dinformation" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">25/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Russie — extension transaction ban Mir et SBP</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Paquet Oct 2025 : extension du transaction ban aux systèmes de paiement Mir et SBP ; application à partir du 25/01/2026.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg/2025/2033/oj" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">26/01</td>
+  <td class="col-source">AMLA</td>
+  <td class="col-sujet">Consultation — collecte de données (préparation supervision directe 2028)</td>
+  <td class="col-statut"><span class="badge badge-programme">Programme</span></td>
+  <td class="col-change">AMLA consulte sur une collecte de données destinée à préparer la supervision directe en 2028. Lancement mars 2026.</td>
+  <td class="col-lien"><a href="https://www.amla.europa.eu/amla-launch-data-collection-exercise-test-risk-assessment-models-financial-sector_en" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">26/01</td>
+  <td class="col-source">EBA</td>
+  <td class="col-sujet">IRRBB Heatmap — phase 2</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">2e phase heatmap IRRBB (risque de taux du portefeuille bancaire) — résultats/insights.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-outlines-medium-long-term-objectives-its-interest-rate-risk-banking-book-heatmap" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">27/01</td>
+  <td class="col-source">BdF / OSMP</td>
+  <td class="col-sujet">Rapport S1 2025 — fraude par manipulation (+37%)</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Fraude par manipulation (ingénierie sociale, spoofing) : montant en hausse ~37%. Représente ~40% du montant total des fraudes. Virement instantané : +70% en volume.</td>
+  <td class="col-lien"><a href="https://www.banque-france.fr/system/files/2026-01/2026-01-27_OSMP-Note-statistiques-de-fraude-du-S1-2025.pdf" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">27/01</td>
+  <td class="col-source">FBF</td>
+  <td class="col-sujet">Appel aux plateformes — lutte contre les escroqueries</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">FBF appelle à un engagement renforcé des plateformes numériques contre les escroqueries en ligne.</td>
+  <td class="col-lien"><a href="https://www.fbf.fr/fr/communique_de_presse/fraude-aux-moyens-de-paiements-un-appel-aux-acteurs-du-numerique-a-se-mobiliser/" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">28/01</td>
+  <td class="col-source">ESMA</td>
+  <td class="col-sujet">Guidelines MiCA — connaissances &amp; compétences (K&amp;C)</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Guidelines ESMA sur les critères d'évaluation des connaissances et compétences du personnel. Application ~28/07/2026.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/document/guidelines-criteria-assessment-knowledge-and-competence-under-markets-crypto-assets" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">29/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Sanctions Iran — nouvelles désignations</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Règlement d'exécution 2026/262 (soutien Russie) : 4 personnes + 6 entités désignées (gel des avoirs, interdiction de mise à disposition).</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg_impl/2026/262/oj" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">29/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Sanctions Soudan — nouvelles désignations</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Règlement d'exécution : mise à jour listes Soudan — 7 individus désignés.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg_impl/2026/251/oj" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">29/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Russie — FIMI (manipulation de l'information)</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Règlement d'exécution 2026/259 — sanctions pour déstabilisation et manipulation de l'information (FIMI). 6 individus désignés.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg_impl/2026/259/oj/eng" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">29/01</td>
+  <td class="col-source">Commission UE</td>
+  <td class="col-sujet">Pays tiers à haut risque LCB-FT — MAJ (Bolivie, BVI, Russie + retraits)</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Ajout Bolivie &amp; BVI (2026/83) ; ajout Russie (2026/46) ; retrait Burkina Faso, Mali, Mozambique, Nigeria, Afrique du Sud, Tanzanie.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg_del/2026/83/oj" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">29/01</td>
+  <td class="col-source">France (JORF)</td>
+  <td class="col-sujet">Gel des avoirs — prorogation 6 mois</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Arrêté : prorogation d'une mesure individuelle de gel des avoirs (6 mois).</td>
+  <td class="col-lien"><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053411494" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">30/01</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Tunisie — mesures restrictives mises à jour</td>
+  <td class="col-statut"><span class="badge badge-en-vigueur">En vigueur</span></td>
+  <td class="col-change">Décision et règlement d'exécution publiés au JOUE L du 30/01/2026.</td>
+  <td class="col-lien"><a href="https://eur-lex.europa.eu/eli/reg_impl/2026/238/oj/eng" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">02/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Étude IA et marchés financiers — 1 000+ cas d'usage</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">100 acteurs interrogés, 1 000+ cas d'usage déclarés (106 détaillés). La LCB-FT est explicitement dans la cartographie IA.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/publications/rapports-etudes-et-analyses/etude-sur-lusage-de-lintelligence-artificielle-par-les-acteurs-des-marches-financiers" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">05/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Fin transitoire PSAN — rappel échéance 01/07/2026</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Les PSAN doivent déposer un dossier MiCA ou préparer un plan de cessation ordonnée. Jalon : 30/03/2026.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/actualites/lamf-rappelle-que-la-periode-transitoire-pour-les-psan-pour-continuer-de-fournir-des-services-sur" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">04/02</td>
+  <td class="col-source">AMLA</td>
+  <td class="col-sujet">Single Programming Document 2026-2028</td>
+  <td class="col-statut"><span class="badge badge-programme">Programme</span></td>
+  <td class="col-change">432 personnes, 40 entités supervisées, budget 96 M€. Canal whistleblowing, focus crypto, stratégie IA. 3 textes TM + 6 RA prévus.</td>
+  <td class="col-lien"><a href="https://www.amla.europa.eu/amla-sets-strategic-priorities-2026-28-single-programming-document_en" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">09/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">SPOT — risques opérationnels SGP</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Focus : robustesse registres d'incidents, fiabilité données FRA, traçabilité calculs coussins/assurances.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/publications/syntheses-de-controles-spot" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">09/02</td>
+  <td class="col-source">Tracfin</td>
+  <td class="col-sujet">Brochures LCB-FT — immobilier + domiciliation</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Rappels sectoriels sur les obligations de vigilance pour les professionnels de l'immobilier et les domiciliataires.</td>
+  <td class="col-lien"><a href="https://www.economie.gouv.fr/tracfin/tracfin-et-la-dgccrf-publient-deux-brochures-pedagogiques-sur-le-dispositif-lcb-ft-destination-des-professionnels-declarants" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">10/02</td>
+  <td class="col-source">AMLA</td>
+  <td class="col-sujet">3 consultations RTS — CDD, relations d'affaires, sanctions/astreintes</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">CDD (données, critères, procédures), relations d'affaires (suivi continu), sanctions/astreintes (pouvoir coercitif). Sanctions : 09/03. CDD + relations : 08/05.</td>
+  <td class="col-lien"><a href="https://www.amla.europa.eu/policy/public-consultations/consultation-draft-rts-customer-due-diligence_en" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">11/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Retrait agrément APICAP — prise d'effet définitive</td>
+  <td class="col-statut"><span class="badge badge-decision">Décision</span></td>
+  <td class="col-change">Prise d'effet après transfert des fonds. Illustre la mécanique du retrait (6 mois Collège → effet).</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/actualites/lamf-annonce-la-prise-deffet-du-retrait-dagrement-de-la-societe-de-gestion-de-portefeuille-apicap" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">10/02</td>
+  <td class="col-source">Transparency Intl</td>
+  <td class="col-sujet">Indice de Perception de la Corruption 2025 — France 66/100</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">France : 66/100, 27e rang. Plus bas score depuis 2012. TI pointe financement politique, lobbying, facilitateurs professionnels.</td>
+  <td class="col-lien"><a href="https://www.transparency.org/en/cpi/2025" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">13/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Relais consultation AMLA — appel à contribution</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">L'AMF invite les participants de marché à contribuer aux 3 consultations AMLA sur les RTS AML/CFT.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/en/news-publications/news/amf-invites-financial-market-participants-amlas-consultations-three-draft-amlcft-implementing" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">13/02</td>
+  <td class="col-source">GAFI</td>
+  <td class="col-sujet">Liste grise MAJ — Koweït + PNG ajoutés</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Koweït et PNG ajoutés. Aucune sortie. Algérie et Namibie possibles sorties en juin. Giles Thomson nommé président (juillet 2026).</td>
+  <td class="col-lien"><a href="https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2026.html" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">13/02</td>
+  <td class="col-source">ACPR</td>
+  <td class="col-sujet">Organisation direction résolution — décision 2026-CR-01</td>
+  <td class="col-statut"><span class="badge badge-decision">Décision</span></td>
+  <td class="col-change">Réorganisation des services de la direction de la résolution. Information institutionnelle.</td>
+  <td class="col-lien"><a href="https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-ndeg-2026-cr-01-du-13-fevrier-2026-portant-sur-lorganisation-des-services-de-la-direction" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">28/01</td>
+  <td class="col-source">HCJP</td>
+  <td class="col-sujet">Rapport fonds suspects chez les PSP — 76 pages</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Dilemme : fonds suspects, pas d'opposition Tracfin, pas de saisie. Proposition : cantonnement encadré + contrôle judiciaire + fichier national.</td>
+  <td class="col-lien"><a href="https://www.banque-france.fr/system/files/2026-02/Rapport_73_F.pdf" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">17/02</td>
+  <td class="col-source">Conseil UE</td>
+  <td class="col-sujet">Tax blacklist MAJ — Vietnam + Turks &amp; Caicos ajoutés</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Vietnam et Turks &amp; Caicos ajoutés. Fidji, Samoa et Trinité-et-Tobago retirés. 10 juridictions en Annexe I.</td>
+  <td class="col-lien"><a href="https://www.consilium.europa.eu/en/press/press-releases/2026/02/17/taxation-council-updates-the-eu-list-of-non-cooperative-jurisdictions-for-tax-purposes/" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">03/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Discours MiCA — passeport contesté</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">La présidente de l'AMF a averti que, faute de convergence de supervision entre États membres, l'AMF ne pourrait exclure de contester le passeporting de licences MiCA.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/prises-de-parole/discours-de-marie-anne-barbat-layani-presidente-de-lamf-conference-afore-consulting-10th-annual" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">19/02</td>
+  <td class="col-source">ACPR</td>
+  <td class="col-sujet">Attentes agrément EP pour PSCA/EMT</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Services sur EMT relèvent aussi de DSP2. Peut nécessiter agrément EP en plus du statut crypto. Jalon : no-action letter EBA 02/03.</td>
+  <td class="col-lien"><a href="https://acpr.banque-france.fr/fr/actualites/attentes-de-lacpr-en-vue-de-lagrement-en-qualite-detablissement-de-paiement-des-prestataires-offrant" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">18/02</td>
+  <td class="col-source">ESMA / Commission UE</td>
+  <td class="col-sujet">Q&amp;A MiCA 2486 — Intérêts sur fonds clients (art. 70 MiCA)</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Un CASP ne peut pas conserver les intérêts générés par les fonds clients déposés en établissement de crédit. Art. 70(1)-(3) MiCA : ces dépôts servent à protéger le client, pas à générer du revenu pour le CASP. Réponse fournie par la Commission européenne.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/publications-and-data/questions-answers/2486" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">19/02</td>
+  <td class="col-source">ESMA</td>
+  <td class="col-sujet">Consultation MAR — delayed disclosure (Listing Act)</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">Amendement des lignes directrices MAR sur la divulgation différée. Deadline : 29/04/2026.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/press-news/consultations/consultation-mar-guidelines-delay-disclosure-inside-information" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">20/02</td>
+  <td class="col-source">FICOBA</td>
+  <td class="col-sujet">Fuite données — 1,2 million de comptes exposés</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Accès illégal : identité, adresse, IBAN, nom de banque. Typologies : faux conseiller, usurpation, fraude entreprises.</td>
+  <td class="col-lien"><a href="https://www.itpro.com/security/data-breaches/a-single-compromised-account-gave-hackers-access-to-1-2-million-french-banking-records" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">20/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Rescrit DOC-2026-02 — rétrocessions CIF</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Cadrage du reversement par un CIF d'une partie des rétrocessions aux clients. Barème prédéfini et progressif.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/reglementation/doctrine/doctrine-en-vigueur" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">23/02</td>
+  <td class="col-source">ESMA</td>
+  <td class="col-sujet">Consultation garanties CCP — collatéral et investissement</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">Projet de RTS sur les garanties comme collatéral CCP et la politique d'investissement. Deadline : 30/04/2026.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/press-news/esma-news/esma-consults-guarantees-ccp-collateral-and-certain-aspects-ccp-investment" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">24/02</td>
+  <td class="col-source">ESMA</td>
+  <td class="col-sujet">Public statement CFD / perpetual futures</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Les « perpetual futures » peuvent relever des mesures nationales d'intervention produit sur les CFD. Le nom commercial ne change pas la qualification.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/sites/default/files/2026-02/ESMA35-243228190-8024_-_Public_statement_on_derivatives_in_scope_of_the_CFD_product_intervention_measures.pdf" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">24/02</td>
+  <td class="col-source">GAFI</td>
+  <td class="col-sujet">Rapport annuel 2024-2025 — fraude 89 % des évaluations mutuelles</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">89 % des évaluations citent la fraude comme infraction sous-jacente (2e après corruption). 16 % seulement démontrent efficacité sur sanctions prolifération.</td>
+  <td class="col-lien"><a href="https://www.fatf-gafi.org/content/dam/fatf-gafi/annual-reports/fatf-annual-report-2024-2025.pdf.coredownload.pdf" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">13/02</td>
+  <td class="col-source">GAFI</td>
+  <td class="col-sujet">Note fraude cyber — scam centres Myanmar/Cambodge</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">La fraude cyber est devenue l'une des formes de criminalité à but lucratif les plus répandues. Les schémas intègrent le blanchiment dès la conception. Deux rapports sur les actifs virtuels annoncés pour mars 2026. (Chiffres de victimes Myanmar/Cambodge : source OHCHR 2023, pas GAFI.)</td>
+  <td class="col-lien"><a href="https://www.fatf-gafi.org/en/publications/Methodsandtrends/cyber-enabled-fraud-digitalisation-ml-tf-pf-risks.html" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">25/02</td>
+  <td class="col-source">EBA / ESMA</td>
+  <td class="col-sujet">Consultation Fit &amp; Proper CRD6 — aptitude dirigeants</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">Révision du cadre d'évaluation de l'aptitude dirigeants et fonctions clés. Deadline : 25/05/2026. Audition : 15/04/2026.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-and-esma-launch-consultation-revised-suitability-assessment-framework-banks-and-investment-firms" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">26/02</td>
+  <td class="col-source">EBA</td>
+  <td class="col-sujet">Validation centrale ISDA SIMM — démarrage 01/03/2026</td>
+  <td class="col-statut"><span class="badge badge-decision">Décision</span></td>
+  <td class="col-change">L'EBA devient le point central de validation du modèle de marge initiale dans l'UE. Phase d'onboarding, demandes à partir d'août 2026.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-kicks-eu-central-validation-isda-simm-1-march-2026" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">26/02</td>
+  <td class="col-source">EBA</td>
+  <td class="col-sujet">Avis RTS mécanisme équivalent CRR — expositions immobilières</td>
+  <td class="col-statut"><span class="badge badge-applicable">Publié</span></td>
+  <td class="col-change">Point de friction avec la Commission sur les paramètres prudentiels liés aux expositions immobilières en construction.</td>
+  <td class="col-lien"><a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-responds-commissions-proposed-amendments-draft-technical-standards-equivalent-legal-mechanism" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">26/02</td>
+  <td class="col-source">ESMA</td>
+  <td class="col-sujet">Consultation PTRR/EMIR — exemption compensation</td>
+  <td class="col-statut"><span class="badge badge-consultation">Consultation</span></td>
+  <td class="col-change">Standards pour les services de réduction de risque post-trade (exemption obligation de compensation). Deadline : 20/04/2026.</td>
+  <td class="col-lien"><a href="https://www.esma.europa.eu/press-news/esma-news/esma-consults-post-trade-risk-reduction-services-under-emir-3" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="even">
+  <td class="col-date">26/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">SPOT — préférences de durabilité (ESG)</td>
+  <td class="col-statut"><span class="badge badge-rapport">Rapport</span></td>
+  <td class="col-change">Insuffisances significatives dans le recueil et la prise en compte des préférences ESG dans le parcours de conseil.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/actualites-publications/publications/syntheses-des-controles-spot/synthese-des-controles-spot-relative-la-prise-en-compte-des-preferences-de-durabilite-dans-le" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+<tr class="odd">
+  <td class="col-date">25/02</td>
+  <td class="col-source">AMF</td>
+  <td class="col-sujet">Transaction TRA-2026-01 — Caisse d'Épargne IDF (600 000 €)</td>
+  <td class="col-statut"><span class="badge badge-decision">Décision</span></td>
+  <td class="col-change">Accord de composition administrative (conclu le 12/11/2025). Cinq griefs : adéquation GSM, schéma de rémunération (inducements), information précontractuelle, conflits d'intérêts, absence de contrôle interne sur la GSM. 600 000 € au Trésor Public + 435 055 € de remboursement clients.</td>
+  <td class="col-lien"><a href="https://www.amf-france.org/fr/sanctions-transactions/transactions/transactions-homologuees/accord-de-composition-administrative-conclu-le-12-novembre-2025-avec-caisse-depargne-et-de" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a></td>
+</tr>
+
+</tbody>
+    </table>
+  </div>
+</div>
+
+<div class="tab-content" id="tab-mode">
+  <div class="mode-body-wrap">
+
+    <!-- INTRO -->
+    <div class="mode-intro">
+      <p class="mode-intro-text">Ce tracker compile la veille réglementaire publiée dans <strong>Early Brief</strong> — LCB-FT, sanctions, paiements, crypto et conformité financière. Il est mis à jour chaque semaine. Les sources sont exclusivement officielles.</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="mode-section">
+      <div class="mode-section-title">Navigation</div>
+      <div class="mode-nav-grid">
+        <div class="mode-nav-item">
+          <div class="mode-nav-label">Dashboard</div>
+          <div class="mode-nav-desc">Vue d'ensemble : volume de veille, répartition par source et par statut, événements marquants du trimestre.</div>
+        </div>
+        <div class="mode-nav-item">
+          <div class="mode-nav-label">Tracker</div>
+          <div class="mode-nav-desc">Toutes les entrées filtrables par mois, source et statut. Chaque ligne renvoie à la source officielle.</div>
+        </div>
+        <div class="mode-nav-item">
+          <div class="mode-nav-label">Mode d'emploi</div>
+          <div class="mode-nav-desc">Légende des statuts, sources couvertes et glossaire des acronymes.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATUTS -->
+    <div class="mode-section">
+      <div class="mode-section-title">Statuts</div>
+      <div class="mode-statut-list">
+        <div class="mode-statut-row">
+          <span class="badge badge-en-vigueur">En vigueur</span>
+          <span class="mode-statut-desc">Texte normatif publié créant des obligations directement applicables.</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-applicable">Publié</span>
+          <span class="mode-statut-desc">Publié et pertinent, mais non contraignant — Q&amp;A, discours, MoU, position paper.</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-consultation">Consultation</span>
+          <span class="mode-statut-desc">Consultation publique ouverte ou collecte de données pré-réglementaire.</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-rapport">Rapport</span>
+          <span class="mode-statut-desc">Rapport, analyse ou position sectorielle — informatif, sans obligation directe.</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-decision">Décision</span>
+          <span class="mode-statut-desc">Acte individuel nominatif — retrait d'agrément, sanction, injonction.</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-programme">Programme</span>
+          <span class="mode-statut-desc">Feuille de route ou orientations stratégiques d'une autorité.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="mode-section">
+      <div class="mode-section-title">Sources couvertes</div>
+      <div class="mode-sources-grid">
+        <div class="mode-source-group">
+          <div class="mode-source-geo">🇫🇷 France</div>
+          <div class="mode-source-names">ACPR · AMF · Tracfin · Legifrance · HCJP · OSMP</div>
+        </div>
+        <div class="mode-source-group">
+          <div class="mode-source-geo">🇪🇺 Union européenne</div>
+          <div class="mode-source-names">AMLA · EBA · ESMA · Commission européenne · Conseil UE · CJUE</div>
+        </div>
+        <div class="mode-source-group">
+          <div class="mode-source-geo">🌍 International</div>
+          <div class="mode-source-names">GAFI/FATF · OFAC · FinCEN · FCA · Egmont Group</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GLOSSAIRE -->
+    <div class="mode-section">
+      <div class="mode-section-title">Glossaire</div>
+      <div class="mode-glossary">
+        <div class="glossary-item"><strong>ACPR</strong> — Autorité de Contrôle Prudentiel et de Résolution</div>
+        <div class="glossary-item"><strong>AMF</strong> — Autorité des Marchés Financiers</div>
+        <div class="glossary-item"><strong>AMLA</strong> — Anti-Money Laundering Authority (future autorité européenne LCB)</div>
+        <div class="glossary-item"><strong>ART</strong> — Asset-Referenced Token (jeton adossé à des actifs)</div>
+        <div class="glossary-item"><strong>CASP</strong> — Crypto-Asset Service Provider (prestataire de services sur crypto)</div>
+        <div class="glossary-item"><strong>CDD</strong> — Customer Due Diligence (vigilance client)</div>
+        <div class="glossary-item"><strong>CRD6</strong> — Capital Requirements Directive VI</div>
+        <div class="glossary-item"><strong>CTPP</strong> — Critical Third-Party Provider (prestataire TIC critique sous DORA)</div>
+        <div class="glossary-item"><strong>DORA</strong> — Digital Operational Resilience Act</div>
+        <div class="glossary-item"><strong>DS</strong> — Déclaration de Soupçon</div>
+        <div class="glossary-item"><strong>EBA</strong> — European Banking Authority (Autorité bancaire européenne)</div>
+        <div class="glossary-item"><strong>EDD</strong> — Enhanced Due Diligence (vigilance renforcée)</div>
+        <div class="glossary-item"><strong>EMT</strong> — E-Money Token (jeton de monnaie électronique)</div>
+        <div class="glossary-item"><strong>EP</strong> — Établissement de Paiement</div>
+        <div class="glossary-item"><strong>ESMA</strong> — European Securities and Markets Authority</div>
+        <div class="glossary-item"><strong>FATF / GAFI</strong> — Financial Action Task Force / Groupe d'Action Financière</div>
+        <div class="glossary-item"><strong>HCJP</strong> — Haut Comité Juridique de la Place Financière de Paris</div>
+        <div class="glossary-item"><strong>IPC</strong> — Indice de Perception de la Corruption (Transparency International)</div>
+        <div class="glossary-item"><strong>LCB-FT</strong> — Lutte contre le Blanchiment de Capitaux et le Financement du Terrorisme</div>
+        <div class="glossary-item"><strong>MiCA</strong> — Markets in Crypto-Assets Regulation</div>
+        <div class="glossary-item"><strong>OSMP</strong> — Observatoire de la Sécurité des Moyens de Paiement</div>
+        <div class="glossary-item"><strong>PSAN</strong> — Prestataire de Services sur Actifs Numériques</div>
+        <div class="glossary-item"><strong>PSP</strong> — Prestataire de Services de Paiement</div>
+        <div class="glossary-item"><strong>PTHR</strong> — Pays Tiers à Haut Risque (liste LCB-FT)</div>
+        <div class="glossary-item"><strong>QLB</strong> — Questionnaire Lutte anti-Blanchiment (reporting ACPR)</div>
+        <div class="glossary-item"><strong>RACI</strong> — Rapport Annuel de Contrôle Interne LCB-FT</div>
+        <div class="glossary-item"><strong>RoI</strong> — Register of Information (registre DORA)</div>
+        <div class="glossary-item"><strong>RTS</strong> — Regulatory Technical Standards</div>
+        <div class="glossary-item"><strong>SGP</strong> — Société de Gestion de Portefeuille</div>
+        <div class="glossary-item"><strong>TCB</strong> — Third-Country Branch (succursale de pays tiers)</div>
+        <div class="glossary-item"><strong>Tracfin</strong> — Traitement du renseignement et action contre les circuits financiers clandestins</div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="mode-footer">
+      <div class="mode-footer-left">
+        <div class="mode-footer-brand">Early Brief</div>
+        <div class="mode-footer-sub">La veille réglementaire hebdomadaire — LCB-FT, sanctions et conformité financière.</div>
+      </div>
+      <a href="https://substack.com/@maryagar" class="mode-footer-cta" target="_blank" rel="noopener">S'abonner gratuitement →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- MENTIONS LÉGALES (modal) -->
+<div id="mentions-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;justify-content:center;align-items:center;">
+  <div style="background:var(--white);max-width:600px;width:90%;max-height:80vh;overflow-y:auto;border-radius:10px;padding:36px 40px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.15);">
+    <button onclick="document.getElementById('mentions-overlay').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;color:var(--light);cursor:pointer;">&times;</button>
+    <h2 style="font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--dark);margin-bottom:16px;">Mentions légales</h2>
+    <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;">
+      <strong>Éditeur</strong><br>
+      Early Brief — Maria Garcia<br>
+      Contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f49995869d95b4919586988dda979b9a878198809d9a93">[email&#160;protected]</a><br>
+    </p>
+    <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;">
+      <strong>Hébergeur</strong><br>
+      Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA
+    </p>
+    <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;">
+      <strong>Données personnelles</strong><br>
+      Ce site ne collecte aucune donnée personnelle, n'utilise aucun cookie et ne fait appel à aucun service tiers de mesure d'audience ou de traçage. Aucune donnée n'est transmise à des tiers.
+    </p>
+    <p style="font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:12px;">
+      <strong>Propriété intellectuelle</strong><br>
+      Le contenu de ce site (textes, structure, mise en page) est protégé par le droit d'auteur. Les données réglementaires référencées sont issues de sources officielles publiques. Les liens externes renvoient vers les sites des autorités émettrices.
+    </p>
+    <p style="font-size:13px;color:var(--mid);line-height:1.7;">
+      <strong>Responsabilité</strong><br>
+      Les informations fournies le sont à titre informatif et ne constituent ni un conseil juridique, ni une recommandation opérationnelle. Early Brief ne saurait être tenu responsable de l'utilisation qui en est faite. Vérifiez systématiquement auprès des sources primaires.
+    </p>
+  </div>
+</div>
+
+<div style="text-align:center;padding:16px 0 8px;font-size:11px;color:var(--light);">
+  <a href="#" onclick="document.getElementById('mentions-overlay').style.display='flex';return false;" style="color:var(--light);text-decoration:underline;">Mentions légales</a>
+  &nbsp;·&nbsp; Aucun cookie · Aucune donnée collectée
+</div>
+
+<!-- STICKY CTA BAR -->
+<div class="cta-bar" id="cta-bar">
+  <p>Ce tracker est un extrait d'<strong>Early Brief</strong> — la veille LCB-FT, sanctions et conformité, chaque semaine.</p>
+  <a class="cta-btn" href="https://substack.com/@maryagar" target="_blank" rel="noopener">S'abonner gratuitement</a>
+  <button class="cta-dismiss" onclick="document.getElementById('cta-bar').style.display='none';document.body.style.paddingBottom='24px';" title="Fermer">&times;</button>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+// ── DONNÉES ÉDITORIALES — À METTRE À JOUR CHAQUE MOIS ───────────────────
+// Modifier uniquement ce bloc pour la mise à jour mensuelle
+const BILAN_MOIS = "Février 2026";
+const EVENEMENTS_MARQUANTS = [
+  {
+    num: "01",
+    titre: "AMLA — 3 consultations RTS simultanées",
+    texte: "CDD, relations d'affaires, sanctions. La consultation sanctions clôture le 09/03 ; les deux autres le 08/05. Les procédures KYC actuelles devront probablement être revues d'ici juillet 2027."
+  },
+  {
+    num: "02",
+    titre: "Mise à jour des listes pays",
+    texte: "Double mouvement en février : liste grise GAFI (Koweït + PNG ajoutés) et tax blacklist UE (Vietnam + Turks & Caicos). Impact direct sur les dispositifs de screening et la cartographie des risques géographiques."
+  },
+  {
+    num: "03",
+    titre: "HCJP — fonds suspects chez les PSP",
+    texte: "Rapport de 76 pages à la demande de l'ACPR : cantonnement encadré, fichier national, contrôle judiciaire proposés. Sujet le plus opérationnel du mois pour les PSP et EME."
+  },
+  {
+    num: "04",
+    titre: "GAFI — la fraude comme infraction sous-jacente",
+    texte: "89 % des évaluations GAFI citent la fraude. Les schémas intègrent le blanchiment dès la conception. Signal clair sur l'évolution des typologies à intégrer dans les dispositifs de détection."
+  },
+  {
+    num: "05",
+    titre: "AMF — passeports MiCA contestés",
+    texte: "L'AMF menace de contester les passeports de certaines licences MiCA obtenues dans d'autres États membres. La supervision MiCA ne sera pas passive en France."
+  }
+];
+// ── FIN DONNÉES ÉDITORIALES ──────────────────────────────────────────────
+
+// ── DASHBOARD RETROSPECTIVE ──────────────────────────────────────────────
+function buildDashboard() {
+  const rows = document.querySelectorAll('#tab-veille .veille-table tbody tr:not(.month-separator):not(.row-hidden)');
+  
+  let total = 0, janCount = 0, fevCount = 0;
+  const sources = {}, statuts = {};
+  const applicableFev = [];
+
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 6) return;
+    total++;
+
+    const dateRaw = cells[0].textContent.trim(); // "08/01" or "14/02"
+    const month = dateRaw.includes('/') ? dateRaw.split('/')[1] : '';
+    if (month === '01') janCount++;
+    else if (month === '02') fevCount++;
+
+    const source = cells[1].textContent.trim();
+    sources[source] = (sources[source] || 0) + 1;
+
+    const badge = cells[3].querySelector('.badge');
+    const statut = badge ? badge.textContent.trim() : 'Autre';
+    statuts[statut] = (statuts[statut] || 0) + 1;
+
+    // Items applicables en février
+    if (month === '02' && statut === 'En vigueur') {
+      const sujet = cells[2].textContent.trim();
+      const synth = cells[4].textContent.trim();
+      applicableFev.push({ date: dateRaw, source, sujet, synth });
+    }
+  });
+
+  // Stats cards
+  // Calcul plage de dates depuis les données
+  const MOIS_FR = ['','Jan.','Fév.','Mars','Avr.','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'];
+  const allMonths = new Set();
+  document.querySelectorAll('#tab-veille .veille-table tbody tr:not(.month-separator) .col-date').forEach(td => {
+    const parts = td.textContent.trim().split('/');
+    if (parts[1]) allMonths.add(parseInt(parts[1]));
+  });
+  const sortedMonths = Array.from(allMonths).sort((a,b) => a-b);
+  const plage = sortedMonths.length > 1
+    ? MOIS_FR[sortedMonths[0]] + ' à ' + MOIS_FR[sortedMonths[sortedMonths.length-1]]
+    : MOIS_FR[sortedMonths[0]] || '';
+  
+  // Mettre à jour les titres
+  const tabLabel = document.getElementById('tab-veille-label');
+  if (tabLabel) tabLabel.textContent = 'Veille 2026 — ' + plage;
+  const veilleTitle = document.getElementById('veille-titre');
+  if (veilleTitle) veilleTitle.textContent = 'Veille réglementaire 2026 — ' + plage;
+
+  // Titre mois
+  const titreMoisEl = document.getElementById('dash-mois-titre');
+  if (titreMoisEl) titreMoisEl.textContent = 'Événements marquants — ' + BILAN_MOIS;
+
+  // Événements marquants
+  const eventsEl = document.getElementById('dash-events');
+  if (eventsEl) {
+    eventsEl.innerHTML = EVENEMENTS_MARQUANTS.map(e => `
+      <div class="event-item">
+        <div class="event-num">${e.num}</div>
+        <div class="event-titre">${e.titre}</div>
+        <div class="event-texte">${e.texte}</div>
+      </div>`).join('');
+  }
+
+  const statsEl = document.getElementById('dash-stats');
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="number">${total}</div><div class="label">items suivis (cumul)</div></div>
+    <div class="stat-card"><div class="number">${janCount}</div><div class="label">items janvier</div></div>
+    <div class="stat-card"><div class="number">${fevCount}</div><div class="label">items février</div></div>
+  `;
+
+  // Applicable en février
+  const appEl = document.getElementById('dash-applicable');
+  if (applicableFev.length === 0) {
+    appEl.innerHTML = '<p style="font-size:12px;color:var(--light);font-style:italic;">Aucun nouveau texte normatif contraignant publié en février 2026.</p>';
+  } else {
+    appEl.innerHTML = applicableFev.map(item => `
+      <div class="signal-item">
+        <div class="signal-date">${item.date}/2026</div>
+        <div class="signal-source">${item.source}</div>
+        <div class="signal-text">${item.sujet}</div>
+      </div>`).join('');
+  }
+
+  // Sources top 8
+  const srcSorted = Object.entries(sources).sort((a,b) => b[1]-a[1]).slice(0,8);
+  const maxSrc = srcSorted[0]?.[1] || 1;
+  const srcEl = document.getElementById('dash-sources');
+  const totalSrc = srcSorted.reduce((sum,[,n]) => sum+n, 0);
+  srcEl.innerHTML = srcSorted.map(([src, n]) => `
+    <div class="source-bar-row">
+      <div class="source-bar-label">${src}</div>
+      <div class="source-bar-track"><div class="source-bar-fill" style="width:${Math.round(n/maxSrc*100)}%"></div></div>
+      <div class="source-bar-count">${n} <span style="color:var(--gray-400);font-weight:400">${Math.round(n/totalSrc*100)}%</span></div>
+    </div>`).join('');
+
+  // Répartition statuts
+  const statutOrder = ['En vigueur','Publié','Décision','Consultation','Rapport','Programme'];
+  const dotColors = {'En vigueur':'#7BA896','Publié':'#7CB4C4','Applicable':'#7CB4C4','Décision':'#D4A053','Consultation':'#9B8EC4','Rapport':'#A8A29E','Programme':'#C48B9F'};
+  const statEl = document.getElementById('dash-statuts');
+  statEl.innerHTML = statutOrder.map(s => `
+    <div class="statut-cell" style="--cell-dot:${dotColors[s] || '#E8E4DC'}">
+      <div class="num">${statuts[s] || 0}</div>
+      <div class="lbl">${s}</div>
+    </div>`).join('');
+}
+
+// DOMContentLoaded already fired (script is at bottom) — call directly
+buildDashboard();
+</script><script>
+// Tab switching
+function switchTab(name, e) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  (e || window.event).target.closest('.tab-btn').classList.add('active');
+}
+
+// Filtering system
+(function() {
+  const table = document.querySelector('.veille-table tbody');
+  if (!table) return;
+
+  const rows = Array.from(table.querySelectorAll('tr'));
+  const dataRows = [];
+  const separators = [];
+  const sources = new Set();
+  const statuts = new Set();
+  const months = new Map();
+  let currentMonth = '';
+
+  // Parse rows and build indexes
+  rows.forEach(row => {
+    if (row.classList.contains('month-separator')) return;
+
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 4) return;
+
+    const dateText = cells[0]?.textContent.trim() || '';
+    const monthNum = dateText.split('/')[1];
+    const MOIS_NUM = {'01':'Janvier','02':'Février','03':'Mars','04':'Avril','05':'Mai','06':'Juin','07':'Juillet','08':'Août','09':'Septembre','10':'Octobre','11':'Novembre','12':'Décembre'};
+    const rowMonth = MOIS_NUM[monthNum] || '';
+
+    const source = cells[1]?.textContent.trim() || '';
+    const badge = cells[3]?.querySelector('.badge');
+    const statut = badge ? badge.textContent.trim() : '';
+    const fullText = row.textContent.toLowerCase();
+
+    sources.add(source);
+    if (statut) statuts.add(statut);
+
+    dataRows.push({ el: row, month: rowMonth, source, statut, text: fullText });
+  });
+
+  // Populate dropdowns
+  const monthSelect = document.getElementById('filter-month');
+  const sourceSelect = document.getElementById('filter-source');
+  const statutSelect = document.getElementById('filter-statut');
+
+
+  // Header metrics
+  const totalEntries = dataRows.length;
+  const uniqueSources = new Set(dataRows.map(r => r.source)).size;
+  const moisCouverts = [...new Set(dataRows.map(r => r.month))];
+  const MOIS_ABBR = {Janvier:'Jan.',Février:'Fév.',Mars:'Mar.',Avril:'Avr.',Mai:'Mai',Juin:'Juin',Juillet:'Juil.',Août:'Aoû.',Septembre:'Sep.',Octobre:'Oct.',Novembre:'Nov.',Décembre:'Déc.'};
+  const monthOrder = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  moisCouverts.sort((a,b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+  const periodLabel = moisCouverts.length > 0
+    ? (moisCouverts.length === 1 ? (MOIS_ABBR[moisCouverts[0]] || moisCouverts[0])
+      : (MOIS_ABBR[moisCouverts[0]] || moisCouverts[0]) + '–' + (MOIS_ABBR[moisCouverts[moisCouverts.length-1]] || moisCouverts[moisCouverts.length-1]))
+    : '—';
+  const mc = document.getElementById('metric-count');
+  const ms = document.getElementById('metric-sources');
+  const mp = document.getElementById('metric-period');
+  if (mc) mc.textContent = totalEntries;
+  const tabLabel = document.getElementById('tab-veille-label');
+  if (tabLabel) tabLabel.textContent = 'Tracker (' + totalEntries + ')';
+  if (ms) ms.textContent = uniqueSources;
+  if (mp) mp.textContent = periodLabel;
+
+  // Months in order
+  const monthOrder2 = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  const usedMonths = [...new Set(dataRows.map(r => r.month))].sort((a,b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+  usedMonths.forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m; opt.textContent = m;
+    monthSelect.appendChild(opt);
+  });
+
+  // Sources sorted
+  [...sources].sort((a,b) => a.localeCompare(b, 'fr')).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    sourceSelect.appendChild(opt);
+  });
+
+  // Statuts
+  [...statuts].sort().forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    statutSelect.appendChild(opt);
+  });
+
+  // Filter logic
+  function applyFilters() {
+    const searchVal = document.getElementById('filter-search').value.toLowerCase().trim();
+    const monthVal = monthSelect.value;
+    const sourceVal = sourceSelect.value;
+    const statutVal = statutSelect.value;
+
+    let visible = 0;
+    const visibleMonths = new Set();
+
+    dataRows.forEach(row => {
+      const matchMonth = monthVal === 'all' || row.month === monthVal;
+      const matchSource = sourceVal === 'all' || row.source === sourceVal;
+      const matchStatut = statutVal === 'all' || row.statut === statutVal;
+      const matchSearch = !searchVal || row.text.includes(searchVal);
+
+      const show = matchMonth && matchSource && matchStatut && matchSearch;
+      row.el.classList.toggle('row-hidden', !show);
+      if (show) { visible++; visibleMonths.add(row.month); }
+    });
+
+    // Show/hide month separators
+    separators.forEach(sep => {
+      sep.el.classList.toggle('row-hidden', !visibleMonths.has(sep.month));
+    });
+
+    // Update counter
+    const total = dataRows.length;
+    const resultsEl = document.getElementById('filter-results');
+    if (visible === total) {
+      resultsEl.textContent = '';
+    } else {
+      resultsEl.textContent = visible + ' / ' + total + ' items';
+    }
+  }
+
+  document.getElementById('filter-search').addEventListener('input', applyFilters);
+  monthSelect.addEventListener('change', applyFilters);
+  sourceSelect.addEventListener('change', applyFilters);
+  statutSelect.addEventListener('change', applyFilters);
+
+  window.resetFilters = function() {
+    document.getElementById('filter-search').value = '';
+    monthSelect.value = 'all';
+    sourceSelect.value = 'all';
+    statutSelect.value = 'all';
+    applyFilters();
+  };
+})();
+
+// CSV Export (respects active filters)
+function exportCSV() {
+  const BOM = '\uFEFF';
+  const sep = ';';
+  const headers = ['Date','Source','Sujet','Statut','Synthèse','Lien'];
+  const lines = [headers.join(sep)];
+
+  document.querySelectorAll('.veille-table tbody tr').forEach(row => {
+    if (row.classList.contains('month-separator') || row.classList.contains('row-hidden')) return;
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 6) return;
+    const vals = Array.from(cells).map((cell, i) => {
+      if (i === 5) {
+        const a = cell.querySelector('a');
+        return a ? a.href : '';
+      }
+      if (i === 3) {
+        const badge = cell.querySelector('.badge');
+        return badge ? badge.textContent.trim() : '';
+      }
+      return cell.textContent.trim();
+    });
+    lines.push(vals.map(v => '"' + v.replace(/"/g, '""') + '"').join(sep));
+  });
+
+  const csv = BOM + lines.join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'early-brief-tracker-2026.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetFilters() {
+  document.getElementById('filter-search').value = '';
+  document.getElementById('filter-month').value = 'all'; document.getElementById('filter-month').options[0].textContent = 'Mois — tous';
+  document.getElementById('filter-source').value = 'all';
+  document.getElementById('filter-statut').value = 'all';
+  document.querySelectorAll('.veille-table tbody tr').forEach(row => {
+    if (!row.classList.contains('month-separator')) row.classList.remove('row-hidden');
+  });
+  document.getElementById('filter-results').textContent = '';
+}
+
+      next = next.nextElementSibling;
+    }
+    sep.classList.toggle('row-hidden', !visible);
+  });
+}
+</script>

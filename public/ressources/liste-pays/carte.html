@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte des listes pays LCB-FT — 5 listes, 5 effets juridiques | Early Brief</title>
+<meta name="description" content="Guide de synthèse : PTHR UE, GAFI grey/black list, sanctions UE, Tax blacklist, ETNC France. Quel effet juridique pour quelle liste ? Que faire quand un pays est sur plusieurs listes ? Février 2026.">
+<meta name="keywords" content="carte listes pays LCB-FT, PTHR UE, GAFI grey list, sanctions UE, Tax blacklist, ETNC, EDD obligatoire, compliance pays, approche risk-based">
+<meta name="author" content="Early Brief">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://early-brief.com/outils/carte-listes-pays-lcbft">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="La Carte des Listes Pays LCB-FT — février 2026">
+<meta property="og:description" content="5 familles de listes pays, 5 effets juridiques distincts. Guide opérationnel pour compliance officers.">
+<meta property="og:url" content="https://early-brief.com/outils/carte-listes-pays-lcbft">
+<meta property="og:site_name" content="Early Brief">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Carte des Listes Pays LCB-FT — février 2026">
+<meta name="twitter:description" content="5 familles de listes pays, 5 effets juridiques distincts. Guide opérationnel.">
+
+<!-- JSON-LD : Article (SEO + LLM) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "La Carte des Listes Pays LCB-FT — 5 familles, 5 effets juridiques",
+  "description": "Guide de synthèse pour compliance officers : comment distinguer les 5 familles de listes pays (PTHR UE, GAFI, sanctions, Tax blacklist UE, ETNC France), leur effet juridique respectif, et la règle d'articulation quand un pays figure sur plusieurs listes.",
+  "author": {"@type": "Organization", "name": "Early Brief", "url": "https://early-brief.com"},
+  "publisher": {"@type": "Organization", "name": "Early Brief"},
+  "datePublished": "2026-02-17",
+  "dateModified": "2026-02-18",
+  "mainEntityOfPage": "https://early-brief.com/outils/carte-listes-pays-lcbft",
+  "about": [
+    {"@type": "Thing", "name": "Lutte contre le blanchiment de capitaux et le financement du terrorisme"},
+    {"@type": "Thing", "name": "Vigilance renforcée (EDD)"},
+    {"@type": "Thing", "name": "Compliance réglementaire"}
+  ],
+  "keywords": "PTHR UE, GAFI grey list, black list, sanctions UE, Tax blacklist, ETNC, LCB-FT, EDD, compliance"
+}
+</script>
+<style>
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/inter.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/inter.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/inter.woff2) format('woff2'); }
+@font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/sourceserif4.woff2) format('woff2'); }
+@font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/sourceserif4.woff2) format('woff2'); }
+@font-face { font-family: 'Source Serif 4'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/sourceserif4-italic.woff) format('woff'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/spacegrotesk.woff2) format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/spacegrotesk.woff2) format('woff2'); }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/spacegrotesk.woff2) format('woff2'); }
+</style>
+<style>
+  :root {
+    --bg: #F5F2EB;
+    --bg-warm: #F3EEE4;
+    --surface: #FFFFFF;
+    --ink: #1F2A23;
+    --muted: #4A5A4A;
+    --subtle: #6A7A6A;
+    --accent: #2D5A3D;
+    --rose: #B56B7A;
+    --sage: #7FA79A;
+    --orange: #C46A3A;
+    --border: #DDD8CE;
+    --border-light: #E8E3D9;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e5de;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 32mm 26mm 24mm;
+    background: var(--bg);
+    position: relative;
+  }
+
+  .page + .page { page-break-before: always; }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; padding: 22mm 22mm 18mm; width: 100%; min-height: auto; page-break-after: always; }
+    * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  @media screen {
+    body { padding: 24px 0; }
+    .page { box-shadow: 0 1px 12px rgba(0,0,0,0.04); margin-bottom: 32px; }
+  }
+
+  /* ── Export bar ── */
+  .export-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background: rgba(31, 42, 35, 0.95);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+  }
+  .export-bar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .export-bar-btn:hover { background: rgba(255,255,255,0.2); }
+  .export-bar-btn svg { width: 14px; height: 14px; }
+  .export-bar-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-right: 8px;
+  }
+  .export-bar-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.15); }
+  @media print { .export-bar { display: none; } }
+  @media screen { body { padding-top: 52px; } }
+
+  /* ── Header ── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .logo-url {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    color: var(--subtle);
+  }
+
+  /* ── Title ── */
+  .page-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  /* ── TABLE ── */
+  .lists-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .lists-table thead th {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 8.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    text-align: left;
+    padding: 0 10px 10px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  .lists-table tbody td {
+    padding: 12px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .lists-table tbody tr:last-child td { border-bottom: 1px solid var(--border); }
+
+  .col-liste { width: 16%; }
+
+  .liste-tag {
+    font-family: var(--font-sans);
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+  .tag-aml { color: var(--accent); }
+  .tag-sanctions { color: var(--orange); }
+  .tag-fiscal { color: var(--subtle); }
+
+  .liste-name {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 10.5px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .col-legal {
+    width: 15%;
+    font-family: var(--font-serif);
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .source-link {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: var(--font-sans);
+    font-size: 7.5px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(45, 90, 61, 0.25);
+    transition: border-color 0.15s;
+  }
+  .source-link:hover { border-color: var(--accent); }
+  @media print { .source-link { color: var(--accent); border-bottom: none; } }
+
+  .col-freq { width: 10%; }
+  .freq-main { font-family: var(--font-sans); font-weight: 600; font-size: 10px; color: var(--ink); }
+  .freq-detail { font-family: var(--font-serif); font-size: 9px; color: var(--muted); }
+
+  .col-effect { width: 34%; }
+
+  .effect-badge {
+    font-family: var(--font-sans);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  .badge-obligation { color: var(--rose); background: rgba(181, 107, 122, 0.1); }
+  .badge-signal { color: var(--sage); background: rgba(127, 167, 154, 0.12); }
+  .badge-muted { color: var(--subtle); background: rgba(106, 122, 106, 0.1); }
+
+  .effect-list {
+    font-family: var(--font-serif);
+    font-size: 9.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    list-style: none;
+  }
+  .effect-list li { padding-left: 8px; position: relative; }
+  .effect-list li::before { content: '·'; position: absolute; left: 0; color: var(--subtle); }
+
+  .effect-conclusion {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 4px;
+    padding-left: 8px;
+  }
+
+  .col-status {
+    width: 25%;
+    font-family: var(--font-sans);
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .status-date { font-weight: 600; color: var(--ink); }
+
+  /* ── Vietnam ── */
+  .case-study {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+  }
+
+  .case-study-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .case-study-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  .case-study-sub {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .case-cols {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 20px;
+  }
+
+  .case-col-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  .case-col-title.gafi { color: var(--accent); }
+  .case-col-title.tax { color: var(--orange); }
+
+  .case-col-item {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    color: var(--ink);
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .case-col-item::before { content: '→'; position: absolute; left: 0; color: var(--border); font-size: 9px; }
+
+  .case-divider { background: var(--border-light); }
+
+  /* ── Key question ── */
+  .key-question {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--accent);
+    background: var(--bg-warm);
+  }
+
+  .key-question-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .key-question-text {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    position: absolute;
+    bottom: 18mm;
+    left: 26mm;
+    right: 26mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 8.5px;
+    color: var(--subtle);
+  }
+
+  @media print { .page-footer { bottom: 12mm; left: 22mm; right: 22mm; } }
+
+  /* ═══════════════════════════════════════════
+     PAGE 2
+     ═══════════════════════════════════════════ */
+  .page2-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .step-box {
+    padding: 14px 18px;
+    border-left: 3px solid var(--ink);
+    background: var(--surface);
+    margin-bottom: 8px;
+  }
+
+  .step-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .step-desc {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .tree-connector {
+    position: relative;
+    height: 22px;
+  }
+  .tree-connector::before { content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 11px; background: var(--border); }
+  .tree-connector::after { content: ''; position: absolute; top: 11px; left: 16.67%; right: 16.67%; height: 1px; background: var(--border); }
+
+  .branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .branch {
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 14px 14px 16px;
+    position: relative;
+  }
+
+  .branch::before { content: ''; position: absolute; top: -11px; left: 50%; width: 1px; height: 11px; background: var(--border); }
+
+  .branch-rose { border-top: 3px solid var(--rose); }
+  .branch-sage { border-top: 3px solid var(--sage); }
+  .branch-orange { border-top: 3px solid var(--orange); }
+
+  .branch-title { font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--ink); margin-bottom: 1px; }
+  .branch-subtitle { font-family: var(--font-sans); font-size: 9px; font-weight: 500; color: var(--subtle); margin-bottom: 10px; }
+
+  .branch-list {
+    font-family: var(--font-serif);
+    font-size: 9.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    list-style: none;
+  }
+  .branch-list li { padding-left: 8px; position: relative; }
+  .branch-list li::before { content: '·'; position: absolute; left: 0; color: var(--border); }
+
+  /* Articulation rule */
+  .articulation-box {
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+  }
+
+  .articulation-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .articulation-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--ink);
+  }
+
+  .articulation-sub {
+    font-family: var(--font-serif);
+    font-size: 9.5px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .articulation-rule {
+    font-family: var(--font-serif);
+    font-size: 9.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .articulation-rule strong {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 9px;
+  }
+
+  .articulation-example {
+    padding: 10px 14px;
+    background: var(--bg-warm);
+    border-radius: 3px;
+  }
+
+  .articulation-example-label {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 8px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 5px;
+  }
+
+  .articulation-example-text {
+    font-family: var(--font-serif);
+    font-size: 9px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .articulation-example-text span {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 8.5px;
+    color: var(--ink);
+  }
+
+  /* Process */
+  .process-box { margin-bottom: 20px; }
+
+  .process-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    padding-left: 2px;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr 12px 1fr 12px 1fr 12px 1fr;
+    align-items: start;
+  }
+
+  .process-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+
+  .process-step-num { font-family: var(--font-sans); font-weight: 600; font-size: 9.5px; color: var(--ink); margin-bottom: 3px; }
+  .process-step-desc { font-family: var(--font-serif); font-size: 9px; line-height: 1.45; color: var(--muted); }
+
+  .process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--border);
+    font-size: 14px;
+    font-family: var(--font-sans);
+    padding-top: 10px;
+  }
+
+  /* Pièges */
+  .traps-box {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    margin-bottom: 20px;
+  }
+
+  .traps-title { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 16px; }
+
+  .trap {
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 2px solid var(--rose);
+  }
+  .trap:last-child { margin-bottom: 0; }
+
+  .trap-title { font-family: var(--font-sans); font-weight: 600; font-size: 10px; color: var(--ink); margin-bottom: 3px; }
+  .trap-desc { font-family: var(--font-serif); font-size: 10px; line-height: 1.55; color: var(--muted); }
+
+  /* CTA */
+  .cta-box {
+    margin-top: 22px;
+    padding: 14px 18px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: var(--bg-warm);
+  }
+
+  .cta-title { font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--accent); margin-bottom: 3px; }
+  .cta-text { font-family: var(--font-serif); font-size: 10.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Export bar (hidden in print) -->
+<div class="export-bar" id="export-bar">
+  <span class="export-bar-logo">Early Brief</span>
+  <span style="color:rgba(255,255,255,0.4)">La Carte des Listes Pays LCB-FT — Février 2026</span>
+  <div class="export-bar-sep"></div>
+  <button class="export-bar-btn" onclick="try{window.print()}catch(e){alert('Utilisez Ctrl+P ou Cmd+P pour exporter en PDF')}">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+    Télécharger en PDF
+  </button>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <header class="page-header">
+    <div class="logo">Early Brief</div>
+  </header>
+
+  <h1 class="page-title">La Carte des Listes Pays</h1>
+  <p class="page-subtitle">5 familles&ensp;·&ensp;5 effets juridiques distincts&ensp;·&ensp;Mise à jour février 2026</p>
+
+  <div style="display:flex;gap:16px;margin-bottom:16px;font-family:var(--font-sans);font-size:8.5px;color:var(--subtle);align-items:center;">
+    <span style="display:flex;align-items:center;gap:5px;"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(181,107,122,0.25);"></span> Obligation directe</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(127,167,154,0.25);"></span> Signal de risque</span>
+    <span style="display:flex;align-items:center;gap:5px;"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:rgba(106,122,106,0.2);"></span> Signal national</span>
+  </div>
+
+  <table class="lists-table">
+    <thead>
+      <tr>
+        <th class="col-liste">Liste</th>
+        <th class="col-legal">Base juridique</th>
+        <th class="col-freq">Fréquence</th>
+        <th class="col-effect">Effet opérationnel</th>
+        <th class="col-status">Statut fév. 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="liste-tag tag-aml">AML</div><div class="liste-name">UE — Pays Tiers<br>à Haut Risque (PTHR)</div></td>
+        <td class="col-legal">Règlement délégué<br>mod. (UE) 2016/1675<br>Art. 9 &amp; 18a AMLD<br><a class="source-link" href="https://finance.ec.europa.eu/financial-crime/anti-money-laundering-and-countering-financing-terrorism-international-level_en" target="_blank">↗ Source officielle</a></td>
+        <td><div class="freq-main">Irrégulière</div><div class="freq-detail">Suivant GAFI + évaluation UE</div></td>
+        <td>
+          <div class="effect-badge badge-obligation">EDD obligatoire</div>
+          <ul class="effect-list"><li>Source des fonds + patrimoine</li><li>Approbation senior management</li><li>Monitoring renforcé</li></ul>
+          <div class="effect-conclusion">→ Pas de marge d'appréciation</div>
+        </td>
+        <td class="col-status">Russie, Bolivie, BVI ajoutées<br>6 pays retirés<br>Adoptée 03-04/12/2025<br><span class="status-date">Entrée en vigueur 29/01/2026</span></td>
+      </tr>
+      <tr>
+        <td><div class="liste-tag tag-aml">AML</div><div class="liste-name">GAFI — Grey List<br>(surveillance renforcée)</div></td>
+        <td class="col-legal">Document public GAFI<br>(pas de force juridique UE directe)<br><a class="source-link" href="https://www.fatf-gafi.org/en/topics/high-risk-and-other-monitored-jurisdictions.html" target="_blank">↗ Source officielle</a></td>
+        <td><div class="freq-main">3×/an</div><div class="freq-detail">Plénière GAFI</div></td>
+        <td>
+          <div class="effect-badge badge-signal">Signal de risque</div>
+          <ul class="effect-list"><li>Pas d'EDD obligatoire en soi</li><li>Facteur aggravant scoring pays</li><li>L'UE peut suivre via PTHR</li></ul>
+          <div class="effect-conclusion">→ Approche risk-based</div>
+        </td>
+        <td class="col-status">Koweït + PNG ajoutés<br>Aucun retiré · 22 juridictions<br><span class="status-date">13/02/2026</span></td>
+      </tr>
+      <tr>
+        <td><div class="liste-tag tag-aml">AML</div><div class="liste-name">GAFI — Black List<br>(call for action)</div></td>
+        <td class="col-legal">Document public GAFI<br>+ appel à contre-mesures<br><a class="source-link" href="https://www.fatf-gafi.org/en/topics/high-risk-and-other-monitored-jurisdictions.html" target="_blank">↗ Source officielle</a></td>
+        <td><div class="freq-main">3×/an</div><div class="freq-detail">Plénière GAFI</div></td>
+        <td>
+          <div class="effect-badge badge-obligation">Contre-mesures</div>
+          <ul class="effect-list"><li>EDD renforcée exigée</li><li>Contre-mesures possibles</li><li>Niveau d'alerte maximal</li></ul>
+          <div class="effect-conclusion">→ Quasi-embargo AML</div>
+        </td>
+        <td class="col-status">Inchangée<br>Iran, RPDC, Myanmar<br><span class="status-date">13/02/2026</span></td>
+      </tr>
+      <tr>
+        <td><div class="liste-tag tag-sanctions">Sanctions</div><div class="liste-name">Sanctions UE / ONU<br>(gel des avoirs, embargos)</div></td>
+        <td class="col-legal">Décisions PESC +<br>règlements UE (JOUE)<br>Directement opposable<br><a class="source-link" href="https://www.sanctionsmap.eu/" target="_blank">↗ EU Sanctions Map</a></td>
+        <td><div class="freq-main">Au fil de l'eau</div><div class="freq-detail">"whenever necessary"</div></td>
+        <td>
+          <div class="effect-badge badge-obligation">Interdiction / Gel</div>
+          <ul class="effect-list"><li>Gel des avoirs obligatoire</li><li>Interdictions sectorielles</li><li>Screening continu des listes</li></ul>
+          <div class="effect-conclusion">→ Obligation de résultat</div>
+        </td>
+        <td class="col-status">&gt;40 régimes actifs<br>Russie = régime le plus étendu (packages successifs)</td>
+      </tr>
+      <tr>
+        <td><div class="liste-tag tag-fiscal">Fiscal</div><div class="liste-name">UE — Tax Blacklist<br>(juridictions non coop.)</div></td>
+        <td class="col-legal">Conclusions Conseil<br>(ECOFIN)<br>Annexe I + Annexe II<br><a class="source-link" href="https://www.consilium.europa.eu/en/policies/eu-list-of-non-cooperative-jurisdictions/" target="_blank">↗ Source officielle</a></td>
+        <td><div class="freq-main">2×/an</div><div class="freq-detail">Fév. + oct.</div></td>
+        <td>
+          <div class="effect-badge badge-signal">Mesures fiscales + Classification LCB-FT</div>
+          <ul class="effect-list"><li>Mesures défensives fiscales (variables selon États membres)</li><li>WHT majorée, limitation d'exemptions, contraintes anti-abus</li><li>DAC6 : peut s'appliquer selon structuration</li><li><strong>Mise à jour de la classification des risques LCB-FT obligatoire</strong> (art. 2 arrêté 6 jan. 2021)</li></ul>
+          <div class="effect-conclusion">→ Pas d'EDD AML automatique · Révision classification LCB-FT requise</div>
+        </td>
+        <td class="col-status">Vietnam + Turks &amp; Caicos ajoutés<br>Fiji, Samoa, Trinidad retirés<br>10 juridictions<br><span class="status-date">17/02/2026</span></td>
+      </tr>
+      <tr>
+        <td><div class="liste-tag tag-fiscal">Fiscal</div><div class="liste-name">France — ETNC<br>(États non coopératifs)</div></td>
+        <td class="col-legal">Arrêté JORF<br>Art. 238-0 A CGI<br><a class="source-link" href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000051568335" target="_blank">↗ Légifrance</a></td>
+        <td><div class="freq-main">Irrégulière</div><div class="freq-detail">Arrêté ministériel</div></td>
+        <td>
+          <div class="effect-badge badge-muted">Fiscal + Classification LCB-FT</div>
+          <ul class="effect-list"><li>Retenues à la source FR</li><li>Régimes anti-abus</li><li>Source obligatoire pour classification LCB-FT (art. 2 arrêté 6 jan. 2021, 3° : listes OCDE/UE adoptées en application de l'art. 238-0 A CGI)</li></ul>
+          <div class="effect-conclusion">→ Obligation de prise en compte dans scoring géographique</div>
+        </td>
+        <td class="col-status">Dernier arrêté :<br><span class="status-date">18 avril 2025</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="case-study">
+    <div class="case-study-header">
+      <div class="case-study-title">Cas concret : le Vietnam</div>
+      <div class="case-study-sub">Même pays, 2 listes, 2 régimes juridiques distincts</div>
+    </div>
+    <div class="case-cols">
+      <div>
+        <div class="case-col-title gafi">Grey List GAFI</div>
+        <div class="case-col-item">Signal de risque / facteur aggravant scoring</div>
+        <div class="case-col-item">Pas d'EDD obligatoire en soi</div>
+        <div class="case-col-item">Sauf si l'UE inscrit sur la liste PTHR (art.&nbsp;18a)</div>
+      </div>
+      <div class="case-divider"></div>
+      <div>
+        <div class="case-col-title tax">Tax Blacklist UE (Annexe I) — depuis le 17/02/2026</div>
+        <div class="case-col-item">Mesures défensives fiscales (variables selon EM)</div>
+        <div class="case-col-item">WHT majorée, limitation d'exemptions</div>
+        <div class="case-col-item">DAC6 : peut s'appliquer selon structuration</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-question">
+    <div class="key-question-label">La question à se poser</div>
+    <div class="key-question-text">Pour chaque pays de votre référentiel : savez-vous quelle liste a déclenché son classement, et quelle obligation précise cela entraîne&nbsp;? C'est la frontière entre signal et obligation.</div>
+  </div>
+
+  <footer class="page-footer">
+    <span>Early Brief — Veille réglementaire &amp; compliance LCB-FT</span>
+    <span>Sources : GAFI, Commission européenne, Conseil UE, Légifrance&ensp;·&ensp;Février 2026&ensp;·&ensp;1/2</span>
+  </footer>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <header class="page-header">
+    <div class="logo">Early Brief</div>
+  </header>
+
+  <h1 class="page2-title">Ce pays est sur une liste — que faire&nbsp;?</h1>
+
+  <div class="step-box">
+    <div class="step-label">Étape 1 — Identifier la source</div>
+    <div class="step-desc">Sur quelle(s) liste(s) exacte(s) ce pays apparaît-il&nbsp;? PTHR UE / GAFI grey-black / Sanctions / Tax blacklist / ETNC</div>
+  </div>
+
+  <div class="tree-connector"></div>
+
+  <div class="branches">
+    <div class="branch branch-rose">
+      <div class="branch-title">PTHR UE ou Sanctions</div>
+      <div class="branch-subtitle">Obligation directe</div>
+      <ul class="branch-list">
+        <li>EDD obligatoire (art. 18a AMLD) ou gel/interdiction (sanctions)</li>
+        <li>Pas de marge d'appréciation</li>
+        <li>Approbation senior management</li>
+        <li>Documentation source fonds et patrimoine</li>
+        <li>Monitoring renforcé systématique</li>
+      </ul>
+    </div>
+    <div class="branch branch-sage">
+      <div class="branch-title">GAFI Grey / Black List</div>
+      <div class="branch-subtitle">Signal + approche risk-based</div>
+      <ul class="branch-list">
+        <li>Facteur aggravant scoring pays</li>
+        <li>EDD si scoring &gt; seuil interne</li>
+        <li>Vérifier si l'UE a suivi (PTHR)</li>
+        <li>Black list : quasi-obligation</li>
+        <li>Documenter le raisonnement</li>
+        <li>Revue périodique accélérée</li>
+      </ul>
+    </div>
+    <div class="branch branch-orange">
+      <div class="branch-title">Tax Blacklist / ETNC</div>
+      <div class="branch-subtitle">Mesures fiscales + Révision classification LCB-FT obligatoire</div>
+      <ul class="branch-list">
+        <li>Mesures défensives fiscales</li>
+        <li>Pas d'EDD AML automatique</li>
+        <li><strong>Révision de la classification des risques LCB-FT requise</strong> (art. 2 arrêté 6 jan. 2021)</li>
+        <li>Mise à jour scoring géographique si pays nouvellement inscrit</li>
+        <li>Vigilance sur structures opaques</li>
+        <li>Reporting DAC6 selon structuration</li>
+        <li>Challenger la substance économique</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Articulation rule -->
+  <div class="articulation-box">
+    <div class="articulation-header">
+      <div class="articulation-title">Pays sur plusieurs listes — règle d'articulation</div>
+      <div class="articulation-sub">On ne choisit pas, on empile</div>
+    </div>
+    <div class="articulation-rule">
+      <strong>Côté AML :</strong> l'obligation la plus contraignante prévaut. Sanctions (gel/interdiction) > PTHR UE (EDD obligatoire) > GAFI black (quasi-obligation) > GAFI grey (signal). Si un pays est PTHR + grey list, l'EDD est déjà obligatoire via le PTHR — la grey list confirme le scoring mais n'ajoute pas d'obligation distincte.
+    </div>
+    <div class="articulation-rule">
+      <strong>Côté fiscal :</strong> les mesures défensives fiscales (Tax blacklist / ETNC) s'appliquent en parallèle, quel que soit le statut AML. Circuit fiscal distinct, service distinct, process distinct. <strong>Mais attention :</strong> ces listes sont aussi des sources obligatoires pour la classification LCB-FT (art. 2 arrêté 6 jan. 2021) — le pont entre les deux dispositifs est légalement requis, pas optionnel.
+    </div>
+    <div class="articulation-example">
+      <div class="articulation-example-label">Exemple — Russie (février 2026)</div>
+      <div class="articulation-example-text">
+        <span>Sanctions UE + OFAC</span> → gel des avoirs, interdictions sectorielles, screening continu&ensp;·&ensp;
+        <span>PTHR UE</span> → EDD obligatoire (règl. 2026/46 Russie ; 2026/83 Bolivie/BVI)&ensp;·&ensp;
+        <span>Tax Annexe I</span> → mesures défensives fiscales nationales&ensp;·&ensp;
+        <span>GAFI</span> → suspendu (02/2023)&ensp;·&ensp;
+        <span>ETNC France</span> → arrêté du 16/02/2024 (JO 17/02/2024).
+        Quatre circuits actifs simultanément, quatre bases juridiques, potentiellement quatre services concernés.
+      </div>
+    </div>
+  </div>
+
+  <div class="process-box">
+    <div class="process-title">Étape 2 — Processus de mise à jour</div>
+    <div class="process-steps">
+      <div class="process-step"><div class="process-step-num">1. Détecter</div><div class="process-step-desc">Veille systématique sur les 5 sources (JOUE, GAFI, JORF)</div></div>
+      <div class="process-arrow">›</div>
+      <div class="process-step"><div class="process-step-num">2. Qualifier</div><div class="process-step-desc">Identifier la liste exacte et son effet juridique précis</div></div>
+      <div class="process-arrow">›</div>
+      <div class="process-step"><div class="process-step-num">3. Mettre à jour</div><div class="process-step-desc">Scoring pays + règles monitoring + procédures EDD</div></div>
+      <div class="process-arrow">›</div>
+      <div class="process-step"><div class="process-step-num">4. Documenter</div><div class="process-step-desc">Tracer : quelle source, quel changement, quelle mesure prise</div></div>
+    </div>
+  </div>
+
+  <div class="traps-box">
+    <div class="traps-title">Les 3 pièges les plus fréquents</div>
+    <div class="trap">
+      <div class="trap-title">1. Tout mettre dans la même case « pays à risque »</div>
+      <div class="trap-desc">Grey list GAFI ≠ PTHR UE ≠ sanctions. Chaque liste a un effet juridique propre. Un pays grey list n'est pas automatiquement en EDD obligatoire. La confusion entre signal et obligation est le défaut le plus courant.</div>
+    </div>
+    <div class="trap">
+      <div class="trap-title">2. Ne pas tracer la source du classement</div>
+      <div class="trap-desc">Un superviseur ne demande pas « ce pays est-il à risque ? » mais « pourquoi l'avez-vous classé ainsi, sur quelle base juridique, et quelle mesure opérationnelle en découle ? » Sans traçabilité, le dispositif est indéfendable.</div>
+    </div>
+    <div class="trap">
+      <div class="trap-title">3. Ne pas mettre à jour en temps utile</div>
+      <div class="trap-desc">L'évaluation des risques doit être « tenue à jour » (art. 8 AMLD). Un scoring pays statique révisé une fois par an ne suffit pas face aux mises à jour fréquentes (sanctions, listes GAFI, PTHR). Il faut un processus, pas un événement.</div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <div class="cta-title">Recevez chaque mise à jour décryptée</div>
+    <div class="cta-text">Abonnez-vous à Early Brief — la veille réglementaire LCB-FT qui traduit chaque publication en actions concrètes.</div>
+  </div>
+
+  <a href="index.html" style="display:block;margin-top:12px;padding:14px 18px;border:2px solid var(--accent);border-radius:4px;background:var(--surface);text-decoration:none;font-family:var(--font-sans);text-align:center;transition:all 0.15s;">
+    <div style="font-size:12px;font-weight:600;color:var(--accent);margin-bottom:2px;">↗ Consulter la liste complète et exportable des pays</div>
+    <div style="font-size:9.5px;color:var(--muted);font-family:var(--font-serif);">Tableau interactif · filtres par liste · export Excel</div>
+  </a>
+
+  <footer class="page-footer">
+    <span>Early Brief — Veille réglementaire &amp; compliance LCB-FT</span>
+    <span>Document à usage professionnel&ensp;·&ensp;Février 2026&ensp;·&ensp;<a href="mentions-legales.html" style="color:inherit;">Mentions légales</a>&ensp;·&ensp;2/2</span>
+  </footer>
+</div>
+
+</body>
+</html>
