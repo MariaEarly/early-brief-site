@@ -132,7 +132,7 @@
       "ref": "SAN-2025-10",
       "date": "2025-11-01",
       "annee": 2025,
-      "entite": "CIF + 2 dirigeants",
+      "entite": "Carat GP + MM. Jimmy Guinet et Sébastien Renaud",
       "type_entite": "CIF",
       "sanction_pecuniaire": 2500000,
       "sanction_disciplinaire": null,
@@ -163,7 +163,7 @@
       "entite": "CACEIS Bank",
       "type_entite": "Dépositaire",
       "sanction_pecuniaire": 3500000,
-      "sanction_disciplinaire": null,
+      "sanction_disciplinaire": "Avertissement",
       "themes": ["autres"],
       "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-12",
       "resume": "Manquements aux obligations professionnelles de dépositaire."
