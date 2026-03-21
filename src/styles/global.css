@@ -793,7 +793,7 @@ hr {
   border-left: 3px solid #2D5A3D;
   padding: 1.5rem 1.5rem 1.5rem 2rem;
   background: rgba(45, 90, 61, 0.04);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 2px 2px 0;
   margin: 1.5rem 0;
 }
 
@@ -801,7 +801,7 @@ hr {
 .fiche-preuves {
   background: rgba(45, 90, 61, 0.06);
   border: 1px solid rgba(45, 90, 61, 0.15);
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
 }
@@ -811,7 +811,7 @@ hr {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 600;
-  color: #2D5A3D;
+  color: #1e3d2a;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
@@ -821,7 +821,7 @@ hr {
 .fiche-vigilance {
   background: rgba(196, 139, 159, 0.08);
   border: 1px solid rgba(196, 139, 159, 0.25);
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
 }
@@ -841,7 +841,7 @@ hr {
 .fiche-futur {
   background: #2D5A3D;
   color: #F5F2EB;
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 1.75rem 2rem;
   margin: 2.5rem 0 1.5rem 0;
 }
