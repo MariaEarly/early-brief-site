@@ -209,8 +209,8 @@
 
     /* === CARDS === */
     .card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      background: #EDE9E0;
+      border: 1px solid #C8C4B8;
       border-radius: var(--radius-lg);
       margin-bottom: 20px;
       overflow: hidden;
@@ -402,8 +402,8 @@
 
     /* === RESULTS CARD === */
     .results-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      background: #EDE9E0;
+      border: 1px solid #C8C4B8;
       border-radius: var(--radius-lg);
       margin-bottom: 20px;
       overflow: hidden;
@@ -2386,6 +2386,7 @@ h2 { font-family: var(--font-serif); }
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 2rem 0;
+  text-align: left;
 }
 
 .hero-split h1 {
@@ -2402,6 +2403,16 @@ h2 { font-family: var(--font-serif); }
   line-height: 1.6;
   margin-top: 0.5rem;
 }
+
+.hero-links {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  color: #6B6B5A;
+  font-size: 0.85rem;
+}
+
+.hero-links .pill { font-weight: 400; }
+.hero-label { font-weight: 400; color: #6B6B5A; }
 
 /* Card header — softer bg */
 .card-header {
