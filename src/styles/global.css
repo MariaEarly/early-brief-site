@@ -59,13 +59,11 @@ img {
 /* HEADER */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0 60px 20px 60px;
+  padding: 1.25rem 60px 1.25rem 60px;
   border-bottom: 1px solid var(--rule);
   margin-bottom: 40px;
-  flex-wrap: wrap;
-  gap: 12px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -78,13 +76,9 @@ header {
   text-transform: uppercase;
   color: var(--ink);
 }
+.logo { text-decoration: none; }
+.logo:hover { opacity: 0.8; }
 .logo em { font-style: normal; color: var(--terra); }
-.header-right {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ghost);
-}
-.header-right a { color: var(--ghost); text-decoration: none; }
 
 hr {
   border: none;
