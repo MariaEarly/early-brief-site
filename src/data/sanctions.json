@@ -1,144 +1,20 @@
 {
   "decisions": [
     {
-      "id": "amf-san-2025-01",
+      "id": "amf-san-2025-12",
       "autorite": "AMF",
-      "ref": "SAN-2025-01",
-      "date": "2025-01-15",
+      "ref": "SAN-2025-12",
+      "date": "2025-12-18",
       "annee": 2025,
-      "entite": "Pharnext + ancien dirigeant",
-      "type_entite": "Émetteur",
-      "sanction_pecuniaire": 800000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-01",
-      "resume": "Information du marché, communication tardive."
-    },
-    {
-      "id": "amf-san-2025-02",
-      "autorite": "AMF",
-      "ref": "SAN-2025-02",
-      "date": "2025-02-15",
-      "annee": 2025,
-      "entite": "3 personnes physiques",
-      "type_entite": "Personnes physiques",
-      "sanction_pecuniaire": 590000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-02",
-      "resume": "Abus de marché (MAR)."
-    },
-    {
-      "id": "amf-san-2025-03",
-      "autorite": "AMF",
-      "ref": "SAN-2025-03",
-      "date": "2025-03-12",
-      "annee": 2025,
-      "entite": "SR Capital + personnes physiques",
-      "type_entite": "Personnes physiques",
-      "sanction_pecuniaire": 0,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-03",
-      "resume": "Abus de marché — hors de cause."
-    },
-    {
-      "id": "amf-san-2025-04",
-      "autorite": "AMF",
-      "ref": "SAN-2025-04",
-      "date": "2025-05-05",
-      "annee": 2025,
-      "entite": "Mikostart + 3 personnes physiques",
-      "type_entite": "Émetteur / Personnes physiques",
-      "sanction_pecuniaire": 700000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-04",
-      "resume": "Manquements d'initiés (divulgation, utilisation, recommandation)."
-    },
-    {
-      "id": "amf-san-2025-05",
-      "autorite": "AMF",
-      "ref": "SAN-2025-05",
-      "date": "2025-06-10",
-      "annee": 2025,
-      "entite": "European TopSoho / SMCP SA",
-      "type_entite": "Émetteur / Actionnaire",
-      "sanction_pecuniaire": 1720000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-05",
-      "resume": "Obligations déclaratives actionnaires, diffusion informations fausses, confidentialité information privilégiée."
-    },
-    {
-      "id": "amf-san-2025-06",
-      "autorite": "AMF",
-      "ref": "SAN-2025-06",
-      "date": "2025-07-09",
-      "annee": 2025,
-      "entite": "MND + 9 personnes",
-      "type_entite": "Émetteur / Personnes physiques",
-      "sanction_pecuniaire": 1890000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-06",
-      "resume": "Communication tardive d'informations privilégiées, manquements d'initiés, obligations professionnelles."
-    },
-    {
-      "id": "amf-san-2025-07",
-      "autorite": "AMF",
-      "ref": "SAN-2025-07",
-      "date": "2025-09-01",
-      "annee": 2025,
-      "entite": "Saxo Bank (ex-BinckBank)",
-      "type_entite": "PSI",
-      "sanction_pecuniaire": 400000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-07",
-      "resume": "Obligations professionnelles (PSI)."
-    },
-    {
-      "id": "amf-san-2025-08",
-      "autorite": "AMF",
-      "ref": "SAN-2025-08",
-      "date": "2025-09-09",
-      "annee": 2025,
-      "entite": "Eternam",
-      "type_entite": "Société de gestion de portefeuille",
-      "sanction_pecuniaire": 400000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-08",
-      "resume": "Manquements lors de la commercialisation de FIA, frais de gestion non transparents."
-    },
-    {
-      "id": "amf-san-2025-09",
-      "autorite": "AMF",
-      "ref": "SAN-2025-09",
-      "date": "2025-09-15",
-      "annee": 2025,
-      "entite": "Altaroc Partners",
-      "type_entite": "Société de gestion de portefeuille",
-      "sanction_pecuniaire": 1300000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-09",
-      "resume": "Absence de procédures opérationnelles encadrant le processus d'investissement."
-    },
-    {
-      "id": "amf-san-2025-10",
-      "autorite": "AMF",
-      "ref": "SAN-2025-10",
-      "date": "2025-11-01",
-      "annee": 2025,
-      "entite": "Carat GP + MM. Jimmy Guinet et Sébastien Renaud",
-      "type_entite": "CIF",
-      "sanction_pecuniaire": 2500000,
-      "sanction_disciplinaire": null,
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-10",
-      "resume": "Obligations professionnelles (CIF)."
+      "entite": "CACEIS Bank",
+      "type_entite": "Dépositaire",
+      "sanction_pecuniaire": 3500000,
+      "sanction_disciplinaire": "Avertissement",
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-12",
+      "resume": "Manquements aux obligations professionnelles de dépositaire."
     },
     {
       "id": "amf-san-2025-11",
@@ -150,51 +26,16 @@
       "type_entite": "Société de gestion de portefeuille",
       "sanction_pecuniaire": 500000,
       "sanction_disciplinaire": null,
-      "themes": ["lcb-ft", "autres"],
+      "themes": [
+        "autres",
+        "gel",
+        "kyc",
+        "lcb-ft",
+        "ppe",
+        "tm"
+      ],
       "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-11",
       "resume": "Non-respect du dossier d'agrément, processus d'investissement, LCB-FT, rémunération des distributeurs."
-    },
-    {
-      "id": "amf-san-2025-12",
-      "autorite": "AMF",
-      "ref": "SAN-2025-12",
-      "date": "2025-12-18",
-      "annee": 2025,
-      "entite": "CACEIS Bank",
-      "type_entite": "Dépositaire",
-      "sanction_pecuniaire": 3500000,
-      "sanction_disciplinaire": "Avertissement",
-      "themes": ["autres"],
-      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-12",
-      "resume": "Manquements aux obligations professionnelles de dépositaire."
-    },
-    {
-      "id": "acpr-2023-03",
-      "autorite": "ACPR",
-      "ref": "2023-03",
-      "date": "2025-01-07",
-      "annee": 2025,
-      "entite": "CARCO",
-      "type_entite": "Institution de prévoyance",
-      "sanction_pecuniaire": 500000,
-      "sanction_disciplinaire": "Blâme",
-      "themes": ["autres"],
-      "source": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-de-la-commission-des-sanctions-ndeg-2023-03-du-7-janvier-2025-legard-de-la-carco",
-      "resume": "Information des assurés, lutte contre la déshérence, relations avec le superviseur."
-    },
-    {
-      "id": "acpr-2024-02",
-      "autorite": "ACPR",
-      "ref": "2024-02",
-      "date": "2025-06-19",
-      "annee": 2025,
-      "entite": "Banque Delubac et Cie",
-      "type_entite": "Établissement de crédit",
-      "sanction_pecuniaire": 600000,
-      "sanction_disciplinaire": "Blâme",
-      "themes": ["lcb-ft", "tm", "gel"],
-      "source": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-de-la-commission-des-sanctions-ndeg-2024-02-du-19-juin-2025-legard-de-la-banque-delubac-et",
-      "resume": "Carences dans le dispositif de surveillance des opérations, délais de traitement des alertes, fermetures de comptes LCB-FT sans examen renforcé systématique."
     },
     {
       "id": "acpr-2024-01",
@@ -206,9 +47,677 @@
       "type_entite": "Établissement de crédit",
       "sanction_pecuniaire": 250000,
       "sanction_disciplinaire": "Blâme",
-      "themes": ["lcb-ft", "controle-interne"],
+      "themes": [
+        "controle-interne",
+        "ds",
+        "gel",
+        "kyc",
+        "lcb-ft",
+        "tm"
+      ],
       "source": "https://acpr.banque-france.fr/fr/actualites/la-commission-des-sanctions-de-lacpr-sanctionne-la-banque-chaabi-du-maroc-bcdm",
       "resume": "Manquements au contrôle interne et aux obligations LCB-FT."
+    },
+    {
+      "id": "amf-san-2025-10",
+      "autorite": "AMF",
+      "ref": "SAN-2025-10",
+      "date": "2025-11-01",
+      "annee": 2025,
+      "entite": "Carat GP + MM. Jimmy Guinet et Sébastien Renaud",
+      "type_entite": "CIF",
+      "sanction_pecuniaire": 2500000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres",
+        "kyc"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-10",
+      "resume": "Obligations professionnelles (CIF)."
+    },
+    {
+      "id": "amf-san-2025-09",
+      "autorite": "AMF",
+      "ref": "SAN-2025-09",
+      "date": "2025-09-15",
+      "annee": 2025,
+      "entite": "Altaroc Partners",
+      "type_entite": "Société de gestion de portefeuille",
+      "sanction_pecuniaire": 1300000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-09",
+      "resume": "Absence de procédures opérationnelles encadrant le processus d'investissement."
+    },
+    {
+      "id": "amf-san-2025-08",
+      "autorite": "AMF",
+      "ref": "SAN-2025-08",
+      "date": "2025-09-09",
+      "annee": 2025,
+      "entite": "Eternam",
+      "type_entite": "Société de gestion de portefeuille",
+      "sanction_pecuniaire": 400000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres",
+        "gel",
+        "kyc",
+        "ppe"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-08",
+      "resume": "Manquements lors de la commercialisation de FIA, frais de gestion non transparents."
+    },
+    {
+      "id": "amf-san-2025-07",
+      "autorite": "AMF",
+      "ref": "SAN-2025-07",
+      "date": "2025-09-01",
+      "annee": 2025,
+      "entite": "Saxo Bank (ex-BinckBank)",
+      "type_entite": "PSI",
+      "sanction_pecuniaire": 400000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-07",
+      "resume": "Obligations professionnelles (PSI)."
+    },
+    {
+      "id": "amf-san-2025-06",
+      "autorite": "AMF",
+      "ref": "SAN-2025-06",
+      "date": "2025-07-09",
+      "annee": 2025,
+      "entite": "MND + 9 personnes",
+      "type_entite": "Émetteur / Personnes physiques",
+      "sanction_pecuniaire": 1890000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-06",
+      "resume": "Communication tardive d'informations privilégiées, manquements d'initiés, obligations professionnelles."
+    },
+    {
+      "id": "acpr-2024-02",
+      "autorite": "ACPR",
+      "ref": "2024-02",
+      "date": "2025-06-19",
+      "annee": 2025,
+      "entite": "Banque Delubac et Cie",
+      "type_entite": "Établissement de crédit",
+      "sanction_pecuniaire": 600000,
+      "sanction_disciplinaire": "Blâme",
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "lcb-ft",
+        "ppe",
+        "tm"
+      ],
+      "source": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-de-la-commission-des-sanctions-ndeg-2024-02-du-19-juin-2025-legard-de-la-banque-delubac-et",
+      "resume": "Carences dans le dispositif de surveillance des opérations, délais de traitement des alertes, fermetures de comptes LCB-FT sans examen renforcé systématique."
+    },
+    {
+      "id": "amf-san-2025-05",
+      "autorite": "AMF",
+      "ref": "SAN-2025-05",
+      "date": "2025-06-10",
+      "annee": 2025,
+      "entite": "European TopSoho / SMCP SA",
+      "type_entite": "Émetteur / Actionnaire",
+      "sanction_pecuniaire": 1720000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-05",
+      "resume": "Obligations déclaratives actionnaires, diffusion informations fausses, confidentialité information privilégiée."
+    },
+    {
+      "id": "amf-san-2025-04",
+      "autorite": "AMF",
+      "ref": "SAN-2025-04",
+      "date": "2025-05-05",
+      "annee": 2025,
+      "entite": "Mikostart + 3 personnes physiques",
+      "type_entite": "Émetteur / Personnes physiques",
+      "sanction_pecuniaire": 700000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-04",
+      "resume": "Manquements d'initiés (divulgation, utilisation, recommandation)."
+    },
+    {
+      "id": "amf-san-2025-03",
+      "autorite": "AMF",
+      "ref": "SAN-2025-03",
+      "date": "2025-03-12",
+      "annee": 2025,
+      "entite": "SR Capital + personnes physiques",
+      "type_entite": "Personnes physiques",
+      "sanction_pecuniaire": 0,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-03",
+      "resume": "Abus de marché — hors de cause."
+    },
+    {
+      "id": "amf-san-2025-02",
+      "autorite": "AMF",
+      "ref": "SAN-2025-02",
+      "date": "2025-02-15",
+      "annee": 2025,
+      "entite": "3 personnes physiques",
+      "type_entite": "Personnes physiques",
+      "sanction_pecuniaire": 590000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-02",
+      "resume": "Abus de marché (MAR)."
+    },
+    {
+      "id": "amf-san-2025-01",
+      "autorite": "AMF",
+      "ref": "SAN-2025-01",
+      "date": "2025-01-15",
+      "annee": 2025,
+      "entite": "Pharnext + ancien dirigeant",
+      "type_entite": "Émetteur",
+      "sanction_pecuniaire": 800000,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "autres"
+      ],
+      "source": "https://www.amf-france.org/fr/sanctions-transactions/decisions-de-la-commission-des-sanctions/san-2025-01",
+      "resume": "Information du marché, communication tardive."
+    },
+    {
+      "id": "acpr-2023-03",
+      "autorite": "ACPR",
+      "ref": "2023-03",
+      "date": "2025-01-07",
+      "annee": 2025,
+      "entite": "CARCO",
+      "type_entite": "Institution de prévoyance",
+      "sanction_pecuniaire": 500000,
+      "sanction_disciplinaire": "Blâme",
+      "themes": [
+        "autres"
+      ],
+      "source": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-de-la-commission-des-sanctions-ndeg-2023-03-du-7-janvier-2025-legard-de-la-carco",
+      "resume": "Information des assurés, lutte contre la déshérence, relations avec le superviseur."
+    },
+    {
+      "id": "amf-san-2024-01",
+      "autorite": "AMF",
+      "ref": "SAN-2024-01",
+      "date": "2024-01-01",
+      "annee": 2024,
+      "entite": "Établissement anonymisé",
+      "type_entite": "Établissement assujetti",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "kyc"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Défaillances DS / TRACFIN (organisation, critères, traçabilité)."
+    },
+    {
+      "id": "amf-san-2024-05",
+      "autorite": "AMF",
+      "ref": "SAN-2024-05",
+      "date": "2024-01-01",
+      "annee": 2024,
+      "entite": "CIC",
+      "type_entite": "PSI",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "amf-san-2024-06",
+      "autorite": "AMF",
+      "ref": "SAN-2024-06",
+      "date": "2024-01-01",
+      "annee": 2024,
+      "entite": "IGR",
+      "type_entite": "Société de gestion de portefeuille",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "gel",
+        "kyc",
+        "ppe"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante."
+    },
+    {
+      "id": "amf-san-2024-09",
+      "autorite": "AMF",
+      "ref": "SAN-2024-09",
+      "date": "2024-01-01",
+      "annee": 2024,
+      "entite": "CIC",
+      "type_entite": "PSI",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "kyc",
+        "ppe"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante."
+    },
+    {
+      "id": "acpr-proc-2023-01",
+      "autorite": "ACPR",
+      "ref": "PROC. 2023_01",
+      "date": "2023-01-01",
+      "annee": 2023,
+      "entite": "Banque régionale d'escompte et de dépôts (BRED)",
+      "type_entite": "Établissement de crédit",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Identification/justification du bénéficiaire effectif insuffisante; Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-01",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_01",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "Établissement anonymisé",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-02",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_02",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "Financière des paiements électroniques",
+      "type_entite": "Établissement de paiement",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-03",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_03",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "Abeille Vie",
+      "type_entite": "Organisme d'assurance",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante; Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-04",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_04",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "BMW Finance",
+      "type_entite": "Établissement de paiement",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-06",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_06",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "Mutuelle de Poitiers Assurances",
+      "type_entite": "Organisme d'assurance",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Criblage gel insuffisant (détection personnes/avoirs gelés); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2022-07",
+      "autorite": "ACPR",
+      "ref": "PROC. 2022_07",
+      "date": "2022-01-01",
+      "annee": 2022,
+      "entite": "Treezor",
+      "type_entite": "Établissement de paiement",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "amf-san-2021-05",
+      "autorite": "AMF",
+      "ref": "SAN-2021-05",
+      "date": "2021-01-01",
+      "annee": 2021,
+      "entite": "Gestys SA + dirigeant",
+      "type_entite": "Société de gestion de portefeuille",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Identification/justification du bénéficiaire effectif insuffisante; Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2021-01",
+      "autorite": "ACPR",
+      "ref": "PROC. 2021_01",
+      "date": "2021-01-01",
+      "annee": 2021,
+      "entite": "W-HA",
+      "type_entite": "Établissement de paiement",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2021-05",
+      "autorite": "ACPR",
+      "ref": "PROC. 2021_05",
+      "date": "2021-01-01",
+      "annee": 2021,
+      "entite": "Caisse régionale de Crédit agricole mutuel du Languedoc",
+      "type_entite": "Établissement de crédit",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-01",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_01",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Attijariwafa Bank Europe",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Absence de DS alors qu’une déclaration aurait dû être faite; Connaissance client (CDD) insuffisante / dossiers incomplets; DS transmises tardivement (délais relevés dans la décision); Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante; Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-02",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_02",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Établissement anonymisé",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-03",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_03",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Établissement anonymisé",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Stock d’alertes en attente / traitement insuffisant; Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-05",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_05",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Établissement anonymisé",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante; Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-06",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_06",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "American Express Carte France",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante; Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-08",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_08",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Société A (anonymisée)",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-09",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_09",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "MMA IARD SA",
+      "type_entite": "Organisme d'assurance",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "gel",
+        "kyc",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Criblage gel insuffisant (détection personnes/avoirs gelés); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2020-11",
+      "autorite": "ACPR",
+      "ref": "PROC. 2020_11",
+      "date": "2020-01-01",
+      "annee": 2020,
+      "entite": "Office des postes et télécommunications de Nouvelle-Calédonie (OPT-NC)",
+      "type_entite": "Établissement de crédit",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Identification/justification du bénéficiaire effectif insuffisante; Scénarios/typologies de détection insuffisants (couverture/paramétrage); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2019-06",
+      "autorite": "ACPR",
+      "ref": "PROC. 2019_06",
+      "date": "2019-01-01",
+      "annee": 2019,
+      "entite": "Établissement A (anonymisé)",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "gel",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances de mise en œuvre du gel (criblage/suivi/notification); Défaillances du dispositif PPE (identification/vigilance renforcée); Surveillance des opérations / traitement des alertes insuffisants."
+    },
+    {
+      "id": "acpr-proc-2019-08",
+      "autorite": "ACPR",
+      "ref": "PROC. 2019_08",
+      "date": "2019-01-01",
+      "annee": 2019,
+      "entite": "Société A (anonymisée)",
+      "type_entite": "Établissement assujetti (anonymisé)",
+      "sanction_pecuniaire": null,
+      "sanction_disciplinaire": null,
+      "themes": [
+        "ds",
+        "kyc",
+        "ppe",
+        "tm"
+      ],
+      "source": null,
+      "resume": "Collecte KYC à l’entrée en relation insuffisante; Connaissance client (CDD) insuffisante / dossiers incomplets; Défaillances DS / TRACFIN (organisation, critères, traçabilité); Défaillances du dispositif PPE (identification/vigilance renforcée); Pièces/justificatifs KYC manquants ou incomplets; Surveillance des opérations / traitement des alertes insuffisants."
     }
   ]
 }
