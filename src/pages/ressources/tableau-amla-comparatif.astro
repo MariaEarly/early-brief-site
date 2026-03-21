@@ -117,30 +117,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <hr>
 <h2>Avantages et inconvénients</h2>
-<h3>Supervision Directe (AMLA)</h3>
-<p><strong>Avantages :</strong></p>
-<p>- Vision européenne cohérente</p>
-<p>- Expertise transfrontalière AMLA</p>
-<p>- Passeport européen facilité (déjà connu par l'autorité centrale)</p>
-<p>- Interlocuteur unique pour opérations UE</p>
-<p><strong>Inconvénients :</strong></p>
-<p>- Coûts plus élevés (double contribution)</p>
-<p>- Documentation en anglais obligatoire</p>
-<p>- Processus plus lourd (JST = 2 niveaux)</p>
-<p>- Inspections potentiellement plus fréquentes</p>
-<p>- Exigences harmonisées strictes (pas d'ajustement local)</p>
-<hr>
-<h3>Supervision Indirecte (Nationale)</h3>
-<p><strong>Avantages :</strong></p>
-<p>- Coûts standard (contribution nationale uniquement)</p>
-<p>- Langue locale acceptable</p>
-<p>- Relation établie avec superviseur national</p>
-<p>- Ajustements locaux possibles (±1 niveau)</p>
-<p>- Moins de reporting transfrontalier</p>
-<p><strong>Inconvénients :</strong></p>
-<p>- Pas d'expertise AMLA directe</p>
-<p>- Passeport européen via coordination nationale (peut être plus long)</p>
-<p>- Moins de visibilité européenne</p>
+
+<div class="amla-cards">
+    <div class="amla-card-pos">
+        <span class="amla-card-label">Supervision directe (AMLA)</span>
+        <p><strong>Avantages</strong></p>
+        <ul>
+            <li>Vision européenne cohérente</li>
+            <li>Expertise transfrontalière AMLA</li>
+            <li>Passeport européen facilité (déjà connu par l'autorité centrale)</li>
+            <li>Interlocuteur unique pour opérations UE</li>
+        </ul>
+        <p><strong>Inconvénients</strong></p>
+        <ul>
+            <li>Coûts plus élevés (double contribution)</li>
+            <li>Documentation en anglais obligatoire</li>
+            <li>Processus plus lourd (JST = 2 niveaux)</li>
+            <li>Inspections potentiellement plus fréquentes</li>
+            <li>Exigences harmonisées strictes (pas d'ajustement local)</li>
+        </ul>
+    </div>
+    <div class="amla-card-neg">
+        <span class="amla-card-label">Supervision indirecte (nationale)</span>
+        <p><strong>Avantages</strong></p>
+        <ul>
+            <li>Coûts standard (contribution nationale uniquement)</li>
+            <li>Langue locale acceptable</li>
+            <li>Relation établie avec superviseur national</li>
+            <li>Ajustements locaux possibles (±1 niveau)</li>
+            <li>Moins de reporting transfrontalier</li>
+        </ul>
+        <p><strong>Inconvénients</strong></p>
+        <ul>
+            <li>Pas d'expertise AMLA directe</li>
+            <li>Passeport européen via coordination nationale (peut être plus long)</li>
+            <li>Moins de visibilité européenne</li>
+        </ul>
+    </div>
+</div>
 <hr>
 <h2>Transition supervision nationale → AMLA</h2>
 <table class="comparison-table"><thead>
@@ -168,34 +182,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </tbody></table>
 
 <p><strong>Interprétation :</strong></p>
-<p>- <strong>0-10 points :</strong> Très faible probabilité (supervision nationale)</p>
-<p>- <strong>15-25 points :</strong> Probabilité moyenne (à surveiller)</p>
-<p>- <strong>30+ points :</strong> Forte probabilité (préparer supervision directe AMLA)</p>
+<ul>
+    <li><strong>0-10 points :</strong> Très faible probabilité (supervision nationale)</li>
+    <li><strong>15-25 points :</strong> Probabilité moyenne (à surveiller)</li>
+    <li><strong>30+ points :</strong> Forte probabilité (préparer supervision directe AMLA)</li>
+</ul>
 <hr>
 <h2>Actions recommandées selon votre situation</h2>
 <h3>Si supervision directe probable (≥25 points)</h3>
 <p><strong>Immédiat (2026) :</strong></p>
-<p>1. Traduire toute documentation clé en anglais</p>
-<p>2. Harmoniser les processus groupe (éliminer les variantes locales)</p>
-<p>3. Centraliser les données LCB-FT (single source of truth)</p>
-<p>4. Identifier les interlocuteurs JST (RCCI, équipes locales)</p>
-<p>5. Budgéter les coûts additionnels (contribution AMLA + ressources)</p>
+<ol>
+    <li>Traduire toute documentation clé en anglais</li>
+    <li>Harmoniser les processus groupe (éliminer les variantes locales)</li>
+    <li>Centraliser les données LCB-FT (single source of truth)</li>
+    <li>Identifier les interlocuteurs JST (RCCI, équipes locales)</li>
+    <li>Budgéter les coûts additionnels (contribution AMLA + ressources)</li>
+</ol>
 <p><strong>Moyen terme (2027) :</strong></p>
-<p>6. Simuler les 100-150 datapoints AMLA</p>
-<p>7. Tester la collecte transfrontalière</p>
-<p>8. Former les équipes au reporting anglais</p>
-<p>9. Préparer le dossier de présentation AMLA</p>
+<ol start="6">
+    <li>Simuler les 100-150 datapoints AMLA</li>
+    <li>Tester la collecte transfrontalière</li>
+    <li>Former les équipes au reporting anglais</li>
+    <li>Préparer le dossier de présentation AMLA</li>
+</ol>
 <hr>
 <h3>Si supervision indirecte (nationale)</h3>
 <p><strong>Immédiat (2026) :</strong></p>
-<p>1. Aligner les modèles de risque sur taxonomie AMLA</p>
-<p>2. Cartographier les 100-150 datapoints</p>
-<p>3. Préparer les preuves de qualité des contrôles</p>
-<p>4. Maintenir le dialogue avec ACPR/AMF</p>
+<ol>
+    <li>Aligner les modèles de risque sur taxonomie AMLA</li>
+    <li>Cartographier les 100-150 datapoints</li>
+    <li>Préparer les preuves de qualité des contrôles</li>
+    <li>Maintenir le dialogue avec ACPR/AMF</li>
+</ol>
 <p><strong>Moyen terme (2027-2028) :</strong></p>
-<p>5. Adapter les systèmes de collecte aux datapoints AMLA</p>
-<p>6. Former les équipes à la méthodologie harmonisée</p>
-<p>7. Documenter les ajustements locaux (si utilisés)</p>
+<ol start="5">
+    <li>Adapter les systèmes de collecte aux datapoints AMLA</li>
+    <li>Former les équipes à la méthodologie harmonisée</li>
+    <li>Documenter les ajustements locaux (si utilisés)</li>
+</ol>
 <hr>
 <h2>FAQ</h2>
 <p><strong>Q : Puis-je passer de supervision indirecte à directe après 2028 ?</strong></p>

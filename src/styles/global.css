@@ -873,3 +873,267 @@ hr {
   padding: 3px 8px;
   border-radius: 3px;
 }
+
+/* ─── AMLA pages — tables ─── */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+.comparison-table th {
+  background: #2D5A3D;
+  color: #F5F2EB;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.comparison-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(45, 90, 61, 0.1);
+  vertical-align: top;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.comparison-table tr:nth-child(even) td {
+  background: rgba(45, 90, 61, 0.03);
+}
+.comparison-table td:first-child,
+.comparison-table th:first-child {
+  width: 22%;
+  font-weight: 600;
+  color: var(--ink);
+}
+@media (max-width: 700px) {
+  .comparison-table { font-size: 0.75rem; }
+  .comparison-table th, .comparison-table td { padding: 0.4rem 0.5rem; }
+}
+
+/* ─── AMLA pages — info box ─── */
+.info-box {
+  background: rgba(45, 90, 61, 0.05);
+  border-left: 3px solid #2D5A3D;
+  padding: 1rem 1.25rem;
+  border-radius: 0 2px 2px 0;
+  margin: 1.25rem 0;
+}
+.info-box p {
+  margin-bottom: 0;
+}
+
+/* ─── AMLA pages — info grid (label/value pairs) ─── */
+.info-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+.info-grid .label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ghost);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.info-grid .value {
+  color: var(--muted);
+}
+
+/* ─── AMLA pages — scope cards (examples) ─── */
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.scope-card {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1rem;
+}
+.scope-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.scope-list {
+  padding-left: 16px;
+}
+.scope-list li {
+  font-size: 0.8rem;
+}
+
+/* ─── AMLA pages — obligation blocks ─── */
+.obligation {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem 3.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  margin: 1.25rem 0;
+}
+.obligation-number {
+  position: absolute;
+  left: 1rem;
+  top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.obligation-title {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+.obligation-content {
+  font-size: 0.85rem;
+}
+
+/* ─── AMLA pages — timeline ─── */
+.inst-timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 2px solid var(--rule);
+}
+.inst-timeline-item {
+  position: relative;
+  padding: 0.5rem 0 1.25rem 1rem;
+}
+.inst-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.85rem;
+  top: 0.7rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ghost);
+  border: 2px solid var(--bg);
+}
+.inst-timeline-item--done::before {
+  background: var(--green);
+}
+.inst-timeline-item--current::before {
+  background: var(--terra);
+  box-shadow: 0 0 0 3px rgba(158, 61, 27, 0.2);
+}
+.inst-timeline-date {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ghost);
+  letter-spacing: 0.04em;
+}
+.inst-timeline-title {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* ─── AMLA pages — perimetre grid (direct/indirect) ─── */
+.inst-perimetre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+.inst-perimetre-block {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 1.25rem;
+}
+.inst-perimetre-block--direct {
+  border-top: 3px solid var(--green);
+}
+.inst-perimetre-block--indirect {
+  border-top: 3px solid var(--terra);
+}
+.inst-perimetre-title {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.inst-perimetre-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: rgba(45, 90, 61, 0.08);
+  color: var(--green);
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.inst-perimetre-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ─── AMLA pages — FAQ ─── */
+.faq-item {
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+.faq-question {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+.faq-answer {
+  margin-top: 0.5rem;
+}
+
+/* ─── AMLA pages — avantages/inconvénients cards ─── */
+.amla-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.amla-card-pos {
+  border: 1px solid rgba(45, 90, 61, 0.2);
+  border-top: 3px solid #2D5A3D;
+  border-radius: 2px;
+  padding: 1.25rem;
+}
+.amla-card-neg {
+  border: 1px solid rgba(158, 61, 27, 0.2);
+  border-top: 3px solid #9E3D1B;
+  border-radius: 2px;
+  padding: 1.25rem;
+}
+.amla-card-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.amla-card-pos .amla-card-label { color: #2D5A3D; }
+.amla-card-neg .amla-card-label { color: #9E3D1B; }
+@media (max-width: 600px) {
+  .amla-cards, .inst-perimetre-grid, .scope-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── AMLA pages — first h2 no top margin ─── */
+.fiche-content > h2:first-child {
+  margin-top: 0;
+}
