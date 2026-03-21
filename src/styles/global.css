@@ -785,3 +785,88 @@ hr {
   text-decoration: none;
 }
 .fiche-retour a:hover { color: var(--terra); }
+
+/* === BLOCS FICHES DIFFÉRENCIÉS === */
+
+/* Réponse — bordure gauche vert sapin */
+.fiche-reponse {
+  border-left: 3px solid #2D5A3D;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  background: rgba(45, 90, 61, 0.04);
+  border-radius: 0 6px 6px 0;
+  margin: 1.5rem 0;
+}
+
+/* Éléments de preuve — encadré vert léger */
+.fiche-preuves {
+  background: rgba(45, 90, 61, 0.06);
+  border: 1px solid rgba(45, 90, 61, 0.15);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.fiche-preuves::before {
+  content: "✓ Éléments de preuve attendus";
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #2D5A3D;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Points de vigilance — encadré vieux rose */
+.fiche-vigilance {
+  background: rgba(196, 139, 159, 0.08);
+  border: 1px solid rgba(196, 139, 159, 0.25);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.fiche-vigilance::before {
+  content: "⚠ Points de vigilance";
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #9B5E72;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Ce qui va changer — bloc vert sapin plein */
+.fiche-futur {
+  background: #2D5A3D;
+  color: #F5F2EB;
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0 1.5rem 0;
+}
+.fiche-futur h2, .fiche-futur h3 {
+  color: #F5F2EB;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.fiche-futur p, .fiche-futur li {
+  color: rgba(245, 242, 235, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.fiche-futur strong {
+  color: #F5F2EB;
+}
+.fiche-futur .fiche-source-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  background: rgba(245, 242, 235, 0.12);
+  color: rgba(245, 242, 235, 0.7);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
