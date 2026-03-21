@@ -4,6 +4,15 @@
       padding: 0;
     }
 
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     :root {
       --ecru: #F5F2EB;
       --white: #FFFFFF;
@@ -23,6 +32,7 @@
       --danger-light: #FDF2F2;
       --font-mono: 'IBM Plex Mono', monospace;
       --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Source Serif 4', 'Cormorant', Georgia, serif;
       --font-display: 'Cormorant', Georgia, serif;
       --radius: 3px;
       --radius-lg: 4px;
@@ -43,9 +53,9 @@
     }
 
     .container {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
+      padding: 3rem 2rem 80px;
     }
 
     /* === SOCIAL PROOF BANNER === */
@@ -100,16 +110,19 @@
     }
 
     .header h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--text-primary);
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #2D2D1F;
       margin: 0 0 8px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .header-tagline {
-      font-size: 16px;
-      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6B6B5A;
       margin: 0 0 4px;
     }
 
@@ -273,9 +286,12 @@
     .form-group.hidden { display: none; }
 
     .form-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6B6B5A;
     }
 
     .form-label.required::after {
@@ -285,20 +301,20 @@
 
     .form-select {
       width: 100%;
-      padding: 12px 14px;
-      font-size: 14px;
+      padding: 0.5rem 2rem 0.5rem 0.75rem;
+      font-size: 0.875rem;
       font-family: var(--font-body);
-      color: var(--text-primary);
-      background: var(--white);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius);
+      color: #4A4A3A;
+      background: #F5F2EB;
+      border: 1px solid #C8C4B8;
+      border-radius: 2px;
       cursor: pointer;
       transition: var(--transition-fast);
+      -webkit-appearance: none;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234A5A4A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239E3D1B'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 12px center;
-      padding-right: 36px;
+      background-position: right 0.75rem center;
       box-sizing: border-box;
     }
 
@@ -306,8 +322,8 @@
 
     .form-select:focus {
       outline: none;
-      border-color: var(--terra);
-      box-shadow: 0 0 0 3px rgba(158,61,27,0.08);
+      border-color: #2D5A3D;
+      box-shadow: none;
     }
 
     .form-help {
@@ -337,16 +353,16 @@
       align-items: center;
       gap: 6px;
       padding: 16px 12px;
-      background: var(--ecru);
-      border: 2px solid transparent;
-      border-radius: var(--radius);
+      background: #F5F2EB;
+      border: 1px solid #C8C4B8;
+      border-radius: 2px;
       cursor: pointer;
       transition: var(--transition-fast);
       text-align: center;
     }
 
     .radio-option label:hover {
-      border-color: rgba(158,61,27,0.2);
+      border-color: var(--terra);
       background: rgba(158,61,27,0.03);
     }
 
@@ -356,16 +372,17 @@
     }
 
     .radio-label-text {
+      font-family: var(--font-body);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--text-primary);
     }
 
     .radio-label-sub {
       font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
+      font-size: 0.7rem;
+      color: #6B6B5A;
+      letter-spacing: 0.04em;
     }
 
     /* === FORM SECTIONS === */
