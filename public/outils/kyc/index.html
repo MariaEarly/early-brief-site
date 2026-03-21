@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F2EB">
+    <title>Checklist KYC/KYB — Early Brief</title>
+    <meta name="description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur CMF L.561-5 et lignes directrices ACPR/TRACFIN. Gratuit.">
+    <link rel="canonical" href="https://early-brief.com/outils/kyc/">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <meta property="og:title" content="Checklist KYC/KYB — Early Brief">
+    <meta property="og:description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur CMF L.561-5 et lignes directrices ACPR/TRACFIN. Gratuit.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://early-brief.com/outils/kyc/">
+    <meta property="og:image" content="https://early-brief.com/assets/images/og-default.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Checklist KYC/KYB — Early Brief">
+    <meta name="twitter:description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Gratuit, fonctionne dans votre navigateur.">
+    <meta name="twitter:image" content="https://early-brief.com/assets/images/og-default.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+    <a href="/ressources/" class="tool-back">← Ressources Early Brief</a>
+
+    <section class="hero-split" id="main-content">
+        <div class="hero-left">
+            <h1>Checklist KYC/KYB</h1>
+        </div>
+        <div class="hero-right">
+            <p class="hero-lead">Générez une checklist de collecte documentaire adaptée à votre client en 30 secondes. Basé sur CMF L.561-5 et lignes directrices ACPR/TRACFIN.</p>
+            <div class="hero-links">
+                <span class="pill pill--category pill--estimation">Bêta</span>
+                <span class="hero-label">100% gratuit · Données locales · Export PDF/JSON/CSV</span>
+            </div>
+        </div>
+    </section>
+    <div class="hero-divider"></div>
+
+    <div class="container">
+
+    <!-- PERSONAS -->
+    <div class="personas-section">
+      <p class="personas-title">Je travaille dans...</p>
+      <div class="personas-grid">
+        <div class="persona-card" onclick="selectPersona('BANQUE')" data-persona="BANQUE">
+          <div class="persona-icon">🏦</div>
+          <div class="persona-name">Banque</div>
+          <div class="persona-desc">Établissement de crédit</div>
+        </div>
+        <div class="persona-card" onclick="selectPersona('PSP')" data-persona="PSP">
+          <div class="persona-icon">💳</div>
+          <div class="persona-name">PSP</div>
+          <div class="persona-desc">Services de paiement</div>
+        </div>
+        <div class="persona-card" onclick="selectPersona('EME')" data-persona="EME">
+          <div class="persona-icon">📱</div>
+          <div class="persona-name">EME</div>
+          <div class="persona-desc">Monnaie électronique</div>
+        </div>
+        <div class="persona-card" onclick="selectPersona('CASP')" data-persona="CASP">
+          <div class="persona-icon">🔗</div>
+          <div class="persona-name">CASP</div>
+          <div class="persona-desc">Crypto-actifs (MiCA)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+      <div class="progress-steps">
+        <div class="progress-step active" data-step="1" role="button" tabindex="0" onclick="goToStep(1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(1);}">
+          <div class="step-circle">1</div>
+          <span class="step-label">Contexte</span>
+        </div>
+        <div class="progress-step" data-step="2" role="button" tabindex="0" onclick="goToStep(2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(2);}">
+          <div class="step-circle">2</div>
+          <span class="step-label">Client</span>
+        </div>
+        <div class="progress-step" data-step="3" role="button" tabindex="0" onclick="goToStep(3)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToStep(3);}">
+          <div class="step-circle">3</div>
+          <span class="step-label">Détails</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTICE CONFIDENTIALITÉ -->
+    <div class="disclaimer">
+      <strong>Vos données KYC/KYB restent locales</strong> — La checklist est générée dans votre navigateur. Email optionnel uniquement pour la newsletter.
+      <a href="#methodologie" class="disclaimer-link">Méthodologie &amp; limites</a>
+    </div>
+
+    <!-- MÉTHODOLOGIE -->
+    <details id="methodologie" class="methodologie-details">
+      <summary class="methodologie-summary">Méthodologie &amp; limites</summary>
+      <div class="disclaimer methodologie-content">
+        <p><strong>Sources :</strong> CMF L.561-5 et lignes directrices ACPR/TRACFIN. Ne constitue pas un avis juridique.</p>
+        <p><strong>Limites :</strong> À adapter selon vos procédures internes et votre classification des risques.</p>
+        <p><strong>Responsabilité :</strong> L'utilisateur reste seul responsable. En cas de doute, consultez votre RCCI/RCSI.</p>
+      </div>
+    </details>
+
+    <!-- CARD 1: CONTEXTE -->
+    <div class="card highlight" id="card1">
+      <div class="card-header">
+        <div class="card-number">1</div>
+        <h2 class="card-title">Contexte interne</h2>
+      </div>
+      <div class="form-grid four-col">
+        <div class="form-group">
+          <label class="form-label required">Organisation</label>
+          <select class="form-select" id="organisation" onchange="updateForm()">
+            <option value="">Sélectionner</option>
+            <option value="BANQUE">Banque</option>
+            <option value="PSP">PSP</option>
+            <option value="EME">EME</option>
+            <option value="CASP">CASP</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Canal</label>
+          <select class="form-select" id="canal" onchange="updateForm()">
+            <option value="">Sélectionner</option>
+            <option value="presentiel">Présentiel</option>
+            <option value="distance">À distance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Relation <span class="tooltip" data-tip="Affaires = relation durable avec KYC complet. Occasionnelle = opération ponctuelle (seuils selon procédure interne, souvent 1 000€ ou 15 000€).">?</span></label>
+          <select class="form-select" id="relation" onchange="updateForm()">
+            <option value="">Sélectionner</option>
+            <option value="affaires">Affaires</option>
+            <option value="occasionnelle">Occasionnelle</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Exposition US <span class="tooltip" data-tip="Déclenche des obligations de filtrage OFAC. Cochez Oui si : paiements en USD, contreparties US, banques correspondantes américaines, clients US persons.">?</span></label>
+          <select class="form-select" id="expositionUS" onchange="updateForm()">
+            <option value="">Sélectionner</option>
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+            <option value="inconnu">Inconnu</option>
+          </select>
+        </div>
+
+        <!-- PPE Toggle -->
+        <div class="form-group" id="ppeGroup">
+          <label class="form-label">PPE détecté ? <span class="tooltip" data-tip="Personne Politiquement Exposée : mandats publics, fonctions gouvernementales, dirigeants d'organisations internationales, ou proches de ces personnes.">?</span></label>
+          <select class="form-select" id="ppeStatus" onchange="updateForm()">
+            <option value="">Non / Inconnu</option>
+            <option value="ppe_direct">Oui - PPE direct</option>
+            <option value="ppe_proche">Oui - Proche de PPE</option>
+            <option value="ppe_associe">Oui - Associé de PPE</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE RÉVISION TOGGLE -->
+    <div class="revision-mode-banner" id="revisionModeBanner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--vert-sapin)" stroke-width="2" width="20" height="20">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <div class="toggle-label">
+        <strong>Révision périodique</strong>
+        <small>Cochez si c'est une revue de dossier existant (pas une entrée en relation)</small>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggleRevisionMode" onchange="updateForm()">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- CARD 2: TYPE CLIENT -->
+    <div class="card" id="card2">
+      <div class="card-header">
+        <div class="card-number">2</div>
+        <h2 class="card-title">Type de client</h2>
+        <span class="card-subtitle">KYC / KYB</span>
+      </div>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="clientType" value="PF" id="clientPF" onchange="updateForm()">
+          <label for="clientPF">
+            <span class="radio-label-text">Personne physique</span>
+            <span class="radio-label-sub">KYC</span>
+          </label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="clientType" value="PM" id="clientPM" onchange="updateForm()">
+          <label for="clientPM">
+            <span class="radio-label-text">Personne morale</span>
+            <span class="radio-label-sub">KYB</span>
+          </label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="clientType" value="TRUST" id="clientTrust" onchange="updateForm()">
+          <label for="clientTrust">
+            <span class="radio-label-text">Trust / Fiducie</span>
+            <span class="radio-label-sub">Structure</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: DÉTAILS KYB -->
+    <div class="card hidden" id="kybDetails">
+      <div class="card-header">
+        <div class="card-number">3</div>
+        <h2 class="card-title">Détails entité</h2>
+      </div>
+
+      <div class="form-section" id="identificationSection">
+        <div class="form-section-title">Identification de l'entité</div>
+        <div class="form-grid">
+          <div class="form-group critical">
+            <label class="form-label required">Pays</label>
+            <select class="form-select" id="pays" onchange="onPaysChange()">
+              <option value="">Sélectionner</option>
+              <option value="FR">France</option>
+              <option value="UE">UE (hors France)</option>
+              <option value="HORSUE">Hors UE</option>
+            </select>
+          </div>
+          <div class="form-group critical">
+            <label class="form-label required" id="legalFormLabel">Forme juridique</label>
+            <select class="form-select" id="legalForm" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label required">Statut</label>
+            <select class="form-select" id="statut" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+              <option value="immatriculee">Immatriculée</option>
+              <option value="creation">En création</option>
+              <option value="succursale">Succursale</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Toggle entité étrangère -->
+        <div class="foreign-toggle-container hidden" id="foreignToggleContainer">
+          <div class="toggle-row compact foreign-toggle-row">
+            <div class="toggle-label">
+              Entité immatriculée hors France
+              <small>Activer pour ajouter une preuve de vérification du registre</small>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleForeignEntity" onchange="onForeignToggleChange()">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="foreign-proof-section hidden" id="foreignProofSection">
+            <details class="foreign-proof-details">
+              <summary class="foreign-proof-summary">Ajouter une preuve (recommandé)</summary>
+              <div class="foreign-proof-content">
+                <p class="foreign-proof-note">Conservez une trace de votre vérification du registre étranger.</p>
+                <div class="foreign-field">
+                  <label for="registryUrl">Source / registre (URL)</label>
+                  <input type="url" id="registryUrl" placeholder="Ex: https://www.handelsregister.de/..." onchange="saveFormOnChange()">
+                </div>
+                <div class="foreign-field">
+                  <label for="verificationDate">Date de vérification</label>
+                  <input type="date" id="verificationDate" onchange="saveFormOnChange()">
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section hidden" id="structureSection">
+        <div class="form-section-title">Structure &amp; Contrôle</div>
+        <div class="form-grid">
+          <div class="form-group hidden" id="coteeGroup">
+            <label class="form-label required">Cotée en bourse ?</label>
+            <select class="form-select" id="cotee" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+              <option value="oui">Oui</option>
+              <option value="non">Non</option>
+            </select>
+          </div>
+          <div class="form-group hidden" id="detentionGroup">
+            <label class="form-label required">Structure de détention</label>
+            <select class="form-select" id="detention" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+              <option value="simple">Simple (directe)</option>
+              <option value="complexe">Complexe (indirecte)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section hidden" id="representationSection">
+        <div class="form-section-title">Représentation</div>
+        <div class="form-grid">
+          <div class="form-group hidden" id="signataireGroup">
+            <label class="form-label required">Signataire = Représentant légal ?</label>
+            <select class="form-select" id="signataireDifferent" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+              <option value="meme">Oui, même personne</option>
+              <option value="different">Non, délégation</option>
+            </select>
+          </div>
+          <div class="form-group hidden" id="dirDiffGroup">
+            <label class="form-label" id="dirDiffLabel">Lieu de gestion = Siège social ?</label>
+            <select class="form-select" id="dirDiff" onchange="updateForm()">
+              <option value="">Sélectionner</option>
+              <option value="oui">Oui, identique</option>
+              <option value="non">Non, différent</option>
+              <option value="inconnu">Je ne sais pas</option>
+            </select>
+            <p class="form-help">Direction effective à une autre adresse que le siège</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RÉSULTATS -->
+    <div class="results-card hidden" id="results">
+      <div class="results-header">
+        <div class="results-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <div class="results-title-group">
+          <h2 class="results-title">Checklist KYC/KYB</h2>
+          <p class="results-meta">Cliquez sur les éléments pour les cocher</p>
+        </div>
+      </div>
+
+      <!-- Référence dossier -->
+      <div class="dossier-ref-container">
+        <label class="dossier-ref-label" for="dossierRef">Référence dossier (optionnel)</label>
+        <input type="text" class="dossier-ref-input" id="dossierRef" placeholder="Ex : Société X - Entrée en relation" maxlength="100" onchange="saveFormOnChange()">
+      </div>
+
+      <!-- RISK SCORE GAUGE -->
+      <div class="risk-score-container" id="riskScoreContainer">
+        <div class="risk-gauge">
+          <div class="risk-score-label">Niveau de risque</div>
+          <div class="risk-gauge-bar">
+            <div class="risk-gauge-fill low" id="riskGaugeFill"></div>
+          </div>
+          <div class="risk-factors" id="riskFactors"></div>
+        </div>
+        <span class="risk-score-level low" id="riskScoreLevel">STANDARD</span>
+      </div>
+
+      <!-- PPE ALERT -->
+      <div class="ppe-alert hidden" id="ppeAlert">
+        <span class="ppe-alert-icon">⚠️</span>
+        <div class="ppe-alert-content">
+          <div class="ppe-alert-title">Vigilance renforcée obligatoire (PPE)</div>
+          <div class="ppe-alert-text" id="ppeAlertText">Ce client est une Personne Politiquement Exposée. Appliquez les mesures de vigilance renforcée et obtenez une validation hiérarchique.</div>
+        </div>
+      </div>
+
+      <!-- REVISION MODE INDICATOR -->
+      <div class="ppe-alert hidden" id="revisionModeAlert">
+        <span class="ppe-alert-icon">🔄</span>
+        <div class="ppe-alert-content">
+          <div class="ppe-alert-title">Mode révision périodique</div>
+          <div class="ppe-alert-text">La checklist est adaptée pour une revue de dossier existant.</div>
+        </div>
+      </div>
+
+      <!-- PROGRESS CIRCLE -->
+      <div class="progress-circle-container" id="checklistProgress">
+        <div class="progress-circle">
+          <svg viewBox="0 0 36 36">
+            <circle class="progress-circle-bg" cx="18" cy="18" r="15.9"/>
+            <circle class="progress-circle-fill" id="progressCircle" cx="18" cy="18" r="15.9" stroke-dasharray="100" stroke-dashoffset="100"/>
+          </svg>
+          <span class="progress-circle-text" id="progressPercent">0%</span>
+        </div>
+        <div class="progress-details">
+          <div class="progress-label"><span id="checkedCount">0</span> / <span id="totalCount">0</span> éléments cochés</div>
+          <div class="progress-sublabel">Cliquez sur les éléments pour suivre votre avancement</div>
+        </div>
+      </div>
+
+      <div class="attention-box attention-box--legend">
+        <ul class="attention-list attention-list--grid">
+          <li><strong>INFOS</strong> = données à recueillir</li>
+          <li><strong>DOCS</strong> = pièces client à obtenir</li>
+          <li><strong>CONTRÔLES</strong> = vérifications à effectuer</li>
+          <li><strong>PREUVES</strong> = traces internes à conserver</li>
+        </ul>
+      </div>
+
+      <div class="results-body">
+        <!-- Accordion INFOS 1 -->
+        <div class="accordion open" data-accordion="a1">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">INFOS 1</span>
+            <span class="accordion-title">Identification</span>
+            <span class="accordion-count" id="countA1">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-a1">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('socleChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('socleChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <ul class="checklist" id="socleChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Accordion INFOS 2 -->
+        <div class="accordion open" data-accordion="a2">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="true" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">INFOS 2</span>
+            <span class="accordion-title">Connaissance relation</span>
+            <span class="accordion-count" id="countA2">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-a2">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('complementsChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('complementsChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <ul class="checklist" id="complementsChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Accordion DOCS -->
+        <div class="accordion" data-accordion="b">
+          <div class="accordion-header" role="button" tabindex="0" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">DOCS</span>
+            <span class="accordion-title">Pièces justificatives</span>
+            <span class="accordion-count" id="countB">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-b">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('docsChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('docsChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <ul class="checklist" id="docsChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Accordion CONTRÔLES -->
+        <div class="accordion" data-accordion="c">
+          <div class="accordion-header" role="button" tabindex="0" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">CONTRÔLES</span>
+            <span class="accordion-title">Vérifications BE/PEP</span>
+            <span class="accordion-count" id="countC">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-c">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('verificationsChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('verificationsChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <ul class="checklist" id="verificationsChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Accordion PREUVES -->
+        <div class="accordion" data-accordion="d">
+          <div class="accordion-header" role="button" tabindex="0" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">PREUVES</span>
+            <span class="accordion-title">Audit trail</span>
+            <span class="accordion-count" id="countD">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-d">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('evidencesChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('evidencesChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <ul class="checklist" id="evidencesChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Points ACPR -->
+        <div class="attention-box">
+          <div class="attention-title">Points d'attention (ACPR)</div>
+          <ul class="attention-list" id="acprPoints"></ul>
+        </div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="notes-section">
+        <label class="notes-label" for="dossierNotes">Notes / justifications</label>
+        <textarea class="notes-textarea" id="dossierNotes" placeholder="Documents manquants, mesures compensatoires..." onchange="saveFormOnChange()"></textarea>
+      </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="btn-group">
+      <div class="dropdown" id="exportDropdown">
+        <button class="btn btn-primary" onclick="toggleDropdown()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Exporter
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-item premium" onclick="exportBrandedPDF()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Export PDF brandé
+            <span class="badge-new">NEW</span>
+          </div>
+          <div class="dropdown-item" onclick="exportJSON()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Export JSON
+          </div>
+          <div class="dropdown-item" onclick="exportCSV()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+            Export CSV
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" onclick="printPage()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+            Imprimer
+          </div>
+        </div>
+      </div>
+      <button class="btn-link" onclick="generateResults()">Régénérer</button>
+    </div>
+
+    </div><!-- /.container -->
+
+    <div class="tool-footer">
+      <div class="tool-footer-brand"><a href="/">Early Brief</a></div>
+      <div class="tool-footer-sub">Veille réglementaire et ressources opérationnelles · <a href="/ressources/">Ressources</a> · <a href="/contact/">Contact</a></div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="./pdf-export.js"></script>
+</body>
+</html>
