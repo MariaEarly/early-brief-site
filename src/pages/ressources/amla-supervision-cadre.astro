@@ -11,18 +11,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <h2>AMLA : Le cadre de supervision LCB-FT qui change tout</h2>
 
-<nav class="toc-grid" aria-label="Sommaire">
-    <a href="#tldr" class="toc-item">TL;DR</a>
-    <a href="#contexte" class="toc-item">Contexte</a>
-    <a href="#importance" class="toc-item">Pourquoi c'est important</a>
-    <a href="#amla" class="toc-item">Qu'est-ce que l'AMLA</a>
-    <a href="#textes" class="toc-item">Les 3 textes publiés</a>
-    <a href="#datapoints" class="toc-item">Les 100-150 datapoints</a>
-    <a href="#calendrier" class="toc-item">Calendrier</a>
-    <a href="#actions" class="toc-item">Actions immédiates</a>
-    <a href="#faq" class="toc-item">FAQ</a>
-    <a href="#sources" class="toc-item">Sources</a>
-</nav>
 
 <section id="tldr">
 <h2>TL;DR (Résumé en 3 points)</h2>
@@ -41,13 +29,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <p>L'AMLA (Anti-Money Laundering Authority) a publié <strong>trois textes techniques</strong> qui posent les fondations du nouveau cadre de supervision LCB-FT européen :</p>
 <ul>
-    <li><strong>2 projets de RTS</strong> (Regulatory Technical Standards) : précisent la méthodologie et les critères de sélection</li>
-    <li><strong>1 projet d'ITS</strong> (Implementing Technical Standards) : précise les modalités opérationnelles (coopération AMLA / autorités nationales)</li>
+    <li><strong>2 projets de RTS</strong> (Regulatory Technical Standards) : précisent la méthodologie et les critères de sélection — <em>en cours de finalisation post-consultation</em></li>
+    <li><strong>1 projet d'ITS</strong> (Implementing Technical Standards) : précise les modalités opérationnelles (coopération AMLA / autorités nationales) — <em>consultation clôturée le 27/01/2026</em></li>
 </ul>
-<p><strong>Consultation publique ouverte jusqu'au 27 janvier 2026 sur le projet d'ITS.</strong></p>
+<p><strong>Consultation publique clôturée le 27 janvier 2026.</strong> L'AMLA analyse les contributions reçues et finalisera les textes avant transmission à la Commission européenne pour adoption.</p>
 
 <div class="info-box">
-    <p><strong>Note de statut :</strong> ces RTS/ITS deviennent pleinement applicables après adoption par la Commission européenne et publication au JOUE.</p>
+    <p><strong>Note de statut :</strong> ces projets de RTS/ITS sont en phase de finalisation post-consultation. Ils deviendront pleinement applicables après adoption par la Commission européenne et publication au JOUE. Les textes publiés le 18 décembre 2025 sont des projets soumis à consultation, pas des normes finales.</p>
+</div>
+
+<div class="info-box">
+    <p><strong>Contexte institutionnel :</strong> l'EBA a transféré ses compétences LCB-FT à l'AMLA le 31 décembre 2025 (fin du mandat EBA sur le périmètre AML). L'AMLA est désormais l'autorité européenne unique en matière de supervision LCB-FT.</p>
 </div>
 </section>
 
@@ -243,9 +235,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <p class="inst-timeline-date">18 décembre 2025</p>
         <p class="inst-timeline-title">Publication des 3 textes techniques (2 RTS + 1 ITS)</p>
     </div>
-    <div class="inst-timeline-item inst-timeline-item--current">
+    <div class="inst-timeline-item inst-timeline-item--done">
         <p class="inst-timeline-date">27 janvier 2026</p>
-        <p class="inst-timeline-title">Fin de la consultation publique sur le projet d'ITS</p>
+        <p class="inst-timeline-title">Consultation publique clôturée — analyse des contributions en cours</p>
     </div>
     <div class="inst-timeline-item">
         <p class="inst-timeline-date">2026</p>
@@ -400,7 +392,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <div class="faq-item">
     <p class="faq-question">Q4 : Les 100-150 datapoints sont-ils définitifs ?</p>
     <div class="faq-answer">
-        <p><strong>R :</strong> La liste exacte sera précisée dans les RTS finaux après la consultation (janvier 2026). Le chiffre de 100-150 est indicatif.</p>
+        <p><strong>R :</strong> La liste exacte sera précisée dans les RTS finaux, attendus courant 2026 après analyse des contributions à la consultation (clôturée le 27 janvier 2026). Le chiffre de 100-150 est indicatif.</p>
     </div>
 </div>
 
@@ -447,31 +439,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <hr>
 
-<section id="sources">
-<h2>Ressources complémentaires</h2>
-
-<div class="inst-ressources-grid">
-    <div class="inst-ressource-card">
-        <h3 class="inst-ressource-title">Textes officiels</h3>
-        <ul class="inst-ressource-list">
-            <li><a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" target="_blank" rel="noopener">Communiqué AMLA (18 déc 2025)</a></li>
-            <li><a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">Directive LCB-FT (UE) 2024/1640 — EUR-Lex</a></li>
-            <li><a href="https://eur-lex.europa.eu" target="_blank" rel="noopener">Règlement AMLA — EUR-Lex</a></li>
-        </ul>
-    </div>
-    <div class="inst-ressource-card">
-        <h3 class="inst-ressource-title">Early Brief</h3>
-        <ul class="inst-ressource-list">
-            <li><a href="/reglementation/panorama-2025-2026.html">Panorama LCB-FT 2025-2026</a></li>
-            <li><a href="/institutions/amla.html">Fiche institution AMLA</a></li>
-            <li><a href="/cadre/lcb-ft.html">Cadre LCB-FT</a></li>
-        </ul>
-    </div>
+<section id="sources" class="fiche-section fiche-sources">
+<h2>Sources</h2>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">AMLA</span>
+    <span class="fiche-source-ref">Communiqué — AMLA takes major step toward harmonised EU supervision</span>
+    <a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">18/12/2025</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">Parlement européen / Conseil</span>
+    <span class="fiche-source-ref">Directive (UE) 2024/1640 — 6e directive anti-blanchiment (AMLD6)</span>
+    <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1640" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">2024</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">Parlement européen / Conseil</span>
+    <span class="fiche-source-ref">Règlement (UE) 2024/1620 — Établissement de l'AMLA</span>
+    <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1620" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">2024</span>
 </div>
 
-<div class="inst-voir-aussi">
-    <p><strong>Voir aussi :</strong> <a href="/institutions/amla.html">AMLA</a> · <a href="/cadre/lcb-ft.html">LCB-FT</a> · <a href="/reglementation/panorama-2025-2026.html">Panorama 2025-26</a></p>
-</div>
+<h3>Sur Early Brief</h3>
+<ul>
+    <li><a href="/ressources/tableau-amla-comparatif/">Tableau comparatif AMLA</a></li>
+    <li><a href="/ressources/glossaire/">Glossaire LCB-FT</a></li>
+    <li><a href="/ressources/faq/">FAQ LCB-FT</a></li>
+</ul>
 </section>
 
     <div class="fiche-retour"><a href="/ressources">&larr; Toutes les ressources</a></div>

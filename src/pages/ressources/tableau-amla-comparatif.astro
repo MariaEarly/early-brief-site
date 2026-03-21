@@ -9,11 +9,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <div class="page">
     <div class="fiche-content">
 
-<hr>
 <h2>Vue d'ensemble</h2>
+
+<div class="info-box">
+    <p><strong>Contexte institutionnel :</strong> l'EBA a transféré ses compétences LCB-FT à l'AMLA le 31 décembre 2025. L'AMLA est désormais l'autorité européenne unique en matière de supervision anti-blanchiment. Les textes techniques (2 RTS + 1 ITS) publiés le 18 décembre 2025 sont des projets en cours de finalisation post-consultation (clôturée le 27 janvier 2026).</p>
+</div>
+
 <p>À partir de 2028, la supervision LCB-FT en Europe se structure en 2 niveaux :</p>
-<p>- <strong>Supervision directe AMLA</strong> : ~40 groupes/établissements complexes et transfrontaliers</p>
-<p>- <strong>Supervision indirecte (nationale)</strong> : Tous les autres, selon méthodologie AMLA harmonisée</p>
+<ul>
+    <li><strong>Supervision directe AMLA</strong> : ~40 groupes/établissements complexes et transfrontaliers</li>
+    <li><strong>Supervision indirecte (nationale)</strong> : tous les autres, selon méthodologie AMLA harmonisée</li>
+</ul>
 <p>Ce tableau compare les 2 modèles.</p>
 <hr>
 <h2>Critères d'éligibilité</h2>
@@ -201,19 +207,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <p><strong>Q : Quel est le coût estimé de la supervision directe AMLA ?</strong></p>
 <p>R : Non communiqué officiellement. Estimations : contribution AMLA = 150-300% de la contribution nationale actuelle (selon taille/complexité).</p>
 <hr>
+<section class="fiche-section fiche-sources">
 <h2>Sources</h2>
-<p>- <strong>RTS n°1 AMLA</strong> (18 déc 2025) : Méthodologie harmonisée évaluation risques</p>
-<p>- <strong>RTS n°2 AMLA</strong> (18 déc 2025) : Sélection entités supervision directe</p>
-<p>- <strong>ITS AMLA</strong> (18 déc 2025) : Coopération AMLA-superviseurs nationaux</p>
-<p>- <strong>Directive (UE) 2024/1640</strong> : 6e directive anti-blanchiment</p>
-<p>- <strong>Règlement AMLA</strong> : Établissement de l'AMLA</p>
-<p><strong>Communiqué AMLA :</strong> <a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" target="_blank" rel="noopener">Lien officiel</a></p>
-<hr>
-<h2>À propos d'Early Brief</h2>
-<p>Early Brief décrypte les développements réglementaires européens avec la granularité opérationnelle que les équipes conformité attendent.</p>
-<p><strong>Site :</strong> <a href="https://early-brief.com" target="_blank" rel="noopener">early-brief.com</a></p>
-<p><strong>Newsletter :</strong> <a href="https://mariaiaciancio.substack.com" target="_blank" rel="noopener">Substack</a></p>
-<p><strong>Contact :</strong> <a href="mailto:contact@early-brief.com" target="_blank" rel="noopener">contact@early-brief.com</a></p>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">AMLA</span>
+    <span class="fiche-source-ref">Projet de RTS n°1 — Méthodologie harmonisée d'évaluation des risques (en cours de finalisation)</span>
+    <a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">18/12/2025</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">AMLA</span>
+    <span class="fiche-source-ref">Projet de RTS n°2 — Sélection des entités sous supervision directe (en cours de finalisation)</span>
+    <span class="fiche-source-date">18/12/2025</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">AMLA</span>
+    <span class="fiche-source-ref">Projet d'ITS — Coopération AMLA-superviseurs nationaux (consultation clôturée 27/01/2026)</span>
+    <span class="fiche-source-date">18/12/2025</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">Parlement européen / Conseil</span>
+    <span class="fiche-source-ref">Directive (UE) 2024/1640 — 6e directive anti-blanchiment (AMLD6)</span>
+    <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1640" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">2024</span>
+</div>
+<div class="fiche-source-item">
+    <span class="fiche-source-authority">Parlement européen / Conseil</span>
+    <span class="fiche-source-ref">Règlement (UE) 2024/1620 — Établissement de l'AMLA</span>
+    <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1620" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+    <span class="fiche-source-date">2024</span>
+</div>
+</section>
 
     <div class="fiche-retour"><a href="/ressources">&larr; Toutes les ressources</a></div>
     </div>
