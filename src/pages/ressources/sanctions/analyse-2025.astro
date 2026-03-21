@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import sanctions from '../../../data/sanctions.json';
+
+const decisions = sanctions.decisions.filter(d => d.annee === 2025);
+const totalAMF = decisions.filter(d => d.autorite === 'AMF').length;
+const totalACPR = decisions.filter(d => d.autorite === 'ACPR').length;
+const montantTotal = decisions.reduce((sum, d) => sum + (d.sanction_pecuniaire || 0), 0);
+const montantAMF = decisions.filter(d => d.autorite === 'AMF').reduce((sum, d) => sum + (d.sanction_pecuniaire || 0), 0);
+const montantACPR = decisions.filter(d => d.autorite === 'ACPR').reduce((sum, d) => sum + (d.sanction_pecuniaire || 0), 0);
+const maxSanction = decisions.reduce((max, d) => (d.sanction_pecuniaire || 0) > max.amount ? { amount: d.sanction_pecuniaire || 0, entite: d.entite } : max, { amount: 0, entite: '' });
+
+const formatMontant = (n: number) => {
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.0', '') + ' M€';
+  if (n >= 1000) return (n / 1000).toFixed(0) + ' k€';
+  return n + ' €';
+};
+---
+
+<BaseLayout
+  title="Sanctions AMF et ACPR 2025 — Analyse — Early Brief"
+  description="15 décisions, 14,7 M€ prononcés. Analyse des griefs retenus, montants et tendances opérationnelles — données officielles."
+  canonicalUrl="https://early-brief.com/ressources/sanctions/analyse-2025"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/sanctions/" class="fiche-back">Sanctions & jurisprudence</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="sanctions">Analyse</span>
+            <span class="fiche-date">Données mises à jour au 21/03/2026 — sources : recueil ACPR et AMF</span>
+        </div>
+        <h1 class="fiche-title">Sanctions AMF et ACPR 2025</h1>
+        <p class="fiche-question">{decisions.length} décisions, {formatMontant(montantTotal)} prononcés. Analyse des griefs retenus, montants et tendances.</p>
+    </div>
+
+    <section class="fiche-section">
+        <h2>Chiffres clés</h2>
+        <div class="scope-grid">
+            <div class="scope-card">
+                <p class="scope-title">Décisions</p>
+                <ul class="scope-list">
+                    <li><strong>{decisions.length}</strong> décisions totales</li>
+                    <li>{totalAMF} AMF + {totalACPR} ACPR</li>
+                </ul>
+            </div>
+            <div class="scope-card">
+                <p class="scope-title">Montants</p>
+                <ul class="scope-list">
+                    <li><strong>{formatMontant(montantTotal)}</strong> total prononcé</li>
+                    <li>AMF : {formatMontant(montantAMF)}</li>
+                    <li>ACPR : {formatMontant(montantACPR)}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <h2>Périmètre et méthode</h2>
+        <div class="info-box">
+            <p>Cette page recense toutes les décisions 2025 :</p>
+            <ul>
+                <li><strong>AMF :</strong> Décisions de la Commission des sanctions SAN-2025-01 à SAN-2025-12</li>
+                <li><strong>ACPR :</strong> Décisions datées 2025 dans le Recueil des sanctions (même si le numéro de décision est 2023-xx ou 2024-xx)</li>
+            </ul>
+            <p><strong>Montants :</strong> Montants prononcés par les autorités (avant recours).</p>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <h2>Analyse par griefs</h2>
+        <p>Règle de comptage : 1 occurrence = 1 décision dans laquelle la famille de manquements est retenue.</p>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Famille</th><th>Occurrences</th><th>Décisions</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Obligations professionnelles</strong></td><td>6</td><td>AMF SAN-2025-07, 08, 09, 10, 11, 12</td></tr>
+                <tr><td><strong>Manquements d'initiés / MAR</strong></td><td>3</td><td>AMF SAN-2025-02, 04, 06</td></tr>
+                <tr><td><strong>Information du marché</strong></td><td>2</td><td>AMF SAN-2025-01, 05</td></tr>
+                <tr><td><strong>LCB-FT</strong></td><td>3</td><td>ACPR Delubac, Chaabi · AMF Novaxia</td></tr>
+                <tr><td><strong>Gel des avoirs</strong></td><td>1</td><td>ACPR Delubac</td></tr>
+                <tr><td><strong>Transaction monitoring</strong></td><td>1</td><td>ACPR Delubac</td></tr>
+                <tr><td><strong>Contrôle interne</strong></td><td>1</td><td>ACPR Chaabi</td></tr>
+                <tr><td><strong>Info assurés / déshérence</strong></td><td>1</td><td>ACPR CARCO</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="fiche-section">
+        <h2>Décisions notables LCB-FT</h2>
+
+        <div class="amla-etape">
+            <div class="amla-etape-titre">ACPR — Banque Delubac et Cie (600 000 € + blâme)</div>
+            <p>Décision 2024-02 du 19 juin 2025.</p>
+            <ul>
+                <li>Carences dans le dispositif de surveillance des opérations</li>
+                <li>Délais de traitement des alertes</li>
+                <li>Fermetures de comptes LCB-FT sans examen renforcé systématique</li>
+                <li>Manquements liés au gel des avoirs</li>
+            </ul>
+        </div>
+
+        <div class="amla-etape">
+            <div class="amla-etape-titre">ACPR — Banque Chaabi du Maroc (250 000 € + blâme)</div>
+            <p>Décision 2024-01 du 7 novembre 2025.</p>
+            <ul>
+                <li>Manquements au contrôle interne</li>
+                <li>Manquements aux obligations LCB-FT</li>
+            </ul>
+        </div>
+
+        <div class="amla-etape">
+            <div class="amla-etape-titre">AMF — Novaxia Investissement (500 000 €)</div>
+            <p>Décision SAN-2025-11 du 10 décembre 2025.</p>
+            <ul>
+                <li>Non-respect du dossier d'agrément</li>
+                <li>Processus d'investissement</li>
+                <li>Manquements LCB-FT</li>
+                <li>Rémunération des distributeurs</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">AMF</span>
+            <span class="fiche-source-ref">Sanctions et transactions — Répertoire des décisions</span>
+            <a href="https://www.amf-france.org/fr/sanctions-transactions/sanctions-et-transactions-accueil" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Recueil des sanctions</span>
+            <a href="https://acpr.banque-france.fr/fr/reglementation/recueil-des-sanctions" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import sanctions from '../../../data/sanctions.json';
+
+const decisions = sanctions.decisions;
+
+const themes = [
+  { key: 'lcb-ft', label: 'LCB-FT', desc: 'Défaillances liées aux obligations de lutte contre le blanchiment et le financement du terrorisme.' },
+  { key: 'tm', label: 'Transaction Monitoring', desc: 'Défaillances liées aux scénarios, alertes et dispositifs de surveillance des opérations.' },
+  { key: 'gel', label: 'Gel des avoirs', desc: 'Défaillances liées au criblage, au suivi et à la mise en œuvre du gel.' },
+  { key: 'controle-interne', label: 'Contrôle interne', desc: 'Défaillances liées au dispositif de contrôle interne (gouvernance, procédures, traçabilité).' },
+];
+
+const getDecisionsByTheme = (themeKey: string) => decisions.filter(d => d.themes.includes(themeKey));
+
+const formatAmount = (n: number | null) => {
+  if (n === null) return '—';
+  if (n === 0) return '0 €';
+  return n.toLocaleString('fr-FR') + ' €';
+};
+---
+
+<BaseLayout
+  title="Défaillances par type — Sanctions ACPR & AMF — Early Brief"
+  description="Synthèse des défaillances sanctionnées par l'ACPR et l'AMF : LCB-FT, transaction monitoring, gel des avoirs, contrôle interne."
+  canonicalUrl="https://early-brief.com/ressources/sanctions/manquements"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/sanctions/" class="fiche-back">Sanctions & jurisprudence</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="sanctions">Thématique</span>
+            <span class="fiche-date">Données mises à jour au 21/03/2026</span>
+        </div>
+        <h1 class="fiche-title">Défaillances par type</h1>
+        <p class="fiche-question">Synthèse des manquements sanctionnés par l'ACPR et l'AMF, classés par thème LCB-FT.</p>
+    </div>
+
+    {themes.map((theme) => {
+      const themeDecisions = getDecisionsByTheme(theme.key);
+      return themeDecisions.length > 0 ? (
+        <section class="fiche-section">
+          <h2>{theme.label}</h2>
+          <p>{theme.desc}</p>
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Autorité</th><th>Entité</th><th>Sanction</th><th>Résumé</th></tr>
+            </thead>
+            <tbody>
+              {themeDecisions.map((d) => (
+                <tr>
+                  <td><strong>{d.autorite}</strong></td>
+                  <td><a href={d.source} target="_blank" rel="noopener noreferrer">{d.entite}</a></td>
+                  <td>{d.sanction_pecuniaire ? formatAmount(d.sanction_pecuniaire) : '—'}{d.sanction_disciplinaire ? ` + ${d.sanction_disciplinaire}` : ''}</td>
+                  <td>{d.resume}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ) : null;
+    })}
+
+    <section class="fiche-section">
+        <div class="info-box">
+            <p><strong>Note méthodologique :</strong> Cette page ne couvre que les thèmes LCB-FT identifiés dans les décisions du dataset. Les manquements « Obligations professionnelles » et « Abus de marché » (AMF) ne sont pas détaillés ici — voir l'<a href="/ressources/sanctions/analyse-2025/">analyse 2025</a> pour la vue complète.</p>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">AMF</span>
+            <span class="fiche-source-ref">Sanctions et transactions</span>
+            <a href="https://www.amf-france.org/fr/sanctions-transactions/sanctions-et-transactions-accueil" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Recueil des sanctions</span>
+            <a href="https://acpr.banque-france.fr/fr/reglementation/recueil-des-sanctions" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>
