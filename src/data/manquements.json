@@ -1,0 +1,2840 @@
+{
+  "meta": {
+    "total_occurrences": 400,
+    "total_decisions": 32,
+    "periode": "2020-2025",
+    "mise_a_jour": "2026-03-21"
+  },
+  "themes": {
+    "kyc": {
+      "label": "KYC / Identification",
+      "count": 133,
+      "items": [
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 25
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 26
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 27
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 8
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 16
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 25
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 26
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 27
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-09",
+          "entite": "CIC",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-09",
+          "entite": "CIC",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-09",
+          "entite": "CIC",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 19
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-09",
+          "entite": "CIC",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 20
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 32
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 33
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 36
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 37
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 14
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 25
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 31
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-10",
+          "entite": "CARAT",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-10",
+          "entite": "CARAT",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-10",
+          "entite": "CARAT",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-10",
+          "entite": "CARAT",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 8
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 17
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 25
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 32
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 13
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 17
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 2
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Perial Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Perial Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 19
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Perial Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 20
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Perial Asset Management",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 22
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 11
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Pièces/justificatifs KYC manquants ou incomplets.",
+          "page": 12
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Pièces/justificatifs KYC manquants ou incomplets.",
+          "page": 13
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Inocap Gestion",
+          "constat": "Pièces/justificatifs KYC manquants ou incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Inocap Gestion",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Inocap Gestion",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 11
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Inocap Gestion",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 14
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Pièces/justificatifs KYC manquants ou incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Pièces/justificatifs KYC manquants ou incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Connaissance client (CDD) insuffisante / dossiers incomplets.",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Identification/justification du bénéficiaire effectif insuffisante.",
+          "page": 18
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Collecte KYC à l’entrée en relation insuffisante.",
+          "page": 19
+        }
+      ]
+    },
+    "tm": {
+      "label": "Transaction Monitoring",
+      "count": 85,
+      "items": [
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2021-05",
+          "entite": "Gestys SA + dirigeant",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 17
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 11
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 14
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 27
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 28
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 29
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 43
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 16
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Stock d’alertes en attente / traitement insuffisant.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Scénarios/typologies de détection insuffisants (couverture/paramétrage).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "TFB",
+          "entite": "—",
+          "constat": "Surveillance des opérations / traitement des alertes insuffisants.",
+          "page": 10
+        }
+      ]
+    },
+    "ds": {
+      "label": "Déclaration de soupçon",
+      "count": 83,
+      "items": [
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 21
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-05",
+          "entite": "CIC",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 17
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "CIC & Banque CIC Sud-Ouest",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 21
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 2
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 11
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Auvergne Investissement Hôtels + dirigeant",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 17
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Inocap Gestion",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Absence de DS alors qu’une déclaration aurait dû être faite.",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "DS transmises tardivement (délais relevés dans la décision).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 14
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 15
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Défaillances DS / TRACFIN (organisation, critères, traçabilité).",
+          "page": 11
+        }
+      ]
+    },
+    "ppe": {
+      "label": "PPE / Vigilance renforcée",
+      "count": 30,
+      "items": [
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 28
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-09",
+          "entite": "CIC",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 22
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 5
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 32
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 35
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-09",
+          "entite": "AMBOISE",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 36
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 7
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 4
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Corum Asset Management",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 42
+        },
+        {
+          "autorite": "AMF",
+          "decision": "— (réf. AMF à compléter)",
+          "entite": "Perial Asset Management",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 18
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_08",
+          "entite": "la societe A",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_01",
+          "entite": "la societe Attijariwafa Bank Europe",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 14
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances du dispositif PPE (identification/vigilance renforcée).",
+          "page": 7
+        }
+      ]
+    },
+    "gel": {
+      "label": "Gel des avoirs",
+      "count": 69,
+      "items": [
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 25
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 26
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 27
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2024-06",
+          "entite": "IGR",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 29
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 5
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 35
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 36
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-08",
+          "entite": "ETERNAM",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 38
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 37
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 43
+        },
+        {
+          "autorite": "AMF",
+          "decision": "SAN-2025-11",
+          "entite": "NOVAXIA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 44
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "BCDM",
+          "entite": "Banque (BCDM)",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 18
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "DELUBAC",
+          "entite": "Banque Delubac",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 19
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2019_06",
+          "entite": "l'etablissement A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_02",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_03",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 10
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_05",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_06",
+          "entite": "la societe American Express Carte France",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 16
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_08",
+          "entite": "la societe A",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Criblage gel insuffisant (détection personnes/avoirs gelés).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 5
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_09",
+          "entite": "la societe MMA IARD SA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 6
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2020_11",
+          "entite": "lOffice des postes et telecommunications de Nouvelle_Caledonie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 11
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_01",
+          "entite": "la societe W_HA",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 13
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2021_05",
+          "entite": "la Caisse regionale de Credit agricole mutuel du Languedoc",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_01",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 7
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_02",
+          "entite": "la Financiere des paiements electroniques",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 9
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 15
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_03",
+          "entite": "la societe Abeille Vie",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 18
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 8
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_04",
+          "entite": "la societe BMW Finance",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 12
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 1
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Criblage gel insuffisant (détection personnes/avoirs gelés).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_06",
+          "entite": "la Mutuelle de Poitiers Assurances",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 4
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 3
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2022_07",
+          "entite": "la societe Treezor",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 17
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "PROC. 2023_01",
+          "entite": "la Banque regionale descompte et de depots",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        },
+        {
+          "autorite": "ACPR",
+          "decision": "TFB",
+          "entite": "—",
+          "constat": "Défaillances de mise en œuvre du gel (criblage/suivi/notification).",
+          "page": 2
+        }
+      ]
+    }
+  }
+}

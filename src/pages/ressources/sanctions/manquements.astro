@@ -1,28 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import sanctions from '../../../data/sanctions.json';
+import manquements from '../../../data/manquements.json';
 
-const decisions = sanctions.decisions;
-
-const themes = [
-  { key: 'lcb-ft', label: 'LCB-FT', desc: 'Défaillances liées aux obligations de lutte contre le blanchiment et le financement du terrorisme.' },
-  { key: 'tm', label: 'Transaction Monitoring', desc: 'Défaillances liées aux scénarios, alertes et dispositifs de surveillance des opérations.' },
-  { key: 'gel', label: 'Gel des avoirs', desc: 'Défaillances liées au criblage, au suivi et à la mise en œuvre du gel.' },
-  { key: 'controle-interne', label: 'Contrôle interne', desc: 'Défaillances liées au dispositif de contrôle interne (gouvernance, procédures, traçabilité).' },
-];
-
-const getDecisionsByTheme = (themeKey: string) => decisions.filter(d => d.themes.includes(themeKey));
-
-const formatAmount = (n: number | null) => {
-  if (n === null) return '—';
-  if (n === 0) return '0 €';
-  return n.toLocaleString('fr-FR') + ' €';
+const themeOrder = ['kyc', 'tm', 'ds', 'ppe', 'gel'] as const;
+const themeLabels: Record<string, string> = {
+  kyc: 'KYC / Identification',
+  tm: 'Transaction Monitoring',
+  ds: 'Déclaration de soupçon',
+  ppe: 'PPE / Vigilance renforcée',
+  gel: 'Gel des avoirs'
 };
 ---
 
 <BaseLayout
-  title="Défaillances par type — Sanctions ACPR & AMF — Early Brief"
-  description="Synthèse des défaillances sanctionnées par l'ACPR et l'AMF : LCB-FT, transaction monitoring, gel des avoirs, contrôle interne."
+  title="Défaillances par type — Sanctions ACPR & AMF 2020–2025 — Early Brief"
+  description="400 occurrences de manquements sur 32 décisions ACPR et AMF (2020–2025). Analyse par thème : KYC, TM, DS, PPE, Gel."
   canonicalUrl="https://early-brief.com/ressources/sanctions/manquements"
 >
 <div class="page">
@@ -31,55 +23,75 @@ const formatAmount = (n: number | null) => {
 
     <div class="fiche-header">
         <div class="fiche-meta">
-            <span class="fiche-category" data-cat="sanctions">Thématique</span>
-            <span class="fiche-date">Données mises à jour au 21/03/2026</span>
+            <span class="fiche-category" data-cat="sanctions">Sanctions</span>
+            <span class="fiche-date">Mis à jour le 21/03/2026</span>
         </div>
-        <h1 class="fiche-title">Défaillances par type</h1>
-        <p class="fiche-question">Synthèse des manquements sanctionnés par l'ACPR et l'AMF, classés par thème LCB-FT.</p>
+        <h1 class="fiche-title">Défaillances par type de manquement</h1>
+        <p class="fiche-question">{manquements.meta.total_occurrences} occurrences · {manquements.meta.total_decisions} décisions · {manquements.meta.periode}</p>
     </div>
 
-    {themes.map((theme) => {
-      const themeDecisions = getDecisionsByTheme(theme.key);
-      return themeDecisions.length > 0 ? (
-        <section class="fiche-section">
-          <h2>{theme.label}</h2>
-          <p>{theme.desc}</p>
-          <table class="comparison-table">
-            <thead>
-              <tr><th>Autorité</th><th>Entité</th><th>Sanction</th><th>Résumé</th></tr>
-            </thead>
-            <tbody>
-              {themeDecisions.map((d) => (
-                <tr>
-                  <td><strong>{d.autorite}</strong></td>
-                  <td><a href={d.source} target="_blank" rel="noopener noreferrer">{d.entite}</a></td>
-                  <td>{d.sanction_pecuniaire ? formatAmount(d.sanction_pecuniaire) : '—'}{d.sanction_disciplinaire ? ` + ${d.sanction_disciplinaire}` : ''}</td>
-                  <td>{d.resume}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      ) : null;
-    })}
-
     <section class="fiche-section">
-        <div class="info-box">
-            <p><strong>Note méthodologique :</strong> Cette page ne couvre que les thèmes LCB-FT identifiés dans les décisions du dataset. Les manquements « Obligations professionnelles » et « Abus de marché » (AMF) ne sont pas détaillés ici — voir l'<a href="/ressources/sanctions/analyse-2025/">analyse 2025</a> pour la vue complète.</p>
+        <div class="fiche-reponse">
+            <p><strong>{manquements.meta.total_occurrences} constats de manquement</strong> extraits de {manquements.meta.total_decisions} décisions ACPR et AMF publiées entre 2020 et 2025. Chaque constat est classé par thème et rattaché à sa décision source.</p>
         </div>
     </section>
+
+    <nav class="fiche-section" style="margin-bottom: 1.5rem;">
+        <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            {themeOrder.map(key => (
+                <li>
+                    <a href={`#${key}`} style="font-family: var(--mono); font-size: 0.7rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.08em; padding: 0.3rem 0.6rem; border: 1px solid rgba(44,74,46,0.2); border-radius: 2px; text-decoration: none;">
+                        {themeLabels[key]} ({manquements.themes[key].count})
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+
+    {themeOrder.map(key => {
+        const theme = manquements.themes[key];
+        return (
+            <section class="fiche-section" id={key}>
+                <h2>{theme.label} — {theme.count} constats</h2>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 8%; text-align: left;">Autorité</th>
+                                <th style="width: 14%; text-align: left;">Décision</th>
+                                <th style="width: 18%; text-align: left;">Entité</th>
+                                <th style="width: 55%; text-align: left;">Constat</th>
+                                <th style="width: 5%;">Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {theme.items.map((item: any) => (
+                                <tr>
+                                    <td style="text-align: left; font-weight: 400;">{item.autorite}</td>
+                                    <td style="text-align: left; font-family: var(--mono); font-size: 0.7rem;">{item.decision}</td>
+                                    <td style="text-align: left; font-weight: 500;">{item.entite}</td>
+                                    <td style="text-align: left; font-size: 0.75rem; line-height: 1.4;">{item.constat}</td>
+                                    <td>{item.page ?? '—'}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        );
+    })}
 
     <section class="fiche-section fiche-sources">
         <h2>Sources</h2>
         <div class="fiche-source-item">
-            <span class="fiche-source-authority">AMF</span>
-            <span class="fiche-source-ref">Sanctions et transactions</span>
-            <a href="https://www.amf-france.org/fr/sanctions-transactions/sanctions-et-transactions-accueil" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Recueil des décisions de la Commission des sanctions</span>
+            <a href="https://acpr.banque-france.fr/fr/publications-et-statistiques/publications?f%5B0%5D=category_publication%3A116" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
         </div>
         <div class="fiche-source-item">
-            <span class="fiche-source-authority">ACPR</span>
-            <span class="fiche-source-ref">Recueil des sanctions</span>
-            <a href="https://acpr.banque-france.fr/fr/reglementation/recueil-des-sanctions" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-authority">AMF</span>
+            <span class="fiche-source-ref">Répertoire des décisions de la Commission des sanctions</span>
+            <a href="https://www.amf-france.org/fr/sanctions-transactions/sanctions-et-transactions-accueil" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
         </div>
     </section>
 
