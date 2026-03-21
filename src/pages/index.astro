@@ -3,11 +3,98 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Early Brief — Veille réglementaire LCB-FT & Conformité"
-  description="Votre newsletter de veille réglementaire en conformité financière, LCB-FT et sanctions internationales."
+  title="Early Brief — Veille réglementaire pour fintechs et professionnels de la conformité"
+  description="Veille réglementaire exploitable sur LCB-FT, MiCA, DORA, PSD3, AI Act et sanctions. Newsletter, ressources et accompagnement pour fintechs, PSP, CASP et professions assujetties."
+  canonicalUrl="https://early-brief.com"
 >
-  <section class="hero">
-    <h1>Early Brief</h1>
-    <p>Veille réglementaire en conformité financière, LCB-FT et sanctions internationales.</p>
-  </section>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="home-hero">
+    <h1>La réglementation,<br><em>traduite en actions.</em></h1>
+    <p class="home-desc">Trop de publications, trop peu de temps. Je sélectionne, hiérarchise et traduis l'actualité réglementaire en contenu directement exploitable — pour les équipes conformité, les fintechs et les professions assujetties.</p>
+    <div class="home-cta">
+      <a href="https://mariaiaciancio.substack.com" class="cta-btn" target="_blank" rel="noopener noreferrer">S'abonner à la newsletter</a>
+      <a href="/offre" class="cta-secondary">Travailler ensemble →</a>
+    </div>
+  </div>
+
+  <!-- CE QUE JE PRODUIS -->
+  <div class="home-section">
+    <div class="home-section-label">Ce que vous trouvez ici</div>
+    <div class="home-grid">
+      <div class="home-card">
+        <div class="home-card-num">01</div>
+        <div class="home-card-title">Newsletter</div>
+        <p class="home-card-desc">Récap hebdo + analyses opérationnelles sur LCB-FT, MiCA, DORA, PSD3, AI Act et sanctions. Gratuite sur Substack.</p>
+        <a href="https://mariaiaciancio.substack.com" class="home-card-link" target="_blank" rel="noopener noreferrer">S'abonner →</a>
+      </div>
+      <div class="home-card">
+        <div class="home-card-num">02</div>
+        <div class="home-card-title">Ressources</div>
+        <p class="home-card-desc">Guides, outils et décryptages opérationnels — calendriers réglementaires, checklists et analyses par thème.</p>
+        <a href="/ressources" class="home-card-link">Explorer →</a>
+      </div>
+      <div class="home-card">
+        <div class="home-card-num">03</div>
+        <div class="home-card-title">Travailler ensemble</div>
+        <p class="home-card-desc">Partenariat éditorial, marque blanche ou système de veille internalisé — pour fintechs, PSP, CASP et cabinets.</p>
+        <a href="/offre" class="home-card-link">Voir les formats →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDIBILITE -->
+  <div class="home-about">
+    <div class="home-about-text">
+      <div class="home-section-label">Qui je suis</div>
+      <p>Ancienne BNP Paribas et Crédit Agricole, j'ai ensuite rejoint l'univers fintech — PSP, crypto, MiCA. À mon compte depuis 3 ans, j'accompagne mes clients dans leur mise en conformité réglementaire et produis une veille opérationnelle sur les textes qui les concernent directement.</p>
+      <a href="/a-propos" class="home-card-link">En savoir plus →</a>
+    </div>
+  </div>
+
+  <!-- DERNIERS ARTICLES -->
+  <div class="home-section">
+    <div class="home-section-label">Derniers articles</div>
+    <div class="articles-grid">
+      <a class="article-card" href="https://mariaiaciancio.substack.com/p/early-brief-14-mars-2026-sanctions" target="_blank" rel="noopener noreferrer">
+        <div class="article-meta">14 mars 2026 · Sanctions</div>
+        <div class="article-title">Sanctions Russie — FAQ paiements : ce que ça change pour les PSP et EME</div>
+        <p class="article-excerpt">La Commission précise quels services de paiement sont visés par l'article 5b(2) — et lesquels ne le sont pas.</p>
+        <div class="article-link">Lire sur Substack →</div>
+      </a>
+      <a class="article-card" href="https://mariaiaciancio.substack.com/p/ia-regulation-financiere-02" target="_blank" rel="noopener noreferrer">
+        <div class="article-meta">Mars 2026 · AI Act</div>
+        <div class="article-title">IA × Régulation financière #02 — Ce que l'Omnibus numérique change</div>
+        <p class="article-excerpt">Ce que l'Omnibus numérique change concrètement pour les institutions financières soumises à l'AI Act.</p>
+        <div class="article-link">Lire sur Substack →</div>
+      </a>
+      <a class="article-card" href="https://mariaiaciancio.substack.com/p/early-brief-recap-hebdo-semaine-du-afd" target="_blank" rel="noopener noreferrer">
+        <div class="article-meta">Semaine du 9 au 13 mars 2026 · Récap</div>
+        <div class="article-title">GAFI, OFAC, tokenisation — La semaine réglementaire</div>
+        <p class="article-excerpt">GAFI, OFAC, tokenisation — la semaine réglementaire sélectionnée et orientée impact opérationnel.</p>
+        <div class="article-link">Lire sur Substack →</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Maria Garcia",
+  "url": "https://early-brief.com",
+  "jobTitle": "Experte conformité réglementaire",
+  "description": "Veille réglementaire exploitable pour fintechs, PSP, CASP et professions assujetties — LCB-FT, MiCA, DORA, PSD3, AI Act, sanctions.",
+  "knowsAbout": ["LCB-FT", "MiCA", "DORA", "PSD3", "AI Act", "Sanctions", "KYC", "conformité fintech"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Early Brief",
+    "url": "https://early-brief.com"
+  }
+}
+</script>
 </BaseLayout>
