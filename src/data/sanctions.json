@@ -176,8 +176,8 @@
       "annee": 2025,
       "entite": "CARCO",
       "type_entite": "Institution de prévoyance",
-      "sanction_pecuniaire": null,
-      "sanction_disciplinaire": null,
+      "sanction_pecuniaire": 500000,
+      "sanction_disciplinaire": "Blâme",
       "themes": ["autres"],
       "source": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-de-la-commission-des-sanctions-ndeg-2023-03-du-7-janvier-2025-legard-de-la-carco",
       "resume": "Information des assurés, lutte contre la déshérence, relations avec le superviseur."
