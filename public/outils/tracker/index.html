@@ -234,13 +234,16 @@
 
   /* FILTER BAR */
   .filter-bar { display:flex; gap:16px; padding:16px 28px 16px; align-items:center; border-bottom:1px solid #E3DDD2; background:var(--ecru); }
-  .filter-bar select { font-family:var(--font-display); font-size:12px; font-weight:500; border:1px solid #DDD6CA; background:#F8F4ED; color:var(--dark); outline:none; cursor:pointer; padding:8px 12px; border-radius:0; min-width:160px; }
-  .filter-bar select:focus { border-color:#AAA095; background:#FFFDF9; }
+  .filter-bar select { font-family:var(--font-body); font-size:0.85rem; font-weight:400; border:1px solid #C8C4B8; background:#F5F2EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239E3D1B'/%3E%3C/svg%3E") no-repeat right 0.75rem center; color:#4A4A3A; outline:none; cursor:pointer; padding:0.5rem 2rem 0.5rem 0.75rem; border-radius:2px; min-width:160px; -webkit-appearance:none; appearance:none; }
+  .filter-bar select:focus { border-color:#2D5A3D; }
+  .filter-search { font-family:var(--font-body); font-size:0.85rem; border:1px solid #C8C4B8; border-radius:2px; padding:0.5rem 0.75rem; outline:none; background:#F5F2EB; color:#4A4A3A; min-width:180px; }
+  .filter-search::placeholder { color:#9E9E8A; }
+  .filter-search:focus { border-color:#2D5A3D; }
   .filter-results { font-size:12px; color:var(--gray-400); margin-left:auto; }
-  .export-btn { font-family:var(--font-display); font-size:12px; font-weight:600; color:#4E4A45; background:transparent; border:1px solid #DDD6CA; padding:8px 12px; border-radius:10px; cursor:pointer; }
-  .export-btn:hover { background:#F3EEE6; color:#1A1A1A; }
-  .filter-reset { font-family:var(--font-display); font-size:12px; color:var(--mid); cursor:pointer; border:none; background:none; text-decoration:underline; align-self:flex-end; padding-bottom:4px; }
-  .filter-reset:hover { color:var(--dark); }
+  .export-btn { font-family:var(--font-body); font-size:0.85rem; font-weight:500; color:#2D5A3D; background:transparent; border:1px solid #2D5A3D; padding:0.5rem 0.75rem; border-radius:2px; cursor:pointer; transition:all .15s; }
+  .export-btn:hover { background:#2D5A3D; color:#F5F2EB; }
+  .filter-reset { font-family:var(--font-body); font-size:0.85rem; color:#9E3D1B; cursor:pointer; border:none; background:none; text-decoration:underline; align-self:center; padding:0; }
+  .filter-reset:hover { color:#7A2E14; }
   .row-hidden { display:none !important; }
 
   /* MODE D'EMPLOI — redesign */
@@ -353,7 +356,7 @@
     <select id="filter-month"><option value="all">Mois — tous</option></select>
     <select id="filter-source"><option value="all">Source — toutes</option></select>
     <select id="filter-statut"><option value="all">Statut — tous</option></select>
-    <input type="search" id="filter-search" placeholder="Rechercher…" style="font-family:var(--font-display);font-size:12px;border:1px solid var(--gray-200);border-radius:10px;padding:8px 12px;outline:none;background:var(--gray-50);color:var(--dark);min-width:180px;">
+    <input type="search" id="filter-search" placeholder="Rechercher…" class="filter-search">
     <button class="export-btn" onclick="exportCSV()">↓ Excel</button>
     <button type="button" class="filter-reset" onclick="resetFilters()">Réinitialiser</button>
     <div class="filter-results" id="filter-results"></div>
