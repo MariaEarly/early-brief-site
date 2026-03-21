@@ -9,19 +9,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <div class="page">
     <div class="fiche-content">
 
-<h2>Vue d'ensemble</h2>
+<a href="/ressources/amla-supervision-cadre/" class="fiche-back">&larr; Vue d'ensemble du cadre AMLA</a>
 
-<div class="info-box">
-    <p><strong>Contexte institutionnel :</strong> l'EBA a transféré ses compétences LCB-FT à l'AMLA le 31 décembre 2025. L'AMLA est désormais l'autorité européenne unique en matière de supervision anti-blanchiment. Les textes techniques (2 RTS + 1 ITS) publiés le 18 décembre 2025 sont des projets en cours de finalisation post-consultation (clôturée le 27 janvier 2026).</p>
-</div>
+<h2>Supervision directe vs indirecte — tableau comparatif</h2>
+<p>Comparaison des deux régimes AMLA applicables à partir de 2028.</p>
 
-<p>À partir de 2028, la supervision LCB-FT en Europe se structure en 2 niveaux :</p>
-<ul>
-    <li><strong>Supervision directe AMLA</strong> : ~40 groupes/établissements complexes et transfrontaliers</li>
-    <li><strong>Supervision indirecte (nationale)</strong> : tous les autres, selon méthodologie AMLA harmonisée</li>
-</ul>
-<p>Ce tableau compare les 2 modèles.</p>
-<hr>
 <h2>Critères d'éligibilité</h2>
 <table class="comparison-table"><thead>
 <tr><th>Critère</th><th>Supervision Directe (AMLA)</th><th>Supervision Indirecte (Nationale)</th></tr>
@@ -33,7 +25,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Critère additionnel</strong></td><td>Complexité transfrontalière</td><td>N/A</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Superviseur responsable</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -44,7 +35,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Interlocuteur quotidien</strong></td><td>JST (mix AMLA + local)</td><td>Superviseur national uniquement</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Méthodologie d'évaluation des risques</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -57,7 +47,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Différence clé</strong></td><td>Aucun ajustement local = comparabilité totale</td><td>Ajustement local limité possible</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Datapoints à fournir</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -69,7 +58,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Qualité requise</strong></td><td>Contrôles qualité renforcés avant transmission AMLA</td><td>Standards nationaux</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Inspections et examens</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -81,7 +69,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Documentation</strong></td><td>Anglais requis</td><td>Langue locale acceptable</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Reporting et communication</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -93,7 +80,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Escalade</strong></td><td>AMLA décide en dernier ressort</td><td>Superviseur national décide</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Pouvoirs de supervision</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -105,7 +91,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Retrait d'agrément</strong></td><td>AMLA peut retirer</td><td>Superviseur national peut retirer</td></tr>
 </tbody></table>
 
-<hr>
 <h2>Coûts de supervision</h2>
 <table class="comparison-table"><thead>
 <tr><th>Aspect</th><th>Supervision Directe</th><th>Supervision Indirecte</th></tr>
@@ -115,122 +100,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <tr><td><strong>Calcul</strong></td><td>Basé sur taille/risque de l'entité</td><td>Selon règles nationales</td></tr>
 </tbody></table>
 
-<hr>
-<h2>Avantages et inconvénients</h2>
-
-<div class="amla-cards">
-    <div class="amla-card-pos">
-        <span class="amla-card-label">Supervision directe (AMLA)</span>
-        <p><strong>Avantages</strong></p>
-        <ul>
-            <li>Vision européenne cohérente</li>
-            <li>Expertise transfrontalière AMLA</li>
-            <li>Passeport européen facilité (déjà connu par l'autorité centrale)</li>
-            <li>Interlocuteur unique pour opérations UE</li>
-        </ul>
-        <p><strong>Inconvénients</strong></p>
-        <ul>
-            <li>Coûts plus élevés (double contribution)</li>
-            <li>Documentation en anglais obligatoire</li>
-            <li>Processus plus lourd (JST = 2 niveaux)</li>
-            <li>Inspections potentiellement plus fréquentes</li>
-            <li>Exigences harmonisées strictes (pas d'ajustement local)</li>
-        </ul>
-    </div>
-    <div class="amla-card-neg">
-        <span class="amla-card-label">Supervision indirecte (nationale)</span>
-        <p><strong>Avantages</strong></p>
-        <ul>
-            <li>Coûts standard (contribution nationale uniquement)</li>
-            <li>Langue locale acceptable</li>
-            <li>Relation établie avec superviseur national</li>
-            <li>Ajustements locaux possibles (±1 niveau)</li>
-            <li>Moins de reporting transfrontalier</li>
-        </ul>
-        <p><strong>Inconvénients</strong></p>
-        <ul>
-            <li>Pas d'expertise AMLA directe</li>
-            <li>Passeport européen via coordination nationale (peut être plus long)</li>
-            <li>Moins de visibilité européenne</li>
-        </ul>
-    </div>
-</div>
-<hr>
-<h2>Transition supervision nationale → AMLA</h2>
-<table class="comparison-table"><thead>
-<tr><th>Étape</th><th>Timeline</th><th>Actions</th></tr>
-</thead><tbody>
-<tr><td><strong>Identification</strong></td><td>2027</td><td>AMLA sélectionne les 40 entités selon critères</td></tr>
-<tr><td><strong>Notification</strong></td><td>2027 Q3-Q4</td><td>Notification formelle aux entités concernées</td></tr>
-<tr><td><strong>Préparation</strong></td><td>2027 Q4 - 2028 Q1</td><td>Harmonisation documentation, traduction anglais, constitution JST</td></tr>
-<tr><td><strong>Transfert</strong></td><td>2028 Q1</td><td>Transfert formel de la supervision au JST</td></tr>
-<tr><td><strong>Supervision effective</strong></td><td>À partir de 2028</td><td>Première collecte datapoints, inspections, reporting</td></tr>
-</tbody></table>
-
-<hr>
-<h2>Matrice de décision : Serai-je sous supervision directe ?</h2>
-<p>Utilisez cette matrice pour évaluer votre situation :</p>
-<table class="comparison-table"><thead>
-<tr><th>Question</th><th>Réponse</th><th>Points</th></tr>
-</thead><tbody>
-<tr><td>Avez-vous une présence matérielle dans ≥6 États membres UE ?</td><td>Oui = +10 / Non = 0</td><td></td></tr>
-<tr><td>Dépassez-vous 20k clients dans au moins 6 États ?</td><td>Oui = +10 / Non = 0</td><td></td></tr>
-<tr><td>OU dépassez-vous 50M€ de flux dans au moins 6 États ?</td><td>Oui = +10 / Non = 0</td><td></td></tr>
-<tr><td>Votre score de risque résiduel est-il élevé (3-4/4) ?</td><td>Oui = +10 / Non = 0</td><td></td></tr>
-<tr><td>Êtes-vous un groupe bancaire international ?</td><td>Oui = +5 / Non = 0</td><td></td></tr>
-<tr><td>Avez-vous des activités crypto-actifs transfrontalières significatives ?</td><td>Oui = +5 / Non = 0</td><td></td></tr>
-</tbody></table>
-
-<p><strong>Interprétation :</strong></p>
-<ul>
-    <li><strong>0-10 points :</strong> Très faible probabilité (supervision nationale)</li>
-    <li><strong>15-25 points :</strong> Probabilité moyenne (à surveiller)</li>
-    <li><strong>30+ points :</strong> Forte probabilité (préparer supervision directe AMLA)</li>
-</ul>
-<hr>
-<h2>Actions recommandées selon votre situation</h2>
-<h3>Si supervision directe probable (≥25 points)</h3>
-<p><strong>Immédiat (2026) :</strong></p>
-<ol>
-    <li>Traduire toute documentation clé en anglais</li>
-    <li>Harmoniser les processus groupe (éliminer les variantes locales)</li>
-    <li>Centraliser les données LCB-FT (single source of truth)</li>
-    <li>Identifier les interlocuteurs JST (RCCI, équipes locales)</li>
-    <li>Budgéter les coûts additionnels (contribution AMLA + ressources)</li>
-</ol>
-<p><strong>Moyen terme (2027) :</strong></p>
-<ol start="6">
-    <li>Simuler les 100-150 datapoints AMLA</li>
-    <li>Tester la collecte transfrontalière</li>
-    <li>Former les équipes au reporting anglais</li>
-    <li>Préparer le dossier de présentation AMLA</li>
-</ol>
-<hr>
-<h3>Si supervision indirecte (nationale)</h3>
-<p><strong>Immédiat (2026) :</strong></p>
-<ol>
-    <li>Aligner les modèles de risque sur taxonomie AMLA</li>
-    <li>Cartographier les 100-150 datapoints</li>
-    <li>Préparer les preuves de qualité des contrôles</li>
-    <li>Maintenir le dialogue avec ACPR/AMF</li>
-</ol>
-<p><strong>Moyen terme (2027-2028) :</strong></p>
-<ol start="5">
-    <li>Adapter les systèmes de collecte aux datapoints AMLA</li>
-    <li>Former les équipes à la méthodologie harmonisée</li>
-    <li>Documenter les ajustements locaux (si utilisés)</li>
-</ol>
-<hr>
-<h2>FAQ</h2>
-<p><strong>Q : Puis-je passer de supervision indirecte à directe après 2028 ?</strong></p>
-<p>R : Oui. L'AMLA réévaluera régulièrement la liste. Si votre empreinte/risque augmente, vous pourriez basculer en supervision directe.</p>
-<p><strong>Q : Puis-je contester ma sélection pour supervision directe ?</strong></p>
-<p>R : Les critères sont objectifs (empreinte + risque résiduel). Contestation possible sur le calcul du score de risque, pas sur les seuils géographiques.</p>
-<p><strong>Q : La supervision directe AMLA remplace-t-elle totalement le superviseur national ?</strong></p>
-<p>R : Non. Le superviseur national reste impliqué via le JST et conserve des compétences (ex: agrément initial, certaines décisions locales).</p>
-<p><strong>Q : Quel est le coût estimé de la supervision directe AMLA ?</strong></p>
-<p>R : Non communiqué officiellement. Estimations : contribution AMLA = 150-300% de la contribution nationale actuelle (selon taille/complexité).</p>
-<hr>
 <section class="fiche-section fiche-sources">
 <h2>Sources</h2>
 <div class="fiche-source-item">
