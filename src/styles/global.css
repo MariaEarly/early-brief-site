@@ -1165,8 +1165,8 @@ hr {
 /* ─── AMLA pages — étapes numérotées ─── */
 .amla-etape {
   border-left: 2px solid #2D5A3D;
-  padding: 0.75rem 0 0.75rem 1.25rem;
-  margin: 0 0 1.75rem 0;
+  padding: 0.6rem 0 0.25rem 1.25rem;
+  margin: 0 0 2rem 0;
 }
 .amla-etape-titre {
   font-family: var(--mono);
