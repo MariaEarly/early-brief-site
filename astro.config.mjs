@@ -7,4 +7,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://early-brief.com',
   integrations: [sitemap()],
+  trailingSlash: 'always',
 });
