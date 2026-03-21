@@ -4,10 +4,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Contact — Early Brief"
-  description="Contactez l'équipe Early Brief pour toute question sur nos services de veille réglementaire."
+  description="Contactez Early Brief pour une question sur la newsletter, l'offre de services ou toute autre demande."
+  canonicalUrl="https://early-brief.com/contact"
 >
-  <section>
-    <h1>Contact</h1>
-    <p>Une question ? N'hésitez pas à nous écrire.</p>
-  </section>
+<div class="page">
+
+  <div class="contact-hero">
+    <h1>Prendre contact</h1>
+    <p class="contact-intro">Pour une question sur la newsletter, l'offre de services, ou toute autre demande.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-form-wrap">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+        <div class="form-field">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required placeholder="Votre nom" />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+        </div>
+        <div class="form-field">
+          <label for="sujet">Type de demande</label>
+          <select id="sujet" name="sujet" required>
+            <option value="" disabled selected>Choisir...</option>
+            <option value="newsletter">Newsletter</option>
+            <option value="offre">Offre de services</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Votre message..."></textarea>
+        </div>
+        <button type="submit" class="cta-btn submit-btn">Envoyer</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <div class="contact-info-label">Email direct</div>
+        <a href="mailto:maria@early.consulting" class="contact-email">maria@early.consulting</a>
+      </div>
+      <div class="contact-info-block">
+        <div class="contact-info-label">Newsletter</div>
+        <a href="https://mariaiaciancio.substack.com" target="_blank" rel="noopener noreferrer" class="home-card-link">S'abonner sur Substack →</a>
+      </div>
+      <div class="contact-info-block">
+        <div class="contact-info-label">Offre de services</div>
+        <a href="/offre" class="home-card-link">Voir les formats →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
 </BaseLayout>

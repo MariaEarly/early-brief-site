@@ -3,11 +3,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="À propos — Early Brief"
-  description="En savoir plus sur Early Brief, notre mission et notre équipe dédiée à la veille réglementaire."
+  title="À propos — Early Brief | Veille réglementaire exploitable"
+  description="Early Brief est une veille réglementaire conçue pour débloquer, anticiper et faire comprendre — par une experte en conformité fintech."
+  canonicalUrl="https://early-brief.com/a-propos"
 >
-  <section>
-    <h1>À propos</h1>
-    <p>Notre mission : rendre la veille réglementaire accessible et actionnable.</p>
-  </section>
+<div class="page">
+
+  <div class="about-hero">
+    <h1>Pourquoi <em>Early Brief</em></h1>
+    <p class="about-intro">Une veille réglementaire conçue pour être utilisable — pas seulement lue.</p>
+  </div>
+
+  <div class="about-section">
+    <div class="about-block">
+      <div class="about-num">01</div>
+      <div class="about-content">
+        <h2>Débloquer sur les zones grises</h2>
+        <p>Les textes ne répondent pas toujours clairement. Il faut interpréter, arbitrer, décider avec une information incomplète. Early Brief prend position là où les publications officielles s'arrêtent — pas pour remplacer un conseil juridique, mais pour donner une lecture opérationnelle utilisable.</p>
+      </div>
+    </div>
+    <div class="about-block">
+      <div class="about-num">02</div>
+      <div class="about-content">
+        <h2>Anticiper plutôt que subir</h2>
+        <p>L'information existe. Elle arrive souvent trop tard — après la décision, après le contrôle, après l'incident. L'objectif d'Early Brief est simple : que vous ayez l'information avant d'en avoir besoin, pas au moment où il faut agir dans l'urgence.</p>
+      </div>
+    </div>
+    <div class="about-block">
+      <div class="about-num">03</div>
+      <div class="about-content">
+        <h2>Faire comprendre un environnement dense</h2>
+        <p>L'environnement réglementaire est épais. Comprendre ce qui change vraiment, ce qui s'applique à qui, ce qui compte dans un texte de 80 pages — ça prend du temps que personne n'a. Early Brief fait ce travail de traduction, pour que vous puissiez décider plutôt que lire.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-context">
+    <div class="about-context-label">Le contexte</div>
+    <p>Early Brief est produit par une professionnelle de la conformité — plusieurs années en banque, puis dans des fintechs régulées (PSP, EME, actifs numériques). À son compte depuis 3 ans, elle accompagne ses clients dans leur mise en conformité réglementaire.</p>
+    <p>La newsletter, les ressources et l'offre de services partagent la même ligne éditoriale : aller à l'essentiel, citer les sources primaires, ne pas répéter ce que tout le monde dit déjà.</p>
+    <a href="/offre" class="home-card-link">Voir l'offre de services →</a>
+  </div>
+
+</div>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "À propos — Early Brief",
+  "url": "https://early-brief.com/a-propos",
+  "description": "Early Brief est une veille réglementaire conçue pour débloquer, anticiper et faire comprendre — par une experte en conformité fintech.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Early Brief",
+    "url": "https://early-brief.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Maria Garcia",
+      "jobTitle": "Experte conformité réglementaire",
+      "knowsAbout": ["LCB-FT", "MiCA", "DORA", "PSD3", "AI Act", "Sanctions", "KYC", "conformité fintech"]
+    }
+  }
+}
+</script>
 </BaseLayout>

@@ -3,11 +3,90 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Newsletter — Early Brief"
-  description="Inscrivez-vous à la newsletter Early Brief pour recevoir notre veille réglementaire chaque semaine."
+  title="Newsletter — Early Brief | Veille réglementaire hebdomadaire"
+  description="Récap hebdo + analyses opérationnelles sur LCB-FT, MiCA, DORA, PSD3, AI Act et sanctions. Gratuite, sur Substack. Pour les équipes conformité, fintechs et professions assujetties."
+  canonicalUrl="https://early-brief.com/newsletter"
 >
-  <section>
-    <h1>Newsletter</h1>
-    <p>Recevez chaque semaine l'essentiel de l'actualité réglementaire.</p>
-  </section>
+<div class="page">
+
+  <div class="nl-hero">
+    <h1>La veille qui <em>dit quoi faire</em></h1>
+    <p class="nl-intro">Lundi, mercredi, week-end — et dès que l'actu le mérite. Gratuit sur Substack.</p>
+    <a href="https://mariaiaciancio.substack.com" class="cta-btn" target="_blank" rel="noopener noreferrer">S'abonner gratuitement</a>
+  </div>
+
+  <div class="nl-formats">
+    <div class="nl-formats-label">Ce que vous recevez</div>
+    <div class="nl-format">
+      <div class="nl-format-day">Lundi</div>
+      <div class="nl-format-content">
+        <h2>Récap hebdo</h2>
+        <p>Les publications de la semaine — régulateurs européens et internationaux, autorités nationales, organisations intergouvernementales. Sélectionnés, hiérarchisés, avec l'essentiel à retenir. Pas une liste exhaustive — ce qui compte pour les équipes conformité de fintechs et professions assujetties.</p>
+      </div>
+    </div>
+    <div class="nl-format">
+      <div class="nl-format-day">Mercredi</div>
+      <div class="nl-format-content">
+        <h2>Analyse opérationnelle</h2>
+        <p>Un sujet traité en profondeur — LCB-FT, sanctions, MiCA, DORA, PSD3, AI Act. Une lecture orientée risque, avec les implications concrètes pour les équipes. Ce que ça change, ce qu'il faut mettre à jour, ce qu'il faut anticiper.</p>
+      </div>
+    </div>
+    <div class="nl-format">
+      <div class="nl-format-day">Selon l'actu</div>
+      <div class="nl-format-content">
+        <h2>Flash réglementaire</h2>
+        <p>Dès qu'une publication le mérite — décision ACPR, mise à jour de liste de sanctions, texte européen structurant — une édition dédiée paraît sans attendre le récap du lundi.</p>
+      </div>
+    </div>
+    <div class="nl-format">
+      <div class="nl-format-day">Week-end</div>
+      <div class="nl-format-content">
+        <h2>IA × Régulation financière</h2>
+        <p>L'intersection entre intelligence artificielle et conformité réglementaire — AI Act, usages IA en conformité, outils, jurisprudence émergente. Une série dédiée pour comprendre ce qui vient.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nl-proof">
+    <div class="nl-proof-label">Pour qui</div>
+    <div class="nl-proof-grid">
+      <div class="nl-proof-item">
+        <div class="nl-proof-title">Équipes conformité &amp; RCCI</div>
+        <p>Rester à jour sans lire tout ce qui sort. Recevoir directement ce qui s'applique à votre structure.</p>
+      </div>
+      <div class="nl-proof-item">
+        <div class="nl-proof-title">CEO &amp; dirigeants de fintechs</div>
+        <p>Comprendre l'environnement réglementaire sans en faire un métier. Anticiper les obligations avant qu'elles deviennent urgentes.</p>
+      </div>
+      <div class="nl-proof-item">
+        <div class="nl-proof-title">Cabinets &amp; consultants</div>
+        <p>Une veille opérationnelle complémentaire — LCB-FT, sanctions, crypto, paiements, IA.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nl-cta">
+    <p class="nl-cta-text">Gratuite. Deux éditions par semaine. Désinscription en un clic.</p>
+    <a href="https://mariaiaciancio.substack.com" class="cta-btn" target="_blank" rel="noopener noreferrer">S'abonner sur Substack</a>
+  </div>
+
+</div>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Early Brief Newsletter",
+  "url": "https://early-brief.com/newsletter",
+  "description": "Veille réglementaire hebdomadaire sur LCB-FT, MiCA, DORA, PSD3, AI Act et sanctions.",
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Garcia",
+    "url": "https://early-brief.com"
+  },
+  "inLanguage": "fr",
+  "isAccessibleForFree": true
+}
+</script>
 </BaseLayout>
