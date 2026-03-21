@@ -1,0 +1,59 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Early Brief</p>
+    <nav class="footer-links">
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+      <a href="/newsletter/">Newsletter</a>
+    </nav>
+    <p class="footer-copy">&copy; {year} Early Brief. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .footer-links a:hover {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--ghost);
+  }
+</style>
