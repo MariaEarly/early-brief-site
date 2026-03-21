@@ -268,19 +268,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <span class="obligation-number">1</span>
     <span class="obligation-title">Gouvernance des données réglementaires</span>
     <div class="obligation-content">
-        <p><strong>Actions :</strong></p>
-        <ol>
-            <li>Cartographier les 100-150 datapoints requis</li>
-            <li>Identifier les sources de données (SI, tableaux, processus)</li>
-            <li>Vérifier la qualité et traçabilité</li>
-            <li>Définir les responsabilités (data owners)</li>
-            <li>Mettre en place des contrôles de cohérence</li>
-        </ol>
-        <p><strong>Outils :</strong></p>
         <ul>
-            <li>Matrice de traçabilité (datapoint → source → owner)</li>
-            <li>Lignage des données documenté</li>
-            <li>Procédures de collecte formalisées</li>
+            <li>Cartographier les 100-150 datapoints requis</li>
+            <li>Identifier les sources de données et définir les data owners</li>
+            <li>Mettre en place contrôles de cohérence et traçabilité</li>
         </ul>
     </div>
 </div>
@@ -289,18 +280,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <span class="obligation-number">2</span>
     <span class="obligation-title">Alignement des modèles internes</span>
     <div class="obligation-content">
-        <p><strong>Actions :</strong></p>
-        <ol>
-            <li>Comparer votre BWRA/CRA avec la taxonomie AMLA</li>
-            <li>Adopter le même langage (4 facteurs, scoring 1-4)</li>
-            <li>Distinguer clairement risque inhérent vs résiduel</li>
-            <li>Documenter les ajustements de scoring (±1 niveau max)</li>
-        </ol>
-        <p><strong>Livrables :</strong></p>
         <ul>
-            <li>Mapping BWRA actuel → BWRA AMLA</li>
-            <li>Gap analysis documentée</li>
-            <li>Plan de migration</li>
+            <li>Comparer votre BWRA/CRA avec la taxonomie AMLA (4 facteurs, scoring 1-4)</li>
+            <li>Distinguer clairement risque inhérent vs résiduel</li>
+            <li>Produire le mapping BWRA actuel → BWRA AMLA + gap analysis</li>
         </ul>
     </div>
 </div>
@@ -309,25 +292,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <span class="obligation-number">3</span>
     <span class="obligation-title">Bibliothèque de preuves de contrôle</span>
     <div class="obligation-content">
-        <p><strong>Actions :</strong></p>
-        <ol>
-            <li>Lister tous vos contrôles LCB-FT (gouvernance, monitoring, KYC, formation, audit)</li>
-            <li>Constituer le dossier de preuves pour chacun :
-                <ul>
-                    <li>Politiques et procédures</li>
-                    <li>Métriques de performance (KPIs)</li>
-                    <li>Rapports d'audit interne/externe</li>
-                    <li>Calendriers de formation + attestations</li>
-                    <li>Logs système (alertes, décisions)</li>
-                </ul>
-            </li>
-            <li>Organiser par catégorie (scoring A/B/C/D)</li>
-        </ol>
-        <p><strong>Format recommandé :</strong></p>
         <ul>
-            <li>Repository centralisé (SharePoint, Confluence, etc.)</li>
-            <li>Index structuré</li>
-            <li>Mise à jour continue</li>
+            <li>Lister tous vos contrôles LCB-FT (gouvernance, monitoring, KYC, formation, audit)</li>
+            <li>Constituer le dossier de preuves : procédures, KPIs, rapports d'audit, logs système</li>
+            <li>Organiser dans un repository centralisé, indexé par catégorie (scoring A/B/C/D)</li>
         </ul>
     </div>
 </div>
@@ -336,24 +304,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <span class="obligation-number">4</span>
     <span class="obligation-title">Anticipation de la supervision directe</span>
     <div class="obligation-content">
-        <p><strong>Pour les groupes à forte empreinte transfrontalière :</strong></p>
-        <p><strong>Étape 1 : Mesurer l'exposition</strong></p>
+        <p><em>Pour les groupes à forte empreinte transfrontalière :</em></p>
         <ul>
-            <li>Nombre de clients par État membre</li>
-            <li>Volumes de flux par État membre</li>
-            <li>Comparer aux seuils (20k clients, 50M€)</li>
-        </ul>
-        <p><strong>Étape 2 : Modéliser le passage sous JST</strong></p>
-        <ul>
-            <li>Impacts sur gouvernance (reporting à l'AMLA + national)</li>
-            <li>Flux de données supplémentaires</li>
-            <li>Interlocuteurs à identifier</li>
-        </ul>
-        <p><strong>Étape 3 : Préparer la transition</strong></p>
-        <ul>
-            <li>Documentation complète en anglais</li>
-            <li>Procédures harmonisées groupe</li>
-            <li>Centralisation des données</li>
+            <li>Mesurer l'exposition par État membre (clients, flux) et comparer aux seuils (20k / 50M€)</li>
+            <li>Modéliser le passage sous JST : gouvernance, flux de données, interlocuteurs</li>
+            <li>Préparer la transition : documentation en anglais, procédures groupe harmonisées</li>
         </ul>
     </div>
 </div>
@@ -364,81 +319,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <section id="faq">
 <h2>FAQ (Questions fréquentes)</h2>
 
-<div class="faq-item">
-    <p class="faq-question">Q1 : Mon établissement sera-t-il supervisé directement par l'AMLA ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Seulement si vous remplissez 2 conditions :</p>
-        <ol>
-            <li>Présence matérielle dans 6 États membres ou plus (plus de 20k clients OU plus de 50M€/État)</li>
-            <li>Score de risque résiduel élevé selon méthodologie AMLA</li>
-        </ol>
-        <p>Environ 40 entités concernées en 2028.</p>
-    </div>
-</div>
+<details>
+    <summary>Mon établissement sera-t-il supervisé directement par l'AMLA ?</summary>
+    <p>Seulement si vous remplissez 2 conditions : présence matérielle dans ≥6 États membres (>20k clients OU >50M€/État) <strong>et</strong> score de risque résiduel élevé selon méthodologie AMLA. Environ 40 entités concernées en 2028.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q2 : Quand dois-je commencer à préparer mes datapoints ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Immédiatement. La phase de tests commence en 2026, et les superviseurs nationaux vont demander des données dès cette année pour préparer la méthodologie.</p>
-    </div>
-</div>
+<details>
+    <summary>Quand dois-je commencer à préparer mes datapoints ?</summary>
+    <p>Immédiatement. La phase de tests commence en 2026, et les superviseurs nationaux vont demander des données dès cette année pour préparer la méthodologie.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q3 : Puis-je continuer à utiliser mon BWRA actuel ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Oui, mais vous devez le rendre compatible avec la méthodologie AMLA (même taxonomie, même scoring). Un mapping sera nécessaire.</p>
-    </div>
-</div>
+<details>
+    <summary>Puis-je continuer à utiliser mon BWRA actuel ?</summary>
+    <p>Oui, mais vous devez le rendre compatible avec la méthodologie AMLA (même taxonomie, même scoring). Un mapping sera nécessaire.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q4 : Les 100-150 datapoints sont-ils définitifs ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> La liste exacte sera précisée dans les RTS finaux, attendus courant 2026 après analyse des contributions à la consultation (clôturée le 27 janvier 2026). Le chiffre de 100-150 est indicatif.</p>
-    </div>
-</div>
+<details>
+    <summary>Les 100-150 datapoints sont-ils définitifs ?</summary>
+    <p>La liste exacte sera précisée dans les RTS finaux, attendus courant 2026 après analyse des contributions à la consultation (clôturée le 27 janvier 2026). Le chiffre de 100-150 est indicatif.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q5 : Que se passe-t-il si je ne suis pas en conformité en 2028 ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Les superviseurs (AMLA ou nationaux selon votre cas) pourront :</p>
-        <ul>
-            <li>Refuser/retirer votre agrément</li>
-            <li>Imposer des mesures correctives</li>
-            <li>Infliger des sanctions administratives</li>
-        </ul>
-    </div>
-</div>
+<details>
+    <summary>Que se passe-t-il si je ne suis pas en conformité en 2028 ?</summary>
+    <p>Les superviseurs (AMLA ou nationaux) pourront refuser/retirer votre agrément, imposer des mesures correctives ou infliger des sanctions administratives.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q6 : Comment savoir si mes contrôles sont de "bonne qualité" (notation A/B) ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Les superviseurs évalueront sur la base de :</p>
-        <ul>
-            <li>Inspections sur place</li>
-            <li>Examens thématiques</li>
-            <li>Rapports d'audit</li>
-            <li>Métriques de performance (délais, taux d'erreur, couverture)</li>
-        </ul>
-        <p>Préparez vos preuves <strong>maintenant</strong>.</p>
-    </div>
-</div>
+<details>
+    <summary>Comment savoir si mes contrôles sont de « bonne qualité » (notation A/B) ?</summary>
+    <p>Les superviseurs évalueront sur la base d'inspections sur place, examens thématiques, rapports d'audit et métriques de performance (délais, taux d'erreur, couverture). Préparez vos preuves <strong>maintenant</strong>.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q7 : Mon établissement est uniquement en France. Suis-je concerné ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Oui. Même si vous restez sous supervision nationale, vous serez évalué selon la méthodologie AMLA harmonisée. Mêmes datapoints, même scoring.</p>
-    </div>
-</div>
+<details>
+    <summary>Mon établissement est uniquement en France. Suis-je concerné ?</summary>
+    <p>Oui. Même sous supervision nationale, vous serez évalué selon la méthodologie AMLA harmonisée. Mêmes datapoints, même scoring.</p>
+</details>
 
-<div class="faq-item">
-    <p class="faq-question">Q8 : Où trouver les textes RTS/ITS complets ?</p>
-    <div class="faq-answer">
-        <p><strong>R :</strong> Communiqué AMLA du 18 décembre 2025 : <a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" target="_blank" rel="noopener">Lien vers le communiqué</a></p>
-    </div>
-</div>
+<details>
+    <summary>Où trouver les textes RTS/ITS complets ?</summary>
+    <p><a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" target="_blank" rel="noopener noreferrer">Communiqué AMLA du 18 décembre 2025</a></p>
+</details>
 </section>
-
-<hr>
 
 <section id="sources" class="fiche-section fiche-sources">
 <h2>Sources</h2>
@@ -461,12 +381,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <span class="fiche-source-date">2024</span>
 </div>
 
-<h3>Sur Early Brief</h3>
-<ul>
-    <li><a href="/ressources/tableau-amla-comparatif/">Tableau comparatif AMLA</a></li>
-    <li><a href="/ressources/glossaire/">Glossaire LCB-FT</a></li>
-    <li><a href="/ressources/faq/">FAQ LCB-FT</a></li>
-</ul>
+</section>
+
+<section class="fiche-section">
+    <h2>Sur Early Brief</h2>
+    <ul>
+        <li><a href="/ressources/tableau-amla-comparatif/">Tableau comparatif AMLA</a></li>
+        <li><a href="/ressources/glossaire/">Glossaire LCB-FT</a></li>
+        <li><a href="/ressources/faq/">FAQ LCB-FT</a></li>
+    </ul>
 </section>
 
     <div class="fiche-retour"><a href="/ressources">&larr; Toutes les ressources</a></div>

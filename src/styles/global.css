@@ -1133,6 +1133,35 @@ hr {
   .amla-cards, .inst-perimetre-grid, .scope-grid { grid-template-columns: 1fr; }
 }
 
+/* ─── AMLA pages — FAQ accordéon ─── */
+.fiche-content details {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.75rem 0;
+}
+.fiche-content summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fiche-content summary::-webkit-details-marker { display: none; }
+.fiche-content summary::after {
+  content: "+";
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--terra);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.fiche-content details[open] summary::after { content: "−"; }
+.fiche-content details p {
+  margin-top: 0.75rem;
+}
+
 /* ─── AMLA pages — first h2 no top margin ─── */
 .fiche-content > h2:first-child {
   margin-top: 0;
