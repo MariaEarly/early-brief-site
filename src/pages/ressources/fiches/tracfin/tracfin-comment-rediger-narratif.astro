@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Déclaration de soupçon : comment rédiger un narratif utile — Fiches compliance — Early Brief"
+  description="Comment structurer la déclaration (faits, chronologie, incohérences) pour qu'elle soit exploitable par Tracfin ?"
+  canonicalUrl="https://early-brief.com/ressources/fiches/tracfin/tracfin-comment-rediger-narratif"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/fiches/" class="fiche-back">Toutes les fiches</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="tracfin">TRACFIN / Déclaration</span>
+            <span class="fiche-date">Mis à jour le 31/01/2026</span>
+        </div>
+        <h1 class="fiche-title">Déclaration de soupçon : comment rédiger un narratif utile</h1>
+        <p class="fiche-question">Comment structurer la déclaration (faits, chronologie, incohérences) pour qu'elle soit exploitable par Tracfin ?</p>
+    </div>
+
+    <section class="fiche-section">
+        <h2>Réponse</h2>
+
+        <p>Un bon narratif, c'est : <strong>des faits + une chronologie + pourquoi c'est suspect + ce que tu as fait</strong>. Pas un essai.</p>
+
+        <h3>Structure recommandée (copiable)</h3>
+
+        <strong>1) Identité et contexte</strong>
+        <ul>
+            <li>qui est le client (PP/PM), ancienneté, activité déclarée, pays</li>
+            <li>pourquoi tu le connais (produit, relation)</li>
+        </ul>
+
+        <strong>2) Chronologie factuelle (datée)</strong>
+        <ul>
+            <li>date/heure, type d'opération, montant, devise, canal, contrepartie, pays</li>
+            <li>répéter uniquement les opérations utiles (pas 50 lignes inutiles)</li>
+        </ul>
+
+        <strong>3) Signal(s) de soupçon (clair)</strong>
+        <ul>
+            <li>"écart au profil" (quoi exactement)</li>
+            <li>pattern (structuration, cash-out rapide, refunds anormaux, etc.)</li>
+            <li>absence de justification économique ou incohérences documentaires</li>
+            <li>éléments externes (adverse media, etc.) si pertinents</li>
+        </ul>
+
+        <strong>4) Démarches de l'assujetti</strong>
+        <ul>
+            <li>quelles demandes de compléments</li>
+            <li>réponses (ou absence)</li>
+            <li>mesures prises (restriction, gel, clôture, etc.) si applicable</li>
+            <li>pourquoi tu conclus au soupçon</li>
+        </ul>
+
+        <strong>5) Pièces / annexes</strong>
+        <ul>
+            <li>extraits de compte / logs / captures utiles</li>
+            <li>documents fournis par le client (si pertinents)</li>
+        </ul>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--evidence">
+            <h3>Éléments de preuve attendus</h3>
+            <ul>
+                <li>Un narratif daté et signé/validé en interne</li>
+                <li>Les pièces mentionnées réellement jointes / archivées</li>
+                <li>L'identifiant ERMES et la date d'envoi (traçabilité)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--risk">
+            <h3>Points de vigilance</h3>
+            <ul>
+                <li>Narratif trop vague ou sans chronologie &rarr; retravailler avant envoi</li>
+                <li>Pièces mentionnées mais non jointes &rarr; vérifier avant soumission</li>
+                <li>Absence de trace de validation interne &rarr; escalade</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-specificities">
+        <h2>Spécificités sectorielles</h2>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">PSP / EME</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Inclure : rôle de chaque acteur (marchand, porteur, bénéficiaire), logique refunds/chargebacks, et les paramètres de règles/alertes qui ont déclenché</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Banque</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Inclure : profil économique (revenus/activité), historique de relation, justification des virements et réponses client</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Crypto / CASP</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Inclure : séquence dépôt / conversion / retrait, contreparties et tout identifiant technique disponible si ton modèle l'expose (sans "tech dump" inutile)</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">TRACFIN</span>
+            <span class="fiche-source-ref">PDF — Guide utilisateur du formulaire de déclaration (ERMES)</span>
+            <a href="https://tracfin.finances.gouv.fr/Documentation/GuideUtilisateurs.pdf" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">TRACFIN</span>
+            <span class="fiche-source-ref">Plateforme — ERMES (infos procédure)</span>
+            <a href="https://tracfin.finances.gouv.fr/Pages/InformationsProcedure.aspx" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">PDF — Lignes directrices ACPR/Tracfin (23 avril 2025) - PDF</span>
+            <a href="https://acpr.banque-france.fr/system/files/2025-04/20250423_Lignes_directrices_obligations_Tracfin.pdf" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">23/04/2025</span>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>

@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Bénéficiaire effectif (UBO) : méthode et traitement des cas opaques — Fiches compliance — Early Brief"
+  description="Comment déterminer le bénéficiaire effectif et que faire si la structure est opaque ou si aucun UBO n'est clairement identifiable ?"
+  canonicalUrl="https://early-brief.com/ressources/fiches/kyc/ubo-beneficiaire-effectif-methode-cas-opaques"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/fiches/" class="fiche-back">Toutes les fiches</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="kyc-kyb">KYC/KYB</span>
+            <span class="fiche-date">Mis à jour le 31/01/2026</span>
+        </div>
+        <h1 class="fiche-title">Bénéficiaire effectif (UBO) : méthode et traitement des cas opaques</h1>
+        <p class="fiche-question">Comment déterminer le bénéficiaire effectif et que faire si la structure est opaque ou si aucun UBO n'est clairement identifiable ?</p>
+    </div>
+
+    <section class="fiche-section">
+        <h2>Réponse</h2>
+
+        <p>Objectif : identifier <strong>qui contrôle réellement</strong> le client (directement ou indirectement) et pouvoir <strong>le démontrer</strong>. L'UBO n'est pas un champ administratif : c'est un pivot de la vigilance.</p>
+
+        <h3>Méthode simple (défendable)</h3>
+
+        <ol>
+            <li>Identifier l'actionnariat direct (niveau 1)</li>
+            <li>Remonter la chaîne (niveaux 2, 3, ...) jusqu'aux personnes physiques</li>
+            <li>Prendre en compte le contrôle <strong>par d'autres moyens</strong> (droits de vote, pactes, nomination, contrôle de fait), si applicable</li>
+            <li>Si après démarches raisonnables aucun UBO clair n'est déterminable :</li>
+        </ol>
+        <ul>
+            <li>Appliquer la règle interne d'identification "par défaut" (souvent dirigeants effectifs)</li>
+            <li>Et décider des mesures renforcées / de l'acceptation / du refus, de façon motivée</li>
+        </ul>
+
+        <h3>Ce que tu fais selon scénario</h3>
+
+        <strong>A — UBO clair et cohérent</strong>
+        <ul>
+            <li>Collecte/consultation des informations</li>
+            <li>Vérification de cohérence (registre / documents / organigramme si nécessaire)</li>
+        </ul>
+
+        <strong>B — UBO déclaré mais doute / incohérences</strong>
+        <ul>
+            <li>Organigramme capitalistique + documents support</li>
+            <li>Mesures renforcées selon risque (validation hiérarchique, restrictions, EDD)</li>
+        </ul>
+
+        <strong>C — Structure opaque / refus de coopérer</strong>
+        <ul>
+            <li>Escalade obligatoire</li>
+            <li>Mesures compensatoires possibles : EDD, restrictions, surveillance renforcée, validations</li>
+            <li>Si opacité persistante + impossibilité de vérifier : envisager refus / sortie et évaluer l'opportunité d'une déclaration selon les éléments</li>
+        </ul>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--evidence">
+            <h3>Éléments de preuve attendus</h3>
+            <ul>
+                <li>Preuve de consultation (si registre accessible) + horodatage</li>
+                <li>Organigramme daté + éléments justificatifs (statuts/extraits, etc.)</li>
+                <li>Note d'analyse : chaîne de détention + % + logique de contrôle</li>
+                <li>Décision motivée + validation (qui, quand, conditions)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--risk">
+            <h3>Points de vigilance</h3>
+            <ul>
+                <li>Chaîne de détention multi-niveaux sans justification &rarr; escalade</li>
+                <li>Juridictions à opacité / incohérences documentaires &rarr; escalade</li>
+                <li>Indices de prête-nom / absence de substance &rarr; escalade</li>
+                <li>Refus de fournir un organigramme ou des pièces probantes &rarr; escalade</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-specificities">
+        <h2>Spécificités sectorielles</h2>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">PSP / EME</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Exiger organigramme plus vite dès qu'il y a acquisition, volumes élevés, cross-border, cash-out, ou sous-traitance/agents</li>
+                    <li>Documenter explicitement les responsabilités de contrôle si chaîne (agrégation, BaaS, etc.)</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Banque</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Sur dossiers groupe : formaliser la remontée capitalistique et la justification des "autres moyens de contrôle"</li>
+                    <li>Sur dossiers sensibles (PPE, pays à risque) : articulation UBO / EDD plus systématique</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Crypto / CASP</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Focus renforcé sur cohérence économique (activité / flux / contreparties) et sur le risque de mules/structures écran</li>
+                    <li>Déclencher plus vite des mesures renforcées si structure multi-juridictions</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">Code monétaire et financier</span>
+            <span class="fiche-source-ref">Loi — Obligations de vigilance : client et bénéficiaire effectif</span>
+            <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072026/LEGISCTA000020179278/" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">INPI</span>
+            <span class="fiche-source-ref">Registre — Bénéficiaires effectifs (information et accès)</span>
+            <a href="https://www.inpi.fr/ressources/formalites-dentreprises/beneficiaires-effectifs" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Lignes directrices — Lignes directrices sur les bénéficiaires effectifs</span>
+            <a href="https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-sur-les-beneficiaires-effectifs" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">03/01/2025</span>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>

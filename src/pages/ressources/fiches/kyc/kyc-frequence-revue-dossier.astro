@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Fréquence de revue des dossiers KYC — Fiches compliance — Early Brief"
+  description="À quelle fréquence doit-on réviser un dossier KYC client ?"
+  canonicalUrl="https://early-brief.com/ressources/fiches/kyc/kyc-frequence-revue-dossier"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/fiches/" class="fiche-back">Toutes les fiches</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="kyc">KYC</span>
+            <span class="fiche-date">Mis à jour le 31/01/2026</span>
+        </div>
+        <h1 class="fiche-title">Fréquence de revue des dossiers KYC</h1>
+        <p class="fiche-question">À quelle fréquence doit-on réviser un dossier KYC client ?</p>
+    </div>
+
+    <section class="fiche-section">
+        <h2>Réponse</h2>
+
+        <p>La fréquence de revue dépend du <strong>niveau de risque</strong> attribué au client :</p>
+
+        <ul>
+            <li><strong>Risque élevé</strong> : revue annuelle (12 mois maximum)</li>
+            <li><strong>Risque standard</strong> : revue tous les 3 ans</li>
+            <li><strong>Risque faible</strong> : revue tous les 5 ans (sauf événement déclencheur)</li>
+        </ul>
+
+        <p>Une revue doit également être déclenchée <strong>hors cycle</strong> en cas de :</p>
+        <ul>
+            <li>Changement significatif dans la situation du client (activité, structure, bénéficiaires effectifs)</li>
+            <li>Alerte screening ou monitoring</li>
+            <li>Information négative externe (presse, base de données)</li>
+            <li>Demande du régulateur</li>
+        </ul>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--evidence">
+            <h3>Éléments de preuve attendus</h3>
+            <ul>
+                <li>Procédure de revue périodique datée et validée</li>
+                <li>Paramétrage des alertes de revue dans le système KYC</li>
+                <li>Historique des revues effectuées avec date et nom du reviewer</li>
+                <li>Traces de revues déclenchées hors cycle avec justification</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--risk">
+            <h3>Points de vigilance</h3>
+            <ul>
+                <li>Ne pas confondre "date de dernière mise à jour du dossier" et "date de revue complète"</li>
+                <li>Documenter systématiquement la décision de maintien ou modification du niveau de risque</li>
+                <li>S'assurer que le processus de revue couvre aussi les bénéficiaires effectifs</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Lignes directrices — Lignes directrices relatives à la LCB-FT, §3.2</span>
+            <a href="https://acpr.banque-france.fr/sites/default/files/medias/documents/20210111_ldcr_lcb-ft.pdf" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">11/01/2021</span>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">EBA</span>
+            <span class="fiche-source-ref">Guidelines — EBA/GL/2021/02 (ML/TF Risk Factors)</span>
+            <a href="https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">01/03/2021</span>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>

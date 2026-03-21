@@ -1,0 +1,1384 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="FAQ LCB-FT — Questions Fréquentes — Early Brief"
+  description="FAQ LCB-FT : réponses aux questions fréquentes sur le KYC, le screening, le monitoring, les déclarations Tracfin et les obligations des assujettis."
+  canonicalUrl="https://early-brief.com/ressources/faq"
+>
+<div class="page">
+    <div class="fiche-content">
+    <section class="hero-split" id="main-content">
+        <div class="hero-left">
+            <h1>FAQ LCB-FT</h1>
+        </div>
+        <div class="hero-right">
+            <p class="hero-lead">50 questions essentielles : anti-blanchiment, AMLA, KYC, TRACFIN, sanctions. Sources officielles vérifiées.</p>
+            <div class="hero-links">
+                <span class="hero-label">50 questions</span>
+            </div>
+        </div>
+    </section>
+    <div class="hero-divider"></div>
+
+    <div class="main-content">
+<!-- Recherche -->
+        <div class="faq-search">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="text" id="faqSearch" placeholder="Rechercher une question (ex: AMLA, KYC, TRACFIN...)">
+        </div>
+        
+        <!-- Expand / Collapse All -->
+        <div class="expand-collapse-all">
+            <button>📖 Tout déplier</button>
+            <button>📕 Tout replier</button>
+        </div>
+        
+        <!-- Info -->
+        <div class="info-box">
+            <p><strong>ℹ️ Information importante :</strong> Cette FAQ est fournie à titre informatif uniquement et ne constitue pas un conseil juridique. Pour toute question spécifique, consultez vos conseils juridiques.</p>
+        </div>
+
+        <!-- Section 1: Généralités -->
+        <div class="section-divider" id="generalites">
+            <h2>1. Généralités LCB-FT</h2>
+        </div>
+        <div class="faq-section">
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q1</span>
+                    <span class="question-text">Qu'est-ce que la LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> LCB-FT = Lutte Contre le Blanchiment de capitaux et le Financement du Terrorisme.</p>
+                        <p>Ensemble de dispositifs réglementaires et opérationnels visant à :</p>
+                        <ul>
+                            <li>Détecter les flux financiers d'origine illicite</li>
+                            <li>Prévenir le financement d'activités terroristes</li>
+                            <li>Identifier les personnes impliquées</li>
+                        </ul>
+                        <p><strong>Base légale UE (paquet 2024) :</strong></p>
+                        <ul>
+                            <li>Directive (UE) <strong>2024/1640</strong> (6e directive anti-blanchiment - AMLD6)</li>
+                            <li>Règlement (UE) <strong>2024/1624</strong> (AMLR - règlement anti-blanchiment directement applicable)</li>
+                            <li>Règlement (UE) <strong>2024/1620</strong> (AMLA - création de l'autorité européenne)</li>
+                        </ul>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://eur-lex.europa.eu/eli/dir/2024/1640" target="_blank" rel="noopener">EUR-Lex - Directive 2024/1640</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q2</span>
+                    <span class="question-text">Qui est concerné par les obligations LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Les "entités assujetties" ou "personnes assujetties".</p>
+                        <p><strong>Principales catégories (liste non exhaustive, voir article L.561-2 CMF) :</strong></p>
+                        <ul>
+                            <li>Établissements de crédit (banques)</li>
+                            <li>Établissements de paiement (PSP)</li>
+                            <li>Établissements de monnaie électronique (EME)</li>
+                            <li>Prestataires de services sur crypto-actifs (CASP/PSCA)</li>
+                            <li>Sociétés de gestion</li>
+                            <li>Entreprises d'assurance (assurance-vie)</li>
+                            <li>Casinos</li>
+                            <li>Professions juridiques et comptables (notaires, avocats, experts-comptables)</li>
+                            <li>Agents immobiliers</li>
+                            <li>Négociants en biens de valeur</li>
+                        </ul>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000050361172" target="_blank" rel="noopener">Article L.561-2 Code monétaire et financier</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q3</span>
+                    <span class="question-text">Quelle est la différence entre BC et FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>BC (Blanchiment de capitaux)</strong> : Dissimuler l'origine illicite de fonds provenant d'infractions (trafic de drogue, fraude, corruption, etc.)</li>
+                            <li><strong>FT (Financement du terrorisme)</strong> : Collecter ou fournir des fonds destinés à financer des actes terroristes</li>
+                        </ul>
+                        <p><strong>Particularité FT :</strong> Les fonds peuvent être d'origine licite.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q4</span>
+                    <span class="question-text">Quelles sont les 3 étapes du blanchiment ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ol>
+                            <li><strong>Placement :</strong> Introduction des fonds illicites dans le système financier</li>
+                            <li><strong>Empilage (layering) :</strong> Multiplication des transactions pour brouiller les pistes</li>
+                            <li><strong>Intégration :</strong> Réintégration dans l'économie légale sous forme d'actifs "propres"</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q5</span>
+                    <span class="question-text">Quels sont les risques si je ne respecte pas la LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <p><strong>Sanctions administratives (ACPR / AMF) :</strong></p>
+                        <ul>
+                            <li>Sanctions pécuniaires + mesures disciplinaires (avertissement, blâme, interdictions, etc.) selon le régime applicable.</li>
+                            <li>Pour l'ACPR : les plafonds peuvent aller, pour une personne morale, jusqu'à <strong>10 % du chiffre d'affaires annuel total</strong> (selon les cas prévus par le CMF).</li>
+                            <li>Pour l'AMF : plafonds variables selon la nature du manquement et le régime de sanction applicable.</li>
+                        </ul>
+                        <p><strong>Sanctions pénales :</strong></p>
+                        <ul>
+                            <li>La violation de certaines obligations (ex. confidentialité/tipping-off, gel des avoirs) peut entraîner des sanctions pénales spécifiques.</li>
+                            <li>Le blanchiment et le financement du terrorisme sont eux-mêmes des infractions pénales (auteurs/complices).</li>
+                        </ul>
+                        <p class="reference"><strong>Références (sources officielles) :</strong></p>
+                        <ul>
+                            <li><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051559361" target="_blank" rel="noopener">Légifrance — CMF, art. L.612-39</a></li>
+                            <li><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051555513" target="_blank" rel="noopener">Légifrance — CMF, art. L.621-15</a></li>
+                        </ul>
+                        <p>---</p>
+                        <p><a name="amla"></a></p>
+                        <p>## 2. AMLA & SUPERVISION</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 2: AMLA -->
+        <div class="section-divider" id="amla">
+            <h2>2. AMLA & Supervision</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q6</span>
+                    <span class="question-text">Qu'est-ce que l'AMLA ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> AMLA = Anti-Money Laundering Authority (Autorité Anti-Blanchiment européenne)</p>
+                        <p><strong>Missions :</strong></p>
+                        <ul>
+                            <li>Harmoniser la supervision LCB-FT dans l'UE</li>
+                            <li>Superviser directement environ 40 entités à risque élevé et/ou transfrontalières (à partir de 2028)</li>
+                            <li>Coordonner les superviseurs nationaux</li>
+                            <li>Définir une méthodologie commune d'évaluation des risques</li>
+                        </ul>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://www.amla.europa.eu/amla-takes-major-step-toward-harmonised-eu-supervision_en" target="_blank" rel="noopener">AMLA - Communiqué décembre 2025</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q7</span>
+                    <span class="question-text">Mon établissement sera-t-il supervisé par l'AMLA ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Supervision directe AMLA si vous remplissez <strong>2 conditions cumulatives</strong> :</p>
+                        <ol>
+                            <li><strong>Activité transfrontière significative</strong> : l'entité opère dans <strong>au moins 6 États membres</strong> (par établissement et/ou en libre prestation de services), au sens du cadre AMLA.</li>
+                            <li><strong>Score de risque résiduel élevé</strong> selon la méthodologie harmonisée (et les normes techniques associées).</li>
+                        </ol>
+                        <p><strong>Critères opérationnels proposés (draft RTS – susceptibles d'évoluer) :</strong></p>
+                        <ul>
+                            <li>Seuil <strong>par État membre</strong> : <strong>20 000 clients</strong> OU <strong>50 M€</strong> de transactions (sans exigence de cumul), utilisés pour apprécier la matérialité de l'activité dans l'État concerné.</li>
+                        </ul>
+                        <p><strong>Sinon :</strong> Vous restez sous supervision nationale (ACPR en France) selon la même méthodologie AMLA harmonisée.</p>
+                        <p class="reference"><strong>Références (sources officielles) :</strong></p>
+                        <ul>
+                            <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1620/oj/eng" target="_blank" rel="noopener">EUR-Lex — Règlement (UE) 2024/1620 (AMLA)</a></li>
+                            <li><a href="https://www.eba.europa.eu/eba-response/92672" target="_blank" rel="noopener">EBA — Response to consultation (RTS / seuils 20 000 clients / 50 M€ ; critère 6 États membres)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q8</span>
+                    <span class="question-text">Quelle est la différence entre supervision directe et indirecte ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>Directe (AMLA)</strong> : Environ 40 groupes complexes/transfrontaliers. AMLA supervise via des Joint Supervisory Teams (JST) mixtes AMLA + superviseurs nationaux.</li>
+                            <li><strong>Indirecte (nationale)</strong> : Tous les autres établissements. Supervision par l'autorité nationale (ACPR/AMF en France) mais selon la méthodologie AMLA harmonisée.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q9</span>
+                    <span class="question-text">Qu'est-ce qu'une JST (Joint Supervisory Team) ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Équipe de supervision mixte AMLA + superviseurs nationaux pour les entités sous supervision directe.</p>
+                        <p><strong>Fonctionnement :</strong></p>
+                        <ul>
+                            <li>Coordination par l'AMLA</li>
+                            <li>Expertise locale des superviseurs nationaux</li>
+                            <li>Décisions collégiales</li>
+                            <li>Modèle inspiré du MSU (Mécanisme de Surveillance Unique) de la BCE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q10</span>
+                    <span class="question-text">Quand l'AMLA commence-t-elle à superviser ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>2027 :</strong> Première sélection des entités éligibles à la supervision directe</li>
+                            <li><strong>2028 :</strong> Démarrage effectif de la supervision directe AMLA</li>
+                        </ul>
+                        <p>---</p>
+                        <p><a name="evaluation-risques"></a></p>
+                        <p>## 3. ÉVALUATION DES RISQUES</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 3: Évaluation risques -->
+        <div class="section-divider" id="evaluation-risques">
+            <h2>3. Évaluation des risques</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q11</span>
+                    <span class="question-text">Qu'est-ce qu'un BWRA ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> BWRA = Business-Wide Risk Assessment (Évaluation des Risques à l'échelle de l'Entreprise)</p>
+                        <p>Document identifiant et évaluant les risques BC/FT de l'établissement selon :</p>
+                        <ul>
+                            <li>Clients</li>
+                            <li>Produits/services</li>
+                            <li>Canaux de distribution</li>
+                            <li>Zones géographiques</li>
+                        </ul>
+                        <p><strong>Mise à jour :</strong> Revue régulière et à chaque changement significatif de l'activité ou du contexte réglementaire. En pratique, souvent au moins annuelle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q12</span>
+                    <span class="question-text">Quelle est la différence entre risque inhérent et risque résiduel ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>Risque inhérent :</strong> Risque BC/FT avant contrôles (basé sur l'activité intrinsèque de l'établissement)</li>
+                            <li><strong>Risque résiduel :</strong> Risque qui subsiste après application des contrôles</li>
+                        </ul>
+                        <p><strong>Méthodologie AMLA harmonisée :</strong></p>
+                        <p>Le risque résiduel est déterminé en ajustant le risque inhérent par la qualité des contrôles, selon une matrice/méthodologie commune :</p>
+                        <ul>
+                            <li>Scores de risque inhérent : 1 (faible) à 4 (élevé)</li>
+                            <li>Qualité des contrôles : A (très bonne) à D (faible)</li>
+                            <li>Risque résiduel : déterminé par mapping entre ces deux dimensions</li>
+                        </ul>
+                        <p><strong>Note :</strong> La relation exacte entre risque inhérent, qualité des contrôles et risque résiduel est définie par la méthodologie AMLA et ne suit pas une formule arithmétique simple.</p>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://riskandcompliance.freshfields.com/post/102k383/will-you-be-directly-supervised-by-amla-draft-rts-on-the-selection-of-obliged" target="_blank" rel="noopener">Freshfields - Méthodologie AMLA</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q13</span>
+                    <span class="question-text">Comment scorer le risque selon AMLA ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <p><strong>Risque inhérent :</strong> 1 (faible) à 4 (élevé)</p>
+                        <p><strong>Qualité contrôles :</strong> A (très bonne) à D (faible)</p>
+                        <p><strong>Risque résiduel :</strong> Calculé selon matrice AMLA harmonisée</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q14</span>
+                    <span class="question-text">Quels sont les 4 facteurs de risque AMLA ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ol>
+                            <li><strong>Clients :</strong> Type, profil, comportement</li>
+                            <li><strong>Produits/services/transactions :</strong> Complexité, anonymat, volumes</li>
+                            <li><strong>Canaux de distribution :</strong> Face-à-face, digital, intermédiaires</li>
+                            <li><strong>Zones géographiques :</strong> Pays à risque, juridictions non coopératives</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q15</span>
+                    <span class="question-text">Qu'est-ce qu'un CRA (Customer Risk Assessment) ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Évaluation du risque BC/FT <strong>individuel</strong> de chaque client.</p>
+                        <p><strong>Basé sur :</strong></p>
+                        <ul>
+                            <li>Profil client (PPE, activité, nationalité)</li>
+                            <li>Produits souscrits</li>
+                            <li>Comportement transactionnel</li>
+                            <li>Zone géographique</li>
+                        </ul>
+                        <p><strong>Output :</strong> Classification risque (faible, moyen, élevé) → Niveau de vigilance adapté.</p>
+                        <p>---</p>
+                        <p><a name="kyc"></a></p>
+                        <p>## 4. KYC & DUE DILIGENCE</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 4: KYC -->
+        <div class="section-divider" id="kyc">
+            <h2>4. KYC & Due Diligence</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q16</span>
+                    <span class="question-text">Qu'est-ce que le KYC ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> KYC = Know Your Customer (Connaître Votre Client)</p>
+                        <p>Ensemble des vérifications permettant d'identifier le client et de comprendre son activité :</p>
+                        <ul>
+                            <li>Identité (pièce d'identité, justificatif de domicile)</li>
+                            <li>Bénéficiaires effectifs</li>
+                            <li>Objet et nature de la relation d'affaires</li>
+                            <li>Origine des fonds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q17</span>
+                    <span class="question-text">Qu'est-ce qu'un bénéficiaire effectif ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Personne physique qui :</p>
+                        <ul>
+                            <li><strong>Détient</strong> directement ou indirectement >25% du capital ou des droits de vote</li>
+                            <li><strong>OU exerce un contrôle</strong> sur la personne morale par d'autres moyens</li>
+                        </ul>
+                        <p><strong>Obligation :</strong> Identifier et vérifier l'identité des bénéficiaires effectifs de toutes les personnes morales clientes.</p>
+                        <p class="reference"><strong>Référence :</strong> Article R.561-1 Code monétaire et financier</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q18</span>
+                    <span class="question-text">Qu'est-ce qu'une PPE ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> PPE = Personne Politiquement Exposée</p>
+                        <p>Personne exerçant ou ayant exercé <strong>dans les 12 mois suivant la cessation de ses fonctions</strong> des fonctions publiques importantes :</p>
+                        <ul>
+                            <li>Chefs d'État/gouvernement</li>
+                            <li>Ministres</li>
+                            <li>Parlementaires</li>
+                            <li>Hauts fonctionnaires</li>
+                            <li>Magistrats de haut rang</li>
+                            <li>Dirigeants d'entreprises publiques</li>
+                        </ul>
+                        <p><strong>+ Membres de leur famille proche + personnes leur étant étroitement associées</strong></p>
+                        <p><strong>Note :</strong> Au-delà de 12 mois, l'établissement peut maintenir des mesures renforcées si le risque persiste (approche par les risques).</p>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043970417" target="_blank" rel="noopener">Article R.561-18 Code monétaire et financier - Légifrance</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q19</span>
+                    <span class="question-text">Quelle vigilance appliquer aux PPE ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Vigilance renforcée obligatoire :</strong></p>
+                        <ol>
+                            <li>Obtenir l'accord de la direction avant d'établir ou poursuivre la relation</li>
+                            <li>Prendre des mesures raisonnables pour déterminer l'origine de la fortune et des fonds</li>
+                            <li>Surveillance renforcée continue de la relation d'affaires</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q20</span>
+                    <span class="question-text">Qu'est-ce que la vigilance simplifiée ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Mesures de vigilance allégées pour clients présentant un faible risque :</p>
+                        <ul>
+                            <li>Établissements de crédit/financiers régulés dans l'UE</li>
+                            <li>Sociétés cotées soumises à obligations de transparence</li>
+                            <li>Administrations publiques UE</li>
+                        </ul>
+                        <p><strong>Attention :</strong> Jamais de simplification en présence de soupçon de BC/FT.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q21</span>
+                    <span class="question-text">Qu'est-ce que la vigilance renforcée ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Mesures additionnelles pour clients à risque élevé :</p>
+                        <ul>
+                            <li>PPE</li>
+                            <li>Clients de pays tiers à risque élevé (liste UE)</li>
+                            <li>Transactions complexes ou inhabituelles</li>
+                            <li>Relations d'affaires à distance</li>
+                            <li>Schémas atypiques</li>
+                        </ul>
+                        <p><strong>Mesures :</strong> Vérifications supplémentaires, origine des fonds/fortune, approbation direction, surveillance accrue.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q22</span>
+                    <span class="question-text">Qu'est-ce qu'un pays tiers à haut risque (LCB-FT) ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Pays tiers à haut risque (LCB-FT)</strong> = Liste établie par la Commission européenne identifiant les pays présentant des carences stratégiques en matière de LCB-FT, en prenant en compte les évaluations du GAFI.</p>
+                        <p><strong>Obligation :</strong> Vigilance renforcée sur clients/transactions liés à ces pays.</p>
+                        <p><strong>À ne pas confondre avec :</strong></p>
+                        <ul>
+                            <li><strong>ETNC/PNPF</strong> (États et Territoires Non Coopératifs / Pays Non ou insuffisamment Coopératifs en matière Fiscale) = liste UE à des fins fiscales (lutte anti-évasion), distincte de la LCB-FT.</li>
+                        </ul>
+                        <p class="reference"><strong>Références (liste UE des pays tiers à haut risque – AML/CFT) :</strong></p>
+                        <ul>
+                            <li>Commission européenne – "High-risk third countries" (liste et mises à jour)</li>
+                            <li>Règlement délégué (UE) 2016/1675 (modifié) + derniers règlements délégués de mise à jour (ex. Règlement délégué (UE) 2025/1184)</li>
+                        </ul>
+                        <p class="reference"><strong>Référence (liste ETNC – fiscale) :</strong></p>
+                        <ul>
+                            <li><a href="https://www.consilium.europa.eu/fr/policies/eu-list-of-non-cooperative-jurisdictions/" target="_blank" rel="noopener">Conseil UE - Liste ETNC</a></li>
+                        </ul>
+                        <p>---</p>
+                        <p><a name="monitoring"></a></p>
+                        <p>## 5. MONITORING & ALERTES</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 5: Monitoring -->
+        <div class="section-divider" id="monitoring">
+            <h2>5. Monitoring & Alertes</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q23</span>
+                    <span class="question-text">Qu'est-ce que le monitoring transactionnel ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Surveillance continue et automatisée des transactions pour détecter des schémas suspects de BC/FT.</p>
+                        <p><strong>Méthodes :</strong></p>
+                        <ul>
+                            <li>Scénarios de détection (règles métier)</li>
+                            <li>Seuils (montants, fréquences)</li>
+                            <li>Comparaison avec profil client attendu</li>
+                            <li>Analyses comportementales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q24</span>
+                    <span class="question-text">Qu'est-ce qu'un scénario de détection ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Règle automatisée déclenchant une alerte en cas de comportement transactionnel atypique.</p>
+                        <p><strong>Exemples :</strong></p>
+                        <ul>
+                            <li>Transactions fragmentées (structuring/smurfing)</li>
+                            <li>Dépôts/retraits cash élevés</li>
+                            <li>Virements vers zones à risque</li>
+                            <li>Round amounts récurrents</li>
+                            <li>Transactions hors profil client</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q25</span>
+                    <span class="question-text">Comment gérer les false positives ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <p><strong>Objectif :</strong> Réduire la charge opérationnelle sans dégrader la capacité de détection.</p>
+                        <p><strong>Méthodes :</strong></p>
+                        <ol>
+                            <li><strong>Tuning régulier des scénarios</strong> (ajustement seuils, règles)</li>
+                            <li><strong>Enrichissement des profils clients</strong> (mieux connaître l'activité normale)</li>
+                            <li><strong>Segmentation fine</strong> (règles différenciées par typologie client)</li>
+                            <li><strong>Machine learning</strong> (apprentissage des vrais/faux positifs)</li>
+                        </ol>
+                        <p><strong>Pilotage par KPIs internes :</strong></p>
+                        <ul>
+                            <li>Taux d'alertes pertinentes</li>
+                            <li>Temps moyen de traitement</li>
+                            <li>Taux d'escalade en déclaration de soupçon</li>
+                            <li>Délai entre génération alerte et déclaration TRACFIN</li>
+                        </ul>
+                        <p><strong>Note :</strong> Il n'existe pas de norme réglementaire sur le taux acceptable de false positives. Le pilotage doit être adapté au profil de risque et à l'activité de l'établissement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q26</span>
+                    <span class="question-text">Qu'est-ce que le screening sanctions ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Vérification automatisée que les clients/transactions ne concernent pas des personnes/entités sous sanctions (gel des avoirs).</p>
+                        <p><strong>Listes/mesures à couvrir (France) :</strong></p>
+                        <ul>
+                            <li>Mesures UE (gel des avoirs)</li>
+                            <li>Mesures ONU</li>
+                            <li>Mesures nationales applicables</li>
+                            <li>S'appuyer notamment sur le <strong>registre national des gels</strong> (article R.562-2 CMF)</li>
+                        </ul>
+                        <p><strong>Listes additionnelles (selon contexte business) :</strong></p>
+                        <ul>
+                            <li>Listes OFAC (USA) : souvent ajoutée pour des raisons business/risque en cas d'exposition US (US nexus, correspondent banking, contreparties américaines), mais <strong>pas une obligation générale française</strong></li>
+                        </ul>
+                        <p><strong>Fréquence :</strong> Screening en temps réel (onboarding, transactions) + batch périodique (portefeuille existant).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q27</span>
+                    <span class="question-text">Quelle est la différence entre screening sanctions et PPE ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>Screening sanctions :</strong> Vérification de non-présence sur listes de gel des avoirs (interdiction transactionnelle immédiate)</li>
+                            <li><strong>Screening PPE :</strong> Identification de personnes politiquement exposées (vigilance renforcée obligatoire, pas d'interdiction automatique)</li>
+                        </ul>
+                        <p><strong>Les deux peuvent être combinés</strong> dans un même outil.</p>
+                        <p>---</p>
+                        <p><a name="tracfin"></a></p>
+                        <p>## 6. DÉCLARATIONS TRACFIN</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 6: TRACFIN -->
+        <div class="section-divider" id="tracfin">
+            <h2>6. Déclarations TRACFIN</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q28</span>
+                    <span class="question-text">Qu'est-ce que TRACFIN ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> TRACFIN = Traitement du Renseignement et Action contre les Circuits FINanciers clandestins</p>
+                        <p>Cellule de renseignement financier (CRF) française, placée sous l'autorité du Ministère de l'Économie.</p>
+                        <p><strong>Mission :</strong> Recevoir, analyser et transmettre aux autorités judiciaires les déclarations de soupçon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q29</span>
+                    <span class="question-text">Quand dois-je faire une déclaration de soupçon ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Dès que vous savez, soupçonnez ou avez de bonnes raisons de soupçonner</strong> qu'une opération :</p>
+                        <ul>
+                            <li>Provient d'une infraction passible de plus d'1 an de prison</li>
+                            <li>Participe au financement du terrorisme</li>
+                        </ul>
+                        <p><strong>Critères :</strong></p>
+                        <ul>
+                            <li>Opérations atypiques/incohérentes avec le profil</li>
+                            <li>Refus du client de fournir des informations</li>
+                            <li>Utilisation de structures opaques</li>
+                            <li>Origine/destination géographique à risque</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q30</span>
+                    <span class="question-text">Quel est le délai pour déclarer ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Obligation légale : "sans délai"</strong> dès le soupçon.</p>
+                        <p><strong>En pratique :</strong></p>
+                        <ul>
+                            <li>Déclaration <strong>avant exécution</strong> de l'opération si possible (pour permettre une éventuelle opposition)</li>
+                            <li>Si déjà exécutée : déclaration dès identification du soupçon</li>
+                        </ul>
+                        <p><strong>Bonne pratique :</strong> Traitement et déclaration dans les meilleurs délais (jours, pas semaines).</p>
+                        <p class="reference"><strong>Référence :</strong> Article L.561-15 Code monétaire et financier</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q31</span>
+                    <span class="question-text">Puis-je informer le client de la déclaration ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>NON. Strictement interdit</strong> (obligation de confidentialité - interdiction du "tipping-off").</p>
+                        <p><strong>Exception :</strong> Avocats peuvent en informer leur ordre professionnel dans certains cas prévus par la loi.</p>
+                        <p><strong>Sanction en cas de violation :</strong></p>
+                        <ul>
+                            <li>Sanction pénale : amende de 22 500 € (article L.574-1 CMF)</li>
+                            <li>+ sanctions disciplinaires / administratives selon le superviseur</li>
+                        </ul>
+                        <p class="reference"><strong>Références :</strong></p>
+                        <ul>
+                            <li>Article L.561-18 CMF (confidentialité de la déclaration de soupçon)</li>
+                            <li>Article L.574-1 CMF (sanction)</li>
+                            <li><a href="https://www.economie.gouv.fr/tracfin/la-confidentialite-de-la-declaration-de-soupcon" target="_blank" rel="noopener">TRACFIN - La confidentialité de la déclaration de soupçon</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q32</span>
+                    <span class="question-text">TRACFIN peut-il bloquer une opération ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Oui</strong>. TRACFIN peut <strong>s'opposer à l'exécution immédiate</strong> d'une opération.</p>
+                        <p><strong>Procédure :</strong></p>
+                        <ul>
+                            <li>L'opération est <strong>reportée pendant 10 jours ouvrables</strong> à compter de la notification de l'opposition</li>
+                            <li>À défaut d'ordonnance du président du tribunal judiciaire à l'issue de ce délai, l'opération peut être exécutée</li>
+                            <li>L'établissement <strong>ne doit PAS exécuter</strong> l'opération pendant ce délai</li>
+                        </ul>
+                        <p class="reference"><strong>Référence :</strong> <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051752340" target="_blank" rel="noopener">Article L.561-24 Code monétaire et financier</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q33</span>
+                    <span class="question-text">Comment faire une déclaration à TRACFIN ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Via <strong>ERMES</strong> (plateforme dématérialisée sécurisée) :</p>
+                        <ol>
+                            <li>Créer un compte établissement</li>
+                            <li>Désigner les déclarants habilités</li>
+                            <li>Remplir le formulaire en ligne (identité client, opération suspecte, motifs)</li>
+                            <li>Joindre pièces justificatives</li>
+                            <li>Envoyer (accusé de réception immédiat)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q34</span>
+                    <span class="question-text">Que se passe-t-il après ma déclaration ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ol>
+                            <li><strong>TRACFIN analyse</strong> (croisement avec d'autres sources, enquêtes)</li>
+                            <li><strong>Si pertinent :</strong> Transmission au Procureur de la République</li>
+                            <li><strong>Si non pertinent :</strong> Classement (vous n'êtes généralement pas informé du résultat)</li>
+                        </ol>
+                        <p><strong>Vous êtes protégé :</strong> Aucune responsabilité civile, pénale ou disciplinaire si déclaration de bonne foi.</p>
+                        <p>---</p>
+                        <p><a name="sanctions"></a></p>
+                        <p>## 7. SANCTIONS & GEL DES AVOIRS</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 7: Sanctions -->
+        <div class="section-divider" id="sanctions">
+            <h2>7. Sanctions & Gel des avoirs</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q35</span>
+                    <span class="question-text">Qu'est-ce que le gel des avoirs ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> Interdiction de mettre à disposition des fonds ou ressources économiques à des personnes/entités désignées sur listes de sanctions.</p>
+                        <p><strong>Application :</strong> Sans délai dès identification d'un match.</p>
+                        <p><strong>Concernés :</strong></p>
+                        <ul>
+                            <li>Listes UE (terrorisme, prolifération, mesures restrictives géographiques)</li>
+                            <li>Listes ONU</li>
+                            <li>Mesures nationales</li>
+                        </ul>
+                        <p><strong>Obligations :</strong></p>
+                        <ol>
+                            <li>Bloquer immédiatement les avoirs</li>
+                            <li>Informer sans délai le ministre chargé de l'économie / DG Trésor</li>
+                            <li>Déclaration TRACFIN <strong>si</strong> soupçon BC/FT additionnel (les deux obligations sont distinctes)</li>
+                        </ol>
+                        <p class="reference"><strong>Références :</strong></p>
+                        <ul>
+                            <li>Article L.562-4 CMF (information sans délai de l'autorité compétente / DG Trésor)</li>
+                            <li>Article L.562-4-1 CMF (organisation et procédures internes gel des avoirs)</li>
+                            <li>Article R.562-2 CMF (registre national des gels)</li>
+                            <li><a href="https://www.amf-france.org/sites/institutionnel/files/2020-07/guide-gel-des-avoirs_vf1.pdf" target="_blank" rel="noopener">AMF - Guide sur le gel des avoirs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q36</span>
+                    <span class="question-text">Quelle est la différence entre sanctions et mesures restrictives ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Termes synonymes</strong> en pratique.</p>
+                        <p>Officiellement :</p>
+                        <ul>
+                            <li><strong>Mesures restrictives :</strong> Terminologie UE (embargos, gel des avoirs, restrictions commerciales, restrictions sectorielles)</li>
+                            <li><strong>Sanctions :</strong> Terminologie ONU/OFAC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q37</span>
+                    <span class="question-text">Comment savoir si un client est sous sanctions ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Screening automatisé</strong> contre les listes officielles :</p>
+                        <ul>
+                            <li>Base de données sanctions (Dow Jones, World-Check, Refinitiv, Comply Advantage, etc.)</li>
+                            <li>Ou listes officielles gratuites (UE, ONU, OFAC)</li>
+                        </ul>
+                        <p><strong>Fréquence :</strong></p>
+                        <ul>
+                            <li>Temps réel (onboarding, transactions)</li>
+                            <li>Batch périodique (portefeuille existant)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q38</span>
+                    <span class="question-text">Que faire en cas de match sanctions ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ol>
+                            <li><strong>Arrêt immédiat</strong> de l'opération/relation</li>
+                            <li><strong>Analyse du match</strong> (vrai positif ? homonyme ? faux positif ?)</li>
+                            <li><strong>Si vrai positif confirmé :</strong></li>
+                        </ol>
+                        <ul>
+                            <li>Gel immédiat de tous les avoirs</li>
+                            <li>Information sans délai DG Trésor</li>
+                            <li>Déclaration TRACFIN si soupçon BC/FT</li>
+                            <li>Documentation complète du processus</li>
+                        </ul>
+                        <ol>
+                            <li><strong>Si faux positif :</strong> Documenter l'analyse et libérer</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q39</span>
+                    <span class="question-text">Puis-je obtenir une autorisation pour débloquer ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Oui</strong>, demande d'autorisation possible auprès de la <strong>DG Trésor</strong> pour :</p>
+                        <ul>
+                            <li>Dépenses essentielles (loyer, alimentation, soins médicaux, etc.)</li>
+                            <li>Frais juridiques</li>
+                            <li>Paiements découlant de contrats conclus avant l'inscription sur liste</li>
+                        </ul>
+                        <p><strong>Délai :</strong> Variable selon complexité (plusieurs semaines en pratique).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q40</span>
+                    <span class="question-text">Quelles sont les sanctions en cas de non-respect du gel ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <p><strong>Sanctions pénales :</strong></p>
+                        <ul>
+                            <li>Article L.574-3 Code monétaire et financier → renvoi à l'article 459 du Code des douanes</li>
+                            <li><strong>Jusqu'à 5 ans d'emprisonnement + amende pouvant aller jusqu'au double de la somme en cause</strong></li>
+                        </ul>
+                        <p><strong>Sanctions administratives :</strong></p>
+                        <ul>
+                            <li>Sanctions ACPR/AMF selon les textes applicables</li>
+                            <li>Mesures prudentielles</li>
+                        </ul>
+                        <p><strong>Risques réputationnels :</strong> Majeurs en cas de manquement.</p>
+                        <p class="reference"><strong>Référence :</strong></p>
+                        <ul>
+                            <li><a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042498852" target="_blank" rel="noopener">Article L.574-3 CMF</a></li>
+                            <li><a href="https://www.amf-france.org/sites/institutionnel/files/2020-07/guide-gel-des-avoirs_vf1.pdf" target="_blank" rel="noopener">AMF - Guide gel des avoirs</a></li>
+                        </ul>
+                        <p>---</p>
+                        <p><a name="organisation"></a></p>
+                        <p>## 8. ORGANISATION & GOUVERNANCE</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 8: Organisation -->
+        <div class="section-divider" id="organisation">
+            <h2>8. Organisation & Gouvernance</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q41</span>
+                    <span class="question-text">Qui est le responsable conformité LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> La terminologie varie selon le type d'entité :</p>
+                        <p><strong>Établissements de crédit, PSP, EME :</strong></p>
+                        <ul>
+                            <li>Responsable conformité et contrôle interne (RCCI) ou responsable de la conformité</li>
+                            <li>Responsable spécifique LCB-FT (selon taille/organisation)</li>
+                        </ul>
+                        <p><strong>Sociétés de gestion, PSI, SGP (régulés AMF) :</strong></p>
+                        <ul>
+                            <li>RCCI (Responsable de la Conformité et du Contrôle Interne)</li>
+                        </ul>
+                        <p><strong>Missions LCB-FT communes :</strong></p>
+                        <ul>
+                            <li>Définir la politique LCB-FT</li>
+                            <li>Coordonner la mise en œuvre du dispositif</li>
+                            <li>Assurer la veille réglementaire</li>
+                            <li>Reporting à la direction/organe de surveillance</li>
+                            <li>Interlocuteur des autorités de supervision</li>
+                        </ul>
+                        <p><strong>Obligation :</strong> Rattachement à la direction générale, indépendance opérationnelle, moyens suffisants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q42</span>
+                    <span class="question-text">Quelle est la différence entre 1ère, 2e et 3e ligne de défense ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>1ère ligne :</strong> Opérationnels (commerciaux, back-office) → Appliquent les contrôles quotidiens (contrôles de 1er niveau)</li>
+                            <li><strong>2e ligne :</strong> Conformité, Risques → Définissent les politiques, contrôles permanents de 2e niveau</li>
+                            <li><strong>3e ligne :</strong> Audit interne → Contrôles périodiques, indépendance totale</li>
+                        </ul>
+                        <p><strong>Principe :</strong> Les 3 lignes doivent être distinctes et indépendantes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q43</span>
+                    <span class="question-text">Quels moyens minimum pour la fonction LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Aucun minimum légal chiffré universel</strong>, mais obligation de moyens :</p>
+                        <ul>
+                            <li>Moyens <strong>proportionnés</strong> à la taille, la nature et le risque de l'activité</li>
+                            <li><strong>Indépendance</strong> (pas de conflit d'intérêts)</li>
+                            <li><strong>Expertise</strong> (formations, certifications, expérience)</li>
+                            <li><strong>Outils</strong> (logiciels monitoring, screening, gestion des alertes, reporting)</li>
+                        </ul>
+                        <p><strong>Benchmark indicatif (variable selon activité) :</strong> 1 ETP LCB-FT pour 50-100 ETP total.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q44</span>
+                    <span class="question-text">Le responsable conformité LCB-FT peut-il être externalisé ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> L'externalisation complète de la fonction conformité LCB-FT est <strong>très encadrée</strong> :</p>
+                        <p><strong>Pour les établissements de crédit, PSP, EME :</strong></p>
+                        <ul>
+                            <li>Une personne physique interne identifiée reste <strong>obligatoire</strong> comme responsable</li>
+                            <li>Certaines briques opérationnelles peuvent être externalisées sous régime d'externalisation maîtrisé (avec maintien du pilotage et de la responsabilité en interne)</li>
+                        </ul>
+                        <p><strong>Pour d'autres assujettis (plus petits) :</strong></p>
+                        <ul>
+                            <li>Externalisation possible dans certains cas, avec accord/supervision de l'autorité</li>
+                        </ul>
+                        <p><strong>Exigences en cas d'externalisation :</strong></p>
+                        <ul>
+                            <li>Responsable interne clairement identifié</li>
+                            <li>Dispositif de pilotage et contrôle effectif</li>
+                            <li>Conformité aux règles d'externalisation (convention, droits d'audit, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q45</span>
+                    <span class="question-text">Quel rôle pour la direction générale ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> La direction générale <strong>approuve</strong> :</p>
+                        <ul>
+                            <li>La politique LCB-FT</li>
+                            <li>Le BWRA (évaluation des risques)</li>
+                            <li>Les ressources allouées à la fonction</li>
+                            <li>Les relations avec les PPE (clients politiquement exposés)</li>
+                        </ul>
+                        <p><strong>+ Reçoit un reporting régulier</strong> (au moins annuel) et <strong>porte la culture LCB-FT</strong> de l'établissement (tone at the top).</p>
+                        <p>---</p>
+                        <p><a name="formation"></a></p>
+                        <p>## 9. FORMATION & SENSIBILISATION</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 9: Formation -->
+        <div class="section-divider" id="formation">
+            <h2>9. Formation & Sensibilisation</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q46</span>
+                    <span class="question-text">Qui doit être formé à la LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Tous les collaborateurs</strong> dont l'activité expose l'établissement au risque BC/FT :</p>
+                        <ul>
+                            <li>Conseillers commerciaux / relation client</li>
+                            <li>Back-office</li>
+                            <li>Conformité</li>
+                            <li>Direction</li>
+                            <li>IT (si accès aux outils LCB-FT ou aux données sensibles)</li>
+                        </ul>
+                        <p><strong>Fréquence :</strong> Formation initiale + mise à jour régulière selon évolutions réglementaires et organisationnelles.</p>
+                        <p class="reference"><strong>Référence :</strong></p>
+                        <ul>
+                            <li>Article L.561-34 CMF (formation des personnes énumérées à L.561-2)</li>
+                        </ul>
+                        <p>*(Exemple sectoriel : <a href="https://www.economie.gouv.fr/files/ldimmobilier_vf_nov2018.pdf" target="_blank" rel="noopener">Lignes directrices immobilier 2018</a> – pour illustration)*</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q47</span>
+                    <span class="question-text">Quel contenu minimum pour les formations ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li>Réglementation LCB-FT (obligations légales)</li>
+                            <li>Typologies de BC/FT (schémas, modus operandi)</li>
+                            <li>Facteurs de risque (clients, produits, zones)</li>
+                            <li>Procédures internes (KYC, monitoring, déclarations)</li>
+                            <li>Sanctions encourues (établissement + individu)</li>
+                            <li>Confidentialité (TRACFIN, enquêtes, tipping-off)</li>
+                            <li>Cas pratiques adaptés au métier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q48</span>
+                    <span class="question-text">Comment prouver les formations à l'autorité ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>Attestations de formation</strong> signées par les participants</li>
+                            <li><strong>Registre de présence</strong> (ou logs e-learning)</li>
+                            <li><strong>Contenu pédagogique</strong> (supports, programmes)</li>
+                            <li><strong>Évaluations</strong> (quiz, tests de connaissances)</li>
+                            <li><strong>Planning annuel</strong> de formation</li>
+                        </ul>
+                        <p><strong>Conservation :</strong> Bonne pratique = conservation pendant au moins 5 ans (cohérent avec obligations de conservation documentaire LCB-FT).</p>
+                        <p>---</p>
+                        <p><a name="audit"></a></p>
+                        <p>## 10. AUDIT & CONTRÔLES</p>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <!-- Section 10: Audit -->
+        <div class="section-divider" id="audit">
+            <h2>10. Audit & Contrôles</h2>
+        </div>
+        <div class="faq-section">
+<div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q49</span>
+                    <span class="question-text">À quelle fréquence auditer le dispositif LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong> <strong>Obligation de contrôle périodique indépendant</strong> à fréquence définie par le risque.</p>
+                        <p><strong>En pratique :</strong></p>
+                        <ul>
+                            <li>Contrôles périodiques sur axes critiques : souvent annuels</li>
+                            <li>Revues plus larges du dispositif : pluriannuelles (2-3 ans)</li>
+                            <li>Plus fréquent si risque élevé, défaillances identifiées, ou évolutions majeures</li>
+                        </ul>
+                        <p><strong>Note :</strong> Il n'existe pas de minimum légal universel "tous les 3 ans". La fréquence doit être proportionnée au risque.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-accordion-item">
+                <button class="faq-accordion-header" aria-expanded="false">
+                    <span class="question-number">Q50</span>
+                    <span class="question-text">Que doit couvrir un audit LCB-FT ?</span>
+                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="faq-accordion-content">
+                    <div class="faq-answer">
+                        <p><strong>R :</strong></p>
+                        <ul>
+                            <li><strong>Gouvernance :</strong> Organisation, moyens, indépendance, reporting</li>
+                            <li><strong>Évaluation des risques :</strong> Qualité du BWRA, CRA, méthodologie</li>
+                            <li><strong>KYC :</strong> Exhaustivité, qualité des données, documentation, bénéficiaires effectifs</li>
+                            <li><strong>Monitoring :</strong> Pertinence des scénarios, traitement des alertes, gestion des false positives</li>
+                            <li><strong>Déclarations TRACFIN :</strong> Délais, qualité, traçabilité, confidentialité</li>
+                            <li><strong>Sanctions :</strong> Screening, procédures de gel, actualisation des listes</li>
+                            <li><strong>Formation :</strong> Plans, réalisation effective, traçabilité, efficacité</li>
+                            <li><strong>Contrôles permanents :</strong> Effectivité, remontées, suivi des actions</li>
+                            <li><strong>Systèmes d'information :</strong> Outils, sécurité, piste d'audit, intégrité des données</li>
+                        </ul>
+                        <p><strong>Output :</strong> Rapport d'audit + plan d'actions correctrices + suivi.</p>
+                        <p>---</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CTA Newsletter -->
+        <div class="cta-box">
+            <h3>📬 Recevez les mises à jour réglementaires</h3>
+            <p>Abonnez-vous à Early Brief pour recevoir les décryptages LCB-FT, AMLA, MiCA, DORA directement dans votre boîte mail.</p>
+            <a href="https://mariaiaciancio.substack.com" target="_blank" rel="noopener" class="cta-button">S'abonner à la newsletter</a>
+        </div>
+
+        <!-- Ressources -->
+        <div class="fiche-retour">
+          <a href="/ressources">&larr; Toutes les ressources</a>
+        </div>
+
+        <!-- Mentions légales -->
+        <section class="content-section">
+            <h2>Mentions légales</h2>
+            <p><strong>Sources :</strong> Références exclusivement officielles (Légifrance, EUR-Lex, ACPR, AMF, TRACFIN, AMLA, EBA, Commission européenne).</p>
+            <p><strong>Avertissement :</strong> Document informatif uniquement. Consultez vos conseils juridiques pour toute question spécifique.</p>
+            <p><strong>Version :</strong> 2.0 (fact-checkée) — 08/01/2026</p>
+        </section>
+    </div>
+    </div>
+</div>
+</BaseLayout>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Déclaration de soupçon : quand déclarer (soupçon ≠ preuve) — Fiches compliance — Early Brief"
+  description="À partir de quel niveau de doute faut-il déclencher une analyse et, le cas échéant, déposer une déclaration à Tracfin ?"
+  canonicalUrl="https://early-brief.com/ressources/fiches/tracfin/tracfin-quand-declarer-soupcon"
+>
+<div class="page">
+    <div class="fiche-content">
+    <a href="/ressources/fiches/" class="fiche-back">Toutes les fiches</a>
+
+    <div class="fiche-header">
+        <div class="fiche-meta">
+            <span class="fiche-category" data-cat="tracfin">TRACFIN / Déclaration</span>
+            <span class="fiche-date">Mis à jour le 31/01/2026</span>
+        </div>
+        <h1 class="fiche-title">Déclaration de soupçon : quand déclarer (soupçon ≠ preuve)</h1>
+        <p class="fiche-question">À partir de quel niveau de doute faut-il déclencher une analyse et, le cas échéant, déposer une déclaration à Tracfin ?</p>
+    </div>
+
+    <section class="fiche-section">
+        <h2>Réponse</h2>
+
+        <p>Tu ne déclares pas quand tu as une preuve pénale. Tu déclares quand, après examen, tu <strong>soupçonnes</strong> ou as de <strong>bonnes raisons de soupçonner</strong>. C'est exactement le standard de l'article L.561-15.</p>
+
+        <h3>Seuil pratique (défendable)</h3>
+
+        <p>Déclencher une <strong>analyse "déclaration"</strong> si au moins un bloc est vrai :</p>
+        <ul>
+            <li>Incohérence majeure profil / flux (montants, pays, bénéficiaires, usage)</li>
+            <li>Schéma répété de contournement (structuration, multi-instruments, multi-bénéficiaires)</li>
+            <li>Absence de justification économique malgré demandes raisonnables</li>
+            <li>Éléments aggravants externes (adverse media sérieux, signaux fraude, lien sanctions/PEP)</li>
+        </ul>
+
+        <p>Ensuite, la décision se fait en 2 sorties :</p>
+        <ul>
+            <li><strong>Clôture motivée</strong> (pas de soupçon) + preuve</li>
+            <li><strong>Déclaration</strong> (soupçon cohérent) + preuve</li>
+        </ul>
+
+        <h3>Timing</h3>
+
+        <ul>
+            <li>Si l'opération n'est pas encore exécutée et que tu peux bloquer / suspendre sans casser le droit applicable : tu le fais selon ta procédure</li>
+            <li>Si l'opération a déjà eu lieu : tu déclares dès que l'analyse est suffisamment étayée (sans attendre "la certitude")</li>
+        </ul>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--evidence">
+            <h3>Éléments de preuve attendus</h3>
+            <ul>
+                <li>Chronologie factuelle (dates, montants, canaux, pays, bénéficiaires)</li>
+                <li>Ce qui rend l'opération atypique (écart au profil / pattern / incohérence)</li>
+                <li>Demandes de compléments et réponses (ou absence)</li>
+                <li>Décision + validation + date</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section">
+        <div class="fiche-box fiche-box--risk">
+            <h3>Points de vigilance</h3>
+            <ul>
+                <li>Soupçon non analysé ou analyse incomplète &rarr; escalade</li>
+                <li>Décision de non-déclaration sans motivation documentée &rarr; escalade</li>
+                <li>Délai excessif entre détection et décision &rarr; escalade</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fiche-section fiche-specificities">
+        <h2>Spécificités sectorielles</h2>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">PSP / EME</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Déclencheurs fréquents : cash-out rapide, structuration, activité "refund" abusive, incohérence marchands/flux, multi-IBAN / multi-bénéficiaires</li>
+                    <li>Si modèle temps réel : prévoir des mesures conservatoires (hold, plafonds) pendant l'analyse</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Banque</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Déclencheurs fréquents : entrées/sorties sans logique économique, bénéficiaires multiples, opérations internationales incohérentes, client injoignable</li>
+                    <li>Formaliser comité/validation et délais</li>
+                </ul>
+            </div>
+        </details>
+        <details class="fiche-specificity">
+            <summary class="fiche-specificity-summary">
+                <span class="fiche-specificity-label">Crypto / CASP</span>
+                <span class="fiche-specificity-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fiche-specificity-content">
+                <ul>
+                    <li>Déclencheurs fréquents : conversions + retraits rapides, opacité des contreparties, patterns de split, incohérence profil économique</li>
+                    <li>Attention au "fuite des fonds" : décider vite sur restrictions</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
+    <section class="fiche-section fiche-sources">
+        <h2>Sources</h2>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">Code monétaire et financier</span>
+            <span class="fiche-source-ref">Loi — Article L.561-15 (obligation de déclaration de soupçon)</span>
+            <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517847" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">Code monétaire et financier</span>
+            <span class="fiche-source-ref">Loi — Section 'Obligation de déclaration et d'information' (L.561-15 s.)</span>
+            <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006072026/LEGISCTA000020180500/" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">ACPR</span>
+            <span class="fiche-source-ref">Lignes directrices — Lignes directrices ACPR/Tracfin - vigilance opérations + déclaration (version 23 avril 2025)</span>
+            <a href="https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-lacpr-et-de-tracfin-relatives-aux-obligations-de-vigilance-sur-les" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">23/09/2025</span>
+        </div>
+        <div class="fiche-source-item">
+            <span class="fiche-source-authority">Conseil d'État</span>
+            <span class="fiche-source-ref">Avis — Avis sur la portée de l'obligation de déclaration (L.561-15)</span>
+            <a href="https://www.conseil-etat.fr/avis-consultatifs/derniers-avis-rendus/au-gouvernement/avis-relatif-a-la-portee-de-l-obligation-de-declaration-prevue-a-l-article-l.-561-15-du-code-monetaire-et-financier" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
+            <span class="fiche-source-date">05/02/2025</span>
+        </div>
+    </section>
+
+    <div class="fiche-retour">
+      <a href="/ressources">&larr; Toutes les ressources</a>
+    </div>
+    </div>
+</div>
+</BaseLayout>
