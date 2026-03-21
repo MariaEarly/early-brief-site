@@ -8,23 +8,25 @@
       --ecru: #F5F2EB;
       --white: #FFFFFF;
       --vert-sapin: #2D5A3D;
-      --vert-hover: #3D6A4D;
-      --vert-light: #E8F0EA;
-      --vert-lighter: #F0F5F1;
-      --text-primary: #1F2A23;
-      --text-secondary: #4A5A4A;
-      --text-muted: #5A6A5A;
-      --border: rgba(0, 0, 0, 0.06);
-      --border-strong: rgba(0, 0, 0, 0.12);
+      --vert-hover: #1E3520;
+      --vert-light: rgba(45,90,61,0.08);
+      --vert-lighter: rgba(45,90,61,0.04);
+      --terra: #9E3D1B;
+      --text-primary: #1A1A1A;
+      --text-secondary: #4A4540;
+      --text-muted: #8A8A7A;
+      --border: rgba(45,90,61,0.12);
+      --border-strong: rgba(45,90,61,0.2);
       --success: #2D7A4D;
       --warning: #B5854A;
       --danger: #C45C5C;
       --danger-light: #FDF2F2;
       --font-mono: 'IBM Plex Mono', monospace;
       --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      --radius: 8px;
-      --radius-lg: 12px;
-      --radius-xl: 16px;
+      --font-display: 'Cormorant', Georgia, serif;
+      --radius: 3px;
+      --radius-lg: 4px;
+      --radius-xl: 4px;
       --transition-fast: 0.15s ease;
       --transition-normal: 0.25s ease;
     }
@@ -179,9 +181,9 @@
 
     /* === DISCLAIMER === */
     .disclaimer {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--vert-sapin);
+      background: rgba(45,90,61,0.04);
+      border: none;
+      border-left: 2px solid var(--vert-sapin);
       border-radius: var(--radius);
       padding: 14px 18px;
       margin-bottom: 28px;
@@ -199,13 +201,11 @@
       border-radius: var(--radius-lg);
       margin-bottom: 20px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       transition: var(--transition-fast);
     }
 
     .card.highlight {
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border-strong);
     }
 
     .card.hidden { display: none; }
@@ -390,7 +390,6 @@
       border-radius: var(--radius-lg);
       margin-bottom: 20px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .results-card.hidden { display: none; }
@@ -717,7 +716,7 @@
       background: var(--white);
       border: 1px solid var(--border-strong);
       border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
       min-width: 180px;
       z-index: 100;
       opacity: 0;
@@ -1406,28 +1405,26 @@
 
     .persona-card {
       background: var(--white);
-      border: 2px solid var(--border);
+      border: 1px solid rgba(45,90,61,0.15);
       border-radius: var(--radius-lg);
-      padding: 16px 12px;
+      padding: 14px 12px;
       text-align: center;
       cursor: pointer;
       transition: var(--transition-fast);
     }
 
     .persona-card:hover {
-      border-color: var(--vert-light);
-      background: var(--vert-lighter);
-      transform: translateY(-2px);
+      border-color: var(--vert-sapin);
+      background: rgba(45,90,61,0.05);
     }
 
     .persona-card.active {
       border-color: var(--vert-sapin);
-      background: var(--vert-light);
+      background: rgba(45,90,61,0.05);
     }
 
     .persona-icon {
-      font-size: 28px;
-      margin-bottom: 8px;
+      display: none;
     }
 
     .persona-name {
@@ -2354,3 +2351,71 @@
   padding: 16px 40px 0;
 }
 .tool-back:hover { color: var(--vert-sapin); }
+
+/* === EARLY BRIEF OVERRIDES === */
+
+/* Links → terra */
+a { color: var(--terra); }
+a:hover { text-decoration: underline; }
+.disclaimer-link { color: var(--terra); }
+
+/* Headings → serif display */
+h1 { font-family: var(--font-display); }
+h2 { font-family: var(--font-display); }
+
+/* Hero alignment */
+.hero-split h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.hero-lead {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Card header — softer bg */
+.card-header {
+  background: rgba(45,90,61,0.04);
+}
+
+/* Results header — softer bg */
+.results-header {
+  background: rgba(45,90,61,0.06);
+}
+
+/* Step circle inactive → muted ecru */
+.step-circle {
+  background: #E0DDD6;
+}
+
+/* PPE / revision alert — remove emoji noise */
+.ppe-alert {
+  border-left: 2px solid var(--warning);
+  border-radius: var(--radius);
+}
+
+/* Risk badge — flat */
+.risk-score-level {
+  border-radius: 2px;
+}
+
+/* Attention box legend */
+.attention-box--legend {
+  background: rgba(45,90,61,0.04);
+  border: 1px solid var(--border);
+}
+
+/* Testimonial — remove shadow */
+.testimonial-banner {
+  box-shadow: none;
+}
+
+/* Newsletter CTA — no gradient */
+.newsletter-cta {
+  background: var(--vert-sapin);
+  border-radius: var(--radius-lg);
+}
