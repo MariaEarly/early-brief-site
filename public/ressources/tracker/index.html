@@ -8,14 +8,14 @@
 <meta name="keywords" content="LCB-FT, conformité, sanctions, AML, AMLA, MiCA, GAFI, FATF, AMF, ACPR, EBA, ESMA, veille réglementaire, compliance, blanchiment, financement du terrorisme, crypto-actifs, PSAN, CASP">
 <meta name="author" content="Early Brief — Maria Garcia">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://early-brief-tracker.netlify.app/">
+<link rel="canonical" href="https://early-brief.com/ressources/tracker/">
 <meta name="theme-color" content="#F5F2EB">
 
 <!-- Open Graph (LinkedIn, Facebook) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tracker réglementaire LCB-FT & conformité 2026 — Early Brief">
 <meta property="og:description" content="53 textes suivis, 18 échéances actives. Veille LCB-FT, sanctions, MiCA, AMLA — sources officielles, filtrable par mois, source et statut.">
-<meta property="og:url" content="https://early-brief-tracker.netlify.app/">
+<meta property="og:url" content="https://early-brief.com/ressources/tracker/">
 <meta property="og:site_name" content="Early Brief">
 <meta property="og:locale" content="fr_FR">
 
@@ -31,7 +31,7 @@
   "@type": "WebApplication",
   "name": "Early Brief — Tracker Réglementaire 2026",
   "description": "Tracker de veille réglementaire en conformité financière, LCB-FT et sanctions internationales. Sources officielles : AMLA, AMF, ACPR, EBA, ESMA, GAFI.",
-  "url": "https://early-brief-tracker.netlify.app/",
+  "url": "https://early-brief.com/ressources/tracker/",
   "applicationCategory": "RegulatoryCompliance",
   "operatingSystem": "Web",
   "author": {
@@ -52,14 +52,14 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
   :root {
     /* Palette Early Brief */
-    --ecru: #F5F2EB;
-    --sage: #BDCFCB;
-    --sage-light: #D9E6E0;
-    --rose: #C48B9F;
+    --ecru: #F4F0E6;
+    --green: #2C4A2E;
+    --green-light: #3D6B40;
+    --terra: #9E3D1B;
     --white: #FFFFFF;
     /* Échelle de gris — 6 tokens */
     --gray-50:  #FAF8F5;
@@ -73,9 +73,9 @@
     --mid:    #5A5651;
     --light:  #A8A29E;
     --border: #E8E4DC;
-    --font-display: 'Inter', system-ui, sans-serif;
-    --font-body:    'Inter', system-ui, sans-serif;
-    --font-serif:   'Spectral', Georgia, serif;
+    --font-display: 'Hanken Grotesk', system-ui, sans-serif;
+    --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+    --font-serif:   'Cormorant', Georgia, serif;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:var(--font-body); background:#F0EDE6; color:var(--dark); padding:24px; padding-bottom:72px; }
@@ -106,7 +106,7 @@
   .source-bar-row { display:flex; align-items:center; gap:12px; }
   .source-bar-label { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--dark); width:100px; flex-shrink:0; }
   .source-bar-track { flex:1; background:var(--gray-200); border-radius:2px; height:6px; overflow:hidden; }
-  .source-bar-fill { height:100%; background:var(--sage); border-radius:2px; transition:width .4s ease; }
+  .source-bar-fill { height:100%; background:var(--green); border-radius:2px; transition:width .4s ease; }
   .source-bar-count { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--gray-600); width:64px; text-align:right; flex-shrink:0; }
   .statut-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
   .statut-cell { background:var(--white); border:1px solid var(--gray-200); border-radius:4px; padding:16px 20px; text-align:center; border-left:3px solid var(--cell-dot, var(--gray-200)); }
@@ -160,7 +160,7 @@
   .deadline-date { font-family:var(--font-display); font-size:12px; font-weight:600; color:var(--dark); width:100px; flex-shrink:0; }
   .deadline-cat { font-size:12px; font-weight:600; color:var(--mid); width:130px; flex-shrink:0; }
   .deadline-desc { font-size:12px; color:var(--light); line-height:1.4; }
-  .urgent { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--sage); margin-right:6px; vertical-align:middle; }
+  .urgent { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--green); margin-right:6px; vertical-align:middle; }
 
   /* VEILLE */
   .veille-header { padding: 18px 28px 10px; }
@@ -286,6 +286,11 @@
 </style>
 </head>
 <body>
+<div style="padding: 12px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; border-bottom: 1px solid rgba(26,24,20,0.14);">
+  <a href="/ressources" style="color: #8A8480; text-decoration: none;">← Ressources</a>
+  <span style="color: #8A8480; margin: 0 8px;">·</span>
+  <a href="/" style="color: #8A8480; text-decoration: none;">Early Brief</a>
+</div>
 
 <div class="brand-bar">
   <div class="brand-inner">
@@ -303,7 +308,7 @@
 
 <div class="tab-switcher">
   <button class="tab-btn active" onclick="switchTab('dashboard', event)"><span class="tab-dot" style="background:var(--dark)"></span>Dashboard</button>
-  <button class="tab-btn" onclick="switchTab('veille', event)"><span class="tab-dot" style="background:var(--sage)"></span><span id="tab-veille-label">Tracker</span></button>
+  <button class="tab-btn" onclick="switchTab('veille', event)"><span class="tab-dot" style="background:var(--green)"></span><span id="tab-veille-label">Tracker</span></button>
   <button class="tab-btn" onclick="switchTab('mode', event)"><span class="tab-dot" style="background:var(--ecru);border:1px solid var(--border)"></span>Mode d'emploi</button>
 </div>
 
