@@ -2390,10 +2390,11 @@ h2 { font-family: var(--font-serif); }
 }
 
 .hero-split h1 {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-family: 'Cormorant', Georgia, serif;
+  font-size: 48px;
+  font-weight: 300;
   color: #2D2D1F;
+  line-height: 1.08;
 }
 
 .hero-lead {
