@@ -79,7 +79,7 @@
     --font-mono:    'IBM Plex Mono', monospace;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:var(--font-body); background:#F0EDE6; color:var(--dark); padding:24px; padding-bottom:72px; }
+  body { font-family:var(--font-body); background:#F4F0E6; color:var(--dark); padding:0; padding-bottom:72px; }
 
   /* CTA BAR (sticky bottom) */
   .cta-bar { position:fixed; bottom:0; left:0; right:0; background:#2D5A3D; border-top:none; padding:10px 32px; display:flex; align-items:center; gap:16px; z-index:900; }
@@ -138,7 +138,7 @@
   .tab-btn:not(.active):hover { color:var(--dark); }
   .tab-dot { display:none; }
 
-  .tab-content { display:none; background:var(--ecru); border-radius:0 0 10px 10px; overflow:hidden; border:1px solid #E6DED2; border-top:none; }
+  .tab-content { display:none; background:var(--ecru); border-radius:0; overflow:hidden; border:none; }
   .tab-content.active { display:block; }
 
   /* DASHBOARD */
@@ -187,7 +187,7 @@
 
   .badge {
     display: inline-flex; align-items: center; gap: 6px;
-    padding: 4px 8px; border-radius: 4px;
+    padding: 4px 8px; border-radius: 2px;
     font-family: var(--font-display); font-size: 10px;
     font-weight: 500; letter-spacing: .01em; white-space: nowrap;
     background: transparent; color: var(--gray-600); border: 1px solid rgba(26,24,20,0.14);
@@ -205,8 +205,8 @@
   .badge-rapport::before     { background: #A8A29E; }
   .badge-programme::before   { background: #8E9BAE; }
 
-  .link-btn { display:inline-block; font-size:12px; font-weight:600; color:#4A4A46; text-decoration:none; }
-  .link-btn:hover { color:#111; text-decoration:underline; }
+  .link-btn { display:inline-block; font-size:12px; font-weight:600; color:#9E3D1B; text-decoration:none; }
+  .link-btn:hover { color:#7A2E14; text-decoration:underline; }
 
   /* MODE D'EMPLOI */
   .mode-header { background:var(--ecru); padding:28px 40px 20px; border-bottom:1px solid var(--border); }
@@ -285,23 +285,28 @@
   .mode-footer { display:flex; align-items:center; justify-content:space-between; margin-top:48px; padding-top:24px; border-top:1px solid var(--gray-200); gap:24px; }
   .mode-footer-brand { font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px; }
   .mode-footer-sub { font-size:12px; color:var(--gray-400); line-height:1.5; }
-  .mode-footer-cta { font-family:var(--font-display); font-size:12px; font-weight:700; color:var(--white); background:#2C4A2E; padding:10px 20px; border-radius:4px; text-decoration:none; white-space:nowrap; flex-shrink:0; }
-  .mode-footer-cta:hover { background:#1E3520; }
+  .mode-footer-cta { font-family:var(--font-body); font-size:12px; font-weight:700; color:#F5F2EB; background:#9E3D1B; padding:10px 20px; border-radius:2px; text-decoration:none; white-space:nowrap; flex-shrink:0; }
+  .mode-footer-cta:hover { background:#7A2E14; }
 </style>
 </head>
 <body>
-<div style="padding: 12px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; border-bottom: 1px solid rgba(26,24,20,0.14);">
-  <a href="/ressources" style="color: #8A8480; text-decoration: none;">← Ressources</a>
-  <span style="color: #8A8480; margin: 0 8px;">·</span>
-  <a href="/" style="color: #8A8480; text-decoration: none;">Early Brief</a>
-</div>
+<header style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid rgba(26,24,20,0.14);background:#F4F0E6;">
+  <a href="/" style="font-family:'Cormorant',serif;font-size:1.3rem;font-weight:600;color:#1A1814;text-decoration:none;letter-spacing:-0.01em;">Early <em style="font-style:normal;color:#9E3D1B;">Brief</em></a>
+  <nav style="display:flex;gap:1.5rem;font-family:'Hanken Grotesk',sans-serif;font-size:0.85rem;">
+    <a href="/ressources/" style="color:#9E3D1B;text-decoration:none;font-weight:500;">Ressources</a>
+    <a href="/offre/" style="color:#4A4540;text-decoration:none;">Offre</a>
+    <a href="/a-propos/" style="color:#4A4540;text-decoration:none;">À propos</a>
+    <a href="/newsletter/" style="color:#4A4540;text-decoration:none;">Newsletter</a>
+    <a href="/contact/" style="color:#4A4540;text-decoration:none;">Contact</a>
+  </nav>
+</header>
 
 <div class="brand-bar">
   <div class="brand-inner">
     <div class="brand-title-wrap">
-      <div class="brand-title">Early <em style="font-style:normal;color:#9E3D1B">Brief</em></div>
+      <div class="brand-title" style="font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--gray-900);">Tracker réglementaire</div>
       <div class="brand-sep"></div>
-      <div class="brand-sub">Veille réglementaire LCB-FT, sanctions &amp; conformité — 2026</div>
+      <div class="brand-sub">LCB-FT, sanctions &amp; conformité — 2026</div>
     </div>
     <div class="header-metrics" style="display:none">
       <div class="metric"><div class="metric-value" id="metric-count">—</div><div class="metric-label">Entrées</div></div>
