@@ -1,11 +1,32 @@
 ---
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/ressources/', label: 'Ressources' },
+  { href: '/offre/', label: 'Offre' },
+  { href: '/newsletter/', label: 'Newsletter' },
+  { href: '/contact/', label: 'Contact' },
+];
 ---
 <header>
   <a href="/" class="logo">Early <em>Brief</em></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
   <nav>
-    <a href="/ressources/">Ressources</a>
-    <a href="/offre/">Offre</a>
-    <a href="/a-propos/">À propos</a>
-    <a href="/contact/">Contact</a>
+    {links.map(link => (
+      <a href={link.href} class:list={[{ active: pathname.startsWith(link.href) }]}>
+        {link.label}
+      </a>
+    ))}
   </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('header nav');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('open');
+  });
+</script>

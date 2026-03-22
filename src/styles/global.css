@@ -85,6 +85,50 @@ header nav a {
 header nav a:hover {
   color: var(--terra);
 }
+header nav a.active {
+  color: var(--terra);
+  font-weight: 500;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 5px;
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+@media (max-width: 600px) {
+  .nav-toggle { display: flex; }
+  header nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 1rem 60px 1.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    z-index: 100;
+  }
+  header nav.open { display: flex; }
+  header { position: relative; }
+}
 .logo {
   font-size: 13px;
   font-weight: 500;
