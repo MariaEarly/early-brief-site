@@ -25,7 +25,6 @@
     }
 
     html, body {
-      height: 100%;
       background: var(--ecru);
       color: var(--text);
       font-family: var(--sans);
@@ -35,28 +34,14 @@
 
     /* ── LAYOUT ── */
     .page {
-      display: block;
-      padding-bottom: 160px;
-    }
-
-    .inner {
       max-width: 780px;
       margin: 0 auto;
-      padding: 0 2.5rem;
-      width: 100%;
+      padding: 0 2.5rem 4rem;
     }
 
     /* ── HEADER ── */
     header {
-      padding: 2.5rem 0 2rem;
-    }
-
-    header .inner {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border-bottom: 1px solid #D4CFC6;
-      padding-bottom: 1.5rem;
+      padding: 2.5rem 0 0;
     }
 
     .breadcrumb {
@@ -92,13 +77,10 @@
 
     /* ── PÉRIMÈTRE ── */
     .scope {
-      padding: 0;
-    }
-
-    .scope .inner {
-      border-top: 1px solid #D4CFC6;
-      border-bottom: 1px solid #D4CFC6;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: 1.25rem 0;
+      margin-top: 1.75rem;
     }
 
     .scope-label {
@@ -128,14 +110,7 @@
 
     /* ── MESSAGES ── */
     .messages-area {
-    }
-
-    .messages-area .inner {
       padding-top: 1.25rem;
-      padding-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
     }
 
     .message {
@@ -214,7 +189,7 @@
     /* Welcome */
     .welcome-msg {
       padding: 1rem 0 0.75rem;
-      border-bottom: 1px solid #D4CFC6;
+      border-bottom: 1px solid var(--border);
     }
 
     .welcome-msg p {
@@ -270,17 +245,9 @@
 
     /* ── INPUT ── */
     .input-area {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #F5F2EB;
-      border-top: 1px solid #D4CFC6;
-      padding: 1.25rem 0 1.75rem;
-      z-index: 10;
-    }
-
-    .input-area .inner {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 0 0;
+      margin-top: 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
@@ -405,7 +372,7 @@
 
     @media (max-width: 600px) {
       h1 { font-size: 1.9rem; }
-      .inner { padding: 0 1.25rem; }
+      .page { padding: 0 1.25rem 3rem; }
     }
   </style>
 </head>
@@ -413,30 +380,26 @@
 <div class="page">
 
   <header>
-    <div class="inner">
-      <a href="/ressources/" class="breadcrumb">← Ressources Early Brief</a>
-      <h1>Early Request</h1>
-      <p class="tagline">Votre question de conformité, analysée en 30 secondes.</p>
-    </div>
+    <a href="/ressources/" class="breadcrumb">← Ressources Early Brief</a>
+    <h1>Early Request</h1>
+    <p class="tagline">Votre question de conformité, analysée en 30 secondes.</p>
 
     <div class="scope">
-      <div class="inner">
-        <p class="scope-label">Périmètre couvert</p>
-        <div class="scope-tags">
-          <span>LCB-FT</span>
-          <span>KYC / PPE</span>
-          <span>Gel des avoirs</span>
-          <span>PSP / EME</span>
-          <span>PSAN / CASP / MiCA</span>
-          <span>Doctrine ACPR / AMF</span>
-          <span>Travel Rule</span>
-        </div>
+      <p class="scope-label">Périmètre couvert</p>
+      <div class="scope-tags">
+        <span>LCB-FT</span>
+        <span>KYC / PPE</span>
+        <span>Gel des avoirs</span>
+        <span>PSP / EME</span>
+        <span>PSAN / CASP / MiCA</span>
+        <span>Doctrine ACPR / AMF</span>
+        <span>Travel Rule</span>
       </div>
     </div>
   </header>
 
   <div class="messages-area" id="messages-wrapper">
-    <div class="inner" id="messages">
+    <div id="messages">
       <div class="welcome-msg">
         <p>Posez votre question. L'assistant s'appuie sur un corpus réglementaire sélectionné : CMF, directives LCB-FT, DSP2, MiCA, doctrine ACPR/AMF.</p>
         <p class="notice">Ne constitue pas un conseil juridique · Les réponses doivent être revues avant tout usage opérationnel</p>
@@ -445,30 +408,27 @@
   </div>
 
   <div class="input-area">
-    <div class="inner">
-      <p class="disclaimer"><strong>⚠ Ne pas inclure de données personnelles</strong> — nom de client, IBAN, email, données sensibles.</p>
-      <div class="sensitive-warning" id="sensitive-warning">
-        Données potentiellement sensibles détectées (IBAN, email, téléphone…). Anonymisez avant d'envoyer.
-      </div>
-      <textarea id="input" rows="2"
-        placeholder="Ex : Quelles sont les obligations de vigilance renforcée pour un EME traitant des transferts vers des pays sous surveillance GAFI ?"
-      ></textarea>
-      <div class="input-actions">
-        <span class="input-hint">↵ Ctrl + Entrée pour envoyer</span>
-        <div class="btn-group">
-          <button id="reset">Nouvelle conversation</button>
-          <button id="send">Envoyer →</button>
-        </div>
-      </div>
-      <div class="error-msg" id="error"></div>
+    <p class="disclaimer"><strong>⚠ Ne pas inclure de données personnelles</strong> — nom de client, IBAN, email, données sensibles.</p>
+    <div class="sensitive-warning" id="sensitive-warning">
+      Données potentiellement sensibles détectées (IBAN, email, téléphone…). Anonymisez avant d'envoyer.
     </div>
+    <textarea id="input" rows="2"
+      placeholder="Ex : Quelles sont les obligations de vigilance renforcée pour un EME traitant des transferts vers des pays sous surveillance GAFI ?"
+    ></textarea>
+    <div class="input-actions">
+      <span class="input-hint">↵ Ctrl + Entrée pour envoyer</span>
+      <div class="btn-group">
+        <button id="reset">Nouvelle conversation</button>
+        <button id="send">Envoyer →</button>
+      </div>
+    </div>
+    <div class="error-msg" id="error"></div>
   </div>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-  // Configuration marked
   marked.setOptions({ breaks: true, gfm: true });
 
   const messagesEl = document.getElementById('messages');
@@ -482,13 +442,12 @@
   let history = [];
   let lastFailedQuestion = null;
 
-  // ── Filtre données sensibles ──
   const SENSITIVE_PATTERNS = [
-    /\b[A-Z]{2}\d{2}[A-Z0-9]{4}\d{7}([A-Z0-9]?){0,16}\b/,  // IBAN
-    /\b[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\b/, // email
-    /\b(0|\+33|0033)[1-9](\d{2}){4}\b/,                       // téléphone FR
-    /\b\d{13,19}\b/,                                           // numéro de carte
-    /\b\d{2}[\/\-]\d{2}[\/\-]\d{2,4}\b/,                     // date naissance
+    /\b[A-Z]{2}\d{2}[A-Z0-9]{4}\d{7}([A-Z0-9]?){0,16}\b/,
+    /\b[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\b/,
+    /\b(0|\+33|0033)[1-9](\d{2}){4}\b/,
+    /\b\d{13,19}\b/,
+    /\b\d{2}[\/\-]\d{2}[\/\-]\d{2,4}\b/,
   ];
 
   function containsSensitiveData(text) {
@@ -528,7 +487,7 @@
     div.appendChild(roleLabel);
     div.appendChild(contentDiv);
     messagesEl.appendChild(div);
-    wrapperEl.scrollTop = wrapperEl.scrollHeight;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     return div;
   }
 
@@ -537,7 +496,7 @@
     div.className = 'thinking';
     div.innerHTML = `<span class="thinking-label">Analyse</span><span class="thinking-dots"><span></span><span></span><span></span></span>`;
     messagesEl.appendChild(div);
-    wrapperEl.scrollTop = wrapperEl.scrollHeight;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     return div;
   }
 
