@@ -35,10 +35,8 @@
 
     /* ── LAYOUT ── */
     .page {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      overflow: hidden;
+      display: block;
+      padding-bottom: 160px;
     }
 
     .inner {
@@ -124,9 +122,6 @@
 
     /* ── MESSAGES ── */
     .messages-area {
-      flex: 1;
-      overflow-y: auto;
-      min-height: 0;
     }
 
     .messages-area .inner {
@@ -269,9 +264,14 @@
 
     /* ── INPUT ── */
     .input-area {
-      background: var(--ecru);
-      padding: 1.25rem 0 2rem;
-      border-top: 1px solid var(--border);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #F5F2EB;
+      border-top: 1px solid #D4CFC6;
+      padding: 1.25rem 0 1.75rem;
+      z-index: 10;
     }
 
     .input-area .inner {
