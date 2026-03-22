@@ -106,7 +106,15 @@ exports.handler = async function (event, context) {
   };
 
   try {
-    const { messages } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    if (!body.messages || body.messages.length > 20) {
+      return { statusCode: 400, headers, body: JSON.stringify({ error: "Conversation trop longue" }) };
+    }
+    const lastMsg = body.messages[body.messages.length - 1];
+    if (lastMsg.content.length > 3000) {
+      return { statusCode: 400, headers, body: JSON.stringify({ error: "Message trop long" }) };
+    }
+    const { messages } = body;
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
