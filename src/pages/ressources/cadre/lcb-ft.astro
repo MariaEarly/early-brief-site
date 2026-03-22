@@ -169,4 +169,13 @@ import AuthorBlock from '../../../components/AuthorBlock.astro';
     </div>
     </div>
 </div>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LCB-FT — cadre juridique applicable en France",
+  "author": { "@type": "Person", "name": "Maria Garcia", "jobTitle": "Consultante conformité" },
+  "publisher": { "@type": "Organization", "name": "Early Brief", "legalName": "Early Consulting SAS" },
+  "dateModified": "2026-01-30",
+  "mainEntityOfPage": "https://early-brief.com/ressources/cadre/lcb-ft/"
+})} />
 </BaseLayout>

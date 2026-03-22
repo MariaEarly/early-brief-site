@@ -404,4 +404,13 @@ import AuthorBlock from '../../components/AuthorBlock.astro';
     <div class="fiche-retour"><a href="/ressources">&larr; Toutes les ressources</a></div>
     </div>
 </div>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AMLA — cadre de supervision européen LCB-FT",
+  "author": { "@type": "Person", "name": "Maria Garcia", "jobTitle": "Consultante conformité" },
+  "publisher": { "@type": "Organization", "name": "Early Brief", "legalName": "Early Consulting SAS" },
+  "dateModified": "2026-03-22",
+  "mainEntityOfPage": "https://early-brief.com/ressources/amla-supervision-cadre/"
+})} />
 </BaseLayout>
