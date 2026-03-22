@@ -13,6 +13,10 @@ const year = new Date().getFullYear();
       <a href="/newsletter">Newsletter</a>
       <a href="/contact">Contact</a>
     </nav>
+    <nav class="footer-legal">
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/politique-confidentialite/">Confidentialité</a>
+    </nav>
     <p class="footer-copy">&copy; {year} Early Brief. Tous droits réservés.</p>
   </div>
 </footer>
@@ -52,6 +56,21 @@ const year = new Date().getFullYear();
 
   .footer-links a:hover {
     color: var(--ink);
+    text-decoration: none;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.75rem;
+    color: var(--ghost);
+  }
+
+  .footer-legal a:hover {
+    color: var(--muted);
     text-decoration: none;
   }
 
