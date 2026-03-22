@@ -91,16 +91,11 @@
       font-weight: 400;
     }
 
-    .header-rule {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin-top: 2rem;
-    }
-
     /* ── PÉRIMÈTRE ── */
     .scope {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid #D4CFC6;
+      border-bottom: 1px solid #D4CFC6;
+      padding: 1.25rem 0;
     }
 
     .scope-label {
@@ -205,12 +200,15 @@
       font-size: 0.78em;
       color: var(--terra);
     }
+    .message.assistant .message-content h1,
+    .message.assistant .message-content h2,
     .message-content h3, .message-content h4 {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-light);
+      font-weight: 500;
       margin: 1.25rem 0 0.5rem;
     }
 
@@ -416,7 +414,6 @@
       <h1>Early Request</h1>
       <p class="tagline">Votre question de conformité, analysée en 30 secondes.</p>
     </div>
-    <hr class="header-rule" style="max-width:780px; margin: 2rem auto 0; padding: 0 2.5rem; box-sizing: content-box;">
 
     <div class="scope">
       <div class="inner">
