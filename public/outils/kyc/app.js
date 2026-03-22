@@ -375,7 +375,7 @@
       return {
         organisation: document.getElementById('organisation').value,
         canal: document.getElementById('canal').value,
-        relation: document.getElementById('relation').value,
+        relation: (document.getElementById('relation') || {}).value || 'affaires',
         expositionUS: document.getElementById('expositionUS').value,
         clientType: clientTypeEl ? clientTypeEl.value : null,
         pays: document.getElementById('pays').value,
@@ -1209,7 +1209,7 @@
           formValues: {
             organisation: document.getElementById('organisation')?.value || '',
             canal: document.getElementById('canal')?.value || '',
-            relation: document.getElementById('relation')?.value || '',
+            relation: document.getElementById('relation')?.value || 'affaires',
             expositionUS: document.getElementById('expositionUS')?.value || '',
             clientType: clientTypeEl ? clientTypeEl.value : null,
             pays: document.getElementById('pays')?.value || '',
@@ -1264,7 +1264,7 @@
         
         safeSet('organisation', fv.organisation);
         safeSet('canal', fv.canal);
-        safeSet('relation', fv.relation);
+        if (document.getElementById('relation')) safeSet('relation', fv.relation);
         safeSet('expositionUS', fv.expositionUS);
 
         if (fv.clientType) {

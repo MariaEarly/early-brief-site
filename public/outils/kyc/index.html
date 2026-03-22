@@ -136,14 +136,7 @@
             <option value="distance">À distance</option>
           </select>
         </div>
-        <div class="form-group">
-          <label class="form-label required">Relation <span class="tooltip" data-tip="Affaires = relation durable avec KYC complet. Occasionnelle = opération ponctuelle (seuils selon procédure interne, souvent 1 000€ ou 15 000€).">?</span></label>
-          <select class="form-select" id="relation" onchange="updateForm()">
-            <option value="">Sélectionner</option>
-            <option value="affaires">Affaires</option>
-            <option value="occasionnelle">Occasionnelle</option>
-          </select>
-        </div>
+        <!-- Relation supprimée — le KYC complet s'applique par défaut -->
         <div class="form-group">
           <label class="form-label required">Exposition US <span class="tooltip" data-tip="Déclenche des obligations de filtrage OFAC. Cochez Oui si : paiements en USD, contreparties US, banques correspondantes américaines, clients US persons.">?</span></label>
           <select class="form-select" id="expositionUS" onchange="updateForm()">
