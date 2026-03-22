@@ -29,7 +29,7 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 
 **Pays à risque** : liste noire GAFI, liste grise GAFI, liste UE (Règlement délégué mis à jour). Mesures (L. 561-10, 3°) : vigilance renforcée obligatoire, documentation accrue.
 
-**Déclaration de soupçon (L. 561-15)** : sommes pouvant provenir d'un crime/délit ou financement terrorisme. Destinataire : TRACFIN. Délai : sans délai. Confidentialité (L. 561-19 = tipping-off interdit). Non-responsabilité si bonne foi (L. 561-22). Droit d'opposition TRACFIN : 10 jours ouvrables (L. 561-24).
+**Déclaration de soupçon (L. 561-15)** : sommes pouvant provenir d'un crime/délit ou financement terrorisme. Destinataire : TRACFIN. Délai : sans délai. Confidentialité (L. 561-18 = tipping-off interdit). Non-responsabilité si bonne foi (L. 561-22). Droit d'opposition TRACFIN : 10 jours ouvrables (L. 561-24).
 
 **Organisation** : déclarant TRACFIN désigné (L. 561-32, R. 561-23), formation (L. 561-34), conservation 5 ans (L. 561-12).
 
