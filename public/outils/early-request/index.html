@@ -274,7 +274,7 @@
     /* ── INPUT ── */
     .input-area {
       background: var(--ecru);
-      padding: 1.75rem 0 2.5rem;
+      padding: 1.25rem 0 2rem;
       border-top: 1px solid var(--border);
     }
 
@@ -297,21 +297,24 @@
       font-family: var(--serif);
       font-weight: 400;
       font-size: 1rem;
-      color: var(--text);
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 0 0.75rem;
+      color: #2D2D1F;
+      background: #EDE9E0;
+      border: 1px solid #C8C4B8;
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
       resize: none;
-      min-height: 48px;
+      min-height: 52px;
       max-height: 160px;
       line-height: 1.55;
       outline: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    textarea:focus { border-bottom-color: var(--vert); }
+    textarea:focus {
+      border-color: #2D5A3D;
+      box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.08);
+    }
     textarea::placeholder {
-      color: var(--border);
+      color: #B0AB9E;
       font-style: italic;
     }
 
