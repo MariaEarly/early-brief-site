@@ -1,0 +1,40 @@
+---
+const { lastUpdated } = Astro.props;
+---
+<div class="author-block">
+  <p class="author-block-text">Rédigé par <strong>Maria Garcia</strong> — Consultante conformité, Early Consulting. <a href="/a-propos/">En savoir plus →</a></p>
+  {lastUpdated && <p class="author-block-date">Mis à jour le {lastUpdated}</p>}
+</div>
+
+<style>
+  .author-block {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .author-block-text {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .author-block-text strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .author-block-text a {
+    color: var(--terra);
+    text-decoration: none;
+    font-size: 0.78rem;
+  }
+  .author-block-text a:hover {
+    text-decoration: underline;
+  }
+  .author-block-date {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ghost);
+    margin-top: 0.35rem;
+    letter-spacing: 0.03em;
+  }
+</style>
