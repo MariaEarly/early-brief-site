@@ -269,7 +269,14 @@ button#send:disabled { opacity: 0.35; cursor: not-allowed; }
       thinking.remove();
       lastFailedQuestion = question;
       const msg = err.name === 'AbortError' ? 'Délai dépassé (30s)' : err.message;
-      errorEl.innerHTML = DOMPurify.sanitize(`${escapeHtml(msg)} — <button onclick="retryLast()">Réessayer</button>`);
+      errorEl.textContent = '';
+      const msgSpan = document.createElement('span');
+      msgSpan.textContent = msg + ' — ';
+      const retryBtn = document.createElement('button');
+      retryBtn.textContent = 'Réessayer';
+      retryBtn.addEventListener('click', retryLast);
+      errorEl.appendChild(msgSpan);
+      errorEl.appendChild(retryBtn);
       errorEl.style.display = 'block';
     } finally {
       sendBtn.disabled = false;
