@@ -34,7 +34,7 @@ html, body { background: var(--ecru); color: var(--text); font-family: var(--san
 .inner { max-width: 900px; margin: 0 auto; padding: 0 60px; }
 
 /* ZONE 1 */
-.zone-presentation { padding: 56px 0 2rem; }
+.zone-presentation { padding-top: 56px; padding-bottom: 2rem; }
 
 .breadcrumb { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--text-light); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
 .breadcrumb:hover { color: var(--terra); }
@@ -50,7 +50,7 @@ h1 { font-family: 'Cormorant', Georgia, serif; font-weight: 300; font-size: 60px
 .scope-tags { font-family: var(--mono); font-size: 0.7rem; color: var(--text-light); line-height: 1.9; }
 
 /* ZONE 2 */
-.zone-action { background: transparent; border-top: none; padding: 3rem 0 2.5rem; }
+.zone-action { background: transparent; border-top: none; padding-top: 3rem; padding-bottom: 2.5rem; }
 
 .disclaimer { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.04em; color: var(--terra); margin-bottom: 0.75rem; }
 
@@ -102,8 +102,8 @@ button#send:disabled { opacity: 0.35; cursor: not-allowed; }
 
 @media (max-width: 600px) {
   h1 { font-size: 1.75rem; }
-  .zone-presentation { padding: 28px 0 1.5rem; }
-  .inner { padding: 0 28px; }
+  .zone-presentation { padding-top: 28px; padding-bottom: 1.5rem; }
+  .inner { padding-left: 28px; padding-right: 28px; }
   .scope-grid { grid-template-columns: 1fr; }
 }
   </style>
