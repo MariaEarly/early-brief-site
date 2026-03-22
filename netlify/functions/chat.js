@@ -94,13 +94,46 @@ Sois direct, précis, opérationnel. Cite toujours les articles. Si la question 
 - Les textes évoluent : toujours vérifier la version en vigueur sur Légifrance/EUR-Lex
 - Ne constitue pas un conseil juridique — valider avec un professionnel qualifié pour les décisions importantes`;
 
+const ALLOWED_ORIGINS = [
+  "https://early-brief.com",
+  "https://www.early-brief.com",
+];
+
+if (process.env.NODE_ENV !== "production") {
+  ALLOWED_ORIGINS.push("http://localhost:4321", "http://127.0.0.1:4321", "http://localhost:8888", "http://127.0.0.1:8888");
+}
+
 exports.handler = async function (event, context) {
+  const origin = event.headers?.origin || event.headers?.Origin || "";
+  const referer = event.headers?.referer || event.headers?.Referer || "";
+  const isAllowed =
+    ALLOWED_ORIGINS.includes(origin) ||
+    ALLOWED_ORIGINS.some((o) => referer.startsWith(o));
+
+  // Preflight CORS
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 204,
+      headers: {
+        "Access-Control-Allow-Origin": isAllowed ? origin : "https://early-brief.com",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Max-Age": "86400",
+      },
+    };
+  }
+
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
+  // Reject cross-origin requests
+  if (!isAllowed) {
+    return { statusCode: 403, body: JSON.stringify({ error: "Origin not allowed" }) };
+  }
+
   const headers = {
-    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": origin || "https://early-brief.com",
     "Access-Control-Allow-Headers": "Content-Type",
     "Content-Type": "application/json",
   };
