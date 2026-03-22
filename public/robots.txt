@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://early-brief.com/sitemap-index.xml
