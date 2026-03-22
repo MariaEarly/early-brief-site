@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="404 — Page introuvable — Early Brief"
+  description="Cette page n'existe pas ou a été déplacée."
+>
+<div class="page" style="display:flex;align-items:center;justify-content:center;min-height:60vh;">
+  <div style="text-align:center;max-width:480px;padding:2rem;">
+    <p style="font-family:var(--mono);font-size:0.75rem;letter-spacing:0.12em;color:#9E3D1B;text-transform:uppercase;margin-bottom:1.5rem;">404</p>
+    <h1 style="font-family:var(--display);font-weight:400;font-size:1.8rem;color:var(--ink);margin-bottom:0.75rem;line-height:1.2;">Cette page n'existe pas</h1>
+    <p style="font-family:var(--sans);font-size:0.95rem;color:var(--muted);margin-bottom:2rem;">La page que vous cherchez a été déplacée ou n'existe plus.</p>
+    <div style="display:flex;gap:1.5rem;justify-content:center;">
+      <a href="/" style="font-family:var(--mono);font-size:0.75rem;letter-spacing:0.06em;color:#2C4A2E;text-decoration:underline;text-underline-offset:3px;">Accueil</a>
+      <a href="/ressources/" style="font-family:var(--mono);font-size:0.75rem;letter-spacing:0.06em;color:#2C4A2E;text-decoration:underline;text-underline-offset:3px;">Ressources</a>
+    </div>
+  </div>
+</div>
+</BaseLayout>
