@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Early Request — Aide à l'analyse réglementaire LCB-FT · PSP · EME · CASP</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ecru: #F5F2EB;
+      --ecru-dark: #EDE9E0;
+      --vert: #2D5A3D;
+      --terra: #9E3D1B;
+      --text: #2D2D1F;
+      --text-light: #6B6B5A;
+      --border: #D4CFC6;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--ecru);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    .inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      width: 100%;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 2.5rem 0 2rem;
+    }
+
+    header .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .breadcrumb {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 1.75rem;
+    }
+    .breadcrumb:hover { color: var(--terra); }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: 2.6rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .tagline {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .header-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    /* ── PÉRIMÈTRE ── */
+    .scope {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scope-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .scope-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .scope-tags span::before {
+      content: '—';
+      margin-right: 0.4rem;
+      color: var(--border);
+    }
+
+    /* ── MESSAGES ── */
+    .messages-area {
+      overflow-y: auto;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    .messages-area .inner {
+      padding-top: 2.5rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .message {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .message:last-child {
+      border-bottom: none;
+    }
+
+    .message-role {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .message.user .message-role { color: var(--terra); }
+    .message.assistant .message-role { color: var(--vert); }
+
+    .message.user .message-content {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .message.assistant .message-content {
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* Markdown */
+    .message-content strong { font-weight: 500; }
+    .message-content em { font-style: italic; }
+    .message-content p { margin-bottom: 0.75rem; }
+    .message-content p:last-child { margin-bottom: 0; }
+    .message-content ul {
+      padding-left: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .message-content li {
+      margin-bottom: 0.3rem;
+      list-style: none;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .message-content li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+    }
+    .message-content code {
+      font-family: var(--mono);
+      font-size: 0.78em;
+      color: var(--terra);
+    }
+    .message-content h3, .message-content h4 {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    /* Welcome */
+    .welcome-msg {
+      padding: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .welcome-msg p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .welcome-msg .notice {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-top: 1rem;
+      font-style: normal;
+    }
+
+    /* Thinking */
+    .thinking {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .thinking-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--vert);
+    }
+
+    .thinking-dots span {
+      display: inline-block;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--vert);
+      animation: dot 1.2s infinite;
+      margin-left: 2px;
+    }
+    .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dot {
+      0%, 60%, 100% { opacity: 0.2; }
+      30% { opacity: 1; }
+    }
+
+    /* ── INPUT ── */
+    .input-area {
+      background: var(--ecru);
+      padding: 1.75rem 0 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .input-area .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .disclaimer {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+    }
+    .disclaimer strong { color: var(--terra); font-weight: 500; }
+
+    textarea {
+      width: 100%;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--text);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0 0.75rem;
+      resize: none;
+      min-height: 48px;
+      max-height: 160px;
+      line-height: 1.55;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    textarea:focus { border-bottom-color: var(--vert); }
+    textarea::placeholder {
+      color: var(--border);
+      font-style: italic;
+    }
+
+    .input-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .input-hint {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      color: var(--border);
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    button#reset {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    button#reset:hover { color: var(--terra); }
+
+    button#send {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--terra);
+      color: var(--ecru);
+      border: none;
+      padding: 0.6rem 1.25rem;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+    }
+    button#send:hover { background: #7a2e14; }
+    button#send:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    .error-msg {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--terra);
+      border-top: 1px solid var(--terra);
+      padding-top: 0.5rem;
+      display: none;
+    }
+
+    .error-msg button {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--terra);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-left: 0.75rem;
+    }
+
+    .sensitive-warning {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      color: var(--terra);
+      border: 1px solid var(--terra);
+      padding: 0.6rem 0.9rem;
+      display: none;
+      line-height: 1.5;
+    }
+
+    .message.user .message-content.blocked {
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.9rem; }
+      .inner { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="inner">
+      <a href="/ressources/" class="breadcrumb">← Ressources Early Brief</a>
+      <h1>Early Request</h1>
+      <p class="tagline">Votre question de conformité, analysée en 30 secondes.</p>
+    </div>
+    <hr class="header-rule" style="max-width:780px; margin: 2rem auto 0; padding: 0 2.5rem; box-sizing: content-box;">
+
+    <div class="scope">
+      <div class="inner">
+        <p class="scope-label">Périmètre couvert</p>
+        <div class="scope-tags">
+          <span>LCB-FT</span>
+          <span>KYC / PPE</span>
+          <span>Gel des avoirs</span>
+          <span>PSP / EME</span>
+          <span>PSAN / CASP / MiCA</span>
+          <span>Doctrine ACPR / AMF</span>
+          <span>Travel Rule</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="messages-area" id="messages-wrapper">
+    <div class="inner" id="messages">
+      <div class="welcome-msg">
+        <p>Posez votre question. L'assistant s'appuie sur un corpus réglementaire sélectionné : CMF, directives LCB-FT, DSP2, MiCA, doctrine ACPR/AMF.</p>
+        <p class="notice">Ne constitue pas un conseil juridique · Les réponses doivent être revues avant tout usage opérationnel</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <div class="inner">
+      <p class="disclaimer"><strong>⚠ Ne pas inclure de données personnelles</strong> — nom de client, IBAN, email, données sensibles.</p>
+      <div class="sensitive-warning" id="sensitive-warning">
+        Données potentiellement sensibles détectées (IBAN, email, téléphone…). Anonymisez avant d'envoyer.
+      </div>
+      <textarea id="input" rows="2"
+        placeholder="Ex : Quelles sont les obligations de vigilance renforcée pour un EME traitant des transferts vers des pays sous surveillance GAFI ?"
+      ></textarea>
+      <div class="input-actions">
+        <span class="input-hint">↵ Ctrl + Entrée pour envoyer</span>
+        <div class="btn-group">
+          <button id="reset">Nouvelle conversation</button>
+          <button id="send">Envoyer →</button>
+        </div>
+      </div>
+      <div class="error-msg" id="error"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  // Configuration marked
+  marked.setOptions({ breaks: true, gfm: true });
+
+  const messagesEl = document.getElementById('messages');
+  const wrapperEl = document.getElementById('messages-wrapper');
+  const inputEl = document.getElementById('input');
+  const sendBtn = document.getElementById('send');
+  const resetBtn = document.getElementById('reset');
+  const errorEl = document.getElementById('error');
+  const sensitiveEl = document.getElementById('sensitive-warning');
+
+  let history = [];
+  let lastFailedQuestion = null;
+
+  // ── Filtre données sensibles ──
+  const SENSITIVE_PATTERNS = [
+    /\b[A-Z]{2}\d{2}[A-Z0-9]{4}\d{7}([A-Z0-9]?){0,16}\b/,  // IBAN
+    /\b[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}\b/, // email
+    /\b(0|\+33|0033)[1-9](\d{2}){4}\b/,                       // téléphone FR
+    /\b\d{13,19}\b/,                                           // numéro de carte
+    /\b\d{2}[\/\-]\d{2}[\/\-]\d{2,4}\b/,                     // date naissance
+  ];
+
+  function containsSensitiveData(text) {
+    return SENSITIVE_PATTERNS.some(p => p.test(text));
+  }
+
+  inputEl.addEventListener('input', () => {
+    inputEl.style.height = 'auto';
+    inputEl.style.height = Math.min(inputEl.scrollHeight, 160) + 'px';
+    sensitiveEl.style.display = containsSensitiveData(inputEl.value) ? 'block' : 'none';
+  });
+
+  inputEl.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') sendMessage();
+  });
+
+  sendBtn.addEventListener('click', sendMessage);
+  resetBtn.addEventListener('click', resetConversation);
+
+  function addMessage(role, content) {
+    const div = document.createElement('div');
+    div.className = `message ${role}`;
+
+    const roleLabel = document.createElement('p');
+    roleLabel.className = 'message-role';
+    roleLabel.textContent = role === 'user' ? 'Vous' : 'Early Request';
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+
+    if (role === 'assistant') {
+      contentDiv.innerHTML = marked.parse(content);
+    } else {
+      contentDiv.innerHTML = `<p>${escapeHtml(content)}</p>`;
+    }
+
+    div.appendChild(roleLabel);
+    div.appendChild(contentDiv);
+    messagesEl.appendChild(div);
+    wrapperEl.scrollTop = wrapperEl.scrollHeight;
+    return div;
+  }
+
+  function addThinking() {
+    const div = document.createElement('div');
+    div.className = 'thinking';
+    div.innerHTML = `<span class="thinking-label">Analyse</span><span class="thinking-dots"><span></span><span></span><span></span></span>`;
+    messagesEl.appendChild(div);
+    wrapperEl.scrollTop = wrapperEl.scrollHeight;
+    return div;
+  }
+
+  async function sendMessage() {
+    const question = inputEl.value.trim();
+    if (!question) return;
+
+    if (containsSensitiveData(question)) {
+      sensitiveEl.style.display = 'block';
+      inputEl.focus();
+      return;
+    }
+
+    sensitiveEl.style.display = 'none';
+    errorEl.style.display = 'none';
+    lastFailedQuestion = null;
+    inputEl.value = '';
+    inputEl.style.height = 'auto';
+    sendBtn.disabled = true;
+
+    const welcome = messagesEl.querySelector('.welcome-msg');
+    if (welcome) welcome.remove();
+
+    addMessage('user', question);
+    history.push({ role: 'user', content: question });
+
+    const thinking = addThinking();
+
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+
+      const res = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history }),
+        signal: controller.signal
+      });
+
+      clearTimeout(timeout);
+      thinking.remove();
+
+      let data;
+      try { data = await res.json(); }
+      catch { throw new Error('Réponse invalide du serveur'); }
+
+      if (!res.ok || data.error) throw new Error(data.error?.message || `Erreur ${res.status}`);
+
+      history.push({ role: 'assistant', content: data.answer });
+      addMessage('assistant', data.answer);
+
+    } catch (err) {
+      thinking.remove();
+      lastFailedQuestion = question;
+      const msg = err.name === 'AbortError' ? 'Délai dépassé (30s)' : err.message;
+      errorEl.innerHTML = `${msg} — <button onclick="retryLast()">Réessayer</button>`;
+      errorEl.style.display = 'block';
+    } finally {
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  async function retryLast() {
+    if (!lastFailedQuestion) return;
+    if (history[history.length - 1]?.content === lastFailedQuestion) {
+      history.pop();
+    }
+    inputEl.value = lastFailedQuestion;
+    lastFailedQuestion = null;
+    errorEl.style.display = 'none';
+    await sendMessage();
+  }
+
+  function resetConversation() {
+    history = [];
+    lastFailedQuestion = null;
+    messagesEl.innerHTML = `
+      <div class="welcome-msg">
+        <p>Posez votre question. L'assistant s'appuie sur un corpus réglementaire sélectionné : CMF, directives LCB-FT, DSP2, MiCA, doctrine ACPR/AMF.</p>
+        <p class="notice">Ne constitue pas un conseil juridique · Les réponses doivent être revues avant tout usage opérationnel</p>
+      </div>`;
+    errorEl.style.display = 'none';
+    sensitiveEl.style.display = 'none';
+  }
+
+  function escapeHtml(t) {
+    return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+</script>
+</body>
+</html>
