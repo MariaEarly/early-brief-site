@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AuthorBlock from '../../../components/AuthorBlock.astro';
 import sanctions from '../../../data/sanctions.json';
 
 const decisions = sanctions.decisions.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -82,6 +83,8 @@ const themeLabels: Record<string, string> = {
             <a href="https://acpr.banque-france.fr/fr/reglementation/recueil-des-sanctions" class="fiche-source-link" target="_blank" rel="noopener noreferrer">Voir la source</a>
         </div>
     </section>
+
+    <AuthorBlock lastUpdated="22 mars 2026" />
 
     <div class="fiche-retour">
       <a href="/ressources">&larr; Toutes les ressources</a>
