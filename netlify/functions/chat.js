@@ -103,6 +103,25 @@ if (process.env.NODE_ENV !== "production") {
   ALLOWED_ORIGINS.push("http://localhost:4321", "http://127.0.0.1:4321", "http://localhost:8888", "http://127.0.0.1:8888");
 }
 
+// Rate limiting (in-memory, per-IP + global daily cap)
+const rateLimitMap = new Map();
+let globalCount = 0;
+let globalReset = Date.now() + 86_400_000;
+const GLOBAL_DAILY_CAP = 500;
+const PER_IP_HOURLY = 15;
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  if (now > globalReset) { globalCount = 0; globalReset = now + 86_400_000; }
+  globalCount++;
+  if (globalCount > GLOBAL_DAILY_CAP) return true;
+  const e = rateLimitMap.get(ip) || { count: 0, resetAt: now + 3_600_000 };
+  if (now > e.resetAt) { e.count = 0; e.resetAt = now + 3_600_000; }
+  e.count++;
+  rateLimitMap.set(ip, e);
+  return e.count > PER_IP_HOURLY;
+}
+
 exports.handler = async function (event, context) {
   const origin = event.headers?.origin || event.headers?.Origin || "";
   const referer = event.headers?.referer || event.headers?.Referer || "";
@@ -130,6 +149,12 @@ exports.handler = async function (event, context) {
   // Reject cross-origin requests
   if (!isAllowed) {
     return { statusCode: 403, body: JSON.stringify({ error: "Origin not allowed" }) };
+  }
+
+  // Rate limit
+  const clientIp = event.headers?.["x-forwarded-for"]?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(clientIp)) {
+    return { statusCode: 429, body: JSON.stringify({ error: "Limite atteinte. Réessayez dans une heure." }) };
   }
 
   const headers = {

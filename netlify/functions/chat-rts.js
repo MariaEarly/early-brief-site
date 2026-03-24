@@ -54,10 +54,19 @@ function getUpstashLimiter() {
   }
 }
 
-// Fallback in-memory
+// Fallback in-memory (per-IP + global daily cap)
 const memRateMap = new Map();
+let globalDailyCount = 0;
+let globalDayReset = Date.now() + 86_400_000;
+const GLOBAL_DAILY_CAP = 200; // max 200 requests/day across all users
+
 function memIsLimited(ip) {
   const now = Date.now();
+  // Global daily cap
+  if (now > globalDayReset) { globalDailyCount = 0; globalDayReset = now + 86_400_000; }
+  globalDailyCount++;
+  if (globalDailyCount > GLOBAL_DAILY_CAP) return true;
+  // Per-IP hourly limit
   const e = memRateMap.get(ip) || { count: 0, resetAt: now + 3_600_000 };
   if (now > e.resetAt) { e.count = 0; e.resetAt = now + 3_600_000; }
   e.count++;
