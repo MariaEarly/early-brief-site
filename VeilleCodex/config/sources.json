@@ -1,0 +1,170 @@
+{
+  "themes": {
+    "lcb_ft": [
+      "aml",
+      "aml/cft",
+      "anti-money laundering",
+      "counter-terrorist financing",
+      "counter terrorist financing",
+      "blanchiment",
+      "financement du terrorisme",
+      "lcb-ft",
+      "cdd",
+      "kyp",
+      "customer due diligence",
+      "kyc",
+      "beneficial owner",
+      "ubo",
+      "suspicious transaction",
+      "freeze of funds",
+      "gel des avoirs",
+      "financial sanctions",
+      "sanctions"
+    ],
+    "mica": [
+      "mica",
+      "crypto-asset",
+      "crypto asset",
+      "psca",
+      "psan",
+      "casp",
+      "emt",
+      "stablecoin",
+      "virtual asset",
+      "unhosted wallet"
+    ],
+    "payments_dsp": [
+      "psd2",
+      "psd3",
+      "psr",
+      "dsp2",
+      "dsp",
+      "services de paiement",
+      "payment service",
+      "payment services",
+      "electronic money",
+      "e-money",
+      "monnaie electronique",
+      "monnaie électronique",
+      "open banking"
+    ],
+    "conformite": [
+      "compliance",
+      "conformite",
+      "conformité",
+      "guidelines",
+      "guideline",
+      "guidance",
+      "opinion",
+      "consultation",
+      "draft rts",
+      "rts",
+      "its",
+      "statement",
+      "report",
+      "public hearing",
+      "doctrine"
+    ],
+    "privacy_data": [
+      "gdpr",
+      "rgpd",
+      "transparency",
+      "information obligations",
+      "cnil",
+      "data protection"
+    ]
+  },
+  "sources": [
+    {
+      "name": "AMLA News",
+      "kind": "html",
+      "url": "https://www.amla.europa.eu/news-events/news_en",
+      "tags": ["lcb_ft", "conformite"],
+      "include_url_patterns": ["/amla-"]
+    },
+    {
+      "name": "AMLA Consultations",
+      "kind": "html",
+      "url": "https://www.amla.europa.eu/policy/public-consultations_en",
+      "tags": ["lcb_ft", "conformite"],
+      "include_url_patterns": ["/policy/public-consultations/consultation-"]
+    },
+    {
+      "name": "EBA Press Releases",
+      "kind": "html",
+      "url": "https://www.eba.europa.eu/publications-and-media/press-releases",
+      "tags": ["lcb_ft", "payments_dsp", "mica", "conformite"],
+      "include_url_patterns": ["/publications-and-media/press-releases/"]
+    },
+    {
+      "name": "ESMA News",
+      "kind": "html",
+      "url": "https://www.esma.europa.eu/press-news/esma-news",
+      "tags": ["mica", "conformite"],
+      "include_url_patterns": ["/press-news/esma-news/"]
+    },
+    {
+      "name": "AMF Actualites",
+      "kind": "html",
+      "url": "https://www.amf-france.org/fr/actualites-publications/actualites",
+      "tags": ["mica", "conformite", "lcb_ft", "payments_dsp"],
+      "include_url_patterns": ["/fr/actualites-publications/actualites/"]
+    },
+    {
+      "name": "ACPR Actualites",
+      "kind": "html",
+      "url": "https://acpr.banque-france.fr/fr/actualites",
+      "tags": ["lcb_ft", "payments_dsp", "conformite", "mica"],
+      "include_url_patterns": ["/fr/actualites/"]
+    },
+    {
+      "name": "TRACFIN",
+      "kind": "html",
+      "url": "https://www.economie.gouv.fr/tracfin",
+      "tags": ["lcb_ft", "conformite"],
+      "include_url_patterns": ["/tracfin/"]
+    },
+    {
+      "name": "FATF Publications",
+      "kind": "html",
+      "url": "https://www.fatf-gafi.org/en/publications.html",
+      "tags": ["lcb_ft", "mica", "conformite"],
+      "include_url_patterns": ["/en/publications/"]
+    },
+    {
+      "name": "Egmont Group News",
+      "kind": "html",
+      "url": "https://egmontgroup.org/news/",
+      "tags": ["lcb_ft", "conformite"],
+      "include_url_patterns": ["/news/"]
+    },
+    {
+      "name": "Wolfsberg News",
+      "kind": "html",
+      "url": "https://wolfsberg-group.org/news",
+      "tags": ["lcb_ft", "conformite", "payments_dsp", "mica"],
+      "include_url_patterns": ["/news", "/news-and-events"]
+    },
+    {
+      "name": "Council of the EU Press Releases",
+      "kind": "html",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/",
+      "tags": ["lcb_ft", "conformite", "payments_dsp", "mica"],
+      "include_url_patterns": ["/en/press/press-releases/20"]
+    },
+    {
+      "name": "European Commission Finance Consultations",
+      "kind": "html",
+      "url": "https://finance.ec.europa.eu/regulation-and-supervision/consultations-0_en",
+      "tags": ["payments_dsp", "mica", "conformite", "lcb_ft"],
+      "include_url_patterns": ["/consultations-0/", "/have-your-say/initiatives/"]
+    },
+    {
+      "name": "CNIL Actualites",
+      "kind": "html",
+      "url": "https://www.cnil.fr/fr/actualites",
+      "tags": ["conformite", "privacy_data"],
+      "include_url_patterns": ["/fr/"]
+    }
+  ]
+}
