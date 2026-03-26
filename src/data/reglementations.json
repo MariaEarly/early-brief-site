@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "derniere_mise_a_jour": "2026-03-26",
+    "total_textes": 3
+  },
+  "textes": [
+    {
+      "id": "amlr-2024",
+      "demo": true,
+      "titre": "Règlement LCB-FT (AMLR)",
+      "reference": "Règlement (UE) 2024/1624",
+      "bloc": "LCB-FT",
+      "type": "Règlement",
+      "statut": "Adopté — application différée",
+      "date_publication": "2024-06-19",
+      "date_application": "2027-07-10",
+      "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2024/1624/oj?locale=fr",
+      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME"],
+      "echeances": [
+        {
+          "date": "2027-07-10",
+          "description": "Application directe dans tous les États membres"
+        },
+        {
+          "date": "2028-01-01",
+          "description": "Démarrage supervision directe AMLA (~40 entités)"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Règlement AMLA",
+          "reference": "Règlement (UE) 2024/1620",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2024/1620/oj?locale=fr",
+          "type": "Règlement"
+        },
+        {
+          "titre": "Directive AMLD6",
+          "reference": "Directive (UE) 2024/1640",
+          "lien": "https://eur-lex.europa.eu/eli/dir/2024/1640/oj?locale=fr",
+          "type": "Directive"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "mica-2023",
+      "demo": true,
+      "titre": "Règlement MiCA",
+      "reference": "Règlement (UE) 2023/1114",
+      "bloc": "MiCA",
+      "type": "Règlement",
+      "statut": "En vigueur",
+      "date_publication": "2023-06-09",
+      "date_application": "2024-12-30",
+      "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj/eng",
+      "institutions_concernees": ["CASP", "EME"],
+      "echeances": [
+        {
+          "date": "2026-06-30",
+          "description": "Fin de la période transitoire en France (PSAN → CASP)"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Travel Rule (TFR)",
+          "reference": "Règlement (UE) 2023/1113",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2023/1113/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "psd3-psr",
+      "demo": true,
+      "titre": "PSD3 / PSR — Package paiements",
+      "reference": "COM/2023/366 + COM/2023/367",
+      "bloc": "PSD2-PSR",
+      "type": "Directive + Règlement",
+      "statut": "Projet",
+      "date_publication": null,
+      "date_application": null,
+      "lien_texte_consolide": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex%3A52023PC0366",
+      "institutions_concernees": ["Établissements de crédit", "PSP", "EME"],
+      "echeances": [
+        {
+          "date": "2026-06-30",
+          "description": "Publication attendue au JOUE (non confirmée au 22/03/2026)"
+        }
+      ],
+      "textes_lies": [],
+      "notes": "Accord politique provisoire du 27/11/2025. Textes finaux non publiés."
+    }
+  ]
+}

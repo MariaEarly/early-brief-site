@@ -1508,3 +1508,217 @@ details[open] > .fiche-specificity-summary::after { content: " −"; }
   color: var(--terra);
   border-color: var(--terra);
 }
+
+/* ─── Réglementations ─── */
+.reg-status-bar {
+  background: var(--terra);
+  color: #F4F0E6;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 10px 0;
+}
+.reg-status-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.reg-sep { opacity: 0.5; }
+
+.reg-page { padding-top: 40px; }
+.reg-title {
+  font-family: var(--display);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.reg-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.reg-search {
+  flex: 1 1 240px;
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid rgba(26,24,20,0.18);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+}
+.reg-search:focus { border-color: var(--green); }
+.reg-search::placeholder { color: var(--ghost); }
+.reg-select {
+  font-family: var(--sans);
+  font-size: 13px;
+  padding: 8px 28px 8px 12px;
+  border: 1px solid rgba(26,24,20,0.18);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239E3D1B'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.reg-select:focus { border-color: var(--green); }
+.reg-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ghost);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+.reg-list { display: flex; flex-direction: column; gap: 0; }
+.reg-card {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.reg-card:first-child { border-top: none; }
+
+.reg-card-badges { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.reg-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.reg-badge-bloc { background: rgba(44,74,46,0.1); color: var(--green); }
+.reg-badge-statut { color: #fff; }
+.reg-badge-type { background: rgba(26,24,20,0.06); color: var(--muted); }
+
+.reg-card-title {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.reg-card-ref {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ghost);
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+}
+
+.reg-card-institutions { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.reg-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border: 1px solid rgba(26,24,20,0.14);
+  border-radius: 2px;
+  padding: 2px 8px;
+}
+
+.reg-card-echeances { margin-bottom: 14px; }
+.reg-card-echeance-next { font-size: 14px; color: var(--ink); line-height: 1.5; }
+.reg-echeance-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--terra);
+  margin-right: 6px;
+}
+.reg-echeance-date { font-weight: 600; }
+.reg-echeance-desc { color: var(--muted); }
+
+.reg-echeances-more { margin-top: 8px; }
+.reg-echeances-more summary {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--terra);
+  cursor: pointer;
+  list-style: none;
+}
+.reg-echeances-more summary::-webkit-details-marker { display: none; }
+.reg-echeances-more ul { padding-left: 0; margin-top: 8px; }
+.reg-echeances-more li {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  list-style: none;
+}
+
+.reg-card-lies { margin-bottom: 14px; }
+.reg-card-lies-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ghost);
+  margin-bottom: 6px;
+}
+.reg-card-lies ul { padding-left: 0; }
+.reg-card-lies li {
+  font-size: 13px;
+  list-style: none;
+  margin-bottom: 3px;
+}
+.reg-card-lies a { color: var(--terra); text-decoration: none; }
+.reg-card-lies a:hover { text-decoration: underline; }
+.reg-card-lies-ref { color: var(--ghost); font-size: 12px; }
+
+.reg-card-notes {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ghost);
+  margin-bottom: 14px;
+}
+
+.reg-card-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--terra);
+  text-decoration: none;
+}
+.reg-card-link:hover { text-decoration: underline; }
+
+.reg-empty {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--ghost);
+}
+.reg-empty p { font-size: 15px; margin-bottom: 16px; }
+.reg-reset {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--terra);
+  background: none;
+  border: 1px solid var(--terra);
+  padding: 6px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.reg-reset:hover { background: var(--terra); color: #F4F0E6; }
+
+@media (max-width: 600px) {
+  .reg-status-inner { padding: 0 20px; }
+  .reg-title { font-size: 32px; }
+  .reg-filters { flex-direction: column; }
+  .reg-search { flex: 1 1 100%; }
+}

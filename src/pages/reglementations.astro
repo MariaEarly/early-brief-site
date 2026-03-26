@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import data from '../data/reglementations.json';
+
+const textes = data.textes;
+const now = new Date();
+const enVigueur = textes.filter(t => t.statut === 'En vigueur').length;
+const echeancesAVenir = textes.reduce((acc, t) => {
+  return acc + t.echeances.filter(e => new Date(e.date) > now).length;
+}, 0);
+
+const formatDate = (d: string | null) => {
+  if (!d) return '—';
+  const date = new Date(d);
+  return date.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+};
+
+const blocs = [...new Set(textes.map(t => t.bloc))].sort();
+const statuts = [...new Set(textes.map(t => t.statut))].sort();
+const institutions = [...new Set(textes.flatMap(t => t.institutions_concernees))].sort();
+
+const statutColors: Record<string, string> = {
+  'En vigueur': '#2C4A2E',
+  'En consultation': '#B8860B',
+  'Transposition en cours': '#9E3D1B',
+  'Adopté — application différée': '#6B6B5A',
+  'Projet': '#8A8480',
+};
+---
+<BaseLayout
+  title="Base réglementaire — Early Brief"
+  description="Référentiel des textes réglementaires en conformité financière : LCB-FT, MiCA, DORA, PSD2, AI Act, sanctions. Statuts, échéances et textes liés."
+  canonicalUrl="https://early-brief.com/reglementations/"
+>
+
+<div class="reg-status-bar">
+  <div class="reg-status-inner">
+    <span>{data.meta.total_textes} textes référencés</span>
+    <span class="reg-sep">·</span>
+    <span>{enVigueur} en vigueur</span>
+    <span class="reg-sep">·</span>
+    <span>{echeancesAVenir} échéances à venir</span>
+    <span class="reg-sep">·</span>
+    <span>Mis à jour le {formatDate(data.meta.derniere_mise_a_jour)}</span>
+  </div>
+</div>
+
+<div class="page reg-page">
+
+  <h1 class="reg-title">Base réglementaire</h1>
+
+  <div class="reg-filters" id="reg-filters">
+    <input type="search" id="reg-search" class="reg-search" placeholder="Rechercher un texte, une référence, une institution…">
+    <select id="reg-bloc" class="reg-select">
+      <option value="">Tous les blocs</option>
+      {blocs.map(b => <option value={b}>{b}</option>)}
+    </select>
+    <select id="reg-statut" class="reg-select">
+      <option value="">Tous les statuts</option>
+      {statuts.map(s => <option value={s}>{s}</option>)}
+    </select>
+    <select id="reg-institution" class="reg-select">
+      <option value="">Toutes les institutions</option>
+      {institutions.map(i => <option value={i}>{i}</option>)}
+    </select>
+    <div class="reg-count" id="reg-count">{textes.length} textes affichés sur {textes.length}</div>
+  </div>
+
+  <div class="reg-list" id="reg-list">
+    {textes.map(t => (
+      <div class="reg-card" id={t.id}
+        data-bloc={t.bloc}
+        data-statut={t.statut}
+        data-institutions={t.institutions_concernees.join(',')}
+        data-search={`${t.titre} ${t.reference} ${t.institutions_concernees.join(' ')}`.toLowerCase()}>
+
+        <div class="reg-card-badges">
+          <span class="reg-badge reg-badge-bloc">{t.bloc}</span>
+          <span class="reg-badge reg-badge-statut" style={`background:${statutColors[t.statut] || '#8A8480'};`}>{t.statut}</span>
+          <span class="reg-badge reg-badge-type">{t.type}</span>
+        </div>
+
+        <h2 class="reg-card-title">{t.titre}</h2>
+        <p class="reg-card-ref">{t.reference}</p>
+
+        <div class="reg-card-institutions">
+          {t.institutions_concernees.map(i => <span class="reg-pill">{i}</span>)}
+        </div>
+
+        {t.echeances.length > 0 && (
+          <div class="reg-card-echeances">
+            <p class="reg-card-echeance-next">
+              <span class="reg-echeance-label">Prochaine échéance :</span>
+              <span class="reg-echeance-date">{formatDate(t.echeances[0].date)}</span>
+              <span class="reg-echeance-desc">— {t.echeances[0].description}</span>
+            </p>
+            {t.echeances.length > 1 && (
+              <details class="reg-echeances-more">
+                <summary>+ {t.echeances.length - 1} autre{t.echeances.length > 2 ? 's' : ''} échéance{t.echeances.length > 2 ? 's' : ''}</summary>
+                <ul>
+                  {t.echeances.slice(1).map(e => (
+                    <li><strong>{formatDate(e.date)}</strong> — {e.description}</li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </div>
+        )}
+
+        {t.textes_lies.length > 0 && (
+          <div class="reg-card-lies">
+            <p class="reg-card-lies-label">Textes liés :</p>
+            <ul>
+              {t.textes_lies.map(l => (
+                <li><a href={l.lien} target="_blank" rel="noopener noreferrer">{l.titre}</a> <span class="reg-card-lies-ref">({l.reference})</span></li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {t.notes && <p class="reg-card-notes">{t.notes}</p>}
+
+        {t.lien_texte_consolide && (
+          <a href={t.lien_texte_consolide} target="_blank" rel="noopener noreferrer" class="reg-card-link">Accéder au texte consolidé →</a>
+        )}
+      </div>
+    ))}
+
+    <div class="reg-empty" id="reg-empty" style="display:none;">
+      <p>Aucun texte ne correspond à ces filtres.</p>
+      <button id="reg-reset-btn" class="reg-reset">Réinitialiser les filtres</button>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline>
+(function() {
+  const search = document.getElementById('reg-search');
+  const bloc = document.getElementById('reg-bloc');
+  const statut = document.getElementById('reg-statut');
+  const institution = document.getElementById('reg-institution');
+  const count = document.getElementById('reg-count');
+  const list = document.getElementById('reg-list');
+  const empty = document.getElementById('reg-empty');
+  const resetBtn = document.getElementById('reg-reset-btn');
+  const cards = list.querySelectorAll('.reg-card');
+  const total = cards.length;
+
+  function filter() {
+    const q = search.value.toLowerCase().trim();
+    const bVal = bloc.value;
+    const sVal = statut.value;
+    const iVal = institution.value;
+    let shown = 0;
+
+    cards.forEach(card => {
+      const matchSearch = !q || card.dataset.search.includes(q);
+      const matchBloc = !bVal || card.dataset.bloc === bVal;
+      const matchStatut = !sVal || card.dataset.statut === sVal;
+      const matchInst = !iVal || card.dataset.institutions.includes(iVal);
+      const visible = matchSearch && matchBloc && matchStatut && matchInst;
+      card.style.display = visible ? '' : 'none';
+      if (visible) shown++;
+    });
+
+    count.textContent = shown + ' texte' + (shown > 1 ? 's' : '') + ' affiché' + (shown > 1 ? 's' : '') + ' sur ' + total;
+    empty.style.display = shown === 0 ? '' : 'none';
+
+    // Update URL
+    const params = new URLSearchParams();
+    if (q) params.set('q', q);
+    if (bVal) params.set('bloc', bVal);
+    if (sVal) params.set('statut', sVal);
+    if (iVal) params.set('institution', iVal);
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? '?' + qs : window.location.pathname);
+  }
+
+  function reset() {
+    search.value = '';
+    bloc.value = '';
+    statut.value = '';
+    institution.value = '';
+    filter();
+  }
+
+  // Restore from URL
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('q')) search.value = params.get('q');
+  if (params.get('bloc')) bloc.value = params.get('bloc');
+  if (params.get('statut')) statut.value = params.get('statut');
+  if (params.get('institution')) institution.value = params.get('institution');
+
+  search.addEventListener('input', filter);
+  bloc.addEventListener('change', filter);
+  statut.addEventListener('change', filter);
+  institution.addEventListener('change', filter);
+  resetBtn.addEventListener('click', reset);
+
+  filter();
+})();
+</script>
+
+</BaseLayout>
