@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Validation réglementations</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F4F0E6; color: #1A1814; padding: 2rem; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .status { font-size: 0.85rem; color: #6B6B5A; margin-bottom: 2rem; }
+    .card { border: 1px solid #D4CFC6; border-radius: 4px; padding: 1.25rem; margin-bottom: 1rem; background: white; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .card-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: #9E3D1B; }
+    .card-type { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; background: #EDE9E0; padding: 2px 8px; border-radius: 2px; }
+    .card-desc { font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .card-detail { font-size: 0.8rem; color: #6B6B5A; margin-bottom: 0.25rem; }
+    .card-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+    .btn { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; padding: 6px 16px; border: none; border-radius: 2px; cursor: pointer; }
+    .btn-accept { background: #2C4A2E; color: white; }
+    .btn-reject { background: transparent; border: 1px solid #9E3D1B; color: #9E3D1B; }
+    .btn:hover { opacity: 0.85; }
+    .empty { text-align: center; color: #8A8480; padding: 3rem; }
+    #file-input { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Validation — Changements détectés</h1>
+  <p class="status">Charge <code>reglementations-pending.json</code> pour afficher les changements en attente.</p>
+  <input type="file" id="file-input" accept=".json">
+  <div id="cards"></div>
+
+  <script>
+    const cardsEl = document.getElementById('cards');
+    const fileInput = document.getElementById('file-input');
+    let pendingData = null;
+
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const text = await file.text();
+      pendingData = JSON.parse(text);
+      render();
+    });
+
+    // Try auto-load from same directory
+    fetch('./reglementations-pending.json').then(r => r.ok ? r.json() : null).then(data => {
+      if (data) { pendingData = data; render(); }
+    }).catch(() => {});
+
+    function render() {
+      if (!pendingData || pendingData.pending.length === 0) {
+        cardsEl.innerHTML = '<div class="empty">Aucun changement en attente.</div>';
+        return;
+      }
+
+      const statusEl = document.querySelector('.status');
+      statusEl.textContent = `Généré le ${new Date(pendingData.generated_at).toLocaleString('fr-FR')} — ${pendingData.pending.length} changement(s)`;
+
+      cardsEl.innerHTML = pendingData.pending.map((p, i) => `
+        <div class="card" id="card-${i}">
+          <div class="card-header">
+            <span class="card-id">${p.id}</span>
+            <span class="card-type">${p.type_changement}</span>
+          </div>
+          <p class="card-desc">${p.description}</p>
+          <p class="card-detail">Champ : ${p.champ}</p>
+          ${p.valeur_actuelle ? `<p class="card-detail">Actuel : ${p.valeur_actuelle}</p>` : ''}
+          ${p.valeur_proposee ? `<p class="card-detail">Proposé : ${typeof p.valeur_proposee === 'object' ? JSON.stringify(p.valeur_proposee) : p.valeur_proposee}</p>` : ''}
+          <p class="card-detail">URL : <a href="${p.url_detectee}" target="_blank">${p.url_detectee}</a></p>
+          <div class="card-actions">
+            <button class="btn btn-accept" onclick="accept(${i})">Valider</button>
+            <button class="btn btn-reject" onclick="reject(${i})">Rejeter</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function accept(i) {
+      pendingData.pending[i].statut = 'validé';
+      document.getElementById('card-' + i).style.opacity = '0.4';
+      document.getElementById('card-' + i).querySelector('.btn-accept').textContent = '✓ Validé';
+      exportUpdated();
+    }
+
+    function reject(i) {
+      pendingData.pending.splice(i, 1);
+      render();
+      exportUpdated();
+    }
+
+    function exportUpdated() {
+      // Download updated pending file
+      const blob = new Blob([JSON.stringify(pendingData, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'reglementations-pending.json';
+      // Don't auto-download, just update UI
+    }
+  </script>
+</body>
+</html>
