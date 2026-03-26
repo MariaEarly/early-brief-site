@@ -1,7 +1,7 @@
 {
   "meta": {
     "derniere_mise_a_jour": "2026-03-26",
-    "total_textes": 36,
+    "total_textes": 45,
     "note": "Références vérifiées sur eur-lex.europa.eu et sources officielles au 26/03/2026"
   },
   "textes": [
@@ -973,6 +973,287 @@
       "echeances": [],
       "textes_lies": [],
       "notes": "Cartographie nationale des risques BC/FT. Base obligatoire pour la classification des risques dans le BWRA de chaque entité assujettie."
+    },
+    {
+      "id": "amla-rts-1-risk-methodology",
+      "titre": "RTS n°1 AMLA — Méthodologie d'évaluation du risque inhérent et résiduel",
+      "reference": "AMLA Consultation Paper (CP) — RTS on risk assessment methodology",
+      "bloc": "LCB-FT",
+      "type": "RTS (projet)",
+      "statut": "En consultation",
+      "date_publication": "2025-12-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.amla.europa.eu/consultations",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [
+        {
+          "date": "2026-01-27",
+          "description": "Clôture consultation publique (terminée)"
+        },
+        {
+          "date": "2027-07-10",
+          "description": "Application avec l'AMLR"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Règlement AMLR",
+          "reference": "Règlement (UE) 2024/1624",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2024/1624/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Scoring harmonisé UE : risque inhérent (1-4), qualité des contrôles (A-D). 100-150 datapoints standardisés. Consultation clôturée le 27/01/2026."
+    },
+    {
+      "id": "amla-rts-2-selection-criteria",
+      "titre": "RTS n°2 AMLA — Critères de sélection pour la supervision directe",
+      "reference": "AMLA Consultation Paper (CP) — RTS on selection criteria",
+      "bloc": "LCB-FT",
+      "type": "RTS (projet)",
+      "statut": "En consultation",
+      "date_publication": "2025-12-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.amla.europa.eu/consultations",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME"
+      ],
+      "echeances": [
+        {
+          "date": "2026-01-27",
+          "description": "Clôture consultation publique (terminée)"
+        },
+        {
+          "date": "2026-09-30",
+          "description": "Deadline superviseurs nationaux — communication liste entités à l'AMLA"
+        },
+        {
+          "date": "2028-01-01",
+          "description": "Démarrage supervision directe ~40 entités"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Règlement AMLA",
+          "reference": "Règlement (UE) 2024/1620",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2024/1620/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Critères : présence dans ≥6 États membres, >20k clients OU >50M€ flux/État, score risque résiduel élevé. Liste définitive non publiée au 27/03/2026."
+    },
+    {
+      "id": "amla-its-cooperation",
+      "titre": "ITS AMLA — Coopération et échange d'informations entre superviseurs",
+      "reference": "AMLA Consultation Paper (CP) — ITS on cooperation",
+      "bloc": "LCB-FT",
+      "type": "ITS (projet)",
+      "statut": "En consultation",
+      "date_publication": "2025-12-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.amla.europa.eu/consultations",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME"
+      ],
+      "echeances": [
+        {
+          "date": "2026-01-27",
+          "description": "Clôture consultation publique (terminée)"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Règlement AMLA",
+          "reference": "Règlement (UE) 2024/1620",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2024/1620/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Joint Supervisory Teams (JST), collecte de données par superviseurs nationaux, contrôles qualité, règles de transfert de supervision."
+    },
+    {
+      "id": "dora-rts-ict-risk-management",
+      "titre": "RTS DORA — Cadre de gestion des risques TIC",
+      "reference": "Règlement délégué (UE) 2024/1774",
+      "bloc": "DORA",
+      "type": "RTS",
+      "statut": "En vigueur",
+      "date_publication": "2024-03-13",
+      "date_application": "2025-01-17",
+      "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj?locale=fr",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Règlement DORA",
+          "reference": "Règlement (UE) 2022/2554",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Détaille les exigences de gestion des risques TIC : politiques de sécurité, gestion des accès, détection des anomalies, plans de continuité, tests."
+    },
+    {
+      "id": "dora-rts-its-incident-reporting",
+      "titre": "RTS/ITS DORA — Classification et notification des incidents TIC",
+      "reference": "JC 2024-33 (ESAs Joint Committee)",
+      "bloc": "DORA",
+      "type": "RTS/ITS",
+      "statut": "En vigueur",
+      "date_publication": "2024-07-17",
+      "date_application": "2025-01-17",
+      "lien_texte_consolide": "https://www.esma.europa.eu/document/final-report-draft-rts-and-its-incident-reporting",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Règlement DORA",
+          "reference": "Règlement (UE) 2022/2554",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Critères de classification des incidents (matérialité, impact), délais de notification (4h/24h/72h), templates de reporting harmonisés."
+    },
+    {
+      "id": "dora-rts-subcontracting",
+      "titre": "RTS DORA — Sous-traitance des services TIC critiques",
+      "reference": "JC 2024-53 (ESAs Joint Committee)",
+      "bloc": "DORA",
+      "type": "RTS",
+      "statut": "En vigueur",
+      "date_publication": "2024-07-26",
+      "date_application": "2025-01-17",
+      "lien_texte_consolide": "https://www.esma.europa.eu/document/final-report-dora-rts-subcontracting",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Règlement DORA",
+          "reference": "Règlement (UE) 2022/2554",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Encadrement de la sous-traitance en chaîne des services TIC : conditions, notification au superviseur, droit d'audit, stratégies de sortie."
+    },
+    {
+      "id": "dora-its-register-information",
+      "titre": "ITS DORA — Registre d'information des contrats TIC",
+      "reference": "ITS Register of Information (EBA)",
+      "bloc": "DORA",
+      "type": "ITS",
+      "statut": "En vigueur",
+      "date_publication": "2024-01-17",
+      "date_application": "2025-01-17",
+      "lien_texte_consolide": "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/implementing-technical-standards-establish-templates-register-information",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [
+        {
+          "date": "2025-04-30",
+          "description": "Échéance indicative transmission registres d'information aux ESAs"
+        }
+      ],
+      "textes_lies": [
+        {
+          "titre": "Règlement DORA",
+          "reference": "Règlement (UE) 2022/2554",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Templates standardisés pour le registre de tous les contrats TIC. Format Excel/XML défini par l'EBA. Dry run réalisé en 2024."
+    },
+    {
+      "id": "mica-rts-white-paper",
+      "titre": "RTS ESMA — Contenu et format des white papers crypto-actifs",
+      "reference": "ESMA RTS MiCA White Papers",
+      "bloc": "MiCA",
+      "type": "RTS",
+      "statut": "En vigueur",
+      "date_publication": "2024-07-12",
+      "date_application": "2024-12-30",
+      "lien_texte_consolide": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "institutions_concernees": [
+        "CASP",
+        "EME"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Règlement MiCA",
+          "reference": "Règlement (UE) 2023/1114",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Définit le contenu obligatoire des white papers pour les offres au public de crypto-actifs (Titles II, III, IV MiCA)."
+    },
+    {
+      "id": "mica-rts-eba-art-emt",
+      "titre": "RTS EBA — Exigences prudentielles ART et EMT",
+      "reference": "EBA RTS MiCA ART/EMT",
+      "bloc": "MiCA",
+      "type": "RTS",
+      "statut": "En vigueur",
+      "date_publication": "2024-10-04",
+      "date_application": "2024-12-30",
+      "lien_texte_consolide": "https://www.eba.europa.eu/regulation-and-policy/markets-crypto-assets-mica",
+      "institutions_concernees": [
+        "EME",
+        "CASP"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Règlement MiCA",
+          "reference": "Règlement (UE) 2023/1114",
+          "lien": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj?locale=fr",
+          "type": "Règlement"
+        }
+      ],
+      "notes": "Exigences de fonds propres, réserves d'actifs, plans de remboursement pour les émetteurs d'ART significatifs et d'EMT."
     }
   ]
 }
