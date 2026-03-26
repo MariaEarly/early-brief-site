@@ -1,7 +1,7 @@
 {
   "meta": {
     "derniere_mise_a_jour": "2026-03-26",
-    "total_textes": 22,
+    "total_textes": 36,
     "note": "Références vérifiées sur eur-lex.europa.eu et sources officielles au 26/03/2026"
   },
   "textes": [
@@ -15,7 +15,14 @@
       "date_publication": "2024-06-19",
       "date_application": "2027-07-10",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2024/1624/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [
         {
           "date": "2026-07-10",
@@ -58,7 +65,12 @@
       "date_publication": "2024-06-19",
       "date_application": "2024-07-01",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2024/1620/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME"
+      ],
       "echeances": [
         {
           "date": "2025-07-01",
@@ -95,7 +107,14 @@
       "date_publication": "2024-06-19",
       "date_application": "2027-07-10",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2024/1640/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [
         {
           "date": "2027-07-10",
@@ -128,7 +147,12 @@
       "date_publication": "2023-05-31",
       "date_application": "2024-12-30",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2023/1113/oj?locale=fr",
-      "institutions_concernees": ["PSP", "CASP", "EME", "Établissements de crédit"],
+      "institutions_concernees": [
+        "PSP",
+        "CASP",
+        "EME",
+        "Établissements de crédit"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -156,7 +180,10 @@
       "date_publication": "2023-06-09",
       "date_application": "2024-12-30",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj?locale=fr",
-      "institutions_concernees": ["CASP", "EME"],
+      "institutions_concernees": [
+        "CASP",
+        "EME"
+      ],
       "echeances": [
         {
           "date": "2026-07-01",
@@ -189,7 +216,14 @@
       "date_publication": "2022-12-27",
       "date_application": "2025-01-17",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [
         {
           "date": "2026-01-17",
@@ -216,7 +250,13 @@
       "date_publication": "2022-12-27",
       "date_application": "2025-01-17",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2022/2556/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -238,7 +278,11 @@
       "date_publication": "2015-12-23",
       "date_application": "2018-01-13",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -260,7 +304,11 @@
       "date_publication": null,
       "date_application": null,
       "lien_texte_consolide": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex%3A52023PC0366",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -282,7 +330,14 @@
       "date_publication": "2024-07-12",
       "date_application": "2024-08-01",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [
         {
           "date": "2025-02-02",
@@ -314,7 +369,14 @@
       "date_publication": "2014-03-17",
       "date_application": "2014-03-17",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2014/269/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -336,7 +398,12 @@
       "date_publication": "2014-07-31",
       "date_application": "2014-07-31",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg/2014/833/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME", "SGP"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "SGP"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -358,7 +425,14 @@
       "date_publication": null,
       "date_application": null,
       "lien_texte_consolide": "https://www.sanctionsmap.eu/",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [],
       "notes": "La Sanctions Map de la Commission européenne liste l'ensemble des régimes de sanctions UE en vigueur avec les textes de base et listes consolidées. Source primaire pour le screening."
@@ -373,7 +447,9 @@
       "date_publication": "2009-09-16",
       "date_application": "2011-04-30",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2009/110/oj?locale=fr",
-      "institutions_concernees": ["EME"],
+      "institutions_concernees": [
+        "EME"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -395,7 +471,14 @@
       "date_publication": "2015-06-05",
       "date_application": "2017-06-26",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2015/849/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [
         {
           "date": "2027-07-10",
@@ -422,7 +505,14 @@
       "date_publication": "2016-12-02",
       "date_application": "2017-01-01",
       "lien_texte_consolide": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033665527",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -444,7 +534,13 @@
       "date_publication": "2021-01-06",
       "date_application": "2021-03-01",
       "lien_texte_consolide": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042933417",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME", "SGP", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -466,7 +562,12 @@
       "date_publication": "2023-01-01",
       "date_application": "2023-01-01",
       "lien_texte_consolide": "https://acpr.banque-france.fr/sites/default/files/media/2023/01/30/20230130_position_acpr_2023-p-01.pdf",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME", "Assureurs"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Assureurs"
+      ],
       "echeances": [],
       "textes_lies": [],
       "notes": "Précise les attentes de l'ACPR sur la mise en œuvre pratique des obligations de vigilance KYC. Source de référence pour les contrôles ACPR."
@@ -481,7 +582,12 @@
       "date_publication": "2024-12-01",
       "date_application": "2025-12-01",
       "lien_texte_consolide": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-guidelines-internal-policies-procedures-and-controls-ensure-implementation-un-eu-and",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "CASP", "EME"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME"
+      ],
       "echeances": [
         {
           "date": "2025-12-01",
@@ -508,7 +614,9 @@
       "date_publication": "2024-07-04",
       "date_application": "2024-12-30",
       "lien_texte_consolide": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-money-laundering-and-terrorist-financing-risk-factors",
-      "institutions_concernees": ["CASP"],
+      "institutions_concernees": [
+        "CASP"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -530,7 +638,11 @@
       "date_publication": "2018-03-13",
       "date_application": "2019-09-14",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/reg_del/2018/389/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit", "PSP", "EME"],
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME"
+      ],
       "echeances": [],
       "textes_lies": [
         {
@@ -552,10 +664,315 @@
       "date_publication": "2013-06-26",
       "date_application": "2014-01-01",
       "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2013/36/oj?locale=fr",
-      "institutions_concernees": ["Établissements de crédit"],
+      "institutions_concernees": [
+        "Établissements de crédit"
+      ],
       "echeances": [],
       "textes_lies": [],
       "notes": "Cadre de gouvernance et d'agrément des établissements de crédit. Modifiée par CRD V (2019/878) et CRD VI (2024/1619). Pertinente pour les obligations de gouvernance LCB-FT des banques."
+    },
+    {
+      "id": "gafi-40-recommandations",
+      "titre": "Les 40 Recommandations du GAFI",
+      "reference": "FATF Recommendations (rév. 2023)",
+      "bloc": "Standards internationaux",
+      "type": "Recommandations",
+      "statut": "En vigueur",
+      "date_publication": "2012-02-16",
+      "date_application": "2012-02-16",
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Méthodologie d'évaluation mutuelle",
+          "reference": "FATF Methodology",
+          "lien": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Assessment-ratings.html",
+          "type": "Méthodologie"
+        }
+      ],
+      "notes": "Standard mondial AML/CFT. Révisé régulièrement (dernière mise à jour : 2023). Base de toutes les législations nationales et européennes LCB-FT."
+    },
+    {
+      "id": "gafi-listes-juridictions",
+      "titre": "Juridictions à risque — Listes GAFI",
+      "reference": "FATF High-Risk Jurisdictions / Grey List",
+      "bloc": "Standards internationaux",
+      "type": "Liste",
+      "statut": "En vigueur",
+      "date_publication": null,
+      "date_application": null,
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions.html",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Déclaration publique GAFI (liste noire)",
+          "reference": "FATF Public Statement",
+          "lien": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/Call-for-action-february-2025.html",
+          "type": "Déclaration"
+        }
+      ],
+      "notes": "Mise à jour 3 fois par an (février, juin, octobre). Liste grise : juridictions sous surveillance renforcée. Liste noire : appel à contre-mesures. Impact direct sur les obligations de vigilance renforcée."
+    },
+    {
+      "id": "gafi-guidance-rba",
+      "titre": "Guidance GAFI — Approche fondée sur les risques (secteur bancaire)",
+      "reference": "FATF Guidance RBA for Banking Sector",
+      "bloc": "Standards internationaux",
+      "type": "Guidance",
+      "statut": "En vigueur",
+      "date_publication": "2014-10-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Fatfgeneral/Rba-banking-sector.html",
+      "institutions_concernees": [
+        "Établissements de crédit"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Guidance opérationnelle pour l'application de l'approche par les risques dans le secteur bancaire. Référence pour les superviseurs nationaux."
+    },
+    {
+      "id": "gafi-guidance-vasp",
+      "titre": "Guidance GAFI — Approche fondée sur les risques pour les VASP",
+      "reference": "FATF Updated Guidance for VASP (rév. 2021)",
+      "bloc": "Standards internationaux",
+      "type": "Guidance",
+      "statut": "En vigueur",
+      "date_publication": "2021-10-28",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Updated-Guidance-RBA-VA-VASP.html",
+      "institutions_concernees": [
+        "CASP",
+        "EME"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Guidance actualisée pour les prestataires de services d'actifs virtuels. Inclut la Travel Rule pour les transferts crypto et les obligations des VASPs."
+    },
+    {
+      "id": "gafi-guidance-pep",
+      "titre": "Guidance GAFI — Personnes politiquement exposées (PPE)",
+      "reference": "FATF Guidance on PEPs (2013, rév. 2023)",
+      "bloc": "Standards internationaux",
+      "type": "Guidance",
+      "statut": "En vigueur",
+      "date_publication": "2013-06-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Peps-guidance.html",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Définit les critères d'identification des PPE, les mesures de vigilance renforcée et les bonnes pratiques. Référence pour R.12 et R.22 du GAFI."
+    },
+    {
+      "id": "egmont-principes",
+      "titre": "Principes du Groupe Egmont — Échange d'informations entre CRF",
+      "reference": "Egmont Group Principles for Information Exchange",
+      "bloc": "Standards internationaux",
+      "type": "Principes",
+      "statut": "En vigueur",
+      "date_publication": "2013-07-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://egmontgroup.org/egmont-group-of-fius/egmont-charter/",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Cadre de coopération entre les 170+ cellules de renseignement financier (CRF/FIU) dans le monde. Définit les principes de confidentialité et d'échange spontané d'informations."
+    },
+    {
+      "id": "wolfsberg-aml-principles",
+      "titre": "Principes Wolfsberg — AML pour la banque de correspondance",
+      "reference": "Wolfsberg AML Principles (rév. 2023)",
+      "bloc": "Standards internationaux",
+      "type": "Standards de place",
+      "statut": "En vigueur",
+      "date_publication": "2023-01-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.wolfsberg-principles.com/wolfsberg-standards",
+      "institutions_concernees": [
+        "Établissements de crédit"
+      ],
+      "echeances": [],
+      "textes_lies": [
+        {
+          "titre": "Wolfsberg Correspondent Banking Due Diligence Questionnaire (CBDDQ)",
+          "reference": "Wolfsberg CBDDQ v2.0",
+          "lien": "https://www.wolfsberg-principles.com/sites/default/files/wb/Wolfsberg%20CBDDQ%20V2.0.pdf",
+          "type": "Questionnaire"
+        }
+      ],
+      "notes": "Standards AML publiés par les 13 plus grandes banques internationales. Le CBDDQ est le questionnaire standard de due diligence pour les relations de correspondance bancaire."
+    },
+    {
+      "id": "wolfsberg-pep-guidance",
+      "titre": "Wolfsberg — Guidance PPE",
+      "reference": "Wolfsberg PEP Guidance (2017)",
+      "bloc": "Standards internationaux",
+      "type": "Standards de place",
+      "statut": "En vigueur",
+      "date_publication": "2017-08-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.wolfsberg-principles.com/wolfsberg-standards",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Précise les bonnes pratiques de screening et de gestion des risques PPE pour les institutions financières internationales."
+    },
+    {
+      "id": "bale-sound-management-mltf",
+      "titre": "Comité de Bâle — Sound management of risks related to ML/TF",
+      "reference": "BCBS d530 (rév. 2020)",
+      "bloc": "Standards internationaux",
+      "type": "Guidelines",
+      "statut": "En vigueur",
+      "date_publication": "2020-06-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.bis.org/bcbs/publ/d530.htm",
+      "institutions_concernees": [
+        "Établissements de crédit"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Guidelines prudentielles du Comité de Bâle sur la gestion du risque ML/TF par les banques. Intègre la gouvernance, le risk appetite, le screening et le monitoring des transactions."
+    },
+    {
+      "id": "tracfin-rapport-activite-2024",
+      "titre": "Tracfin — Rapport d'activité et d'analyse 2024",
+      "reference": "Rapport annuel Tracfin 2024",
+      "bloc": "Textes FR",
+      "type": "Rapport",
+      "statut": "En vigueur",
+      "date_publication": "2025-06-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin/les-rapports-dactivite-et-danalyse",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Statistiques annuelles : nombre de DS reçues, typologies de blanchiment détectées, tendances sectorielles. Référence opérationnelle pour calibrer les dispositifs LCB-FT."
+    },
+    {
+      "id": "tracfin-lignes-directrices-conjointes",
+      "titre": "Lignes directrices conjointes ACPR / Tracfin",
+      "reference": "ACPR/Tracfin — Obligations de vigilance et DS",
+      "bloc": "Textes FR",
+      "type": "Lignes directrices",
+      "statut": "En vigueur",
+      "date_publication": "2024-01-01",
+      "date_application": null,
+      "lien_texte_consolide": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-lacpr-et-de-tracfin-relatives-aux-obligations-de-vigilance-sur-les",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR."
+    },
+    {
+      "id": "acpr-lignes-directrices-gel",
+      "titre": "Lignes directrices ACPR / DG Trésor — Gel des avoirs",
+      "reference": "ACPR/DGT — Gel des avoirs et embargos",
+      "bloc": "Textes FR",
+      "type": "Lignes directrices",
+      "statut": "En vigueur",
+      "date_publication": "2021-06-16",
+      "date_application": null,
+      "lien_texte_consolide": "https://acpr.banque-france.fr/system/files/2025-01/20210616_lignes_directrices_gel_des_avoirs.pdf",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Couvrent les obligations de gel des avoirs et d'embargo : screening des listes, délais de mise en œuvre, gestion des faux positifs, reporting au DG Trésor."
+    },
+    {
+      "id": "dg-tresor-registre-gels",
+      "titre": "Registre national des gels — DG Trésor",
+      "reference": "Base de données DG Trésor",
+      "bloc": "Sanctions",
+      "type": "Registre",
+      "statut": "En vigueur",
+      "date_publication": null,
+      "date_application": null,
+      "lien_texte_consolide": "https://gels-avoirs.dgtresor.gouv.fr/",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Liste consolidée des personnes et entités soumises à une mesure de gel des avoirs en France. Mise à jour en temps réel. Source obligatoire pour le screening."
+    },
+    {
+      "id": "anr-france-2023",
+      "titre": "Analyse nationale des risques BC/FT — France",
+      "reference": "ANR 2023 (DG Trésor)",
+      "bloc": "Textes FR",
+      "type": "Rapport",
+      "statut": "En vigueur",
+      "date_publication": "2023-12-14",
+      "date_application": null,
+      "lien_texte_consolide": "https://www.tresor.economie.gouv.fr/Articles/2023/12/14/analyse-nationale-des-risques-de-blanchiment-de-capitaux-et-de-financement-du-terrorisme-en-france",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "CASP",
+        "EME",
+        "SGP",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "Cartographie nationale des risques BC/FT. Base obligatoire pour la classification des risques dans le BWRA de chaque entité assujettie."
     }
   ]
 }
