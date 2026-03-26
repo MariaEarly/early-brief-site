@@ -9,6 +9,7 @@ const textes = data.textes.sort((a, b) => {
 });
 const now = new Date();
 const enVigueur = textes.filter(t => t.statut === 'En vigueur').length;
+const enConsultation = textes.filter(t => t.statut === 'En consultation').length;
 const echeancesAVenir = textes.reduce((acc, t) => {
   return acc + t.echeances.filter(e => new Date(e.date) > now).length;
 }, 0);
@@ -20,16 +21,6 @@ const formatDate = (d: string | null) => {
 };
 
 const blocs = [...new Set(textes.map(t => t.bloc))].sort();
-const statuts = [...new Set(textes.map(t => t.statut))].sort();
-const institutions = [...new Set(textes.flatMap(t => t.institutions_concernees))].sort();
-
-// Counts per bloc
-const blocCounts: Record<string, number> = {};
-blocs.forEach(b => blocCounts[b] = textes.filter(t => t.bloc === b).length);
-
-// Counts per statut
-const statutCounts: Record<string, number> = {};
-statuts.forEach(s => statutCounts[s] = textes.filter(t => t.statut === s).length);
 
 const statutColors: Record<string, string> = {
   'En vigueur': '#2C4A2E',
@@ -38,295 +29,148 @@ const statutColors: Record<string, string> = {
   'Adopté — application différée': '#6B6B5A',
   'Projet': '#8A8480',
 };
-
-// Upcoming deadlines (next 12 months)
-const twelveMonths = new Date();
-twelveMonths.setMonth(twelveMonths.getMonth() + 12);
-const upcomingDeadlines = textes.flatMap(t =>
-  t.echeances.filter(e => new Date(e.date) > now && new Date(e.date) <= twelveMonths)
-    .map(e => ({ ...e, texte_id: t.id, texte_titre: t.titre, bloc: t.bloc }))
-).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 ---
 <BaseLayout
   title="Base réglementaire — Early Brief"
-  description="Référentiel des textes réglementaires en conformité financière : LCB-FT, MiCA, DORA, PSD2, AI Act, sanctions. Statuts, échéances et textes liés."
+  description="Référentiel des textes réglementaires en conformité financière : LCB-FT, MiCA, DORA, PSD2, AI Act, sanctions."
   canonicalUrl="https://early-brief.com/reglementations/"
-  fullWidth={true}
 >
 
-<div class="db-layout">
+<div class="page rb-page">
 
-  <!-- SIDEBAR -->
-  <aside class="db-sidebar">
-    <div class="db-sidebar-header">
-      <span class="db-sidebar-title">Filtres</span>
-      <span class="db-sidebar-updated">Mis à jour {formatDate(data.meta.derniere_mise_a_jour)}</span>
+  <div class="rb-header">
+    <h1>Base réglementaire</h1>
+    <p class="rb-sub">{textes.length} textes · {enVigueur} en vigueur · {echeancesAVenir} échéances à venir · Mis à jour le {formatDate(data.meta.derniere_mise_a_jour)}</p>
+  </div>
+
+  <div class="rb-bar">
+    <input type="search" id="rb-search" class="rb-search" placeholder="Rechercher…">
+    <div class="rb-chips" id="rb-chips">
+      <button class="rb-chip active" data-value="">Tous</button>
+      {blocs.map(b => <button class="rb-chip" data-value={b}>{b}</button>)}
     </div>
-
-    <div class="db-sidebar-search">
-      <input type="search" id="reg-search" placeholder="Rechercher…">
-    </div>
-
-    <div class="db-filter-group">
-      <div class="db-filter-label">Bloc réglementaire</div>
-      <button class="db-filter-item active" data-filter="bloc" data-value="">Tous <span class="db-filter-count">{textes.length}</span></button>
-      {blocs.map(b => (
-        <button class="db-filter-item" data-filter="bloc" data-value={b}>{b} <span class="db-filter-count">{blocCounts[b]}</span></button>
-      ))}
-    </div>
-
-    <div class="db-filter-group">
-      <div class="db-filter-label">Statut</div>
-      <button class="db-filter-item active" data-filter="statut" data-value="">Tous <span class="db-filter-count">{textes.length}</span></button>
-      {statuts.map(s => (
-        <button class="db-filter-item" data-filter="statut" data-value={s}>
-          <span class="db-dot" style={`background:${statutColors[s] || '#8A8480'};`}></span>
-          {s} <span class="db-filter-count">{statutCounts[s]}</span>
-        </button>
-      ))}
-    </div>
-
-    <div class="db-filter-group">
-      <div class="db-filter-label">Institution</div>
-      <select id="reg-institution" class="db-select">
-        <option value="">Toutes</option>
-        {institutions.map(i => <option value={i}>{i}</option>)}
+    <div class="rb-bar-right">
+      <select id="rb-sort" class="rb-sort">
+        <option value="date-desc">Récents</option>
+        <option value="date-asc">Anciens</option>
+        <option value="alpha">A → Z</option>
       </select>
+      <span class="rb-count" id="rb-count">{textes.length}</span>
     </div>
+  </div>
 
-    <button class="db-reset" id="reg-reset-btn">Réinitialiser</button>
-  </aside>
+  <div class="rb-list" id="rb-list">
+    {textes.map(t => (
+      <details class="rb-item" id={t.id}
+        data-bloc={t.bloc}
+        data-statut={t.statut}
+        data-date={t.date_publication || '0000-01-01'}
+        data-title={t.titre}
+        data-search={`${t.titre} ${t.reference} ${t.institutions_concernees.join(' ')} ${t.bloc} ${t.notes || ''}`.toLowerCase()}>
+        <summary class="rb-row">
+          <span class="rb-row-bloc">{t.bloc}</span>
+          <span class="rb-row-title">{t.titre}</span>
+          <span class="rb-row-ref">{t.reference}</span>
+          <span class="rb-row-statut" style={`color:${statutColors[t.statut] || '#8A8480'};`}>{t.statut}</span>
+          {t.echeances.length > 0 && (
+            <span class="rb-row-date">{formatDate(t.echeances[0].date)}</span>
+          )}
+        </summary>
+        <div class="rb-detail">
+          {t.notes && <p class="rb-detail-notes">{t.notes}</p>}
 
-  <!-- MAIN CONTENT -->
-  <main class="db-main">
-
-    <!-- TOPBAR -->
-    <div class="db-topbar">
-      <div class="db-stats">
-        <div class="db-stat">
-          <span class="db-stat-num">{data.meta.total_textes}</span>
-          <span class="db-stat-label">textes</span>
-        </div>
-        <div class="db-stat">
-          <span class="db-stat-num">{enVigueur}</span>
-          <span class="db-stat-label">en vigueur</span>
-        </div>
-        <div class="db-stat">
-          <span class="db-stat-num">{echeancesAVenir}</span>
-          <span class="db-stat-label">échéances à venir</span>
-        </div>
-      </div>
-      <div class="db-topbar-right">
-        <select id="reg-sort" class="db-sort">
-          <option value="date-desc">Plus récents</option>
-          <option value="date-asc">Plus anciens</option>
-          <option value="alpha">A → Z</option>
-          <option value="echeances">Prochaine échéance</option>
-        </select>
-        <span class="db-count" id="reg-count">{textes.length} textes affichés</span>
-      </div>
-    </div>
-
-    <!-- FEED -->
-    <div class="db-feed" id="reg-list">
-      {textes.map(t => (
-        <div class="db-card" id={t.id}
-          data-bloc={t.bloc}
-          data-statut={t.statut}
-          data-institutions={t.institutions_concernees.join(',')}
-          data-date={t.date_publication || '0000-01-01'}
-          data-title={t.titre}
-          data-echeance={t.echeances.length > 0 ? t.echeances[0].date : '9999-12-31'}
-          data-search={`${t.titre} ${t.reference} ${t.institutions_concernees.join(' ')}`.toLowerCase()}>
-
-          <div class="db-card-meta">
-            <span class="db-card-bloc">{t.bloc}</span>
-            <span class="db-card-date">{formatDate(t.date_publication)}</span>
-            <span class="db-card-statut" style={`background:${statutColors[t.statut] || '#8A8480'};`}>{t.statut}</span>
-          </div>
-
-          <h2 class="db-card-title">{t.titre}</h2>
-          <p class="db-card-ref">{t.reference} · {t.type}</p>
-
-          {t.notes && <p class="db-card-notes">{t.notes}</p>}
-
-          <div class="db-card-footer">
-            <div class="db-card-pills">
-              {t.institutions_concernees.slice(0, 4).map(i => <span class="db-card-pill">{i}</span>)}
-              {t.institutions_concernees.length > 4 && <span class="db-card-pill">+{t.institutions_concernees.length - 4}</span>}
-            </div>
-            <div class="db-card-actions">
-              {t.echeances.length > 0 && (
-                <span class="db-card-deadline">{formatDate(t.echeances[0].date)}</span>
-              )}
-              {t.lien_texte_consolide && (
-                <a href={t.lien_texte_consolide} target="_blank" rel="noopener noreferrer" class="db-card-link">Source ↗</a>
-              )}
-            </div>
-          </div>
-
-          {(t.echeances.length > 0 || t.textes_lies.length > 0) && (
-            <details class="db-card-details">
-              <summary>Détails</summary>
-              <div class="db-card-details-inner">
-                {t.echeances.length > 0 && (
-                  <div class="db-card-detail-section">
-                    <span class="db-card-detail-label">Échéances</span>
-                    {t.echeances.map(e => (
-                      <p class="db-card-detail-line"><strong>{formatDate(e.date)}</strong> — {e.description}</p>
-                    ))}
-                  </div>
-                )}
-                {t.textes_lies.length > 0 && (
-                  <div class="db-card-detail-section">
-                    <span class="db-card-detail-label">Textes liés</span>
-                    {t.textes_lies.map(l => (
-                      <p class="db-card-detail-line"><a href={l.lien} target="_blank" rel="noopener noreferrer">{l.titre}</a> <span class="db-card-detail-ref">({l.reference})</span></p>
-                    ))}
-                  </div>
-                )}
+          <div class="rb-detail-grid">
+            {t.echeances.length > 0 && (
+              <div class="rb-detail-col">
+                <span class="rb-detail-label">Échéances</span>
+                {t.echeances.map(e => (
+                  <p class="rb-detail-line"><strong>{formatDate(e.date)}</strong> — {e.description}</p>
+                ))}
               </div>
-            </details>
+            )}
+            {t.textes_lies.length > 0 && (
+              <div class="rb-detail-col">
+                <span class="rb-detail-label">Textes liés</span>
+                {t.textes_lies.map(l => (
+                  <p class="rb-detail-line"><a href={l.lien} target="_blank" rel="noopener noreferrer">{l.titre}</a></p>
+                ))}
+              </div>
+            )}
+            <div class="rb-detail-col">
+              <span class="rb-detail-label">Institutions</span>
+              <p class="rb-detail-line">{t.institutions_concernees.join(' · ')}</p>
+            </div>
+          </div>
+
+          {t.lien_texte_consolide && (
+            <a href={t.lien_texte_consolide} target="_blank" rel="noopener noreferrer" class="rb-detail-source">Texte consolidé ↗</a>
           )}
         </div>
-      ))}
+      </details>
+    ))}
+  </div>
 
-      <div class="db-empty" id="reg-empty" style="display:none;">
-        <p>Aucun texte ne correspond à ces filtres.</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- RIGHT PANEL -->
-  <aside class="db-right">
-    <div class="db-right-section">
-      <div class="db-right-title">Prochaines échéances</div>
-      {upcomingDeadlines.length === 0 && <p class="db-right-empty">Aucune dans les 12 mois</p>}
-      {upcomingDeadlines.map(d => (
-        <div class="db-right-item">
-          <span class="db-right-date">{formatDate(d.date)}</span>
-          <span class="db-right-bloc">{d.bloc}</span>
-          <p class="db-right-desc">{d.description}</p>
-        </div>
-      ))}
-    </div>
-  </aside>
+  <div class="rb-empty" id="rb-empty" style="display:none;">
+    Aucun résultat.
+    <button id="rb-reset">Réinitialiser</button>
+  </div>
 
 </div>
 
 <script is:inline>
 (function() {
-  const search = document.getElementById('reg-search');
-  const institution = document.getElementById('reg-institution');
-  const sortSelect = document.getElementById('reg-sort');
-  const count = document.getElementById('reg-count');
-  const list = document.getElementById('reg-list');
-  const empty = document.getElementById('reg-empty');
-  const resetBtn = document.getElementById('reg-reset-btn');
-  let cards = Array.from(list.querySelectorAll('.db-card'));
-  const total = cards.length;
-  const filterBtns = document.querySelectorAll('.db-filter-item');
-
+  const search = document.getElementById('rb-search');
+  const sort = document.getElementById('rb-sort');
+  const countEl = document.getElementById('rb-count');
+  const list = document.getElementById('rb-list');
+  const empty = document.getElementById('rb-empty');
+  const resetBtn = document.getElementById('rb-reset');
+  const chips = document.querySelectorAll('.rb-chip');
+  let items = Array.from(list.querySelectorAll('.rb-item'));
+  const total = items.length;
   let activeBloc = '';
-  let activeStatut = '';
 
-  function sortCards() {
-    const val = sortSelect.value;
-    cards.sort((a, b) => {
-      if (val === 'date-desc') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
-      if (val === 'date-asc') return (a.dataset.date || '').localeCompare(b.dataset.date || '');
-      if (val === 'alpha') return (a.dataset.title || '').localeCompare(b.dataset.title || '', 'fr');
-      if (val === 'echeances') return (a.dataset.echeance || '').localeCompare(b.dataset.echeance || '');
+  chips.forEach(c => c.addEventListener('click', () => {
+    chips.forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    activeBloc = c.dataset.value;
+    run();
+  }));
+
+  function run() {
+    const q = search.value.toLowerCase().trim();
+    let shown = 0;
+    items.forEach(el => {
+      const matchQ = !q || el.dataset.search.includes(q);
+      const matchB = !activeBloc || el.dataset.bloc === activeBloc;
+      el.style.display = (matchQ && matchB) ? '' : 'none';
+      if (matchQ && matchB) shown++;
+    });
+    countEl.textContent = shown;
+    empty.style.display = shown === 0 ? '' : 'none';
+  }
+
+  function doSort() {
+    const v = sort.value;
+    items.sort((a, b) => {
+      if (v === 'date-desc') return b.dataset.date.localeCompare(a.dataset.date);
+      if (v === 'date-asc') return a.dataset.date.localeCompare(b.dataset.date);
+      if (v === 'alpha') return a.dataset.title.localeCompare(b.dataset.title, 'fr');
       return 0;
     });
-    const emptyEl = document.getElementById('reg-empty');
-    cards.forEach(c => list.appendChild(c));
-    list.appendChild(emptyEl);
+    items.forEach(el => list.appendChild(el));
   }
 
-  sortSelect.addEventListener('change', () => { sortCards(); filter(); });
-
-  // Sidebar filter buttons
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filterType = btn.dataset.filter;
-      const value = btn.dataset.value;
-
-      // Update active state within group
-      btn.closest('.db-filter-group').querySelectorAll('.db-filter-item').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (filterType === 'bloc') activeBloc = value;
-      if (filterType === 'statut') activeStatut = value;
-      filter();
-    });
+  search.addEventListener('input', run);
+  sort.addEventListener('change', () => { doSort(); run(); });
+  resetBtn.addEventListener('click', () => {
+    search.value = '';
+    activeBloc = '';
+    chips.forEach(c => c.classList.toggle('active', c.dataset.value === ''));
+    run();
   });
 
-  function filter() {
-    const q = search.value.toLowerCase().trim();
-    const iVal = institution.value;
-    let shown = 0;
-
-    cards.forEach(card => {
-      const matchSearch = !q || card.dataset.search.includes(q);
-      const matchBloc = !activeBloc || card.dataset.bloc === activeBloc;
-      const matchStatut = !activeStatut || card.dataset.statut === activeStatut;
-      const matchInst = !iVal || card.dataset.institutions.includes(iVal);
-      const visible = matchSearch && matchBloc && matchStatut && matchInst;
-      card.style.display = visible ? '' : 'none';
-      if (visible) shown++;
-    });
-
-    count.textContent = shown + ' texte' + (shown > 1 ? 's' : '') + ' affiché' + (shown > 1 ? 's' : '');
-    empty.style.display = shown === 0 ? '' : 'none';
-
-    const params = new URLSearchParams();
-    if (q) params.set('q', q);
-    if (activeBloc) params.set('bloc', activeBloc);
-    if (activeStatut) params.set('statut', activeStatut);
-    if (iVal) params.set('institution', iVal);
-    const qs = params.toString();
-    history.replaceState(null, '', qs ? '?' + qs : window.location.pathname);
-  }
-
-  function reset() {
-    search.value = '';
-    institution.value = '';
-    activeBloc = '';
-    activeStatut = '';
-    filterBtns.forEach(btn => {
-      if (btn.dataset.value === '') btn.classList.add('active');
-      else btn.classList.remove('active');
-    });
-    filter();
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('q')) search.value = params.get('q');
-  if (params.get('bloc')) {
-    activeBloc = params.get('bloc');
-    filterBtns.forEach(btn => {
-      if (btn.dataset.filter === 'bloc') {
-        btn.classList.toggle('active', btn.dataset.value === activeBloc);
-      }
-    });
-  }
-  if (params.get('statut')) {
-    activeStatut = params.get('statut');
-    filterBtns.forEach(btn => {
-      if (btn.dataset.filter === 'statut') {
-        btn.classList.toggle('active', btn.dataset.value === activeStatut);
-      }
-    });
-  }
-  if (params.get('institution')) institution.value = params.get('institution');
-
-  search.addEventListener('input', filter);
-  institution.addEventListener('change', filter);
-  resetBtn.addEventListener('click', reset);
-
-  filter();
+  run();
 })();
 </script>
 
