@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+src/data/reglementations-pending.json
+script/scrape-errors.log

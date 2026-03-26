@@ -27,26 +27,18 @@
 <body>
   <h1>Validation — Changements détectés</h1>
   <p class="status">Charge <code>reglementations-pending.json</code> pour afficher les changements en attente.</p>
-  <input type="file" id="file-input" accept=".json">
   <div id="cards"></div>
 
   <script>
     const cardsEl = document.getElementById('cards');
-    const fileInput = document.getElementById('file-input');
     let pendingData = null;
 
-    fileInput.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      const text = await file.text();
-      pendingData = JSON.parse(text);
-      render();
-    });
-
-    // Try auto-load from same directory
-    fetch('./reglementations-pending.json').then(r => r.ok ? r.json() : null).then(data => {
+    // Auto-load from admin server API
+    fetch('/api/pending').then(r => r.ok ? r.json() : null).then(data => {
       if (data) { pendingData = data; render(); }
-    }).catch(() => {});
+    }).catch(() => {
+      cardsEl.innerHTML = '<div class="empty">Serveur admin non démarré.<br><code>node script/admin-server.cjs</code></div>';
+    });
 
     function render() {
       if (!pendingData || pendingData.pending.length === 0) {
@@ -76,26 +68,20 @@
       `).join('');
     }
 
-    function accept(i) {
-      pendingData.pending[i].statut = 'validé';
-      document.getElementById('card-' + i).style.opacity = '0.4';
-      document.getElementById('card-' + i).querySelector('.btn-accept').textContent = '✓ Validé';
-      exportUpdated();
+    async function accept(i) {
+      const res = await fetch('/api/accept', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({index: i}) });
+      const data = await res.json();
+      if (data.ok) {
+        document.getElementById('card-' + i).style.opacity = '0.4';
+        document.getElementById('card-' + i).querySelector('.btn-accept').textContent = '✓ Validé';
+        if (data.remaining === 0) setTimeout(() => location.reload(), 500);
+      }
     }
 
-    function reject(i) {
-      pendingData.pending.splice(i, 1);
-      render();
-      exportUpdated();
-    }
-
-    function exportUpdated() {
-      // Download updated pending file
-      const blob = new Blob([JSON.stringify(pendingData, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'reglementations-pending.json';
-      // Don't auto-download, just update UI
+    async function reject(i) {
+      const res = await fetch('/api/reject', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({index: i}) });
+      const data = await res.json();
+      if (data.ok) location.reload();
     }
   </script>
 </body>
