@@ -2,7 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import data from '../data/reglementations.json';
 
-const textes = data.textes;
+const textes = data.textes.sort((a, b) => {
+  const aDate = a.date_publication ? new Date(a.date_publication).getTime() : 0;
+  const bDate = b.date_publication ? new Date(b.date_publication).getTime() : 0;
+  return bDate - aDate;
+});
 const now = new Date();
 const enVigueur = textes.filter(t => t.statut === 'En vigueur').length;
 const echeancesAVenir = textes.reduce((acc, t) => {
@@ -35,11 +39,11 @@ const statutColors: Record<string, string> = {
   'Projet': '#8A8480',
 };
 
-// Upcoming deadlines (next 6 months)
-const sixMonths = new Date();
-sixMonths.setMonth(sixMonths.getMonth() + 6);
+// Upcoming deadlines (next 12 months)
+const twelveMonths = new Date();
+twelveMonths.setMonth(twelveMonths.getMonth() + 12);
 const upcomingDeadlines = textes.flatMap(t =>
-  t.echeances.filter(e => new Date(e.date) > now && new Date(e.date) <= sixMonths)
+  t.echeances.filter(e => new Date(e.date) > now && new Date(e.date) <= twelveMonths)
     .map(e => ({ ...e, texte_id: t.id, texte_titre: t.titre, bloc: t.bloc }))
 ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 ---
@@ -112,7 +116,15 @@ const upcomingDeadlines = textes.flatMap(t =>
           <span class="db-stat-label">échéances à venir</span>
         </div>
       </div>
-      <div class="db-count" id="reg-count">{textes.length} textes affichés</div>
+      <div class="db-topbar-right">
+        <select id="reg-sort" class="db-sort">
+          <option value="date-desc">Plus récents</option>
+          <option value="date-asc">Plus anciens</option>
+          <option value="alpha">A → Z</option>
+          <option value="echeances">Prochaine échéance</option>
+        </select>
+        <span class="db-count" id="reg-count">{textes.length} textes affichés</span>
+      </div>
     </div>
 
     <!-- FEED -->
@@ -122,6 +134,9 @@ const upcomingDeadlines = textes.flatMap(t =>
           data-bloc={t.bloc}
           data-statut={t.statut}
           data-institutions={t.institutions_concernees.join(',')}
+          data-date={t.date_publication || '0000-01-01'}
+          data-title={t.titre}
+          data-echeance={t.echeances.length > 0 ? t.echeances[0].date : '9999-12-31'}
           data-search={`${t.titre} ${t.reference} ${t.institutions_concernees.join(' ')}`.toLowerCase()}>
 
           <div class="db-card-meta">
@@ -187,7 +202,7 @@ const upcomingDeadlines = textes.flatMap(t =>
   <aside class="db-right">
     <div class="db-right-section">
       <div class="db-right-title">Prochaines échéances</div>
-      {upcomingDeadlines.length === 0 && <p class="db-right-empty">Aucune dans les 6 mois</p>}
+      {upcomingDeadlines.length === 0 && <p class="db-right-empty">Aucune dans les 12 mois</p>}
       {upcomingDeadlines.map(d => (
         <div class="db-right-item">
           <span class="db-right-date">{formatDate(d.date)}</span>
@@ -204,16 +219,33 @@ const upcomingDeadlines = textes.flatMap(t =>
 (function() {
   const search = document.getElementById('reg-search');
   const institution = document.getElementById('reg-institution');
+  const sortSelect = document.getElementById('reg-sort');
   const count = document.getElementById('reg-count');
   const list = document.getElementById('reg-list');
   const empty = document.getElementById('reg-empty');
   const resetBtn = document.getElementById('reg-reset-btn');
-  const cards = list.querySelectorAll('.db-card');
+  let cards = Array.from(list.querySelectorAll('.db-card'));
   const total = cards.length;
   const filterBtns = document.querySelectorAll('.db-filter-item');
 
   let activeBloc = '';
   let activeStatut = '';
+
+  function sortCards() {
+    const val = sortSelect.value;
+    cards.sort((a, b) => {
+      if (val === 'date-desc') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+      if (val === 'date-asc') return (a.dataset.date || '').localeCompare(b.dataset.date || '');
+      if (val === 'alpha') return (a.dataset.title || '').localeCompare(b.dataset.title || '', 'fr');
+      if (val === 'echeances') return (a.dataset.echeance || '').localeCompare(b.dataset.echeance || '');
+      return 0;
+    });
+    const emptyEl = document.getElementById('reg-empty');
+    cards.forEach(c => list.appendChild(c));
+    list.appendChild(emptyEl);
+  }
+
+  sortSelect.addEventListener('change', () => { sortCards(); filter(); });
 
   // Sidebar filter buttons
   filterBtns.forEach(btn => {
