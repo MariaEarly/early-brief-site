@@ -482,4 +482,17 @@ import reglementations from '../data/reglementations.json';
 })();
 </script>
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Dataset", "CollectionPage"],
+  "name": "Base réglementaire — Early Brief",
+  "description": `Base de référence centralisant ${reglementations.textes.length} textes réglementaires applicables aux acteurs financiers en France : LCB-FT, DORA, MiCA, sanctions, AI Act, PSD2-PSR.`,
+  "url": "https://early-brief.com/reglementations/",
+  "keywords": ["LCB-FT", "DORA", "MiCA", "sanctions", "AMLA", "conformité financière", "réglementation financière"],
+  "creator": { "@type": "Person", "name": "Maria Iaciancio", "url": "https://early-brief.com/a-propos/" },
+  "dateModified": "2026-03-27",
+  "inLanguage": "fr",
+  "isAccessibleForFree": true
+})} />
+
 </BaseLayout>

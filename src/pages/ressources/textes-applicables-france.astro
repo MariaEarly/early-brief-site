@@ -270,4 +270,16 @@ const statusBadge = (statut: string) => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTafDrawer(); });
 </script>
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "Textes applicables en France — cartographie par niveau normatif",
+  "description": "Cartographie des textes réglementaires applicables en France classés par niveau normatif : droit UE directement applicable, directives transposées, droit national, soft law.",
+  "url": "https://early-brief.com/ressources/textes-applicables-france/",
+  "author": { "@type": "Person", "name": "Maria Iaciancio" },
+  "dateModified": "2026-03-27",
+  "inLanguage": "fr",
+  "publisher": { "@type": "Organization", "name": "Early Brief", "url": "https://early-brief.com" }
+})} />
+
 </BaseLayout>
