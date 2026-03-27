@@ -59,6 +59,7 @@ import reglementations from '../data/reglementations.json';
       <div class="db-topbar-left">
         <button class="db-mobile-filter-btn" id="mobile-filter-btn">Filtres</button>
         <h1 class="db-title">Base réglementaire</h1>
+        <p class="base-intro">Référentiel centralisant {reglementations.textes.length} textes réglementaires applicables aux acteurs financiers en France : LCB-FT, DORA, MiCA, sanctions, AI Act, PSD2-PSR. Mise à jour en continu.</p>
         <p class="db-subtitle" id="db-subtitle"></p>
         <a href="/ressources/textes-applicables-france/" style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.04em;color:var(--terra);text-decoration:none;display:inline-block;margin-top:4px;">→ Voir les textes applicables en France</a>
       </div>
@@ -128,6 +129,7 @@ import reglementations from '../data/reglementations.json';
 .db-topbar { display: flex; justify-content: space-between; align-items: flex-start; padding: 28px 32px 16px; gap: 16px; flex-wrap: wrap; }
 .db-topbar-left { flex: 1; }
 .db-title { font-family: 'Cormorant', serif; font-size: 28px; font-weight: 400; color: #1A1814; line-height: 1.1; margin-bottom: 4px; }
+.base-intro { font-family: 'Hanken Grotesk', sans-serif; font-weight: 300; font-size: 13px; color: rgba(26,24,20,0.45); line-height: 1.65; max-width: 520px; margin: 6px 0 2px; }
 .db-subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.04em; color: rgba(26,24,20,0.38); }
 .db-topbar-right { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .db-search-wrap { position: relative; }

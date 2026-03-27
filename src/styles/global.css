@@ -1599,3 +1599,23 @@ details[open] > .fiche-specificity-summary::after { content: " −"; }
   .rb-bar-right { margin-left: 0; }
   .rb-header h1 { font-size: 28px; }
 }
+
+/* Renvoi contextuel vers la base réglementaire */
+.renvoi-base {
+  border-left: 2px solid var(--terra);
+  padding: 0.6rem 0 0.6rem 1rem;
+  margin: 2rem 0 1.5rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+.renvoi-base a {
+  color: var(--terra);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.renvoi-base a:hover {
+  color: var(--ink);
+}
