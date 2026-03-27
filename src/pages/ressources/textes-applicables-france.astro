@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import reglementations from '../../data/reglementations.json';
+
+const textes = reglementations.textes;
+
+const couches = [
+  {
+    id: "reglement-ue",
+    num: "01",
+    couleur: "#9E3D1B",
+    titre: "Droit UE directement applicable",
+    sous: "Règlements européens · Pas de transposition requise",
+    desc: "S'appliquent en France dès leur entrée en vigueur, sans acte national de transposition. Priment sur le droit national en cas de conflit.",
+    textes: textes.filter((r: any) => r.niveau === "reglement-ue")
+  },
+  {
+    id: "directive-ue",
+    num: "02",
+    couleur: "#2C4A2E",
+    titre: "Directives transposées en droit français",
+    sous: "Directives UE · Transposition par loi ou ordonnance",
+    desc: "Fixent un objectif à atteindre. La France les transpose via des lois, ordonnances ou décrets qui modifient le Code monétaire et financier.",
+    textes: textes.filter((r: any) => r.niveau === "directive-ue")
+  },
+  {
+    id: "droit-national",
+    num: "03",
+    couleur: "#1A1814",
+    titre: "Droit national",
+    sous: "CMF · Ordonnances · Arrêtés · Instructions ACPR/AMF",
+    desc: "Textes français contraignants : Code monétaire et financier, arrêtés ministériels, instructions et positions des autorités de supervision nationales.",
+    textes: textes.filter((r: any) => r.niveau === "droit-national")
+  },
+  {
+    id: "soft-law",
+    num: "04",
+    couleur: "rgba(26,24,20,0.28)",
+    titre: "Soft law",
+    sous: "Guidelines AES · Recommandations AMF/ACPR · Standards GAFI",
+    desc: "Non contraignants juridiquement. Les guidelines EBA/ESMA sont soumises au mécanisme comply or explain. Les standards GAFI constituent la référence internationale.",
+    textes: textes.filter((r: any) => r.niveau === "soft-law")
+  }
+];
+
+const statusBadge = (statut: string) => {
+  const map: Record<string, string> = {
+    'En vigueur': 'badge-vigueur',
+    'En consultation': 'badge-consultation',
+    'Adopté — application différée': 'badge-adopte',
+    'Transposition en cours': 'badge-transposition',
+    'Projet': 'badge-projet'
+  };
+  return map[statut] || 'badge-projet';
+};
+---
+<BaseLayout
+  title="Textes applicables en France — Early Brief"
+  description="57 textes réglementaires classés par niveau normatif : règlements UE, directives transposées, droit national, soft law. Conformité financière."
+  canonicalUrl="https://early-brief.com/ressources/textes-applicables-france/"
+>
+
+<style>
+.taf-page { max-width: 960px; margin: 0 auto; padding: 56px 60px 72px; }
+@media (max-width: 800px) { .taf-page { padding: 40px 28px 56px; } }
+@media (max-width: 480px) { .taf-page { padding: 28px 20px 48px; } }
+
+.taf-breadcrumb { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; color: var(--ghost); text-decoration: none; display: inline-block; margin-bottom: 2rem; }
+.taf-breadcrumb:hover { color: var(--terra); }
+
+.taf-title { font-family: var(--display); font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.5rem; }
+.taf-subtitle { font-family: var(--sans); font-weight: 300; font-size: 12.5px; color: var(--ghost); line-height: 1.7; max-width: 560px; margin-bottom: 1.5rem; }
+
+.taf-note { border-left: 2px solid var(--green); padding: 0.75rem 1rem; margin-bottom: 2.5rem; }
+.taf-note p { font-family: var(--sans); font-size: 11.5px; color: var(--muted); line-height: 1.7; margin: 0; }
+.taf-note strong { color: var(--ink); font-weight: 500; }
+
+/* Couche */
+.taf-couche { margin-bottom: 0.5rem; border: 1px solid var(--rule); border-radius: 2px; }
+.taf-couche-header { display: grid; grid-template-columns: 28px 10px 1fr auto 20px; align-items: center; gap: 12px; padding: 14px 20px; cursor: pointer; user-select: none; transition: background 0.12s; }
+.taf-couche-header:hover { background: rgba(26,24,20,0.025); }
+
+.taf-couche:nth-child(1) .taf-couche-header { padding-left: 20px; }
+.taf-couche:nth-child(2) .taf-couche-header { padding-left: 28px; }
+.taf-couche:nth-child(3) .taf-couche-header { padding-left: 36px; }
+.taf-couche:nth-child(4) .taf-couche-header { padding-left: 44px; }
+
+.taf-num { font-family: var(--mono); font-size: 9px; color: var(--ghost); }
+.taf-dot { width: 8px; height: 8px; border-radius: 50%; }
+.taf-couche-info { display: flex; flex-direction: column; gap: 1px; }
+.taf-couche-titre { font-family: var(--display); font-size: 17px; font-weight: 500; color: var(--ink); }
+.taf-couche-sous { font-family: var(--mono); font-size: 9.5px; color: var(--ghost); letter-spacing: 0.02em; }
+.taf-count { font-family: var(--mono); font-size: 10px; color: var(--ghost); white-space: nowrap; }
+.taf-chevron { font-family: var(--sans); font-size: 14px; color: var(--ghost); transition: transform 0.2s; }
+.taf-couche.open .taf-chevron { transform: rotate(90deg); }
+
+.taf-couche-body { display: none; padding: 0 20px 16px; }
+.taf-couche.open .taf-couche-body { display: block; }
+
+.taf-couche-desc { font-family: var(--sans); font-weight: 300; font-size: 12px; color: var(--ghost); line-height: 1.7; margin-bottom: 1rem; padding-left: 50px; }
+
+/* Table */
+.taf-table { width: 100%; border-collapse: collapse; }
+.taf-table thead th { font-family: var(--mono); font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ghost); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+.taf-table tbody tr { cursor: pointer; transition: background 0.1s; }
+.taf-table tbody tr:hover { background: rgba(26,24,20,0.03); }
+.taf-table tbody tr.selected { border-left: 2px solid var(--terra); background: rgba(158,61,27,0.04); }
+.taf-table td { padding: 10px 10px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.taf-table td:first-child { font-family: var(--display); font-size: 14.5px; font-weight: 500; color: var(--ink); line-height: 1.35; }
+.taf-table td:nth-child(2) { font-family: var(--mono); font-size: 10px; color: var(--ghost); }
+.taf-table td:nth-child(4) { font-family: var(--mono); font-size: 10px; color: var(--ghost); text-align: right; white-space: nowrap; }
+.taf-table .taf-datelabel { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ghost); display: block; }
+.taf-table .taf-dateval { font-family: var(--mono); font-size: 11px; color: var(--terra); font-variant-numeric: tabular-nums; }
+
+/* Badges */
+.taf-badge { font-family: var(--mono); font-size: 8.5px; padding: 2px 7px; border-radius: 2px; white-space: nowrap; }
+.badge-vigueur { background: rgba(44,74,46,0.07); color: var(--green); border: 1px solid rgba(44,74,46,0.16); }
+.badge-consultation { background: rgba(158,61,27,0.06); color: var(--terra); border: 1px solid rgba(158,61,27,0.18); }
+.badge-adopte { background: rgba(26,24,20,0.05); color: var(--ink); border: 1px solid var(--rule); }
+.badge-transposition { background: transparent; color: var(--muted); border: 1px solid var(--rule); }
+.badge-projet { background: transparent; color: var(--ghost); border: 1px solid var(--rule); }
+
+/* Drawer */
+.taf-drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(26,24,20,0.12); z-index: 99; }
+.taf-drawer-overlay.open { display: block; }
+.taf-drawer { position: fixed; top: 0; right: 0; width: 340px; height: 100vh; background: var(--bg); border-left: 1px solid var(--rule); transform: translateX(100%); transition: transform 0.2s ease; z-index: 100; display: flex; flex-direction: column; overflow-y: auto; }
+.taf-drawer.open { transform: translateX(0); }
+
+.taf-drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--rule); }
+.taf-drawer-head span { font-family: var(--mono); font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ghost); }
+.taf-drawer-close { font-size: 18px; color: var(--ghost); cursor: pointer; background: none; border: none; padding: 4px; }
+.taf-drawer-close:hover { color: var(--ink); }
+
+.taf-drawer-body { padding: 20px; flex: 1; }
+.taf-drawer-meta { font-family: var(--mono); font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ghost); margin-bottom: 8px; }
+.taf-drawer-titre { font-family: var(--display); font-size: 21px; font-weight: 500; color: var(--ink); line-height: 1.25; margin-bottom: 16px; }
+.taf-drawer-sep { border: none; border-top: 1px solid var(--rule); margin: 0 0 14px; }
+.taf-drawer-field { margin-bottom: 10px; }
+.taf-drawer-label { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ghost); display: block; margin-bottom: 2px; }
+.taf-drawer-value { font-family: var(--sans); font-size: 12.5px; color: var(--ink); }
+.taf-drawer-date { font-family: var(--mono); font-size: 12px; color: var(--terra); font-variant-numeric: tabular-nums; }
+.taf-drawer-desc { font-family: var(--sans); font-weight: 300; font-size: 12px; color: var(--muted); line-height: 1.7; margin-top: 14px; }
+.taf-drawer-france { border-left: 2px solid var(--terra); padding: 8px 12px; margin: 14px 0; }
+.taf-drawer-france-label { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terra); margin-bottom: 2px; }
+.taf-drawer-france-value { font-family: var(--sans); font-size: 12px; color: var(--ink); font-weight: 500; }
+.taf-drawer-france-detail { font-family: var(--sans); font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.taf-drawer-foot { padding: 16px 20px; border-top: 1px solid var(--rule); }
+.taf-drawer-btn { display: block; width: 100%; text-align: center; font-family: var(--sans); font-size: 12.5px; font-weight: 500; background: var(--terra); color: var(--bg); padding: 10px; border-radius: 2px; text-decoration: none; transition: background 0.15s; }
+.taf-drawer-btn:hover { background: #7a2e14; }
+
+@media (max-width: 768px) {
+  .taf-couche-header { grid-template-columns: 24px 8px 1fr auto 16px; gap: 8px; padding-left: 16px !important; }
+  .taf-couche-desc { padding-left: 0; }
+  .taf-drawer { width: 100vw; }
+  .taf-table td:nth-child(2) { display: none; }
+}
+</style>
+
+<div class="taf-page">
+  <a href="/ressources/" class="taf-breadcrumb">Ressources › Textes applicables en France</a>
+
+  <h1 class="taf-title">Textes applicables en France</h1>
+  <p class="taf-subtitle">57 textes réglementaires classés par niveau normatif — du droit européen directement applicable à la soft law internationale.</p>
+
+  <div class="taf-note">
+    <p><strong>Comply or explain</strong> — Les guidelines EBA/ESMA ne sont pas juridiquement contraignantes, mais les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment. En pratique, elles sont traitées comme des obligations par les superviseurs français.</p>
+  </div>
+
+  {couches.map((c) => (
+    <div class="taf-couche" id={c.id}>
+      <div class="taf-couche-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="taf-num">{c.num}</span>
+        <span class="taf-dot" style={`background:${c.couleur}`}></span>
+        <div class="taf-couche-info">
+          <span class="taf-couche-titre">{c.titre}</span>
+          <span class="taf-couche-sous">{c.sous}</span>
+        </div>
+        <span class="taf-count">{c.textes.length} textes</span>
+        <span class="taf-chevron">›</span>
+      </div>
+      <div class="taf-couche-body">
+        <p class="taf-couche-desc">{c.desc}</p>
+        <table class="taf-table">
+          <thead><tr><th>Texte</th><th>Autorité</th><th>Statut</th><th>Date clé</th></tr></thead>
+          <tbody>
+            {c.textes.map((t: any, i: number) => (
+              <tr data-idx={textes.indexOf(t)} onclick={`openTafDrawer(${textes.indexOf(t)})`}>
+                <td>{t.titre}</td>
+                <td>{t.autorite}</td>
+                <td><span class={`taf-badge ${statusBadge(t.statut)}`}>{t.statut}</span></td>
+                <td>
+                  {t.dateLabel ? <span class="taf-datelabel">{t.dateLabel}</span> : null}
+                  {t.date ? <span class="taf-dateval">{t.date}</span> : <span style="color:var(--ghost)">—</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  ))}
+</div>
+
+<!-- Drawer -->
+<div class="taf-drawer-overlay" id="taf-overlay" onclick="closeTafDrawer()"></div>
+<div class="taf-drawer" id="taf-drawer">
+  <div class="taf-drawer-head">
+    <span>Détail</span>
+    <button class="taf-drawer-close" onclick="closeTafDrawer()">✕</button>
+  </div>
+  <div class="taf-drawer-body" id="taf-drawer-body"></div>
+  <div class="taf-drawer-foot" id="taf-drawer-foot"></div>
+</div>
+
+<script define:vars={{ textesJson: JSON.stringify(textes) }}>
+  const TEXTES = JSON.parse(textesJson);
+
+  window.openTafDrawer = function(idx) {
+    const t = TEXTES[idx];
+    if (!t) return;
+    const body = document.getElementById('taf-drawer-body');
+    const foot = document.getElementById('taf-drawer-foot');
+
+    let html = `<p class="taf-drawer-meta">${t.categorie || t.bloc} · ${t.type}</p>`;
+    html += `<p class="taf-drawer-titre">${t.titre}</p>`;
+    html += `<hr class="taf-drawer-sep">`;
+
+    html += `<div class="taf-drawer-field"><span class="taf-drawer-label">Référence</span><span class="taf-drawer-value">${t.reference}</span></div>`;
+    html += `<div class="taf-drawer-field"><span class="taf-drawer-label">Autorité</span><span class="taf-drawer-value">${t.autorite}</span></div>`;
+
+    const badgeClass = {'En vigueur':'badge-vigueur','En consultation':'badge-consultation','Adopté — application différée':'badge-adopte','Transposition en cours':'badge-transposition','Projet':'badge-projet'}[t.statut] || 'badge-projet';
+    html += `<div class="taf-drawer-field"><span class="taf-drawer-label">Statut</span><span class="taf-badge ${badgeClass}">${t.statut}</span></div>`;
+
+    if (t.dateLabel && t.date) {
+      html += `<div class="taf-drawer-field"><span class="taf-drawer-label">${t.dateLabel}</span><span class="taf-drawer-date">${t.date}</span></div>`;
+    }
+
+    if (t.application_france) {
+      html += `<div class="taf-drawer-france"><p class="taf-drawer-france-label">Application en France</p><p class="taf-drawer-france-value">${t.application_france}</p>`;
+      if (t.application_france_detail) {
+        html += `<p class="taf-drawer-france-detail">${t.application_france_detail}</p>`;
+      }
+      html += `</div>`;
+    }
+
+    const desc = t.description || t.notes || '';
+    if (desc) {
+      html += `<p class="taf-drawer-desc">${desc}</p>`;
+    }
+
+    body.innerHTML = html;
+
+    const url = t.url || t.lien_texte_consolide || '';
+    foot.innerHTML = url ? `<a href="${url}" class="taf-drawer-btn" target="_blank" rel="noopener noreferrer">Accéder au texte officiel →</a>` : '';
+
+    document.getElementById('taf-drawer').classList.add('open');
+    document.getElementById('taf-overlay').classList.add('open');
+  };
+
+  window.closeTafDrawer = function() {
+    document.getElementById('taf-drawer').classList.remove('open');
+    document.getElementById('taf-overlay').classList.remove('open');
+  };
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTafDrawer(); });
+</script>
+
+</BaseLayout>

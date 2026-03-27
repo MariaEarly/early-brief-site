@@ -1,7 +1,7 @@
 {
   "meta": {
     "derniere_mise_a_jour": "2026-03-26",
-    "total_textes": 45,
+    "total_textes": 57,
     "note": "Références vérifiées sur eur-lex.europa.eu et sources officielles au 26/03/2026"
   },
   "textes": [
@@ -53,7 +53,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Abroge et remplace le dispositif issu de la AMLD4 (Directive 2015/849) pour les entités du secteur privé. Premier règlement LCB-FT directement applicable dans tous les États membres."
+      "notes": "Abroge et remplace le dispositif issu de la AMLD4 (Directive 2015/849) pour les entités du secteur privé. Premier règlement LCB-FT directement applicable dans tous les États membres.",
+      "autorite": "UE",
+      "dateLabel": "Applicable le",
+      "date": "10/07/2027",
+      "description": "Abroge et remplace le dispositif issu de la AMLD4 (Directive 2015/849) pour les entités du secteur privé. Premier règlement LCB-FT directement applicable dans tous les États membres.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1624/oj?locale=fr",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "amla-2024",
@@ -95,7 +104,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Siège de l'AMLA : Francfort. L'AMLA publie des orientations et normes techniques complémentaires à l'AMLR."
+      "notes": "Siège de l'AMLA : Francfort. L'AMLA publie des orientations et normes techniques complémentaires à l'AMLR.",
+      "autorite": "AMLA",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/07/2024",
+      "description": "Siège de l'AMLA : Francfort. L'AMLA publie des orientations et normes techniques complémentaires à l'AMLR.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1620/oj?locale=fr",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "amld6-2024",
@@ -135,7 +153,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Porte sur l'organisation des autorités nationales (CRF, superviseurs). Abroge la AMLD4 à la date de transposition. Étend le registre des bénéficiaires effectifs aux comptes crypto-actifs et IBAN virtuels."
+      "notes": "Porte sur l'organisation des autorités nationales (CRF, superviseurs). Abroge la AMLD4 à la date de transposition. Étend le registre des bénéficiaires effectifs aux comptes crypto-actifs et IBAN virtuels.",
+      "autorite": "UE",
+      "dateLabel": "Transposition au",
+      "date": "10/07/2027",
+      "description": "Porte sur l'organisation des autorités nationales (CRF, superviseurs). Abroge la AMLD4 à la date de transposition. Étend le registre des bénéficiaires effectifs aux comptes crypto-actifs et IBAN virtuels.",
+      "url": "https://eur-lex.europa.eu/eli/dir/2024/1640/oj?locale=fr",
+      "categorie": "LCB-FT",
+      "application_france": "En attente",
+      "application_france_detail": "Transposition au plus tard le 10/07/2027",
+      "niveau": "directive-ue"
     },
     {
       "id": "tfr-2023",
@@ -168,7 +195,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Étend les obligations de traçabilité des virements aux transferts de crypto-actifs. Remplace le règlement 2015/847."
+      "notes": "Étend les obligations de traçabilité des virements aux transferts de crypto-actifs. Remplace le règlement 2015/847.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/12/2024",
+      "description": "Étend les obligations de traçabilité des virements aux transferts de crypto-actifs. Remplace le règlement 2015/847.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/1113/oj?locale=fr",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "mica-2023",
@@ -204,7 +240,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Pleinement applicable depuis le 30 décembre 2024. Les PSAN français enregistrés avant cette date bénéficient d'une période transitoire jusqu'au 1er juillet 2026 (loi DDADUE du 9 mars 2023)."
+      "notes": "Pleinement applicable depuis le 30 décembre 2024. Les PSAN français enregistrés avant cette date bénéficient d'une période transitoire jusqu'au 1er juillet 2026 (loi DDADUE du 9 mars 2023).",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/12/2024",
+      "description": "Pleinement applicable depuis le 30 décembre 2024. Les PSAN français enregistrés avant cette date bénéficient d'une période transitoire jusqu'au 1er juillet 2026 (loi DDADUE du 9 mars 2023).",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj?locale=fr",
+      "categorie": "MiCA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "dora-2022",
@@ -238,7 +283,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Applicable depuis le 17 janvier 2025. Couvre la gestion des risques TIC, la notification des incidents majeurs, les tests de résilience (TLPT), et la supervision des prestataires TIC critiques (CTPP)."
+      "notes": "Applicable depuis le 17 janvier 2025. Couvre la gestion des risques TIC, la notification des incidents majeurs, les tests de résilience (TLPT), et la supervision des prestataires TIC critiques (CTPP).",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Applicable depuis le 17 janvier 2025. Couvre la gestion des risques TIC, la notification des incidents majeurs, les tests de résilience (TLPT), et la supervision des prestataires TIC critiques (CTPP).",
+      "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj?locale=fr",
+      "categorie": "DORA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "dora-dir-2022",
@@ -266,7 +320,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Modifie les directives sectorielles existantes (CRD, DSP2, Solvabilité II, MiFID2, AIFMD, IORP2, BRRD) pour les aligner avec DORA. Transposition requise par les États membres."
+      "notes": "Modifie les directives sectorielles existantes (CRD, DSP2, Solvabilité II, MiFID2, AIFMD, IORP2, BRRD) pour les aligner avec DORA. Transposition requise par les États membres.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Modifie les directives sectorielles existantes (CRD, DSP2, Solvabilité II, MiFID2, AIFMD, IORP2, BRRD) pour les aligner avec DORA. Transposition requise par les États membres.",
+      "url": "https://eur-lex.europa.eu/eli/dir/2022/2556/oj?locale=fr",
+      "categorie": "DORA",
+      "application_france": "Transposé",
+      "application_france_detail": "Modifications sectorielles transposées",
+      "niveau": "directive-ue"
     },
     {
       "id": "psd2-2015",
@@ -292,7 +355,16 @@
           "type": "Proposition"
         }
       ],
-      "notes": "Sera abrogée par PSD3 à l'entrée en vigueur de celle-ci. Toujours applicable jusqu'à la transposition de PSD3."
+      "notes": "Sera abrogée par PSD3 à l'entrée en vigueur de celle-ci. Toujours applicable jusqu'à la transposition de PSD3.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "13/01/2018",
+      "description": "Sera abrogée par PSD3 à l'entrée en vigueur de celle-ci. Toujours applicable jusqu'à la transposition de PSD3.",
+      "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj?locale=fr",
+      "categorie": "PSD2-PSR",
+      "application_france": "Transposé",
+      "application_france_detail": "Ordonnance n°2017-1252 du 9 août 2017",
+      "niveau": "directive-ue"
     },
     {
       "id": "psd3-psr-2023",
@@ -318,7 +390,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Accord politique provisoire du 27 novembre 2025. Textes finaux non publiés au JOUE au 26/03/2026. PSD3 intègre les EME comme sous-catégorie des PSP, abrogeant la EMD2. Aucune date d'application confirmée."
+      "notes": "Accord politique provisoire du 27 novembre 2025. Textes finaux non publiés au JOUE au 26/03/2026. PSD3 intègre les EME comme sous-catégorie des PSP, abrogeant la EMD2. Aucune date d'application confirmée.",
+      "autorite": "UE",
+      "dateLabel": "",
+      "date": "",
+      "description": "Accord politique provisoire du 27 novembre 2025. Textes finaux non publiés au JOUE au 26/03/2026. PSD3 intègre les EME comme sous-catégorie des PSP, abrogeant la EMD2. Aucune date d'application confirmée.",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=celex%3A52023PC0366",
+      "categorie": "PSD2-PSR",
+      "application_france": "En attente",
+      "application_france_detail": "Texte non encore adopté",
+      "niveau": "soft-law"
     },
     {
       "id": "ai-act-2024",
@@ -357,7 +438,16 @@
         }
       ],
       "textes_lies": [],
-      "notes": "Autorités compétentes en France pour les services financiers : ACPR et CNIL. Les établissements financiers déployeurs tiennent les journaux dans le cadre de leur documentation réglementaire existante (art. 26(7) AI Act)."
+      "notes": "Autorités compétentes en France pour les services financiers : ACPR et CNIL. Les établissements financiers déployeurs tiennent les journaux dans le cadre de leur documentation réglementaire existante (art. 26(7) AI Act).",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/08/2024",
+      "description": "Autorités compétentes en France pour les services financiers : ACPR et CNIL. Les établissements financiers déployeurs tiennent les journaux dans le cadre de leur documentation réglementaire existante (art. 26(7) AI Act).",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr",
+      "categorie": "AI Act",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "sanctions-ue-russie-269",
@@ -386,7 +476,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Régulièrement mis à jour par règlements modificatifs (paquets de sanctions successifs). La liste consolidée des personnes et entités désignées est disponible sur le registre des sanctions de l'UE (sanctions.ec.europa.eu)."
+      "notes": "Régulièrement mis à jour par règlements modificatifs (paquets de sanctions successifs). La liste consolidée des personnes et entités désignées est disponible sur le registre des sanctions de l'UE (sanctions.ec.europa.eu).",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/03/2014",
+      "description": "Régulièrement mis à jour par règlements modificatifs (paquets de sanctions successifs). La liste consolidée des personnes et entités désignées est disponible sur le registre des sanctions de l'UE (sanctions.ec.europa.eu).",
+      "url": "https://eur-lex.europa.eu/eli/reg/2014/269/oj?locale=fr",
+      "categorie": "Sanctions",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "sanctions-ue-russie-833",
@@ -413,7 +512,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Porte sur les mesures sectorielles : accès aux marchés de capitaux, restrictions sur biens à double usage, secteur de l'énergie. Mis à jour par 14+ paquets de sanctions depuis 2022."
+      "notes": "Porte sur les mesures sectorielles : accès aux marchés de capitaux, restrictions sur biens à double usage, secteur de l'énergie. Mis à jour par 14+ paquets de sanctions depuis 2022.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "31/07/2014",
+      "description": "Porte sur les mesures sectorielles : accès aux marchés de capitaux, restrictions sur biens à double usage, secteur de l'énergie. Mis à jour par 14+ paquets de sanctions depuis 2022.",
+      "url": "https://eur-lex.europa.eu/eli/reg/2014/833/oj?locale=fr",
+      "categorie": "Sanctions",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "sanctions-ue-cadre-general",
@@ -435,7 +543,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "La Sanctions Map de la Commission européenne liste l'ensemble des régimes de sanctions UE en vigueur avec les textes de base et listes consolidées. Source primaire pour le screening."
+      "notes": "La Sanctions Map de la Commission européenne liste l'ensemble des régimes de sanctions UE en vigueur avec les textes de base et listes consolidées. Source primaire pour le screening.",
+      "autorite": "UE",
+      "dateLabel": "",
+      "date": "",
+      "description": "La Sanctions Map de la Commission européenne liste l'ensemble des régimes de sanctions UE en vigueur avec les textes de base et listes consolidées. Source primaire pour le screening.",
+      "url": "https://www.sanctionsmap.eu/",
+      "categorie": "Sanctions",
+      "application_france": "Comply or explain",
+      "application_france_detail": "Les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment",
+      "niveau": "soft-law"
     },
     {
       "id": "emd2-2009",
@@ -459,7 +576,16 @@
           "type": "Proposition"
         }
       ],
-      "notes": "Sera abrogée par PSD3 à son entrée en vigueur. Les agrément EMD2 resteront valides 24 mois après l'entrée en vigueur de PSD3 (période transitoire grandfathering)."
+      "notes": "Sera abrogée par PSD3 à son entrée en vigueur. Les agrément EMD2 resteront valides 24 mois après l'entrée en vigueur de PSD3 (période transitoire grandfathering).",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/04/2011",
+      "description": "Sera abrogée par PSD3 à son entrée en vigueur. Les agrément EMD2 resteront valides 24 mois après l'entrée en vigueur de PSD3 (période transitoire grandfathering).",
+      "url": "https://eur-lex.europa.eu/eli/dir/2009/110/oj?locale=fr",
+      "categorie": "PSD2-PSR",
+      "application_france": "Transposé",
+      "application_france_detail": "Transposée en droit français (CMF)",
+      "niveau": "directive-ue"
     },
     {
       "id": "amld4-2015",
@@ -493,7 +619,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Toujours en vigueur jusqu'à transposition d'AMLD6 le 10 juillet 2027. Modifiée par AMLD5 (2018/843). Texte de référence actuel pour les obligations LCB-FT des entités assujetties."
+      "notes": "Toujours en vigueur jusqu'à transposition d'AMLD6 le 10 juillet 2027. Modifiée par AMLD5 (2018/843). Texte de référence actuel pour les obligations LCB-FT des entités assujetties.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "26/06/2017",
+      "description": "Toujours en vigueur jusqu'à transposition d'AMLD6 le 10 juillet 2027. Modifiée par AMLD5 (2018/843). Texte de référence actuel pour les obligations LCB-FT des entités assujetties.",
+      "url": "https://eur-lex.europa.eu/eli/dir/2015/849/oj?locale=fr",
+      "categorie": "LCB-FT",
+      "application_france": "Transposé",
+      "application_france_detail": "Ordonnance n°2016-1635 du 1er décembre 2016 + Ordonnance n°2020-115 du 12 février 2020",
+      "niveau": "directive-ue"
     },
     {
       "id": "ordonnance-lcbft-fr-2016",
@@ -522,7 +657,16 @@
           "type": "Code"
         }
       ],
-      "notes": "A introduit les dispositions LCB-FT dans le Code monétaire et financier (L.561-1 et suivants). Sera modifiée lors de la transposition d'AMLD6 au plus tard le 10 juillet 2027."
+      "notes": "A introduit les dispositions LCB-FT dans le Code monétaire et financier (L.561-1 et suivants). Sera modifiée lors de la transposition d'AMLD6 au plus tard le 10 juillet 2027.",
+      "autorite": "France",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/01/2017",
+      "description": "A introduit les dispositions LCB-FT dans le Code monétaire et financier (L.561-1 et suivants). Sera modifiée lors de la transposition d'AMLD6 au plus tard le 10 juillet 2027.",
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000033665527",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "arrete-lcbft-fr-2021",
@@ -550,7 +694,16 @@
           "type": "Ordonnance"
         }
       ],
-      "notes": "Précise les exigences organisationnelles pour les entités soumises au contrôle de l'ACPR : gouvernance LCB-FT, fonctions de conformité, ressources dédiées, procédures internes."
+      "notes": "Précise les exigences organisationnelles pour les entités soumises au contrôle de l'ACPR : gouvernance LCB-FT, fonctions de conformité, ressources dédiées, procédures internes.",
+      "autorite": "France",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/03/2021",
+      "description": "Précise les exigences organisationnelles pour les entités soumises au contrôle de l'ACPR : gouvernance LCB-FT, fonctions de conformité, ressources dédiées, procédures internes.",
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042933417",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "acpr-position-2023",
@@ -570,7 +723,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Précise les attentes de l'ACPR sur la mise en œuvre pratique des obligations de vigilance KYC. Source de référence pour les contrôles ACPR."
+      "notes": "Précise les attentes de l'ACPR sur la mise en œuvre pratique des obligations de vigilance KYC. Source de référence pour les contrôles ACPR.",
+      "autorite": "ACPR",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/01/2023",
+      "description": "Précise les attentes de l'ACPR sur la mise en œuvre pratique des obligations de vigilance KYC. Source de référence pour les contrôles ACPR.",
+      "url": "https://acpr.banque-france.fr/sites/default/files/media/2023/01/30/20230130_position_acpr_2023-p-01.pdf",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "guidelines-eba-lcbft-2024",
@@ -602,7 +764,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Couvrent les cas ambigus de screening : homonymes, entités partiellement désignées, filiales de personnes désignées. Première édition du Deep Dive Early Brief (décembre 2024)."
+      "notes": "Couvrent les cas ambigus de screening : homonymes, entités partiellement désignées, filiales de personnes désignées. Première édition du Deep Dive Early Brief (décembre 2024).",
+      "autorite": "EBA",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/12/2025",
+      "description": "Couvrent les cas ambigus de screening : homonymes, entités partiellement désignées, filiales de personnes désignées. Première édition du Deep Dive Early Brief (décembre 2024).",
+      "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-guidelines-internal-policies-procedures-and-controls-ensure-implementation-un-eu-and",
+      "categorie": "LCB-FT",
+      "application_france": "Comply or explain",
+      "application_france_detail": "Les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment",
+      "niveau": "soft-law"
     },
     {
       "id": "mica-eba-ica-2024",
@@ -626,7 +797,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Orientations sur les facteurs de risque LCB-FT spécifiques aux prestataires de services sur crypto-actifs dans le cadre MiCA."
+      "notes": "Orientations sur les facteurs de risque LCB-FT spécifiques aux prestataires de services sur crypto-actifs dans le cadre MiCA.",
+      "autorite": "EBA",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/12/2024",
+      "description": "Orientations sur les facteurs de risque LCB-FT spécifiques aux prestataires de services sur crypto-actifs dans le cadre MiCA.",
+      "url": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-money-laundering-and-terrorist-financing-risk-factors",
+      "categorie": "MiCA",
+      "application_france": "Comply or explain",
+      "application_france_detail": "Les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment",
+      "niveau": "soft-law"
     },
     {
       "id": "psd2-rts-sca-2018",
@@ -652,7 +832,16 @@
           "type": "Directive"
         }
       ],
-      "notes": "Définit les exigences techniques SCA (2 facteurs parmi : possession, inhérence, connaissance) et les exemptions applicables. Sera révisé dans le cadre PSR."
+      "notes": "Définit les exigences techniques SCA (2 facteurs parmi : possession, inhérence, connaissance) et les exemptions applicables. Sera révisé dans le cadre PSR.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "14/09/2019",
+      "description": "Définit les exigences techniques SCA (2 facteurs parmi : possession, inhérence, connaissance) et les exemptions applicables. Sera révisé dans le cadre PSR.",
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2018/389/oj?locale=fr",
+      "categorie": "PSD2-PSR",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe",
+      "niveau": "reglement-ue"
     },
     {
       "id": "crd4-2013",
@@ -669,7 +858,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Cadre de gouvernance et d'agrément des établissements de crédit. Modifiée par CRD V (2019/878) et CRD VI (2024/1619). Pertinente pour les obligations de gouvernance LCB-FT des banques."
+      "notes": "Cadre de gouvernance et d'agrément des établissements de crédit. Modifiée par CRD V (2019/878) et CRD VI (2024/1619). Pertinente pour les obligations de gouvernance LCB-FT des banques.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/01/2014",
+      "description": "Cadre de gouvernance et d'agrément des établissements de crédit. Modifiée par CRD V (2019/878) et CRD VI (2024/1619). Pertinente pour les obligations de gouvernance LCB-FT des banques.",
+      "url": "https://eur-lex.europa.eu/eli/dir/2013/36/oj?locale=fr",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "directive-ue"
     },
     {
       "id": "gafi-40-recommandations",
@@ -698,7 +896,16 @@
           "type": "Méthodologie"
         }
       ],
-      "notes": "Standard mondial AML/CFT. Révisé régulièrement (dernière mise à jour : 2023). Base de toutes les législations nationales et européennes LCB-FT."
+      "notes": "Standard mondial AML/CFT. Révisé régulièrement (dernière mise à jour : 2023). Base de toutes les législations nationales et européennes LCB-FT.",
+      "autorite": "GAFI",
+      "dateLabel": "En vigueur depuis",
+      "date": "16/02/2012",
+      "description": "Standard mondial AML/CFT. Révisé régulièrement (dernière mise à jour : 2023). Base de toutes les législations nationales et européennes LCB-FT.",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "gafi-listes-juridictions",
@@ -727,7 +934,16 @@
           "type": "Déclaration"
         }
       ],
-      "notes": "Mise à jour 3 fois par an (février, juin, octobre). Liste grise : juridictions sous surveillance renforcée. Liste noire : appel à contre-mesures. Impact direct sur les obligations de vigilance renforcée."
+      "notes": "Mise à jour 3 fois par an (février, juin, octobre). Liste grise : juridictions sous surveillance renforcée. Liste noire : appel à contre-mesures. Impact direct sur les obligations de vigilance renforcée.",
+      "autorite": "GAFI",
+      "dateLabel": "",
+      "date": "",
+      "description": "Mise à jour 3 fois par an (février, juin, octobre). Liste grise : juridictions sous surveillance renforcée. Liste noire : appel à contre-mesures. Impact direct sur les obligations de vigilance renforcée.",
+      "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions.html",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "gafi-guidance-rba",
@@ -744,7 +960,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Guidance opérationnelle pour l'application de l'approche par les risques dans le secteur bancaire. Référence pour les superviseurs nationaux."
+      "notes": "Guidance opérationnelle pour l'application de l'approche par les risques dans le secteur bancaire. Référence pour les superviseurs nationaux.",
+      "autorite": "GAFI",
+      "dateLabel": "Publié le",
+      "date": "01/10/2014",
+      "description": "Guidance opérationnelle pour l'application de l'approche par les risques dans le secteur bancaire. Référence pour les superviseurs nationaux.",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfgeneral/Rba-banking-sector.html",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "gafi-guidance-vasp",
@@ -762,7 +987,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Guidance actualisée pour les prestataires de services d'actifs virtuels. Inclut la Travel Rule pour les transferts crypto et les obligations des VASPs."
+      "notes": "Guidance actualisée pour les prestataires de services d'actifs virtuels. Inclut la Travel Rule pour les transferts crypto et les obligations des VASPs.",
+      "autorite": "GAFI",
+      "dateLabel": "Publié le",
+      "date": "28/10/2021",
+      "description": "Guidance actualisée pour les prestataires de services d'actifs virtuels. Inclut la Travel Rule pour les transferts crypto et les obligations des VASPs.",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Updated-Guidance-RBA-VA-VASP.html",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "gafi-guidance-pep",
@@ -784,7 +1018,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Définit les critères d'identification des PPE, les mesures de vigilance renforcée et les bonnes pratiques. Référence pour R.12 et R.22 du GAFI."
+      "notes": "Définit les critères d'identification des PPE, les mesures de vigilance renforcée et les bonnes pratiques. Référence pour R.12 et R.22 du GAFI.",
+      "autorite": "GAFI",
+      "dateLabel": "Publié le",
+      "date": "01/06/2013",
+      "description": "Définit les critères d'identification des PPE, les mesures de vigilance renforcée et les bonnes pratiques. Référence pour R.12 et R.22 du GAFI.",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Peps-guidance.html",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "egmont-principes",
@@ -804,7 +1047,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Cadre de coopération entre les 170+ cellules de renseignement financier (CRF/FIU) dans le monde. Définit les principes de confidentialité et d'échange spontané d'informations."
+      "notes": "Cadre de coopération entre les 170+ cellules de renseignement financier (CRF/FIU) dans le monde. Définit les principes de confidentialité et d'échange spontané d'informations.",
+      "autorite": "Egmont",
+      "dateLabel": "Publié le",
+      "date": "01/07/2013",
+      "description": "Cadre de coopération entre les 170+ cellules de renseignement financier (CRF/FIU) dans le monde. Définit les principes de confidentialité et d'échange spontané d'informations.",
+      "url": "https://egmontgroup.org/egmont-group-of-fius/egmont-charter/",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "wolfsberg-aml-principles",
@@ -828,7 +1080,16 @@
           "type": "Questionnaire"
         }
       ],
-      "notes": "Standards AML publiés par les 13 plus grandes banques internationales. Le CBDDQ est le questionnaire standard de due diligence pour les relations de correspondance bancaire."
+      "notes": "Standards AML publiés par les 13 plus grandes banques internationales. Le CBDDQ est le questionnaire standard de due diligence pour les relations de correspondance bancaire.",
+      "autorite": "Wolfsberg",
+      "dateLabel": "Publié le",
+      "date": "01/01/2023",
+      "description": "Standards AML publiés par les 13 plus grandes banques internationales. Le CBDDQ est le questionnaire standard de due diligence pour les relations de correspondance bancaire.",
+      "url": "https://www.wolfsberg-principles.com/wolfsberg-standards",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "wolfsberg-pep-guidance",
@@ -847,7 +1108,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Précise les bonnes pratiques de screening et de gestion des risques PPE pour les institutions financières internationales."
+      "notes": "Précise les bonnes pratiques de screening et de gestion des risques PPE pour les institutions financières internationales.",
+      "autorite": "Wolfsberg",
+      "dateLabel": "Publié le",
+      "date": "01/08/2017",
+      "description": "Précise les bonnes pratiques de screening et de gestion des risques PPE pour les institutions financières internationales.",
+      "url": "https://www.wolfsberg-principles.com/wolfsberg-standards",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "bale-sound-management-mltf",
@@ -864,7 +1134,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Guidelines prudentielles du Comité de Bâle sur la gestion du risque ML/TF par les banques. Intègre la gouvernance, le risk appetite, le screening et le monitoring des transactions."
+      "notes": "Guidelines prudentielles du Comité de Bâle sur la gestion du risque ML/TF par les banques. Intègre la gouvernance, le risk appetite, le screening et le monitoring des transactions.",
+      "autorite": "Comité de Bâle",
+      "dateLabel": "Publié le",
+      "date": "01/06/2020",
+      "description": "Guidelines prudentielles du Comité de Bâle sur la gestion du risque ML/TF par les banques. Intègre la gouvernance, le risk appetite, le screening et le monitoring des transactions.",
+      "url": "https://www.bis.org/bcbs/publ/d530.htm",
+      "categorie": "Standards internationaux",
+      "application_france": "Soft law",
+      "application_france_detail": "Standards non contraignants — servent de référence pour les évaluations GAFI",
+      "niveau": "soft-law"
     },
     {
       "id": "tracfin-rapport-activite-2024",
@@ -886,7 +1165,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Statistiques annuelles : nombre de DS reçues, typologies de blanchiment détectées, tendances sectorielles. Référence opérationnelle pour calibrer les dispositifs LCB-FT."
+      "notes": "Statistiques annuelles : nombre de DS reçues, typologies de blanchiment détectées, tendances sectorielles. Référence opérationnelle pour calibrer les dispositifs LCB-FT.",
+      "autorite": "Tracfin",
+      "dateLabel": "Publié le",
+      "date": "01/06/2025",
+      "description": "Statistiques annuelles : nombre de DS reçues, typologies de blanchiment détectées, tendances sectorielles. Référence opérationnelle pour calibrer les dispositifs LCB-FT.",
+      "url": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin/les-rapports-dactivite-et-danalyse",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "tracfin-lignes-directrices-conjointes",
@@ -906,7 +1194,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR."
+      "notes": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR.",
+      "autorite": "ACPR",
+      "dateLabel": "Publié le",
+      "date": "01/01/2024",
+      "description": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR.",
+      "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-lacpr-et-de-tracfin-relatives-aux-obligations-de-vigilance-sur-les",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "acpr-lignes-directrices-gel",
@@ -928,7 +1225,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Couvrent les obligations de gel des avoirs et d'embargo : screening des listes, délais de mise en œuvre, gestion des faux positifs, reporting au DG Trésor."
+      "notes": "Couvrent les obligations de gel des avoirs et d'embargo : screening des listes, délais de mise en œuvre, gestion des faux positifs, reporting au DG Trésor.",
+      "autorite": "France",
+      "dateLabel": "Publié le",
+      "date": "16/06/2021",
+      "description": "Couvrent les obligations de gel des avoirs et d'embargo : screening des listes, délais de mise en œuvre, gestion des faux positifs, reporting au DG Trésor.",
+      "url": "https://acpr.banque-france.fr/system/files/2025-01/20210616_lignes_directrices_gel_des_avoirs.pdf",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "dg-tresor-registre-gels",
@@ -950,7 +1256,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Liste consolidée des personnes et entités soumises à une mesure de gel des avoirs en France. Mise à jour en temps réel. Source obligatoire pour le screening."
+      "notes": "Liste consolidée des personnes et entités soumises à une mesure de gel des avoirs en France. Mise à jour en temps réel. Source obligatoire pour le screening.",
+      "autorite": "France",
+      "dateLabel": "",
+      "date": "",
+      "description": "Liste consolidée des personnes et entités soumises à une mesure de gel des avoirs en France. Mise à jour en temps réel. Source obligatoire pour le screening.",
+      "url": "https://gels-avoirs.dgtresor.gouv.fr/",
+      "categorie": "Sanctions",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "anr-france-2023",
@@ -972,7 +1287,16 @@
       ],
       "echeances": [],
       "textes_lies": [],
-      "notes": "Cartographie nationale des risques BC/FT. Base obligatoire pour la classification des risques dans le BWRA de chaque entité assujettie."
+      "notes": "Cartographie nationale des risques BC/FT. Base obligatoire pour la classification des risques dans le BWRA de chaque entité assujettie.",
+      "autorite": "France",
+      "dateLabel": "Publié le",
+      "date": "14/12/2023",
+      "description": "Cartographie nationale des risques BC/FT. Base obligatoire pour la classification des risques dans le BWRA de chaque entité assujettie.",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/2023/12/14/analyse-nationale-des-risques-de-blanchiment-de-capitaux-et-de-financement-du-terrorisme-en-france",
+      "categorie": "Textes FR",
+      "application_france": "Droit français",
+      "application_france_detail": "",
+      "niveau": "droit-national"
     },
     {
       "id": "amla-rts-1-risk-methodology",
@@ -1010,7 +1334,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Scoring harmonisé UE : risque inhérent (1-4), qualité des contrôles (A-D). 100-150 datapoints standardisés. Consultation clôturée le 27/01/2026."
+      "notes": "Scoring harmonisé UE : risque inhérent (1-4), qualité des contrôles (A-D). 100-150 datapoints standardisés. Consultation clôturée le 27/01/2026.",
+      "autorite": "AMLA",
+      "dateLabel": "Clôture le",
+      "date": "27/01/2026",
+      "description": "Scoring harmonisé UE : risque inhérent (1-4), qualité des contrôles (A-D). 100-150 datapoints standardisés. Consultation clôturée le 27/01/2026.",
+      "url": "https://www.amla.europa.eu/consultations",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe",
+      "niveau": "soft-law"
     },
     {
       "id": "amla-rts-2-selection-criteria",
@@ -1050,7 +1383,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Critères : présence dans ≥6 États membres, >20k clients OU >50M€ flux/État, score risque résiduel élevé. Liste définitive non publiée au 27/03/2026."
+      "notes": "Critères : présence dans ≥6 États membres, >20k clients OU >50M€ flux/État, score risque résiduel élevé. Liste définitive non publiée au 27/03/2026.",
+      "autorite": "AMLA",
+      "dateLabel": "Clôture le",
+      "date": "27/01/2026",
+      "description": "Critères : présence dans ≥6 États membres, >20k clients OU >50M€ flux/État, score risque résiduel élevé. Liste définitive non publiée au 27/03/2026.",
+      "url": "https://www.amla.europa.eu/consultations",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe",
+      "niveau": "soft-law"
     },
     {
       "id": "amla-its-cooperation",
@@ -1082,7 +1424,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Joint Supervisory Teams (JST), collecte de données par superviseurs nationaux, contrôles qualité, règles de transfert de supervision."
+      "notes": "Joint Supervisory Teams (JST), collecte de données par superviseurs nationaux, contrôles qualité, règles de transfert de supervision.",
+      "autorite": "AMLA",
+      "dateLabel": "Clôture le",
+      "date": "27/01/2026",
+      "description": "Joint Supervisory Teams (JST), collecte de données par superviseurs nationaux, contrôles qualité, règles de transfert de supervision.",
+      "url": "https://www.amla.europa.eu/consultations",
+      "categorie": "LCB-FT",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe",
+      "niveau": "soft-law"
     },
     {
       "id": "dora-rts-ict-risk-management",
@@ -1111,7 +1462,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Détaille les exigences de gestion des risques TIC : politiques de sécurité, gestion des accès, détection des anomalies, plans de continuité, tests."
+      "notes": "Détaille les exigences de gestion des risques TIC : politiques de sécurité, gestion des accès, détection des anomalies, plans de continuité, tests.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Détaille les exigences de gestion des risques TIC : politiques de sécurité, gestion des accès, détection des anomalies, plans de continuité, tests.",
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2024/1774/oj?locale=fr",
+      "categorie": "DORA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "dora-rts-its-incident-reporting",
@@ -1140,7 +1500,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Critères de classification des incidents (matérialité, impact), délais de notification (4h/24h/72h), templates de reporting harmonisés."
+      "notes": "Critères de classification des incidents (matérialité, impact), délais de notification (4h/24h/72h), templates de reporting harmonisés.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Critères de classification des incidents (matérialité, impact), délais de notification (4h/24h/72h), templates de reporting harmonisés.",
+      "url": "https://www.esma.europa.eu/document/final-report-draft-rts-and-its-incident-reporting",
+      "categorie": "DORA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe",
+      "niveau": "reglement-ue"
     },
     {
       "id": "dora-rts-subcontracting",
@@ -1169,7 +1538,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Encadrement de la sous-traitance en chaîne des services TIC : conditions, notification au superviseur, droit d'audit, stratégies de sortie."
+      "notes": "Encadrement de la sous-traitance en chaîne des services TIC : conditions, notification au superviseur, droit d'audit, stratégies de sortie.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Encadrement de la sous-traitance en chaîne des services TIC : conditions, notification au superviseur, droit d'audit, stratégies de sortie.",
+      "url": "https://www.esma.europa.eu/document/final-report-dora-rts-subcontracting",
+      "categorie": "DORA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "dora-its-register-information",
@@ -1203,7 +1581,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Templates standardisés pour le registre de tous les contrats TIC. Format Excel/XML défini par l'EBA. Dry run réalisé en 2024."
+      "notes": "Templates standardisés pour le registre de tous les contrats TIC. Format Excel/XML défini par l'EBA. Dry run réalisé en 2024.",
+      "autorite": "UE",
+      "dateLabel": "En vigueur depuis",
+      "date": "17/01/2025",
+      "description": "Templates standardisés pour le registre de tous les contrats TIC. Format Excel/XML défini par l'EBA. Dry run réalisé en 2024.",
+      "url": "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/implementing-technical-standards-establish-templates-register-information",
+      "categorie": "DORA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "mica-rts-white-paper",
@@ -1228,7 +1615,16 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Définit le contenu obligatoire des white papers pour les offres au public de crypto-actifs (Titles II, III, IV MiCA)."
+      "notes": "Définit le contenu obligatoire des white papers pour les offres au public de crypto-actifs (Titles II, III, IV MiCA).",
+      "autorite": "ESMA",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/12/2024",
+      "description": "Définit le contenu obligatoire des white papers pour les offres au public de crypto-actifs (Titles II, III, IV MiCA).",
+      "url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "categorie": "MiCA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
     },
     {
       "id": "mica-rts-eba-art-emt",
@@ -1253,7 +1649,347 @@
           "type": "Règlement"
         }
       ],
-      "notes": "Exigences de fonds propres, réserves d'actifs, plans de remboursement pour les émetteurs d'ART significatifs et d'EMT."
+      "notes": "Exigences de fonds propres, réserves d'actifs, plans de remboursement pour les émetteurs d'ART significatifs et d'EMT.",
+      "autorite": "EBA",
+      "dateLabel": "En vigueur depuis",
+      "date": "30/12/2024",
+      "description": "Exigences de fonds propres, réserves d'actifs, plans de remboursement pour les émetteurs d'ART significatifs et d'EMT.",
+      "url": "https://www.eba.europa.eu/regulation-and-policy/markets-crypto-assets-mica",
+      "categorie": "MiCA",
+      "application_france": "Directement applicable",
+      "application_france_detail": "Règlement UE d'application directe — pas de transposition nécessaire",
+      "niveau": "reglement-ue"
+    },
+    {
+      "id": "amf-doc-2019-23",
+      "titre": "Instruction AMF DOC-2019-23 — Procédures d'enregistrement et d'agrément PSAN",
+      "reference": "AMF DOC-2019-23",
+      "bloc": "MiCA",
+      "categorie": "MiCA",
+      "type": "Instruction",
+      "statut": "En vigueur",
+      "date_publication": "2019-12-19",
+      "date_application": "2019-12-19",
+      "lien_texte_consolide": "https://www.amf-france.org/fr/reglementation/doctrine/doc-2019-23",
+      "institutions_concernees": [
+        "PSAN",
+        "CASP"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "AMF",
+      "dateLabel": "En vigueur depuis",
+      "date": "19/12/2019",
+      "url": "https://www.amf-france.org/fr/reglementation/doctrine/doc-2019-23",
+      "description": "Procédures et formulaires pour l'enregistrement et l'agrément des prestataires de services sur actifs numériques auprès de l'AMF.",
+      "application_france": "Droit français",
+      "application_france_detail": "Instruction AMF applicable aux PSAN enregistrés ou agréés en France",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "amf-position-2024-crypto",
+      "titre": "Position AMF — Commercialisation des actifs numériques",
+      "reference": "AMF Position 2024",
+      "bloc": "MiCA",
+      "categorie": "MiCA",
+      "type": "Position",
+      "statut": "En vigueur",
+      "date_publication": "2024-01-15",
+      "date_application": "2024-01-15",
+      "lien_texte_consolide": "https://www.amf-france.org/fr/espace-professionnels/prestataires-de-services-sur-actifs-numeriques-psan",
+      "institutions_concernees": [
+        "PSAN",
+        "CASP"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "AMF",
+      "dateLabel": "En vigueur depuis",
+      "date": "15/01/2024",
+      "url": "https://www.amf-france.org/fr/espace-professionnels/prestataires-de-services-sur-actifs-numeriques-psan",
+      "description": "Règles de commercialisation et de communication promotionnelle pour les actifs numériques. Encadrement des influenceurs et de la publicité.",
+      "application_france": "Droit français",
+      "application_france_detail": "Position AMF — applicable aux PSAN exerçant en France",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "amf-doctrine-sgp-lcbft",
+      "titre": "Doctrine AMF — Obligations LCB-FT des sociétés de gestion",
+      "reference": "AMF — Doctrine SGP",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Position",
+      "statut": "En vigueur",
+      "date_publication": "2023-01-01",
+      "date_application": "2023-01-01",
+      "lien_texte_consolide": "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme-lcb-ft",
+      "institutions_concernees": [
+        "Sociétés de gestion",
+        "CIF"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "AMF",
+      "dateLabel": "En vigueur depuis",
+      "date": "",
+      "url": "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme-lcb-ft",
+      "description": "Obligations de vigilance, classification des risques et déclaration de soupçon pour les sociétés de gestion de portefeuille et CIF supervisés par l'AMF.",
+      "application_france": "Droit français",
+      "application_france_detail": "Doctrine AMF applicable aux SGP et CIF",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "acpr-2024-p01-pays-tiers",
+      "titre": "Position ACPR 2024-P-01 — Vigilance renforcée pays tiers à haut risque",
+      "reference": "ACPR 2024-P-01",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Position",
+      "statut": "En vigueur",
+      "date_publication": "2024-03-01",
+      "date_application": "2024-03-01",
+      "lien_texte_consolide": "https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/reglementation-en-matiere-de-lcb-ft",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "ACPR",
+      "dateLabel": "En vigueur depuis",
+      "date": "01/03/2024",
+      "url": "https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/reglementation-en-matiere-de-lcb-ft",
+      "description": "Mesures de vigilance renforcée à appliquer pour les relations d'affaires et opérations impliquant des pays tiers identifiés à haut risque par la Commission européenne.",
+      "application_france": "Droit français",
+      "application_france_detail": "Position ACPR contraignante pour les entités supervisées",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "eba-gl-2021-02-risk-factors",
+      "titre": "Guidelines EBA — Facteurs de risque ML/TF",
+      "reference": "EBA/GL/2021/02",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Guidelines",
+      "statut": "En vigueur",
+      "date_publication": "2021-03-01",
+      "date_application": "2021-11-26",
+      "lien_texte_consolide": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-on-customer-due-diligence-and-the-factors-credit-and-financial",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Entreprises d'investissement"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "EBA",
+      "dateLabel": "En vigueur depuis",
+      "date": "26/11/2021",
+      "url": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-on-customer-due-diligence-and-the-factors-credit-and-financial",
+      "description": "Lignes directrices sur les facteurs de risque de blanchiment et de financement du terrorisme. Texte de référence pour la classification des risques clients, produits, canaux et zones géographiques.",
+      "application_france": "Comply or explain",
+      "application_france_detail": "ACPR et AMF ont déclaré leur conformité — applicable aux entités supervisées en France",
+      "niveau": "soft-law"
+    },
+    {
+      "id": "eba-gl-2022-15-remote-onboarding",
+      "titre": "Guidelines EBA — Entrée en relation à distance",
+      "reference": "EBA/GL/2022/15",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Guidelines",
+      "statut": "En vigueur",
+      "date_publication": "2022-11-22",
+      "date_application": "2023-10-02",
+      "lien_texte_consolide": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-on-the-use-of-remote-customer-onboarding-solutions",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "CASP"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "EBA",
+      "dateLabel": "En vigueur depuis",
+      "date": "02/10/2023",
+      "url": "https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism/guidelines-on-the-use-of-remote-customer-onboarding-solutions",
+      "description": "Cadre pour l'utilisation de solutions d'identification et de vérification d'identité à distance (vidéo, eIDAS, biométrie). Critères de fiabilité et de documentation.",
+      "application_france": "Comply or explain",
+      "application_france_detail": "Applicable aux entités supervisées ACPR et AMF",
+      "niveau": "soft-law"
+    },
+    {
+      "id": "tracfin-tendances-2023",
+      "titre": "Tracfin — Tendances et analyse des risques BC/FT 2023",
+      "reference": "Tracfin — Rapport TAR 2023",
+      "bloc": "Textes FR",
+      "categorie": "Textes FR",
+      "type": "Rapport",
+      "statut": "En vigueur",
+      "date_publication": "2024-06-01",
+      "date_application": "",
+      "lien_texte_consolide": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin/les-rapports-dactivite-et-danalyse",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Assureurs"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "Tracfin",
+      "dateLabel": "Publié le",
+      "date": "01/06/2024",
+      "url": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin/les-rapports-dactivite-et-danalyse",
+      "description": "Analyse des tendances de blanchiment et de financement du terrorisme identifiées par Tracfin. Typologies de risques, secteurs surveillés, indicateurs d'alerte.",
+      "application_france": "Informatif",
+      "application_france_detail": "Document d'analyse — sert de référence pour calibrer les dispositifs LCB-FT",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "tracfin-lignes-directrices-ds",
+      "titre": "Tracfin — Lignes directrices sur la déclaration de soupçon",
+      "reference": "Tracfin — Guide DS",
+      "bloc": "Textes FR",
+      "categorie": "Textes FR",
+      "type": "Lignes directrices",
+      "statut": "En vigueur",
+      "date_publication": "2023-01-01",
+      "date_application": "",
+      "lien_texte_consolide": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "Assureurs",
+        "PSAN"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "Tracfin",
+      "dateLabel": "",
+      "date": "",
+      "url": "https://www.economie.gouv.fr/tracfin/les-publications-de-tracfin",
+      "description": "Modalités pratiques de la déclaration de soupçon : critères de déclenchement, rédaction du narratif, transmission via ERMES, délais et suivi.",
+      "application_france": "Droit français",
+      "application_france_detail": "Guide opérationnel Tracfin — référence pour les assujettis",
+      "niveau": "droit-national"
+    },
+    {
+      "id": "amld5-2018-843",
+      "titre": "5e Directive LCB-FT (AMLD5)",
+      "reference": "Directive (UE) 2018/843",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Directive",
+      "statut": "En vigueur",
+      "date_publication": "2018-06-19",
+      "date_application": "2020-01-10",
+      "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2018/843/oj?locale=fr",
+      "institutions_concernees": [
+        "Établissements de crédit",
+        "PSP",
+        "EME",
+        "PSAN"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "UE",
+      "dateLabel": "Transposée le",
+      "date": "10/01/2020",
+      "url": "https://eur-lex.europa.eu/eli/dir/2018/843/oj?locale=fr",
+      "description": "Extension du périmètre LCB-FT aux plateformes d'échange de crypto-actifs et aux fournisseurs de portefeuilles. Renforcement de la transparence des bénéficiaires effectifs. Registres centralisés.",
+      "application_france": "Transposé",
+      "application_france_detail": "Ordonnance n°2020-115 du 12 février 2020",
+      "niveau": "directive-ue"
+    },
+    {
+      "id": "dir-2018-1673-penal",
+      "titre": "Directive volet pénal — Blanchiment de capitaux",
+      "reference": "Directive (UE) 2018/1673",
+      "bloc": "LCB-FT",
+      "categorie": "LCB-FT",
+      "type": "Directive",
+      "statut": "En vigueur",
+      "date_publication": "2018-11-12",
+      "date_application": "2020-12-03",
+      "lien_texte_consolide": "https://eur-lex.europa.eu/eli/dir/2018/1673/oj?locale=fr",
+      "institutions_concernees": [],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "UE",
+      "dateLabel": "Transposée le",
+      "date": "03/12/2020",
+      "url": "https://eur-lex.europa.eu/eli/dir/2018/1673/oj?locale=fr",
+      "description": "Harmonisation des infractions pénales de blanchiment de capitaux dans l'UE. Définition des infractions principales, peines minimales, compétence juridictionnelle.",
+      "application_france": "Transposé",
+      "application_france_detail": "Transposée en droit pénal français",
+      "niveau": "directive-ue"
+    },
+    {
+      "id": "gafi-evaluation-france-2022",
+      "titre": "GAFI — Évaluation mutuelle de la France (5e cycle)",
+      "reference": "FATF MER France 2022",
+      "bloc": "Standards internationaux",
+      "categorie": "Standards internationaux",
+      "type": "Rapport",
+      "statut": "En vigueur",
+      "date_publication": "2022-05-01",
+      "date_application": "",
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Mer-france-2022.html",
+      "institutions_concernees": [],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "GAFI",
+      "dateLabel": "Publié le",
+      "date": "01/05/2022",
+      "url": "https://www.fatf-gafi.org/en/publications/Mutualevaluations/Mer-france-2022.html",
+      "description": "Évaluation du dispositif français de lutte contre le blanchiment et le financement du terrorisme. Notation par recommandation et par résultat immédiat. Points forts et actions prioritaires.",
+      "application_france": "Soft law",
+      "application_france_detail": "Évaluation de référence — les recommandations orientent les réformes françaises",
+      "niveau": "soft-law"
+    },
+    {
+      "id": "gafi-guidance-vasp-2021",
+      "titre": "GAFI — Guidance actifs virtuels et VASP (mise à jour 2021)",
+      "reference": "FATF Updated Guidance VA/VASP 2021",
+      "bloc": "Standards internationaux",
+      "categorie": "Standards internationaux",
+      "type": "Guidance",
+      "statut": "En vigueur",
+      "date_publication": "2021-10-28",
+      "date_application": "",
+      "lien_texte_consolide": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html",
+      "institutions_concernees": [
+        "PSAN",
+        "CASP"
+      ],
+      "echeances": [],
+      "textes_lies": [],
+      "notes": "",
+      "autorite": "GAFI",
+      "dateLabel": "Publié le",
+      "date": "28/10/2021",
+      "url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html",
+      "description": "Mise à jour de la guidance sur l'approche par les risques pour les actifs virtuels et les VASP. Inclut DeFi, NFT, stablecoins, peer-to-peer.",
+      "application_france": "Soft law",
+      "application_france_detail": "Référence pour l'AMF et l'ACPR dans la supervision des PSAN/CASP",
+      "niveau": "soft-law"
     }
   ]
 }

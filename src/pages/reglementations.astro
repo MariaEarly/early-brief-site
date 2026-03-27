@@ -1,176 +1,482 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import data from '../data/reglementations.json';
-
-const textes = data.textes.sort((a, b) => {
-  const aDate = a.date_publication ? new Date(a.date_publication).getTime() : 0;
-  const bDate = b.date_publication ? new Date(b.date_publication).getTime() : 0;
-  return bDate - aDate;
-});
-const now = new Date();
-const enVigueur = textes.filter(t => t.statut === 'En vigueur').length;
-const enConsultation = textes.filter(t => t.statut === 'En consultation').length;
-const echeancesAVenir = textes.reduce((acc, t) => {
-  return acc + t.echeances.filter(e => new Date(e.date) > now).length;
-}, 0);
-
-const formatDate = (d: string | null) => {
-  if (!d) return '—';
-  const date = new Date(d);
-  return date.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-};
-
-const blocs = [...new Set(textes.map(t => t.bloc))].sort();
-
-const statutColors: Record<string, string> = {
-  'En vigueur': '#2C4A2E',
-  'En consultation': '#B8860B',
-  'Transposition en cours': '#9E3D1B',
-  'Adopté — application différée': '#6B6B5A',
-  'Projet': '#8A8480',
-};
+import reglementations from '../data/reglementations.json';
 ---
 <BaseLayout
   title="Base réglementaire — Early Brief"
-  description="Référentiel des textes réglementaires en conformité financière : LCB-FT, MiCA, DORA, PSD2, AI Act, sanctions."
+  description="Référentiel des textes réglementaires en conformité financière : LCB-FT, MiCA, DORA, PSD2, AI Act, sanctions. Statuts, échéances et textes liés."
   canonicalUrl="https://early-brief.com/reglementations/"
 >
+<div class="db-layout">
+  <!-- SIDEBAR -->
+  <aside class="db-sidebar" id="db-sidebar">
+    <div class="db-sidebar-inner">
+      <div class="db-sidebar-stats">
+        <button class="db-stat" data-action="all">
+          <span class="db-stat-num" id="stat-total">0</span>
+          <span class="db-stat-label">Textes</span>
+        </button>
+        <button class="db-stat" data-action="vigueur">
+          <span class="db-stat-num" id="stat-vigueur">0</span>
+          <span class="db-stat-label">En vigueur</span>
+        </button>
+        <button class="db-stat" data-action="echeances">
+          <span class="db-stat-num" id="stat-echeances">0</span>
+          <span class="db-stat-label">Échéances</span>
+        </button>
+      </div>
 
-<div class="page rb-page">
-
-  <div class="rb-header">
-    <h1>Base réglementaire</h1>
-    <p class="rb-sub">{textes.length} textes · {enVigueur} en vigueur · {echeancesAVenir} échéances à venir · Mis à jour le {formatDate(data.meta.derniere_mise_a_jour)}</p>
-  </div>
-
-  <div class="rb-bar">
-    <input type="search" id="rb-search" class="rb-search" placeholder="Rechercher…">
-    <div class="rb-chips" id="rb-chips">
-      <button class="rb-chip active" data-value="">Tous</button>
-      {blocs.map(b => <button class="rb-chip" data-value={b}>{b}</button>)}
-    </div>
-    <div class="rb-bar-right">
-      <select id="rb-sort" class="rb-sort">
-        <option value="date-desc">Récents</option>
-        <option value="date-asc">Anciens</option>
-        <option value="alpha">A → Z</option>
-      </select>
-      <span class="rb-count" id="rb-count">{textes.length}</span>
-    </div>
-  </div>
-
-  <div class="rb-list" id="rb-list">
-    {textes.map(t => (
-      <details class="rb-item" id={t.id}
-        data-bloc={t.bloc}
-        data-statut={t.statut}
-        data-date={t.date_publication || '0000-01-01'}
-        data-title={t.titre}
-        data-search={`${t.titre} ${t.reference} ${t.institutions_concernees.join(' ')} ${t.bloc} ${t.notes || ''}`.toLowerCase()}>
-        <summary class="rb-row">
-          <span class="rb-row-bloc">{t.bloc}</span>
-          <span class="rb-row-title">{t.titre}</span>
-          <span class="rb-row-ref">{t.reference}</span>
-          <span class="rb-row-statut" style={`color:${statutColors[t.statut] || '#8A8480'};`}>{t.statut}</span>
-          {t.echeances.length > 0 && (
-            <span class="rb-row-date">{formatDate(t.echeances[0].date)}</span>
-          )}
-        </summary>
-        <div class="rb-detail">
-          {t.notes && <p class="rb-detail-notes">{t.notes}</p>}
-
-          <div class="rb-detail-grid">
-            {t.echeances.length > 0 && (
-              <div class="rb-detail-col">
-                <span class="rb-detail-label">Échéances</span>
-                {t.echeances.map(e => (
-                  <p class="rb-detail-line"><strong>{formatDate(e.date)}</strong> — {e.description}</p>
-                ))}
-              </div>
-            )}
-            {t.textes_lies.length > 0 && (
-              <div class="rb-detail-col">
-                <span class="rb-detail-label">Textes liés</span>
-                {t.textes_lies.map(l => (
-                  <p class="rb-detail-line"><a href={l.lien} target="_blank" rel="noopener noreferrer">{l.titre}</a></p>
-                ))}
-              </div>
-            )}
-            <div class="rb-detail-col">
-              <span class="rb-detail-label">Institutions</span>
-              <p class="rb-detail-line">{t.institutions_concernees.join(' · ')}</p>
-            </div>
-          </div>
-
-          {t.lien_texte_consolide && (
-            <a href={t.lien_texte_consolide} target="_blank" rel="noopener noreferrer" class="rb-detail-source">Texte consolidé ↗</a>
-          )}
+      <div class="db-filter-group" id="fg-cat">
+        <div class="db-filter-header" onclick="this.parentElement.classList.toggle('collapsed')">
+          <p class="db-filter-label">Catégorie</p><span class="db-filter-toggle">▾</span>
         </div>
-      </details>
-    ))}
+        <div class="db-filter-list" id="filter-cat"></div>
+      </div>
+      <div class="db-filter-group" id="fg-aut">
+        <div class="db-filter-header" onclick="this.parentElement.classList.toggle('collapsed')">
+          <p class="db-filter-label">Autorité</p><span class="db-filter-toggle">▾</span>
+        </div>
+        <div class="db-filter-list" id="filter-aut"></div>
+      </div>
+      <div class="db-filter-group" id="fg-stat">
+        <div class="db-filter-header" onclick="this.parentElement.classList.toggle('collapsed')">
+          <p class="db-filter-label">Statut</p><span class="db-filter-toggle">▾</span>
+        </div>
+        <div class="db-filter-list" id="filter-stat"></div>
+      </div>
+      <div class="db-filter-group collapsed" id="fg-typ">
+        <div class="db-filter-header" onclick="this.parentElement.classList.toggle('collapsed')">
+          <p class="db-filter-label">Type</p><span class="db-filter-toggle">▾</span>
+        </div>
+        <div class="db-filter-list" id="filter-typ"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="db-main">
+    <div class="db-topbar">
+      <div class="db-topbar-left">
+        <button class="db-mobile-filter-btn" id="mobile-filter-btn">Filtres</button>
+        <h1 class="db-title">Base réglementaire</h1>
+        <p class="db-subtitle" id="db-subtitle"></p>
+        <a href="/ressources/textes-applicables-france/" style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.04em;color:var(--terra);text-decoration:none;display:inline-block;margin-top:4px;">→ Voir les textes applicables en France</a>
+      </div>
+      <div class="db-topbar-right">
+        <div class="db-search-wrap">
+          <svg class="db-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" class="db-search" id="db-search" placeholder="Rechercher…">
+        </div>
+        <select class="db-sort" id="db-sort">
+          <option value="recent">Récents</option>
+          <option value="alpha">A–Z</option>
+          <option value="date">Date clé</option>
+        </select>
+        <button class="db-compact-btn" id="db-compact" title="Mode compact">≡</button>
+      </div>
+    </div>
+
+    <div class="db-list-header">
+      <span></span>
+      <span class="db-col-titre" data-sort="alpha">Texte ↕</span>
+      <span class="db-col-aut">Autorité</span>
+      <span class="db-col-stat" data-sort="statut">Statut</span>
+      <span class="db-col-date" data-sort="date">Date clé ↕</span>
+    </div>
+
+    <div class="db-count" id="db-count"></div>
+    <div class="db-list" id="db-list"></div>
   </div>
 
-  <div class="rb-empty" id="rb-empty" style="display:none;">
-    Aucun résultat.
-    <button id="rb-reset">Réinitialiser</button>
+  <!-- DRAWER -->
+  <div class="db-drawer" id="db-drawer">
+    <button class="db-drawer-close" id="db-drawer-close">&times;</button>
+    <div class="db-drawer-inner" id="db-drawer-inner"></div>
   </div>
 
+  <!-- BACKDROP -->
+  <div class="db-backdrop" id="db-backdrop"></div>
 </div>
 
-<script is:inline>
+<style is:global>
+/* ── DB Layout ── */
+.db-layout { display: grid; grid-template-columns: 210px 1fr; min-height: calc(100vh - 80px); position: relative; }
+
+/* ── Sidebar ── */
+.db-sidebar { background: #EDE9DC; border-right: 1px solid rgba(26,24,20,0.09); overflow-y: auto; }
+.db-sidebar-inner { padding: 24px 16px; }
+.db-sidebar-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 28px; }
+.db-stat { background: none; border: 1px solid rgba(26,24,20,0.09); border-radius: 2px; padding: 10px 6px; cursor: pointer; text-align: center; transition: background 0.1s; }
+.db-stat:hover, .db-stat.active { background: rgba(26,24,20,0.08); }
+.db-stat-num { display: block; font-family: 'Cormorant', serif; font-size: 22px; font-weight: 500; color: #1A1814; line-height: 1; }
+.db-stat-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,24,20,0.38); margin-top: 4px; display: block; }
+
+.db-filter-group { margin-bottom: 4px; }
+.db-filter-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 6px 0; }
+.db-filter-label { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,24,20,0.38); margin-bottom: 0; }
+.db-filter-toggle { font-size: 10px; color: rgba(26,24,20,0.25); transition: transform 0.15s; }
+.db-filter-group.collapsed .db-filter-toggle { transform: rotate(-90deg); }
+.db-filter-group.collapsed .db-filter-list { display: none; }
+.db-filter-list { display: flex; flex-direction: column; gap: 1px; padding-bottom: 8px; }
+.db-filter-item { font-family: 'Hanken Grotesk', sans-serif; font-size: 12px; color: rgba(26,24,20,0.55); padding: 4px 8px; border-radius: 2px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s; border: none; background: none; width: 100%; text-align: left; }
+.db-filter-item:hover { background: rgba(26,24,20,0.05); color: #1A1814; }
+.db-filter-item.active { background: rgba(26,24,20,0.08); color: #1A1814; font-weight: 500; }
+.db-filter-count { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(26,24,20,0.3); }
+
+/* ── Main ── */
+.db-main { background: #F4F0E6; display: flex; flex-direction: column; min-width: 0; }
+.db-topbar { display: flex; justify-content: space-between; align-items: flex-start; padding: 28px 32px 16px; gap: 16px; flex-wrap: wrap; }
+.db-topbar-left { flex: 1; }
+.db-title { font-family: 'Cormorant', serif; font-size: 28px; font-weight: 400; color: #1A1814; line-height: 1.1; margin-bottom: 4px; }
+.db-subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.04em; color: rgba(26,24,20,0.38); }
+.db-topbar-right { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.db-search-wrap { position: relative; }
+.db-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 13px; height: 13px; color: rgba(26,24,20,0.25); pointer-events: none; }
+.db-search { font-family: 'Hanken Grotesk', sans-serif; font-size: 12.5px; border: 1px solid rgba(26,24,20,0.12); background: #F4F0E6; padding: 7px 12px 7px 30px; border-radius: 2px; outline: none; width: 190px; color: #1A1814; }
+.db-search:focus { border-color: #2C4A2E; }
+.db-search::placeholder { color: rgba(26,24,20,0.3); }
+.db-sort { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.04em; border: 1px solid rgba(26,24,20,0.12); background: #F4F0E6; padding: 7px 10px; border-radius: 2px; outline: none; color: rgba(26,24,20,0.55); cursor: pointer; appearance: none; -webkit-appearance: none; }
+.db-compact-btn { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.04em; color: rgba(26,24,20,0.4); background: none; border: 1px solid rgba(26,24,20,0.12); padding: 6px 10px; border-radius: 2px; cursor: pointer; }
+.db-compact-btn:hover, .db-compact-btn.active { color: #1A1814; background: rgba(26,24,20,0.05); }
+
+/* ── List header ── */
+.db-list-header { display: grid; grid-template-columns: 10px 1fr 70px 100px 110px; gap: 12px; padding: 0 32px; font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,24,20,0.3); border-bottom: 1px solid rgba(26,24,20,0.09); padding-bottom: 8px; }
+.db-list-header span { cursor: pointer; user-select: none; }
+.db-list-header span:hover { color: rgba(26,24,20,0.6); }
+.db-list-header .sort-active { color: #9E3D1B; }
+.db-count { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(26,24,20,0.3); padding: 8px 32px 4px; }
+
+/* ── List items ── */
+.db-list { flex: 1; overflow-y: auto; }
+.db-item { display: grid; grid-template-columns: 10px 1fr 70px 100px 110px; gap: 12px; padding: 11px 32px; border-bottom: 1px solid rgba(26,24,20,0.06); cursor: pointer; transition: background 0.1s; align-items: center; border-left: 2px solid transparent; }
+.db-item:hover { background: rgba(26,24,20,0.03); }
+.db-item.selected { border-left: 2px solid #9E3D1B; background: rgba(158,61,27,0.04); }
+.db-item.deadline-soon { background: rgba(158,61,27,0.02); }
+
+/* Compact mode */
+.db-list.compact .db-item { padding: 6px 32px; }
+.db-list.compact .db-item-titre { font-size: 13.5px; }
+
+/* Category dot */
+.db-item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.db-dot-lcbft { background: #2C4A2E; }
+.db-dot-dora { background: #3B6B8A; }
+.db-dot-mica { background: #8B5E3C; }
+.db-dot-psd2 { background: #6B5B8A; }
+.db-dot-ai { background: #4A7A6A; }
+.db-dot-sanctions { background: #9E3D1B; }
+.db-dot-fr { background: #5A5A5A; }
+.db-dot-standards { background: #8A7A5A; }
+
+.db-item-titre { font-family: 'Cormorant', serif; font-size: 15px; font-weight: 500; color: #1A1814; line-height: 1.3; }
+.db-item-aut { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.04em; color: rgba(26,24,20,0.5); }
+
+/* Badges statut */
+.db-badge { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.03em; padding: 3px 6px; border-radius: 2px; display: inline-block; white-space: nowrap; }
+.db-badge--vigueur { background: rgba(44,74,46,0.07); color: #2C4A2E; border: 1px solid rgba(44,74,46,0.16); }
+.db-badge--consultation { background: rgba(158,61,27,0.06); color: #9E3D1B; border: 1px solid rgba(158,61,27,0.18); }
+.db-badge--adopte { background: rgba(26,24,20,0.05); color: #1A1814; border: 1px solid rgba(26,24,20,0.09); }
+.db-badge--transposition { background: transparent; color: rgba(26,24,20,0.45); border: 1px solid rgba(26,24,20,0.12); }
+.db-badge--projet { background: transparent; color: rgba(26,24,20,0.3); border: 1px solid rgba(26,24,20,0.07); }
+
+.db-item-date { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #1A1814; }
+.db-item-date-label { display: block; font-size: 8px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(26,24,20,0.4); margin-bottom: 2px; }
+.db-item-date-soon { color: #9E3D1B; }
+.db-item-date-soon .db-item-date-label { color: #9E3D1B; }
+
+/* France application badges */
+.db-badge-fr { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.03em; padding: 3px 8px; border-radius: 2px; display: inline-block; }
+.db-badge-fr--directementapplicable { background: rgba(44,74,46,0.07); color: #2C4A2E; border: 1px solid rgba(44,74,46,0.16); }
+.db-badge-fr--transpos { background: rgba(44,74,46,0.05); color: #2C4A2E; border: 1px solid rgba(44,74,46,0.12); }
+.db-badge-fr--droitfranais { background: rgba(26,24,20,0.05); color: #1A1814; border: 1px solid rgba(26,24,20,0.1); }
+.db-badge-fr--enattente { background: rgba(158,61,27,0.06); color: #9E3D1B; border: 1px solid rgba(158,61,27,0.18); }
+.db-badge-fr--complyorexplain { background: rgba(26,24,20,0.04); color: rgba(26,24,20,0.55); border: 1px solid rgba(26,24,20,0.1); }
+.db-badge-fr--softlaw { background: transparent; color: rgba(26,24,20,0.4); border: 1px solid rgba(26,24,20,0.08); }
+.db-badge-fr--informatif { background: transparent; color: rgba(26,24,20,0.35); border: 1px solid rgba(26,24,20,0.07); }
+
+/* France encadré drawer */
+.db-drawer-france { border-left: 3px solid #9E3D1B; background: rgba(158,61,27,0.03); padding: 12px 16px; margin-bottom: 20px; border-radius: 0 2px 2px 0; }
+.db-drawer-france-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #9E3D1B; margin-bottom: 6px; }
+.db-drawer-france-detail { font-family: 'Hanken Grotesk', sans-serif; font-size: 11.5px; color: rgba(26,24,20,0.6); line-height: 1.5; margin-top: 6px; }
+
+/* ── Drawer ── */
+.db-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 360px; background: #F4F0E6; border-left: 1px solid rgba(26,24,20,0.09); transform: translateX(100%); transition: transform 0.2s ease; z-index: 100; overflow-y: auto; padding: 32px 28px; }
+.db-drawer.open { transform: translateX(0); }
+.db-drawer-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; color: rgba(26,24,20,0.3); cursor: pointer; line-height: 1; }
+.db-drawer-close:hover { color: #1A1814; }
+.db-drawer-inner {}
+
+.db-drawer-meta { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,24,20,0.38); margin-bottom: 12px; }
+.db-drawer-titre { font-family: 'Cormorant', serif; font-size: 24px; font-weight: 500; color: #1A1814; line-height: 1.2; margin-bottom: 8px; }
+.db-drawer-ref { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: rgba(26,24,20,0.45); margin-bottom: 16px; }
+.db-drawer-field { margin-bottom: 16px; }
+.db-drawer-field-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,24,20,0.3); margin-bottom: 4px; }
+.db-drawer-field-value { font-family: 'Hanken Grotesk', sans-serif; font-size: 13px; color: #1A1814; line-height: 1.6; }
+.db-drawer-desc { font-family: 'Hanken Grotesk', sans-serif; font-size: 13px; color: rgba(26,24,20,0.7); line-height: 1.65; margin-bottom: 20px; }
+.db-drawer-cta { display: inline-block; font-family: 'Hanken Grotesk', sans-serif; font-size: 12.5px; font-weight: 500; background: #9E3D1B; color: #F4F0E6; padding: 10px 20px; border-radius: 2px; text-decoration: none; transition: background 0.15s; margin-top: 8px; }
+.db-drawer-cta:hover { background: #7a2e14; }
+
+/* ── Backdrop ── */
+.db-backdrop { display: none; position: fixed; inset: 0; background: rgba(26,24,20,0.3); z-index: 90; }
+.db-backdrop.visible { display: block; }
+
+/* ── Mobile filter btn ── */
+.db-mobile-filter-btn { display: none; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; background: none; border: 1px solid rgba(26,24,20,0.12); padding: 6px 12px; border-radius: 2px; cursor: pointer; color: rgba(26,24,20,0.55); margin-bottom: 8px; }
+
+/* ── No results ── */
+.db-empty { padding: 60px 32px; text-align: center; }
+.db-empty-msg { font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: rgba(26,24,20,0.38); margin-bottom: 12px; }
+.db-empty-reset { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #9E3D1B; background: none; border: none; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .db-layout { grid-template-columns: 1fr; }
+  .db-sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 260px; z-index: 110; transform: translateX(-100%); transition: transform 0.2s ease; }
+  .db-sidebar.open { transform: translateX(0); }
+  .db-mobile-filter-btn { display: block; }
+  .db-list-header { display: none; }
+  .db-item { grid-template-columns: 10px 1fr; gap: 8px; padding: 14px 20px; }
+  .db-item-titre { font-size: 15px; }
+  .db-item-aut, .db-item-date { grid-column: 2; }
+  .db-topbar { padding: 20px 20px 12px; }
+  .db-search { width: 140px; }
+  .db-drawer { width: 100%; }
+  .db-count { padding-left: 20px; padding-right: 20px; }
+}
+</style>
+
+<script define:vars={{ textes: reglementations.textes, meta: reglementations.meta }}>
 (function() {
-  const search = document.getElementById('rb-search');
-  const sort = document.getElementById('rb-sort');
-  const countEl = document.getElementById('rb-count');
-  const list = document.getElementById('rb-list');
-  const empty = document.getElementById('rb-empty');
-  const resetBtn = document.getElementById('rb-reset');
-  const chips = document.querySelectorAll('.rb-chip');
-  let items = Array.from(list.querySelectorAll('.rb-item'));
-  const total = items.length;
-  let activeBloc = '';
+  const DATA = textes;
+  const META = meta;
 
-  chips.forEach(c => c.addEventListener('click', () => {
-    chips.forEach(x => x.classList.remove('active'));
-    c.classList.add('active');
-    activeBloc = c.dataset.value;
-    run();
-  }));
+  let activeCat = "tous";
+  let activeAut = "toutes";
+  let activeStat = "tous";
+  let activeTyp = "tous";
+  let activeSort = "recent";
+  let searchQ = "";
+  let selectedIdx = null;
 
-  function run() {
-    const q = search.value.toLowerCase().trim();
-    let shown = 0;
-    items.forEach(el => {
-      const matchQ = !q || el.dataset.search.includes(q);
-      const matchB = !activeBloc || el.dataset.bloc === activeBloc;
-      el.style.display = (matchQ && matchB) ? '' : 'none';
-      if (matchQ && matchB) shown++;
-    });
-    countEl.textContent = shown;
-    empty.style.display = shown === 0 ? '' : 'none';
+  // ── Helpers ──
+  function badgeClass(statut) {
+    if (statut === 'En vigueur') return 'db-badge--vigueur';
+    if (statut === 'En consultation') return 'db-badge--consultation';
+    if (statut.startsWith('Adopté')) return 'db-badge--adopte';
+    if (statut === 'Transposition en cours') return 'db-badge--transposition';
+    return 'db-badge--projet';
   }
 
-  function doSort() {
-    const v = sort.value;
-    items.sort((a, b) => {
-      if (v === 'date-desc') return b.dataset.date.localeCompare(a.dataset.date);
-      if (v === 'date-asc') return a.dataset.date.localeCompare(b.dataset.date);
-      if (v === 'alpha') return a.dataset.title.localeCompare(b.dataset.title, 'fr');
-      return 0;
-    });
-    items.forEach(el => list.appendChild(el));
+  function shortStatut(statut) {
+    if (statut.startsWith('Adopté')) return 'Adopté';
+    if (statut === 'Transposition en cours') return 'Transposition';
+    return statut;
   }
 
-  search.addEventListener('input', run);
-  sort.addEventListener('change', () => { doSort(); run(); });
-  resetBtn.addEventListener('click', () => {
-    search.value = '';
-    activeBloc = '';
-    chips.forEach(c => c.classList.toggle('active', c.dataset.value === ''));
-    run();
+  function parseDate(d) {
+    if (!d) return null;
+    const p = d.split('/');
+    if (p.length === 3) return new Date(+p[2], +p[1]-1, +p[0]);
+    return null;
+  }
+
+  function esc(s) { return (s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function dotClass(cat) {
+    const map = { 'LCB-FT':'db-dot-lcbft', 'DORA':'db-dot-dora', 'MiCA':'db-dot-mica', 'PSD2-PSR':'db-dot-psd2', 'AI Act':'db-dot-ai', 'Sanctions':'db-dot-sanctions', 'Textes FR':'db-dot-fr', 'Standards internationaux':'db-dot-standards' };
+    return map[cat] || 'db-dot-fr';
+  }
+
+  function isSoon(dateStr) {
+    const d = parseDate(dateStr);
+    if (!d) return false;
+    const now = new Date();
+    const sixMonths = new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+    return d > now && d <= sixMonths;
+  }
+
+  // ── Stats ──
+  function updateStats() {
+    document.getElementById('stat-total').textContent = DATA.length;
+    document.getElementById('stat-vigueur').textContent = DATA.filter(t => t.statut === 'En vigueur').length;
+    const now = new Date();
+    document.getElementById('stat-echeances').textContent = DATA.filter(t => { const d = parseDate(t.date); return d && d > now; }).length;
+    document.getElementById('db-subtitle').textContent = DATA.length + ' textes référencés · Mis à jour le ' + META.derniere_mise_a_jour.split('-').reverse().join('/');
+  }
+
+  // ── Build sidebar filters ──
+  function buildFilters() {
+    buildFilterGroup('filter-cat', 'categorie', activeCat, v => { activeCat = v; render(); });
+    buildFilterGroup('filter-aut', 'autorite', activeAut, v => { activeAut = v; render(); });
+    buildFilterGroup('filter-stat', 'statut', activeStat, v => { activeStat = v; render(); });
+    buildFilterGroup('filter-typ', 'type', activeTyp, v => { activeTyp = v; render(); });
+  }
+
+  function buildFilterGroup(containerId, field, activeVal, onChange) {
+    const el = document.getElementById(containerId);
+    const counts = {};
+    DATA.forEach(t => { const v = t[field] || '—'; counts[v] = (counts[v]||0) + 1; });
+    const allLabel = field === 'autorite' ? 'Toutes' : 'Tous';
+    const allVal = field === 'autorite' ? 'toutes' : 'tous';
+
+    let html = `<button class="db-filter-item ${activeVal===allVal?'active':''}" data-val="${allVal}">${allLabel} <span class="db-filter-count">${DATA.length}</span></button>`;
+    Object.entries(counts).sort((a,b) => b[1]-a[1]).forEach(([v, c]) => {
+      html += `<button class="db-filter-item ${activeVal===v?'active':''}" data-val="${esc(v)}">${esc(v)} <span class="db-filter-count">${c}</span></button>`;
+    });
+    el.innerHTML = html;
+    el.querySelectorAll('.db-filter-item').forEach(btn => {
+      btn.addEventListener('click', () => { onChange(btn.dataset.val); });
+    });
+  }
+
+  // ── Filter + Sort ──
+  function getFiltered() {
+    let list = DATA.filter(t => {
+      if (activeCat !== 'tous' && t.categorie !== activeCat) return false;
+      if (activeAut !== 'toutes' && t.autorite !== activeAut) return false;
+      if (activeStat !== 'tous' && t.statut !== activeStat) return false;
+      if (activeTyp !== 'tous' && t.type !== activeTyp) return false;
+      if (searchQ) {
+        const q = searchQ.toLowerCase();
+        if (!(t.titre||'').toLowerCase().includes(q) && !(t.reference||'').toLowerCase().includes(q) && !(t.autorite||'').toLowerCase().includes(q)) return false;
+      }
+      return true;
+    });
+
+    if (activeSort === 'alpha') list.sort((a,b) => (a.titre||'').localeCompare(b.titre||''));
+    else if (activeSort === 'date') {
+      list.sort((a,b) => {
+        const da = parseDate(a.date), db = parseDate(b.date);
+        if (!da && !db) return 0;
+        if (!da) return 1;
+        if (!db) return -1;
+        return da - db;
+      });
+    }
+    return list;
+  }
+
+  // ── Render list ──
+  function renderList(filtered) {
+    const el = document.getElementById('db-list');
+    if (!filtered.length) {
+      el.innerHTML = `<div class="db-empty"><p class="db-empty-msg">Aucun texte ne correspond à ces filtres.</p><button class="db-empty-reset" onclick="document.getElementById('db-search').value='';window.__dbReset()">Réinitialiser</button></div>`;
+      return;
+    }
+    el.innerHTML = filtered.map((t, i) => {
+      const soon = isSoon(t.date);
+      return `
+      <div class="db-item${selectedIdx===i?' selected':''}${soon?' deadline-soon':''}" data-idx="${i}">
+        <span class="db-item-dot ${dotClass(t.categorie)}" title="${esc(t.categorie)}"></span>
+        <span class="db-item-titre">${esc(t.titre)}</span>
+        <span class="db-item-aut">${esc(t.autorite)}</span>
+        <span><span class="db-badge ${badgeClass(t.statut)}">${esc(shortStatut(t.statut))}</span></span>
+        <span class="db-item-date${soon?' db-item-date-soon':''}">${t.dateLabel ? `<span class="db-item-date-label">${esc(t.dateLabel)}</span>${esc(t.date)}` : '—'}</span>
+      </div>`;
+    }).join('');
+
+    el.querySelectorAll('.db-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const idx = +item.dataset.idx;
+        selectedIdx = idx;
+        openDrawer(filtered[idx]);
+        renderList(filtered);
+      });
+    });
+  }
+
+  // ── Drawer ──
+  function openDrawer(t) {
+    const el = document.getElementById('db-drawer-inner');
+    const institutions = (t.institutions_concernees||[]).join(', ') || '—';
+    const echeances = (t.echeances||[]).map(e => `<li>${esc(e.date)} — ${esc(e.description)}</li>`).join('');
+    const textesLies = (t.textes_lies||[]).map(l => `<li><a href="${esc(l.lien)}" target="_blank" rel="noopener" style="color:#9E3D1B;text-decoration:underline;text-underline-offset:2px;font-size:12px;">${esc(l.titre)}</a> <span style="color:rgba(26,24,20,0.3);font-size:9px;">${esc(l.type||'')}</span></li>`).join('');
+
+    el.innerHTML = `
+      <p class="db-drawer-meta">${esc(t.categorie)} · ${esc(t.type)}</p>
+      <h2 class="db-drawer-titre">${esc(t.titre)}</h2>
+      <p class="db-drawer-ref">${esc(t.reference)}</p>
+      ${t.application_france ? `<div class="db-drawer-france"><p class="db-drawer-france-label">Application en France</p><span class="db-badge-fr db-badge-fr--${(t.application_france||'').toLowerCase().replace(/[^a-z]/g,'')}">${esc(t.application_france)}</span>${t.application_france_detail ? `<p class="db-drawer-france-detail">${esc(t.application_france_detail)}</p>` : ''}</div>` : ''}
+      <div class="db-drawer-field"><p class="db-drawer-field-label">Autorité</p><p class="db-drawer-field-value">${esc(t.autorite)}</p></div>
+      <div class="db-drawer-field"><p class="db-drawer-field-label">Statut</p><p class="db-drawer-field-value"><span class="db-badge ${badgeClass(t.statut)}">${esc(t.statut)}</span></p></div>
+      ${t.dateLabel ? `<div class="db-drawer-field"><p class="db-drawer-field-label">${esc(t.dateLabel)}</p><p class="db-drawer-field-value">${esc(t.date)}</p></div>` : ''}
+      ${t.description ? `<p class="db-drawer-desc">${esc(t.description)}</p>` : ''}
+      ${institutions !== '—' ? `<div class="db-drawer-field"><p class="db-drawer-field-label">Institutions concernées</p><p class="db-drawer-field-value">${esc(institutions)}</p></div>` : ''}
+      ${echeances ? `<div class="db-drawer-field"><p class="db-drawer-field-label">Échéances</p><ul style="list-style:none;padding:0;font-size:12px;color:#1A1814;line-height:1.7;">${echeances}</ul></div>` : ''}
+      ${textesLies ? `<div class="db-drawer-field"><p class="db-drawer-field-label">Textes liés</p><ul style="list-style:none;padding:0;">${textesLies}</ul></div>` : ''}
+      ${t.url ? `<a href="${esc(t.url)}" class="db-drawer-cta" target="_blank" rel="noopener">Accéder au texte officiel →</a>` : ''}
+    `;
+    document.getElementById('db-drawer').classList.add('open');
+    document.getElementById('db-backdrop').classList.add('visible');
+  }
+
+  function closeDrawer() {
+    document.getElementById('db-drawer').classList.remove('open');
+    document.getElementById('db-backdrop').classList.remove('visible');
+    selectedIdx = null;
+    render();
+  }
+
+  // ── Render all ──
+  function render() {
+    buildFilters();
+    const filtered = getFiltered();
+    document.getElementById('db-count').textContent = filtered.length + ' / ' + DATA.length + ' textes';
+    renderList(filtered);
+  }
+
+  // ── Reset ──
+  window.__dbReset = function() {
+    activeCat = "tous"; activeAut = "toutes"; activeStat = "tous"; activeTyp = "tous";
+    searchQ = ""; selectedIdx = null;
+    document.getElementById('db-search').value = '';
+    closeDrawer();
+    render();
+  };
+
+  // ── Stat shortcuts ──
+  document.querySelectorAll('.db-stat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      if (action === 'all') { activeCat = "tous"; activeAut = "toutes"; activeStat = "tous"; activeTyp = "tous"; }
+      else if (action === 'vigueur') { activeStat = 'En vigueur'; activeCat = "tous"; activeAut = "toutes"; activeTyp = "tous"; }
+      else if (action === 'echeances') { activeStat = "tous"; activeCat = "tous"; activeAut = "toutes"; activeTyp = "tous"; document.getElementById('db-sort').value = 'date'; activeSort = 'date'; }
+      render();
+    });
   });
 
-  run();
+  // ── Events ──
+  document.getElementById('db-search').addEventListener('input', e => { searchQ = e.target.value; render(); });
+  document.getElementById('db-sort').addEventListener('change', e => { activeSort = e.target.value; render(); });
+  document.getElementById('db-drawer-close').addEventListener('click', closeDrawer);
+  document.getElementById('db-backdrop').addEventListener('click', closeDrawer);
+
+  // Compact mode
+  document.getElementById('db-compact').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.getElementById('db-list').classList.toggle('compact');
+  });
+
+  // Sortable column headers
+  document.querySelectorAll('.db-list-header [data-sort]').forEach(el => {
+    el.addEventListener('click', () => {
+      const s = el.dataset.sort;
+      if (s === 'statut') return; // no sort by statut
+      activeSort = s;
+      document.getElementById('db-sort').value = s;
+      render();
+    });
+  });
+
+  // Mobile sidebar
+  document.getElementById('mobile-filter-btn').addEventListener('click', () => {
+    document.getElementById('db-sidebar').classList.toggle('open');
+    document.getElementById('db-backdrop').classList.toggle('visible');
+  });
+
+  // ── Init ──
+  updateStats();
+  render();
 })();
 </script>
 
