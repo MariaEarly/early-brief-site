@@ -1,9 +1,9 @@
-# Early Brief — Veille réglementaire et conformité financière
+# Early Brief — Veille réglementaire et conformité
 # https://early-brief.com
 # Mise à jour : 2026-03-27
 
 ## À propos
-Early Brief est une newsletter et base de ressources spécialisée en conformité financière : LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act. Destinée aux compliance officers, analystes KYC/KYB, juristes et équipes conformité des banques, PSP, EME, fintechs et gestionnaires d'actifs.
+Early Brief est une newsletter et base de ressources spécialisée en conformité réglementaire — LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act : LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act. Destinée aux compliance officers, analystes KYC/KYB, juristes et équipes conformité des banques, PSP, EME, fintechs et gestionnaires d'actifs.
 
 ## Pages prioritaires
 
@@ -42,5 +42,5 @@ Couverture: LCB-FT, sanctions UE, MiCA, DORA, PSD3/PSR, AMLA, AI Act, standards 
 
 ## Auteur
 Maria Garcia — fondatrice Early Brief et Early Consulting
-Spécialisation : conformité financière, LCB-FT, réglementation européenne
+Spécialisation : conformité réglementaire, LCB-FT, sanctions, MiCA, DORA, AMLA, réglementation européenne
 LinkedIn: https://www.linkedin.com/in/mariaiaciancio
