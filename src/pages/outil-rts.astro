@@ -1,17 +1,43 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import AmlaRtsCddTool from '../components/AmlaRtsCddTool.jsx';
 ---
+<BaseLayout
+  title="Outil de consultation — RTS CDD AMLA | Early Brief"
+  description="Interrogez le projet de RTS de l'AMLA sur les obligations de vigilance client (CDD). Outil gratuit Early Brief."
+  canonicalUrl="https://early-brief.com/outil-rts/"
+>
+<div class="page">
+  <div class="fiche-content">
+    <a href="/ressources/" class="fiche-back">Ressources</a>
 
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RTS CDD — AMLA | Early Brief</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  </head>
-  <body style="margin:0;padding:0;background:#0d0f14;">
+    <div class="fiche-header">
+      <div class="fiche-meta">
+        <span class="fiche-category" data-cat="outil">Outil</span>
+      </div>
+      <h1 class="fiche-title">Outil de consultation — RTS CDD AMLA</h1>
+      <p class="fiche-question" style="max-width:560px;">Interrogez le projet de règlement technique de l'AMLA sur les obligations de vigilance client (CDD) — Articles 1 à 7. Consultation ouverte jusqu'au 8 mai 2026.</p>
+    </div>
+
     <AmlaRtsCddTool client:load />
-  </body>
-</html>
+
+    <div class="renvoi-base" style="margin-top:2rem;">
+      <span>Retrouvez l'ensemble des textes AMLA dans la <a href="/reglementations/?bloc=LCB-FT">Base réglementaire</a>.</span>
+    </div>
+
+    <div class="fiche-retour">
+      <a href="/ressources/">&larr; Toutes les ressources</a>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Outil de consultation RTS CDD AMLA",
+  "description": "Outil d'interrogation du projet de RTS AMLA sur les obligations de vigilance client (CDD).",
+  "url": "https://early-brief.com/outil-rts/",
+  "applicationCategory": "LegalApplication",
+  "offers": { "@type": "Offer", "price": "0" }
+})} />
+</BaseLayout>
