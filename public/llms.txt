@@ -1,0 +1,46 @@
+# Early Brief — Veille réglementaire et conformité financière
+# https://early-brief.com
+# Mise à jour : 2026-03-27
+
+## À propos
+Early Brief est une newsletter et base de ressources spécialisée en conformité financière : LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act. Destinée aux compliance officers, analystes KYC/KYB, juristes et équipes conformité des banques, PSP, EME, fintechs et gestionnaires d'actifs.
+
+## Pages prioritaires
+
+### Base réglementaire
+URL: https://early-brief.com/reglementations/
+Description: Base de référence centralisant 57 textes réglementaires applicables aux acteurs financiers en France. Filtrable par catégorie (LCB-FT, DORA, MiCA, sanctions, AI Act, PSD2-PSR), autorité émettrice, statut et type. Mise à jour en continu.
+
+### Textes applicables en France
+URL: https://early-brief.com/ressources/textes-applicables-france/
+Description: Cartographie des textes réglementaires par niveau normatif — droit UE directement applicable, directives transposées, droit national, soft law.
+
+### LCB-FT — Cadre réglementaire
+URL: https://early-brief.com/ressources/cadre/lcb-ft/
+Description: Vue d'ensemble du cadre LCB-FT applicable en France : textes de référence, obligations pour les entités assujetties, calendrier des évolutions (AMLR, AMLA, AMLD6).
+
+### AMLA — Supervision et cadre institutionnel
+URL: https://early-brief.com/ressources/amla-supervision-cadre/
+Description: Présentation de l'Autorité de lutte contre le blanchiment (AMLA) : missions, périmètre de supervision directe, calendrier, articulation avec les superviseurs nationaux.
+
+### Outil de consultation RTS CDD
+URL: https://early-brief.com/outil-rts/
+Description: Outil gratuit d'interrogation du projet de RTS AMLA sur les obligations de vigilance client (CDD). Répond aux questions opérationnelles sur les Articles 1 à 7.
+
+### Glossaire
+URL: https://early-brief.com/ressources/glossaire/
+Description: Glossaire des termes réglementaires LCB-FT, sanctions, MiCA, DORA — définitions courtes orientées praticiens.
+
+### FAQ
+URL: https://early-brief.com/ressources/faq/
+Description: Questions fréquentes sur la réglementation LCB-FT, les obligations des entités assujetties, les sanctions et la conformité MiCA.
+
+## Newsletter
+URL: https://mariaiaciancio.substack.com
+Fréquence: Réactive — publiée à chaque développement réglementaire significatif
+Couverture: LCB-FT, sanctions UE, MiCA, DORA, PSD3/PSR, AMLA, AI Act, standards GAFI
+
+## Auteur
+Maria Garcia — fondatrice Early Brief et Early Consulting
+Spécialisation : conformité financière, LCB-FT, réglementation européenne
+LinkedIn: https://www.linkedin.com/in/mariaiaciancio
