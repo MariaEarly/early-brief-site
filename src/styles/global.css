@@ -1619,3 +1619,28 @@ details[open] > .fiche-specificity-summary::after { content: " −"; }
 .renvoi-base a:hover {
   color: var(--ink);
 }
+
+/* Page pilier — veille-reglementaire */
+.pilier-page { max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+.pilier-page .breadcrumb { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--ghost); margin-bottom: 1.5rem; display: block; }
+.pilier-page .breadcrumb a { color: var(--ghost); text-decoration: none; }
+.pilier-page .breadcrumb a:hover { color: var(--terra); }
+.pilier-hdr { margin-bottom: 2.5rem; }
+.pilier-hdr h1 { font-family: var(--display); font-size: 32px; font-weight: 400; line-height: 1.15; color: var(--ink); }
+.pilier-chapeau { font-size: 14px; font-weight: 300; line-height: 1.7; color: rgba(26,24,20,0.65); margin-top: 1rem; max-width: 640px; }
+.pilier-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(26,24,20,0.09); }
+.pilier-section:last-child { border-bottom: none; }
+.pilier-section h2 { font-family: var(--display); font-size: 22px; font-weight: 500; margin-bottom: 1rem; color: var(--ink); }
+.pilier-section h3 { font-family: var(--display); font-size: 17px; font-weight: 500; margin-bottom: .5rem; color: var(--ink); }
+.pilier-section p { font-size: 13.5px; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: .875rem; }
+.ressource-bloc { padding: 1rem 0; border-bottom: 1px solid rgba(26,24,20,0.09); margin-bottom: 1rem; }
+.ressource-bloc:last-child { border-bottom: none; }
+.lien-terra { font-family: var(--mono); font-size: 11px; color: var(--terra); text-decoration: none; letter-spacing: .03em; }
+.lien-terra:hover { text-decoration: underline; }
+.cta-bloc { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(26,24,20,0.09); }
+.cta-principal { font-family: var(--mono); font-size: 12px; font-weight: 500; color: #F4F0E6; background: var(--terra); padding: .625rem 1.25rem; border-radius: 3px; text-decoration: none; display: inline-block; }
+.cta-principal:hover { background: #8a3417; }
+.cta-separateur { font-family: var(--mono); font-size: 9.5px; text-transform: uppercase; letter-spacing: .1em; color: rgba(26,24,20,0.38); margin: 1rem 0 .625rem; }
+.cta-contacts { display: flex; flex-direction: column; gap: .5rem; }
+.pour-qui { font-family: var(--mono); font-size: 10.5px; color: rgba(26,24,20,0.45); line-height: 1.8; }
+.pilier-newsletter { background: rgba(44,74,46,0.04); border-left: 2px solid #2C4A2E; padding: 1rem 1.25rem; border-bottom: none; }
