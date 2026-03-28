@@ -550,8 +550,8 @@
       "description": "La Sanctions Map de la Commission européenne liste l'ensemble des régimes de sanctions UE en vigueur avec les textes de base et listes consolidées. Source primaire pour le screening.",
       "url": "https://www.sanctionsmap.eu/",
       "categorie": "Sanctions",
-      "application_france": "Comply or explain",
-      "application_france_detail": "Les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment",
+      "application_france": "Informatif",
+      "application_france_detail": "Portail officiel d'information — ne constitue pas un instrument normatif de type guideline",
       "niveau": "soft-law"
     },
     {
@@ -1183,7 +1183,7 @@
       "bloc": "Textes FR",
       "type": "Lignes directrices",
       "statut": "En vigueur",
-      "date_publication": "2024-01-01",
+      "date_publication": "2025-04-23",
       "date_application": null,
       "lien_texte_consolide": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-lacpr-et-de-tracfin-relatives-aux-obligations-de-vigilance-sur-les",
       "institutions_concernees": [
@@ -1197,7 +1197,7 @@
       "notes": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR.",
       "autorite": "ACPR",
       "dateLabel": "Publié le",
-      "date": "01/01/2024",
+      "date": "23/04/2025",
       "description": "Précisent les attentes des autorités françaises sur la vigilance clientèle et la déclaration de soupçon. Source primaire pour les contrôles ACPR.",
       "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-lacpr-et-de-tracfin-relatives-aux-obligations-de-vigilance-sur-les",
       "categorie": "Textes FR",
@@ -1709,10 +1709,10 @@
       "dateLabel": "En vigueur depuis",
       "date": "15/01/2024",
       "url": "https://www.amf-france.org/fr/espace-professionnels/prestataires-de-services-sur-actifs-numeriques-psan",
-      "description": "Règles de commercialisation et de communication promotionnelle pour les actifs numériques. Encadrement des influenceurs et de la publicité.",
+      "description": "Doctrine de supervision — règles de commercialisation et de communication promotionnelle pour les actifs numériques. Encadrement des influenceurs et de la publicité.",
       "application_france": "Droit français",
       "application_france_detail": "Position AMF — applicable aux PSAN exerçant en France",
-      "niveau": "droit-national"
+      "niveau": "soft-law"
     },
     {
       "id": "amf-doctrine-sgp-lcbft",
@@ -1736,10 +1736,10 @@
       "dateLabel": "En vigueur depuis",
       "date": "",
       "url": "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme-lcb-ft",
-      "description": "Obligations de vigilance, classification des risques et déclaration de soupçon pour les sociétés de gestion de portefeuille et CIF supervisés par l'AMF.",
+      "description": "Doctrine de supervision — obligations de vigilance, classification des risques et déclaration de soupçon pour les sociétés de gestion de portefeuille et CIF supervisés par l'AMF.",
       "application_france": "Droit français",
       "application_france_detail": "Doctrine AMF applicable aux SGP et CIF",
-      "niveau": "droit-national"
+      "niveau": "soft-law"
     },
     {
       "id": "acpr-2024-p01-pays-tiers",
@@ -1765,10 +1765,10 @@
       "dateLabel": "En vigueur depuis",
       "date": "01/03/2024",
       "url": "https://acpr.banque-france.fr/fr/reglementation/focus-sur-la-reglementation/reglementation-en-matiere-de-lcb-ft",
-      "description": "Mesures de vigilance renforcée à appliquer pour les relations d'affaires et opérations impliquant des pays tiers identifiés à haut risque par la Commission européenne.",
+      "description": "Doctrine de supervision — mesures de vigilance renforcée à appliquer pour les relations d'affaires et opérations impliquant des pays tiers identifiés à haut risque par la Commission européenne.",
       "application_france": "Droit français",
       "application_france_detail": "Position ACPR contraignante pour les entités supervisées",
-      "niveau": "droit-national"
+      "niveau": "soft-law"
     },
     {
       "id": "eba-gl-2021-02-risk-factors",
