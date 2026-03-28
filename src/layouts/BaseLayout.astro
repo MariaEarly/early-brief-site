@@ -8,7 +8,7 @@ const { title, description, canonicalUrl, ogImage, fullWidth } = Astro.props;
 const siteUrl = Astro.site ?? new URL(Astro.url.pathname, 'https://early-brief.com');
 const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogUrl = canonical;
-const ogImg = ogImage ?? 'https://early-brief.com/og-default.png';
+const ogImg = ogImage ? new URL(ogImage, siteUrl).href : 'https://early-brief.com/og-default.png';
 ---
 
 <!doctype html>

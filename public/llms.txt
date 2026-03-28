@@ -25,7 +25,7 @@ Description: Présentation de l'Autorité de lutte contre le blanchiment (AMLA) 
 
 ### Outil de consultation RTS CDD
 URL: https://early-brief.com/outil-rts/
-Description: Outil gratuit d'interrogation du projet de RTS AMLA sur les obligations de vigilance client (CDD). Répond aux questions opérationnelles sur les Articles 1 à 7.
+Description: Outil gratuit d'interrogation du projet de RTS AMLA sur les obligations de vigilance client (CDD). Répond aux questions opérationnelles sur les Articles 1 à 33.
 
 ### Glossaire
 URL: https://early-brief.com/ressources/glossaire/

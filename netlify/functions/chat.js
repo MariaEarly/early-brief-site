@@ -33,7 +33,7 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 
 **Organisation** : déclarant TRACFIN désigné (L. 561-32, R. 561-23), formation (L. 561-34), conservation 5 ans (L. 561-12).
 
-**Gel des avoirs (L. 562-1 à L. 562-14)** : effet immédiat, déclaration DG Trésor sous 24h, tipping-off interdit.
+**Gel des avoirs (L. 562-1 à L. 562-14)** : effet immédiat, déclaration au DG Trésor sans délai, tipping-off interdit.
 
 **Sanctions ACPR** : jusqu'à 100 M€ ou 10% CA (L. 612-39). Non-déclaration DS : 22 500 € (L. 574-1).
 
