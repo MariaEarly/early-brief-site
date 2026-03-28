@@ -134,7 +134,7 @@
       },
 
       verifications: {
-        base: ["Screening sanctions (UE, ONU, OFAC)", "Screening PEP", "Vérification pays à risque", "Cohérence économique"],
+        base: ["Screening sanctions (UE, ONU — OFAC si nexus US)", "Screening PEP", "Vérification pays à risque", "Cohérence économique"],
         BE: "Identification et vérification des BE (chaîne de contrôle)",
         BECotee: "Vérification marché réglementé (cotation)",
         TRUST: "Vérification des parties prenantes au trust"
@@ -172,7 +172,7 @@
       revision: {
         infosPF: ["Vérifier adresse actuelle", "Confirmer situation professionnelle", "Actualiser revenus/patrimoine si significatif"],
         infosPM: ["Vérifier dirigeants actuels", "Confirmer actionnariat/BE", "Actualiser activité si évolution"],
-        documents: ["Kbis/extrait registre récent (< 3 mois)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile/siège"],
+        documents: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile/siège"],
         verifications: ["Re-screening sanctions/PEP (tous)", "Vérifier évolution pays à risque", "Contrôle cohérence activité/opérations"],
         evidences: ["Rapport screening actualisé", "Note de revue périodique", "Historique des changements identifiés"]
       },
