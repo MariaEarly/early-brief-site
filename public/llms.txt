@@ -35,6 +35,10 @@ Description: Glossaire des termes réglementaires LCB-FT, sanctions, MiCA, DORA 
 URL: https://early-brief.com/ressources/faq/
 Description: Questions fréquentes sur la réglementation LCB-FT, les obligations des entités assujetties, les sanctions et la conformité MiCA.
 
+### Early Request
+URL: https://early-brief.com/outils/early-request/
+Description: Assistant gratuit d'analyse réglementaire. Répond aux questions de conformité LCB-FT, KYC, gel des avoirs, MiCA, Travel Rule. S'appuie sur un corpus réglementaire sélectionné et sourcé. Entités couvertes : EC, PSP, EME, PSAN, CASP, entreprises d'investissement.
+
 ## Newsletter
 URL: https://mariaiaciancio.substack.com
 Fréquence: Réactive — publiée à chaque développement réglementaire significatif
