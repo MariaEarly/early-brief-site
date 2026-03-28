@@ -1220,6 +1220,19 @@ hr {
   margin-top: 0.75rem;
 }
 
+/* ─── FAQ section titles ─── */
+.faq-section-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 2rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
 /* ─── AMLA pages — étapes numérotées ─── */
 .amla-etape {
   border-left: 2px solid #2D5A3D;
