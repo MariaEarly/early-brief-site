@@ -250,7 +250,7 @@ hr {
   margin-bottom: 24px;
 }
 .home-hero h1 em {
-  color: var(--green);
+  color: var(--ink);
   font-style: normal;
 }
 .home-desc {
@@ -259,13 +259,14 @@ hr {
   font-weight: 300;
   line-height: 1.75;
   max-width: 680px;
-  margin-bottom: 32px;
+  margin-bottom: 0.5rem;
 }
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: .06em;
@@ -278,7 +279,7 @@ hr {
   text-decoration: none;
   letter-spacing: .03em;
   display: block;
-  margin-top: .25rem;
+  margin-top: 1rem;
 }
 .home-cta {
   display: flex;
