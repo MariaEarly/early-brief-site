@@ -1341,8 +1341,8 @@
       "description": "Scoring harmonisé UE : risque inhérent (1-4), qualité des contrôles (A-D). 100-150 datapoints standardisés. Consultation clôturée le 27/01/2026.",
       "url": "https://www.amla.europa.eu/consultations",
       "categorie": "LCB-FT",
-      "application_france": "Directement applicable",
-      "application_france_detail": "Règlement UE d'application directe",
+      "application_france": "Projet — non encore adopté par la Commission",
+      "application_france_detail": "RTS en consultation publique — texte final attendu après adoption par la Commission européenne",
       "niveau": "soft-law"
     },
     {
@@ -1390,8 +1390,8 @@
       "description": "Critères : présence dans ≥6 États membres, >20k clients OU >50M€ flux/État, score risque résiduel élevé. Liste définitive non publiée au 27/03/2026.",
       "url": "https://www.amla.europa.eu/consultations",
       "categorie": "LCB-FT",
-      "application_france": "Directement applicable",
-      "application_france_detail": "Règlement UE d'application directe",
+      "application_france": "Projet — non encore adopté par la Commission",
+      "application_france_detail": "RTS en consultation publique — texte final attendu après adoption par la Commission européenne",
       "niveau": "soft-law"
     },
     {
@@ -1431,8 +1431,8 @@
       "description": "Joint Supervisory Teams (JST), collecte de données par superviseurs nationaux, contrôles qualité, règles de transfert de supervision.",
       "url": "https://www.amla.europa.eu/consultations",
       "categorie": "LCB-FT",
-      "application_france": "Directement applicable",
-      "application_france_detail": "Règlement UE d'application directe",
+      "application_france": "Projet — non encore adopté par la Commission",
+      "application_france_detail": "RTS en consultation publique — texte final attendu après adoption par la Commission européenne",
       "niveau": "soft-law"
     },
     {
