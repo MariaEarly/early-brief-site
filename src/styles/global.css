@@ -261,6 +261,25 @@ hr {
   max-width: 680px;
   margin-bottom: 32px;
 }
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: rgba(26,24,20,0.55);
+}
+.hero-marque-blanche {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: #9E3D1B;
+  text-decoration: none;
+  letter-spacing: .03em;
+  display: block;
+  margin-top: .25rem;
+}
 .home-cta {
   display: flex;
   align-items: center;
