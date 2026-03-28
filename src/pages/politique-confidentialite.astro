@@ -8,62 +8,105 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
 <div class="page">
   <div class="fiche-content">
-    <h1 class="fiche-title">Politique de confidentialité</h1>
-    <p style="font-family:var(--mono);font-size:0.75rem;color:var(--ghost);margin-bottom:2rem;">Dernière mise à jour : mars 2026</p>
+    <h1>Politique de confidentialité</h1>
+    <p class="politique-date">Dernière mise à jour : 28 mars 2026</p>
 
-    <section class="fiche-section">
-      <h2>Responsable du traitement</h2>
-      <p><strong>Early Consulting SAS</strong><br>
-      Siège social : Paris, France<br>
+    <section class="politique-section">
+      <h2>1. Responsable du traitement</h2>
+      <p>Early Brief — Maria Garcia<br>
       Contact : <a href="mailto:contact@early.consulting">contact@early.consulting</a></p>
     </section>
 
-    <section class="fiche-section">
-      <h2>Données collectées</h2>
-      <p>Les seules données personnelles collectées sur ce site proviennent du <strong>formulaire de contact</strong> :</p>
-      <ul>
-        <li>Nom</li>
-        <li>Adresse email</li>
-        <li>Message</li>
-      </ul>
-      <p>Ces données sont transmises via <strong>Netlify Forms</strong> et stockées sur les serveurs de Netlify, Inc.</p>
+    <section class="politique-section">
+      <h2>2. Données collectées et traitements</h2>
+
+      <h3>2.1 Formulaire de contact</h3>
+      <p>Données collectées : nom, adresse email, contenu du message.</p>
+      <p>Finalité : répondre aux demandes entrantes.</p>
+      <p>Base légale : intérêt légitime du responsable de traitement à répondre aux sollicitations (article 6.1.f RGPD).</p>
+      <p>Durée de conservation : 12 mois à compter de la dernière interaction.</p>
+      <p>Sous-traitant : Netlify, Inc. (hébergement et traitement des formulaires) — voir section 4.</p>
+
+      <h3>2.2 Navigation et hébergement</h3>
+      <p>Le site est hébergé sur Netlify. Netlify collecte des données techniques de navigation (adresse IP, logs d'accès) dans le cadre de la fourniture du service d'hébergement. Ces données sont traitées par Netlify selon sa propre politique de confidentialité. Durée de conservation par Netlify : 30 jours selon la politique par défaut.</p>
+      <p>Aucun outil d'analytics, pixel publicitaire ou outil de mesure d'audience tiers n'est installé sur ce site.</p>
+
+      <h3>2.3 Polices de caractères</h3>
+      <p>Les polices utilisées sur ce site (Cormorant, Hanken Grotesk, IBM Plex Mono) sont auto-hébergées sur les serveurs Netlify. Aucune requête n'est émise vers Google Fonts ou tout autre service tiers de polices.</p>
+
+      <h3>2.4 Outil Early Request</h3>
+      <p>Early Request est un assistant d'analyse réglementaire qui transmet les messages saisis par l'utilisateur à l'API Anthropic pour générer une réponse.</p>
+      <p>Données transmises : le texte du message saisi par l'utilisateur.<br>
+      Finalité : fournir une réponse à la question posée.<br>
+      Base légale : intérêt légitime du responsable de traitement à fournir le service demandé (article 6.1.f RGPD).<br>
+      Sous-traitant : Anthropic, PBC (États-Unis) — voir section 4.</p>
+      <p>L'outil affiche un avertissement invitant à ne pas saisir de données personnelles (IBAN, email, données sensibles). Les messages ne sont pas conservés par Early Brief après traitement. Anthropic conserve les données transmises via l'API pendant 30 jours à des fins de sécurité, sans les utiliser pour l'entraînement de ses modèles selon sa politique par défaut.</p>
+
+      <h3>2.5 Bibliothèques JavaScript tierces</h3>
+      <p>Certains outils du site chargent des bibliothèques JavaScript depuis des CDN tiers (jsDelivr, cdnjs/Cloudflare). Ces chargements transmettent l'adresse IP du visiteur aux serveurs des CDN concernés dans le cadre du protocole HTTP standard.</p>
     </section>
 
-    <section class="fiche-section">
-      <h2>Finalité</h2>
-      <p>Les données collectées sont utilisées exclusivement pour <strong>répondre à votre demande</strong> (question, demande d'information sur les services, prise de contact).</p>
+    <section class="politique-section">
+      <h2>3. Cookies et traceurs</h2>
+      <p>Ce site ne dépose pas de cookies analytiques, publicitaires ou de suivi. Aucun outil de mesure d'audience tiers n'est utilisé. Les seules données techniques collectées sont celles inhérentes au protocole HTTP (logs Netlify, requêtes CDN) documentées à la section 2.</p>
     </section>
 
-    <section class="fiche-section">
-      <h2>Durée de conservation</h2>
-      <p>Les données du formulaire de contact sont conservées pendant une durée maximale de <strong>12 mois</strong> à compter de la réception, puis supprimées.</p>
+    <section class="politique-section">
+      <h2>4. Sous-traitants et destinataires</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Sous-traitant</th>
+            <th>Pays</th>
+            <th>Finalité</th>
+            <th>Garanties transfert hors UE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Netlify, Inc.</strong></td>
+            <td>États-Unis</td>
+            <td>Hébergement, formulaires, logs</td>
+            <td>CCT UE</td>
+          </tr>
+          <tr>
+            <td><strong>Anthropic, PBC</strong></td>
+            <td>États-Unis</td>
+            <td>Traitement messages Early Request</td>
+            <td>CCT UE</td>
+          </tr>
+          <tr>
+            <td><strong>jsDelivr (Prospect One)</strong></td>
+            <td>UE / CDN mondial</td>
+            <td>Diffusion bibliothèques JS</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>cdnjs (Cloudflare)</strong></td>
+            <td>États-Unis</td>
+            <td>Diffusion bibliothèques JS</td>
+            <td>CCT UE</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <section class="fiche-section">
-      <h2>Cookies et tracking</h2>
-      <p>Ce site <strong>n'utilise aucun cookie tiers</strong>, aucun outil d'analytics (Google Analytics, Plausible, etc.), et aucun pixel de suivi. Aucune donnée de navigation n'est collectée.</p>
+    <section class="politique-section">
+      <h2>5. Transferts hors Union européenne</h2>
+      <p>Les données transmises à Netlify et Anthropic font l'objet de transferts vers les États-Unis. Ces transferts sont encadrés par des clauses contractuelles types (CCT) adoptées par la Commission européenne conformément à l'article 46 RGPD.</p>
     </section>
 
-    <section class="fiche-section">
-      <h2>Outil Early Request</h2>
-      <p>L'outil d'aide à l'analyse réglementaire <strong>Early Request</strong> transmet vos questions à l'API Anthropic pour générer une réponse. <strong>Aucune donnée personnelle n'est conservée côté serveur</strong> après la génération de la réponse. Les conversations ne sont pas utilisées pour l'entraînement des modèles, conformément aux conditions d'utilisation de l'API Anthropic.</p>
+    <section class="politique-section">
+      <h2>6. Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+      <p>Droit d'accès (article 15) · Droit de rectification (article 16) · Droit à l'effacement (article 17) · Droit à la limitation du traitement (article 18) · Droit à la portabilité (article 20) · Droit d'opposition (article 21)</p>
+      <p>Pour exercer vos droits : <a href="mailto:contact@early.consulting">contact@early.consulting</a></p>
+      <p>Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>).</p>
     </section>
 
-    <section class="fiche-section">
-      <h2>Vos droits</h2>
-      <p>Conformément au RGPD, vous disposez d'un droit d'<strong>accès</strong>, de <strong>rectification</strong> et de <strong>suppression</strong> de vos données personnelles. Pour exercer ces droits, contactez-nous à <a href="mailto:contact@early.consulting">contact@early.consulting</a>.</p>
-    </section>
-
-    <section class="fiche-section">
-      <h2>Droit de réclamation</h2>
-      <p>Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> — Commission Nationale de l'Informatique et des Libertés.<br>
-      3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07<br>
-      <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></p>
-    </section>
-
-    <section class="fiche-section">
-      <h2>Sous-traitants</h2>
-      <p>Le formulaire de contact est traité via <strong>Netlify Forms</strong> (Netlify, Inc., 512 2nd Street, San Francisco, CA 94107, États-Unis). Les données sont hébergées sur les serveurs de Netlify conformément à leur <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.</p>
+    <section class="politique-section">
+      <h2>7. Sécurité</h2>
+      <p>Le site est servi exclusivement en HTTPS. Les données du formulaire de contact transitent via les serveurs Netlify en connexion chiffrée.</p>
     </section>
 
     <div class="fiche-retour">
