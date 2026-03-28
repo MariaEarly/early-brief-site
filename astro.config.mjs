@@ -1,5 +1,6 @@
 // @ts-check
-import { defineConfig, fontProviders } from 'astro/config';
+// @ts-check
+import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
@@ -17,27 +18,4 @@ export default defineConfig({
     ],
   })],
   trailingSlash: 'always',
-  fonts: [
-    {
-      name: "Cormorant",
-      cssVariable: "--font-cormorant",
-      provider: fontProviders.google(),
-      weights: [400, 600, 700],
-      styles: ["normal", "italic"],
-    },
-    {
-      name: "Hanken Grotesk",
-      cssVariable: "--font-hanken",
-      provider: fontProviders.google(),
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal"],
-    },
-    {
-      name: "IBM Plex Mono",
-      cssVariable: "--font-mono",
-      provider: fontProviders.google(),
-      weights: [400, 500],
-      styles: ["normal"],
-    },
-  ],
 });

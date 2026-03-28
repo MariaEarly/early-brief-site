@@ -183,9 +183,9 @@ export default function App() {
 
   return (
     <div style={{ fontFamily: T.sans, background: T.bg, minHeight: "100vh", paddingBottom: "48px" }}>
-      {/* Google Fonts */}
+      {/* Polices auto-hébergées */}
+      <link rel="stylesheet" href="/fonts/fonts.css" />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: #F4F0E6; }
         textarea:focus { outline: none; }
