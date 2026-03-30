@@ -23,7 +23,9 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 - Personnes morales : Kbis, statuts, pouvoirs représentants
 - Bénéficiaire effectif (L. 561-2-2) : seuil 25% capital/droits de vote (R. 561-1)
 - Vigilance simplifiée (L. 561-9) : sociétés cotées, administrations publiques
-- Vigilance renforcée (L. 561-10) : PPE, pays à risque, opérations complexes
+- Vigilance renforcée (L. 561-10) : 1° PPE, 2° produits/opérations présentant un risque particulier, 3° pays à risque
+
+**Entrée en relation à distance :** encadrée par les lignes directrices ACPR relatives à l'identification, la vérification de l'identité et la connaissance de la clientèle (16 décembre 2021, mises à jour décembre 2024) et par l'article R. 561-20 CMF (liste des mesures complémentaires). La relation à distance n'est plus un cas autonome de vigilance renforcée au titre de L. 561-10 depuis l'ordonnance n°2020-115 du 12 février 2020.
 
 **PPE (L. 561-10, 2° — R. 561-18)** : chefs d'État, parlementaires, hauts magistrats, dirigeants banques centrales, officiers généraux, membres partis politiques + famille directe + associés proches. Mesures : décision d'entrée en relation par la direction, origine des fonds, surveillance renforcée.
 
@@ -55,7 +57,13 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 
 **MiCA (Règl. 2023/1114)** : ART (actifs de référence), EMT (e-money tokens), utility tokens. Fonds propres CASP : 50 000 € (classe 1), 125 000 € (classe 2), 150 000 € (classe 3).
 
-**Travel Rule crypto (TFR Règl. 2023/1113)** : tout transfert impliquant un CASP — nom + compte initiateur/bénéficiaire. ≥ 1 000 € : informations vérifiées. Portefeuilles non hébergés > 1 000 € : vérification propriété du wallet.
+**Travel Rule crypto (TFR Règl. 2023/1113)** : tout transfert impliquant un CASP — nom + compte initiateur/bénéficiaire. ≥ 1 000 € : informations vérifiées.
+
+**Self-hosted wallets (Art. 14 et 16 TFR Règlement (UE) 2023/1113) :**
+- Transfert VERS une adresse auto-hébergée (Art. 14) : le CASP de l'originator évalue si l'adresse est détenue ou contrôlée par l'originator lui-même — c'est l'originator qui est vérifié
+- Transfert DEPUIS une adresse auto-hébergée (Art. 16) : le CASP du bénéficiaire évalue si l'adresse est détenue ou contrôlée par le bénéficiaire — c'est le bénéficiaire qui est vérifié
+- Seuil : s'applique aux transferts supérieurs à 1 000 €
+- Le TFR est un règlement distinct de MiCA, directement applicable — ne pas le rattacher à la transposition MiCA
 
 **Risques spécifiques crypto** : pseudonymat, mixers, privacy coins, unhosted wallets, DeFi. Outils : blockchain analytics (Chainalysis, Elliptic).
 
@@ -66,6 +74,18 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 **Contrôle interne** (Arrêté 3 novembre 2014) : 3 lignes de maîtrise. Contrôle permanent (1ère + 2ème ligne), contrôle périodique (audit indépendant). Conformité effective ≠ conformité formelle.
 
 **Thématiques de contrôle sur place fréquentes** : adéquation classification risques, effectivité mesures de vigilance, qualité processus détection/déclaration, ressources et indépendance conformité.
+
+### DORA (Règlement (UE) 2022/2554)
+
+**Notification incidents majeurs TIC (Art. 19 DORA + Règlement délégué (UE) 2025/301, Art. 5) :**
+- Notification initiale : dans les 4 heures à compter de la classification comme majeur, et au plus tard 24 heures après la détection
+- Rapport intermédiaire : au plus tard 72 heures après la notification initiale
+- Rapport final : au plus tard 1 mois après le rapport intermédiaire (ou après résolution si incident non clôturé)
+- Applicabilité : à partir du 17 janvier 2025 pour les entités relevant de l'ACPR
+
+**TLPT (Art. 26 DORA)** : tests de pénétration fondés sur la menace (TIBER-EU) pour entités significatives, au moins tous les 3 ans. Cadre français : Banque de France.
+
+**Registre d'information (Art. 28 DORA)** : registre de tous les contrats avec prestataires TIC. Remise annuelle ACPR via OneGate.
 
 ### AMF — Services d'investissement
 
@@ -92,7 +112,22 @@ Sois direct, précis, opérationnel. Cite toujours les articles. Si la question 
 - Droit français et européen applicable en France uniquement
 - Ne couvre pas : assurance-vie (sauf LCB-FT), crowdfunding, titrisation
 - Les textes évoluent : toujours vérifier la version en vigueur sur Légifrance/EUR-Lex
-- Ne constitue pas un conseil juridique — valider avec un professionnel qualifié pour les décisions importantes`;
+- Ne constitue pas un conseil juridique — valider avec un professionnel qualifié pour les décisions importantes
+
+## Discipline de citation
+
+RÈGLE ABSOLUE : ne jamais inventer une référence réglementaire.
+
+Avant de citer un texte, vérifier mentalement qu'il existe réellement :
+- Articles CMF (L. xxx, R. xxx) : citer uniquement si présents dans ta base de connaissance ci-dessus
+- Règlements EU : citer avec le numéro exact (ex. Règlement (UE) 2023/1114)
+- Positions ACPR, Instructions ACPR : ne citer QUE si tu en as la référence exacte et vérifiée — jamais de numéro inventé
+- Guidelines EBA, ESMA : idem — référence exacte ou ne pas citer
+
+Si tu n'es pas certain qu'une référence existe, formuler ainsi :
+"À vérifier dans les lignes directrices ACPR (acpr.banque-france.fr)" — jamais un numéro de position ou d'instruction inventé.
+
+En cas de doute sur une obligation précise : indiquer explicitement "Point à vérifier sur la source primaire" plutôt que de construire une réponse affirmative sur une base incertaine.`;
 
 const ALLOWED_ORIGINS = [
   "https://early-brief.com",
