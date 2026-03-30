@@ -10,11 +10,11 @@ const BRAND_CONFIG = {
   url: 'https://early-brief.com/',
   tagline: 'Checklist KYC/KYB',
   colors: {
-    primary: '#2D5A3D',      // Vert sapin
-    secondary: '#4A5A4A',    // Texte secondaire
-    muted: '#5A6A5A',        // Texte atténué
-    light: '#E8F0EA',        // Fond clair
-    success: '#2D7A4D',
+    primary: '#9E3D1B',      // Terra Early Brief
+    secondary: '#4A4540',    // Texte secondaire
+    muted: '#6B6560',        // Texte atténué
+    light: '#F4F0E6',        // Fond écru Early Brief
+    success: '#2C4A2E',      // Vert Early Brief
     warning: '#B5854A',
     danger: '#C45C5C'
   }
@@ -49,8 +49,8 @@ function exportBrandedPDF() {
   // HEADER BRANDÉ
   // ========================================
   function drawHeader() {
-    // Bandeau vert
-    doc.setFillColor(45, 90, 61); // #2D5A3D
+    // Bandeau terra
+    doc.setFillColor(158, 61, 27); // #9E3D1B
     doc.rect(0, 0, pageWidth, 25, 'F');
 
     // Nom de la marque
@@ -82,12 +82,12 @@ function exportBrandedPDF() {
     const footerY = pageHeight - 15;
 
     // Ligne de séparation
-    doc.setDrawColor(45, 90, 61);
+    doc.setDrawColor(158, 61, 27);
     doc.setLineWidth(0.5);
     doc.line(margin, footerY - 5, pageWidth - margin, footerY - 5);
 
     // Texte footer
-    doc.setTextColor(90, 106, 90);
+    doc.setTextColor(107, 101, 96);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
 
@@ -118,7 +118,7 @@ function exportBrandedPDF() {
   // Niveau de risque
   const riskLevel = document.getElementById('riskScoreLevel')?.textContent || 'STANDARD';
   const riskColors = {
-    'STANDARD': [45, 122, 77],
+    'STANDARD': [44, 74, 46],
     'VIGILANCE': [181, 133, 74],
     'RENFORCÉ': [196, 92, 92]
   };
@@ -133,7 +133,7 @@ function exportBrandedPDF() {
   yPos += 15;
 
   // Contexte
-  doc.setTextColor(74, 90, 74);
+  doc.setTextColor(74, 69, 64);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
 
@@ -181,9 +181,9 @@ function exportBrandedPDF() {
     }
 
     // Titre de section
-    doc.setFillColor(232, 240, 234);
+    doc.setFillColor(244, 240, 230);
     doc.rect(margin, yPos - 3, contentWidth, 8, 'F');
-    doc.setTextColor(45, 90, 61);
+    doc.setTextColor(158, 61, 27);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
     doc.text(section.title, margin + 3, yPos + 2);
@@ -203,14 +203,14 @@ function exportBrandedPDF() {
       const text = item.querySelector('.check-text')?.textContent || item.textContent;
 
       // Checkbox
-      doc.setDrawColor(45, 90, 61);
+      doc.setDrawColor(158, 61, 27);
       doc.setLineWidth(0.3);
       doc.rect(margin, yPos - 3, 4, 4);
 
       if (isChecked) {
-        doc.setFillColor(45, 90, 61);
+        doc.setFillColor(158, 61, 27);
         doc.rect(margin + 0.5, yPos - 2.5, 3, 3, 'F');
-        doc.setTextColor(90, 106, 90);
+        doc.setTextColor(107, 101, 96);
       } else {
         doc.setTextColor(31, 42, 35);
       }
@@ -235,15 +235,15 @@ function exportBrandedPDF() {
       yPos = drawHeader();
     }
 
-    doc.setFillColor(245, 242, 235);
+    doc.setFillColor(244, 240, 230);
     doc.rect(margin, yPos - 3, contentWidth, 8, 'F');
-    doc.setTextColor(45, 90, 61);
+    doc.setTextColor(158, 61, 27);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
     doc.text('NOTES', margin + 3, yPos + 2);
     yPos += 10;
 
-    doc.setTextColor(74, 90, 74);
+    doc.setTextColor(74, 69, 64);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
     const noteLines = doc.splitTextToSize(notes, contentWidth);

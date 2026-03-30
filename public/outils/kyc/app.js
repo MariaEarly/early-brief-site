@@ -90,7 +90,7 @@
         },
         PM: {
           socle: ["Forme juridique", "Dénomination / raison sociale", "Numéro d'immatriculation", "Adresse du siège social", "Identité des représentants légaux"],
-          complementsBE: ["Identité des bénéficiaires effectifs (>25%)", "Chaîne de contrôle / détention"],
+          complementsBE: ["Identité des bénéficiaires effectifs (>25% du capital ou des droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)", "Chaîne de contrôle / détention"],
           complementsCotee: ["Identification des principaux actionnaires"],
           complementsGouvernance: ["Identité des dirigeants", "Membres du bureau / conseil", "Pouvoirs de signature"],
           directionEffective: "Adresse de direction effective (si différente du siège)"
@@ -104,7 +104,7 @@
 
       documents: {
         PF: {
-          base: ["Pièce d'identité en cours de validité", "Justificatif de domicile récent"],
+          base: ["Pièce d'identité en cours de validité", "Justificatif de domicile récent (selon procédure interne et approche par les risques — non obligatoire au sens strict du CMF)"],
           distance: ["Second justificatif ou mesure complémentaire (entrée à distance)"]
         },
         PM: {
@@ -125,7 +125,7 @@
             succursale: ["Extrait immatriculation succursale", "Extrait registre société mère", "Statuts société mère"]
           },
           HORSUE: {
-            base: ["Extrait registre (apostille/légalisé)", "Statuts (traduits, certifiés)", "PI du représentant", "Justificatif siège", "Certificate of Good Standing"],
+            base: ["Extrait registre (apostille/légalisé)", "Statuts (traduits, certifiés)", "PI du représentant", "Justificatif siège", "Certificat de validité juridique ou équivalent (enregistrement registre officiel)"],
             succursale: ["Extrait immatriculation succursale FR", "Documents société mère"]
           },
           common: { beCotee: "Justificatif de cotation", pouvoirs: "Justificatif des pouvoirs (PV, délégation)" }
@@ -181,7 +181,8 @@
         "Distinguer identification et vérification",
         "Documenter les mesures prises",
         "Conserver copies et preuves (5 ans)",
-        "Adapter l'intensité au risque",
+        "Adapter l'intensité au risque (L.561-4-1 CMF)",
+        "PPE : maintenir la vigilance renforcée au moins 12 mois après la fin du mandat (L.561-46 CMF)",
         "En cas de doute : ne pas entrer en relation"
       ],
       pointACPROccasionnel: "Occasionnel : appliquer seuils procédure interne",
@@ -202,7 +203,7 @@
         B: {
           base: "Privilégier les documents récents (&lt;3 mois) et les sources officielles.",
           foreign: "Hors UE : vérifier si apostille ou légalisation requise. Traduction assermentée si nécessaire.",
-          remote: "À distance : second document d'identité recommandé, vérification source indépendante.",
+          remote: "À distance : le justificatif de domicile ne constitue pas une mesure de confirmation d'identité au sens des LD ACPR (pp. 12-15). Privilégier les mesures listées à l'article R.561-20.",
           creation: "En création : attestation de dépôt des fonds, projet de statuts, récépissé d'immatriculation."
         },
         C: {
@@ -658,9 +659,7 @@
       const resultsHidden = document.getElementById('results').classList.contains('hidden');
       const v = getFormValues();
       
-      // Ne pas scroller automatiquement pour PF/TRUST (moins intrusif)
-      const isPFOrTrust = v.clientType === 'PF' || v.clientType === 'TRUST';
-      const shouldScroll = !isPFOrTrust && ((!lastCanGenerate && nowCanGenerate) || resultsHidden);
+      const shouldScroll = (!lastCanGenerate && nowCanGenerate) || resultsHidden;
 
       if (nowCanGenerate) {
         setTimeout(() => {
@@ -738,6 +737,10 @@
       if (shouldScroll) {
         document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+
+      // Mettre à jour le label du bouton après première génération
+      const btnGenerate = document.getElementById('btnGenerate');
+      if (btnGenerate) btnGenerate.textContent = 'Régénérer';
     }
 
     function generateResults() {
@@ -999,7 +1002,7 @@
     }
 
     function exportJSON() {
-      const excludeContext = document.getElementById('toggleExportNoContext').checked;
+      const excludeContext = document.getElementById('toggleExportNoContext')?.checked;
       const dossierRef = document.getElementById('dossierRef')?.value?.trim() || '';
       const dossierNotes = document.getElementById('dossierNotes')?.value?.trim() || '';
       
@@ -1077,7 +1080,7 @@
     }
 
     function exportCSV() {
-      const excludeContext = document.getElementById('toggleExportNoContext').checked;
+      const excludeContext = document.getElementById('toggleExportNoContext')?.checked;
       const dossierRef = document.getElementById('dossierRef')?.value?.trim() || '';
       const dossierNotes = document.getElementById('dossierNotes')?.value?.trim() || '';
       
@@ -1412,7 +1415,7 @@
         if (v.detention === 'complexe') {
           actions.push("Documenter chaîne de détention complète + identifier BE à chaque niveau");
         } else {
-          actions.push("Identifier les bénéficiaires effectifs (>25% ou contrôle)");
+          actions.push("Identifier les bénéficiaires effectifs (>25% du capital/droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)");
         }
       }
       

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F5F2EB">
     <title>Checklist KYC/KYB — Early Brief</title>
-    <meta name="description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur les obligations de vigilance du CMF (L.561-5 à L.561-14) et les lignes directrices ACPR 2022. Gratuit.">
+    <meta name="description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur le CMF (L.561-4-1, L.561-5 à L.561-14-2, R.561-5 et R.561-5-1) et les lignes directrices ACPR (décembre 2021, mises à jour décembre 2024). Gratuit.">
     <link rel="canonical" href="https://early-brief.com/outils/kyc/">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta property="og:title" content="Checklist KYC/KYB — Early Brief">
-    <meta property="og:description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur les obligations de vigilance du CMF (L.561-5 à L.561-14) et les lignes directrices ACPR 2022. Gratuit.">
+    <meta property="og:description" content="Générez votre checklist de collecte documentaire KYC/KYB en 30 secondes. Basé sur le CMF (L.561-4-1, L.561-5 à L.561-14-2, R.561-5 et R.561-5-1) et les lignes directrices ACPR (décembre 2021, mises à jour décembre 2024). Gratuit.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://early-brief.com/outils/kyc/">
     <meta property="og:image" content="https://early-brief.com/assets/images/og-default.png">
@@ -43,7 +43,7 @@
             <h1>Checklist KYC/KYB</h1>
         </div>
         <div class="hero-right">
-            <p class="hero-lead">Générez une checklist de collecte documentaire adaptée à votre client en 30 secondes. Basé sur les obligations de vigilance du CMF (L.561-5 à L.561-14) et les lignes directrices ACPR 2022.</p>
+            <p class="hero-lead">Générez une checklist de collecte documentaire adaptée à votre client en 30 secondes. Basé sur le CMF (L.561-4-1, L.561-5 à L.561-14-2, R.561-5 et R.561-5-1) et les lignes directrices ACPR relatives à l'identification, la vérification de l'identité et la connaissance de la clientèle (décembre 2021, mises à jour décembre 2024).</p>
             <div class="hero-links">
                 <span class="pill pill--category pill--estimation">Bêta</span>
                 <span class="hero-label">100% gratuit · Données locales · Export PDF/JSON/CSV</span>
@@ -105,9 +105,11 @@
     <details id="methodologie" class="methodologie-details">
       <summary class="methodologie-summary">Méthodologie &amp; limites</summary>
       <div class="disclaimer methodologie-content">
-        <p><strong>Sources :</strong> les obligations de vigilance du CMF (L.561-5 à L.561-14) et les lignes directrices ACPR 2022. Ne constitue pas un avis juridique.</p>
-        <p><strong>Limites :</strong> À adapter selon vos procédures internes et votre classification des risques.</p>
-        <p><strong>Responsabilité :</strong> L'utilisateur reste seul responsable. En cas de doute, consultez votre RCCI/RCSI.</p>
+        <p><strong>Sources :</strong> Code monétaire et financier (L.561-4-1, L.561-5 à L.561-14-2, R.561-5 et R.561-5-1) et lignes directrices ACPR relatives à l'identification, la vérification de l'identité et la connaissance de la clientèle (16 décembre 2021, mises à jour décembre 2024). Pour le gel des avoirs : lignes directrices conjointes ACPR/DGT (version mars 2026). Ne constitue pas un avis juridique.</p>
+        <p><strong>Périmètre :</strong> La checklist ne couvre pas l'ensemble des obligations LCB-FT applicables à votre catégorie d'entité, ni les exigences propres à votre approche par les risques (L.561-4-1 CMF). À adapter selon vos procédures internes et votre classification des risques.</p>
+        <p><strong>Scoring de risque :</strong> Les niveaux STANDARD / VIGILANCE / RENFORCÉ sont des indicateurs opérationnels internes à cet outil. Ils ne constituent pas une qualification légale officielle et ne se substituent pas à votre propre classification des risques.</p>
+        <p><strong>CASP :</strong> Adapter aux Principes d'Application Sectoriels ACPR et aux RTS CDD AMLA en cours d'adoption.</p>
+        <p><strong>Limites :</strong> En cas de doute, consultez votre responsable LCB-FT ou responsable conformité.</p>
       </div>
     </details>
 
@@ -398,6 +400,19 @@
         </ul>
       </div>
 
+      <div id="noteAssoFondation" class="hidden" style="
+        background:#F4F0E6;
+        border-left:2px solid #2C4A2E;
+        padding:10px 14px;
+        margin-bottom:16px;
+        font-family:'Hanken Grotesk',sans-serif;
+        font-size:13px;
+        color:#1A1814;
+        line-height:1.5;
+      ">
+        Association/Fondation : pas d'actionnariat. Documenter dirigeants, pouvoirs de signature et contrôle effectif.
+      </div>
+
       <div class="results-body">
         <!-- Accordion INFOS 1 -->
         <div class="accordion open" data-accordion="a1">
@@ -544,7 +559,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-link" onclick="generateResults()">Régénérer</button>
+      <button class="btn-link" id="btnGenerate" onclick="generateResults()">Générer la checklist</button>
     </div>
 
     </div><!-- /.container -->
