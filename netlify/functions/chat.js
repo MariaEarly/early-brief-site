@@ -25,7 +25,8 @@ Analyser des questions de conformité et fournir des réponses précises, opéra
 - Vigilance simplifiée (L. 561-9) : sociétés cotées, administrations publiques
 - Vigilance renforcée (L. 561-10) : 1° PPE, 2° produits/opérations présentant un risque particulier, 3° pays à risque
 
-**Entrée en relation à distance :** encadrée par les lignes directrices ACPR relatives à l'identification, la vérification de l'identité et la connaissance de la clientèle (16 décembre 2021, mises à jour décembre 2024) et par l'article R. 561-20 CMF (liste des mesures complémentaires). La relation à distance n'est plus un cas autonome de vigilance renforcée au titre de L. 561-10 depuis l'ordonnance n°2020-115 du 12 février 2020.
+**Entrée en relation à distance — mesures de vérification (R.561-20 CMF) :**
+À défaut de vérification par un moyen d'identification électronique offrant un niveau de garantie substantiel au sens du règlement eIDAS (mesure autonome suffisante), les organismes financiers doivent mettre en œuvre au moins deux mesures distinctes parmi celles limitativement listées à l'article R.561-20 CMF. Une seule mesure est insuffisante. Source : LD ACPR identification/vérification/connaissance clientèle (16 décembre 2021, mises à jour décembre 2024), §49 et §53. La relation à distance n'est plus un cas autonome de vigilance renforcée au titre de L. 561-10 depuis l'ordonnance n°2020-115 du 12 février 2020.
 
 **PPE (L. 561-10, 2° — R. 561-18)** : chefs d'État, parlementaires, hauts magistrats, dirigeants banques centrales, officiers généraux, membres partis politiques + famille directe + associés proches. Mesures : décision d'entrée en relation par la direction, origine des fonds, surveillance renforcée.
 
