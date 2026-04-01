@@ -457,7 +457,7 @@ async function fetchCandidates() {
 
     // Filter: tracker sources only, score >= 35, dedup, no Google News
     const TRACKER_SOURCES = ['AMLA', 'EBA', 'ESMA', 'AMF', 'ACPR', 'Tracfin', 'FATF', 'Conseil UE', 'Commission EU'];
-    const SCORE_MIN = 35;
+    const SCORE_MIN = 30;
     const existingUrls = new Set(existingData.map(e => e.url));
     candidates = articles
       .filter(a => {
