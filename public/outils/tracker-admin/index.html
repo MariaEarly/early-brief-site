@@ -455,11 +455,20 @@ async function fetchCandidates() {
     const artData = await artRes.json();
     const articles = artData.items || artData;
 
-    // Filter: not already in tracker, score >= 25
+    // Filter: tracker sources only, score >= 35, dedup, no Google News
+    const TRACKER_SOURCES = ['AMLA', 'EBA', 'ESMA', 'AMF', 'ACPR', 'Tracfin', 'FATF', 'Conseil UE', 'Commission EU'];
+    const SCORE_MIN = 35;
     const existingUrls = new Set(existingData.map(e => e.url));
     candidates = articles
-      .filter(a => a.original_url && !existingUrls.has(a.original_url))
-      .filter(a => (a.score || 0) >= 25)
+      .filter(a => {
+        const src = a.source_name || '';
+        const isTrackerSource = TRACKER_SOURCES.some(s => src.toLowerCase().includes(s.toLowerCase()));
+        const hasScore = (parseFloat(a.score) || 0) >= SCORE_MIN;
+        const afterCutoff = !a.published_at || new Date(a.published_at) >= new Date('2026-01-01');
+        const isNew = a.original_url && !existingUrls.has(a.original_url);
+        const isNotGoogleNews = !(a.original_url || '').includes('news.google.com');
+        return isTrackerSource && hasScore && afterCutoff && isNew && isNotGoogleNews;
+      })
       .map(a => ({
         id: a.id,
         date: formatDateFr(a.published_at || a.created_at),
@@ -475,7 +484,7 @@ async function fetchCandidates() {
 
     document.getElementById('count-candidates').textContent = candidates.length;
     document.getElementById('app-meta').textContent =
-      `${candidates.length} candidat(s) depuis la plateforme (${dateFrom} → ${dateTo}, score >= 25)`;
+      `${candidates.length} candidat(s) depuis la plateforme (${dateFrom} → ${dateTo}, score >= ${SCORE_MIN}, sources tracker)`;
 
     decisions = {};
     renderCandidates();
