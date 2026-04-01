@@ -5,7 +5,212 @@
       version: "7.4",
       schemaVersion: 3, // Increment when localStorage structure changes
       scope: "Socle CMF L.561-5 / Lignes directrices ACPR-TRACFIN",
-      
+
+      sources: {
+        // =========================================================
+        // IDENTIFICATION DU CLIENT / DES INTERVENANTS
+        // =========================================================
+
+        // Personnes physiques — noyau d'identification
+        "Nom(s)": {
+          ref: "CMF R.561-5, I, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Prénom(s)": {
+          ref: "CMF R.561-5, I, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Date de naissance": {
+          ref: "CMF R.561-5, I, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Lieu de naissance": {
+          ref: "CMF R.561-5, I, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+
+        // Personnes physiques — éléments de connaissance / profil
+        "Nationalité(s)": {
+          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Adresse du domicile": {
+          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Profession / activité": {
+          ref: "CMF R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
+        },
+        "Revenus / patrimoine estimé": {
+          ref: "CMF R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
+        },
+
+        // Personnes morales — identification
+        "Forme juridique": {
+          ref: "CMF R.561-5, II, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Dénomination / raison sociale": {
+          ref: "CMF R.561-5, II, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Numéro d'immatriculation": {
+          ref: "CMF R.561-5, II, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Adresse du siège social": {
+          ref: "CMF R.561-5, II, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Identité des représentants légaux": {
+          ref: "CMF R.561-5, II + R.561-5-4",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
+        },
+
+        // Bénéficiaire effectif
+        "Identité des bénéficiaires effectifs (>25% du capital ou des droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)": {
+          ref: "CMF L.561-2-2 + R.561-1",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
+        },
+        "Chaîne de contrôle / détention": {
+          ref: "CMF L.561-2-2 + R.561-1 + R.561-7",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036824564"
+        },
+
+        // =========================================================
+        // VERIFICATION DE L'IDENTITE / DES POUVOIRS
+        // =========================================================
+
+        "Pièce d'identité en cours de validité": {
+          ref: "CMF R.561-5-1, 1°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Justificatif de domicile récent (selon procédure interne et approche par les risques — non obligatoire au sens strict du CMF)": {
+          ref: "Lignes directrices ACPR 2025 — bonne pratique / approche par les risques",
+          url: "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-relatives-lidentification-la-verification-de-lidentite-et-la-connaissance-de-la"
+        },
+        "Second justificatif ou mesure complémentaire (entrée à distance)": {
+          ref: "CMF R.561-5-2 + Lignes directrices ACPR 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577229/"
+        },
+
+        "Extrait Kbis récent (souvent < 3 mois selon politique interne)": {
+          ref: "CMF R.561-5-1, 4°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Statuts certifiés conformes": {
+          ref: "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "PI du représentant légal": {
+          ref: "CMF R.561-5-4 + R.561-5-1",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
+        },
+        "Certificat de validité juridique ou équivalent (enregistrement registre officiel)": {
+          ref: "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+
+        // =========================================================
+        // CONNAISSANCE DU CLIENT / DE LA RELATION D'AFFAIRES
+        // =========================================================
+
+        "Objet de la relation d'affaires": {
+          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Nature de la relation d'affaires": {
+          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Origine des fonds (déclaratif)": {
+          ref: "CMF R.561-12-1 + R.561-12 + selon le risque",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592280"
+        },
+
+        // =========================================================
+        // SCREENING / GEL DES AVOIRS / PEP / PAYS A RISQUE
+        // =========================================================
+
+        "Screening sanctions (UE, ONU — OFAC si nexus US)": {
+          ref: "CMF L.562-4 + L.562-4-1 (OFAC : politique interne / nexus US, non obligation CMF générale)",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045250683"
+        },
+        "Screening PEP": {
+          ref: "CMF L.561-10, 1° + R.561-18 + R.561-20-2",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053153188"
+        },
+        "Vérification pays à risque": {
+          ref: "CMF L.561-10, 3°",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053153188"
+        },
+        "Identification et vérification des BE (chaîne de contrôle)": {
+          ref: "CMF L.561-5 + L.561-2-2 + R.561-1 + R.561-7",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517742"
+        },
+
+        // =========================================================
+        // VIGILANCE RENFORCEE — PPE / PEP
+        // =========================================================
+
+        "Fonction/mandat exercé(e)": {
+          ref: "CMF R.561-18",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043970417"
+        },
+        "Déclaration d'origine de patrimoine": {
+          ref: "CMF L.561-10, 1° + R.561-20-2 + Lignes directrices ACPR 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
+        },
+        "Screening PEP renforcé (bases dédiées)": {
+          ref: "CMF R.561-20-2",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
+        },
+        "Validation hiérarchique documentée": {
+          ref: "CMF R.561-20-2, II",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
+        },
+
+        // =========================================================
+        // CONSERVATION / PREUVES / JUSTIFICATION
+        // =========================================================
+
+        "Rapport / log de screening (sanctions, PEP)": {
+          ref: "CMF L.561-12 + L.562-4-1",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
+        },
+        "Preuve validation hiérarchique (email/PV)": {
+          ref: "CMF R.561-20-2 + L.561-12",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
+        },
+
+        // =========================================================
+        // COMPLEMENTS — CONNAISSANCE RELATION / SCREENING
+        // =========================================================
+
+        "Nature des opérations bancaires envisagées": {
+          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Objet et nature des services de paiement": {
+          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Usage prévu de la monnaie électronique": {
+          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Stratégie crypto et provenance des actifs numériques": {
+          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
+        },
+        "Cohérence économique": {
+          ref: "CMF L.561-6 — vigilance constante sur les opérations",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577798"
+        },
+      },
+
       // Formulaires / Webhooks (à configurer)
       emailWebhook: null,
       webhookTimeout: 8000,
@@ -948,7 +1153,10 @@
         li.setAttribute('tabindex', '0');
         li.setAttribute('aria-checked', 'false');
 
-        li.addEventListener('click', () => toggleCheckItem(li));
+        li.addEventListener('click', (e) => {
+          if (e.target.closest('.source-icon')) return; // Ne pas toggle si clic sur ⓘ
+          toggleCheckItem(li);
+        });
         li.addEventListener('keydown', e => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -969,7 +1177,11 @@
           li.setAttribute('aria-checked', 'true');
         }
 
-        li.innerHTML = `<span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text">${item}</span>`;
+        const source = CONFIG.sources && CONFIG.sources[item];
+    const sourceIcon = source
+      ? `<a href="${source.url}" target="_blank" rel="noopener" class="source-icon" title="${source.ref}" aria-label="Source : ${source.ref}">ⓘ</a>`
+      : '';
+    li.innerHTML = `<span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text">${item}</span>${sourceIcon}`;
         el.appendChild(li);
       });
 
