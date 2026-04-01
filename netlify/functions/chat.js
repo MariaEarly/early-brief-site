@@ -188,10 +188,13 @@ exports.handler = async function (event) {
     let chunks = [];
     let contextBlock = '';
 
+    let ragDebug = '';
     try {
       chunks = await retrieveChunks(lastMsg.content);
       contextBlock = buildContext(chunks);
+      ragDebug = `OK: ${chunks.length} chunks`;
     } catch (ragError) {
+      ragDebug = `RAG error: ${ragError.message}`;
       console.error('RAG error (fallback sans contexte):', ragError.message);
       // Continue sans RAG — le system prompt empêche les hallucinations
     }
@@ -226,7 +229,10 @@ exports.handler = async function (event) {
       body: JSON.stringify({
         answer: data.content[0].text,
         sources_used: chunks.length,
-        has_context: chunks.length > 0
+        has_context: chunks.length > 0,
+        _debug: ragDebug,
+        _supabase: !!supabase,
+        _voyage: !!process.env.VOYAGE_API_KEY
       }),
     };
   } catch (err) {
