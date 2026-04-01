@@ -19,6 +19,26 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY
 );
 
+const OPENLEGI_TOKEN = process.env.OPENLEGI_TOKEN;
+
+const CMF_ARTICLES = [
+  { id: "LEGIARTI000033517742", label: "CMF L.561-5 — Identification client", category: "lcb-ft" },
+  { id: "LEGIARTI000041592134", label: "CMF L.561-2-2 — Bénéficiaire effectif définition", category: "lcb-ft" },
+  { id: "LEGIARTI000053153188", label: "CMF L.561-10 — Vigilance complémentaire PPE pays risque", category: "lcb-ft" },
+  { id: "LEGIARTI000033517667", label: "CMF L.561-10-1 — Vigilance renforcée risque élevé", category: "lcb-ft" },
+  { id: "LEGIARTI000041592332", label: "CMF R.561-18 — PPE définition catégories", category: "lcb-ft" },
+  { id: "LEGIARTI000041578272", label: "CMF L.561-46 — PPE durée post-mandat 12 mois", category: "lcb-ft" },
+  { id: "LEGIARTI000041592285", label: "CMF R.561-12 — Vigilance constante relation affaires", category: "lcb-ft" },
+  { id: "LEGIARTI000041592315", label: "CMF R.561-20 — Mesures vérification distance", category: "lcb-ft" },
+  { id: "LEGIARTI000041577825", label: "CMF L.561-15 — Déclaration de soupçon Tracfin", category: "lcb-ft" },
+  { id: "LEGIARTI000006645026", label: "CMF L.561-18 — Tipping-off interdit", category: "lcb-ft" },
+  { id: "LEGIARTI000006645030", label: "CMF L.561-22 — Non-responsabilité bonne foi DS", category: "lcb-ft" },
+  { id: "LEGIARTI000041577831", label: "CMF L.561-24 — Droit opposition Tracfin 10 jours", category: "lcb-ft" },
+  { id: "LEGIARTI000041577809", label: "CMF L.561-12 — Conservation documents 5 ans", category: "lcb-ft" },
+  { id: "LEGIARTI000006645084", label: "CMF L.562-1 — Gel des avoirs principe", category: "lcb-ft" },
+  { id: "LEGIARTI000006645088", label: "CMF L.562-4 — Obligations assujettis gel avoirs", category: "lcb-ft" },
+];
+
 // ============================================================
 // CORPUS — à enrichir au fur et à mesure
 // Chaque chunk = un article ou une section précise
@@ -121,6 +141,303 @@ async function getEmbedding(text) {
   return data.data[0].embedding;
 }
 
+// Initialise une session MCP OpenLegi et retourne le session ID
+let mcpSessionId = null;
+async function initMCPSession() {
+  if (mcpSessionId) return mcpSessionId;
+
+  const res = await fetch('https://mcp.openlegi.fr/legifrance/mcp', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${OPENLEGI_TOKEN}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json, text/event-stream'
+    },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'initialize',
+      params: {
+        protocolVersion: '2024-11-05',
+        capabilities: {},
+        clientInfo: { name: 'early-brief', version: '1.0' }
+      }
+    })
+  });
+
+  const sessionHeader = res.headers.get('mcp-session-id');
+  if (!sessionHeader) throw new Error('Pas de session MCP retournée');
+  mcpSessionId = sessionHeader;
+  console.log(`  Session MCP: ${mcpSessionId.slice(0, 8)}...`);
+  return mcpSessionId;
+}
+
+async function fetchCMFArticle(articleNum) {
+  if (!OPENLEGI_TOKEN) throw new Error('OPENLEGI_TOKEN manquant');
+
+  const sessionId = await initMCPSession();
+
+  const response = await fetch('https://mcp.openlegi.fr/legifrance/mcp', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${OPENLEGI_TOKEN}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json, text/event-stream',
+      'Mcp-Session-Id': sessionId
+    },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: 2,
+      method: 'tools/call',
+      params: {
+        name: 'rechercher_code',
+        arguments: {
+          search: articleNum,
+          code_name: 'Code monétaire et financier',
+          champ: 'NUM_ARTICLE',
+          formatter: true
+        }
+      }
+    })
+  });
+
+  if (!response.ok) {
+    // Session expirée ? Réinitialiser
+    if (response.status === 400) {
+      mcpSessionId = null;
+      throw new Error(`OpenLegi HTTP ${response.status} — session expirée, relancer`);
+    }
+    throw new Error(`OpenLegi HTTP ${response.status}`);
+  }
+
+  const text = await response.text();
+
+  // Parser format SSE (Server-Sent Events)
+  for (const line of text.split('\n')) {
+    if (line.startsWith('data: ')) {
+      try {
+        const data = JSON.parse(line.slice(6));
+        const content = data?.result?.content?.[0]?.text;
+        if (content && content.length > 50) return content;
+      } catch {}
+    }
+  }
+
+  // Fallback : chercher du JSON dans la réponse brute
+  try {
+    const json = JSON.parse(text);
+    const content = json?.result?.content?.[0]?.text;
+    if (content) return content;
+  } catch {}
+
+  console.log(`  ⚠️ Réponse brute OpenLegi (${articleNum}):`, text.slice(0, 200));
+  return null;
+}
+
+async function ingestCMFArticles() {
+  console.log(`\nIngestion de ${CMF_ARTICLES.length} articles CMF via OpenLegi...`);
+
+  let success = 0;
+  let failed = 0;
+
+  for (const article of CMF_ARTICLES) {
+    console.log(`→ ${article.label}`);
+
+    try {
+      // Extraire le numéro d'article du label (ex: "CMF L.561-5 — ..." → "L561-5")
+      const articleNum = article.label.match(/CMF ([LR]\.\d[\d\-]+)/)?.[1]?.replace('.', '') || article.id;
+      const content = await fetchCMFArticle(articleNum);
+
+      if (!content) {
+        console.log(`  ⚠️ Contenu vide — ignoré`);
+        failed++;
+        continue;
+      }
+
+      // Tronquer à 3000 chars max par chunk (limite embedding)
+      const truncated = content.slice(0, 3000);
+      const sourceUrl = `https://www.legifrance.gouv.fr/codes/article_lc/${article.id}`;
+      const embedding = await getEmbedding(truncated);
+
+      const { error } = await supabase
+        .from('regulatory_chunks')
+        .upsert({
+          content: truncated,
+          source_label: article.label,
+          source_url: sourceUrl,
+          source_ref: article.label,
+          category: article.category,
+          embedding,
+          updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'source_ref'
+        });
+
+      if (error) {
+        console.error(`  ❌ Supabase: ${error.message}`);
+        failed++;
+      } else {
+        console.log(`  ✓ indexé (${truncated.length} chars)`);
+        success++;
+      }
+
+    } catch (err) {
+      console.error(`  ❌ Erreur: ${err.message}`);
+      failed++;
+    }
+
+    // Rate limiting
+    await new Promise(r => setTimeout(r, 100));
+  }
+
+  console.log(`\nCMF : ${success} indexés, ${failed} échoués`);
+}
+
+// ── RÈGLEMENTS EU — chunking automatique article par article ──────────────
+const EU_REGULATIONS = [
+  {
+    celex: "32023R1113",
+    label: "TFR — Transfer of Funds Regulation",
+    category: "mica",
+    file: "tfr.html"
+  },
+  {
+    celex: "32023R1114",
+    label: "MiCA — Markets in Crypto-Assets Regulation",
+    category: "mica",
+    file: "mica.html"
+  },
+  {
+    celex: "32024R1624",
+    label: "AMLR — Anti-Money Laundering Regulation",
+    category: "lcb-ft",
+    file: "amlr.html"
+  },
+  {
+    celex: "32022R2554",
+    label: "DORA — Digital Operational Resilience Act",
+    category: "dora",
+    file: "dora.html"
+  },
+];
+
+
+function chunkByArticle(rawHtml, regulation) {
+  const chunks = [];
+
+  // Extraire les positions des vrais titres d'articles via la classe CSS oj-ti-art
+  const artHeadingRegex = /<p[^>]*class="oj-ti-art"[^>]*>\s*Article[\s&nbsp;]+(premier|\d+(?:er)?)\s*<\/p>/gi;
+  const articlePositions = [];
+  let m;
+  while ((m = artHeadingRegex.exec(rawHtml)) !== null) {
+    const num = m[1].toLowerCase() === 'premier' ? '1' : m[1].replace('er', '');
+    articlePositions.push({ num, pos: m.index });
+  }
+
+  // Découper le HTML entre chaque titre d'article, puis nettoyer
+  for (let i = 0; i < articlePositions.length; i++) {
+    const start = articlePositions[i].pos;
+    const end = i + 1 < articlePositions.length ? articlePositions[i + 1].pos : rawHtml.length;
+    const htmlSlice = rawHtml.slice(start, end);
+
+    // Nettoyer le HTML → texte
+    const content = htmlSlice
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&rsquo;/g, "'")
+      .replace(/&laquo;/g, '«')
+      .replace(/&raquo;/g, '»')
+      .replace(/&#\d+;/g, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+
+    if (content.length < 100) continue;
+
+    const truncated = content.slice(0, 2500);
+
+    chunks.push({
+      content: truncated,
+      source_label: `${regulation.label} — Art. ${articlePositions[i].num}`,
+      source_url: `https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:${regulation.celex}`,
+      source_ref: `${regulation.celex}-art-${articlePositions[i].num}`,
+      category: regulation.category
+    });
+  }
+
+  return chunks;
+}
+
+async function ingestEURegulations() {
+  console.log(`\nIngestion de ${EU_REGULATIONS.length} règlements EU (chunking automatique)...`);
+
+  for (const regulation of EU_REGULATIONS) {
+    console.log(`\n${regulation.label} (${regulation.celex})`);
+
+    const filePath = path.join(__dirname, 'data', regulation.file);
+    if (!fs.existsSync(filePath)) {
+      console.log(`  ⚠️ Fichier scripts/data/${regulation.file} absent — ignoré`);
+      continue;
+    }
+    const rawHtml = fs.readFileSync(filePath, 'utf8');
+    console.log(`  HTML chargé : ${rawHtml.length} chars`);
+
+    const chunks = chunkByArticle(rawHtml, regulation);
+    console.log(`  ${chunks.length} articles détectés`);
+
+    if (chunks.length === 0) {
+      console.log(`  ⚠️ Aucun article extrait — vérifier le parsing`);
+      continue;
+    }
+
+    console.log(`  Aperçu des 3 premiers chunks :`);
+    chunks.slice(0, 3).forEach(c => {
+      console.log(`    → ${c.source_label} (${c.content.length} chars)`);
+      console.log(`      ${c.content.slice(0, 100)}...`);
+    });
+
+    let success = 0;
+    let failed = 0;
+
+    for (const chunk of chunks) {
+      try {
+        const embedding = await getEmbedding(chunk.content);
+
+        const { error } = await supabase
+          .from('regulatory_chunks')
+          .upsert({
+            content: chunk.content,
+            source_label: chunk.source_label,
+            source_url: chunk.source_url,
+            source_ref: chunk.source_ref,
+            category: chunk.category,
+            embedding,
+            updated_at: new Date().toISOString()
+          }, { onConflict: 'source_ref' });
+
+        if (error) { failed++; console.error(`  ❌ ${chunk.source_label}: ${error.message}`); }
+        else success++;
+
+      } catch (err) {
+        failed++;
+        console.error(`  ❌ ${chunk.source_label}: ${err.message}`);
+      }
+
+      // Rate limiting Voyage AI (3 RPM sans carte)
+      await new Promise(r => setTimeout(r, 100));
+    }
+
+    console.log(`  ✓ ${success} indexés, ${failed} échoués`);
+
+    // 2 secondes entre chaque règlement
+    await new Promise(r => setTimeout(r, 2000));
+  }
+}
+
 async function ingest() {
   console.log(`Ingestion de ${CORPUS.length} chunks...`);
 
@@ -147,8 +464,18 @@ async function ingest() {
     else console.log(`  ✓ indexé`);
 
     // Rate limiting Voyage AI
-    await new Promise(r => setTimeout(r, 21000));
+    await new Promise(r => setTimeout(r, 100));
   }
+
+  // Ingestion automatique articles CMF via OpenLegi
+  if (OPENLEGI_TOKEN) {
+    await ingestCMFArticles();
+  } else {
+    console.log('\n⚠️ OPENLEGI_TOKEN absent — ingestion CMF ignorée');
+  }
+
+  // Ingestion automatique règlements EU
+  await ingestEURegulations();
 
   console.log('\nIngestion terminée.');
 }
