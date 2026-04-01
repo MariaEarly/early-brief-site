@@ -300,8 +300,18 @@ textarea:focus { outline: 2px solid var(--terra); border-color: transparent; }
 
   <!-- Token bar -->
   <div class="token-bar">
-    <input type="password" id="gh-token" placeholder="GitHub Personal Access Token (ghp_... ou github_pat_...)">
-    <button class="btn btn-fetch" onclick="fetchCandidates()">Fetch candidats</button>
+    <input type="password" id="gh-token" placeholder="GitHub Personal Access Token (ghp_... ou github_pat_...)" style="flex:1">
+    <div style="display:flex;gap:12px;align-items:flex-end">
+      <div>
+        <label style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--gray-400);display:block;margin-bottom:3px">Date debut</label>
+        <input type="date" id="date-from" value="2026-03-01" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:13px">
+      </div>
+      <div>
+        <label style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--gray-400);display:block;margin-bottom:3px">Date fin</label>
+        <input type="date" id="date-to" value="2026-03-31" style="padding:7px 10px;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:13px">
+      </div>
+      <button class="btn btn-fetch" onclick="fetchCandidates()">Fetch candidats</button>
+    </div>
   </div>
 
   <!-- Tabs -->
@@ -434,12 +444,11 @@ async function fetchCandidates() {
     if (!loginRes.ok) throw new Error('Login plateforme echoue');
     const { access_token } = await loginRes.json();
 
-    // Fetch recent articles (last 14 days, score >= 25)
-    const dateFrom = new Date();
-    dateFrom.setDate(dateFrom.getDate() - 14);
-    const dateStr = dateFrom.toISOString().split('T')[0];
+    // Fetch articles for selected date range
+    const dateFrom = document.getElementById('date-from').value;
+    const dateTo = document.getElementById('date-to').value;
 
-    const artRes = await fetch(`${PLATFORM_URL}/api/v1/articles?date_from=${dateStr}&page_size=200`, {
+    const artRes = await fetch(`${PLATFORM_URL}/api/v1/articles?date_from=${dateFrom}&date_to=${dateTo}&page_size=500`, {
       headers: { 'Authorization': `Bearer ${access_token}` }
     });
     if (!artRes.ok) throw new Error('Fetch articles echoue');
@@ -466,7 +475,7 @@ async function fetchCandidates() {
 
     document.getElementById('count-candidates').textContent = candidates.length;
     document.getElementById('app-meta').textContent =
-      `${candidates.length} candidat(s) depuis la plateforme (14 derniers jours, score >= 25)`;
+      `${candidates.length} candidat(s) depuis la plateforme (${dateFrom} → ${dateTo}, score >= 25)`;
 
     decisions = {};
     renderCandidates();
