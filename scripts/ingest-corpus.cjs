@@ -358,11 +358,14 @@ function chunkByArticle(rawHtml, regulation) {
 
     if (content.length < 100) continue;
 
-    const truncated = content.slice(0, 2500);
+    // Préfixer avec le label pour améliorer la qualité de l'embedding
+    const label = `${regulation.label} — Art. ${articlePositions[i].num}`;
+    const prefixed = `[${label}] ${content}`;
+    const truncated = prefixed.slice(0, 2500);
 
     chunks.push({
       content: truncated,
-      source_label: `${regulation.label} — Art. ${articlePositions[i].num}`,
+      source_label: label,
       source_url: `https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:${regulation.celex}`,
       source_ref: `${regulation.celex}-art-${articlePositions[i].num}`,
       category: regulation.category

@@ -26,3 +26,6 @@ scripts/data/
 .idea/
 src/data/reglementations-pending.json
 script/scrape-errors.log
+
+# Tracker — fichier de validation interne, ne pas publier
+public/outils/tracker/pending.json

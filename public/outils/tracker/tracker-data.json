@@ -285,7 +285,7 @@
     "source": "AMF",
     "titre": "SPOT — risques opérationnels SGP",
     "description": "Focus : robustesse registres d'incidents, fiabilité données FRA, traçabilité calculs coussins/assurances.",
-    "url": "https://www.amf-france.org/fr/actualites-publications/publications/syntheses-de-controles-spot",
+    "url": "https://www.amf-france.org/en/news-publications/publications/spot-inspection-campaigns/summary-spot-inspections-asset-management-companies-operational-risk-management-systems",
     "type_source": "officielle",
     "statut": "rapport"
   },
@@ -405,7 +405,7 @@
     "source": "ESMA / Commission UE",
     "titre": "Q&A MiCA 2486 — Intérêts sur fonds clients (art. 70 MiCA)",
     "description": "Un CASP ne peut pas conserver les intérêts générés par les fonds clients déposés en établissement de crédit. Art. 70(1)-(3) MiCA : ces dépôts servent à protéger le client, pas à générer du revenu pour le CASP. Réponse fournie par la Commission européenne.",
-    "url": "https://www.esma.europa.eu/publications-and-data/questions-answers/2486",
+    "url": "https://www.esma.europa.eu/publications-data/questions-answers/2486",
     "type_source": "officielle",
     "statut": "publié"
   },
