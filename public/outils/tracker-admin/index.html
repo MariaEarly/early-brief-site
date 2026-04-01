@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tracker Admin — Early Brief</title>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root {
+  --ecru: #F4F0E6;
+  --green: #2C4A2E;
+  --green-light: #3D6B40;
+  --terra: #9E3D1B;
+  --white: #FFFFFF;
+  --gray-100: #F5F2EB;
+  --gray-200: #E8E4DC;
+  --gray-400: #A8A29E;
+  --gray-600: #5A5651;
+  --gray-900: #2D2B28;
+  --border: #E8E4DC;
+  --font-display: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-display);
+  background: var(--ecru);
+  color: var(--gray-900);
+  min-height: 100vh;
+}
+
+/* ---- Lock screen ---- */
+#lock-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.lock-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 40px 36px;
+  width: 360px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.lock-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.lock-sub {
+  font-size: 13px;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+.lock-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.lock-input:focus { outline: 2px solid var(--terra); border-color: transparent; }
+.lock-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lock-btn:hover { background: var(--green-light); }
+.lock-error {
+  color: var(--terra);
+  font-size: 12px;
+  margin-top: 8px;
+  display: none;
+}
+
+/* ---- App ---- */
+#app { display: none; padding: 24px 32px; max-width: 960px; margin: 0 auto; }
+
+/* Token bar */
+.token-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--white);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.token-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.token-bar input:focus { outline: 2px solid var(--terra); border-color: transparent; }
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.app-title { font-size: 22px; font-weight: 600; }
+.app-meta { font-size: 13px; color: var(--gray-600); }
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toolbar-stats { font-size: 13px; color: var(--gray-600); }
+.toolbar-actions { display: flex; gap: 10px; align-items: center; }
+.status-msg { font-size: 13px; color: var(--green); font-weight: 600; }
+
+/* Buttons */
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.85; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-primary { background: var(--green); color: white; }
+.btn-terra { background: var(--terra); color: white; }
+.btn-secondary { background: var(--gray-100); color: var(--gray-900); border: 1px solid var(--border); }
+.btn-fetch { background: var(--terra); color: white; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--gray-600);
+  border-bottom: none;
+}
+.tab:first-child { border-radius: 8px 0 0 0; }
+.tab:last-child { border-radius: 0 8px 0 0; }
+.tab.active { background: var(--green); color: white; border-color: var(--green); }
+.tab .count {
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 4px;
+  opacity: 0.7;
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--border);
+}
+.card.high { border-left-color: var(--terra); }
+.card.approved { opacity: 0.4; pointer-events: none; border-left-color: var(--green); }
+.card.rejected { opacity: 0.3; pointer-events: none; border-left-color: var(--gray-400); }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.card-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.card-url { font-size: 11px; margin-top: 3px; }
+.card-url a { color: var(--terra); text-decoration: none; }
+.card-url a:hover { text-decoration: underline; }
+.badges { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--gray-100);
+  color: var(--gray-900);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+.desc-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-400);
+  margin: 10px 0 4px;
+}
+textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  background: var(--gray-100);
+}
+textarea:focus { outline: 2px solid var(--terra); border-color: transparent; }
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Existing entries */
+.entry-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--white);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.entry-row .entry-date { font-family: var(--font-mono); font-size: 11px; color: var(--gray-400); width: 80px; flex-shrink: 0; }
+.entry-row .entry-source { font-weight: 600; width: 100px; flex-shrink: 0; }
+.entry-row .entry-title { flex: 1; }
+.entry-row .entry-statut {
+  font-size: 10px; font-family: var(--font-mono); padding: 2px 6px;
+  border-radius: 3px; background: var(--gray-100); flex-shrink: 0;
+}
+
+/* Empty & loading */
+.empty { padding: 40px; text-align: center; color: var(--gray-400); font-size: 14px; }
+.loading { padding: 40px; text-align: center; color: var(--gray-400); font-size: 14px; }
+
+/* Toast */
+.toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+.toast {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: white;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.toast-success { background: var(--green); }
+.toast-error { background: var(--terra); }
+</style>
+</head>
+<body>
+
+<!-- Lock screen -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-title">Tracker Admin</div>
+    <div class="lock-sub">Early Brief &mdash; Espace administration</div>
+    <form onsubmit="return unlock(event)">
+      <input type="password" class="lock-input" id="lock-pw" placeholder="Mot de passe" autofocus>
+      <button type="submit" class="lock-btn">Acceder</button>
+    </form>
+    <div class="lock-error" id="lock-error">Mot de passe incorrect</div>
+  </div>
+</div>
+
+<!-- App -->
+<div id="app">
+  <div class="app-header">
+    <div>
+      <div class="app-title">Tracker Admin</div>
+      <div class="app-meta" id="app-meta">Connecte le token GitHub puis clique Fetch.</div>
+    </div>
+    <button class="btn btn-secondary" onclick="doLogout()">Deconnexion</button>
+  </div>
+
+  <!-- Token bar -->
+  <div class="token-bar">
+    <input type="password" id="gh-token" placeholder="GitHub Personal Access Token (ghp_... ou github_pat_...)">
+    <button class="btn btn-fetch" onclick="fetchCandidates()">Fetch candidats</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="candidates" onclick="switchTab('candidates')">Candidats <span class="count" id="count-candidates">0</span></div>
+    <div class="tab" data-tab="existing" onclick="switchTab('existing')">En ligne <span class="count" id="count-existing">0</span></div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar-candidates">
+    <div class="toolbar-stats" id="stats">Aucun candidat charge</div>
+    <div class="toolbar-actions">
+      <span class="status-msg" id="status-msg"></span>
+      <button class="btn btn-primary" id="btn-publish" disabled onclick="publishApproved()">Publier les approuves</button>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div id="panel-candidates"></div>
+  <div id="panel-existing" style="display:none"></div>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<script>
+// ── Constants ──
+const REPO = 'MariaEarly/early-brief-site';
+const DATA_PATH = 'public/outils/tracker/tracker-data.json';
+const PLATFORM_URL = 'https://earlybriefp7hwqsga-earlybrief-api.functions.fnc.fr-par.scw.cloud';
+const PW_HASH = '75ce3cbc3667d9c43ad497211fa160e4a98832e829876190fe1d613ac0642784';
+
+let candidates = [];
+let existingData = [];
+let existingFileSha = '';
+let decisions = {};
+
+// ── Auth ──
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function unlock(e) {
+  e.preventDefault();
+  const pw = document.getElementById('lock-pw').value;
+  const hash = await sha256(pw);
+  if (hash === PW_HASH) {
+    sessionStorage.setItem('eb_admin', '1');
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadExisting();
+  } else {
+    document.getElementById('lock-error').style.display = 'block';
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('eb_admin');
+  location.reload();
+}
+
+// Check session on load
+if (sessionStorage.getItem('eb_admin') === '1') {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  loadExisting();
+}
+
+// ── GitHub API helpers ──
+function ghToken() { return document.getElementById('gh-token').value.trim(); }
+
+async function ghGet(path) {
+  const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
+    headers: { 'Authorization': `Bearer ${ghToken()}`, 'Accept': 'application/vnd.github+json' }
+  });
+  if (!res.ok) throw new Error(`GitHub GET ${res.status}`);
+  return res.json();
+}
+
+async function ghPut(path, content, sha, message) {
+  const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${ghToken()}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ message, content: btoa(unescape(encodeURIComponent(content))), sha })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(`GitHub PUT ${res.status}: ${err.message || ''}`);
+  }
+  return res.json();
+}
+
+// ── Load existing tracker data ──
+async function loadExisting() {
+  try {
+    const file = await ghGet(DATA_PATH).catch(() => null);
+    if (file) {
+      existingData = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+      existingFileSha = file.sha;
+    } else {
+      // Fallback: fetch raw file without token
+      const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/${DATA_PATH}`);
+      existingData = await res.json();
+    }
+    document.getElementById('count-existing').textContent = existingData.length;
+    renderExisting();
+  } catch(e) {
+    console.warn('Could not load existing data:', e);
+  }
+}
+
+// ── Fetch candidates from Scaleway platform ──
+async function fetchCandidates() {
+  const btn = document.querySelector('.btn-fetch');
+  btn.disabled = true;
+  btn.textContent = 'Chargement...';
+  document.getElementById('panel-candidates').innerHTML = '<div class="loading">Connexion a la plateforme...</div>';
+
+  try {
+    // Login to platform
+    const loginRes = await fetch(`${PLATFORM_URL}/api/v1/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'admin@earlybrief.com', password: 'Eb!Scw#2026$Prod' })
+    });
+    if (!loginRes.ok) throw new Error('Login plateforme echoue');
+    const { access_token } = await loginRes.json();
+
+    // Fetch recent articles (last 14 days, score >= 25)
+    const dateFrom = new Date();
+    dateFrom.setDate(dateFrom.getDate() - 14);
+    const dateStr = dateFrom.toISOString().split('T')[0];
+
+    const artRes = await fetch(`${PLATFORM_URL}/api/v1/articles?date_from=${dateStr}&page_size=200`, {
+      headers: { 'Authorization': `Bearer ${access_token}` }
+    });
+    if (!artRes.ok) throw new Error('Fetch articles echoue');
+    const artData = await artRes.json();
+    const articles = artData.items || artData;
+
+    // Filter: not already in tracker, score >= 25
+    const existingUrls = new Set(existingData.map(e => e.url));
+    candidates = articles
+      .filter(a => a.original_url && !existingUrls.has(a.original_url))
+      .filter(a => (a.score || 0) >= 25)
+      .map(a => ({
+        id: a.id,
+        date: formatDateFr(a.published_at || a.created_at),
+        source: a.source_name || 'Autre',
+        titre: a.title,
+        description: a.summary || '',
+        url: a.original_url,
+        score: parseFloat(a.score) || 0,
+        type_source: 'officielle',
+        statut: 'publie'
+      }))
+      .sort((a, b) => b.score - a.score);
+
+    document.getElementById('count-candidates').textContent = candidates.length;
+    document.getElementById('app-meta').textContent =
+      `${candidates.length} candidat(s) depuis la plateforme (14 derniers jours, score >= 25)`;
+
+    decisions = {};
+    renderCandidates();
+    toast(`${candidates.length} candidats charges`, 'success');
+
+  } catch(e) {
+    document.getElementById('panel-candidates').innerHTML = `<div class="empty">Erreur : ${esc(e.message)}</div>`;
+    toast(e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Fetch candidats';
+  }
+}
+
+function formatDateFr(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+}
+
+// ── Render candidates ──
+function renderCandidates() {
+  const panel = document.getElementById('panel-candidates');
+  if (candidates.length === 0) {
+    panel.innerHTML = '<div class="empty">Aucun candidat. Clique "Fetch candidats" pour charger depuis la plateforme.</div>';
+    updateStats();
+    return;
+  }
+  panel.innerHTML = candidates.map(c => `
+    <div class="card ${c.score >= 35 ? 'high' : ''}" id="card-${c.id}">
+      <div class="card-header">
+        <div>
+          <div class="card-title">${esc(c.titre)}</div>
+          <div class="card-url"><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url?.substring(0, 80))}${c.url?.length > 80 ? '...' : ''}</a></div>
+        </div>
+        <div class="badges">
+          <span class="badge">${esc(c.source)}</span>
+          <span class="badge">${esc(c.date)}</span>
+          <span class="badge">score ${c.score}</span>
+        </div>
+      </div>
+      <div class="desc-label">Description pour le tracker</div>
+      <textarea id="desc-${c.id}" placeholder="Resume editorial...">${esc(c.description)}</textarea>
+      <div class="card-actions">
+        <button class="btn btn-primary" onclick="decide('${c.id}','approve')">Approuver</button>
+        <button class="btn btn-secondary" onclick="decide('${c.id}','reject')">Rejeter</button>
+      </div>
+    </div>
+  `).join('');
+  updateStats();
+}
+
+function decide(id, action) {
+  const desc = document.getElementById(`desc-${id}`).value.trim();
+  decisions[id] = { action, description: desc };
+  const card = document.getElementById(`card-${id}`);
+  card.classList.remove('approved', 'rejected');
+  card.classList.add(action === 'approve' ? 'approved' : 'rejected');
+  updateStats();
+}
+
+function updateStats() {
+  const approved = Object.values(decisions).filter(d => d.action === 'approve').length;
+  const rejected = Object.values(decisions).filter(d => d.action === 'reject').length;
+  const pending = candidates.length - approved - rejected;
+  document.getElementById('stats').textContent =
+    `${candidates.length} candidats | ${approved} approuves | ${rejected} rejetes | ${pending} en attente`;
+  document.getElementById('btn-publish').disabled = approved === 0 || !ghToken();
+}
+
+// ── Publish approved to GitHub ──
+async function publishApproved() {
+  if (!ghToken()) { toast('Token GitHub requis', 'error'); return; }
+
+  const toAdd = candidates
+    .filter(c => decisions[c.id]?.action === 'approve')
+    .map(c => ({
+      id: c.id,
+      date: c.date,
+      source: c.source,
+      titre: c.titre,
+      description: decisions[c.id].description || c.description || '',
+      url: c.url,
+      type_source: c.type_source || 'officielle',
+      statut: 'publie'
+    }));
+
+  if (toAdd.length === 0) return;
+
+  const btn = document.getElementById('btn-publish');
+  const msg = document.getElementById('status-msg');
+  btn.disabled = true;
+  msg.textContent = 'Publication en cours...';
+
+  try {
+    // Re-fetch latest file to get current SHA
+    const file = await ghGet(DATA_PATH);
+    const currentData = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\n/g, '')))));
+    existingFileSha = file.sha;
+
+    // Merge: add new entries at the beginning
+    const merged = [...toAdd, ...currentData];
+
+    // Commit to GitHub
+    const commitMsg = `tracker: +${toAdd.length} entree(s) via admin`;
+    await ghPut(DATA_PATH, JSON.stringify(merged, null, 2), existingFileSha, commitMsg);
+
+    existingData = merged;
+    document.getElementById('count-existing').textContent = existingData.length;
+
+    // Remove decided candidates
+    const decidedIds = new Set(Object.keys(decisions));
+    candidates = candidates.filter(c => !decidedIds.has(c.id));
+    decisions = {};
+    document.getElementById('count-candidates').textContent = candidates.length;
+
+    renderCandidates();
+    renderExisting();
+
+    msg.textContent = '';
+    toast(`${toAdd.length} entree(s) publiees sur GitHub — Netlify deploiera automatiquement`, 'success');
+
+  } catch(e) {
+    msg.textContent = '';
+    toast(`Erreur: ${e.message}`, 'error');
+    btn.disabled = false;
+  }
+}
+
+// ── Render existing entries ──
+function renderExisting() {
+  const panel = document.getElementById('panel-existing');
+  if (existingData.length === 0) {
+    panel.innerHTML = '<div class="empty">Aucune entree dans le tracker.</div>';
+    return;
+  }
+  panel.innerHTML = existingData.slice(0, 100).map(e => `
+    <div class="entry-row">
+      <span class="entry-date">${esc(e.date)}</span>
+      <span class="entry-source">${esc(e.source)}</span>
+      <span class="entry-title">${esc(e.titre)}</span>
+      <span class="entry-statut">${esc(e.statut)}</span>
+    </div>
+  `).join('');
+}
+
+// ── Tabs ──
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+  document.getElementById('panel-candidates').style.display = tab === 'candidates' ? '' : 'none';
+  document.getElementById('panel-existing').style.display = tab === 'existing' ? '' : 'none';
+  document.getElementById('toolbar-candidates').style.display = tab === 'candidates' ? '' : 'none';
+}
+
+// ── Utils ──
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function toast(msg, type) {
+  const c = document.getElementById('toasts');
+  const el = document.createElement('div');
+  el.className = `toast toast-${type}`;
+  el.textContent = msg;
+  c.appendChild(el);
+  setTimeout(() => el.remove(), 5000);
+}
+</script>
+</body>
+</html>
