@@ -13,6 +13,9 @@ const PORT = 3333;
 const DATA_DIR = path.join(__dirname, '..', 'src', 'data');
 const REG_FILE = path.join(DATA_DIR, 'reglementations.json');
 const PENDING_FILE = path.join(DATA_DIR, 'reglementations-pending.json');
+const TRACKER_DIR = path.join(__dirname, '..', 'public', 'outils', 'tracker');
+const TRACKER_DATA = path.join(TRACKER_DIR, 'tracker-data.json');
+const TRACKER_PENDING = path.join(TRACKER_DIR, 'pending.json');
 
 const server = http.createServer((req, res) => {
   // CORS
@@ -89,6 +92,97 @@ const server = http.createServer((req, res) => {
       } catch (e) {
         res.writeHead(500); res.end(JSON.stringify({ error: e.message }));
       }
+    });
+    return;
+  }
+
+  // ── Tracker: GET /api/tracker/pending ──────────────────
+  if (req.url === '/api/tracker/pending' && req.method === 'GET') {
+    try {
+      if (!fs.existsSync(TRACKER_PENDING)) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ candidates: [], generated_at: new Date().toISOString() }));
+        return;
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(fs.readFileSync(TRACKER_PENDING, 'utf-8'));
+    } catch (e) {
+      res.writeHead(500); res.end(JSON.stringify({ error: e.message }));
+    }
+    return;
+  }
+
+  // ── Tracker: POST /api/tracker/approve ────────────────
+  if (req.url === '/api/tracker/approve' && req.method === 'POST') {
+    let body = '';
+    req.on('data', c => body += c);
+    req.on('end', () => {
+      try {
+        const { entries } = JSON.parse(body);
+        if (!entries || !Array.isArray(entries)) {
+          res.writeHead(400); res.end(JSON.stringify({ error: 'entries manquant' }));
+          return;
+        }
+
+        const tracker = JSON.parse(fs.readFileSync(TRACKER_DATA, 'utf-8'));
+        const existingUrls = new Set(tracker.map(e => e.url));
+
+        const newEntries = entries
+          .filter(e => !existingUrls.has(e.url))
+          .map(e => ({
+            id: e.id.replace('candidate-', ''),
+            date: e.date,
+            source: e.source,
+            titre: e.titre,
+            description: e.description,
+            url: e.url,
+            type_source: e.type_source || 'officielle',
+            statut: e.statut || 'publié'
+          }));
+
+        // Ajouter en tête (entrées récentes en premier)
+        tracker.unshift(...newEntries);
+        fs.writeFileSync(TRACKER_DATA, JSON.stringify(tracker, null, 2));
+
+        // Nettoyer pending.json — retirer les entrées traitées
+        if (fs.existsSync(TRACKER_PENDING)) {
+          const pending = JSON.parse(fs.readFileSync(TRACKER_PENDING, 'utf-8'));
+          const approvedIds = new Set(entries.map(e => e.id));
+          pending.candidates = (pending.candidates || []).filter(c => !approvedIds.has(c.id));
+          fs.writeFileSync(TRACKER_PENDING, JSON.stringify(pending, null, 2));
+        }
+
+        console.log(`✓ ${newEntries.length} entrée(s) ajoutée(s) au tracker`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ added: newEntries.length }));
+      } catch (e) {
+        res.writeHead(500); res.end(JSON.stringify({ error: e.message }));
+      }
+    });
+    return;
+  }
+
+  // ── Tracker: POST /api/tracker/publish — git add + commit + push
+  if (req.url === '/api/tracker/publish' && req.method === 'POST') {
+    const { exec } = require('child_process');
+    const projectRoot = path.join(__dirname, '..');
+
+    const date = new Date().toLocaleDateString('fr-FR', {
+      day: '2-digit', month: '2-digit', year: 'numeric'
+    });
+
+    const cmd = `cd "${projectRoot}" && git add public/outils/tracker/tracker-data.json && git commit -m "tracker: mise à jour ${date}" && git push`;
+
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error('Git error:', stderr);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: stderr || error.message }));
+        return;
+      }
+      console.log('Git push OK:', stdout);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, output: stdout }));
     });
     return;
   }

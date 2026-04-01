@@ -2,87 +2,297 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — Validation réglementations</title>
+  <title>Early Brief — Validation tracker</title>
   <style>
+    /* Design system Early Brief */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #F4F0E6; color: #1A1814; padding: 2rem; max-width: 900px; margin: 0 auto; }
-    h1 { font-size: 1.5rem; margin-bottom: 1rem; }
-    .status { font-size: 0.85rem; color: #6B6B5A; margin-bottom: 2rem; }
-    .card { border: 1px solid #D4CFC6; border-radius: 4px; padding: 1.25rem; margin-bottom: 1rem; background: white; }
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-    .card-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: #9E3D1B; }
-    .card-type { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; background: #EDE9E0; padding: 2px 8px; border-radius: 2px; }
-    .card-desc { font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .card-detail { font-size: 0.8rem; color: #6B6B5A; margin-bottom: 0.25rem; }
-    .card-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
-    .btn { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; padding: 6px 16px; border: none; border-radius: 2px; cursor: pointer; }
-    .btn-accept { background: #2C4A2E; color: white; }
-    .btn-reject { background: transparent; border: 1px solid #9E3D1B; color: #9E3D1B; }
-    .btn:hover { opacity: 0.85; }
-    .empty { text-align: center; color: #8A8480; padding: 3rem; }
-    #file-input { margin-bottom: 1rem; }
+    body {
+      font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      background: #F4F0E6;
+      color: #1A1814;
+      padding: 32px;
+    }
+    h1 { font-family: Georgia, serif; font-size: 24px; margin-bottom: 8px; }
+    .meta { font-size: 13px; color: #666; margin-bottom: 32px; }
+    .empty { padding: 40px; text-align: center; color: #888; font-size: 15px; }
+
+    /* Carte candidat */
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      border-left: 4px solid #ccc;
+    }
+    .card.high { border-left-color: #9E3D1B; }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #F4F0E6;
+      color: #1A1814;
+      white-space: nowrap;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .titre { font-size: 15px; font-weight: 600; line-height: 1.4; }
+    .url a { font-size: 12px; color: #9E3D1B; text-decoration: none; }
+    .url a:hover { text-decoration: underline; }
+
+    /* Champ description éditable */
+    .description-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      margin: 12px 0 4px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 72px;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.5;
+      resize: vertical;
+      background: #fafafa;
+    }
+    textarea:focus { outline: 2px solid #9E3D1B; border-color: transparent; }
+
+    /* Actions */
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button {
+      padding: 8px 18px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    button:hover { opacity: 0.85; }
+    .btn-approve {
+      background: #2C4A2E;
+      color: white;
+    }
+    .btn-reject {
+      background: #F4F0E6;
+      color: #1A1814;
+      border: 1px solid #ccc;
+    }
+    .card.approved { opacity: 0.4; pointer-events: none; border-left-color: #2C4A2E; }
+    .card.rejected { opacity: 0.4; pointer-events: none; border-left-color: #ccc; }
+
+    /* Barre d'actions globale */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 14px 20px;
+      background: white;
+      border-radius: 8px;
+    }
+    .toolbar-stats { font-size: 14px; }
+    .btn-save {
+      background: #9E3D1B;
+      color: white;
+      padding: 10px 24px;
+      font-size: 15px;
+    }
+    .btn-save:disabled { opacity: 0.4; cursor: not-allowed; }
+    .status-msg {
+      font-size: 13px;
+      color: #2C4A2E;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
-  <h1>Validation — Changements détectés</h1>
-  <p class="status">Charge <code>reglementations-pending.json</code> pour afficher les changements en attente.</p>
-  <div id="cards"></div>
 
-  <script>
-    const cardsEl = document.getElementById('cards');
-    let pendingData = null;
+<h1>Validation tracker réglementaire</h1>
+<p class="meta" id="meta">Chargement...</p>
 
-    // Auto-load from admin server API
-    fetch('/api/pending').then(r => r.ok ? r.json() : null).then(data => {
-      if (data) { pendingData = data; render(); }
-    }).catch(() => {
-      cardsEl.innerHTML = '<div class="empty">Serveur admin non démarré.<br><code>node script/admin-server.cjs</code></div>';
-    });
+<div class="toolbar">
+  <div class="toolbar-stats" id="stats">—</div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <span class="status-msg" id="status-msg"></span>
+    <button class="btn-save" id="btn-save" disabled onclick="saveApproved()">
+      Enregistrer les approuvés
+    </button>
+    <button class="btn-publish" id="btn-publish"
+      style="display:none; background:#1A1814; color:white; padding:10px 24px; font-size:15px; border-radius:6px;"
+      onclick="publish()">
+      🚀 Publier sur le site
+    </button>
+  </div>
+</div>
 
-    function render() {
-      if (!pendingData || pendingData.pending.length === 0) {
-        cardsEl.innerHTML = '<div class="empty">Aucun changement en attente.</div>';
-        return;
-      }
+<div id="candidates"></div>
 
-      const statusEl = document.querySelector('.status');
-      statusEl.textContent = `Généré le ${new Date(pendingData.generated_at).toLocaleString('fr-FR')} — ${pendingData.pending.length} changement(s)`;
+<script>
+let candidates = [];
+let decisions = {}; // id → { action: 'approve'|'reject', description }
 
-      cardsEl.innerHTML = pendingData.pending.map((p, i) => `
-        <div class="card" id="card-${i}">
-          <div class="card-header">
-            <span class="card-id">${p.id}</span>
-            <span class="card-type">${p.type_changement}</span>
-          </div>
-          <p class="card-desc">${p.description}</p>
-          <p class="card-detail">Champ : ${p.champ}</p>
-          ${p.valeur_actuelle ? `<p class="card-detail">Actuel : ${p.valeur_actuelle}</p>` : ''}
-          ${p.valeur_proposee ? `<p class="card-detail">Proposé : ${typeof p.valeur_proposee === 'object' ? JSON.stringify(p.valeur_proposee) : p.valeur_proposee}</p>` : ''}
-          <p class="card-detail">URL : <a href="${p.url_detectee}" target="_blank">${p.url_detectee}</a></p>
-          <div class="card-actions">
-            <button class="btn btn-accept" onclick="accept(${i})">Valider</button>
-            <button class="btn btn-reject" onclick="reject(${i})">Rejeter</button>
+async function load() {
+  try {
+    const res = await fetch('/api/tracker/pending');
+    const data = await res.json();
+    candidates = data.candidates || [];
+
+    document.getElementById('meta').textContent =
+      `Généré le ${new Date(data.generated_at).toLocaleString('fr-FR')} · `
+      + `Source : ${data.source || '—'} · `
+      + `${candidates.length} candidat(s)`;
+
+    render();
+  } catch(e) {
+    document.getElementById('meta').textContent = 'Erreur de chargement — admin-server.cjs tourne ?';
+  }
+}
+
+function render() {
+  const container = document.getElementById('candidates');
+
+  if (candidates.length === 0) {
+    container.innerHTML = '<div class="empty">Aucun candidat en attente.<br>Lance tracker-from-platform.cjs pour en générer.</div>';
+    updateStats();
+    return;
+  }
+
+  container.innerHTML = candidates.map(c => `
+    <div class="card ${(c.score || 0) >= 35 ? 'high' : ''}" id="card-${c.id}">
+      <div class="card-header">
+        <div>
+          <div class="titre">${escHtml(c.titre)}</div>
+          <div class="url" style="margin-top:4px">
+            <a href="${escHtml(c.url)}" target="_blank" rel="noopener">${escHtml(c.url)}</a>
           </div>
         </div>
-      `).join('');
-    }
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
+          <span class="badge">${escHtml(c.source)}</span>
+          <span class="badge">${escHtml(c.date)}</span>
+          <span class="badge">score ${c.score || '—'}</span>
+        </div>
+      </div>
 
-    async function accept(i) {
-      const res = await fetch('/api/accept', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({index: i}) });
-      const data = await res.json();
-      if (data.ok) {
-        document.getElementById('card-' + i).style.opacity = '0.4';
-        document.getElementById('card-' + i).querySelector('.btn-accept').textContent = '✓ Validé';
-        if (data.remaining === 0) setTimeout(() => location.reload(), 500);
-      }
-    }
+      <div class="description-label">Description pour le tracker</div>
+      <textarea
+        id="desc-${c.id}"
+        placeholder="Résumé éditorial — laisser vide pour utiliser le summary de la plateforme"
+      >${escHtml(c.description || '')}</textarea>
 
-    async function reject(i) {
-      const res = await fetch('/api/reject', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({index: i}) });
-      const data = await res.json();
-      if (data.ok) location.reload();
-    }
-  </script>
+      <div class="actions">
+        <button class="btn-approve" onclick="decide('${c.id}', 'approve')">✓ Approuver</button>
+        <button class="btn-reject" onclick="decide('${c.id}', 'reject')">✗ Rejeter</button>
+      </div>
+    </div>
+  `).join('');
+
+  updateStats();
+}
+
+function decide(id, action) {
+  const desc = document.getElementById(`desc-${id}`).value.trim();
+  decisions[id] = { action, description: desc };
+
+  const card = document.getElementById(`card-${id}`);
+  card.classList.remove('approved', 'rejected');
+  card.classList.add(action === 'approve' ? 'approved' : 'rejected');
+
+  updateStats();
+}
+
+function updateStats() {
+  const approved = Object.values(decisions).filter(d => d.action === 'approve').length;
+  const rejected = Object.values(decisions).filter(d => d.action === 'reject').length;
+  const pending = candidates.length - approved - rejected;
+
+  document.getElementById('stats').textContent =
+    `${candidates.length} candidats · ✓ ${approved} approuvés · ✗ ${rejected} rejetés · ${pending} en attente`;
+
+  document.getElementById('btn-save').disabled = approved === 0;
+}
+
+async function saveApproved() {
+  const toSave = candidates
+    .filter(c => decisions[c.id]?.action === 'approve')
+    .map(c => ({
+      ...c,
+      description: decisions[c.id].description || c.description || c.summary || '',
+      statut: 'publié'
+    }));
+
+  if (toSave.length === 0) return;
+
+  document.getElementById('status-msg').textContent = 'Enregistrement...';
+  document.getElementById('btn-save').disabled = true;
+
+  try {
+    const res = await fetch('/api/tracker/approve', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ entries: toSave })
+    });
+
+    if (!res.ok) throw new Error(await res.text());
+
+    const result = await res.json();
+    document.getElementById('status-msg').textContent =
+      `✓ ${result.added} entrée(s) ajoutée(s) au tracker`;
+    document.getElementById('btn-publish').style.display = 'inline-block';
+
+    // Retirer les approuvés/rejetés de la liste
+    const toRemove = Object.keys(decisions);
+    candidates = candidates.filter(c => !toRemove.includes(c.id));
+    decisions = {};
+    render();
+
+  } catch(e) {
+    document.getElementById('status-msg').textContent = `Erreur : ${e.message}`;
+    document.getElementById('btn-save').disabled = false;
+  }
+}
+
+function escHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+async function publish() {
+  document.getElementById('status-msg').textContent = 'Publication en cours...';
+  document.getElementById('btn-publish').disabled = true;
+
+  try {
+    const res = await fetch('/api/tracker/publish', { method: 'POST' });
+    if (!res.ok) throw new Error(await res.text());
+
+    document.getElementById('status-msg').textContent = '✅ Publié sur early-brief.com';
+    document.getElementById('btn-publish').style.display = 'none';
+  } catch(e) {
+    document.getElementById('status-msg').textContent = `❌ Erreur : ${e.message}`;
+    document.getElementById('btn-publish').disabled = false;
+  }
+}
+
+load();
+</script>
 </body>
 </html>
