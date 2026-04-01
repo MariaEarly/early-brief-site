@@ -466,8 +466,7 @@ async function fetchCandidates() {
         const hasScore = (parseFloat(a.score) || 0) >= SCORE_MIN;
         const afterCutoff = !a.published_at || new Date(a.published_at) >= new Date('2026-01-01');
         const isNew = a.original_url && !existingUrls.has(a.original_url);
-        const isNotGoogleNews = !(a.original_url || '').includes('news.google.com');
-        return isTrackerSource && hasScore && afterCutoff && isNew && isNotGoogleNews;
+        return isTrackerSource && hasScore && afterCutoff && isNew;
       })
       .filter(a => {
         // Client-side date range filter on published_at
