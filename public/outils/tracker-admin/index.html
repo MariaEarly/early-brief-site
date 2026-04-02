@@ -469,12 +469,6 @@ async function fetchCandidates() {
         const isNotGoogleNews = !(a.original_url || '').includes('news.google.com');
         return isTrackerSource && hasScore && afterCutoff && isNew && isNotGoogleNews;
       })
-      .filter(a => {
-        // Client-side date range filter on published_at
-        const pubDate = a.published_at ? a.published_at.substring(0, 10) : null;
-        if (pubDate && (pubDate < dateFrom || pubDate > dateTo)) return false;
-        return true;
-      })
       .map(a => ({
         id: a.id,
         date: formatDateFr(a.published_at || a.created_at),
