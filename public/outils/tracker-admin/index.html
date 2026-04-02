@@ -497,7 +497,8 @@ async function fetchCandidates() {
     const GENERIC_TITLES = [
       'ressources', 'resources', 'contact', 'contact us',
       'conseil européen', 'european council', 'public consultations',
-      'consultations publiques', 'home', 'accueil', 'news', 'actualités'
+      'consultations publiques', 'home', 'accueil', 'news', 'actualités',
+      'fincen.gov', 'ofac', 'site officiel'
     ];
     const OFFICIAL_DOMAINS = [
       'amla.europa.eu', 'eba.europa.eu', 'esma.europa.eu',
@@ -522,10 +523,11 @@ async function fetchCandidates() {
         const passesFilter = isPriority || (isOther && hasScore);
         const isOfficialDomain = OFFICIAL_DOMAINS.some(d => url.includes(d));
         const isNotGeneric = !GENERIC_TITLES.some(t => title === t);
+        const hasMeaningfulTitle = (a.title || '').length > 15;
         const afterCutoff = !a.published_at || new Date(a.published_at) >= new Date('2026-01-01');
         const isNew = a.original_url && !existingUrls.has(a.original_url);
         const isNotGoogleNews = !url.includes('news.google.com');
-        return passesFilter && isOfficialDomain && isNotGeneric && afterCutoff && isNew && isNotGoogleNews;
+        return passesFilter && isOfficialDomain && isNotGeneric && hasMeaningfulTitle && afterCutoff && isNew && isNotGoogleNews;
       })
       .map(a => ({
         id: a.id,
