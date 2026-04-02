@@ -494,18 +494,25 @@ async function fetchCandidates() {
     const PRIORITY_SOURCES = ['AMLA', 'EBA', 'ESMA', 'AMF', 'ACPR', 'Tracfin', 'FATF', 'Conseil UE', 'Commission EU', 'OFAC', 'OFSI', 'Moneyval', 'FinCEN', 'Legifrance'];
     const OTHER_SOURCES = ['Egmont', 'Wolfsberg', 'BIS', 'FSB', 'EIOPA', 'ECB', 'CNIL', 'AI Office'];
     const SCORE_MIN = 30;
+    const GENERIC_TITLES = [
+      'ressources', 'resources', 'contact', 'contact us',
+      'conseil européen', 'european council', 'public consultations',
+      'consultations publiques', 'home', 'accueil', 'news', 'actualités'
+    ];
     const existingUrls = new Set(existingData.map(e => e.url));
     candidates = articles
       .filter(a => {
         const src = a.source_name || '';
+        const title = (a.title || '').toLowerCase().trim();
         const isPriority = PRIORITY_SOURCES.some(s => src.toLowerCase().includes(s.toLowerCase()));
         const isOther = OTHER_SOURCES.some(s => src.toLowerCase().includes(s.toLowerCase()));
         const hasScore = (parseFloat(a.score) || 0) >= SCORE_MIN;
         const passesFilter = isPriority || (isOther && hasScore);
+        const isNotGeneric = !GENERIC_TITLES.some(t => title === t);
         const afterCutoff = !a.published_at || new Date(a.published_at) >= new Date('2026-01-01');
         const isNew = a.original_url && !existingUrls.has(a.original_url);
         const isNotGoogleNews = !(a.original_url || '').includes('news.google.com');
-        return passesFilter && afterCutoff && isNew && isNotGoogleNews;
+        return passesFilter && isNotGeneric && afterCutoff && isNew && isNotGoogleNews;
       })
       .map(a => ({
         id: a.id,
