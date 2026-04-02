@@ -356,6 +356,7 @@
     <select id="filter-month"><option value="all">Mois — tous</option></select>
     <select id="filter-source"><option value="all">Source — toutes</option></select>
     <select id="filter-statut"><option value="all">Statut — tous</option></select>
+    <select id="filter-perimetre"><option value="fr-eu">Périmètre — France / UE</option><option value="international">Périmètre — UK / US</option><option value="all">Périmètre — Tout</option></select>
     <input type="search" id="filter-search" placeholder="Rechercher…" class="filter-search">
     <button class="export-btn" onclick="exportCSV()">↓ Excel</button>
     <button type="button" class="filter-reset" onclick="resetFilters()">Réinitialiser</button>
@@ -860,12 +861,22 @@ function initFilters() {
     statutSelect.appendChild(opt);
   });
 
+  // Perimeter source groups
+  const PERIMETER_FR_EU = [
+    'ACPR', 'AMF', 'Tracfin', 'EBA', 'ESMA', 'AMLA', 'FATF', 'Conseil UE',
+    'Commission EU', 'Legifrance', 'DGT Trésor', 'COLB', 'Banque de France',
+    'CNIL', 'Moneyval', 'Europarl', 'EIOPA', 'ECB', 'Egmont', 'Wolfsberg',
+    'UN Sanctions', 'BIS', 'FSB', 'AI Office'
+  ];
+  const PERIMETER_INTERNATIONAL = ['OFAC', 'OFSI', 'FinCEN'];
+
   // Filter logic
   function applyFilters() {
     const searchVal = document.getElementById('filter-search').value.toLowerCase().trim();
     const monthVal = monthSelect.value;
     const sourceVal = sourceSelect.value;
     const statutVal = statutSelect.value;
+    const perimetre = document.getElementById('filter-perimetre').value;
 
     let visible = 0;
     const visibleMonths = new Set();
@@ -875,8 +886,14 @@ function initFilters() {
       const matchSource = sourceVal === 'all' || row.source === sourceVal;
       const matchStatut = statutVal === 'all' || row.statut === statutVal;
       const matchSearch = !searchVal || row.text.includes(searchVal);
+      let matchPerimetre = true;
+      if (perimetre === 'fr-eu') {
+        matchPerimetre = PERIMETER_FR_EU.some(s => (row.source || '').toLowerCase().includes(s.toLowerCase()));
+      } else if (perimetre === 'international') {
+        matchPerimetre = PERIMETER_INTERNATIONAL.some(s => (row.source || '').toLowerCase().includes(s.toLowerCase()));
+      }
 
-      const show = matchMonth && matchSource && matchStatut && matchSearch;
+      const show = matchMonth && matchSource && matchStatut && matchSearch && matchPerimetre;
       row.el.classList.toggle('row-hidden', !show);
       if (show) { visible++; visibleMonths.add(row.month); }
     });
@@ -900,12 +917,14 @@ function initFilters() {
   monthSelect.addEventListener('change', applyFilters);
   sourceSelect.addEventListener('change', applyFilters);
   statutSelect.addEventListener('change', applyFilters);
+  document.getElementById('filter-perimetre').addEventListener('change', applyFilters);
 
   window.resetFilters = function() {
     document.getElementById('filter-search').value = '';
     monthSelect.value = 'all';
     sourceSelect.value = 'all';
     statutSelect.value = 'all';
+    document.getElementById('filter-perimetre').value = 'fr-eu';
     applyFilters();
   };
 }
@@ -949,6 +968,7 @@ function resetFilters() {
   document.getElementById('filter-month').value = 'all'; document.getElementById('filter-month').options[0].textContent = 'Mois — tous';
   document.getElementById('filter-source').value = 'all';
   document.getElementById('filter-statut').value = 'all';
+  document.getElementById('filter-perimetre').value = 'fr-eu';
   document.querySelectorAll('.veille-table tbody tr').forEach(row => {
     if (!row.classList.contains('month-separator')) row.classList.remove('row-hidden');
   });
