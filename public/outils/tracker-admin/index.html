@@ -475,6 +475,7 @@ async function fetchCandidates() {
       .map(a => ({
         id: a.id,
         date: formatDateFr(a.published_at || a.created_at),
+        published_at: a.published_at || a.created_at,
         source: a.source_name || 'Autre',
         titre: stripHtml(a.title),
         description: stripHtml(a.summary || ''),
@@ -483,7 +484,7 @@ async function fetchCandidates() {
         type_source: 'officielle',
         statut: 'publie'
       }))
-      .sort((a, b) => b.score - a.score);
+      .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 
     document.getElementById('count-candidates').textContent = candidates.length;
     document.getElementById('app-meta').textContent =
