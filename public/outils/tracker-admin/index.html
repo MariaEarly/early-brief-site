@@ -455,6 +455,11 @@ async function fetchCandidates() {
     const artData = await artRes.json();
     const articles = artData.items || artData;
 
+    // DEBUG — temporaire
+    console.log('Total articles API:', articles.length);
+    console.log('Sources distinctes:', [...new Set(articles.map(a => a.source_name))]);
+    console.log('Scores min/max:', Math.min(...articles.map(a => parseFloat(a.score)||0)), Math.max(...articles.map(a => parseFloat(a.score)||0)));
+
     // Filter: tracker sources only, score >= 35, dedup, no Google News
     const TRACKER_SOURCES = ['AMLA', 'EBA', 'ESMA', 'AMF', 'ACPR', 'Tracfin', 'FATF', 'Conseil UE', 'Commission EU'];
     const SCORE_MIN = 30;
