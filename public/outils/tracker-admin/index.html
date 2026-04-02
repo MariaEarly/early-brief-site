@@ -348,6 +348,41 @@ let existingData = [];
 let existingFileSha = '';
 let decisions = {};
 
+// ── AI Description Generator ──
+async function generateDescription(titre, source) {
+  try {
+    const res = await fetch('/.netlify/functions/describe-tracker', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titre, source })
+    });
+    const data = await res.json();
+    return data.description || titre || '';
+  } catch {
+    return titre || '';
+  }
+}
+
+async function generateDescriptions(items) {
+  const results = [];
+  const BATCH_SIZE = 10;
+  const statusEl = document.getElementById('status-msg');
+
+  for (let i = 0; i < items.length; i += BATCH_SIZE) {
+    const batch = items.slice(i, i + BATCH_SIZE);
+    const batchResults = await Promise.all(
+      batch.map(async c => ({
+        ...c,
+        description: await generateDescription(c.titre, c.source)
+      }))
+    );
+    results.push(...batchResults);
+    statusEl.textContent = `Descriptions... ${Math.min(i + BATCH_SIZE, items.length)}/${items.length}`;
+  }
+  statusEl.textContent = '';
+  return results;
+}
+
 // ── Auth ──
 async function sha256(msg) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
@@ -489,6 +524,9 @@ async function fetchCandidates() {
     document.getElementById('count-candidates').textContent = candidates.length;
     document.getElementById('app-meta').textContent =
       `${candidates.length} candidat(s) depuis la plateforme (${dateFrom} → ${dateTo}, sources prioritaires + autres score >= ${SCORE_MIN})`;
+
+    // Generate AI descriptions (batched, 10 at a time)
+    candidates = await generateDescriptions(candidates);
 
     decisions = {};
     renderCandidates();
