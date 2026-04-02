@@ -499,20 +499,33 @@ async function fetchCandidates() {
       'conseil européen', 'european council', 'public consultations',
       'consultations publiques', 'home', 'accueil', 'news', 'actualités'
     ];
+    const OFFICIAL_DOMAINS = [
+      'amla.europa.eu', 'eba.europa.eu', 'esma.europa.eu',
+      'acpr.banque-france.fr', 'amf-france.org', 'tracfin.gouv.fr',
+      'fatf-gafi.org', 'consilium.europa.eu', 'ec.europa.eu',
+      'legifrance.gouv.fr', 'tresor.economie.gouv.fr', 'banque-france.fr',
+      'cnil.fr', 'coe.int', 'europarl.europa.eu', 'eiopa.europa.eu',
+      'ecb.europa.eu', 'egmontgroup.org', 'wolfsberg-group.org',
+      'un.org', 'bis.org', 'fsb.org', 'digital-strategy.ec.europa.eu',
+      'ofac.treas.gov', 'treasury.gov', 'fincen.gov', 'gov.uk',
+      'eur-lex.europa.eu', 'finance.ec.europa.eu'
+    ];
     const existingUrls = new Set(existingData.map(e => e.url));
     candidates = articles
       .filter(a => {
         const src = a.source_name || '';
+        const url = (a.original_url || '').toLowerCase();
         const title = (a.title || '').toLowerCase().trim();
         const isPriority = PRIORITY_SOURCES.some(s => src.toLowerCase().includes(s.toLowerCase()));
         const isOther = OTHER_SOURCES.some(s => src.toLowerCase().includes(s.toLowerCase()));
         const hasScore = (parseFloat(a.score) || 0) >= SCORE_MIN;
         const passesFilter = isPriority || (isOther && hasScore);
+        const isOfficialDomain = OFFICIAL_DOMAINS.some(d => url.includes(d));
         const isNotGeneric = !GENERIC_TITLES.some(t => title === t);
         const afterCutoff = !a.published_at || new Date(a.published_at) >= new Date('2026-01-01');
         const isNew = a.original_url && !existingUrls.has(a.original_url);
-        const isNotGoogleNews = !(a.original_url || '').includes('news.google.com');
-        return passesFilter && isNotGeneric && afterCutoff && isNew && isNotGoogleNews;
+        const isNotGoogleNews = !url.includes('news.google.com');
+        return passesFilter && isOfficialDomain && isNotGeneric && afterCutoff && isNew && isNotGoogleNews;
       })
       .map(a => ({
         id: a.id,
