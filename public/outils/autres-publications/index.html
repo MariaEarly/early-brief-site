@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Actualités réglementaires — Early Brief</title>
+<title>Autres publications — Early Brief</title>
 <meta name="description" content="Publications, rapports et signaux des régulateurs en conformité financière — LCB-FT, MiCA, DORA, sanctions internationales.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://early-brief.com/outils/actualites/">
+<link rel="canonical" href="https://early-brief.com/outils/autres-publications/">
 <meta name="theme-color" content="#F5F2EB">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Actualités réglementaires — Early Brief">
-<meta property="og:description" content="Publications, rapports et signaux des régulateurs — LCB-FT, MiCA, DORA, sanctions.">
-<meta property="og:url" content="https://early-brief.com/outils/actualites/">
+<meta property="og:title" content="Autres publications — Early Brief">
+<meta property="og:description" content="Discours, rapports, positions et signaux des régulateurs — hors textes applicables.">
+<meta property="og:url" content="https://early-brief.com/outils/autres-publications/">
 <meta property="og:site_name" content="Early Brief">
 <meta property="og:locale" content="fr_FR">
 
@@ -109,7 +109,7 @@
   <a href="/" style="font-family:'Cormorant',serif;font-size:1.3rem;font-weight:600;color:#1A1814;text-decoration:none;letter-spacing:-0.01em;">Early <em style="font-style:normal;color:#9E3D1B;">Brief</em></a>
   <nav style="display:flex;gap:1.5rem;font-family:'Hanken Grotesk',sans-serif;font-size:0.85rem;">
     <a href="/ressources/" style="color:#4A4540;text-decoration:none;">Ressources</a>
-    <a href="/outils/actualites/" style="color:#9E3D1B;text-decoration:none;font-weight:500;">Actualités</a>
+    <a href="/outils/autres-publications/" style="color:#9E3D1B;text-decoration:none;font-weight:500;">Actualités</a>
     <a href="/offre/" style="color:#4A4540;text-decoration:none;">Offre</a>
     <a href="/a-propos/" style="color:#4A4540;text-decoration:none;">À propos</a>
     <a href="/newsletter/" style="color:#4A4540;text-decoration:none;">Newsletter</a>
@@ -120,8 +120,8 @@
 <div class="brand-bar">
   <div class="brand-inner">
     <div class="brand-title-wrap">
-      <div class="brand-title">Actualités réglementaires</div>
-      <div class="brand-sub">Publications, rapports et signaux des régulateurs — LCB-FT, MiCA, DORA, sanctions</div>
+      <div class="brand-title">Autres publications</div>
+      <div class="brand-sub">Discours, rapports, positions et signaux des régulateurs — hors textes applicables</div>
     </div>
   </div>
 
@@ -165,7 +165,7 @@
 
 <!-- STICKY CTA BAR -->
 <div class="cta-bar" id="cta-bar">
-  <p>Ces actualités sont un extrait d'<strong>Early Brief</strong> — la veille LCB-FT, sanctions et conformité.</p>
+  <p><strong>Early Brief</strong> — Veille réglementaire LCB-FT, sanctions et conformité financière.</p>
   <a class="cta-btn" href="https://substack.com/@maryagar" target="_blank" rel="noopener">S'abonner gratuitement</a>
   <button class="cta-dismiss" onclick="document.getElementById('cta-bar').style.display='none';document.body.style.paddingBottom='24px';" title="Fermer">&times;</button>
 </div>
@@ -178,7 +178,7 @@ const TYPE_COLORS = {
 
 (async function loadActualites() {
   try {
-    const res = await fetch('./actualites-data.json');
+    const res = await fetch('./autres-publications-data.json');
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const entries = await res.json();
 
@@ -330,7 +330,7 @@ function exportCSV() {
   const csv = BOM + lines.join('\n');
   const a = document.createElement('a');
   a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-  a.download = 'early-brief-actualites-2026.csv';
+  a.download = 'early-brief-autres-publications-2026.csv';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

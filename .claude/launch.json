@@ -3,15 +3,15 @@
   "configurations": [
     {
       "name": "astro-dev",
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "/usr/local/bin/npm",
       "runtimeArgs": ["run", "dev"],
       "port": 4321
     },
     {
       "name": "static-public",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "public", "-l", "3333"],
-      "port": 3333
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["-e", "const h=require('http'),f=require('fs'),p=require('path');h.createServer((q,r)=>{let u=p.join(__dirname,'..','public',q.url==='/'?'index.html':q.url);if(f.existsSync(u)&&f.statSync(u).isDirectory())u=p.join(u,'index.html');if(!f.existsSync(u)){r.writeHead(404);r.end('Not found');return}const e=p.extname(u),t={'.html':'text/html','.json':'application/json','.css':'text/css','.js':'text/javascript'}[e]||'text/plain';r.writeHead(200,{'Content-Type':t+'; charset=utf-8'});r.end(f.readFileSync(u))}).listen(3335,()=>console.log('ok'))"],
+      "port": 3335
     }
   ]
 }

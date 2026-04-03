@@ -369,10 +369,10 @@ async function generateDescription(titre, source) {
     return {
       description: data.description || titre || '',
       type: data.type || 'INTELLIGENCE',
-      destination: data.destination || 'actualites'
+      destination: data.destination || 'autres-publications'
     };
   } catch {
-    return { description: titre || '', type: 'INTELLIGENCE', destination: 'actualites' };
+    return { description: titre || '', type: 'INTELLIGENCE', destination: 'autres-publications' };
   }
 }
 
@@ -614,7 +614,7 @@ function renderCandidates() {
           style="font-size:12px;padding:3px 8px;border:1px solid #ddd;border-radius:4px;"
           onchange="updateDestination('${c.id}', this.value)">
           <option value="tracker" ${c.destination === 'tracker' ? 'selected' : ''}>→ Tracker</option>
-          <option value="actualites" ${c.destination === 'actualites' ? 'selected' : ''}>→ Actualités</option>
+          <option value="autres-publications" ${c.destination === 'autres-publications' ? 'selected' : ''}>→ Autres publications</option>
         </select>
       </div>
       <div class="desc-label">Description pour le tracker</div>
@@ -635,7 +635,7 @@ function updateDestination(id, destination) {
 
 function decide(id, action) {
   const desc = document.getElementById(`desc-${id}`).value.trim();
-  const destination = document.getElementById(`dest-${id}`)?.value || 'actualites';
+  const destination = document.getElementById(`dest-${id}`)?.value || 'autres-publications';
   decisions[id] = { action, description: desc, destination };
   const card = document.getElementById(`card-${id}`);
   card.classList.remove('approved', 'rejected');
@@ -666,7 +666,7 @@ async function publishApproved() {
       description: decisions[c.id].description || c.description || '',
       url: c.url,
       type: c.type || 'INTELLIGENCE',
-      destination: decisions[c.id].destination || c.destination || 'actualites',
+      destination: decisions[c.id].destination || c.destination || 'autres-publications',
       type_source: c.type_source || 'officielle',
       statut: 'publie'
     }));

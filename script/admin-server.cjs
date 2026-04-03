@@ -147,8 +147,8 @@ const server = http.createServer((req, res) => {
         trackerData.unshift(...newTrackerEntries);
         fs.writeFileSync(TRACKER_DATA, JSON.stringify(trackerData, null, 2));
 
-        // Actualités
-        const actualitesPath = path.join(__dirname, '..', 'public', 'outils', 'actualites', 'actualites-data.json');
+        // Autres publications
+        const actualitesPath = path.join(__dirname, '..', 'public', 'outils', 'autres-publications', 'autres-publications-data.json');
         const actualitesData = JSON.parse(fs.readFileSync(actualitesPath, 'utf-8'));
         const existingActualitesUrls = new Set(actualitesData.map(e => e.url));
         const newActualitesEntries = toActualites
@@ -194,7 +194,7 @@ const server = http.createServer((req, res) => {
       day: '2-digit', month: '2-digit', year: 'numeric'
     });
 
-    const cmd = `cd "${projectRoot}" && git add public/outils/tracker/tracker-data.json public/outils/actualites/actualites-data.json && git commit -m "tracker+actualites: mise à jour ${date}" && git push`;
+    const cmd = `cd "${projectRoot}" && git add public/outils/tracker/tracker-data.json public/outils/autres-publications/autres-publications-data.json && git commit -m "tracker+autres-publications: mise à jour ${date}" && git push`;
 
     exec(cmd, (error, stdout, stderr) => {
       if (error) {

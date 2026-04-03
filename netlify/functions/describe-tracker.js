@@ -49,7 +49,7 @@ Règles strictes :
 
     if (!response.ok) {
       console.error('Anthropic error:', data);
-      return { statusCode: 200, headers, body: JSON.stringify({ description: titre, type: 'INTELLIGENCE', destination: 'actualites' }) };
+      return { statusCode: 200, headers, body: JSON.stringify({ description: titre, type: 'INTELLIGENCE', destination: 'autres-publications' }) };
     }
 
     const description = data.content[0].text.trim();
@@ -79,7 +79,9 @@ Types disponibles :
 
 Destination :
 - "tracker" si TEXTE, DECISION ou CONSULTATION
-- "actualites" si RAPPORT ou INTELLIGENCE`,
+- "autres-publications" si RAPPORT ou INTELLIGENCE
+
+Utilise exactement ces valeurs de destination, sans variante.`,
         messages: [{
           role: 'user',
           content: `Source : ${source}\nTitre : ${titre}\n\nRéponds : {"type": "...", "destination": "..."}`
@@ -87,7 +89,7 @@ Destination :
       }),
     });
 
-    let classification = { type: 'INTELLIGENCE', destination: 'actualites' };
+    let classification = { type: 'INTELLIGENCE', destination: 'autres-publications' };
     try {
       const classifyData = await classifyResponse.json();
       if (classifyResponse.ok) {
@@ -109,7 +111,7 @@ Destination :
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ description: titre, type: 'INTELLIGENCE', destination: 'actualites' })
+      body: JSON.stringify({ description: titre, type: 'INTELLIGENCE', destination: 'autres-publications' })
     };
   }
 };
