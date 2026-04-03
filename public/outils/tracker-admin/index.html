@@ -348,7 +348,16 @@ let existingData = [];
 let existingFileSha = '';
 let decisions = {};
 
-// ── AI Description Generator ──
+// ── Type colors ──
+const TYPE_COLORS = {
+  'TEXTE':        { bg: '#2C4A2E', text: '#F4F0E6' },
+  'DECISION':     { bg: '#9E3D1B', text: '#F4F0E6' },
+  'CONSULTATION': { bg: '#1B3A5C', text: '#F4F0E6' },
+  'RAPPORT':      { bg: '#4A4540', text: '#F4F0E6' },
+  'INTELLIGENCE': { bg: '#8A8480', text: '#F4F0E6' }
+};
+
+// ── AI Description + Classification Generator ──
 async function generateDescription(titre, source) {
   try {
     const res = await fetch('/.netlify/functions/describe-tracker', {
@@ -357,9 +366,13 @@ async function generateDescription(titre, source) {
       body: JSON.stringify({ titre, source })
     });
     const data = await res.json();
-    return data.description || titre || '';
+    return {
+      description: data.description || titre || '',
+      type: data.type || 'INTELLIGENCE',
+      destination: data.destination || 'actualites'
+    };
   } catch {
-    return titre || '';
+    return { description: titre || '', type: 'INTELLIGENCE', destination: 'actualites' };
   }
 }
 
@@ -371,10 +384,10 @@ async function generateDescriptions(items) {
   for (let i = 0; i < items.length; i += BATCH_SIZE) {
     const batch = items.slice(i, i + BATCH_SIZE);
     const batchResults = await Promise.all(
-      batch.map(async c => ({
-        ...c,
-        description: await generateDescription(c.titre, c.source)
-      }))
+      batch.map(async c => {
+        const ai = await generateDescription(c.titre, c.source);
+        return { ...c, description: ai.description, type: ai.type, destination: ai.destination };
+      })
     );
     results.push(...batchResults);
     statusEl.textContent = `Descriptions... ${Math.min(i + BATCH_SIZE, items.length)}/${items.length}`;
@@ -590,6 +603,20 @@ function renderCandidates() {
           <span class="badge">score ${c.score}</span>
         </div>
       </div>
+      <div style="display:flex;gap:8px;align-items:center;margin:8px 0;">
+        <span class="type-badge" id="badge-${c.id}"
+          style="background:${TYPE_COLORS[c.type]?.bg || '#8A8480'};color:${TYPE_COLORS[c.type]?.text || '#F4F0E6'};
+          padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;
+          font-family:'IBM Plex Mono',monospace;">
+          ${c.type || 'INTELLIGENCE'}
+        </span>
+        <select id="dest-${c.id}"
+          style="font-size:12px;padding:3px 8px;border:1px solid #ddd;border-radius:4px;"
+          onchange="updateDestination('${c.id}', this.value)">
+          <option value="tracker" ${c.destination === 'tracker' ? 'selected' : ''}>→ Tracker</option>
+          <option value="actualites" ${c.destination === 'actualites' ? 'selected' : ''}>→ Actualités</option>
+        </select>
+      </div>
       <div class="desc-label">Description pour le tracker</div>
       <textarea id="desc-${c.id}" placeholder="Resume editorial...">${esc(c.description)}</textarea>
       <div class="card-actions">
@@ -601,9 +628,15 @@ function renderCandidates() {
   updateStats();
 }
 
+function updateDestination(id, destination) {
+  const idx = candidates.findIndex(c => c.id === id);
+  if (idx !== -1) candidates[idx].destination = destination;
+}
+
 function decide(id, action) {
   const desc = document.getElementById(`desc-${id}`).value.trim();
-  decisions[id] = { action, description: desc };
+  const destination = document.getElementById(`dest-${id}`)?.value || 'actualites';
+  decisions[id] = { action, description: desc, destination };
   const card = document.getElementById(`card-${id}`);
   card.classList.remove('approved', 'rejected');
   card.classList.add(action === 'approve' ? 'approved' : 'rejected');
@@ -632,6 +665,8 @@ async function publishApproved() {
       titre: c.titre,
       description: decisions[c.id].description || c.description || '',
       url: c.url,
+      type: c.type || 'INTELLIGENCE',
+      destination: decisions[c.id].destination || c.destination || 'actualites',
       type_source: c.type_source || 'officielle',
       statut: 'publie'
     }));

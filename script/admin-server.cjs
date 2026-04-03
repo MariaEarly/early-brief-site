@@ -124,11 +124,15 @@ const server = http.createServer((req, res) => {
           return;
         }
 
-        const tracker = JSON.parse(fs.readFileSync(TRACKER_DATA, 'utf-8'));
-        const existingUrls = new Set(tracker.map(e => e.url));
+        // Séparer tracker vs actualités
+        const toTracker = entries.filter(e => e.destination === 'tracker');
+        const toActualites = entries.filter(e => e.destination !== 'tracker');
 
-        const newEntries = entries
-          .filter(e => !existingUrls.has(e.url))
+        // Tracker
+        const trackerData = JSON.parse(fs.readFileSync(TRACKER_DATA, 'utf-8'));
+        const existingTrackerUrls = new Set(trackerData.map(e => e.url));
+        const newTrackerEntries = toTracker
+          .filter(e => !existingTrackerUrls.has(e.url))
           .map(e => ({
             id: e.id.replace('candidate-', ''),
             date: e.date,
@@ -136,13 +140,32 @@ const server = http.createServer((req, res) => {
             titre: e.titre,
             description: e.description,
             url: e.url,
-            type_source: e.type_source || 'officielle',
-            statut: e.statut || 'publié'
+            type: e.type || 'TEXTE',
+            type_source: 'officielle',
+            statut: 'publié'
           }));
+        trackerData.unshift(...newTrackerEntries);
+        fs.writeFileSync(TRACKER_DATA, JSON.stringify(trackerData, null, 2));
 
-        // Ajouter en tête (entrées récentes en premier)
-        tracker.unshift(...newEntries);
-        fs.writeFileSync(TRACKER_DATA, JSON.stringify(tracker, null, 2));
+        // Actualités
+        const actualitesPath = path.join(__dirname, '..', 'public', 'outils', 'actualites', 'actualites-data.json');
+        const actualitesData = JSON.parse(fs.readFileSync(actualitesPath, 'utf-8'));
+        const existingActualitesUrls = new Set(actualitesData.map(e => e.url));
+        const newActualitesEntries = toActualites
+          .filter(e => !existingActualitesUrls.has(e.url))
+          .map(e => ({
+            id: e.id.replace('candidate-', ''),
+            date: e.date,
+            source: e.source,
+            titre: e.titre,
+            description: e.description,
+            url: e.url,
+            type: e.type || 'INTELLIGENCE',
+            type_source: 'officielle',
+            statut: 'publié'
+          }));
+        actualitesData.unshift(...newActualitesEntries);
+        fs.writeFileSync(actualitesPath, JSON.stringify(actualitesData, null, 2));
 
         // Nettoyer pending.json — retirer les entrées traitées
         if (fs.existsSync(TRACKER_PENDING)) {
@@ -152,9 +175,9 @@ const server = http.createServer((req, res) => {
           fs.writeFileSync(TRACKER_PENDING, JSON.stringify(pending, null, 2));
         }
 
-        console.log(`✓ ${newEntries.length} entrée(s) ajoutée(s) au tracker`);
+        console.log(`✓ ${newTrackerEntries.length} → tracker, ${newActualitesEntries.length} → actualités`);
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ added: newEntries.length }));
+        res.end(JSON.stringify({ added_tracker: newTrackerEntries.length, added_actualites: newActualitesEntries.length }));
       } catch (e) {
         res.writeHead(500); res.end(JSON.stringify({ error: e.message }));
       }
@@ -171,7 +194,7 @@ const server = http.createServer((req, res) => {
       day: '2-digit', month: '2-digit', year: 'numeric'
     });
 
-    const cmd = `cd "${projectRoot}" && git add public/outils/tracker/tracker-data.json && git commit -m "tracker: mise à jour ${date}" && git push`;
+    const cmd = `cd "${projectRoot}" && git add public/outils/tracker/tracker-data.json public/outils/actualites/actualites-data.json && git commit -m "tracker+actualites: mise à jour ${date}" && git push`;
 
     exec(cmd, (error, stdout, stderr) => {
       if (error) {

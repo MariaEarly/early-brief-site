@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités réglementaires — Early Brief</title>
+<meta name="description" content="Publications, rapports et signaux des régulateurs en conformité financière — LCB-FT, MiCA, DORA, sanctions internationales.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://early-brief.com/outils/actualites/">
+<meta name="theme-color" content="#F5F2EB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Actualités réglementaires — Early Brief">
+<meta property="og:description" content="Publications, rapports et signaux des régulateurs — LCB-FT, MiCA, DORA, sanctions.">
+<meta property="og:url" content="https://early-brief.com/outils/actualites/">
+<meta property="og:site_name" content="Early Brief">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  :root {
+    --ecru: #F4F0E6;
+    --green: #2C4A2E;
+    --green-light: #3D6B40;
+    --terra: #9E3D1B;
+    --white: #FFFFFF;
+    --gray-50:  #FAF8F5;
+    --gray-100: #F5F2EB;
+    --gray-200: #E8E4DC;
+    --gray-400: #A8A29E;
+    --gray-600: #5A5651;
+    --gray-900: #2D2B28;
+    --dark:   #2D2B28;
+    --mid:    #5A5651;
+    --light:  #A8A29E;
+    --border: #E8E4DC;
+    --font-display: 'Hanken Grotesk', system-ui, sans-serif;
+    --font-body:    'Hanken Grotesk', system-ui, sans-serif;
+    --font-serif:   'Source Serif 4', 'Cormorant', Georgia, serif;
+    --font-mono:    'IBM Plex Mono', monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--font-body); background:#F4F0E6; color:var(--dark); padding:0; padding-bottom:72px; }
+
+  /* CTA BAR */
+  .cta-bar { position:fixed; bottom:0; left:0; right:0; background:#F4F0E6; border-top:1px solid rgba(26,24,20,0.12); padding:10px 32px; display:flex; align-items:center; gap:16px; z-index:900; }
+  .cta-bar p { font-family:var(--font-body); font-size:12px; color:#4A4540; margin:0; }
+  .cta-bar p strong { color:#1A1814; }
+  .cta-bar a.cta-btn { font-family:var(--font-mono); font-size:11px; font-weight:500; color:#9E3D1B; background:transparent; border:1px solid #9E3D1B; padding:7px 16px; border-radius:2px; text-decoration:none; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; margin-left:auto; transition:all .15s; }
+  .cta-bar a.cta-btn:hover { background:#9E3D1B; color:#F4F0E6; }
+  .cta-dismiss { background:none; border:none; color:var(--gray-400); font-size:18px; cursor:pointer; padding:0 0 0 8px; line-height:1; }
+  .cta-dismiss:hover { color:var(--gray-900); }
+
+  .brand-bar { padding:32px 32px 0; background:var(--ecru); }
+  .brand-inner { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; }
+  .brand-title-wrap { display:flex; flex-direction:column; gap:6px; }
+  .brand-title { font-family:'Cormorant',Georgia,serif; font-size:36px; font-weight:300; color:var(--gray-900); letter-spacing:-0.01em; line-height:1.1; }
+  .brand-sub { font-size:15px; color:var(--gray-400); line-height:1.8; }
+
+  /* TABLE */
+  .veille-header { padding: 18px 28px 10px; }
+  .veille-wrapper { overflow-x:auto; overflow-y:auto; max-height:calc(100vh - 260px); padding:0 0 6px; }
+  .veille-table { width:100%; border-collapse:separate; border-spacing:0; font-size:14px; background:var(--ecru); table-layout:fixed; }
+  .veille-table thead th { font-family:var(--font-display); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--gray-400); background:transparent; border-bottom:1px solid rgba(26,24,20,0.14); padding:10px 12px; text-align:left; position:sticky; top:0; white-space:nowrap; z-index:2; }
+  .veille-table thead th:first-child { padding-left:28px; }
+  .veille-table tbody tr { background:transparent; transition:background .12s; }
+  .veille-table tbody tr:hover { background:rgba(26,24,20,0.04); }
+  .veille-table td { padding:12px 12px; vertical-align:middle; border-bottom:1px solid rgba(26,24,20,0.14); line-height:1.45; }
+  .veille-table td:first-child { padding-left:28px; }
+  .col-date { font-family:var(--font-display); font-size:12px; font-weight:500; color:var(--gray-400); width:100px; white-space:nowrap; font-variant-numeric:tabular-nums lining-nums; }
+  .col-source { font-size:12px; font-weight:700; color:var(--gray-900); width:110px; line-height:1.35; }
+  .col-type { width:110px; text-align:center; vertical-align:middle; white-space:nowrap; }
+  .col-sujet { font-family:var(--font-serif); font-size:14px; font-weight:400; color:var(--gray-900); line-height:1.35; }
+  .col-lien { width:110px; text-align:left; vertical-align:middle; white-space:nowrap; }
+
+  .badge-type {
+    display: inline-block;
+    padding: 3px 8px; border-radius: 2px;
+    font-family: var(--font-mono); font-size: 10px;
+    font-weight: 600; letter-spacing: .02em; white-space: nowrap;
+    color: #F4F0E6;
+  }
+
+  .link-btn { display:inline-block; font-size:12px; font-weight:600; color:#9E3D1B; text-decoration:none; }
+  .link-btn:hover { color:#7A2E14; text-decoration:underline; }
+
+  /* FILTER BAR */
+  .filter-bar { display:flex; gap:16px; padding:16px 28px 16px; align-items:center; border-bottom:1px solid #E3DDD2; background:var(--ecru); }
+  .filter-bar select { font-family:var(--font-body); font-size:0.85rem; font-weight:400; border:1px solid #C8C4B8; background:#F5F2EB url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239E3D1B'/%3E%3C/svg%3E") no-repeat right 0.75rem center; color:#4A4A3A; outline:none; cursor:pointer; padding:0.5rem 2rem 0.5rem 0.75rem; border-radius:2px; min-width:160px; -webkit-appearance:none; appearance:none; }
+  .filter-bar select:focus { border-color:#2D5A3D; }
+  .filter-search { font-family:var(--font-body); font-size:0.85rem; border:1px solid #C8C4B8; border-radius:2px; padding:0.5rem 0.75rem; outline:none; background:#F5F2EB; color:#4A4A3A; min-width:180px; }
+  .filter-search::placeholder { color:#9E9E8A; }
+  .filter-search:focus { border-color:#2D5A3D; }
+  .filter-results { font-size:12px; color:var(--gray-400); margin-left:auto; }
+  .export-btn { font-family:var(--font-body); font-size:0.85rem; font-weight:500; color:#2D5A3D; background:transparent; border:1px solid #2D5A3D; padding:0.5rem 0.75rem; border-radius:2px; cursor:pointer; transition:all .15s; }
+  .export-btn:hover { background:#2D5A3D; color:#F5F2EB; }
+  .filter-reset { font-family:var(--font-body); font-size:0.85rem; color:#9E3D1B; cursor:pointer; border:none; background:none; text-decoration:underline; align-self:center; padding:0; }
+  .filter-reset:hover { color:#7A2E14; }
+  .row-hidden { display:none !important; }
+
+  @media print {
+    body { background:var(--ecru); padding:0; }
+    .brand-bar, .cta-bar { display:none; }
+    .veille-table tbody tr:hover { background:inherit; }
+  }
+</style>
+</head>
+<body>
+<header style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid rgba(26,24,20,0.14);background:#F4F0E6;">
+  <a href="/" style="font-family:'Cormorant',serif;font-size:1.3rem;font-weight:600;color:#1A1814;text-decoration:none;letter-spacing:-0.01em;">Early <em style="font-style:normal;color:#9E3D1B;">Brief</em></a>
+  <nav style="display:flex;gap:1.5rem;font-family:'Hanken Grotesk',sans-serif;font-size:0.85rem;">
+    <a href="/ressources/" style="color:#4A4540;text-decoration:none;">Ressources</a>
+    <a href="/outils/actualites/" style="color:#9E3D1B;text-decoration:none;font-weight:500;">Actualités</a>
+    <a href="/offre/" style="color:#4A4540;text-decoration:none;">Offre</a>
+    <a href="/a-propos/" style="color:#4A4540;text-decoration:none;">À propos</a>
+    <a href="/newsletter/" style="color:#4A4540;text-decoration:none;">Newsletter</a>
+    <a href="/contact/" style="color:#4A4540;text-decoration:none;">Contact</a>
+  </nav>
+</header>
+
+<div class="brand-bar">
+  <div class="brand-inner">
+    <div class="brand-title-wrap">
+      <div class="brand-title">Actualités réglementaires</div>
+      <div class="brand-sub">Publications, rapports et signaux des régulateurs — LCB-FT, MiCA, DORA, sanctions</div>
+    </div>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <select id="filter-month"><option value="all">Mois — tous</option></select>
+    <select id="filter-source"><option value="all">Source — toutes</option></select>
+    <select id="filter-type"><option value="all">Type — tous</option><option value="RAPPORT">Rapport</option><option value="INTELLIGENCE">Intelligence</option></select>
+    <input type="search" id="filter-search" placeholder="Rechercher…" class="filter-search">
+    <button class="export-btn" onclick="exportCSV()">↓ Excel</button>
+    <button type="button" class="filter-reset" onclick="resetFilters()">Réinitialiser</button>
+    <div class="filter-results" id="filter-results"></div>
+  </div>
+</div>
+
+<div class="veille-wrapper">
+  <table class="veille-table">
+    <colgroup>
+      <col style="width:100px">
+      <col style="width:110px">
+      <col style="width:110px">
+      <col>
+      <col style="width:110px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Source</th>
+        <th>Type</th>
+        <th>Titre</th>
+        <th>Lien</th>
+      </tr>
+    </thead>
+    <tbody id="actu-tbody"></tbody>
+  </table>
+</div>
+
+<div style="text-align:center;padding:16px 0 8px;font-size:11px;color:var(--light);">
+  <a href="/outils/tracker/" style="color:var(--light);text-decoration:underline;">Tracker réglementaire</a>
+  &nbsp;·&nbsp; <a href="/politique-confidentialite/" style="color:var(--light);text-decoration:none;">Confidentialité</a>
+</div>
+
+<!-- STICKY CTA BAR -->
+<div class="cta-bar" id="cta-bar">
+  <p>Ces actualités sont un extrait d'<strong>Early Brief</strong> — la veille LCB-FT, sanctions et conformité.</p>
+  <a class="cta-btn" href="https://substack.com/@maryagar" target="_blank" rel="noopener">S'abonner gratuitement</a>
+  <button class="cta-dismiss" onclick="document.getElementById('cta-bar').style.display='none';document.body.style.paddingBottom='24px';" title="Fermer">&times;</button>
+</div>
+
+<script>
+const TYPE_COLORS = {
+  'RAPPORT':      '#4A4540',
+  'INTELLIGENCE': '#8A8480'
+};
+
+(async function loadActualites() {
+  try {
+    const res = await fetch('./actualites-data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const entries = await res.json();
+
+    const tbody = document.getElementById('actu-tbody');
+    const fragment = document.createDocumentFragment();
+
+    entries.forEach(entry => {
+      const tr = document.createElement('tr');
+
+      const dateParts = (entry.date || '').split('/');
+      const dateShort = dateParts.length >= 2 ? dateParts[0] + '/' + dateParts[1] : entry.date || '';
+      const typeLabel = entry.type || 'INTELLIGENCE';
+      const typeBg = TYPE_COLORS[typeLabel] || '#8A8480';
+
+      const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      tr.innerHTML =
+        '<td class="col-date">' + esc(dateShort) + '</td>' +
+        '<td class="col-source">' + esc(entry.source) + '</td>' +
+        '<td class="col-type"><span class="badge-type" style="background:' + typeBg + '">' + esc(typeLabel) + '</span></td>' +
+        '<td class="col-sujet">' + esc(entry.titre) + '</td>' +
+        '<td class="col-lien">' + (entry.url ? '<a href="' + entry.url + '" target="_blank" rel="noopener" class="link-btn">Voir ↗</a>' : '') + '</td>';
+
+      fragment.appendChild(tr);
+    });
+
+    tbody.appendChild(fragment);
+    document.dispatchEvent(new CustomEvent('actu-loaded', { detail: { count: entries.length } }));
+  } catch (err) {
+    console.error('Actualités: erreur chargement données', err);
+    document.getElementById('actu-tbody').innerHTML =
+      '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--light);">Aucune actualité pour le moment.</td></tr>';
+  }
+})();
+
+// Filters
+document.addEventListener('actu-loaded', function() {
+  const table = document.querySelector('.veille-table tbody');
+  if (!table) return;
+
+  const rows = Array.from(table.querySelectorAll('tr'));
+  const dataRows = [];
+  const sources = new Set();
+  const months = new Set();
+
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 5) return;
+
+    const dateText = cells[0]?.textContent.trim() || '';
+    const MOIS_NUM = {'01':'Janvier','02':'Février','03':'Mars','04':'Avril','05':'Mai','06':'Juin','07':'Juillet','08':'Août','09':'Septembre','10':'Octobre','11':'Novembre','12':'Décembre'};
+    const monthNum = dateText.split('/')[1];
+    const rowMonth = MOIS_NUM[monthNum] || '';
+
+    const source = cells[1]?.textContent.trim() || '';
+    const type = cells[2]?.textContent.trim() || '';
+    const fullText = row.textContent.toLowerCase();
+
+    sources.add(source);
+    if (rowMonth) months.add(rowMonth);
+
+    dataRows.push({ el: row, month: rowMonth, source, type, text: fullText });
+  });
+
+  // Populate month dropdown
+  const monthSelect = document.getElementById('filter-month');
+  const monthOrder = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  [...months].sort((a,b) => monthOrder.indexOf(a) - monthOrder.indexOf(b)).forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m; opt.textContent = m;
+    monthSelect.appendChild(opt);
+  });
+
+  // Populate source dropdown
+  const sourceSelect = document.getElementById('filter-source');
+  [...sources].sort((a,b) => a.localeCompare(b, 'fr')).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    sourceSelect.appendChild(opt);
+  });
+
+  const typeSelect = document.getElementById('filter-type');
+
+  function applyFilters() {
+    const searchVal = document.getElementById('filter-search').value.toLowerCase().trim();
+    const monthVal = monthSelect.value;
+    const sourceVal = sourceSelect.value;
+    const typeVal = typeSelect.value;
+
+    let visible = 0;
+    dataRows.forEach(row => {
+      const matchMonth = monthVal === 'all' || row.month === monthVal;
+      const matchSource = sourceVal === 'all' || row.source === sourceVal;
+      const matchType = typeVal === 'all' || row.type === typeVal;
+      const matchSearch = !searchVal || row.text.includes(searchVal);
+
+      const show = matchMonth && matchSource && matchType && matchSearch;
+      row.el.classList.toggle('row-hidden', !show);
+      if (show) visible++;
+    });
+
+    const resultsEl = document.getElementById('filter-results');
+    if (visible === dataRows.length) {
+      resultsEl.textContent = '';
+    } else {
+      resultsEl.textContent = visible + ' / ' + dataRows.length + ' items';
+    }
+  }
+
+  document.getElementById('filter-search').addEventListener('input', applyFilters);
+  monthSelect.addEventListener('change', applyFilters);
+  sourceSelect.addEventListener('change', applyFilters);
+  typeSelect.addEventListener('change', applyFilters);
+
+  window.resetFilters = function() {
+    document.getElementById('filter-search').value = '';
+    monthSelect.value = 'all';
+    sourceSelect.value = 'all';
+    typeSelect.value = 'all';
+    applyFilters();
+  };
+});
+
+// CSV Export
+function exportCSV() {
+  const BOM = '\uFEFF';
+  const sep = ';';
+  const headers = ['Date','Source','Type','Titre','Lien'];
+  const lines = [headers.join(sep)];
+
+  document.querySelectorAll('.veille-table tbody tr').forEach(row => {
+    if (row.classList.contains('row-hidden')) return;
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 5) return;
+    const vals = Array.from(cells).map((cell, i) => {
+      if (i === 4) {
+        const a = cell.querySelector('a');
+        return a ? a.href : '';
+      }
+      if (i === 2) {
+        const badge = cell.querySelector('.badge-type');
+        return badge ? badge.textContent.trim() : '';
+      }
+      return cell.textContent.trim();
+    });
+    lines.push(vals.map(v => '"' + v.replace(/"/g, '""') + '"').join(sep));
+  });
+
+  const csv = BOM + lines.join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'early-brief-actualites-2026.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function resetFilters() {
+  document.getElementById('filter-search').value = '';
+  document.getElementById('filter-month').value = 'all';
+  document.getElementById('filter-source').value = 'all';
+  document.getElementById('filter-type').value = 'all';
+  document.querySelectorAll('.veille-table tbody tr').forEach(row => row.classList.remove('row-hidden'));
+  document.getElementById('filter-results').textContent = '';
+}
+</script>
+</body>
+</html>
