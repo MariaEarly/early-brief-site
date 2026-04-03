@@ -7,7 +7,8 @@
     "description": "FinCEN propose une règle pour rémunérer les lanceurs d'alerte",
     "url": "https://www.fincen.gov/news/news-releases/fincen-proposes-rule-pay-whistleblowers",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "CONSULTATION"
   },
   {
     "id": "b74c8aa4-eefd-4eb6-9e77-acab68f5be58",
@@ -17,47 +18,8 @@
     "description": "Émission d'une licence générale modifiée liée à la Russie et publication de questions fréquemment posées modifiées",
     "url": "https://ofac.treasury.gov/recent-actions/20260330",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "04c252b7-b9ec-463c-b060-ebb0fef63a99",
-    "date": "30/03/2026",
-    "source": "EIOPA",
-    "titre": "EIOPA publishes third Report on the application of the Insurance Distribution Directive",
-    "description": "EIOPA publie son troisième rapport sur l'application de la directive sur la distribution d'assurance",
-    "url": "https://www.eiopa.europa.eu/eiopa-publishes-third-report-application-insurance-distribution-directive-2026-03-30_en",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "0c2e2288-305c-491b-a4bb-b90e680c956c",
-    "date": "30/03/2026",
-    "source": "EBA",
-    "titre": "François-Louis Michaud to take up his role as Chair of the European Banking Authority",
-    "description": "François-Louis Michaud prend ses fonctions de président de l'Autorité bancaire européenne",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/francois-louis-michaud-take-his-role-chair-european-banking-authority",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "424cb457-343b-4e81-900e-462e6f141f85",
-    "date": "30/03/2026",
-    "source": "AMF",
-    "titre": "L'AMF signe un accord de consultation pour contribuer aux travaux du FMSB",
-    "description": "L'AMF signe un accord de consultation pour contribuer aux travaux du FMSB",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/lamf-signe-un-accord-de-consultation-pour-contribuer-aux-travaux-du-fmsb#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "2203f84e-c895-400b-aa59-f90b27efb8c2",
-    "date": "30/03/2026",
-    "source": "ECB Supervision",
-    "titre": "ECB streamlines how it supervises banks’ internal models",
-    "description": "La BCE simplifie la supervision des modèles internes des banques",
-    "url": "https://www.bankingsupervision.europa.eu//press/pr/date/2026/html/ssm.pr260330~7f6b503e0c.en.html",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "962b397c-bc55-4b11-814a-ad193861b6c1",
@@ -67,27 +29,8 @@
     "description": "La BCE sanctionne BofA Securities Europe SA pour violation des exigences de reporting",
     "url": "https://www.bankingsupervision.europa.eu//press/pr/date/2026/html/ssm.pr260327~a4529c6c22.en.html",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "5ffeaeac-adc9-4b7e-9055-ff69974e5a1e",
-    "date": "27/03/2026",
-    "source": "AMF",
-    "titre": "L'AMF publie les dernières données sur l’évolution du marché monétaire à fin décembre 2025",
-    "description": "L'AMF publie les dernières données sur l'évolution du marché monétaire à fin décembre 2025",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/lamf-publie-les-dernieres-donnees-sur-levolution-du-marche-monetaire-fin-decembre-2025#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "2e4fb1ec-1e8d-444a-9b29-e3c7fddf0155",
-    "date": "27/03/2026",
-    "source": "AMF",
-    "titre": "Indicateurs sur le marché des fonds monétaires français entre le 31 décembre 2023 et le 31 décembre 2025",
-    "description": "Indicateurs du marché des fonds monétaires français du 31 décembre 2023 au 31 décembre 2025",
-    "url": "https://www.amf-france.org/fr/actualites-publications/publications/rapports-etudes-et-analyses/indicateurs-sur-le-marche-des-fonds-monetaires-francais-entre-le-31-decembre-2023-et-le-31-decembre#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "322769cb-7205-4973-994f-f53237448423",
@@ -97,7 +40,8 @@
     "description": "Retraits de désignations Global Magnitsky et de désignations liées à la Russie",
     "url": "https://ofac.treasury.gov/recent-actions/20260327",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "32ea4e3f-6038-4a10-90c8-b656c14a04a0",
@@ -107,27 +51,8 @@
     "description": "Émission de nouvelles licences générales et licences modifiées liées au Venezuela",
     "url": "https://ofac.treasury.gov/recent-actions/20260327_33",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "dd561ace-52c6-4c56-9e0f-4ca30d7b825b",
-    "date": "27/03/2026",
-    "source": "EBA",
-    "titre": "ESAs spring risk update highlights geopolitical pressures and rising private finance risks",
-    "description": "Mise à jour printanière des risques des AES : pressions géopolitiques et risques croissants de la finance privée",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/esas-spring-risk-update-highlights-geopolitical-pressures-and-rising-private-finance-risks",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "1668e558-1ad2-4c75-a799-0ae63cf7b861",
-    "date": "26/03/2026",
-    "source": "AMF",
-    "titre": "L'AMF clarifie sa doctrine sur plusieurs aspects relatifs aux sociétés de gestion de portefeuille",
-    "description": "L'AMF précise sa position sur différents aspects concernant les sociétés de gestion de portefeuille",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/lamf-clarifie-sa-doctrine-sur-plusieurs-aspects-relatifs-aux-societes-de-gestion-de-portefeuille#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "2f759177-a77f-48f4-a084-1ad2e1857cd1",
@@ -137,17 +62,8 @@
     "description": "Directive AIFM 2",
     "url": "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/aifm-2#xts=607212&xtor=RSS-3&type=RSS",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "5d3bdeaf-07a7-423f-8e65-4953e2fb984c",
-    "date": "26/03/2026",
-    "source": "AMF",
-    "titre": "Crypto-actifs : l'AMF applique les orientations de l'ESMA sur les connaissances et les compétences du personnel des prestataires de services sur crypto-actifs au titre de MiCA",
-    "description": "L'AMF applique les orientations ESMA sur les compétences du personnel des prestataires de services crypto-actifs sous MiCA",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/crypto-actifs-lamf-applique-les-orientations-de-lesma-sur-les-connaissances-et-les-competences-du#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "6ac97413-9139-4ccd-993a-d268fe67afc8",
@@ -157,37 +73,8 @@
     "description": "Suppressions de désignations Belarus ; Émission de licence générale Belarus ; Révocation de la directive 1 Belarus",
     "url": "https://ofac.treasury.gov/recent-actions/20260326",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "c562108f-8ca5-41fc-b109-408086286e7b",
-    "date": "24/03/2026",
-    "source": "EBA",
-    "titre": "The EBA publishes its second MREL impact assessment Report",
-    "description": "L'EBA publie son deuxième rapport d'évaluation d'impact MREL",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-second-mrel-impact-assessment-report",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "a13d5ad2-abf1-4d48-984f-65c23a317b8b",
-    "date": "24/03/2026",
-    "source": "AMLA",
-    "titre": "AMLA to Hold First Public Hearing",
-    "description": "L'AMLA organise sa première audience publique",
-    "url": "https://www.amla.europa.eu/amla-hold-public-hearing-two-draft-rts_en",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "7376f753-390d-4875-bc03-77759365f087",
-    "date": "24/03/2026",
-    "source": "AMLA",
-    "titre": "AMLA Successfully Concludes First Public Hearing",
-    "description": "L'AMLA conclut avec succès sa première audience publique",
-    "url": "https://www.amla.europa.eu/amla-concludes-first-public-hearing-draft-regulatory-technical-standards_en",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "fe680c4a-d137-45f7-a78f-fa1c67b965c2",
@@ -197,17 +84,8 @@
     "description": "Émission d'une licence générale liée au Venezuela",
     "url": "https://ofac.treasury.gov/recent-actions/20260324",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "492ab885-d6f0-4797-a594-07ad7d4cab99",
-    "date": "24/03/2026",
-    "source": "EBA",
-    "titre": "​The EBA launches call for papers for its 2026 Policy Research Workshop",
-    "description": "L'EBA lance un appel à contributions pour son atelier de recherche politique 2026",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-launches-call-papers-its-2026-policy-research-workshop",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "94bf7668-24d7-483a-9227-1410079b9d2b",
@@ -217,7 +95,8 @@
     "description": "Désignations antiterroristes ; Suppressions de désignations antidrogue et liées à la Russie",
     "url": "https://ofac.treasury.gov/recent-actions/20260320",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "65ab1195-71ae-4565-9497-07d7e8a1a189",
@@ -227,7 +106,8 @@
     "description": "Émission d'une licence générale liée à l'Iran par le Bureau de contrôle des avoirs étrangers",
     "url": "https://ofac.treasury.gov/recent-actions/20260320_33",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "45b23161-19b8-4174-979c-f3abfd48daa6",
@@ -237,7 +117,8 @@
     "description": "L'ABE publie le projet final de normes techniques modifiant les délais de demande d'autorisation préalable pour réduire les fonds propres et instruments d'engagements éligibles",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-final-draft-amending-technical-standards-shortening-timing-application-prior",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "88853e3f-f29f-40e0-afff-2a4b6c6048c7",
@@ -247,7 +128,8 @@
     "description": "Émission d'une licence générale liée à la Russie",
     "url": "https://ofac.treasury.gov/recent-actions/20260319_33",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "0e604792-ff0e-4c5e-8b2c-543bfe928912",
@@ -257,17 +139,8 @@
     "description": "Émission d'une licence générale modifiée liée au Venezuela et questions fréquemment posées",
     "url": "https://ofac.treasury.gov/recent-actions/20260319",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "0a1b1634-78a1-4187-b48b-c1a3d18a5798",
-    "date": "18/03/2026",
-    "source": "AMF",
-    "titre": "Le Listing Act : favoriser l’accès des sociétés aux marchés de capitaux européens",
-    "description": "Le Listing Act : favoriser l'accès des sociétés aux marchés de capitaux européens",
-    "url": "https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/listing-act",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "95f59bcf-645b-46c4-8131-290620ef0f33",
@@ -277,17 +150,8 @@
     "description": "Émission d'une licence générale liée au Venezuela et questions fréquemment posées",
     "url": "https://ofac.treasury.gov/recent-actions/20260318",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "b768304b-6b68-403d-8493-15491db6b0a1",
-    "date": "18/03/2026",
-    "source": "ECB Supervision",
-    "titre": "ECB publishes supervisory banking statistics on significant institutions for the fourth quarter of 2025",
-    "description": "La BCE publie les statistiques de supervision bancaire des établissements importants pour le quatrième trimestre 2025",
-    "url": "https://www.bankingsupervision.europa.eu//press/pr/date/2026/html/ssm.pr260318~abe7a7cc0a.en.html",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "f7ff5644-7495-4692-b1c8-ca58aff8c2a7",
@@ -297,7 +161,8 @@
     "description": "L'EBA publie une liste révisée des règles de validation ITS",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-issues-revised-list-its-validation-rules-36",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "9198a3b4-9655-4348-9ba2-7ccd54b02449",
@@ -307,7 +172,8 @@
     "description": "L'EBA consulte sur les produits réglementaires relatifs à l'autorisation des modèles de marge initiale",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-consults-regulatory-products-initial-margin-model-authorisation",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "CONSULTATION"
   },
   {
     "id": "1003eca6-2192-41a1-8346-4ff2b087fbbf",
@@ -317,7 +183,8 @@
     "description": "Sanctions du Conseil contre trois entités et deux personnes pour cyberattaques contre l'UE et ses États membres",
     "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/03/16/cyber-attacks-against-the-eu-and-its-member-states-council-sanctions-three-entities-and-two-individuals/",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "294b8699-2baf-402a-9237-727257f7e0a6",
@@ -327,7 +194,8 @@
     "description": "L'UE prolonge de six mois les sanctions individuelles contre la Russie pour l'agression en Ukraine",
     "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/03/14/russia-s-war-of-aggression-against-ukraine-eu-extends-individual-listings-over-ukraine-s-territorial-integrity-for-a-further-six-months/",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "e09c77c1-e84c-42b4-87ca-798fadc0dd48",
@@ -337,7 +205,8 @@
     "description": "L'AMF demande la prolongation de la suspension du titre RAPID NUTRITION",
     "url": "https://www.amf-france.org/fr/actualites-publications/communiques/communiques-de-lamf/lamf-requiert-la-prolongation-de-la-suspension-du-titre-rapid-nutrition#xts=607212&xtor=RSS-3&type=RSS",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "643ba94c-98db-46a4-81c1-5b0e68c8e596",
@@ -347,17 +216,8 @@
     "description": "Émission de licences générales liées au Venezuela et questions fréquemment posées modifiées",
     "url": "https://ofac.treasury.gov/recent-actions/20260313_33",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "f98c5521-ad2b-4114-84d0-0304d57a95d3",
-    "date": "12/03/2026",
-    "source": "AMF",
-    "titre": "Financement participatif : l’AMF rappelle aux plateformes leurs obligations en matière de traitement des réclamations",
-    "description": "Financement participatif : l'AMF rappelle aux plateformes leurs obligations en matière de traitement des réclamations",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/financement-participatif-lamf-rappelle-aux-plateformes-leurs-obligations-en-matiere-de-traitement#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "c5edb209-60d9-4c94-b43c-59cfebf20dd6",
@@ -367,7 +227,8 @@
     "description": "Émission d'une licence générale liée à la Russie",
     "url": "https://ofac.treasury.gov/recent-actions/20260312_33",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "7db5c4a5-49ee-461c-844d-bbf73c84fc2d",
@@ -377,17 +238,8 @@
     "description": "Désignations antiterroristes ; Désignations Corée du Nord et mise à jour ; Suppression de désignation antidrogue",
     "url": "https://ofac.treasury.gov/recent-actions/20260312",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "b8f4a1c4-3391-48af-a8e8-b3f3c7492d8a",
-    "date": "12/03/2026",
-    "source": "AMF",
-    "titre": "L'Autorité des marchés financiers, la Banque de France et la direction générale du Trésor lancent un groupe stratégique de place dédié à l'innovation et à la tokenisation de la finance",
-    "description": "L'AMF, la Banque de France et la DG Trésor créent un groupe stratégique sur l'innovation et la tokenisation financière",
-    "url": "https://www.amf-france.org/fr/actualites-publications/communiques/communiques-de-lamf/lautorite-des-marches-financiers-la-banque-de-france-et-la-direction-generale-du-tresor-lancent-un#xts=607212&xtor=RSS-3&type=RSS",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "48aa7351-112b-4e2a-ada1-0909de21a10f",
@@ -397,7 +249,8 @@
     "description": "La BCE sanctionne une filiale de Nordea pour dépassement des limites sur les grandes expositions",
     "url": "https://www.bankingsupervision.europa.eu//press/pr/date/2026/html/ssm.pr260310~8758e97beb.en.html",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "e7714800-7584-4280-8ce7-334ff40f76c4",
@@ -407,17 +260,8 @@
     "description": "FinCEN émet un ordre de ciblage géographique élargi pour la frontière sud-ouest",
     "url": "https://www.fincen.gov/news/news-releases/fincen-issues-expanded-southwest-border-geographic-targeting-order",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "c574ca6e-84cc-49a2-af98-a548e27e35b1",
-    "date": "10/03/2026",
-    "source": "OFSI UK",
-    "titre": "Sanctions enforcement: cross-government approach, March 2026",
-    "description": "Application des sanctions : approche interministérielle, mars 2026",
-    "url": "https://www.gov.uk/government/publications/sanctions-enforcement-cross-government-approach-march-2026",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "260aaaab-70a5-488c-9412-97f3d32d0134",
@@ -427,17 +271,8 @@
     "description": "Désignations antiterroristes ; Mise à jour des désignations liées au Soudan",
     "url": "https://ofac.treasury.gov/recent-actions/20260309",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "e3fdf377-a015-4e4e-9ba0-46db3d6c9c48",
-    "date": "06/03/2026",
-    "source": "FinCEN",
-    "titre": "Financial Action Task Force Identifies Jurisdictions with Anti-Money Laundering, Combating the Financing of Terrorism, and Counter-Proliferation Finance Deficiencies",
-    "description": "Le Groupe d'action financière identifie les juridictions présentant des déficiences en matière de lutte contre le blanchiment d'argent, le financement du terrorisme et la prolifération",
-    "url": "https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-5",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "8c543f13-8fbd-464f-9e9a-49fd485c0430",
@@ -447,7 +282,8 @@
     "description": "FinCEN inflige une amende historique de 80 millions de dollars à Canaccord Genuity LLC pour violations liées à la fraude en valeurs mobilières",
     "url": "https://www.fincen.gov/news/news-releases/fincen-assesses-historic-80-million-penalty-against-canaccord-genuity-llc",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "9eb6a0ac-b880-4336-a4c6-5d9211764a4a",
@@ -457,7 +293,8 @@
     "description": "Émission d'une licence générale liée au Venezuela",
     "url": "https://ofac.treasury.gov/recent-actions/20260306_33",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "47faefce-25b3-46d5-8362-c7c412ae862c",
@@ -467,7 +304,8 @@
     "description": "Émission d'une licence générale liée à la Russie ; Émission d'une FAQ modifiée liée au Venezuela",
     "url": "https://ofac.treasury.gov/recent-actions/20260305_33",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "219642ca-98c6-420c-ad4c-f7417835e222",
@@ -477,7 +315,8 @@
     "description": "Retraits de désignations liées au Venezuela ; Émission d'une licence générale modifiée liée à la Russie",
     "url": "https://ofac.treasury.gov/recent-actions/20260305",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "65f50f98-1335-490c-813c-547a4725a94f",
@@ -487,7 +326,8 @@
     "description": "L'ABE établit des normes de reporting harmonisées pour renforcer la surveillance des succursales de pays tiers",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-sets-out-harmonised-reporting-standards-enhance-oversight-third-country-branches",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "TEXTE"
   },
   {
     "id": "fb544298-1bfa-4b1b-9fc5-d82ee23f0e6f",
@@ -497,17 +337,8 @@
     "description": "Le Conseil de l'UE inscrit le Corps des gardiens de la révolution islamique sur la liste terroriste",
     "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/02/19/eu-terrorist-list-council-designates-the-islamic-revolutionary-guard-corps-as-a-terrorist-organisation/",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "2413d96f-39b2-4728-899a-f594eec55941",
-    "date": "04/03/2026",
-    "source": "OFAC",
-    "titre": "Issuance of Venezuela-related Frequently Asked Questions | Office of Foreign Assets Control",
-    "description": "Issuance of Venezuela-related Frequently Asked Questions | Office of Foreign Assets Control",
-    "url": "https://ofac.treasury.gov/recent-actions/20260304",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "c692dc72-1529-4fd1-a130-339adbaee02b",
@@ -517,7 +348,8 @@
     "description": "Accord de composition administrative du 20 novembre 2025 avec Edmond de Rothschild Private Equity",
     "url": "https://www.amf-france.org/fr/sanctions-transactions/transactions/transactions-homologuees/accord-de-composition-administrative-conclu-le-20-novembre-2025-avec-la-societe-edmond-de-rothschild#xts=607212&xtor=RSS-3&type=RSS",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "0db786fc-83f0-4b16-8810-69d7c7b0eadb",
@@ -527,7 +359,8 @@
     "description": "Accord de composition administrative conclu le 13 novembre 2025 avec M. Christian Guillemot",
     "url": "https://www.amf-france.org/fr/sanctions-transactions/transactions/transactions-homologuees/accord-de-composition-administrative-conclu-le-13-novembre-2025-avec-m-christian-guillemot#xts=607212&xtor=RSS-3&type=RSS",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "4b216904-a1e2-44fd-aa11-2185bd16603a",
@@ -537,7 +370,8 @@
     "description": "Accord de composition administrative du 13 novembre 2025 avec AMA Corporation PLC",
     "url": "https://www.amf-france.org/fr/sanctions-transactions/transactions/transactions-homologuees/accord-de-composition-administrative-conclu-le-13-novembre-2025-avec-la-societe-ama-corporation-plc#xts=607212&xtor=RSS-3&type=RSS",
     "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "07bcc83e-8dc8-4df4-8a58-2c1c40b88912",
@@ -547,27 +381,8 @@
     "description": "Democratic Republic of the Congo-related Designations; Issuance of Associated General License | Office of Foreign Assets Control",
     "url": "https://ofac.treasury.gov/recent-actions/20260302",
     "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "584b71fd-004f-44ba-bca0-926de0c1c1e4",
-    "date": "01/03/2026",
-    "source": "AMF",
-    "titre": "L'AMF publie sa cartographie 2025 des marchés et des risques",
-    "description": "L'AMF publie sa cartographie 2025 des marchés et des risques",
-    "url": "https://www.amf-france.org/fr/actualites-publications/communiques/communiques-de-lamf/lamf-publie-sa-cartographie-2025-des-marches-et-des-risques",
-    "type_source": "officielle",
-    "statut": "publie"
-  },
-  {
-    "id": "96218fe8-5bff-4c5c-b637-01fa8118833c",
-    "date": "01/03/2026",
-    "source": "FATF / GAFI",
-    "titre": "Inter Governmental Action Group against Money Laundering in West Africa (GIABA)",
-    "description": "Inter Governmental Action Group against Money Laundering in West Africa (GIABA)",
-    "url": "https://www.fatf-gafi.org/en/countries/global-network/inter-governmental-action-group-against-money-laundering-in-west.html",
-    "type_source": "officielle",
-    "statut": "publie"
+    "statut": "publie",
+    "type": "DECISION"
   },
   {
     "id": "038d9c8d-60f2-49c1-b6cd-fb562f4b4eb4",
@@ -577,7 +392,8 @@
     "description": "The European Banking Authority (EBA) today published its final Guidelines on instruments for the capital endowment requirement for third-country branches under the Capital Requirements Directive (CRD). The Guidelines set out the list of instruments that third-country branches may use to meet their capital endowment requirement and specify the minimum operational conditions that ensure these instruments are available when needed. The overall objective is to ensure that the capital endowment assets protect local depositors at the level of the third country branch, or they remain available to pay appropriate claims and satisfy local creditors in the event of resolution or winding-up of the third country branch.",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-final-guidelines-instruments-capital-endowment-requirement-third-country-branches",
     "type_source": "officielle",
-    "statut": "publié"
+    "statut": "publié",
+    "type": "TEXTE"
   },
   {
     "id": "1c71927f-a810-4fb9-b83a-500171da3bec",
@@ -587,7 +403,8 @@
     "description": "",
     "url": "https://acpr.banque-france.fr/fr/communiques-de-presse/lacpr-met-en-demeure-la-mutuelle-just-de-corriger-les-manquements-de-son-dispositif-de-reglement-des",
     "type_source": "officielle",
-    "statut": "publié"
+    "statut": "publié",
+    "type": "DECISION"
   },
   {
     "id": "eba-draft-rts-cooperation-colleges-tcbs-2026-01-08",
@@ -597,37 +414,8 @@
     "description": "Final draft RTS transmis à la Commission : règles de coopération/échange d'info + fonctionnement des collèges pour succursales de pays tiers.",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-final-draft-technical-standards-strengthen-supervisory-cooperation-third-country",
     "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "amf-programme-de-travail-2026-priorites-2026-01-13",
-    "date": "13/01/2026",
-    "source": "AMF",
-    "titre": "Programme de travail 2026 (priorités d'action et de supervision)",
-    "description": "Publication du programme de travail AMF 2026 (axes/priorités de supervision).",
-    "url": "https://www.amf-france.org/fr/lamf/notre-strategie/nos-priorites-daction-et-de-supervision",
-    "type_source": "officielle",
-    "statut": "programme"
-  },
-  {
-    "id": "esas-uk-regulat-mou-dora-oversight-des-ctpps-2026-01-14",
-    "date": "14/01/2026",
-    "source": "ESAs / UK Regulators",
-    "titre": "MoU DORA — oversight des CTPPs",
-    "description": "Accord de coopération ESAs ↔ régulateurs UK pour l'oversight des prestataires TIC critiques (CTPPs) sous DORA.",
-    "url": "https://www.esma.europa.eu/press-news/esma-news/european-supervisory-authorities-and-uk-financial-regulators-sign-memorandum",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "egmont-group-horizontal-analysis-io2-io6-euii-gr-2026-01-14",
-    "date": "14/01/2026",
-    "source": "Egmont Group",
-    "titre": "Horizontal Analysis IO2 & IO6 (EUII Group)",
-    "description": "Rapport de bonnes pratiques/constats FIU sur l'efficacité (IO2/IO6) : coopération et utilisation du renseignement financier.",
-    "url": "https://egmontgroup.org/wp-content/uploads/2026/01/EUII-Group-Horizontal-Analysis-of-IO2-and-IO6-Final-version.pdf",
-    "type_source": "officielle",
-    "statut": "rapport"
+    "statut": "publié",
+    "type": "CONSULTATION"
   },
   {
     "id": "conseil-ue-hamas-pij-prorogation-mesures-restr-2026-01-16",
@@ -637,27 +425,8 @@
     "description": "Prorogation d'un an du cadre de mesures restrictives (→ 20/01/2027) — décision + acte d'exécution.",
     "url": "https://eur-lex.europa.eu/eli/dec/2026/122/oj/eng",
     "type_source": "officielle",
-    "statut": "en vigueur"
-  },
-  {
-    "id": "eba-amla-transfert-mandats-aml-cft-eba-amla-2026-01-01",
-    "date": "01/01/2026",
-    "source": "EBA / AMLA",
-    "titre": "Transfert mandats AML/CFT — EBA → AMLA",
-    "description": "L'EBA a officiellement transféré ses mandats AML/CFT à l'AMLA. Les standards EBA existants restent applicables jusqu'à remplacement progressif par l'AMLA.",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-and-amla-complete-handover-amlcft-mandates",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "acpr-programme-de-travail-2026-2026-01-19",
-    "date": "19/01/2026",
-    "source": "ACPR",
-    "titre": "Programme de travail 2026",
-    "description": "Publication des axes 2026 (supervision, gouvernance, risques, résilience, simplification…).",
-    "url": "https://acpr.banque-france.fr/fr/actualites/lautorite-de-controle-prudentiel-et-de-resolution-presente-son-programme-de-travail-pour-lannee-2026",
-    "type_source": "officielle",
-    "statut": "programme"
+    "statut": "en vigueur",
+    "type": "TEXTE"
   },
   {
     "id": "conseil-ue-joue-hamas-pij-avis-procedures-autorisat-2026-01-19",
@@ -667,17 +436,8 @@
     "description": "Publication d'un avis au JOUE série C : information des personnes concernées, voies de recours et traitement des données dans le cadre des mesures restrictives.",
     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ%3AC_202600388",
     "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "amf-spot-enseignements-controles-foncti-2026-01-20",
-    "date": "20/01/2026",
-    "source": "AMF",
-    "titre": "SPOT — enseignements contrôles fonction conformité PSI",
-    "description": "Absence d'éléments probants attestant l'effectivité du conseil sur rémunérations, faiblesses accès données, suivi insuffisant transactions personnelles.",
-    "url": "https://www.amf-france.org/en/news-publications/news-releases/amf-news-releases/amf-publishes-findings-its-inspections-role-and-involvement-compliance-function-investment-services",
-    "type_source": "officielle",
-    "statut": "rapport"
+    "statut": "publié",
+    "type": "TEXTE"
   },
   {
     "id": "acpr-instruction-2026-i-01-reporting-fra-2026-01-22",
@@ -687,17 +447,8 @@
     "description": "Nouvelle instruction ACPR : reporting annuel (frais, volumes, rejets) virements & virements instantanés ; dépôt ONEGATE (XBRL-CSV).",
     "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/instruction-ndeg-2026-i-01-relative-aux-informations-transmettre-lacpr-par-les-prestataires-de",
     "type_source": "officielle",
-    "statut": "en vigueur"
-  },
-  {
-    "id": "acpr-webinaire-dora-registre-d-informati-2026-01-23",
-    "date": "23/01/2026",
-    "source": "ACPR",
-    "titre": "Webinaire DORA — Registre d'informations (RoI)",
-    "description": "Points opérationnels RoI (format, erreurs fréquentes, attendus) + supports. 3 causes de rejet identifiées (date, ZIP, encodage).",
-    "url": "https://acpr.banque-france.fr/fr/actualites/remise-des-registres-dinformation",
-    "type_source": "officielle",
-    "statut": "rapport"
+    "statut": "en vigueur",
+    "type": "TEXTE"
   },
   {
     "id": "conseil-ue-russie-extension-transaction-ban-mi-2026-01-25",
@@ -707,7 +458,8 @@
     "description": "Paquet Oct 2025 : extension du transaction ban aux systèmes de paiement Mir et SBP ; application à partir du 25/01/2026.",
     "url": "https://eur-lex.europa.eu/eli/reg/2025/2033/oj",
     "type_source": "officielle",
-    "statut": "en vigueur"
+    "statut": "en vigueur",
+    "type": "TEXTE"
   },
   {
     "id": "amla-consultation-collecte-de-donnees-pr-2026-01-26",
@@ -717,57 +469,8 @@
     "description": "AMLA consulte sur une collecte de données destinée à préparer la supervision directe en 2028. Lancement mars 2026.",
     "url": "https://www.amla.europa.eu/amla-launch-data-collection-exercise-test-risk-assessment-models-financial-sector_en",
     "type_source": "officielle",
-    "statut": "programme"
-  },
-  {
-    "id": "eba-irrbb-heatmap-phase-2-2026-01-26",
-    "date": "26/01/2026",
-    "source": "EBA",
-    "titre": "IRRBB Heatmap — phase 2",
-    "description": "2e phase heatmap IRRBB (risque de taux du portefeuille bancaire) — résultats/insights.",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-outlines-medium-long-term-objectives-its-interest-rate-risk-banking-book-heatmap",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "bdf-osmp-rapport-s1-2025-fraude-par-manipula-2026-01-27",
-    "date": "27/01/2026",
-    "source": "BdF / OSMP",
-    "titre": "Rapport S1 2025 — fraude par manipulation (+37%)",
-    "description": "Fraude par manipulation (ingénierie sociale, spoofing) : montant en hausse ~37%. Représente ~40% du montant total des fraudes. Virement instantané : +70% en volume.",
-    "url": "https://www.banque-france.fr/system/files/2026-01/2026-01-27_OSMP-Note-statistiques-de-fraude-du-S1-2025.pdf",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "fbf-appel-aux-plateformes-lutte-contre--2026-01-27",
-    "date": "27/01/2026",
-    "source": "FBF",
-    "titre": "Appel aux plateformes — lutte contre les escroqueries",
-    "description": "FBF appelle à un engagement renforcé des plateformes numériques contre les escroqueries en ligne.",
-    "url": "https://www.fbf.fr/fr/communique_de_presse/fraude-aux-moyens-de-paiements-un-appel-aux-acteurs-du-numerique-a-se-mobiliser/",
-    "type_source": "secondaire",
-    "statut": "rapport"
-  },
-  {
-    "id": "esma-guidelines-mica-connaissances-compe-2026-01-28",
-    "date": "28/01/2026",
-    "source": "ESMA",
-    "titre": "Guidelines MiCA — connaissances & compétences (K&C)",
-    "description": "Guidelines ESMA sur les critères d'évaluation des connaissances et compétences du personnel. Application ~28/07/2026.",
-    "url": "https://www.esma.europa.eu/document/guidelines-criteria-assessment-knowledge-and-competence-under-markets-crypto-assets",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "conseil-ue-sanctions-iran-nouvelles-designatio-2026-01-29",
-    "date": "29/01/2026",
-    "source": "Conseil UE",
-    "titre": "Sanctions Iran — nouvelles désignations",
-    "description": "Règlement d'exécution 2026/262 (soutien Russie) : 4 personnes + 6 entités désignées (gel des avoirs, interdiction de mise à disposition).",
-    "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/262/oj",
-    "type_source": "officielle",
-    "statut": "en vigueur"
+    "statut": "programme",
+    "type": "CONSULTATION"
   },
   {
     "id": "conseil-ue-sanctions-soudan-nouvelles-designat-2026-01-29",
@@ -777,17 +480,8 @@
     "description": "Règlement d'exécution : mise à jour listes Soudan — 7 individus désignés.",
     "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/251/oj",
     "type_source": "officielle",
-    "statut": "en vigueur"
-  },
-  {
-    "id": "conseil-ue-russie-fimi-manipulation-de-l-infor-2026-01-29",
-    "date": "29/01/2026",
-    "source": "Conseil UE",
-    "titre": "Russie — FIMI (manipulation de l'information)",
-    "description": "Règlement d'exécution 2026/259 — sanctions pour déstabilisation et manipulation de l'information (FIMI). 6 individus désignés.",
-    "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/259/oj/eng",
-    "type_source": "officielle",
-    "statut": "en vigueur"
+    "statut": "en vigueur",
+    "type": "DECISION"
   },
   {
     "id": "commission-ue-pays-tiers-a-haut-risque-lcb-ft-maj-2026-01-29",
@@ -797,17 +491,8 @@
     "description": "Ajout Bolivie & BVI (2026/83) ; ajout Russie (2026/46) ; retrait Burkina Faso, Mali, Mozambique, Nigeria, Afrique du Sud, Tanzanie.",
     "url": "https://eur-lex.europa.eu/eli/reg_del/2026/83/oj",
     "type_source": "officielle",
-    "statut": "en vigueur"
-  },
-  {
-    "id": "france-jorf-gel-des-avoirs-prorogation-6-mois-2026-01-29",
-    "date": "29/01/2026",
-    "source": "France (JORF)",
-    "titre": "Gel des avoirs — prorogation 6 mois",
-    "description": "Arrêté : prorogation d'une mesure individuelle de gel des avoirs (6 mois).",
-    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053411494",
-    "type_source": "officielle",
-    "statut": "en vigueur"
+    "statut": "en vigueur",
+    "type": "TEXTE"
   },
   {
     "id": "conseil-ue-tunisie-mesures-restrictives-mises--2026-01-30",
@@ -817,67 +502,8 @@
     "description": "Décision et règlement d'exécution publiés au JOUE L du 30/01/2026.",
     "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/238/oj/eng",
     "type_source": "officielle",
-    "statut": "en vigueur"
-  },
-  {
-    "id": "amf-etude-ia-et-marches-financiers-1-00-2026-02-02",
-    "date": "02/02/2026",
-    "source": "AMF",
-    "titre": "Étude IA et marchés financiers — 1 000+ cas d'usage",
-    "description": "100 acteurs interrogés, 1 000+ cas d'usage déclarés (106 détaillés). La LCB-FT est explicitement dans la cartographie IA.",
-    "url": "https://www.amf-france.org/fr/actualites-publications/publications/rapports-etudes-et-analyses/etude-sur-lusage-de-lintelligence-artificielle-par-les-acteurs-des-marches-financiers",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "amf-fin-transitoire-psan-rappel-echeanc-2026-02-05",
-    "date": "05/02/2026",
-    "source": "AMF",
-    "titre": "Fin transitoire PSAN — rappel échéance 01/07/2026",
-    "description": "Les PSAN doivent déposer un dossier MiCA ou préparer un plan de cessation ordonnée. Jalon : 30/03/2026.",
-    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/lamf-rappelle-que-la-periode-transitoire-pour-les-psan-pour-continuer-de-fournir-des-services-sur",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "amla-single-programming-document-2026-20-2026-02-04",
-    "date": "04/02/2026",
-    "source": "AMLA",
-    "titre": "Single Programming Document 2026-2028",
-    "description": "432 personnes, 40 entités supervisées, budget 96 M€. Canal whistleblowing, focus crypto, stratégie IA. 3 textes TM + 6 RA prévus.",
-    "url": "https://www.amla.europa.eu/amla-sets-strategic-priorities-2026-28-single-programming-document_en",
-    "type_source": "officielle",
-    "statut": "programme"
-  },
-  {
-    "id": "amf-spot-risques-operationnels-sgp-2026-02-09",
-    "date": "09/02/2026",
-    "source": "AMF",
-    "titre": "SPOT — risques opérationnels SGP",
-    "description": "Focus : robustesse registres d'incidents, fiabilité données FRA, traçabilité calculs coussins/assurances.",
-    "url": "https://www.amf-france.org/en/news-publications/publications/spot-inspection-campaigns/summary-spot-inspections-asset-management-companies-operational-risk-management-systems",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "tracfin-brochures-lcb-ft-immobilier-domicil-2026-02-09",
-    "date": "09/02/2026",
-    "source": "Tracfin",
-    "titre": "Brochures LCB-FT — immobilier + domiciliation",
-    "description": "Rappels sectoriels sur les obligations de vigilance pour les professionnels de l'immobilier et les domiciliataires.",
-    "url": "https://www.economie.gouv.fr/tracfin/tracfin-et-la-dgccrf-publient-deux-brochures-pedagogiques-sur-le-dispositif-lcb-ft-destination-des-professionnels-declarants",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "amla-3-consultations-rts-cdd-relations-d-2026-02-10",
-    "date": "10/02/2026",
-    "source": "AMLA",
-    "titre": "3 consultations RTS — CDD, relations d'affaires, sanctions/astreintes",
-    "description": "CDD (données, critères, procédures), relations d'affaires (suivi continu), sanctions/astreintes (pouvoir coercitif). Sanctions : 09/03. CDD + relations : 08/05.",
-    "url": "https://www.amla.europa.eu/policy/public-consultations/consultation-draft-rts-customer-due-diligence_en",
-    "type_source": "officielle",
-    "statut": "consultation"
+    "statut": "en vigueur",
+    "type": "TEXTE"
   },
   {
     "id": "amf-retrait-agrement-apicap-prise-d-eff-2026-02-11",
@@ -887,17 +513,8 @@
     "description": "Prise d'effet après transfert des fonds. Illustre la mécanique du retrait (6 mois Collège → effet).",
     "url": "https://www.amf-france.org/fr/actualites-publications/actualites/lamf-annonce-la-prise-deffet-du-retrait-dagrement-de-la-societe-de-gestion-de-portefeuille-apicap",
     "type_source": "officielle",
-    "statut": "décision"
-  },
-  {
-    "id": "transparency-in-indice-de-perception-de-la-corrupti-2026-02-10",
-    "date": "10/02/2026",
-    "source": "Transparency Intl",
-    "titre": "Indice de Perception de la Corruption 2025 — France 66/100",
-    "description": "France : 66/100, 27e rang. Plus bas score depuis 2012. TI pointe financement politique, lobbying, facilitateurs professionnels.",
-    "url": "https://www.transparency.org/en/cpi/2025",
-    "type_source": "secondaire",
-    "statut": "rapport"
+    "statut": "décision",
+    "type": "DECISION"
   },
   {
     "id": "amf-relais-consultation-amla-appel-a-co-2026-02-13",
@@ -907,7 +524,8 @@
     "description": "L'AMF invite les participants de marché à contribuer aux 3 consultations AMLA sur les RTS AML/CFT.",
     "url": "https://www.amf-france.org/en/news-publications/news/amf-invites-financial-market-participants-amlas-consultations-three-draft-amlcft-implementing",
     "type_source": "officielle",
-    "statut": "consultation"
+    "statut": "consultation",
+    "type": "CONSULTATION"
   },
   {
     "id": "gafi-liste-grise-maj-koweit-png-ajoutes-2026-02-13",
@@ -917,87 +535,8 @@
     "description": "Koweït et PNG ajoutés. Aucune sortie.",
     "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/increased-monitoring-february-2026.html",
     "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "acpr-organisation-direction-resolution-d-2026-02-13",
-    "date": "13/02/2026",
-    "source": "ACPR",
-    "titre": "Organisation direction résolution — décision 2026-CR-01",
-    "description": "Réorganisation des services de la direction de la résolution. Information institutionnelle.",
-    "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/decision-ndeg-2026-cr-01-du-13-fevrier-2026-portant-sur-lorganisation-des-services-de-la-direction",
-    "type_source": "officielle",
-    "statut": "décision"
-  },
-  {
-    "id": "hcjp-rapport-fonds-suspects-chez-les-psp-2026-01-28",
-    "date": "28/01/2026",
-    "source": "HCJP",
-    "titre": "Rapport fonds suspects chez les PSP — 76 pages",
-    "description": "Dilemme : fonds suspects, pas d'opposition Tracfin, pas de saisie. Proposition : cantonnement encadré + contrôle judiciaire + fichier national.",
-    "url": "https://www.banque-france.fr/system/files/2026-02/Rapport_73_F.pdf",
-    "type_source": "secondaire",
-    "statut": "rapport"
-  },
-  {
-    "id": "conseil-ue-tax-blacklist-maj-vietnam-turks-cai-2026-02-17",
-    "date": "17/02/2026",
-    "source": "Conseil UE",
-    "titre": "Tax blacklist MAJ — Vietnam + Turks & Caicos ajoutés",
-    "description": "Vietnam et Turks & Caicos ajoutés. Fidji, Samoa et Trinité-et-Tobago retirés. 10 juridictions en Annexe I.",
-    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/17/taxation-council-updates-the-eu-list-of-non-cooperative-jurisdictions-for-tax-purposes/",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "amf-discours-mica-passeport-conteste-2026-02-03",
-    "date": "03/02/2026",
-    "source": "AMF",
-    "titre": "Discours MiCA — passeport contesté",
-    "description": "La présidente de l'AMF a averti que, faute de convergence de supervision entre États membres, l'AMF ne pourrait exclure de contester le passeporting de licences MiCA.",
-    "url": "https://www.amf-france.org/fr/actualites-publications/prises-de-parole/discours-de-marie-anne-barbat-layani-presidente-de-lamf-conference-afore-consulting-10th-annual",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "acpr-attentes-agrement-ep-pour-psca-emt-2026-02-19",
-    "date": "19/02/2026",
-    "source": "ACPR",
-    "titre": "Attentes agrément EP pour PSCA/EMT",
-    "description": "Services sur EMT relèvent aussi de DSP2. Peut nécessiter agrément EP en plus du statut crypto. No-action letter EBA publiée le 02/03/2026 : les CASP existants ne sont pas tenus de demander un agrément EP avant le 30/06/2027.",
-    "url": "https://acpr.banque-france.fr/fr/actualites/attentes-de-lacpr-en-vue-de-lagrement-en-qualite-detablissement-de-paiement-des-prestataires-offrant",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "esma-commission-q-a-mica-2486-interets-sur-fonds-cl-2026-02-18",
-    "date": "18/02/2026",
-    "source": "ESMA / Commission UE",
-    "titre": "Q&A MiCA 2486 — Intérêts sur fonds clients (art. 70 MiCA)",
-    "description": "Un CASP ne peut pas conserver les intérêts générés par les fonds clients déposés en établissement de crédit. Art. 70(1)-(3) MiCA : ces dépôts servent à protéger le client, pas à générer du revenu pour le CASP. Réponse fournie par la Commission européenne.",
-    "url": "https://www.esma.europa.eu/publications-data/questions-answers/2486",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "esma-consultation-mar-delayed-disclosure-2026-02-19",
-    "date": "19/02/2026",
-    "source": "ESMA",
-    "titre": "Consultation MAR — delayed disclosure (Listing Act)",
-    "description": "Amendement des lignes directrices MAR sur la divulgation différée. Deadline : 29/04/2026.",
-    "url": "https://www.esma.europa.eu/press-news/consultations/consultation-mar-guidelines-delay-disclosure-inside-information",
-    "type_source": "officielle",
-    "statut": "consultation"
-  },
-  {
-    "id": "ficoba-fuite-donnees-1-2-million-de-compte-2026-02-20",
-    "date": "20/02/2026",
-    "source": "FICOBA",
-    "titre": "Fuite données — 1,2 million de comptes exposés",
-    "description": "Accès illégal : identité, adresse, IBAN, nom de banque. Typologies : faux conseiller, usurpation, fraude entreprises.",
-    "url": "https://www.itpro.com/security/data-breaches/a-single-compromised-account-gave-hackers-access-to-1-2-million-french-banking-records",
-    "type_source": "secondaire",
-    "statut": "rapport"
+    "statut": "publié",
+    "type": "DECISION"
   },
   {
     "id": "amf-rescrit-doc-2026-02-retrocessions-c-2026-02-20",
@@ -1007,7 +546,8 @@
     "description": "Cadrage du reversement par un CIF d'une partie des rétrocessions aux clients. Barème prédéfini et progressif.",
     "url": "https://www.amf-france.org/fr/reglementation/doctrine/doctrine-en-vigueur",
     "type_source": "officielle",
-    "statut": "publié"
+    "statut": "publié",
+    "type": "DECISION"
   },
   {
     "id": "esma-consultation-garanties-ccp-collater-2026-02-23",
@@ -1017,37 +557,8 @@
     "description": "Projet de RTS sur les garanties comme collatéral CCP et la politique d'investissement. Deadline : 30/04/2026.",
     "url": "https://www.esma.europa.eu/press-news/esma-news/esma-consults-guarantees-ccp-collateral-and-certain-aspects-ccp-investment",
     "type_source": "officielle",
-    "statut": "consultation"
-  },
-  {
-    "id": "esma-public-statement-cfd-perpetual-futu-2026-02-24",
-    "date": "24/02/2026",
-    "source": "ESMA",
-    "titre": "Public statement CFD / perpetual futures",
-    "description": "Les « perpetual futures » peuvent relever des mesures nationales d'intervention produit sur les CFD. Le nom commercial ne change pas la qualification.",
-    "url": "https://www.esma.europa.eu/sites/default/files/2026-02/ESMA35-243228190-8024_-_Public_statement_on_derivatives_in_scope_of_the_CFD_product_intervention_measures.pdf",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "gafi-rapport-annuel-2024-2025-fraude-89--2026-02-24",
-    "date": "24/02/2026",
-    "source": "GAFI",
-    "titre": "Rapport annuel 2024-2025 — fraude 89 % des évaluations mutuelles",
-    "description": "89 % des évaluations citent la fraude comme infraction sous-jacente (2e après corruption). 16 % seulement démontrent efficacité sur sanctions prolifération.",
-    "url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/annual-reports/fatf-annual-report-2024-2025.pdf.coredownload.pdf",
-    "type_source": "officielle",
-    "statut": "rapport"
-  },
-  {
-    "id": "gafi-note-fraude-cyber-scam-centres-myan-2026-02-13",
-    "date": "13/02/2026",
-    "source": "GAFI",
-    "titre": "Note fraude cyber — scam centres Myanmar/Cambodge",
-    "description": "La fraude cyber est devenue l'une des formes de criminalité à but lucratif les plus répandues. Les schémas intègrent le blanchiment dès la conception. Deux rapports sur les actifs virtuels annoncés pour mars 2026. (Chiffres de victimes Myanmar/Cambodge : source OHCHR 2023, pas GAFI.)",
-    "url": "https://www.fatf-gafi.org/en/publications/Methodsandtrends/cyber-enabled-fraud-digitalisation-ml-tf-pf-risks.html",
-    "type_source": "officielle",
-    "statut": "rapport"
+    "statut": "consultation",
+    "type": "CONSULTATION"
   },
   {
     "id": "eba-esma-consultation-fit-proper-crd6-aptitu-2026-02-25",
@@ -1057,47 +568,8 @@
     "description": "Révision du cadre d'évaluation de l'aptitude dirigeants et fonctions clés. Deadline : 25/05/2026. Audition : 15/04/2026.",
     "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-and-esma-launch-consultation-revised-suitability-assessment-framework-banks-and-investment-firms",
     "type_source": "officielle",
-    "statut": "consultation"
-  },
-  {
-    "id": "eba-validation-centrale-isda-simm-demar-2026-02-26",
-    "date": "26/02/2026",
-    "source": "EBA",
-    "titre": "Validation centrale ISDA SIMM — démarrage 01/03/2026",
-    "description": "L'EBA devient le point central de validation du modèle de marge initiale dans l'UE. Phase d'onboarding, demandes à partir d'août 2026.",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-kicks-eu-central-validation-isda-simm-1-march-2026",
-    "type_source": "officielle",
-    "statut": "décision"
-  },
-  {
-    "id": "eba-avis-rts-mecanisme-equivalent-crr-e-2026-02-26",
-    "date": "26/02/2026",
-    "source": "EBA",
-    "titre": "Avis RTS mécanisme équivalent CRR — expositions immobilières",
-    "description": "Point de friction avec la Commission sur les paramètres prudentiels liés aux expositions immobilières en construction.",
-    "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-responds-commissions-proposed-amendments-draft-technical-standards-equivalent-legal-mechanism",
-    "type_source": "officielle",
-    "statut": "publié"
-  },
-  {
-    "id": "esma-consultation-ptrr-emir-exemption-co-2026-02-26",
-    "date": "26/02/2026",
-    "source": "ESMA",
-    "titre": "Consultation PTRR/EMIR — exemption compensation",
-    "description": "Standards pour les services de réduction de risque post-trade (exemption obligation de compensation). Deadline : 20/04/2026.",
-    "url": "https://www.esma.europa.eu/press-news/esma-news/esma-consults-post-trade-risk-reduction-services-under-emir-3",
-    "type_source": "officielle",
-    "statut": "consultation"
-  },
-  {
-    "id": "amf-spot-preferences-de-durabilite-esg-2026-02-26",
-    "date": "26/02/2026",
-    "source": "AMF",
-    "titre": "SPOT — préférences de durabilité (ESG)",
-    "description": "Insuffisances significatives dans le recueil et la prise en compte des préférences ESG dans le parcours de conseil.",
-    "url": "https://www.amf-france.org/fr/actualites-publications/publications/syntheses-des-controles-spot/synthese-des-controles-spot-relative-la-prise-en-compte-des-preferences-de-durabilite-dans-le",
-    "type_source": "officielle",
-    "statut": "rapport"
+    "statut": "consultation",
+    "type": "CONSULTATION"
   },
   {
     "id": "amf-transaction-tra-2026-01-caisse-d-ep-2026-02-25",
@@ -1107,6 +579,29 @@
     "description": "Accord de composition administrative (conclu le 12/11/2025). Cinq griefs : adéquation GSM, schéma de rémunération (inducements), information précontractuelle, conflits d'intérêts, absence de contrôle interne sur la GSM. 600 000 € au Trésor Public + 435 055 € de remboursement clients.",
     "url": "https://www.amf-france.org/fr/sanctions-transactions/transactions/transactions-homologuees/accord-de-composition-administrative-conclu-le-12-novembre-2025-avec-caisse-depargne-et-de",
     "type_source": "officielle",
-    "statut": "décision"
+    "statut": "décision",
+    "type": "DECISION"
+  },
+  {
+    "id": "conseil-ue-sanctions-iran-nouvelles-designatio-2026-01-29",
+    "date": "29/01/2026",
+    "source": "Conseil UE",
+    "titre": "Sanctions Iran — nouvelles désignations",
+    "description": "Règlement d'exécution 2026/262 (soutien Russie) : 4 personnes + 6 entités désignées (gel des avoirs, interdiction de mise à disposition).",
+    "url": "https://eur-lex.europa.eu/eli/reg_impl/2026/262/oj",
+    "type_source": "officielle",
+    "statut": "en vigueur",
+    "type": "DECISION"
+  },
+  {
+    "id": "france-jorf-gel-des-avoirs-prorogation-6-mois-2026-01-29",
+    "date": "29/01/2026",
+    "source": "France (JORF)",
+    "titre": "Gel des avoirs — prorogation 6 mois",
+    "description": "Arrêté : prorogation d'une mesure individuelle de gel des avoirs (6 mois).",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053411494",
+    "type_source": "officielle",
+    "statut": "en vigueur",
+    "type": "TEXTE"
   }
 ]
