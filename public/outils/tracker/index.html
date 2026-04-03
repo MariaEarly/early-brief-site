@@ -94,8 +94,8 @@
   .event-item { display:flex; align-items:flex-start; gap:16px; padding:12px 0; border-bottom:1px solid #F0EDE6; }
   .event-item:last-child { border-bottom:none; }
   .event-num { font-family:var(--font-display); font-size:10px; font-weight:700; color:var(--terra); width:24px; flex-shrink:0; padding-top:2px; letter-spacing:.05em; }
-  .event-titre { font-family:var(--font-serif); font-size:12px; font-weight:400; color:var(--dark); width:220px; flex-shrink:0; line-height:1.4; }
-  .event-texte { font-size:12px; font-weight:400; color:#4A4A3A; line-height:1.7; }
+  .event-titre { font-family:var(--font-serif); font-size:14px; font-weight:400; color:var(--dark); width:220px; flex-shrink:0; line-height:1.4; }
+  .event-texte { font-size:13px; font-weight:400; color:#4A4A3A; line-height:1.7; }
 
   .signal-list { display:flex; flex-direction:column; gap:0; }
   .signal-item { display:flex; align-items:flex-start; gap:16px; padding:10px 0; border-bottom:1px solid #F0EDE6; }
@@ -331,7 +331,7 @@
     <div class="stats-row" id="dash-stats"></div>
 
     <!-- Répartition par statut -->
-    <div class="section-title">Textes entrés en vigueur — Février 2026</div>
+    <div class="section-title">Textes entrés en vigueur — Mars 2026</div>
     <div id="dash-applicable" class="signal-list"></div>
 
     <!-- Répartition par source -->
@@ -447,21 +447,48 @@
       </div>
     </div>
 
+    <!-- FILTRES -->
+    <div class="mode-section">
+      <div class="mode-section-title">Filtres</div>
+      <div class="mode-statut-list">
+        <div class="mode-statut-row">
+          <span class="badge badge-applicable" style="min-width:120px;">Mois</span>
+          <span class="mode-statut-desc">Filtre par mois de publication (janvier, février, mars…).</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-applicable" style="min-width:120px;">Source</span>
+          <span class="mode-statut-desc">Filtre par autorité émettrice (AMF, EBA, FinCEN…).</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-applicable" style="min-width:120px;">Statut</span>
+          <span class="mode-statut-desc">Filtre par type de publication (en vigueur, consultation, décision…).</span>
+        </div>
+        <div class="mode-statut-row">
+          <span class="badge badge-applicable" style="min-width:120px;">Périmètre</span>
+          <span class="mode-statut-desc"><strong>France / UE</strong> — sources françaises et européennes (défaut). <strong>UK / US</strong> — OFAC, OFSI, FinCEN. <strong>Tout</strong> — l'ensemble des sources.</span>
+        </div>
+      </div>
+    </div>
+
     <!-- SOURCES -->
     <div class="mode-section">
       <div class="mode-section-title">Sources couvertes</div>
       <div class="mode-sources-grid">
         <div class="mode-source-group">
           <div class="mode-source-geo">🇫🇷 France</div>
-          <div class="mode-source-names">ACPR · AMF · Tracfin · Legifrance · HCJP · OSMP</div>
+          <div class="mode-source-names">ACPR · AMF · Tracfin · Legifrance JO · DGT Trésor / COLB · Banque de France · CNIL</div>
         </div>
         <div class="mode-source-group">
           <div class="mode-source-geo">🇪🇺 Union européenne</div>
-          <div class="mode-source-names">AMLA · EBA · ESMA · Commission européenne · Conseil UE · CJUE</div>
+          <div class="mode-source-names">AMLA · EBA · ESMA · EIOPA · ECB Supervision · Commission EU (FISMA) · Conseil UE · Europarl ECON · AI Office EU · Moneyval · EUR-Lex Sanctions</div>
         </div>
         <div class="mode-source-group">
           <div class="mode-source-geo">🌍 International</div>
-          <div class="mode-source-names">GAFI/FATF · OFAC · FinCEN · FCA · Egmont Group</div>
+          <div class="mode-source-names">FATF / GAFI · Egmont Group · Wolfsberg Group · BIS · FSB · UN Sanctions</div>
+        </div>
+        <div class="mode-source-group">
+          <div class="mode-source-geo">🇺🇸🇬🇧 UK / US</div>
+          <div class="mode-source-names">OFAC · OFSI UK · FinCEN</div>
         </div>
       </div>
     </div>
@@ -552,7 +579,7 @@
 
 <!-- STICKY CTA BAR -->
 <div class="cta-bar" id="cta-bar">
-  <p>Ce tracker est un extrait d'<strong>Early Brief</strong> — la veille LCB-FT, sanctions et conformité.</p>
+  <p><strong>Early Brief</strong> — Veille réglementaire LCB-FT, sanctions et conformité financière.</p>
   <a class="cta-btn" href="https://substack.com/@maryagar" target="_blank" rel="noopener">S'abonner gratuitement</a>
   <button class="cta-dismiss" onclick="document.getElementById('cta-bar').style.display='none';document.body.style.paddingBottom='24px';" title="Fermer">&times;</button>
 </div>
@@ -622,7 +649,7 @@
 <script>
 // ── DONNÉES ÉDITORIALES — À METTRE À JOUR CHAQUE MOIS ───────────────────
 // Modifier uniquement ce bloc pour la mise à jour mensuelle
-const BILAN_MOIS = "Février 2026";
+const BILAN_MOIS = "Mars 2026";
 const EVENEMENTS_MARQUANTS = [
   {
     num: "01",
@@ -656,9 +683,9 @@ const EVENEMENTS_MARQUANTS = [
 function buildDashboard() {
   const rows = document.querySelectorAll('#tab-veille .veille-table tbody tr:not(.month-separator):not(.row-hidden)');
   
-  let total = 0, janCount = 0, fevCount = 0;
+  let total = 0, janCount = 0, fevCount = 0, marsCount = 0;
   const sources = {}, statuts = {};
-  const applicableFev = [];
+  const applicableMars = [];
 
   rows.forEach(row => {
     const cells = row.querySelectorAll('td');
@@ -669,6 +696,7 @@ function buildDashboard() {
     const month = dateRaw.includes('/') ? dateRaw.split('/')[1] : '';
     if (month === '01') janCount++;
     else if (month === '02') fevCount++;
+    else if (month === '03') marsCount++;
 
     const source = cells[1].textContent.trim();
     sources[source] = (sources[source] || 0) + 1;
@@ -678,10 +706,10 @@ function buildDashboard() {
     statuts[statut] = (statuts[statut] || 0) + 1;
 
     // Items applicables en février
-    if (month === '02' && statut === 'En vigueur') {
+    if (month === '03' && statut === 'En vigueur') {
       const sujet = cells[2].textContent.trim();
       const synth = cells[4].textContent.trim();
-      applicableFev.push({ date: dateRaw, source, sujet, synth });
+      applicableMars.push({ date: dateRaw, source, sujet, synth });
     }
   });
 
@@ -722,16 +750,16 @@ function buildDashboard() {
   const statsEl = document.getElementById('dash-stats');
   statsEl.innerHTML = `
     <div class="stat-card"><div class="number">${total}</div><div class="label">items suivis (cumul)</div></div>
-    <div class="stat-card"><div class="number">${janCount}</div><div class="label">items janvier</div></div>
     <div class="stat-card"><div class="number">${fevCount}</div><div class="label">items février</div></div>
+    <div class="stat-card"><div class="number">${marsCount}</div><div class="label">items mars</div></div>
   `;
 
   // Applicable en février
   const appEl = document.getElementById('dash-applicable');
-  if (applicableFev.length === 0) {
-    appEl.innerHTML = '<p style="font-size:12px;color:var(--light);font-style:italic;">Aucun nouveau texte normatif contraignant publié en février 2026.</p>';
+  if (applicableMars.length === 0) {
+    appEl.innerHTML = '<p style="font-size:12px;color:var(--light);font-style:italic;">Aucun nouveau texte normatif contraignant publié en mars 2026.</p>';
   } else {
-    appEl.innerHTML = applicableFev.map(item => `
+    appEl.innerHTML = applicableMars.map(item => `
       <div class="signal-item">
         <div class="signal-date">${item.date}/2026</div>
         <div class="signal-source">${item.source}</div>
