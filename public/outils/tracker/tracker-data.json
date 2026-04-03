@@ -603,5 +603,71 @@
     "type_source": "officielle",
     "statut": "en vigueur",
     "type": "TEXTE"
+  },
+  {
+    "id": "1775249499809",
+    "date": "07/01/2026",
+    "source": "Conseil UE",
+    "titre": "Déclarations d'alignement sanctions UE — 5 régimes (Syrie, Myanmar, Tunisie, Moldavie, Guinée)",
+    "description": "Cinq pays tiers déclarent leur alignement sur les mesures restrictives de l'Union européenne.",
+    "url": "",
+    "type": "TEXTE",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499810",
+    "date": "08/01/2026",
+    "source": "AMF / Parquet",
+    "titre": "CJIP HSBC Continental Europe — fraude fiscale CumCum (3,9 Md€)",
+    "description": "Convention judiciaire d'intérêt public conclue entre le Parquet national financier et HSBC CE pour des opérations CumCum.",
+    "url": "",
+    "type": "DECISION",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499811",
+    "date": "09/01/2026",
+    "source": "Conseil UE",
+    "titre": "Guatemala — prorogation d'un an des mesures restrictives",
+    "description": "Le Conseil prolonge d'un an les mesures restrictives à l'encontre de personnes compromettant la démocratie au Guatemala.",
+    "url": "",
+    "type": "TEXTE",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499814",
+    "date": "25/01/2026",
+    "source": "AMLA",
+    "titre": "Collecte de données — modèles de risque pour la supervision directe",
+    "description": "L'AMLA lance une collecte de données auprès des entités assujetties pour calibrer ses modèles de risque en vue de la supervision directe.",
+    "url": "",
+    "type": "CONSULTATION",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499815",
+    "date": "23/02/2026",
+    "source": "Conseil UE",
+    "titre": "Russie — nouvelles désignations individuelles (gel des avoirs)",
+    "description": "Le Conseil ajoute de nouvelles personnes et entités à la liste des mesures restrictives à l'encontre de la Russie.",
+    "url": "",
+    "type": "DECISION",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499816",
+    "date": "26/02/2026",
+    "source": "Conseil UE",
+    "titre": "Sanctions Biélorussie + terrorisme — mise à jour des listes",
+    "description": "Le Conseil met à jour les mesures restrictives visant la Biélorussie et les listes liées au terrorisme.",
+    "url": "",
+    "type": "DECISION",
+    "type_source": "officielle",
+    "statut": "publié"
   }
 ]

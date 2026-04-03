@@ -614,5 +614,27 @@
     "type_source": "officielle",
     "statut": "rapport",
     "type": "INTELLIGENCE"
+  },
+  {
+    "id": "1775249499812",
+    "date": "09/01/2026",
+    "source": "AMF / ACPR",
+    "titre": "Mise en garde conjointe — Forex et dérivés sur crypto-actifs non autorisés",
+    "description": "L'AMF et l'ACPR alertent sur des offres frauduleuses de trading Forex et dérivés crypto proposées par des entités non agréées.",
+    "url": "",
+    "type": "INTELLIGENCE",
+    "type_source": "officielle",
+    "statut": "publié"
+  },
+  {
+    "id": "1775249499813",
+    "date": "15/01/2026",
+    "source": "EBA / ESMA / FCA",
+    "titre": "DORA — Memorandum of Understanding UE-UK sur la supervision des CTPPs",
+    "description": "Les ESAs et la FCA signent un MoU pour coopérer sur la supervision des prestataires tiers critiques de services TIC.",
+    "url": "",
+    "type": "INTELLIGENCE",
+    "type_source": "officielle",
+    "statut": "publié"
   }
 ]
