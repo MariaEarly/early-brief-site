@@ -337,6 +337,25 @@ hr {
   letter-spacing: 0.5px;
 }
 .home-card-link:hover { color: var(--terra); }
+.home-card-link--ia {
+  display: block;
+  margin-top: 8px;
+  color: var(--terra);
+}
+.home-badge-ia {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--terra);
+  border: 1px solid var(--terra);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
 
 .home-about {
   padding: 48px 0;
