@@ -110,20 +110,54 @@ async function embedQuery(text) {
   return data.data[0].embedding;
 }
 
-// ── RAG : recherche vectorielle Supabase ──────────────────
+// ── RAG : recherche vectorielle Supabase + reranking ─────
 async function retrieveChunks(question) {
   if (!supabase || !process.env.VOYAGE_API_KEY) return [];
 
   const embedding = await embedQuery(question);
 
+  // Étape 1 : récupérer 30 candidats via similarité cosinus
   const { data, error } = await supabase.rpc('match_chunks', {
     query_embedding: embedding,
     match_threshold: 0.15,
-    match_count: 15
+    match_count: 30
   });
 
   if (error) throw new Error(`Supabase error: ${error.message}`);
-  return data || [];
+  const candidates = data || [];
+  if (candidates.length === 0) return [];
+
+  // Étape 2 : reranker les candidats via Voyage AI rerank-2
+  try {
+    const rerankRes = await fetch('https://api.voyageai.com/v1/rerank', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.VOYAGE_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'rerank-2',
+        query: question,
+        documents: candidates.map(c => c.content),
+        top_k: 10
+      })
+    });
+
+    const rerankData = await rerankRes.json();
+
+    if (rerankData.data && Array.isArray(rerankData.data)) {
+      // Réordonner les chunks selon le score de reranking
+      return rerankData.data.map(r => ({
+        ...candidates[r.index],
+        rerank_score: r.relevance_score
+      }));
+    }
+  } catch (rerankError) {
+    console.error('Rerank error (fallback top 10 cosine):', rerankError.message);
+  }
+
+  // Fallback : retourner les 10 premiers par similarité cosinus
+  return candidates.slice(0, 10);
 }
 
 // ── RAG : construction du contexte ────────────────────────
