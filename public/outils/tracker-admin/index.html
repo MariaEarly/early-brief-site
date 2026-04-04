@@ -341,7 +341,7 @@ textarea:focus { outline: 2px solid var(--terra); border-color: transparent; }
 const REPO = 'MariaEarly/early-brief-site';
 const DATA_PATH = 'public/outils/tracker/tracker-data.json';
 const PLATFORM_URL = 'https://earlybriefp7hwqsga-earlybrief-api.functions.fnc.fr-par.scw.cloud';
-const PW_HASH = '75ce3cbc3667d9c43ad497211fa160e4a98832e829876190fe1d613ac0642784';
+let platformToken = null;
 
 let candidates = [];
 let existingData = [];
@@ -397,32 +397,40 @@ async function generateDescriptions(items) {
 }
 
 // ── Auth ──
-async function sha256(msg) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
 async function unlock(e) {
   e.preventDefault();
   const pw = document.getElementById('lock-pw').value;
-  const hash = await sha256(pw);
-  if (hash === PW_HASH) {
-    sessionStorage.setItem('eb_admin', '1');
+  const errEl = document.getElementById('lock-error');
+  errEl.style.display = 'none';
+
+  try {
+    const res = await fetch(`${PLATFORM_URL}/api/v1/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'admin@earlybrief.com', password: pw })
+    });
+    if (!res.ok) { errEl.style.display = 'block'; return; }
+    const data = await res.json();
+    platformToken = data.access_token;
+    sessionStorage.setItem('eb_admin_token', platformToken);
     document.getElementById('lock-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     loadExisting();
-  } else {
-    document.getElementById('lock-error').style.display = 'block';
+  } catch {
+    errEl.style.display = 'block';
   }
 }
 
 function doLogout() {
-  sessionStorage.removeItem('eb_admin');
+  platformToken = null;
+  sessionStorage.removeItem('eb_admin_token');
   location.reload();
 }
 
 // Check session on load
-if (sessionStorage.getItem('eb_admin') === '1') {
+const savedToken = sessionStorage.getItem('eb_admin_token');
+if (savedToken) {
+  platformToken = savedToken;
   document.getElementById('lock-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
   loadExisting();
@@ -483,14 +491,9 @@ async function fetchCandidates() {
   document.getElementById('panel-candidates').innerHTML = '<div class="loading">Connexion a la plateforme...</div>';
 
   try {
-    // Login to platform
-    const loginRes = await fetch(`${PLATFORM_URL}/api/v1/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: 'admin@earlybrief.com', password: 'Eb!Scw#2026$Prod' })
-    });
-    if (!loginRes.ok) throw new Error('Login plateforme echoue');
-    const { access_token } = await loginRes.json();
+    // Use token from login
+    if (!platformToken) throw new Error('Non authentifié — rechargez la page');
+    const access_token = platformToken;
 
     // Fetch articles for selected date range
     const dateFrom = document.getElementById('date-from').value;
