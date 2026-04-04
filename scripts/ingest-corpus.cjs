@@ -118,6 +118,14 @@ const CORPUS = [
     source_url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202400886",
     source_ref: "Règlement (UE) 2024/886, Art. 5d (filtrage), Art. 5c (VoP)",
     category: "paiements"
+  },
+  // ── PONTS VOCABULAIRE (retrieval helpers) ───────────────
+  {
+    content: `La déclaration de soupçon à Tracfin (article L.561-15 CMF) n'est soumise à aucun seuil de montant. Elle est déclenchée par le soupçon que des fonds proviennent d'une infraction ou sont destinés au financement du terrorisme — indépendamment du montant de l'opération. Une opération de 100€ peut donner lieu à déclaration si elle est suspecte. À l'inverse, une opération de plusieurs millions d'euros ne génère pas automatiquement d'obligation de déclaration en l'absence de soupçon. Il n'existe pas de seuil légal de déclenchement.`,
+    source_label: "CMF — Article L.561-15 (déclaration de soupçon Tracfin)",
+    source_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577825",
+    source_ref: "CMF-L561-15-seuil-manuel",
+    category: "lcb-ft"
   }
 ];
 
