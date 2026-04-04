@@ -1,4 +1,9 @@
     // ========================================
+    // PAYS DATA (loaded from liste-pays/data.json)
+    // ========================================
+    let PAYS_DATA = null;
+
+    // ========================================
     // CONFIG
     // ========================================
     const CONFIG = {
@@ -595,7 +600,9 @@
         signataireDifferent: document.getElementById('signataireDifferent').value,
         // v7.4: Nouveaux champs
         ppeStatus: document.getElementById('ppeStatus')?.value || '',
-        revisionMode: document.getElementById('toggleRevisionMode')?.checked || false
+        revisionMode: document.getElementById('toggleRevisionMode')?.checked || false,
+        // v7.5: Pays détaillé (code ISO2 si HORSUE)
+        paysDetail: document.getElementById('pays-detail')?.value || ''
       };
     }
 
@@ -628,6 +635,18 @@
     function onPaysChange() {
       const pays = document.getElementById('pays').value;
       if (pays) populateLegalFormOptions(pays);
+
+      // Afficher/masquer le sélecteur pays détaillé
+      const detailWrap = document.getElementById('pays-detail-wrap');
+      if (detailWrap) {
+        if (pays === 'HORSUE') {
+          detailWrap.style.display = 'block';
+        } else {
+          detailWrap.style.display = 'none';
+          document.getElementById('pays-detail').value = '';
+        }
+      }
+
       updateForeignToggleVisibility();
       updateForm();
     }
@@ -932,6 +951,7 @@
         updateRiskScore(v);
         updatePPEAlert(v);
         updateRevisionModeAlert(v);
+        checkPaysAlerte(v.paysDetail);
       } catch (e) {
         console.warn('v7.4 features error:', e);
       }
@@ -1442,7 +1462,9 @@
             verificationDate: document.getElementById('verificationDate')?.value || '',
             // v7.4: Nouveaux champs
             ppeStatus: document.getElementById('ppeStatus')?.value || '',
-            revisionMode: document.getElementById('toggleRevisionMode')?.checked || false
+            revisionMode: document.getElementById('toggleRevisionMode')?.checked || false,
+            // v7.5: Pays détaillé
+            paysDetail: document.getElementById('pays-detail')?.value || ''
           },
           checkedItems: Array.from(checkedItems),
           timestamp: new Date().toISOString()
@@ -1490,6 +1512,12 @@
         if (fv.pays) {
           document.getElementById('pays').value = fv.pays;
           populateLegalFormOptions(fv.pays, true);
+          // v7.5: Restaurer pays détaillé
+          if (fv.pays === 'HORSUE') {
+            const detailWrap = document.getElementById('pays-detail-wrap');
+            if (detailWrap) detailWrap.style.display = 'block';
+            if (fv.paysDetail) document.getElementById('pays-detail').value = fv.paysDetail;
+          }
         }
 
         safeSet('legalForm', fv.legalForm);
@@ -1978,6 +2006,120 @@
     }
 
     // ========================================
+    // v7.5: PAYS GAFI/SANCTIONS ALERT
+    // ========================================
+    function populatePaysDetail() {
+      const select = document.getElementById('pays-detail');
+      if (!select || !PAYS_DATA) return;
+
+      // Garder la première option "Sélectionner..."
+      select.innerHTML = '<option value="">Sélectionner...</option>';
+
+      // Trier les pays alphabétiquement et les ajouter
+      const sorted = PAYS_DATA.countries.slice().sort((a, b) => a.n.localeCompare(b.n, 'fr'));
+      sorted.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.a2;
+        // Ajouter un indicateur visuel pour les pays à risque
+        let label = c.n;
+        if (c.fatf === 'black') label += ' — GAFI liste noire';
+        else if (c.fatf === 'grey') label += ' — GAFI liste grise';
+        else if (c.fatf === 'susp') label += ' — GAFI suspendu';
+        if (c.sUE === 'Complet' || c.ofac === 'Complet') label += ' — Sanctions complètes';
+        opt.textContent = label;
+        select.appendChild(opt);
+      });
+    }
+
+    function checkPaysAlerte(paysCode) {
+      const alertEl = document.getElementById('paysAlert');
+      if (!alertEl) return;
+
+      if (!paysCode || !PAYS_DATA) {
+        alertEl.classList.add('hidden');
+        return;
+      }
+
+      const country = PAYS_DATA.countries.find(c => c.a2 === paysCode);
+      if (!country) {
+        alertEl.classList.add('hidden');
+        return;
+      }
+
+      const alerts = [];
+
+      // GAFI black list
+      if (country.fatf === 'black') {
+        alerts.push({
+          level: 'red',
+          title: 'Liste noire GAFI — ' + country.n,
+          text: 'Ce pays figure sur la liste noire GAFI (appel à contre-mesures) — vigilance renforcée obligatoire (art. L.561-10-1 CMF). Contre-mesures possibles selon art. L.561-10-3 CMF.'
+        });
+      } else if (country.fatf === 'grey') {
+        alerts.push({
+          level: 'orange',
+          title: 'Liste grise GAFI — ' + country.n,
+          text: 'Ce pays figure sur la liste grise GAFI (surveillance renforcée) — prise en compte requise dans votre approche par les risques.'
+        });
+      } else if (country.fatf === 'susp') {
+        alerts.push({
+          level: 'orange',
+          title: 'Vigilance GAFI — ' + country.n,
+          text: 'Ce pays fait l\'objet d\'un appel à la vigilance GAFI (membre suspendu).'
+        });
+      }
+
+      // Sanctions complètes UE ou OFAC
+      const hasCompleteSanctions = country.sUE === 'Complet' || country.ofac === 'Complet';
+      if (hasCompleteSanctions) {
+        const sources = [];
+        if (country.sUE === 'Complet') sources.push('UE');
+        if (country.ofac === 'Complet') sources.push('OFAC');
+        alerts.push({
+          level: 'red',
+          title: 'Sanctions complètes (' + sources.join(' + ') + ') — ' + country.n,
+          text: 'Ce pays est soumis à des sanctions complètes — vérifiez vos obligations de gel des avoirs et restrictions sectorielles.'
+        });
+      }
+      // Sanctions UE non complètes (ciblé, sectoriel, embargo) — y compris si OFAC est Complet
+      if (country.sUE && country.sUE !== '' && country.sUE !== 'Complet') {
+        alerts.push({
+          level: 'orange',
+          title: 'Sanctions UE (' + country.sUE.toLowerCase() + ') — ' + country.n,
+          text: country.sUED ? 'Sanctions UE : ' + country.sUED + '.' : 'Ce pays fait l\'objet de sanctions UE ciblées.'
+        });
+      }
+
+      // PTHR UE (pays tiers à haut risque)
+      if (country.eu === 1 && alerts.length === 0) {
+        alerts.push({
+          level: 'orange',
+          title: 'Pays tiers à haut risque UE — ' + country.n,
+          text: 'Ce pays figure sur la liste UE des pays tiers à haut risque (PTHR) — vigilance renforcée obligatoire (art. L.561-10-1 CMF).'
+        });
+      }
+
+      if (alerts.length === 0) {
+        alertEl.classList.add('hidden');
+        return;
+      }
+
+      // Trier : rouge d'abord, puis orange
+      alerts.sort((a, b) => (a.level === 'red' ? 0 : 1) - (b.level === 'red' ? 0 : 1));
+
+      const hasRed = alerts[0].level === 'red';
+      const icon = document.getElementById('paysAlertIcon');
+      const title = document.getElementById('paysAlertTitle');
+      const text = document.getElementById('paysAlertText');
+
+      alertEl.classList.remove('hidden');
+      alertEl.style.borderLeftColor = hasRed ? '#9E3D1B' : '#b8860b';
+      icon.textContent = hasRed ? '⚠️' : 'ℹ️';
+      title.textContent = alerts[0].title;
+      text.innerHTML = alerts.map(a => a.text).join('<br><br>');
+    }
+
+    // ========================================
     // v7.4: REVISION MODE ALERT
     // ========================================
     function updateRevisionModeAlert(v) {
@@ -2057,8 +2199,19 @@ Best regards,
     // ========================================
     // INIT
     // ========================================
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       populateLegalFormOptions('FR', true);
+
+      // v7.5: Charger les données pays GAFI/sanctions
+      try {
+        const resp = await fetch('../liste-pays/data.json');
+        if (resp.ok) {
+          PAYS_DATA = await resp.json();
+          populatePaysDetail();
+        }
+      } catch (e) {
+        console.warn('Données pays non disponibles:', e.message);
+      }
 
       const restored = loadFromLocalStorage();
       if (restored) setTimeout(updateForm, 100);

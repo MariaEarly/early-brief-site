@@ -249,6 +249,12 @@
               <option value="UE">UE (hors France)</option>
               <option value="HORSUE">Hors UE</option>
             </select>
+            <div id="pays-detail-wrap" style="display:none; margin-top:8px;">
+              <label class="form-label">Pays du client</label>
+              <select class="form-select" id="pays-detail" onchange="updateForm()">
+                <option value="">Sélectionner...</option>
+              </select>
+            </div>
           </div>
           <div class="form-group critical">
             <label class="form-label required" id="legalFormLabel">Forme juridique</label>
@@ -385,6 +391,15 @@
         <div class="ppe-alert-content">
           <div class="ppe-alert-title">Vigilance renforcée obligatoire (PPE)</div>
           <div class="ppe-alert-text" id="ppeAlertText">Ce client est une Personne Politiquement Exposée. Appliquez les mesures de vigilance renforcée et obtenez une validation hiérarchique.</div>
+        </div>
+      </div>
+
+      <!-- PAYS GAFI/SANCTIONS ALERT -->
+      <div class="ppe-alert hidden" id="paysAlert">
+        <span class="ppe-alert-icon" id="paysAlertIcon">⚠️</span>
+        <div class="ppe-alert-content">
+          <div class="ppe-alert-title" id="paysAlertTitle"></div>
+          <div class="ppe-alert-text" id="paysAlertText"></div>
         </div>
       </div>
 
