@@ -1,0 +1,1605 @@
+{
+  "meta": {
+    "sources": {
+      "eu_aml": {
+        "v": "2026-01-29"
+      },
+      "fatf": {
+        "v": "2026-02-13"
+      },
+      "sanctions": {
+        "v": "2026-02-13"
+      },
+      "eu_tax": {
+        "v": "2026-02-17"
+      }
+    }
+  },
+  "countries": [
+    {
+      "n": "Afghanistan",
+      "a2": "AF",
+      "a3": "AFG",
+      "rg": "Asie",
+      "fatf": "",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs (régime Taliban)",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 24,
+      "cpir": 162,
+      "h": [
+        {
+          "d": "2000-02-14",
+          "e": "Sanctions UE ciblées - Règlement (CE) 337/2000 (Taliban, RCSNU 1267)"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Algérie",
+      "a2": "DZ",
+      "a3": "DZA",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.82,
+      "cpi": 34,
+      "cpir": 107,
+      "h": [
+        {
+          "d": "2024-10-25",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Angola",
+      "a2": "AO",
+      "a3": "AGO",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.55,
+      "cpi": 32,
+      "cpir": 121,
+      "h": [
+        {
+          "d": "2024-10-25",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Anguilla",
+      "a2": "AI",
+      "a3": "AIA",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2020-10-06",
+          "e": "Ajout Annexe I UE - Conseil 06/10/2020"
+        },
+        {
+          "d": "2021-10-05",
+          "e": "Retrait Annexe I UE"
+        },
+        {
+          "d": "2022-10-04",
+          "e": "Ré-ajout Annexe I UE (substance économique)"
+        },
+        {
+          "d": "2010-02-12",
+          "e": "ETNC - Arrêté 12/02/2010 (liste initiale, art. 238-0 A)"
+        },
+        {
+          "d": "2012-04-04",
+          "e": "Retrait ETNC - Arrêté 04/04/2012 (convention signée)"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 b)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Antigua-et-Barbuda",
+      "a2": "AG",
+      "a3": "ATG",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 1,
+      "bas": 3.98,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Retrait Annexe II UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2024-10-08",
+          "e": "Ajout Annexe II UE - déplacé depuis Annexe I, Conseil 08/10/2024"
+        },
+        {
+          "d": "2024-02-16",
+          "e": "ETNC - Arrêté 16/02/2024 (art. 238-0 A, 2 bis 2°)"
+        }
+      ]
+    },
+    {
+      "n": "Bélarus",
+      "a2": "BY",
+      "a3": "BLR",
+      "rg": "Europe",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Sectoriel",
+      "sUED": "Embargo armes, tech, finance",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.27,
+      "cpi": 28,
+      "cpir": 133,
+      "h": [
+        {
+          "d": "2004-09-24",
+          "e": "Sanctions UE ciblées - Position commune 2004/661/CFSP (disparitions)"
+        },
+        {
+          "d": "2022-03-01",
+          "e": "Renforcement sanctions UE"
+        }
+      ]
+    },
+    {
+      "n": "Belize",
+      "a2": "BZ",
+      "a3": "BLZ",
+      "rg": "Am. centrale",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 4.06,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2024-02-20",
+          "e": "Annexe II UE - déplacé depuis Annexe I, Conseil 20/02/2024"
+        }
+      ]
+    },
+    {
+      "n": "Bolivie",
+      "a2": "BO",
+      "a3": "BOL",
+      "rg": "Am. du Sud",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2026-01-29",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.58,
+      "cpi": 28,
+      "cpir": 133,
+      "h": [
+        {
+          "d": "2025-06-13",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2026-01-29",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Brunei",
+      "a2": "BN",
+      "a3": "BRN",
+      "rg": "Asie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 4.22,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2025-02-18",
+          "e": "Annexe II UE - ajout (régime FSIE), Conseil 18/02/2025"
+        }
+      ]
+    },
+    {
+      "n": "Bulgarie",
+      "a2": "BG",
+      "a3": "BGR",
+      "rg": "Europe",
+      "fatf": "grey",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5,
+      "cpi": 43,
+      "cpir": 76,
+      "h": [
+        {
+          "d": "2023-10-27",
+          "e": "Ajout GAFI grey (1er État UE)"
+        }
+      ]
+    },
+    {
+      "n": "Cameroun",
+      "a2": "CM",
+      "a3": "CMR",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2023-10-18",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.41,
+      "cpi": 26,
+      "cpir": 140,
+      "h": [
+        {
+          "d": "2023-06-23",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2023-10-18",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Centrafrique",
+      "a2": "CF",
+      "a3": "CAF",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Embargo",
+      "sUED": "Embargo armes",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 7.21,
+      "cpi": 19,
+      "cpir": 167,
+      "h": [
+        {
+          "d": "2013-12-01",
+          "e": "Embargo armes UE"
+        }
+      ]
+    },
+    {
+      "n": "Corée du Nord",
+      "a2": "KP",
+      "a3": "PRK",
+      "rg": "Asie",
+      "fatf": "black",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "Complet",
+      "sUED": "Embargo total",
+      "ofac": "Complet",
+      "ofacD": "Programme de sanctions global",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 15,
+      "cpir": 170,
+      "h": [
+        {
+          "d": "2006-11-20",
+          "e": "Sanctions UE complètes - Règlement 329/2007 (RCSNU 1718)"
+        },
+        {
+          "d": "1950-12-17",
+          "e": "OFAC embargo Corée du Nord - Proclamation 2914 / FACR (TWEA)"
+        },
+        {
+          "d": "2011-02-01",
+          "e": "GAFI black"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Côte d'Ivoire",
+      "a2": "CI",
+      "a3": "CIV",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.05,
+      "cpi": 45,
+      "cpir": 69,
+      "h": [
+        {
+          "d": "2024-10-25",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Cuba",
+      "a2": "CU",
+      "a3": "CUB",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "Complet",
+      "ofacD": "Programme de sanctions global",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 42,
+      "cpir": 80,
+      "h": [
+        {
+          "d": "1962-02-07",
+          "e": "Embargo OFAC"
+        }
+      ]
+    },
+    {
+      "n": "Eswatini",
+      "a2": "SZ",
+      "a3": "SWZ",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 6.51,
+      "cpi": 27,
+      "cpir": 135,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Annexe II UE - liste originale, Conseil 05/12/2017"
+        },
+        {
+          "d": "2021-10-05",
+          "e": "Retrait Annexe II UE - réformes fiscales, Conseil 05/10/2021"
+        },
+        {
+          "d": "2022-10-04",
+          "e": "Ré-ajout Annexe II UE - régime ZES, Conseil 04/10/2022"
+        }
+      ]
+    },
+    {
+      "n": "Fidji",
+      "a2": "FJ",
+      "a3": "FJI",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 1,
+      "bas": 4.73,
+      "cpi": 55,
+      "cpir": 50,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Retrait Annexe I UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2019-03-12",
+          "e": "Ajout Annexe I UE - Conseil 12/03/2019"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        }
+      ]
+    },
+    {
+      "n": "Groenland",
+      "a2": "GL",
+      "a3": "GRL",
+      "rg": "Europe",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2025-10-10",
+          "e": "Annexe II UE - Conseil 10/10/2025"
+        }
+      ]
+    },
+    {
+      "n": "Guam",
+      "a2": "GU",
+      "a3": "GUM",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Haïti",
+      "a2": "HT",
+      "a3": "HTI",
+      "rg": "Caraïbes",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2022-03-13",
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 8.12,
+      "cpi": 16,
+      "cpir": 168,
+      "h": [
+        {
+          "d": "2022-12-19",
+          "e": "Sanctions UE ciblées - Décision 2022/2478 (Haïti)"
+        },
+        {
+          "d": "2021-06-01",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2022-03-13",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Iran",
+      "a2": "IR",
+      "a3": "IRN",
+      "rg": "Moyen-Orient",
+      "fatf": "black",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "Sectoriel",
+      "sUED": "Pétrole, finance, nucléaire",
+      "ofac": "Complet",
+      "ofacD": "Programme de sanctions global",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 23,
+      "cpir": 151,
+      "h": [
+        {
+          "d": "2007-02-27",
+          "e": "Sanctions UE - Position commune 2007/140/CFSP (nucléaire, RCSNU 1737)"
+        },
+        {
+          "d": "1987-10-29",
+          "e": "OFAC embargo Iran - EO 12613 (importations iraniennes)"
+        },
+        {
+          "d": "2008-10-01",
+          "e": "GAFI black"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Jordanie",
+      "a2": "JO",
+      "a3": "JOR",
+      "rg": "Moyen-Orient",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 4.85,
+      "cpi": 49,
+      "cpir": 59,
+      "h": [
+        {
+          "d": "2025-10-10",
+          "e": "Annexe II UE - Conseil 10/10/2025"
+        }
+      ]
+    },
+    {
+      "n": "Kenya",
+      "a2": "KE",
+      "a3": "KEN",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.6,
+      "cpi": 32,
+      "cpir": 121,
+      "h": [
+        {
+          "d": "2024-02-23",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Koweït",
+      "a2": "KW",
+      "a3": "KWT",
+      "rg": "Moyen-Orient",
+      "fatf": "grey",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.13,
+      "cpi": 46,
+      "cpir": 64,
+      "h": [
+        {
+          "d": "2026-02-13",
+          "e": "Ajout GAFI grey"
+        }
+      ]
+    },
+    {
+      "n": "Laos",
+      "a2": "LA",
+      "a3": "LAO",
+      "rg": "Asie",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 7.5,
+      "cpi": 33,
+      "cpir": 114,
+      "h": [
+        {
+          "d": "2025-02-21",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Liban",
+      "a2": "LB",
+      "a3": "LBN",
+      "rg": "Moyen-Orient",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.93,
+      "cpi": 22,
+      "cpir": 154,
+      "h": [
+        {
+          "d": "2020-07-30",
+          "e": "Sanctions UE ciblées - Décision 2020/1110 (Liban)"
+        },
+        {
+          "d": "2024-10-25",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Libye",
+      "a2": "LY",
+      "a3": "LBY",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Embargo",
+      "sUED": "Embargo armes, pétrole illicite",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 16,
+      "cpir": 168,
+      "h": [
+        {
+          "d": "2011-02-28",
+          "e": "Embargo armes UE"
+        }
+      ]
+    },
+    {
+      "n": "Îles Vierges US",
+      "a2": "VI",
+      "a3": "VIR",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2018-03-13",
+          "e": "Ajout Annexe I UE - Conseil 13/03/2018 (post-moratoire ouragan)"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Îles Vierges GB",
+      "a2": "VG",
+      "a3": "VGB",
+      "rg": "Caraïbes",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2026-01-29",
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2023-10-17",
+          "e": "Annexe II UE - déplacé depuis Annexe I, Conseil 17/10/2023"
+        },
+        {
+          "d": "2025-06-13",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2026-01-29",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Îles Turques-et-Caïques",
+      "a2": "TC",
+      "a3": "TCA",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2022-10-04",
+          "e": "Ajout Annexe I UE - Conseil 04/10/2022"
+        },
+        {
+          "d": "2024-02-20",
+          "e": "Retrait Annexe I UE"
+        },
+        {
+          "d": "2011-04-14",
+          "e": "ETNC - Arrêté 14/04/2011 (art. 238-0 A, 2 b)"
+        },
+        {
+          "d": "2012-04-04",
+          "e": "Retrait ETNC - Arrêté 04/04/2012 (convention signée)"
+        },
+        {
+          "d": "2023-02-03",
+          "e": "ETNC - Arrêté 03/02/2023 (art. 238-0 A, 2 bis 1°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Ré-ajout Annexe I UE - Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Mali",
+      "a2": "ML",
+      "a3": "MLI",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.69,
+      "cpi": 28,
+      "cpir": 139,
+      "h": [
+        {
+          "d": "2020-01-01",
+          "e": "Sanctions ciblées UE"
+        }
+      ]
+    },
+    {
+      "n": "Maroc",
+      "a2": "MA",
+      "a3": "MAR",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 5.04,
+      "cpi": 37,
+      "cpir": 99,
+      "h": [
+        {
+          "d": "2025-10-10",
+          "e": "Annexe II UE - Conseil 10/10/2025"
+        }
+      ]
+    },
+    {
+      "n": "Monaco",
+      "a2": "MC",
+      "a3": "MCO",
+      "rg": "Europe",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2024-06-28",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Monténégro",
+      "a2": "ME",
+      "a3": "MNE",
+      "rg": "Europe",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 4.33,
+      "cpi": 46,
+      "cpir": 65,
+      "h": [
+        {
+          "d": "2025-10-10",
+          "e": "Annexe II UE - Conseil 10/10/2025"
+        }
+      ]
+    },
+    {
+      "n": "Myanmar",
+      "a2": "MM",
+      "a3": "MMR",
+      "rg": "Asie",
+      "fatf": "black",
+      "eu": 1,
+      "euD": "2020-10-01",
+      "sUE": "Sectoriel",
+      "sUED": "Embargo armes, secteurs clés",
+      "ofac": "Étendu",
+      "ofacD": "Programme Birmanie",
+      "tax": null,
+      "etnc": 0,
+      "bas": 8.18,
+      "cpi": 16,
+      "cpir": 168,
+      "h": [
+        {
+          "d": "1996-10-28",
+          "e": "Sanctions UE - Position commune 1996/635/CFSP (embargo armes, droits humains)"
+        },
+        {
+          "d": "2021-02-11",
+          "e": "OFAC programme Birmanie (EO 14014, coup d'État)"
+        },
+        {
+          "d": "2020-10-01",
+          "e": "Ajout PTHR UE"
+        },
+        {
+          "d": "2022-10-01",
+          "e": "GAFI black"
+        }
+      ]
+    },
+    {
+      "n": "Namibie",
+      "a2": "NA",
+      "a3": "NAM",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 4.78,
+      "cpi": 49,
+      "cpir": 59,
+      "h": [
+        {
+          "d": "2024-02-23",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Népal",
+      "a2": "NP",
+      "a3": "NPL",
+      "rg": "Asie",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.88,
+      "cpi": 34,
+      "cpir": 107,
+      "h": [
+        {
+          "d": "2025-02-21",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Nicaragua",
+      "a2": "NI",
+      "a3": "NIC",
+      "rg": "Am. centrale",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs dirigeants",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.44,
+      "cpi": 17,
+      "cpir": 169,
+      "h": [
+        {
+          "d": "2019-10-01",
+          "e": "Sanctions ciblées UE"
+        }
+      ]
+    },
+    {
+      "n": "Palaos",
+      "a2": "PW",
+      "a3": "PLW",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2020-02-18",
+          "e": "Ré-ajout Annexe I UE (non-respect AEOI)"
+        },
+        {
+          "d": "2021-02-26",
+          "e": "ETNC - Arrêté 26/02/2021 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Panama",
+      "a2": "PA",
+      "a3": "PAN",
+      "rg": "Am. centrale",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": 5.83,
+      "cpi": 33,
+      "cpir": 114,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2018-01-23",
+          "e": "Retrait Annexe I UE"
+        },
+        {
+          "d": "2020-02-18",
+          "e": "Ré-ajout Annexe I UE (EOIR insuffisant)"
+        },
+        {
+          "d": "2010-02-12",
+          "e": "ETNC - Arrêté 12/02/2010 (liste initiale, art. 238-0 A)"
+        },
+        {
+          "d": "2012-04-04",
+          "e": "Retrait ETNC - Arrêté 04/04/2012 (convention signée)"
+        },
+        {
+          "d": "2016-04-08",
+          "e": "ETNC - Arrêté 08/04/2016 (art. 238-0 A, 2 b) - Panama Papers"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Papouasie-Nvlle-Guinée",
+      "a2": "PG",
+      "a3": "PNG",
+      "rg": "Océanie",
+      "fatf": "grey",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 6.61,
+      "cpi": 31,
+      "cpir": 127,
+      "h": [
+        {
+          "d": "2026-02-13",
+          "e": "Ajout GAFI grey"
+        }
+      ]
+    },
+    {
+      "n": "Rép. dém. du Congo",
+      "a2": "CD",
+      "a3": "COD",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2023-03-16",
+      "sUE": "Embargo",
+      "sUED": "Embargo armes",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 7.63,
+      "cpi": 20,
+      "cpir": 163,
+      "h": [
+        {
+          "d": "2003-04-28",
+          "e": "Sanctions UE embargo armes - Décision 2010/788 (RCSNU 1493)"
+        },
+        {
+          "d": "2022-10-01",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2023-03-16",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Russie",
+      "a2": "RU",
+      "a3": "RUS",
+      "rg": "Europe",
+      "fatf": "susp",
+      "eu": 1,
+      "euD": "2026-01-29",
+      "sUE": "Sectoriel",
+      "sUED": "Finance, énergie, tech, transport",
+      "ofac": "Étendu",
+      "ofacD": "Sanctions Russie/Ukraine",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": 22,
+      "cpir": 154,
+      "h": [
+        {
+          "d": "2024-02-16",
+          "e": "ETNC - Arrêté 16/02/2024 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2014-07-31",
+          "e": "Sanctions UE sectorielles - Règlement 833/2014 (Crimée/Donbass)"
+        },
+        {
+          "d": "2014-03-06",
+          "e": "OFAC programme Russie étendu (EO 13661, Ukraine)"
+        },
+        {
+          "d": "2023-02-24",
+          "e": "Suspension GAFI"
+        },
+        {
+          "d": "2023-02-14",
+          "e": "Annexe I fiscale - Conclusions ECOFIN 14/02/2023"
+        },
+        {
+          "d": "2026-01-29",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Samoa",
+      "a2": "WS",
+      "a3": "WSM",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 1,
+      "bas": 4.56,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Retrait Annexe I UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        }
+      ]
+    },
+    {
+      "n": "Samoa américaines",
+      "a2": "AS",
+      "a3": "ASM",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        }
+      ]
+    },
+    {
+      "n": "Seychelles",
+      "a2": "SC",
+      "a3": "SYC",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 4.6,
+      "cpi": 72,
+      "cpir": 18,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Retrait Annexe II UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2024-02-20",
+          "e": "Ajout Annexe II UE - déplacé depuis Annexe I, Conseil 20/02/2024"
+        }
+      ]
+    },
+    {
+      "n": "Somalie",
+      "a2": "SO",
+      "a3": "SOM",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Embargo",
+      "sUED": "Embargo armes",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 11,
+      "cpir": 176,
+      "h": [
+        {
+          "d": "2002-12-10",
+          "e": "Embargo armes UE - Position commune 2002/960/CFSP (RCSNU 733)"
+        }
+      ]
+    },
+    {
+      "n": "Soudan",
+      "a2": "SD",
+      "a3": "SDN",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Embargo",
+      "sUED": "Embargo armes (Darfour)",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 11,
+      "cpir": 176,
+      "h": [
+        {
+          "d": "1994-03-01",
+          "e": "Embargo armes UE"
+        }
+      ]
+    },
+    {
+      "n": "Soudan du Sud",
+      "a2": "SS",
+      "a3": "SSD",
+      "rg": "Afrique",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2022-03-13",
+      "sUE": "Embargo",
+      "sUED": "Embargo armes",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 8,
+      "cpir": 180,
+      "h": [
+        {
+          "d": "2014-07-10",
+          "e": "Sanctions UE embargo - Règlement 748/2014"
+        },
+        {
+          "d": "2021-06-01",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2022-03-13",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Syrie",
+      "a2": "SY",
+      "a3": "SYR",
+      "rg": "Moyen-Orient",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "Complet",
+      "sUED": "Embargo quasi total",
+      "ofac": "Complet",
+      "ofacD": "Programme de sanctions global",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 12,
+      "cpir": 177,
+      "h": [
+        {
+          "d": "2011-05-09",
+          "e": "Sanctions UE complètes - Règlement 442/2011"
+        },
+        {
+          "d": "2004-05-11",
+          "e": "OFAC programme complet Syrie (EO 13338)"
+        },
+        {
+          "d": "2010-02-01",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Trinité-et-Tobago",
+      "a2": "TT",
+      "a3": "TTO",
+      "rg": "Caraïbes",
+      "fatf": "",
+      "eu": 1,
+      "euD": "2018-03-06",
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 1,
+      "bas": 4.12,
+      "cpi": 41,
+      "cpir": 82,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Retrait Annexe I UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2017-12-05",
+          "e": "Ajout Annexe I UE - 1ère liste 05/12/2017"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+        },
+        {
+          "d": "2018-03-06",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Turquie",
+      "a2": "TR",
+      "a3": "TUR",
+      "rg": "Moyen-Orient",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": "II",
+      "etnc": 0,
+      "bas": 5.65,
+      "cpi": 34,
+      "cpir": 107,
+      "h": [
+        {
+          "d": "2017-12-05",
+          "e": "Annexe II UE - liste originale, Conseil 05/12/2017"
+        }
+      ]
+    },
+    {
+      "n": "Vanuatu",
+      "a2": "VU",
+      "a3": "VUT",
+      "rg": "Océanie",
+      "fatf": "",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 1,
+      "bas": 4.97,
+      "cpi": 50,
+      "cpir": 57,
+      "h": [
+        {
+          "d": "2019-03-12",
+          "e": "Ajout Annexe I UE - Conseil 12/03/2019"
+        },
+        {
+          "d": "2020-01-06",
+          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 1°)"
+        },
+        {
+          "d": "2026-02-17",
+          "e": "Annexe I UE - maintien Conseil 17/02/2026"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Venezuela",
+      "a2": "VE",
+      "a3": "VEN",
+      "rg": "Am. du Sud",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2025-08-05",
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs dirigeants",
+      "ofac": "Étendu",
+      "ofacD": "Sanctions Venezuela",
+      "tax": null,
+      "etnc": 0,
+      "bas": 7.55,
+      "cpi": 10,
+      "cpir": 178,
+      "h": [
+        {
+          "d": "2017-11-13",
+          "e": "Sanctions UE ciblées - Règlement 2017/2063"
+        },
+        {
+          "d": "2015-03-09",
+          "e": "OFAC programme Venezuela - EO 13692 (mesures ciblées)"
+        },
+        {
+          "d": "2024-06-28",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2025-08-05",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Viêt Nam",
+      "a2": "VN",
+      "a3": "VNM",
+      "rg": "Asie",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2023-10-18",
+      "sUE": "",
+      "ofac": "",
+      "tax": "I",
+      "etnc": 0,
+      "bas": 6.69,
+      "cpi": 40,
+      "cpir": 88,
+      "h": [
+        {
+          "d": "2026-02-17",
+          "e": "Ajout Annexe I UE - Conseil 17/02/2026"
+        },
+        {
+          "d": "2023-06-23",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2023-10-18",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Yémen",
+      "a2": "YE",
+      "a3": "YEM",
+      "rg": "Moyen-Orient",
+      "fatf": "grey",
+      "eu": 1,
+      "euD": "2016-09-23",
+      "sUE": "Embargo",
+      "sUED": "Embargo armes",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": 13,
+      "cpir": 173,
+      "h": [
+        {
+          "d": "2015-04-14",
+          "e": "Sanctions UE embargo - Règlement 2015/878 (RCSNU 2216)"
+        },
+        {
+          "d": "2010-02-01",
+          "e": "Ajout GAFI grey"
+        },
+        {
+          "d": "2016-09-23",
+          "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Zimbabwe",
+      "a2": "ZW",
+      "a3": "ZWE",
+      "rg": "Afrique",
+      "fatf": "",
+      "eu": 0,
+      "sUE": "Ciblé",
+      "sUED": "Gel avoirs",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": 5.81,
+      "cpi": 23,
+      "cpir": 158,
+      "h": [
+        {
+          "d": "2002-02-01",
+          "e": "Sanctions ciblées UE"
+        }
+      ]
+    }
+  ]
+}
