@@ -382,7 +382,9 @@
       revision: {
         infosPF: ["Vérifier adresse actuelle", "Confirmer situation professionnelle", "Actualiser revenus/patrimoine si significatif"],
         infosPM: ["Vérifier dirigeants actuels", "Confirmer actionnariat/BE", "Actualiser activité si évolution"],
-        documents: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile/siège"],
+        documentsPF: ["PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile"],
+        documentsPM: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de siège"],
+        documentsTRUST: ["PI du trustee si expirée", "Acte constitutif actualisé (si modification)", "Actualisation identité des bénéficiaires"],
         verifications: ["Re-screening sanctions/PEP (tous)", "Vérifier évolution pays à risque", "Contrôle cohérence activité/opérations"],
         evidences: ["Rapport screening actualisé", "Note de revue périodique", "Historique des changements identifiés"]
       },
@@ -1064,9 +1066,11 @@
         docs = [...docs, ...CONFIG.PPE.documents];
       }
 
-      // v7.4: Mode révision - documents à actualiser
+      // v7.4: Mode révision - documents à actualiser (par type de client)
       if (isRevision) {
-        docs = [...docs, ...CONFIG.revision.documents];
+        if (v.clientType === 'PF') docs = [...docs, ...CONFIG.revision.documentsPF];
+        else if (v.clientType === 'TRUST') docs = [...docs, ...CONFIG.revision.documentsTRUST];
+        else docs = [...docs, ...CONFIG.revision.documentsPM];
       }
 
       return docs;
