@@ -817,7 +817,7 @@
 
       let step3Complete = false;
       if (v.clientType === 'PM') {
-        step3Complete = v.pays && v.legalForm && v.statut;
+        step3Complete = v.pays && v.legalForm;
       } else if (v.clientType) {
         step3Complete = true;
       }
@@ -959,10 +959,8 @@
       if (!v.organisation || !v.canal || !v.relation || !v.expositionUS || !v.clientType) return false;
       if (v.clientType === 'PF' || v.clientType === 'TRUST') return true;
       if (v.clientType === 'PM') {
-        if (!v.pays || !v.statut || !v.legalForm || !v.signataireDifferent) return false;
-        if (isCoteeApplicable(v.family, v.statut) && !v.cotee) return false;
-        if (isDetentionApplicable(v.family) && !v.detention) return false;
-        if (isDirDiffRequired(v.pays, v.statut, v.detention) && !v.dirDiff) return false;
+        // Génération progressive — socle visible dès pays + legalForm
+        if (!v.pays || !v.legalForm) return false;
         return true;
       }
       return false;
