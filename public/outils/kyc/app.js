@@ -481,7 +481,6 @@
         "PPE : maintenir la vigilance renforcée au moins 12 mois après la fin du mandat (L.561-46 CMF)",
         "En cas de doute : ne pas entrer en relation"
       ],
-      pointACPROccasionnel: "Occasionnel : appliquer seuils procédure interne",
       noteAssoFondation: "Association/Fondation : pas d'actionnariat. Documenter dirigeants, pouvoirs de signature et contrôle effectif.",
 
       // TIPS PAR SECTION (générés selon contexte)
@@ -672,7 +671,7 @@
       return {
         organisation: document.getElementById('organisation').value,
         canal: document.getElementById('canal').value,
-        relation: (document.getElementById('relation') || {}).value || 'affaires',
+        relation: 'affaires',
         expositionUS: document.getElementById('expositionUS').value,
         clientType: clientTypeEl ? clientTypeEl.value : null,
         pays: document.getElementById('pays').value,
@@ -1252,7 +1251,6 @@
 
     function buildACPRPoints(v) {
       const points = [...CONFIG.pointsACPR];
-      if (v.relation === 'occasionnelle') points.push(CONFIG.pointACPROccasionnel);
       return points;
     }
 
@@ -1550,7 +1548,6 @@
           formValues: {
             organisation: document.getElementById('organisation')?.value || '',
             canal: document.getElementById('canal')?.value || '',
-            relation: document.getElementById('relation')?.value || 'affaires',
             expositionUS: document.getElementById('expositionUS')?.value || '',
             clientType: clientTypeEl ? clientTypeEl.value : null,
             pays: document.getElementById('pays')?.value || '',
@@ -1607,7 +1604,6 @@
         
         safeSet('organisation', fv.organisation);
         safeSet('canal', fv.canal);
-        if (document.getElementById('relation')) safeSet('relation', fv.relation);
         safeSet('expositionUS', fv.expositionUS);
 
         if (fv.clientType) {
@@ -1918,7 +1914,6 @@
           if (foreignEnabled && verificationDate) summary += `Vérifié le : ${verificationDate}\n`;
         }
         summary += `Canal : ${v.canal || '-'}\n`;
-        summary += `Relation : ${v.relation || '-'}\n`;
         if (v.expositionUS === 'oui') summary += `⚠️ NEXUS US/OFAC\n`;
         summary += `\n`;
       }
