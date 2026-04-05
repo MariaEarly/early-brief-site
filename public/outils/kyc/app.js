@@ -1583,8 +1583,10 @@
       try {
         if (localStorage.getItem(STORAGE_KEY + '_enabled') !== '1') return false;
 
-        document.getElementById('toggleLocalStorage').checked = true;
-        document.getElementById('btnClearStorage').style.display = 'inline-flex';
+        const toggle = document.getElementById('toggleLocalStorage');
+        const btn = document.getElementById('btnClearStorage');
+        if (toggle) toggle.checked = true;
+        if (btn) btn.style.display = 'inline-flex';
 
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) return false;
