@@ -1,4 +1,86 @@
     // ========================================
+    // RULES ENGINE (loaded from rules.json)
+    // ========================================
+    let RULES = null;
+
+    async function loadRules() {
+      const resp = await fetch('./rules.json');
+      const data = await resp.json();
+      RULES = data.items.filter(i => i.id); // filtre les séparateurs _comment
+    }
+
+    function matchesProfile(item, v) {
+      const c = item.conditions;
+      if (!c) return true;
+
+      // client_type
+      if (c.client_type && !c.client_type.includes('*') &&
+          !c.client_type.includes(v.clientType)) return false;
+
+      // family
+      if (c.family && !c.family.includes('*') &&
+          !c.family.includes(v.family)) return false;
+
+      // pays
+      if (c.pays && !c.pays.includes('*') &&
+          !c.pays.includes(v.pays)) return false;
+
+      // statut (inclusion)
+      if (c.statut && !c.statut.includes('*') &&
+          !c.statut.includes(v.statut)) return false;
+
+      // statut_not (exclusion)
+      if (c.statut_not && c.statut_not.includes(v.statut)) return false;
+
+      // canal
+      if (c.canal && !c.canal.includes('*') &&
+          !c.canal.includes(v.canal)) return false;
+
+      // organisation
+      if (c.organisation && !c.organisation.includes('*') &&
+          !c.organisation.includes(v.organisation)) return false;
+
+      // ppeStatus
+      if (c.ppeStatus && !c.ppeStatus.includes('*') &&
+          !c.ppeStatus.includes(v.ppeStatus)) return false;
+
+      // cotee
+      if (c.cotee && !c.cotee.includes('*') &&
+          !c.cotee.includes(v.cotee)) return false;
+
+      // cotee_not
+      if (c.cotee_not && c.cotee_not.includes(v.cotee)) return false;
+
+      // detention
+      if (c.detention && !c.detention.includes('*') &&
+          !c.detention.includes(v.detention)) return false;
+
+      // signataire
+      if (c.signataire && !c.signataire.includes('*') &&
+          !c.signataire.includes(v.signataireDifferent)) return false;
+
+      // revision
+      if (c.revision) {
+        const isRevision = v.revisionMode ? 'true' : 'false';
+        if (!c.revision.includes(isRevision)) return false;
+      }
+
+      // expositionUS
+      if (c.expositionUS && !c.expositionUS.includes('*') &&
+          !c.expositionUS.includes(v.expositionUS)) return false;
+
+      return true;
+    }
+
+    function getRuleItems(category, v) {
+      if (!RULES) return [];
+      return RULES
+        .filter(item => item.category === category)
+        .filter(item => matchesProfile(item, v))
+        .map(item => item.label);
+    }
+
+    // ========================================
     // PAYS DATA (loaded from liste-pays/data.json)
     // ========================================
     let PAYS_DATA = null;
@@ -1755,7 +1837,12 @@
     // INIT
     // ========================================
     document.addEventListener('DOMContentLoaded', async () => {
-      // Options legalForm sont statiques dans le HTML depuis v8
+      // Charger le référentiel rules.json
+      try {
+        await loadRules();
+      } catch (e) {
+        console.warn('Rules non disponibles:', e.message);
+      }
 
       // v7.5: Charger les données pays GAFI/sanctions
       try {
