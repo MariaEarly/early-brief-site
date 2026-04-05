@@ -1026,6 +1026,7 @@
     // BUILD LISTS
     // ========================================
     function buildInfosList(v) {
+      // === ANCIEN MOTEUR (CONFIG) ===
       const r = { socle: [], complements: [] };
       const isRevision = v.revisionMode;
 
@@ -1061,6 +1062,28 @@
       r.complements = [...r.complements, ...CONFIG.infosCMF.purposeNatureBase];
       if (v.organisation && CONFIG.organisationComplements[v.organisation]) {
         r.complements.push(CONFIG.organisationComplements[v.organisation].purposeNature);
+      }
+
+      // === NOUVEAU MOTEUR (rules.json) — comparaison debug ===
+      if (RULES) {
+        const allInfoNew = getRuleItems('info', v)
+          .filter(label => {
+            // Exclure les items informationnels (ACPR, note asso) qui ne sont pas dans l'ancien build
+            const item = RULES.find(r => r.label === label && r.category === 'info');
+            return item && item.status !== 'informational';
+          });
+        const oldTotal = r.socle.length + r.complements.length;
+        const diff = allInfoNew.length - oldTotal;
+        const marker = diff === 0 ? '✅' : '⚠️';
+        console.log(`${marker} INFOS — rules.json: ${allInfoNew.length}, CONFIG: ${oldTotal} (socle ${r.socle.length} + comp ${r.complements.length})${diff !== 0 ? ' DELTA=' + diff : ''}`);
+        if (diff !== 0) {
+          const oldLabels = new Set([...r.socle, ...r.complements]);
+          const newLabels = new Set(allInfoNew);
+          const missing = [...oldLabels].filter(l => !newLabels.has(l));
+          const extra = [...newLabels].filter(l => !oldLabels.has(l));
+          if (missing.length) console.log('  MISSING in rules:', missing);
+          if (extra.length) console.log('  EXTRA in rules:', extra);
+        }
       }
 
       return r;
