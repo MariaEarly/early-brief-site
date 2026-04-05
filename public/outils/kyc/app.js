@@ -466,8 +466,8 @@
       revision: {
         infosPF: ["Vérifier adresse actuelle", "Confirmer situation professionnelle", "Actualiser revenus/patrimoine si significatif"],
         infosPM: ["Vérifier dirigeants actuels", "Confirmer actionnariat/BE", "Actualiser activité si évolution"],
-        documentsPF: ["PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile"],
-        documentsPM: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de siège"],
+        documentsPF: ["PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile (pratique de place)"],
+        documentsPM: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de siège (pratique de place)"],
         documentsTRUST: ["PI du trustee si expirée", "Acte constitutif actualisé (si modification)", "Actualisation identité des bénéficiaires"],
         verifications: ["Re-screening sanctions/PEP (tous)", "Vérifier évolution pays à risque", "Contrôle cohérence activité/opérations"],
         evidences: ["Rapport screening actualisé", "Note de revue périodique", "Historique des changements identifiés"]
@@ -2019,11 +2019,9 @@
         factors.push({ label: 'Proche/Associé PPE', level: 'high' });
       }
 
-      // Facteur 4: Exposition US
-      if (v.expositionUS === 'oui') {
-        score += 1;
-        factors.push({ label: 'Nexus US', level: 'medium' });
-      }
+      // Facteur 4: Exposition US — retiré du scoring.
+      // OFAC relève d'une politique interne, pas d'une obligation CMF.
+      // L'alerte contextuelle #nexusUSAlert suffit.
 
       // Facteur 5: Entrée à distance
       if (v.canal === 'distance') {
