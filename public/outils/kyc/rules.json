@@ -2,15 +2,60 @@
   "version": "1.0.0",
   "updated": "2026-04-05",
   "schema": {
-    "categories": ["info", "doc", "controle", "preuve"],
-    "natures": ["kyc_strict", "connaissance_relation", "be_controle", "vigilance_renforcee", "sectoriel"],
-    "statuses": ["mandatory", "conditional", "recommended", "informational"],
-    "client_types": ["PF", "PM", "TRUST"],
-    "families": ["commerciale", "civile", "sel", "association", "fondation", "gie", "publique", "ei"],
-    "pays_values": ["FR", "UE", "HORSUE"],
-    "organisations": ["BANQUE", "PSP", "EME", "CASP"],
-    "statuts": ["", "creation", "succursale"],
-    "canaux": ["presentiel", "distance"]
+    "categories": [
+      "info",
+      "doc",
+      "controle",
+      "preuve"
+    ],
+    "natures": [
+      "kyc_strict",
+      "connaissance_relation",
+      "be_controle",
+      "vigilance_renforcee",
+      "sectoriel"
+    ],
+    "statuses": [
+      "mandatory",
+      "conditional",
+      "recommended",
+      "informational"
+    ],
+    "client_types": [
+      "PF",
+      "PM",
+      "TRUST"
+    ],
+    "families": [
+      "commerciale",
+      "civile",
+      "sel",
+      "association",
+      "fondation",
+      "gie",
+      "publique",
+      "ei"
+    ],
+    "pays_values": [
+      "FR",
+      "UE",
+      "HORSUE"
+    ],
+    "organisations": [
+      "BANQUE",
+      "PSP",
+      "EME",
+      "CASP"
+    ],
+    "statuts": [
+      "",
+      "creation",
+      "succursale"
+    ],
+    "canaux": [
+      "presentiel",
+      "distance"
+    ]
   },
   "items": [
     {
@@ -19,118 +64,1938 @@
       "category": "info",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5, II, 1\u00b0",
+      "ref": "CMF R.561-5, II, 1°",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
       "conditions": {
-        "client_type": ["PM"]
+        "client_type": [
+          "PM"
+        ]
       }
     },
     {
       "id": "pm-socle-denomination",
-      "label": "D\u00e9nomination / raison sociale",
+      "label": "Dénomination / raison sociale",
       "category": "info",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5, II, 1\u00b0",
+      "ref": "CMF R.561-5, II, 1°",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
       "conditions": {
-        "client_type": ["PM"]
+        "client_type": [
+          "PM"
+        ]
       }
     },
     {
       "id": "pm-socle-immatriculation",
-      "label": "Num\u00e9ro d'immatriculation",
+      "label": "Numéro d'immatriculation",
       "category": "info",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5, II, 1\u00b0",
+      "ref": "CMF R.561-5, II, 1°",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
       "conditions": {
-        "client_type": ["PM"]
+        "client_type": [
+          "PM"
+        ]
       }
     },
     {
       "id": "pm-socle-siege",
-      "label": "Adresse du si\u00e8ge social",
+      "label": "Adresse du siège social",
       "category": "info",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5, II, 1\u00b0",
+      "ref": "CMF R.561-5, II, 1°",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
       "conditions": {
-        "client_type": ["PM"]
+        "client_type": [
+          "PM"
+        ]
       }
     },
     {
       "id": "pm-socle-representants",
-      "label": "Identit\u00e9 des repr\u00e9sentants l\u00e9gaux",
+      "label": "Identité des représentants légaux",
       "category": "info",
       "nature": "kyc_strict",
       "status": "mandatory",
       "ref": "CMF R.561-5, II + R.561-5-4",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234",
       "conditions": {
-        "client_type": ["PM"]
+        "client_type": [
+          "PM"
+        ]
       }
     },
     {
       "id": "pm-doc-kbis",
-      "label": "Extrait Kbis r\u00e9cent (souvent < 3 mois selon politique interne)",
+      "label": "Extrait Kbis récent (souvent < 3 mois selon politique interne)",
       "category": "doc",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5-1, 4\u00b0",
+      "ref": "CMF R.561-5-1, 4°",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
       "conditions": {
-        "client_type": ["PM"],
-        "pays": ["FR"],
-        "family": ["commerciale"],
-        "statut_not": ["creation", "succursale"]
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
       }
     },
     {
       "id": "pm-doc-statuts",
-      "label": "Statuts certifi\u00e9s conformes",
+      "label": "Statuts certifiés conformes",
       "category": "doc",
       "nature": "kyc_strict",
       "status": "mandatory",
-      "ref": "CMF R.561-5-1, 4\u00b0 + Lignes directrices ACPR 2025",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
       "conditions": {
-        "client_type": ["PM"],
-        "pays": ["FR"],
-        "family": ["commerciale"],
-        "statut_not": ["creation", "succursale"]
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
       }
     },
     {
       "id": "pm-doc-pi-representant",
-      "label": "PI du repr\u00e9sentant l\u00e9gal",
+      "label": "PI du représentant légal",
       "category": "doc",
       "nature": "kyc_strict",
       "status": "mandatory",
       "ref": "CMF R.561-5-4 + R.561-5-1",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234",
       "conditions": {
-        "client_type": ["PM"],
-        "pays": ["FR"],
-        "family": ["commerciale"],
-        "statut_not": ["creation", "succursale"]
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
       }
     },
     {
       "id": "pm-doc-justif-siege",
-      "label": "Justificatif si\u00e8ge (si non visible Kbis)",
+      "label": "Justificatif siège (si non visible Kbis)",
       "category": "doc",
       "nature": "kyc_strict",
       "status": "conditional",
-      "ref": "CMF R.561-5-1, 4\u00b0 + Lignes directrices ACPR 2025",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
       "conditions": {
-        "client_type": ["PM"],
-        "pays": ["FR"],
-        "family": ["commerciale"],
-        "statut_not": ["creation", "succursale"]
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 1 — Socle PF (8 items) ==="
+    },
+    {
+      "id": "pf-socle-nom",
+      "label": "Nom(s)",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, I, 1°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-socle-prenom",
+      "label": "Prénom(s)",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, I, 1°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-socle-date-naissance",
+      "label": "Date de naissance",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, I, 1°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-socle-lieu-naissance",
+      "label": "Lieu de naissance",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, I, 1°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-socle-nationalite",
+      "label": "Nationalité(s)",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-socle-adresse",
+      "label": "Adresse du domicile",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-compl-profession",
+      "label": "Profession / activité",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-compl-revenus",
+      "label": "Revenus / patrimoine estimé",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 2 — Socle TRUST (7 items) ==="
+    },
+    {
+      "id": "trust-socle-nature",
+      "label": "Nature juridique du dispositif",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-socle-constituant",
+      "label": "Identité du constituant",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-5 II + AMLR Art. 62(1)a + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-socle-trustees",
+      "label": "Identité du(des) trustee(s)",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-4 + AMLR Art. 62(1)b + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-socle-beneficiaires",
+      "label": "Identité des bénéficiaires",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-socle-protecteur",
+      "label": "Identité du protecteur (si applicable)",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-5 II + AMLR Art. 62(1)d + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-compl-objet",
+      "label": "Objet et finalité du trust",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF R.561-12 + AMLR Art. 62(2) + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-compl-loi",
+      "label": "Loi applicable et juridiction",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 3 — purposeNatureBase (3 items, tous types) ==="
+    },
+    {
+      "id": "common-objet-relation",
+      "label": "Objet de la relation d'affaires",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "common-nature-relation",
+      "label": "Nature de la relation d'affaires",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "common-origine-fonds",
+      "label": "Origine des fonds (déclaratif)",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF R.561-12-1 + R.561-12 + selon le risque",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592280",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 4 — organisationComplements (4 items) ==="
+    },
+    {
+      "id": "orga-banque-purpose",
+      "label": "Nature des opérations bancaires envisagées",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ],
+        "organisation": [
+          "BANQUE"
+        ]
+      }
+    },
+    {
+      "id": "orga-psp-purpose",
+      "label": "Objet et nature des services de paiement",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ],
+        "organisation": [
+          "PSP"
+        ]
+      }
+    },
+    {
+      "id": "orga-eme-purpose",
+      "label": "Usage prévu de la monnaie électronique",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ],
+        "organisation": [
+          "EME"
+        ]
+      }
+    },
+    {
+      "id": "orga-casp-purpose",
+      "label": "Stratégie crypto et provenance des actifs numériques",
+      "category": "info",
+      "nature": "connaissance_relation",
+      "status": "mandatory",
+      "ref": "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858",
+      "conditions": {
+        "client_type": [
+          "PF",
+          "PM",
+          "TRUST"
+        ],
+        "organisation": [
+          "CASP"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 5 — Documents PF (3 items) ==="
+    },
+    {
+      "id": "pf-doc-pi",
+      "label": "Pièce d'identité en cours de validité",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 1°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-doc-domicile",
+      "label": "Justificatif de domicile récent (selon procédure interne et approche par les risques — non obligatoire au sens strict du CMF)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "Lignes directrices ACPR 2025 — bonne pratique / approche par les risques",
+      "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-relatives-lidentification-la-verification-de-lidentite-et-la-connaissance-de-la",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ]
+      }
+    },
+    {
+      "id": "pf-doc-distance",
+      "label": "Second justificatif ou mesure complémentaire (entrée à distance)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "conditional",
+      "ref": "CMF R.561-5-2 + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577229/",
+      "conditions": {
+        "client_type": [
+          "PF"
+        ],
+        "canal": [
+          "distance"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 5 — Documents PM FR par famille (41 items) ==="
+    },
+    {
+      "id": "pm-doc-fr-commerciale-extrait-kbis-recent-souvent-3-mois-selon",
+      "label": "Extrait Kbis récent (souvent < 3 mois selon politique interne)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-commerciale-statuts-certifies-conformes",
+      "label": "Statuts certifiés conformes",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-commerciale-pi-du-representant-legal",
+      "label": "PI du représentant légal",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-commerciale-justificatif-siege-si-non-visible-kbis",
+      "label": "Justificatif siège (si non visible Kbis)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "conditional",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "commerciale"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-civile-extrait-kbis-ou-rcs",
+      "label": "Extrait Kbis ou RCS",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "civile"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-civile-statuts-certifies-conformes",
+      "label": "Statuts certifiés conformes",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "civile"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-civile-pi-du-gerant",
+      "label": "PI du gérant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "civile"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-sel-extrait-kbis-recent",
+      "label": "Extrait Kbis récent",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "sel"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-sel-statuts-certifies-conformes",
+      "label": "Statuts certifiés conformes",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "sel"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-sel-pi-du-representant-legal",
+      "label": "PI du représentant légal",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "sel"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-sel-justificatif-inscription-ordre",
+      "label": "Justificatif inscription Ordre",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "sel"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-statuts-a-jour",
+      "label": "Statuts à jour",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-recepisse-prefecture-rna-joafe",
+      "label": "Récépissé préfecture (RNA) / JOAFE",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-liste-membres-du-bureau",
+      "label": "Liste membres du bureau",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-pv-designation-dirigeants",
+      "label": "PV désignation dirigeants",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-association-pouvoirs-delegation",
+      "label": "Pouvoirs / délégation",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "association"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-statuts-ou-acte-constitutif",
+      "label": "Statuts ou acte constitutif",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-decret-decision-de-creation",
+      "label": "Décret / décision de création",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-liste-administrateurs",
+      "label": "Liste administrateurs",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-pv-nomination-dirigeants",
+      "label": "PV nomination dirigeants",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-fondation-pouvoirs-delegation",
+      "label": "Pouvoirs / délégation",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "fondation"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-gie-extrait-kbis-recent",
+      "label": "Extrait Kbis récent",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "gie"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-gie-contrat-constitutif-statuts",
+      "label": "Contrat constitutif / statuts",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "gie"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-gie-liste-des-membres",
+      "label": "Liste des membres",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "gie"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-gie-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "gie"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-gie-pouvoirs-delegation",
+      "label": "Pouvoirs / délégation",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "gie"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-publique-acte-de-nomination",
+      "label": "Acte de nomination",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "publique"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-publique-delegation-de-pouvoirs",
+      "label": "Délégation de pouvoirs",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "publique"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-publique-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "publique"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-ei-avis-insee-sirene",
+      "label": "Avis INSEE / SIRENE",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "ei"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-ei-pi-de-lentrepreneur",
+      "label": "PI de l'entrepreneur",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "ei"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-ei-justificatif-domiciliation",
+      "label": "Justificatif domiciliation",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "family": [
+          "ei"
+        ],
+        "statut_not": [
+          "creation",
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-creation-projet-de-statuts",
+      "label": "Projet de statuts",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "creation"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-creation-attestation-de-depot-des-fonds",
+      "label": "Attestation de dépôt des fonds",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "creation"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-creation-pi-du-fondateur",
+      "label": "PI du fondateur",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "creation"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-creation-recepisse-de-depot-cfe",
+      "label": "Récépissé de dépôt CFE",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "creation"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-succursale-extrait-immatriculation-succursale",
+      "label": "Extrait immatriculation succursale",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-succursale-statuts-societe-mere",
+      "label": "Statuts société mère",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-fr-succursale-extrait-registre-societe-mere",
+      "label": "Extrait registre société mère",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "FR"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-common-be-cotee",
+      "label": "Justificatif de cotation",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "conditional",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "cotee": [
+          "oui"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-common-pouvoirs",
+      "label": "Justificatif des pouvoirs (PV, délégation)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "conditional",
+      "ref": "CMF R.561-5-1, 4°",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "signataire": [
+          "different"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 6 — Documents PM UE (7 items) ==="
+    },
+    {
+      "id": "pm-doc-ue-extrait-registre-local-recent",
+      "label": "Extrait registre local récent",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-statuts-traduits",
+      "label": "Statuts (traduits)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-justificatif-siege",
+      "label": "Justificatif siège",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-succursale-extrait-immatriculation-succursale",
+      "label": "Extrait immatriculation succursale",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-succursale-extrait-registre-societe-mere",
+      "label": "Extrait registre société mère",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-ue-succursale-statuts-societe-mere",
+      "label": "Statuts société mère",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "UE"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 7 — Documents PM HORSUE (7 items) ==="
+    },
+    {
+      "id": "pm-doc-horsue-extrait-registre-apostille-legalise",
+      "label": "Extrait registre (apostille/légalisé)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-statuts-traduits-certifies",
+      "label": "Statuts (traduits, certifiés)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-pi-du-representant",
+      "label": "PI du représentant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-justificatif-siege",
+      "label": "Justificatif siège",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-certificat-de-validite-juridique-ou-equi",
+      "label": "Certificat de validité juridique ou équivalent (enregistrement registre officiel)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut_not": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-succursale-extrait-immatriculation-succursale-fr",
+      "label": "Extrait immatriculation succursale FR",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "id": "pm-doc-horsue-succursale-documents-societe-mere",
+      "label": "Documents société mère",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "PM"
+        ],
+        "pays": [
+          "HORSUE"
+        ],
+        "statut": [
+          "succursale"
+        ]
+      }
+    },
+    {
+      "_comment": "=== BLOC 8 — Documents TRUST (7 items) ==="
+    },
+    {
+      "id": "trust-doc-acte-constitutif-du-trust",
+      "label": "Acte constitutif du trust",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1 + AMLR Art. 62 + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-piece-didentite-du-trustee",
+      "label": "Pièce d'identité du trustee",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 1° + AMLR Art. 62(1)b + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-piece-didentite-du-constituant",
+      "label": "Pièce d'identité du constituant",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 1° + AMLR Art. 62(1)a + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-justificatif-didentite-des-beneficiaires",
+      "label": "Justificatif d'identité des bénéficiaires",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-piece-didentite-du-protecteur-si-designe",
+      "label": "Pièce d'identité du protecteur (si désigné)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1 + AMLR Art. 62(1)d + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-justificatif-dorigine-des-fonds-apportes",
+      "label": "Justificatif d'origine des fonds apportés au trust",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-12 + AMLR Art. 29(1)c + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
+      }
+    },
+    {
+      "id": "trust-doc-organigramme-du-dispositif-constituant-t",
+      "label": "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "recommended",
+      "ref": "CMF L.561-2-2 + AMLR Art. 62 + LD ACPR Identification 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537",
+      "conditions": {
+        "client_type": [
+          "TRUST"
+        ]
       }
     }
   ]
