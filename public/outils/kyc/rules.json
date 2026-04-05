@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-04-05",
+  "schema": {
+    "categories": ["info", "doc", "controle", "preuve"],
+    "natures": ["kyc_strict", "connaissance_relation", "be_controle", "vigilance_renforcee", "sectoriel"],
+    "statuses": ["mandatory", "conditional", "recommended", "informational"],
+    "client_types": ["PF", "PM", "TRUST"],
+    "families": ["commerciale", "civile", "sel", "association", "fondation", "gie", "publique", "ei"],
+    "pays_values": ["FR", "UE", "HORSUE"],
+    "organisations": ["BANQUE", "PSP", "EME", "CASP"],
+    "statuts": ["", "creation", "succursale"],
+    "canaux": ["presentiel", "distance"]
+  },
+  "items": [
+    {
+      "id": "pm-socle-forme-juridique",
+      "label": "Forme juridique",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, II, 1\u00b0",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": ["PM"]
+      }
+    },
+    {
+      "id": "pm-socle-denomination",
+      "label": "D\u00e9nomination / raison sociale",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, II, 1\u00b0",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": ["PM"]
+      }
+    },
+    {
+      "id": "pm-socle-immatriculation",
+      "label": "Num\u00e9ro d'immatriculation",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, II, 1\u00b0",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": ["PM"]
+      }
+    },
+    {
+      "id": "pm-socle-siege",
+      "label": "Adresse du si\u00e8ge social",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, II, 1\u00b0",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220",
+      "conditions": {
+        "client_type": ["PM"]
+      }
+    },
+    {
+      "id": "pm-socle-representants",
+      "label": "Identit\u00e9 des repr\u00e9sentants l\u00e9gaux",
+      "category": "info",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5, II + R.561-5-4",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234",
+      "conditions": {
+        "client_type": ["PM"]
+      }
+    },
+    {
+      "id": "pm-doc-kbis",
+      "label": "Extrait Kbis r\u00e9cent (souvent < 3 mois selon politique interne)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4\u00b0",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": ["PM"],
+        "pays": ["FR"],
+        "family": ["commerciale"],
+        "statut_not": ["creation", "succursale"]
+      }
+    },
+    {
+      "id": "pm-doc-statuts",
+      "label": "Statuts certifi\u00e9s conformes",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-1, 4\u00b0 + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": ["PM"],
+        "pays": ["FR"],
+        "family": ["commerciale"],
+        "statut_not": ["creation", "succursale"]
+      }
+    },
+    {
+      "id": "pm-doc-pi-representant",
+      "label": "PI du repr\u00e9sentant l\u00e9gal",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "mandatory",
+      "ref": "CMF R.561-5-4 + R.561-5-1",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234",
+      "conditions": {
+        "client_type": ["PM"],
+        "pays": ["FR"],
+        "family": ["commerciale"],
+        "statut_not": ["creation", "succursale"]
+      }
+    },
+    {
+      "id": "pm-doc-justif-siege",
+      "label": "Justificatif si\u00e8ge (si non visible Kbis)",
+      "category": "doc",
+      "nature": "kyc_strict",
+      "status": "conditional",
+      "ref": "CMF R.561-5-1, 4\u00b0 + Lignes directrices ACPR 2025",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956",
+      "conditions": {
+        "client_type": ["PM"],
+        "pays": ["FR"],
+        "family": ["commerciale"],
+        "statut_not": ["creation", "succursale"]
+      }
+    }
+  ]
+}
