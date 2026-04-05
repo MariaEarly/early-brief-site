@@ -1040,68 +1040,7 @@
     }
 
     function buildDocsList(v) {
-      let docs = [];
-      const isRevision = v.revisionMode;
-
-      if (v.clientType === 'PF') {
-        docs = [...CONFIG.documents.PF.base];
-        if (v.canal === 'distance') docs = [...docs, ...CONFIG.documents.PF.distance];
-      } else if (v.clientType === 'PM') {
-        const region = v.pays;
-        const family = v.effectiveFamily;
-
-        if (region === 'FR') {
-          const regionDocs = CONFIG.documents.PM.FR;
-          if (v.statut === 'creation') docs = [...regionDocs.creation];
-          else if (v.statut === 'succursale') docs = [...regionDocs.succursale];
-          else docs = [...(regionDocs[family] || regionDocs.commerciale)];
-        } else if (region === 'UE') {
-          docs = v.statut === 'succursale' ? [...CONFIG.documents.PM.UE.succursale] : [...CONFIG.documents.PM.UE.base];
-        } else {
-          docs = v.statut === 'succursale' ? [...CONFIG.documents.PM.HORSUE.succursale] : [...CONFIG.documents.PM.HORSUE.base];
-        }
-
-        if (isCoteeApplicable(v.family, v.statut) && v.cotee === 'oui') {
-          docs.push(CONFIG.documents.PM.common.beCotee);
-        }
-        if (v.signataireDifferent === 'different') {
-          docs.push(CONFIG.documents.PM.common.pouvoirs);
-          // v7.4: Mandataire - documents complémentaires
-          docs = [...docs, ...CONFIG.mandataire.documents];
-        }
-      } else if (v.clientType === 'TRUST') {
-        docs = [...CONFIG.documents.TRUST];
-      }
-
-      // v7.4: PPE - documents complémentaires
-      if (v.ppeStatus && v.ppeStatus !== '') {
-        docs = [...docs, ...CONFIG.PPE.documents];
-      }
-
-      // v7.4: Mode révision - documents à actualiser (par type de client)
-      if (isRevision) {
-        if (v.clientType === 'PF') docs = [...docs, ...CONFIG.revision.documentsPF];
-        else if (v.clientType === 'TRUST') docs = [...docs, ...CONFIG.revision.documentsTRUST];
-        else docs = [...docs, ...CONFIG.revision.documentsPM];
-      }
-
-      // === DEBUG: comparaison rules.json ===
-      if (RULES) {
-        const newDocs = getRuleItems('doc', v);
-        const diff = newDocs.length - docs.length;
-        const marker = diff === 0 ? '✅' : '⚠️';
-        console.log(`${marker} DOCS — rules.json: ${newDocs.length}, CONFIG: ${docs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
-        if (diff !== 0) {
-          const oldSet = new Set(docs);
-          const newSet = new Set(newDocs);
-          const missing = [...oldSet].filter(l => !newSet.has(l));
-          const extra = [...newSet].filter(l => !oldSet.has(l));
-          if (missing.length) console.log('  DOCS MISSING in rules:', missing);
-          if (extra.length) console.log('  DOCS EXTRA in rules:', extra);
-        }
-      }
-
-      return docs;
+      return getRuleItems('doc', v);
     }
 
     // Items gel des avoirs (screening sanctions / OFAC)
@@ -1114,111 +1053,12 @@
     }
 
     function buildVerificationsList(v) {
-      // Gel items are now in buildGelList — keep only non-gel verifications
       const gelItems = new Set(buildGelList(v));
-      const verifs = CONFIG.verifications.base.filter(item => !gelItems.has(item));
-      const isRevision = v.revisionMode;
-
-      if (v.clientType === 'PM') {
-        const family = v.effectiveFamily;
-        if (!isNoBEFamily(family)) {
-          if (isCoteeApplicable(v.family, v.statut) && v.cotee === 'oui') {
-            verifs.push(CONFIG.verifications.BECotee);
-          } else if (!isAssoFondation(v.family)) {
-            verifs.push(CONFIG.verifications.BE);
-          }
-        }
-        // v7.4: Mandataire - vérifications
-        if (v.signataireDifferent === 'different') {
-          verifs.push(...CONFIG.mandataire.verifications);
-        }
-      } else if (v.clientType === 'TRUST') {
-        verifs.push(CONFIG.verifications.TRUST);
-      }
-
-      // v7.4: PPE - vérifications renforcées
-      if (v.ppeStatus && v.ppeStatus !== '') {
-        verifs.push(...CONFIG.PPE.verifications);
-      }
-
-      // v7.4: Mode révision - vérifications à renouveler (sans re-screening, déjà dans gel)
-      if (isRevision) {
-        const revVerifs = CONFIG.revision.verifications.filter(item => !gelItems.has(item));
-        verifs.push(...revVerifs);
-      }
-
-      // === DEBUG: comparaison rules.json ===
-      if (RULES) {
-        const newVerifs = getRuleItems('controle', v).filter(label => !gelItems.has(label));
-        const diff = newVerifs.length - verifs.length;
-        const marker = diff === 0 ? '✅' : '⚠️';
-        console.log(`${marker} VERIFS — rules.json: ${newVerifs.length}, CONFIG: ${verifs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
-        if (diff !== 0) {
-          const oldSet = new Set(verifs);
-          const newSet = new Set(newVerifs);
-          const missing = [...oldSet].filter(l => !newSet.has(l));
-          const extra = [...newSet].filter(l => !oldSet.has(l));
-          if (missing.length) console.log('  VERIFS MISSING in rules:', missing);
-          if (extra.length) console.log('  VERIFS EXTRA in rules:', extra);
-        }
-      }
-
-      return verifs;
+      return getRuleItems('controle', v).filter(label => !gelItems.has(label));
     }
 
     function buildEvidencesList(v) {
-      let evs = [CONFIG.evidences.screening];
-      const isRevision = v.revisionMode;
-
-      if (v.expositionUS === 'oui') evs.push(CONFIG.evidences.OFAC);
-      if (v.canal === 'distance') evs = [...evs, ...CONFIG.evidences.distance];
-
-      if (v.clientType === 'PM') {
-        const family = v.effectiveFamily;
-        if (isAssoFondation(v.family)) {
-          evs = [...evs, ...CONFIG.evidences.gouvernance];
-        } else if (!isNoBEFamily(family)) {
-          if (isCoteeApplicable(v.family, v.statut) && v.cotee === 'oui') {
-            evs.push(CONFIG.evidences.BECotee);
-          } else {
-            evs = [...evs, ...CONFIG.evidences.BE];
-          }
-        }
-        // v7.4: Mandataire - preuves
-        if (v.signataireDifferent === 'different') {
-          evs.push(...CONFIG.mandataire.evidences);
-        }
-      } else if (v.clientType === 'TRUST') {
-        evs = [...evs, ...CONFIG.evidences.TRUST];
-      }
-
-      // v7.4: PPE - preuves
-      if (v.ppeStatus && v.ppeStatus !== '') {
-        evs.push(...CONFIG.PPE.evidences);
-      }
-
-      // v7.4: Mode révision - preuves
-      if (isRevision) {
-        evs.push(...CONFIG.revision.evidences);
-      }
-
-      // === DEBUG: comparaison rules.json ===
-      if (RULES) {
-        const newEvs = getRuleItems('preuve', v);
-        const diff = newEvs.length - evs.length;
-        const marker = diff === 0 ? '✅' : '⚠️';
-        console.log(`${marker} EVIDENCES — rules.json: ${newEvs.length}, CONFIG: ${evs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
-        if (diff !== 0) {
-          const oldSet = new Set(evs);
-          const newSet = new Set(newEvs);
-          const missing = [...oldSet].filter(l => !newSet.has(l));
-          const extra = [...newSet].filter(l => !oldSet.has(l));
-          if (missing.length) console.log('  EVIDENCES MISSING in rules:', missing);
-          if (extra.length) console.log('  EVIDENCES EXTRA in rules:', extra);
-        }
-      }
-
-      return evs;
+      return getRuleItems('preuve', v);
     }
 
     function buildACPRPoints(v) {
