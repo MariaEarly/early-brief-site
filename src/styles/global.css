@@ -726,6 +726,7 @@ hr {
   letter-spacing: 3px;
   color: var(--ink);
   font-weight: 500;
+  margin-top: 0;
   margin-bottom: 28px;
 }
 .ressources-orientation {
