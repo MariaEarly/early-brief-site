@@ -340,7 +340,7 @@
           },
           common: { beCotee: "Justificatif de cotation", pouvoirs: "Justificatif des pouvoirs (PV, délégation)" }
         },
-        TRUST: ["Acte constitutif du trust", "PI du trustee", "PI du constituant", "Justificatif identité des bénéficiaires"]
+        TRUST: ["Acte constitutif du trust", "PI du trustee", "PI du constituant", "Justificatif identité des bénéficiaires", "Pièce d'identité du protecteur (si désigné)", "Justificatif d'origine des fonds apportés au trust", "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)"]
       },
 
       verifications: {
