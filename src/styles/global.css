@@ -728,6 +728,34 @@ hr {
   font-weight: 500;
   margin-bottom: 28px;
 }
+.ressources-orientation {
+  background: rgba(26, 24, 20, 0.04);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+.orientation-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.orientation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.orientation-links a {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--terra);
+  text-decoration: none;
+  font-weight: 500;
+}
+.orientation-links a:hover {
+  text-decoration: underline;
+}
 .ressources-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

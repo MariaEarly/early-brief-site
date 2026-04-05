@@ -1314,7 +1314,21 @@
       }
 
       const restored = loadFromLocalStorage();
-      if (restored) setTimeout(updateForm, 100);
+      if (restored) {
+        setTimeout(() => {
+          const org = document.getElementById('organisation')?.value;
+          if (org) {
+            // Activate persona card visually
+            document.querySelectorAll('.persona-card').forEach(card => {
+              card.classList.toggle('active', card.dataset.persona === org);
+            });
+          }
+          // Sync lastClientType so updateForm won't reset restored fields
+          const ct = document.querySelector('input[name="clientType"]:checked')?.value;
+          if (ct) lastClientType = ct;
+          updateForm();
+        }, 100);
+      }
 
       updateProgressBar();
     });

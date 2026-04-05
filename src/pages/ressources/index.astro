@@ -14,8 +14,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="ressources-intro">Outils et fiches opérationnelles pour les équipes conformité — en accès libre.</p>
   </div>
 
-  <div class="ressources-section">
-    <div class="ressources-section-label">Outils interactifs</div>
+  <div class="ressources-orientation">
+    <p class="orientation-label">Je cherche...</p>
+    <div class="orientation-links">
+      <a href="#outils">Un outil opérationnel</a>
+      <a href="#textes">Un texte ou une cartographie</a>
+      <a href="#fiches">Une fiche pratique</a>
+      <a href="#sanctions">Des décisions & jurisprudence</a>
+    </div>
+  </div>
+
+  <div class="ressources-section" id="outils">
+    <h2 class="ressources-section-label">Outils interactifs</h2>
     <div class="ressources-grid">
       <a href="/outils/tracker/" class="ressources-card" target="_blank" rel="noopener">
         <div class="ressources-card-tag">Outil</div>
@@ -37,13 +47,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </a>
       <a href="/outils/kyc/" class="ressources-card" target="_blank" rel="noopener">
         <div class="ressources-card-tag">Outil</div>
-        <h2 class="ressources-card-title">KYC Document Collector</h2>
+        <h2 class="ressources-card-title">Checklist KYC/KYB</h2>
         <p class="ressources-card-desc">Générez une checklist de collecte adaptée à votre client en 30 secondes. Export PDF, JSON, CSV.</p>
         <div class="ressources-card-link">Lancer l'outil →</div>
       </a>
       <a href="/outils/autres-publications/" class="ressources-card" target="_blank" rel="noopener">
         <div class="ressources-card-tag">Outil</div>
-        <h2 class="ressources-card-title">Autres publications</h2>
+        <h2 class="ressources-card-title">Rapports &amp; signaux régulateurs</h2>
         <p class="ressources-card-desc">Discours, rapports, positions et signaux des régulateurs — hors textes applicables.</p>
         <div class="ressources-card-link">Ouvrir →</div>
       </a>
@@ -56,8 +66,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <div class="ressources-section">
-    <div class="ressources-section-label">Base réglementaire</div>
+  <div class="ressources-section" id="textes">
+    <h2 class="ressources-section-label">Explorer les textes</h2>
     <div class="ressources-grid">
       <a href="/reglementations/" class="ressources-card">
         <div class="ressources-card-tag">Dashboard</div>
@@ -75,7 +85,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 
   <div class="ressources-section">
-    <div class="ressources-section-label">Cadre réglementaire</div>
+    <h2 class="ressources-section-label">Guides thématiques</h2>
     <div class="ressources-grid">
       <a href="/ressources/cadre/lcb-ft/" class="ressources-card">
         <div class="ressources-card-tag">Référence</div>
@@ -104,8 +114,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <div class="ressources-section">
-    <div class="ressources-section-label">Fiches opérationnelles</div>
+  <div class="ressources-section" id="fiches">
+    <h2 class="ressources-section-label">Fiches opérationnelles</h2>
     <div class="ressources-grid">
       <a href="/ressources/fiches/kyc/" class="ressources-card">
         <div class="ressources-card-tag">KYC / KYB</div>
@@ -128,8 +138,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <div class="ressources-section">
-    <div class="ressources-section-label">Sanctions &amp; jurisprudence</div>
+  <div class="ressources-section" id="sanctions">
+    <h2 class="ressources-section-label">Sanctions &amp; jurisprudence</h2>
     <div class="ressources-grid">
       <a href="/ressources/sanctions/panorama/" class="ressources-card">
         <div class="ressources-card-tag">Guide</div>
@@ -159,7 +169,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 
   <div class="ressources-section">
-    <div class="ressources-section-label">Institutions &amp; superviseurs</div>
+    <h2 class="ressources-section-label">Institutions &amp; superviseurs</h2>
     <div class="ressources-grid">
       <a href="/ressources/institutions/acpr/" class="ressources-card">
         <div class="ressources-card-tag">France</div>
@@ -195,7 +205,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 
   <div class="ressources-section">
-    <div class="ressources-section-label">Références</div>
+    <h2 class="ressources-section-label">Glossaire &amp; FAQ</h2>
     <div class="ressources-grid">
       <a href="/ressources/glossaire/" class="ressources-card">
         <div class="ressources-card-tag">Référence</div>
