@@ -16,6 +16,7 @@ export default defineConfig({
       'https://early-brief.com/outils/roadmap/',
       'https://early-brief.com/outils/early-request/',
       'https://early-brief.com/outils/autres-publications/',
+      'https://early-brief.com/outils/liste-pays/carte',
     ],
   })],
   trailingSlash: 'always',
