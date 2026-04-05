@@ -952,6 +952,7 @@
         updatePPEAlert(v);
         updateRevisionModeAlert(v);
         checkPaysAlerte(v.paysDetail);
+        checkNexusUSAlerte(v);
       } catch (e) {
         console.warn('v7.4 features error:', e);
       }
@@ -2117,6 +2118,22 @@
       icon.textContent = hasRed ? '⚠️' : 'ℹ️';
       title.textContent = alerts[0].title;
       text.innerHTML = alerts.map(a => a.text).join('<br><br>');
+    }
+
+    // ========================================
+    // v7.5: NEXUS US ALERT
+    // ========================================
+    function checkNexusUSAlerte(v) {
+      const el = document.getElementById('nexusUSAlert');
+      if (!el) return;
+
+      if (v.expositionUS === 'oui') {
+        el.classList.remove('hidden');
+        document.getElementById('nexusUSAlertText').textContent =
+          'Une exposition aux États-Unis peut déclencher des obligations de screening OFAC (SDN list) indépendamment du droit français. Vérifiez le nexus US de votre client et consultez votre politique interne sanctions.';
+      } else {
+        el.classList.add('hidden');
+      }
     }
 
     // ========================================
