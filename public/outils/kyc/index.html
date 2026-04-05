@@ -593,6 +593,15 @@
       <button class="btn-link" id="btnGenerate" onclick="generateResults()">Générer la checklist</button>
     </div>
 
+    <div class="toggle-row">
+      <label class="toggle-label">
+        <input type="checkbox" id="toggleLocalStorage" onchange="toggleLocalStorageSave(this.checked)">
+        <span>Sauvegarder mon dossier localement</span>
+      </label>
+      <span class="toggle-hint">Les données restent dans votre navigateur</span>
+      <button id="btnClearStorage" onclick="clearLocalStorage()" class="btn-clear" disabled>Vider</button>
+    </div>
+
     </div><!-- /.container -->
 
     <div class="tool-footer">

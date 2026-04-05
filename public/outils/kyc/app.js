@@ -886,9 +886,9 @@
       }
     }
 
-    function toggleLocalStorage() {
-      const enabled = isLocalStorageEnabled();
-      document.getElementById('btnClearStorage').style.display = enabled ? 'inline-flex' : 'none';
+    function toggleLocalStorageSave(enabled) {
+      const btn = document.getElementById('btnClearStorage');
+      if (btn) btn.disabled = !enabled;
       if (enabled) saveToLocalStorage();
       try {
         if (isLocalStorageAvailable()) {
@@ -938,10 +938,9 @@
       try {
         if (localStorage.getItem(STORAGE_KEY + '_enabled') !== '1') return false;
 
-        const toggle = document.getElementById('toggleLocalStorage');
+        document.getElementById('toggleLocalStorage')?.setAttribute('checked', '');
         const btn = document.getElementById('btnClearStorage');
-        if (toggle) toggle.checked = true;
-        if (btn) btn.style.display = 'inline-flex';
+        if (btn) btn.disabled = false;
 
         const stored = localStorage.getItem(STORAGE_KEY);
         if (!stored) return false;
@@ -1013,8 +1012,9 @@
       try {
         localStorage.removeItem(STORAGE_KEY);
         localStorage.removeItem(STORAGE_KEY + '_enabled');
-        document.getElementById('toggleLocalStorage').checked = false;
-        document.getElementById('btnClearStorage').style.display = 'none';
+        document.getElementById('toggleLocalStorage')?.removeAttribute('checked');
+        const btn = document.getElementById('btnClearStorage');
+        if (btn) btn.disabled = true;
         checkedItems.clear();
         updateChecklistProgress();
       } catch (e) {
