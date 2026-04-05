@@ -214,6 +214,90 @@
           ref: "CMF L.561-6 — vigilance constante sur les opérations",
           url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577798"
         },
+
+        // =========================================================
+        // TRUST / FIDUCIE
+        // =========================================================
+
+        // Identification
+        "Nature juridique du dispositif": {
+          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Identité du constituant": {
+          ref: "CMF L.561-5 II + AMLR Art. 62(1)a + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Identité du(des) trustee(s)": {
+          ref: "CMF R.561-5-4 + AMLR Art. 62(1)b + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
+        },
+        "Identité des bénéficiaires": {
+          ref: "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
+        },
+        "Identité du protecteur (si applicable)": {
+          ref: "CMF L.561-5 II + AMLR Art. 62(1)d + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+        "Objet et finalité du trust": {
+          ref: "CMF R.561-12 + AMLR Art. 62(2) + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
+        },
+        "Loi applicable et juridiction": {
+          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+
+        // Documents
+        "Acte constitutif du trust": {
+          ref: "CMF R.561-5-1 + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Pièce d'identité du trustee": {
+          ref: "CMF R.561-5-1, 1° + AMLR Art. 62(1)b + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Pièce d'identité du constituant": {
+          ref: "CMF R.561-5-1, 1° + AMLR Art. 62(1)a + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Justificatif d'identité des bénéficiaires": {
+          ref: "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
+        },
+        "Pièce d'identité du protecteur (si désigné)": {
+          ref: "CMF R.561-5-1 + AMLR Art. 62(1)d + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
+        },
+        "Justificatif d'origine des fonds apportés au trust": {
+          ref: "CMF R.561-12 + AMLR Art. 29(1)c + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
+        },
+        "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)": {
+          ref: "CMF L.561-2-2 + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
+        },
+
+        // Vérifications
+        "Vérification des parties prenantes au trust": {
+          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
+        },
+
+        // Évidences
+        "Acte constitutif du trust conservé au dossier": {
+          ref: "CMF L.561-12 + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
+        },
+        "Preuves d'identification des parties": {
+          ref: "CMF L.561-12 + AMLR Art. 62 + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
+        },
+        "Justification économique documentée": {
+          ref: "CMF R.561-12 + AMLR Art. 62(2) + LD ACPR Identification 2025",
+          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
+        },
       },
 
       // Formulaires / Webhooks (à configurer)
@@ -307,7 +391,7 @@
         },
         TRUST: {
           socle: ["Nature juridique du dispositif", "Identité du constituant", "Identité du(des) trustee(s)", "Identité des bénéficiaires", "Identité du protecteur (si applicable)"],
-          complements: ["Objet du trust", "Loi applicable"]
+          complements: ["Objet et finalité du trust", "Loi applicable et juridiction"]
         },
         purposeNatureBase: ["Objet de la relation d'affaires", "Nature de la relation d'affaires", "Origine des fonds (déclaratif)"]
       },
@@ -340,14 +424,14 @@
           },
           common: { beCotee: "Justificatif de cotation", pouvoirs: "Justificatif des pouvoirs (PV, délégation)" }
         },
-        TRUST: ["Acte constitutif du trust", "PI du trustee", "PI du constituant", "Justificatif identité des bénéficiaires", "Pièce d'identité du protecteur (si désigné)", "Justificatif d'origine des fonds apportés au trust", "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)"]
+        TRUST: ["Acte constitutif du trust", "Pièce d'identité du trustee", "Pièce d'identité du constituant", "Justificatif d'identité des bénéficiaires", "Pièce d'identité du protecteur (si désigné)", "Justificatif d'origine des fonds apportés au trust", "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)"]
       },
 
       verifications: {
         base: ["Screening sanctions (UE, ONU — OFAC si nexus US)", "Screening PEP", "Vérification pays à risque", "Cohérence économique"],
         BE: "Identification et vérification des BE (chaîne de contrôle)",
         BECotee: "Vérification marché réglementé (cotation)",
-        TRUST: "Vérification des parties prenantes au trust"
+        TRUST: "Vérification des parties prenantes au trust",
       },
 
       evidences: {
@@ -357,7 +441,7 @@
         BE: ["Justificatifs identification BE", "Trace vérification chaîne de contrôle", "Documentation si structure complexe"],
         BECotee: "Justification traitement BE (cotation) + preuve",
         gouvernance: ["Justificatifs identification dirigeants", "Trace vérification pouvoirs", "Documentation fonctionnement statutaire"],
-        TRUST: ["Acte trust conservé", "Preuves identification parties", "Justification économique"],
+        TRUST: ["Acte constitutif du trust conservé au dossier", "Preuves d'identification des parties", "Justification économique documentée"],
         PPE: ["Preuve validation hiérarchique", "Rapport screening PEP détaillé", "Justification entrée/maintien de la relation"],
         mandataire: "Trace vérification pouvoirs du mandataire + lien avec l'entité"
       },
