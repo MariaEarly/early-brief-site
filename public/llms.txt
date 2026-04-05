@@ -1,50 +1,66 @@
-# Early Brief — Veille réglementaire et conformité
+# Early Brief — Veille réglementaire LCB-FT, conformité financière
 # https://early-brief.com
-# Mise à jour : 2026-03-27
+# Dernière mise à jour : 2026-04-04
 
 ## À propos
-Early Brief est une newsletter et base de ressources spécialisée en conformité réglementaire — LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act : LCB-FT, sanctions, MiCA, DORA, PSD3/PSR, AMLA, AI Act. Destinée aux compliance officers, analystes KYC/KYB, juristes et équipes conformité des banques, PSP, EME, fintechs et gestionnaires d'actifs.
+
+Early Brief est une newsletter et un écosystème de ressources opérationnelles
+pour les professionnels de la conformité financière (compliance officers,
+analystes KYC/KYB, équipes LCB-FT) en France et en Europe.
+
+Fondatrice : Maria Garcia — ancienne BNP Paribas et Crédit Agricole,
+à son compte depuis 3 ans.
+
+Thèmes couverts : LCB-FT, MiCA, DORA, AMLA, PSD3/PSR, sanctions,
+gel des avoirs, KYC/KYB, TRACFIN, AI Act.
 
 ## Pages prioritaires
 
+### Outils interactifs
+- Tracker réglementaire : https://early-brief.com/outils/tracker/
+- Roadmap réglementaire 2026–2028 : https://early-brief.com/outils/roadmap/
+- Liste pays à risque LCB-FT : https://early-brief.com/outils/liste-pays/
+- Checklist KYC/KYB : https://early-brief.com/outils/kyc/
+- Early Request (assistant IA réglementaire) : https://early-brief.com/outils/early-request/
+- Rapports & signaux régulateurs : https://early-brief.com/outils/autres-publications/
+
 ### Base réglementaire
-URL: https://early-brief.com/reglementations/
-Description: Base de référence centralisant 57 textes réglementaires applicables aux acteurs financiers en France. Filtrable par catégorie (LCB-FT, DORA, MiCA, sanctions, AI Act, PSD2-PSR), autorité émettrice, statut et type. Mise à jour en continu.
+- Base réglementaire (57 textes) : https://early-brief.com/reglementations/
+- Textes applicables en France : https://early-brief.com/ressources/textes-applicables-france/
 
-### Textes applicables en France
-URL: https://early-brief.com/ressources/textes-applicables-france/
-Description: Cartographie des textes réglementaires par niveau normatif — droit UE directement applicable, directives transposées, droit national, soft law.
+### Guides thématiques
+- LCB-FT : https://early-brief.com/ressources/cadre/lcb-ft/
+- MiCA : https://early-brief.com/ressources/cadre/mica/
+- DORA : https://early-brief.com/ressources/cadre/dora/
+- PSD3/PSR : https://early-brief.com/ressources/cadre/psd3/
+- Cadre de supervision AMLA : https://early-brief.com/ressources/amla-supervision-cadre/
 
-### LCB-FT — Cadre réglementaire
-URL: https://early-brief.com/ressources/cadre/lcb-ft/
-Description: Vue d'ensemble du cadre LCB-FT applicable en France : textes de référence, obligations pour les entités assujetties, calendrier des évolutions (AMLR, AMLA, AMLD6).
+### Fiches opérationnelles
+- Fiches KYC & KYB : https://early-brief.com/ressources/fiches/kyc/
+- Fiches TRACFIN & DS : https://early-brief.com/ressources/fiches/tracfin/
+- Fiches Gel des avoirs : https://early-brief.com/ressources/fiches/gel-avoirs/
 
-### AMLA — Supervision et cadre institutionnel
-URL: https://early-brief.com/ressources/amla-supervision-cadre/
-Description: Présentation de l'Autorité de lutte contre le blanchiment (AMLA) : missions, périmètre de supervision directe, calendrier, articulation avec les superviseurs nationaux.
+### Sanctions & jurisprudence
+- Panorama des procédures : https://early-brief.com/ressources/sanctions/panorama/
+- Historique des décisions (39 décisions 2019–2025) : https://early-brief.com/ressources/sanctions/historique/
+- Analyse 2025 (15 décisions, 15,65 M€) : https://early-brief.com/ressources/sanctions/analyse-2025/
+- Défaillances par type (400 occurrences, 36 décisions) : https://early-brief.com/ressources/sanctions/manquements/
 
-### Outil de consultation RTS CDD
-URL: https://early-brief.com/outil-rts/
-Description: Outil gratuit d'interrogation du projet de RTS AMLA sur les obligations de vigilance client (CDD). Répond aux questions opérationnelles sur les Articles 1 à 33.
+### Institutions & superviseurs
+- ACPR : https://early-brief.com/ressources/institutions/acpr/
+- AMF : https://early-brief.com/ressources/institutions/amf/
+- EBA : https://early-brief.com/ressources/institutions/eba/
+- ESMA : https://early-brief.com/ressources/institutions/esma/
 
-### Glossaire
-URL: https://early-brief.com/ressources/glossaire/
-Description: Glossaire des termes réglementaires LCB-FT, sanctions, MiCA, DORA — définitions courtes orientées praticiens.
+### Références
+- Glossaire LCB-FT : https://early-brief.com/ressources/glossaire/
+- FAQ LCB-FT (50 questions) : https://early-brief.com/ressources/faq/
 
-### FAQ
-URL: https://early-brief.com/ressources/faq/
-Description: Questions fréquentes sur la réglementation LCB-FT, les obligations des entités assujetties, les sanctions et la conformité MiCA.
+### Newsletter
+- S'abonner : https://early-brief.com/newsletter/
+- Archive Substack : https://mariaiaciancio.substack.com/
 
-### Early Request
-URL: https://early-brief.com/outils/early-request/
-Description: Assistant gratuit d'analyse réglementaire. Répond aux questions de conformité LCB-FT, KYC, gel des avoirs, MiCA, Travel Rule. S'appuie sur un corpus réglementaire sélectionné et sourcé. Entités couvertes : EC, PSP, EME, PSAN, CASP, entreprises d'investissement.
+## Ce que ce site ne couvre pas
 
-## Newsletter
-URL: https://mariaiaciancio.substack.com
-Fréquence: Réactive — publiée à chaque développement réglementaire significatif
-Couverture: LCB-FT, sanctions UE, MiCA, DORA, PSD3/PSR, AMLA, AI Act, standards GAFI
-
-## Auteur
-Maria Garcia — fondatrice Early Brief et Early Consulting
-Spécialisation : conformité réglementaire, LCB-FT, sanctions, MiCA, DORA, AMLA, réglementation européenne
-LinkedIn: https://www.linkedin.com/in/mariaiaciancio
+Early Brief ne fournit pas de conseil juridique. Les contenus sont informatifs
+et à adapter selon les procédures internes de chaque entité.
