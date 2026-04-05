@@ -70,7 +70,8 @@
         "client_type": [
           "PM"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pm-socle-denomination",
@@ -84,7 +85,8 @@
         "client_type": [
           "PM"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pm-socle-immatriculation",
@@ -98,7 +100,8 @@
         "client_type": [
           "PM"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pm-socle-siege",
@@ -112,7 +115,8 @@
         "client_type": [
           "PM"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pm-socle-representants",
@@ -126,7 +130,8 @@
         "client_type": [
           "PM"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "_comment": "=== BLOC 1 — Socle PF (8 items) ==="
@@ -143,7 +148,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-socle-prenom",
@@ -157,7 +163,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-socle-date-naissance",
@@ -171,7 +178,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-socle-lieu-naissance",
@@ -185,7 +193,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-socle-nationalite",
@@ -199,7 +208,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-socle-adresse",
@@ -213,7 +223,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "pf-compl-profession",
@@ -227,7 +238,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pf-compl-revenus",
@@ -241,7 +253,8 @@
         "client_type": [
           "PF"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "_comment": "=== BLOC 2 — Socle TRUST (7 items) ==="
@@ -258,7 +271,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "trust-socle-constituant",
@@ -272,7 +286,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "trust-socle-trustees",
@@ -286,7 +301,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "trust-socle-beneficiaires",
@@ -300,7 +316,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "trust-socle-protecteur",
@@ -314,7 +331,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "trust-compl-objet",
@@ -328,7 +346,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "trust-compl-loi",
@@ -342,7 +361,8 @@
         "client_type": [
           "TRUST"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "_comment": "=== BLOC 3 — purposeNatureBase (3 items, tous types) ==="
@@ -361,7 +381,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "common-nature-relation",
@@ -377,7 +398,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "common-origine-fonds",
@@ -393,7 +415,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "_comment": "=== BLOC 4 — organisationComplements (4 items) ==="
@@ -415,7 +438,8 @@
         "organisation": [
           "BANQUE"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "orga-psp-purpose",
@@ -434,7 +458,8 @@
         "organisation": [
           "PSP"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "orga-eme-purpose",
@@ -453,7 +478,8 @@
         "organisation": [
           "EME"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "orga-casp-purpose",
@@ -472,7 +498,8 @@
         "organisation": [
           "CASP"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "_comment": "=== BLOC 5 — Documents PF (3 items) ==="
@@ -2173,8 +2200,9 @@
         "client_type": [
           "PM"
         ],
-        "detention": [
-          "complexe"
+        "family": [
+          "association",
+          "fondation"
         ]
       }
     },
@@ -2190,8 +2218,9 @@
         "client_type": [
           "PM"
         ],
-        "detention": [
-          "complexe"
+        "family": [
+          "association",
+          "fondation"
         ]
       }
     },
@@ -2207,8 +2236,9 @@
         "client_type": [
           "PM"
         ],
-        "detention": [
-          "complexe"
+        "family": [
+          "association",
+          "fondation"
         ]
       }
     },
@@ -2285,7 +2315,8 @@
           "ppe_proche",
           "ppe_associe"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "ppe-info-periode-dexercice-du-mandat",
@@ -2301,7 +2332,8 @@
           "ppe_proche",
           "ppe_associe"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "ppe-info-lien-avec-le-client-si-proche-associe",
@@ -2317,7 +2349,8 @@
           "ppe_proche",
           "ppe_associe"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "ppe-doc-declaration-dorigine-de-patrimoine",
@@ -2462,7 +2495,8 @@
         "signataire": [
           "different"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "mand-info-fonction-au-sein-de-lentite",
@@ -2476,7 +2510,8 @@
         "signataire": [
           "different"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "mand-info-perimetre-des-pouvoirs-delegues",
@@ -2490,7 +2525,8 @@
         "signataire": [
           "different"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "mand-doc-pi-du-mandataire-en-cours-de-validite",
@@ -2642,7 +2678,8 @@
         "cotee_not": [
           "oui"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pm-compl-be-chaine",
@@ -2665,7 +2702,8 @@
         "cotee_not": [
           "oui"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pm-compl-cotee-actionnaires",
@@ -2682,7 +2720,8 @@
         "cotee": [
           "oui"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pm-compl-gouv-identite-des-dirigeants",
@@ -2700,7 +2739,8 @@
           "association",
           "fondation"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pm-compl-gouv-membres-du-bureau-conseil",
@@ -2718,7 +2758,8 @@
           "association",
           "fondation"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "id": "pm-compl-gouv-pouvoirs-de-signature",
@@ -2736,7 +2777,8 @@
           "association",
           "fondation"
         ]
-      }
+      },
+      "section": "complement"
     },
     {
       "_comment": "=== BLOC 14 — Révision périodique (20 items) ==="
@@ -2756,7 +2798,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-info-pf-confirmer-situation-professionnelle",
@@ -2773,7 +2816,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-info-pf-actualiser-revenus-patrimoine-si-significatif",
@@ -2790,7 +2834,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-info-pm-verifier-dirigeants-actuels",
@@ -2807,7 +2852,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-info-pm-confirmer-actionnariat-be",
@@ -2824,7 +2870,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-info-pm-actualiser-activite-si-evolution",
@@ -2841,7 +2888,8 @@
         "revision": [
           "true"
         ]
-      }
+      },
+      "section": "socle"
     },
     {
       "id": "rev-doc-pf-pi-expiree",
@@ -3110,7 +3158,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "id": "acpr-documenter-les-mesures-prises",
@@ -3126,7 +3175,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "id": "acpr-conserver-copies-et-preuves-5-ans",
@@ -3142,7 +3192,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "id": "acpr-adapter-lintensite-au-risque-l-561-4-1-cmf",
@@ -3158,7 +3209,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "id": "acpr-ppe-maintenir-la-vigilance-renforcee-au-moins",
@@ -3174,7 +3226,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "id": "acpr-en-cas-de-doute-ne-pas-entrer-en-relation",
@@ -3190,7 +3243,8 @@
           "PM",
           "TRUST"
         ]
-      }
+      },
+      "section": "acpr"
     },
     {
       "_comment": "=== BLOC 16 — Note association/fondation (1 item) ==="
@@ -3211,7 +3265,8 @@
           "association",
           "fondation"
         ]
-      }
+      },
+      "section": "acpr"
     }
   ]
 }

@@ -72,10 +72,17 @@
       return true;
     }
 
-    function getRuleItems(category, v) {
+    function getRuleItems(category, v, filter) {
       if (!RULES) return [];
       return RULES
         .filter(item => item.category === category)
+        .filter(item => {
+          if (filter) {
+            if (filter.section && item.section !== filter.section) return false;
+            if (filter.status_not && item.status === filter.status_not) return false;
+          }
+          return true;
+        })
         .filter(item => matchesProfile(item, v))
         .map(item => item.label);
     }
@@ -1026,67 +1033,10 @@
     // BUILD LISTS
     // ========================================
     function buildInfosList(v) {
-      // === ANCIEN MOTEUR (CONFIG) ===
-      const r = { socle: [], complements: [] };
-      const isRevision = v.revisionMode;
-
-      if (v.clientType === 'PF') {
-        r.socle = isRevision ? [...CONFIG.revision.infosPF] : [...CONFIG.infosCMF.PF.socle];
-        r.complements = [...CONFIG.infosCMF.PF.complements];
-      } else if (v.clientType === 'PM') {
-        r.socle = isRevision ? [...CONFIG.revision.infosPM] : [...CONFIG.infosCMF.PM.socle];
-        const family = v.effectiveFamily;
-
-        if (isAssoFondation(v.family)) {
-          r.complements = [...CONFIG.infosCMF.PM.complementsGouvernance];
-        } else if (isCoteeApplicable(v.family, v.statut) && v.cotee === 'oui') {
-          r.complements = [...CONFIG.infosCMF.PM.complementsCotee];
-        } else if (!isNoBEFamily(family)) {
-          r.complements = [...CONFIG.infosCMF.PM.complementsBE];
-        }
-
-        // v7.4: Mandataire - infos complémentaires
-        if (v.signataireDifferent === 'different') {
-          r.complements = [...r.complements, ...CONFIG.mandataire.infos];
-        }
-      } else if (v.clientType === 'TRUST') {
-        r.socle = [...CONFIG.infosCMF.TRUST.socle];
-        r.complements = [...CONFIG.infosCMF.TRUST.complements];
-      }
-
-      // v7.4: PPE - infos complémentaires
-      if (v.ppeStatus && v.ppeStatus !== '') {
-        r.complements = [...r.complements, ...CONFIG.PPE.infos];
-      }
-
-      r.complements = [...r.complements, ...CONFIG.infosCMF.purposeNatureBase];
-      if (v.organisation && CONFIG.organisationComplements[v.organisation]) {
-        r.complements.push(CONFIG.organisationComplements[v.organisation].purposeNature);
-      }
-
-      // === NOUVEAU MOTEUR (rules.json) — comparaison debug ===
-      if (RULES) {
-        const allInfoNew = getRuleItems('info', v)
-          .filter(label => {
-            // Exclure les items informationnels (ACPR, note asso) qui ne sont pas dans l'ancien build
-            const item = RULES.find(r => r.label === label && r.category === 'info');
-            return item && item.status !== 'informational';
-          });
-        const oldTotal = r.socle.length + r.complements.length;
-        const diff = allInfoNew.length - oldTotal;
-        const marker = diff === 0 ? '✅' : '⚠️';
-        console.log(`${marker} INFOS — rules.json: ${allInfoNew.length}, CONFIG: ${oldTotal} (socle ${r.socle.length} + comp ${r.complements.length})${diff !== 0 ? ' DELTA=' + diff : ''}`);
-        if (diff !== 0) {
-          const oldLabels = new Set([...r.socle, ...r.complements]);
-          const newLabels = new Set(allInfoNew);
-          const missing = [...oldLabels].filter(l => !newLabels.has(l));
-          const extra = [...newLabels].filter(l => !oldLabels.has(l));
-          if (missing.length) console.log('  MISSING in rules:', missing);
-          if (extra.length) console.log('  EXTRA in rules:', extra);
-        }
-      }
-
-      return r;
+      return {
+        socle: getRuleItems('info', v, { section: 'socle' }),
+        complements: getRuleItems('info', v, { section: 'complement' })
+      };
     }
 
     function buildDocsList(v) {
@@ -1135,6 +1085,22 @@
         else docs = [...docs, ...CONFIG.revision.documentsPM];
       }
 
+      // === DEBUG: comparaison rules.json ===
+      if (RULES) {
+        const newDocs = getRuleItems('doc', v);
+        const diff = newDocs.length - docs.length;
+        const marker = diff === 0 ? '✅' : '⚠️';
+        console.log(`${marker} DOCS — rules.json: ${newDocs.length}, CONFIG: ${docs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
+        if (diff !== 0) {
+          const oldSet = new Set(docs);
+          const newSet = new Set(newDocs);
+          const missing = [...oldSet].filter(l => !newSet.has(l));
+          const extra = [...newSet].filter(l => !oldSet.has(l));
+          if (missing.length) console.log('  DOCS MISSING in rules:', missing);
+          if (extra.length) console.log('  DOCS EXTRA in rules:', extra);
+        }
+      }
+
       return docs;
     }
 
@@ -1181,6 +1147,22 @@
         verifs.push(...revVerifs);
       }
 
+      // === DEBUG: comparaison rules.json ===
+      if (RULES) {
+        const newVerifs = getRuleItems('controle', v).filter(label => !gelItems.has(label));
+        const diff = newVerifs.length - verifs.length;
+        const marker = diff === 0 ? '✅' : '⚠️';
+        console.log(`${marker} VERIFS — rules.json: ${newVerifs.length}, CONFIG: ${verifs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
+        if (diff !== 0) {
+          const oldSet = new Set(verifs);
+          const newSet = new Set(newVerifs);
+          const missing = [...oldSet].filter(l => !newSet.has(l));
+          const extra = [...newSet].filter(l => !oldSet.has(l));
+          if (missing.length) console.log('  VERIFS MISSING in rules:', missing);
+          if (extra.length) console.log('  VERIFS EXTRA in rules:', extra);
+        }
+      }
+
       return verifs;
     }
 
@@ -1218,6 +1200,22 @@
       // v7.4: Mode révision - preuves
       if (isRevision) {
         evs.push(...CONFIG.revision.evidences);
+      }
+
+      // === DEBUG: comparaison rules.json ===
+      if (RULES) {
+        const newEvs = getRuleItems('preuve', v);
+        const diff = newEvs.length - evs.length;
+        const marker = diff === 0 ? '✅' : '⚠️';
+        console.log(`${marker} EVIDENCES — rules.json: ${newEvs.length}, CONFIG: ${evs.length}${diff !== 0 ? ' DELTA=' + diff : ''}`);
+        if (diff !== 0) {
+          const oldSet = new Set(evs);
+          const newSet = new Set(newEvs);
+          const missing = [...oldSet].filter(l => !newSet.has(l));
+          const extra = [...newSet].filter(l => !oldSet.has(l));
+          if (missing.length) console.log('  EVIDENCES MISSING in rules:', missing);
+          if (extra.length) console.log('  EVIDENCES EXTRA in rules:', extra);
+        }
       }
 
       return evs;
