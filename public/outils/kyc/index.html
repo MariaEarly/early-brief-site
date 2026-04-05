@@ -150,17 +150,9 @@
         <div class="card-number">1</div>
         <h2 class="card-title">Contexte interne</h2>
       </div>
-      <div class="form-grid four-col">
-        <div class="form-group">
-          <label class="form-label required">Organisation</label>
-          <select class="form-select" id="organisation" onchange="updateForm()">
-            <option value="">Sélectionner</option>
-            <option value="BANQUE">Banque</option>
-            <option value="PSP">PSP</option>
-            <option value="EME">EME</option>
-            <option value="CASP">CASP</option>
-          </select>
-        </div>
+      <!-- Organisation pré-remplie par les boutons persona -->
+      <input type="hidden" id="organisation" value="">
+      <div class="form-grid three-col">
         <div class="form-group">
           <label class="form-label required">Canal</label>
           <select class="form-select" id="canal" onchange="updateForm()">
@@ -267,52 +259,28 @@
             </div>
           </div>
           <div class="form-group critical">
-            <label class="form-label required" id="legalFormLabel">Forme juridique</label>
+            <label class="form-label required" id="legalFormLabel">Famille juridique</label>
             <select class="form-select" id="legalForm" onchange="updateForm()">
               <option value="">Sélectionner</option>
+              <option value="commerciale" data-tip="SA, SAS, SASU, SARL, EURL, SNC, SCS, SCA, SEM, Ltd, GmbH…">Commerciale</option>
+              <option value="civile" data-tip="SCI, SC, SCM, SCP…">Civile</option>
+              <option value="sel" data-tip="SELARL, SELAS, SELAFA, SELCA">SEL (libérale)</option>
+              <option value="association" data-tip="Loi 1901, ASBL, ONG…">Association / ONG</option>
+              <option value="fondation" data-tip="Fondation reconnue d'utilité publique, Stiftung…">Fondation</option>
+              <option value="gie" data-tip="Groupement d'intérêt économique">GIE</option>
+              <option value="publique" data-tip="État, collectivité, établissement public">Publique</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label required">Statut</label>
             <select class="form-select" id="statut" onchange="updateForm()">
               <option value="">Sélectionner</option>
-              <option value="immatriculee">Immatriculée</option>
               <option value="creation">En création</option>
               <option value="succursale">Succursale</option>
             </select>
           </div>
         </div>
 
-        <!-- Toggle entité étrangère -->
-        <div class="foreign-toggle-container hidden" id="foreignToggleContainer">
-          <div class="toggle-row compact foreign-toggle-row">
-            <div class="toggle-label">
-              Entité immatriculée hors France
-              <small>Activer pour ajouter une preuve de vérification du registre</small>
-            </div>
-            <label class="toggle-switch">
-              <input type="checkbox" id="toggleForeignEntity" onchange="onForeignToggleChange()">
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-
-          <div class="foreign-proof-section hidden" id="foreignProofSection">
-            <details class="foreign-proof-details">
-              <summary class="foreign-proof-summary">Ajouter une preuve (recommandé)</summary>
-              <div class="foreign-proof-content">
-                <p class="foreign-proof-note">Conservez une trace de votre vérification du registre étranger.</p>
-                <div class="foreign-field">
-                  <label for="registryUrl">Source / registre (URL)</label>
-                  <input type="url" id="registryUrl" placeholder="Ex: https://www.handelsregister.de/..." onchange="saveFormOnChange()">
-                </div>
-                <div class="foreign-field">
-                  <label for="verificationDate">Date de vérification</label>
-                  <input type="date" id="verificationDate" onchange="saveFormOnChange()">
-                </div>
-              </div>
-            </details>
-          </div>
-        </div>
       </div>
 
       <div class="form-section hidden" id="structureSection">
@@ -327,7 +295,7 @@
             </select>
           </div>
           <div class="form-group hidden" id="detentionGroup">
-            <label class="form-label required">Structure de détention</label>
+            <label class="form-label required">Structure de détention <span class="tooltip" data-tip="Simple = actionnariat direct, pas de holding intermédiaire. Complexe = chaîne de contrôle indirecte, holdings, structures multi-niveaux.">?</span></label>
             <select class="form-select" id="detention" onchange="updateForm()">
               <option value="">Sélectionner</option>
               <option value="simple">Simple (directe)</option>
@@ -347,16 +315,6 @@
               <option value="meme">Oui, même personne</option>
               <option value="different">Non, délégation</option>
             </select>
-          </div>
-          <div class="form-group hidden" id="dirDiffGroup">
-            <label class="form-label" id="dirDiffLabel">Lieu de gestion = Siège social ?</label>
-            <select class="form-select" id="dirDiff" onchange="updateForm()">
-              <option value="">Sélectionner</option>
-              <option value="oui">Oui, identique</option>
-              <option value="non">Non, différent</option>
-              <option value="inconnu">Je ne sais pas</option>
-            </select>
-            <p class="form-help">Direction effective à une autre adresse que le siège</p>
           </div>
         </div>
       </div>

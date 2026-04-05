@@ -309,66 +309,8 @@
       assoFondationFamilies: ['association', 'fondation'],
       noBEFamilies: ['ei', 'publique'],
 
-      legalFormOptions: {
-        FR: [
-          { group: 'Commerciales', options: [
-            { value: 'SA', label: 'SA' }, { value: 'SAS', label: 'SAS' }, { value: 'SASU', label: 'SASU' },
-            { value: 'SARL', label: 'SARL' }, { value: 'EURL', label: 'EURL' }, { value: 'SNC', label: 'SNC' },
-            { value: 'SCS', label: 'SCS' }, { value: 'SCA', label: 'SCA' }, { value: 'SEM', label: 'SEM' }
-          ]},
-          { group: 'Civiles', options: [
-            { value: 'SCI', label: 'SCI' }, { value: 'SC', label: 'SC (autre)' },
-            { value: 'SCM', label: 'SCM' }, { value: 'SCP', label: 'SCP' }
-          ]},
-          { group: 'SEL', options: [
-            { value: 'SELARL', label: 'SELARL' }, { value: 'SELAS', label: 'SELAS' },
-            { value: 'SELAFA', label: 'SELAFA' }, { value: 'SELCA', label: 'SELCA' }
-          ]},
-          { group: 'Associations / Fondations', options: [
-            { value: 'ASSOCIATION', label: 'Association' }, { value: 'FONDATION', label: 'Fondation' },
-            { value: 'GIE', label: 'GIE' }
-          ]},
-          { group: 'Publiques', options: [
-            { value: 'ETAT_COLLECTIVITE', label: 'État / Collectivité' },
-            { value: 'ETABLISSEMENT_PUBLIC', label: 'Établissement public' }
-          ]},
-          { group: 'Individuelles', options: [
-            { value: 'EI', label: 'EI' }, { value: 'MICRO', label: 'Micro-entrepreneur' }
-          ]}
-        ],
-        UE: [{ group: 'Formes UE', options: [
-          { value: 'COMMERCIALE_UE', label: 'Société commerciale' },
-          { value: 'CIVILE_UE', label: 'Société civile' },
-          { value: 'ASSOCIATION_UE', label: 'Association / ONG' },
-          { value: 'FONDATION_UE', label: 'Fondation' },
-          { value: 'PUBLIQUE_UE', label: 'Entité publique' },
-          { value: 'EI_UE', label: 'Entrepreneur individuel' },
-          { value: 'AUTRE_UE', label: 'Autre' }
-        ]}],
-        HORSUE: [{ group: 'Formes Hors UE', options: [
-          { value: 'COMMERCIALE_HORSUE', label: 'Société commerciale' },
-          { value: 'CIVILE_HORSUE', label: 'Société civile' },
-          { value: 'ASSOCIATION_HORSUE', label: 'Association / ONG' },
-          { value: 'FONDATION_HORSUE', label: 'Fondation' },
-          { value: 'PUBLIQUE_HORSUE', label: 'Entité publique' },
-          { value: 'EI_HORSUE', label: 'Entrepreneur individuel' },
-          { value: 'AUTRE_HORSUE', label: 'Autre' }
-        ]}]
-      },
-
-      legalFormToFamily: {
-        'SA': 'commerciale', 'SAS': 'commerciale', 'SASU': 'commerciale', 'SARL': 'commerciale',
-        'EURL': 'commerciale', 'SNC': 'commerciale', 'SCS': 'commerciale', 'SCA': 'commerciale', 'SEM': 'commerciale',
-        'SCI': 'civile', 'SC': 'civile', 'SCM': 'civile', 'SCP': 'civile',
-        'SELARL': 'sel', 'SELAS': 'sel', 'SELAFA': 'sel', 'SELCA': 'sel',
-        'ASSOCIATION': 'association', 'FONDATION': 'fondation', 'GIE': 'gie',
-        'ETAT_COLLECTIVITE': 'publique', 'ETABLISSEMENT_PUBLIC': 'publique',
-        'EI': 'ei', 'MICRO': 'ei',
-        'COMMERCIALE_UE': 'commerciale', 'CIVILE_UE': 'civile', 'ASSOCIATION_UE': 'association',
-        'FONDATION_UE': 'fondation', 'PUBLIQUE_UE': 'publique', 'EI_UE': 'ei', 'AUTRE_UE': 'autre',
-        'COMMERCIALE_HORSUE': 'commerciale', 'CIVILE_HORSUE': 'civile', 'ASSOCIATION_HORSUE': 'association',
-        'FONDATION_HORSUE': 'fondation', 'PUBLIQUE_HORSUE': 'publique', 'EI_HORSUE': 'ei', 'AUTRE_HORSUE': 'autre'
-      },
+      // Familles juridiques — la valeur du <select> EST la famille
+      legalFormFamilies: ['commerciale', 'civile', 'sel', 'association', 'fondation', 'gie', 'publique'],
 
       organisationComplements: {
         BANQUE: { purposeNature: "Nature des opérations bancaires envisagées" },
@@ -387,7 +329,6 @@
           complementsBE: ["Identité des bénéficiaires effectifs (>25% du capital ou des droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)", "Chaîne de contrôle / détention"],
           complementsCotee: ["Identification des principaux actionnaires"],
           complementsGouvernance: ["Identité des dirigeants", "Membres du bureau / conseil", "Pouvoirs de signature"],
-          directionEffective: "Adresse de direction effective (si différente du siège)"
         },
         TRUST: {
           socle: ["Nature juridique du dispositif", "Identité du constituant", "Identité du(des) trustee(s)", "Identité des bénéficiaires", "Identité du protecteur (si applicable)"],
@@ -603,7 +544,8 @@
     // UTILITY FUNCTIONS
     // ========================================
     function mapLegalFormToFamily(legalForm) {
-      return CONFIG.legalFormToFamily[legalForm] || 'autre';
+      // Depuis v8: la valeur du select EST la famille
+      return legalForm || 'autre';
     }
 
     function getEffectiveFamily(family) {
@@ -624,10 +566,6 @@
 
     function isNoBEFamily(family) {
       return CONFIG.noBEFamilies.includes(family);
-    }
-
-    function isDirDiffRequired(pays, statut, detention) {
-      return pays === 'HORSUE' || (detention === 'complexe' && statut !== 'creation');
     }
 
     // ========================================
@@ -651,7 +589,6 @@
         effectiveFamily: getEffectiveFamily(family),
         cotee: document.getElementById('cotee').value,
         detention: document.getElementById('detention').value,
-        dirDiff: document.getElementById('dirDiff').value,
         signataireDifferent: document.getElementById('signataireDifferent').value,
         // v7.4: Nouveaux champs
         ppeStatus: document.getElementById('ppeStatus')?.value || '',
@@ -661,35 +598,16 @@
       };
     }
 
-    function populateLegalFormOptions(pays, forceReset) {
-      if (pays === lastLegalFormCountry && !forceReset) return;
-
-      const select = document.getElementById('legalForm');
+    function updateLegalFormLabel(pays) {
       const label = document.getElementById('legalFormLabel');
-      
-      select.innerHTML = '<option value="">Sélectionner</option>';
-      const options = CONFIG.legalFormOptions[pays] || CONFIG.legalFormOptions.FR;
-
-      label.textContent = pays === 'FR' ? 'Forme juridique' : pays === 'UE' ? 'Forme juridique (UE)' : 'Forme juridique (Hors UE)';
-
-      options.forEach(group => {
-        const optgroup = document.createElement('optgroup');
-        optgroup.label = group.group;
-        group.options.forEach(opt => {
-          const option = document.createElement('option');
-          option.value = opt.value;
-          option.textContent = opt.label;
-          optgroup.appendChild(option);
-        });
-        select.appendChild(optgroup);
-      });
-
-      lastLegalFormCountry = pays;
+      if (label) {
+        label.textContent = pays === 'FR' ? 'Famille juridique' : pays === 'UE' ? 'Famille juridique (UE)' : 'Famille juridique (Hors UE)';
+      }
     }
 
     function onPaysChange() {
       const pays = document.getElementById('pays').value;
-      if (pays) populateLegalFormOptions(pays);
+      if (pays) updateLegalFormLabel(pays);
 
       // Afficher/masquer le sélecteur pays détaillé
       const detailWrap = document.getElementById('pays-detail-wrap');
@@ -702,14 +620,12 @@
         }
       }
 
-      updateForeignToggleVisibility();
       updateForm();
     }
 
     function resetConditionalValues() {
       document.getElementById('cotee').value = '';
       document.getElementById('detention').value = '';
-      document.getElementById('dirDiff').value = '';
     }
 
     function updateForm() {
@@ -733,7 +649,7 @@
       if (caspAlert) caspAlert.classList.toggle('hidden', v.organisation !== 'CASP');
 
       if (!isPM) {
-        ['coteeGroup', 'detentionGroup', 'dirDiffGroup', 'signataireGroup'].forEach(id => 
+        ['coteeGroup', 'detentionGroup', 'signataireGroup'].forEach(id =>
           document.getElementById(id).classList.add('hidden')
         );
         updateProgressBar();
@@ -741,7 +657,7 @@
         return;
       }
 
-      if (v.pays) populateLegalFormOptions(v.pays);
+      if (v.pays) updateLegalFormLabel(v.pays);
 
       if (lastFamily !== null && lastFamily !== v.family) resetConditionalValues();
       lastFamily = v.family;
@@ -760,10 +676,6 @@
       const showDetention = hasLegalForm && isDetentionApplicable(updatedV.family);
       document.getElementById('detentionGroup').classList.toggle('hidden', !showDetention);
       if (!showDetention) document.getElementById('detention').value = '';
-
-      document.getElementById('dirDiffGroup').classList.toggle('hidden', !hasLegalForm);
-      document.getElementById('dirDiffLabel').classList.toggle('required', 
-        isDirDiffRequired(updatedV.pays, updatedV.statut, updatedV.detention));
 
       updateProgressBar();
       tryAutoGenerate();
@@ -1050,10 +962,6 @@
           r.complements = [...CONFIG.infosCMF.PM.complementsBE];
         }
 
-        if (v.dirDiff === 'non') {
-          r.complements.push(CONFIG.infosCMF.PM.directionEffective);
-        }
-
         // v7.4: Mandataire - infos complémentaires
         if (v.signataireDifferent === 'different') {
           r.complements = [...r.complements, ...CONFIG.mandataire.infos];
@@ -1300,12 +1208,7 @@
       const excludeContext = document.getElementById('toggleExportNoContext')?.checked;
       const dossierRef = document.getElementById('dossierRef')?.value?.trim() || '';
       const dossierNotes = document.getElementById('dossierNotes')?.value?.trim() || '';
-      
-      // Foreign entity info only if toggle is enabled
-      const foreignEnabled = isForeignEntityEnabled();
-      const registryUrl = foreignEnabled ? (document.getElementById('registryUrl')?.value?.trim() || '') : '';
-      const verificationDate = foreignEnabled ? (document.getElementById('verificationDate')?.value || '') : '';
-      
+
       // Helper to remove null/undefined/empty values from object
       const cleanObject = (obj) => {
         const cleaned = {};
@@ -1342,15 +1245,7 @@
       if (currentResults.showAssoFondationNote) allNotes.push(CONFIG.noteAssoFondation);
       if (dossierNotes) allNotes.push(dossierNotes);
       if (allNotes.length) data.notes = allNotes;
-      
-      // Add foreign registry proof if enabled and present
-      if (foreignEnabled && (registryUrl || verificationDate)) {
-        data.foreignRegistryProof = cleanObject({
-          registryUrl: registryUrl,
-          verificationDate: verificationDate
-        });
-      }
-      
+
       // Add context only if not excluded and clean it
       if (!excludeContext && currentResults.context) {
         data.context = cleanObject(currentResults.context);
@@ -1379,12 +1274,7 @@
       const excludeContext = document.getElementById('toggleExportNoContext')?.checked;
       const dossierRef = document.getElementById('dossierRef')?.value?.trim() || '';
       const dossierNotes = document.getElementById('dossierNotes')?.value?.trim() || '';
-      
-      // Foreign entity info only if toggle is enabled
-      const foreignEnabled = isForeignEntityEnabled();
-      const registryUrl = foreignEnabled ? (document.getElementById('registryUrl')?.value?.trim() || '') : '';
-      const verificationDate = foreignEnabled ? (document.getElementById('verificationDate')?.value || '') : '';
-      
+
       let csv = 'Section,Element\n';
       csv += `Meta,"Document Collector v${CONFIG.version}"\n`;
       csv += `Meta,"${new Date().toISOString()}"\n`;
@@ -1394,9 +1284,6 @@
         Object.entries(currentResults.context).forEach(([k, val]) => {
           if (val) csv += `Contexte,"${sanitizeCSV(k + ': ' + val)}"\n`;
         });
-        // Foreign registry proof (only if enabled)
-        if (foreignEnabled && registryUrl) csv += `Contexte,"Registre vérifié: ${sanitizeCSV(registryUrl)}"\n`;
-        if (foreignEnabled && verificationDate) csv += `Contexte,"Date vérification: ${sanitizeCSV(verificationDate)}"\n`;
       }
 
       currentResults.socle.forEach(i => csv += `A1-Socle,"${sanitizeCSV(i)}"\n`);
@@ -1435,11 +1322,9 @@
       currentResults = null;
       checkedItems.clear();
 
-      ['kybDetails', 'coteeGroup', 'detentionGroup', 'dirDiffGroup', 'signataireGroup', 'results', 'noteAssoFondation'].forEach(id => 
+      ['kybDetails', 'coteeGroup', 'detentionGroup', 'signataireGroup', 'results', 'noteAssoFondation'].forEach(id =>
         document.getElementById(id).classList.add('hidden')
       );
-
-      populateLegalFormOptions('FR', true);
       updateProgressBar();
     }
 
@@ -1491,13 +1376,8 @@
             cotee: document.getElementById('cotee')?.value || '',
             detention: document.getElementById('detention')?.value || '',
             signataireDifferent: document.getElementById('signataireDifferent')?.value || '',
-            dirDiff: document.getElementById('dirDiff')?.value || '',
             dossierRef: document.getElementById('dossierRef')?.value || '',
-            // v7.3: Nouveaux champs
             dossierNotes: document.getElementById('dossierNotes')?.value || '',
-            foreignEntityEnabled: document.getElementById('toggleForeignEntity')?.checked || false,
-            registryUrl: document.getElementById('registryUrl')?.value || '',
-            verificationDate: document.getElementById('verificationDate')?.value || '',
             // v7.4: Nouveaux champs
             ppeStatus: document.getElementById('ppeStatus')?.value || '',
             revisionMode: document.getElementById('toggleRevisionMode')?.checked || false,
@@ -1550,7 +1430,7 @@
 
         if (fv.pays) {
           document.getElementById('pays').value = fv.pays;
-          populateLegalFormOptions(fv.pays, true);
+          updateLegalFormLabel(fv.pays);
           // v7.5: Restaurer pays détaillé
           if (fv.pays === 'HORSUE') {
             const detailWrap = document.getElementById('pays-detail-wrap');
@@ -1564,25 +1444,8 @@
         safeSet('cotee', fv.cotee);
         safeSet('detention', fv.detention);
         safeSet('signataireDifferent', fv.signataireDifferent);
-        safeSet('dirDiff', fv.dirDiff);
         safeSet('dossierRef', fv.dossierRef);
-        
-        // v7.3: Nouveaux champs
         safeSet('dossierNotes', fv.dossierNotes);
-        
-        // Afficher le toggle entité étrangère si nécessaire
-        if (fv.pays && fv.pays !== 'FR') {
-          updateForeignToggleVisibility();
-
-          // Restaurer le toggle et les champs si activé
-          const foreignToggle = document.getElementById('toggleForeignEntity');
-          if (foreignToggle && fv.foreignEntityEnabled) {
-            foreignToggle.checked = true;
-            onForeignToggleChange();
-            safeSet('registryUrl', fv.registryUrl);
-            safeSet('verificationDate', fv.verificationDate);
-          }
-        }
 
         // v7.4: Restaurer PPE et mode révision
         safeSet('ppeStatus', fv.ppeStatus);
@@ -1622,52 +1485,6 @@
     // ========================================
     // NOUVELLES FONCTIONS v7.3
     // ========================================
-
-    // Afficher/masquer le toggle entité étrangère (seulement si pays ≠ FR)
-    function updateForeignToggleVisibility() {
-      const pays = document.getElementById('pays')?.value;
-      const toggleContainer = document.getElementById('foreignToggleContainer');
-      const toggle = document.getElementById('toggleForeignEntity');
-      
-      if (toggleContainer) {
-        // Afficher le toggle seulement si pays est UE ou HORSUE (pas FR, pas vide)
-        const showToggle = pays && pays !== 'FR';
-        toggleContainer.classList.toggle('hidden', !showToggle);
-        
-        // Si on cache le toggle, réinitialiser
-        if (!showToggle && toggle) {
-          toggle.checked = false;
-          onForeignToggleChange();
-        }
-      }
-    }
-
-    // Gérer le changement du toggle entité étrangère
-    function onForeignToggleChange() {
-      const toggle = document.getElementById('toggleForeignEntity');
-      const proofSection = document.getElementById('foreignProofSection');
-      
-      if (proofSection) {
-        proofSection.classList.toggle('hidden', !toggle?.checked);
-        
-        // Si on désactive, vider les champs
-        if (!toggle?.checked) {
-          const registryUrl = document.getElementById('registryUrl');
-          const verificationDate = document.getElementById('verificationDate');
-          if (registryUrl) registryUrl.value = '';
-          if (verificationDate) verificationDate.value = '';
-        }
-      }
-      
-      saveFormOnChange();
-    }
-
-    // Helper : est-ce que l'entité étrangère est activée ?
-    function isForeignEntityEnabled() {
-      const pays = document.getElementById('pays')?.value;
-      const toggle = document.getElementById('toggleForeignEntity');
-      return pays && pays !== 'FR' && toggle?.checked;
-    }
 
     function saveFormOnChange() {
       if (isLocalStorageEnabled()) saveToLocalStorage();
@@ -1938,7 +1755,7 @@
     // INIT
     // ========================================
     document.addEventListener('DOMContentLoaded', async () => {
-      populateLegalFormOptions('FR', true);
+      // Options legalForm sont statiques dans le HTML depuis v8
 
       // v7.5: Charger les données pays GAFI/sanctions
       try {
