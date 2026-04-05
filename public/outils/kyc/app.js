@@ -759,6 +759,10 @@
 
       document.getElementById('kybDetails').classList.toggle('hidden', !isPM);
 
+      // CASP alert visibility
+      const caspAlert = document.getElementById('casp-alert');
+      if (caspAlert) caspAlert.classList.toggle('hidden', v.organisation !== 'CASP');
+
       if (!isPM) {
         ['coteeGroup', 'detentionGroup', 'dirDiffGroup', 'signataireGroup'].forEach(id => 
           document.getElementById(id).classList.add('hidden')
@@ -993,6 +997,7 @@
 
       const infos = buildInfosList(v);
       const docs = buildDocsList(v);
+      const gel = buildGelList(v);
       const verifs = buildVerificationsList(v);
       const evs = buildEvidencesList(v);
       const acpr = buildACPRPoints(v);
@@ -1003,6 +1008,7 @@
         socle: infos.socle,
         complements: infos.complements,
         documents: docs,
+        gel: gel,
         verifications: verifs,
         evidences: evs,
         acprPoints: acpr,
@@ -1013,6 +1019,7 @@
       renderChecklist('socleChecklist', infos.socle, 'countA1');
       renderChecklist('complementsChecklist', infos.complements, 'countA2');
       renderChecklist('docsChecklist', docs, 'countB');
+      renderChecklist('gelChecklist', gel, 'countGel');
       renderChecklist('verificationsChecklist', verifs, 'countC');
       renderChecklist('evidencesChecklist', evs, 'countD');
       renderACPRPoints(acpr);
@@ -1160,11 +1167,20 @@
       return docs;
     }
 
-    function buildVerificationsList(v) {
-      const verifs = [...CONFIG.verifications.base];
-      const isRevision = v.revisionMode;
+    // Items gel des avoirs (screening sanctions / OFAC)
+    function buildGelList(v) {
+      const gel = ["Screening sanctions (UE, ONU — OFAC si nexus US)"];
+      if (v.expositionUS === 'oui') gel.push('Vérification OFAC renforcée');
+      // Revision: re-screening sanctions
+      if (v.revisionMode) gel.push("Re-screening sanctions/PEP (tous)");
+      return gel;
+    }
 
-      if (v.expositionUS === 'oui') verifs.push('Vérification OFAC renforcée');
+    function buildVerificationsList(v) {
+      // Gel items are now in buildGelList — keep only non-gel verifications
+      const gelItems = new Set(buildGelList(v));
+      const verifs = CONFIG.verifications.base.filter(item => !gelItems.has(item));
+      const isRevision = v.revisionMode;
 
       if (v.clientType === 'PM') {
         const family = v.effectiveFamily;
@@ -1188,9 +1204,10 @@
         verifs.push(...CONFIG.PPE.verifications);
       }
 
-      // v7.4: Mode révision - vérifications à renouveler
+      // v7.4: Mode révision - vérifications à renouveler (sans re-screening, déjà dans gel)
       if (isRevision) {
-        verifs.push(...CONFIG.revision.verifications);
+        const revVerifs = CONFIG.revision.verifications.filter(item => !gelItems.has(item));
+        verifs.push(...revVerifs);
       }
 
       return verifs;
@@ -1357,6 +1374,7 @@
         checklistSocle: currentResults.socle,
         checklistComplements: currentResults.complements,
         checklistDocuments: currentResults.documents,
+        checklistGelDesAvoirs: currentResults.gel,
         checklistVerifications: currentResults.verifications,
         checklistEvidences: currentResults.evidences,
         pointsACPR: currentResults.acprPoints
@@ -1428,7 +1446,8 @@
       currentResults.complements.forEach(i => csv += `A2-Complements,"${sanitizeCSV(i)}"\n`);
       if (currentResults.showAssoFondationNote) csv += `A2-Note,"${sanitizeCSV(CONFIG.noteAssoFondation)}"\n`;
       currentResults.documents.forEach(i => csv += `B-Documents,"${sanitizeCSV(i)}"\n`);
-      currentResults.verifications.forEach(i => csv += `C-Verifications,"${sanitizeCSV(i)}"\n`);
+      currentResults.gel.forEach(i => csv += `C1-Sanctions-Gel,"${sanitizeCSV(i)}"\n`);
+      currentResults.verifications.forEach(i => csv += `C2-Verifications,"${sanitizeCSV(i)}"\n`);
       currentResults.evidences.forEach(i => csv += `D-Evidences,"${sanitizeCSV(i)}"\n`);
       currentResults.acprPoints.forEach(i => csv += `ACPR,"${sanitizeCSV(i)}"\n`);
       
@@ -1911,8 +1930,13 @@
       currentResults.documents.forEach(d => summary += `□ ${d}\n`);
       summary += `\n`;
       
+      // Gel des avoirs
+      summary += `--- SANCTIONS & GEL DES AVOIRS ---\n`;
+      currentResults.gel.forEach(c => summary += `□ ${c}\n`);
+      summary += `\n`;
+
       // Contrôles
-      summary += `--- CONTRÔLES À EFFECTUER ---\n`;
+      summary += `--- CONTRÔLES BE/PEP ---\n`;
       currentResults.verifications.forEach(c => summary += `□ ${c}\n`);
       summary += `\n`;
       

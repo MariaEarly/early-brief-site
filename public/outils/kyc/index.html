@@ -96,6 +96,16 @@
           <div class="persona-desc">Crypto-actifs (MiCA)</div>
         </div>
       </div>
+      <p class="org-note">Le socle KYC/KYB est commun à tous les profils (CMF L.561-5). La checklist s'adapte à votre contexte spécifique.</p>
+    </div>
+
+    <!-- CASP ALERT -->
+    <div id="casp-alert" class="ppe-alert hidden" style="border-left-color: #B45309; margin-bottom: 1.5rem;">
+      <span class="ppe-alert-icon">⚠️</span>
+      <div class="ppe-alert-content">
+        <div class="ppe-alert-title">CASP — cadre en cours de stabilisation</div>
+        <div class="ppe-alert-text">Les obligations KYC CASP relèvent du CMF et des PAS ACPR PSAN. Les RTS CDD AMLA (en cours d'adoption) introduiront des exigences supplémentaires. Adapter votre dispositif en conséquence.</div>
+      </div>
     </div>
 
     <!-- PROGRESS BAR -->
@@ -507,6 +517,24 @@
               <button class="section-action-btn" onclick="toggleAllInSection('docsChecklist', false)">✗ Tout décocher</button>
             </div>
             <ul class="checklist" id="docsChecklist"></ul>
+          </div>
+        </div>
+
+        <!-- Accordion GEL DES AVOIRS -->
+        <div class="accordion" data-accordion="gel">
+          <div class="accordion-header" role="button" tabindex="0" onclick="toggleAccordion(this)">
+            <span class="accordion-marker">CONTRÔLES</span>
+            <span class="accordion-title">Sanctions & gel des avoirs</span>
+            <span class="accordion-count" id="countGel">0</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="accordion-content" id="panel-gel">
+            <div class="section-actions">
+              <button class="section-action-btn" onclick="toggleAllInSection('gelChecklist', true)">✓ Tout cocher</button>
+              <button class="section-action-btn" onclick="toggleAllInSection('gelChecklist', false)">✗ Tout décocher</button>
+            </div>
+            <p class="section-note">Le screening sanctions vérifie l'absence de désignation. En cas d'alerte confirmée, appliquer les obligations de gel (L.562-4 CMF) sans délai.</p>
+            <ul class="checklist" id="gelChecklist"></ul>
           </div>
         </div>
 
