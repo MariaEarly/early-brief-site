@@ -1936,6 +1936,7 @@
       "id": "verif-screening-sanctions-ue-onu-ofac-si-nexus-us",
       "label": "Screening sanctions (UE, ONU — OFAC si nexus US)",
       "category": "controle",
+      "section": "gel",
       "nature": "be_controle",
       "status": "mandatory",
       "ref": "CMF L.562-4 + L.562-4-1",
@@ -1946,6 +1947,19 @@
           "PM",
           "TRUST"
         ]
+      }
+    },
+    {
+      "id": "verif-ofac-renforce",
+      "label": "Vérification OFAC renforcée (SDN list, secondary sanctions)",
+      "category": "controle",
+      "section": "gel",
+      "nature": "vigilance_renforcee",
+      "status": "conditional",
+      "ref": "Politique interne sanctions — OFAC (hors obligation CMF directe)",
+      "url": "https://ofac.treasury.gov/sanctions-programs-and-country-information",
+      "conditions": {
+        "expositionUS": ["oui"]
       }
     },
     {
@@ -3031,6 +3045,7 @@
       "id": "rev-verif-re-screening-sanctions-pep-tous",
       "label": "Re-screening sanctions/PEP (tous)",
       "category": "controle",
+      "section": "gel",
       "nature": "be_controle",
       "status": "mandatory",
       "ref": "CMF L.562-4 + L.561-10 + L.561-6",

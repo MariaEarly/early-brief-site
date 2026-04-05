@@ -79,6 +79,7 @@
         .filter(item => {
           if (filter) {
             if (filter.section && item.section !== filter.section) return false;
+            if (filter.section_not && item.section === filter.section_not) return false;
             if (filter.status_not && item.status === filter.status_not) return false;
           }
           return true;
@@ -640,18 +641,12 @@
       return getRuleItems('doc', v);
     }
 
-    // Items gel des avoirs (screening sanctions / OFAC)
     function buildGelList(v) {
-      const gel = ["Screening sanctions (UE, ONU — OFAC si nexus US)"];
-      if (v.expositionUS === 'oui') gel.push('Vérification OFAC renforcée');
-      // Revision: re-screening sanctions
-      if (v.revisionMode) gel.push("Re-screening sanctions/PEP (tous)");
-      return gel;
+      return getRuleItems('controle', v, { section: 'gel' });
     }
 
     function buildVerificationsList(v) {
-      const gelItems = new Set(buildGelList(v));
-      return getRuleItems('controle', v).filter(label => !gelItems.has(label));
+      return getRuleItems('controle', v, { section_not: 'gel' });
     }
 
     function buildEvidencesList(v) {
