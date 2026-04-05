@@ -100,418 +100,15 @@
       schemaVersion: 3, // Increment when localStorage structure changes
       scope: "Socle CMF L.561-5 / Lignes directrices ACPR-TRACFIN",
 
-      sources: {
-        // =========================================================
-        // IDENTIFICATION DU CLIENT / DES INTERVENANTS
-        // =========================================================
-
-        // Personnes physiques — noyau d'identification
-        "Nom(s)": {
-          ref: "CMF R.561-5, I, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Prénom(s)": {
-          ref: "CMF R.561-5, I, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Date de naissance": {
-          ref: "CMF R.561-5, I, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Lieu de naissance": {
-          ref: "CMF R.561-5, I, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-
-        // Personnes physiques — éléments de connaissance / profil
-        "Nationalité(s)": {
-          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Adresse du domicile": {
-          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Profession / activité": {
-          ref: "CMF R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
-        },
-        "Revenus / patrimoine estimé": {
-          ref: "CMF R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
-        },
-
-        // Personnes morales — identification
-        "Forme juridique": {
-          ref: "CMF R.561-5, II, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Dénomination / raison sociale": {
-          ref: "CMF R.561-5, II, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Numéro d'immatriculation": {
-          ref: "CMF R.561-5, II, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Adresse du siège social": {
-          ref: "CMF R.561-5, II, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Identité des représentants légaux": {
-          ref: "CMF R.561-5, II + R.561-5-4",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
-        },
-
-        // Bénéficiaire effectif
-        "Identité des bénéficiaires effectifs (>25% du capital ou des droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)": {
-          ref: "CMF L.561-2-2 + R.561-1",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
-        },
-        "Chaîne de contrôle / détention": {
-          ref: "CMF L.561-2-2 + R.561-1 + R.561-7",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036824564"
-        },
-
-        // =========================================================
-        // VERIFICATION DE L'IDENTITE / DES POUVOIRS
-        // =========================================================
-
-        "Pièce d'identité en cours de validité": {
-          ref: "CMF R.561-5-1, 1°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Justificatif de domicile récent (selon procédure interne et approche par les risques — non obligatoire au sens strict du CMF)": {
-          ref: "Lignes directrices ACPR 2025 — bonne pratique / approche par les risques",
-          url: "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-relatives-lidentification-la-verification-de-lidentite-et-la-connaissance-de-la"
-        },
-        "Second justificatif ou mesure complémentaire (entrée à distance)": {
-          ref: "CMF R.561-5-2 + Lignes directrices ACPR 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577229/"
-        },
-
-        "Extrait Kbis récent (souvent < 3 mois selon politique interne)": {
-          ref: "CMF R.561-5-1, 4°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Statuts certifiés conformes": {
-          ref: "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "PI du représentant légal": {
-          ref: "CMF R.561-5-4 + R.561-5-1",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
-        },
-        "Certificat de validité juridique ou équivalent (enregistrement registre officiel)": {
-          ref: "CMF R.561-5-1, 4° + Lignes directrices ACPR 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-
-        // =========================================================
-        // CONNAISSANCE DU CLIENT / DE LA RELATION D'AFFAIRES
-        // =========================================================
-
-        "Objet de la relation d'affaires": {
-          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Nature de la relation d'affaires": {
-          ref: "CMF L.561-5-1 + R.561-12 + Arrêté du 2 septembre 2009",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Origine des fonds (déclaratif)": {
-          ref: "CMF R.561-12-1 + R.561-12 + selon le risque",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592280"
-        },
-
-        // =========================================================
-        // SCREENING / GEL DES AVOIRS / PEP / PAYS A RISQUE
-        // =========================================================
-
-        "Screening sanctions (UE, ONU — OFAC si nexus US)": {
-          ref: "CMF L.562-4 + L.562-4-1 (OFAC : politique interne / nexus US, non obligation CMF générale)",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000045250683"
-        },
-        "Screening PEP": {
-          ref: "CMF L.561-10, 1° + R.561-18 + R.561-20-2",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053153188"
-        },
-        "Vérification pays à risque": {
-          ref: "CMF L.561-10, 3°",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053153188"
-        },
-        "Identification et vérification des BE (chaîne de contrôle)": {
-          ref: "CMF L.561-5 + L.561-2-2 + R.561-1 + R.561-7",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517742"
-        },
-
-        // =========================================================
-        // VIGILANCE RENFORCEE — PPE / PEP
-        // =========================================================
-
-        "Fonction/mandat exercé(e)": {
-          ref: "CMF R.561-18",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043970417"
-        },
-        "Déclaration d'origine de patrimoine": {
-          ref: "CMF L.561-10, 1° + R.561-20-2 + Lignes directrices ACPR 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
-        },
-        "Screening PEP renforcé (bases dédiées)": {
-          ref: "CMF R.561-20-2",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
-        },
-        "Validation hiérarchique documentée": {
-          ref: "CMF R.561-20-2, II",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
-        },
-
-        // =========================================================
-        // CONSERVATION / PREUVES / JUSTIFICATION
-        // =========================================================
-
-        "Rapport / log de screening (sanctions, PEP)": {
-          ref: "CMF L.561-12 + L.562-4-1",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
-        },
-        "Preuve validation hiérarchique (email/PV)": {
-          ref: "CMF R.561-20-2 + L.561-12",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592332"
-        },
-
-        // =========================================================
-        // COMPLEMENTS — CONNAISSANCE RELATION / SCREENING
-        // =========================================================
-
-        "Nature des opérations bancaires envisagées": {
-          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Objet et nature des services de paiement": {
-          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Usage prévu de la monnaie électronique": {
-          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Stratégie crypto et provenance des actifs numériques": {
-          ref: "CMF L.561-5-1 + R.561-12 — connaissance de la relation d'affaires",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033512858"
-        },
-        "Cohérence économique": {
-          ref: "CMF L.561-6 — vigilance constante sur les opérations",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577798"
-        },
-
-        // =========================================================
-        // TRUST / FIDUCIE
-        // =========================================================
-
-        // Identification
-        "Nature juridique du dispositif": {
-          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Identité du constituant": {
-          ref: "CMF L.561-5 II + AMLR Art. 62(1)a + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Identité du(des) trustee(s)": {
-          ref: "CMF R.561-5-4 + AMLR Art. 62(1)b + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577234"
-        },
-        "Identité des bénéficiaires": {
-          ref: "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
-        },
-        "Identité du protecteur (si applicable)": {
-          ref: "CMF L.561-5 II + AMLR Art. 62(1)d + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-        "Objet et finalité du trust": {
-          ref: "CMF R.561-12 + AMLR Art. 62(2) + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
-        },
-        "Loi applicable et juridiction": {
-          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-
-        // Documents
-        "Acte constitutif du trust": {
-          ref: "CMF R.561-5-1 + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Pièce d'identité du trustee": {
-          ref: "CMF R.561-5-1, 1° + AMLR Art. 62(1)b + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Pièce d'identité du constituant": {
-          ref: "CMF R.561-5-1, 1° + AMLR Art. 62(1)a + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Justificatif d'identité des bénéficiaires": {
-          ref: "CMF L.561-2-2 + AMLR Art. 62(1)c + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
-        },
-        "Pièce d'identité du protecteur (si désigné)": {
-          ref: "CMF R.561-5-1 + AMLR Art. 62(1)d + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043332956"
-        },
-        "Justificatif d'origine des fonds apportés au trust": {
-          ref: "CMF R.561-12 + AMLR Art. 29(1)c + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
-        },
-        "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)": {
-          ref: "CMF L.561-2-2 + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033517537"
-        },
-
-        // Vérifications
-        "Vérification des parties prenantes au trust": {
-          ref: "CMF L.561-5 II + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592220"
-        },
-
-        // Évidences
-        "Acte constitutif du trust conservé au dossier": {
-          ref: "CMF L.561-12 + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
-        },
-        "Preuves d'identification des parties": {
-          ref: "CMF L.561-12 + AMLR Art. 62 + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041577784"
-        },
-        "Justification économique documentée": {
-          ref: "CMF R.561-12 + AMLR Art. 62(2) + LD ACPR Identification 2025",
-          url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041592285"
-        },
-      },
-
       // Formulaires / Webhooks (à configurer)
       emailWebhook: null,
       webhookTimeout: 8000,
-      
+
+      // Helpers UI form — familles applicables
       coteeApplicableFamilies: ['commerciale', 'civile', 'sel'],
       detentionApplicableFamilies: ['commerciale', 'civile', 'sel', 'gie'],
       assoFondationFamilies: ['association', 'fondation'],
       noBEFamilies: ['ei', 'publique'],
-
-      // Familles juridiques — la valeur du <select> EST la famille
-      legalFormFamilies: ['commerciale', 'civile', 'sel', 'association', 'fondation', 'gie', 'publique'],
-
-      organisationComplements: {
-        BANQUE: { purposeNature: "Nature des opérations bancaires envisagées" },
-        PSP: { purposeNature: "Objet et nature des services de paiement" },
-        EME: { purposeNature: "Usage prévu de la monnaie électronique" },
-        CASP: { purposeNature: "Stratégie crypto et provenance des actifs numériques" }
-      },
-
-      infosCMF: {
-        PF: {
-          socle: ["Nom(s)", "Prénom(s)", "Date de naissance", "Lieu de naissance", "Nationalité(s)", "Adresse du domicile"],
-          complements: ["Profession / activité", "Revenus / patrimoine estimé"]
-        },
-        PM: {
-          socle: ["Forme juridique", "Dénomination / raison sociale", "Numéro d'immatriculation", "Adresse du siège social", "Identité des représentants légaux"],
-          complementsBE: ["Identité des bénéficiaires effectifs (>25% du capital ou des droits de vote, ou contrôle par tout autre moyen — L.561-2-2 CMF)", "Chaîne de contrôle / détention"],
-          complementsCotee: ["Identification des principaux actionnaires"],
-          complementsGouvernance: ["Identité des dirigeants", "Membres du bureau / conseil", "Pouvoirs de signature"],
-        },
-        TRUST: {
-          socle: ["Nature juridique du dispositif", "Identité du constituant", "Identité du(des) trustee(s)", "Identité des bénéficiaires", "Identité du protecteur (si applicable)"],
-          complements: ["Objet et finalité du trust", "Loi applicable et juridiction"]
-        },
-        purposeNatureBase: ["Objet de la relation d'affaires", "Nature de la relation d'affaires", "Origine des fonds (déclaratif)"]
-      },
-
-      documents: {
-        PF: {
-          base: ["Pièce d'identité en cours de validité", "Justificatif de domicile récent (selon procédure interne et approche par les risques — non obligatoire au sens strict du CMF)"],
-          distance: ["Second justificatif ou mesure complémentaire (entrée à distance)"]
-        },
-        PM: {
-          FR: {
-            commerciale: ["Extrait Kbis récent (souvent < 3 mois selon politique interne)", "Statuts certifiés conformes", "PI du représentant légal", "Justificatif siège (si non visible Kbis)"],
-            civile: ["Extrait Kbis ou RCS", "Statuts certifiés conformes", "PI du gérant"],
-            sel: ["Extrait Kbis récent", "Statuts certifiés conformes", "PI du représentant légal", "Justificatif inscription Ordre"],
-            association: ["Statuts à jour", "Récépissé préfecture (RNA) / JOAFE", "Liste membres du bureau", "PV désignation dirigeants", "PI du représentant", "Pouvoirs / délégation"],
-            fondation: ["Statuts ou acte constitutif", "Décret / décision de création", "Liste administrateurs", "PV nomination dirigeants", "PI du représentant", "Pouvoirs / délégation"],
-            gie: ["Extrait Kbis récent", "Contrat constitutif / statuts", "Liste des membres", "PI du représentant", "Pouvoirs / délégation"],
-            publique: ["Acte de nomination", "Délégation de pouvoirs", "PI du représentant"],
-            ei: ["Avis INSEE / SIRENE", "PI de l'entrepreneur", "Justificatif domiciliation"],
-            creation: ["Projet de statuts", "Attestation de dépôt des fonds", "PI du fondateur", "Récépissé de dépôt CFE"],
-            succursale: ["Extrait immatriculation succursale", "Statuts société mère", "Extrait registre société mère"]
-          },
-          UE: {
-            base: ["Extrait registre local récent", "Statuts (traduits)", "PI du représentant", "Justificatif siège"],
-            succursale: ["Extrait immatriculation succursale", "Extrait registre société mère", "Statuts société mère"]
-          },
-          HORSUE: {
-            base: ["Extrait registre (apostille/légalisé)", "Statuts (traduits, certifiés)", "PI du représentant", "Justificatif siège", "Certificat de validité juridique ou équivalent (enregistrement registre officiel)"],
-            succursale: ["Extrait immatriculation succursale FR", "Documents société mère"]
-          },
-          common: { beCotee: "Justificatif de cotation", pouvoirs: "Justificatif des pouvoirs (PV, délégation)" }
-        },
-        TRUST: ["Acte constitutif du trust", "Pièce d'identité du trustee", "Pièce d'identité du constituant", "Justificatif d'identité des bénéficiaires", "Pièce d'identité du protecteur (si désigné)", "Justificatif d'origine des fonds apportés au trust", "Organigramme du dispositif (constituant → trustee(s) → bénéficiaires)"]
-      },
-
-      verifications: {
-        base: ["Screening sanctions (UE, ONU — OFAC si nexus US)", "Screening PEP", "Vérification pays à risque", "Cohérence économique"],
-        BE: "Identification et vérification des BE (chaîne de contrôle)",
-        BECotee: "Vérification marché réglementé (cotation)",
-        TRUST: "Vérification des parties prenantes au trust",
-      },
-
-      evidences: {
-        screening: "Rapport / log de screening (sanctions, PEP)",
-        OFAC: "Preuve screening OFAC",
-        distance: ["Preuves vérification à distance", "Trace facteurs authentification"],
-        BE: ["Justificatifs identification BE", "Trace vérification chaîne de contrôle", "Documentation si structure complexe"],
-        BECotee: "Justification traitement BE (cotation) + preuve",
-        gouvernance: ["Justificatifs identification dirigeants", "Trace vérification pouvoirs", "Documentation fonctionnement statutaire"],
-        TRUST: ["Acte constitutif du trust conservé au dossier", "Preuves d'identification des parties", "Justification économique documentée"],
-        PPE: ["Preuve validation hiérarchique", "Rapport screening PEP détaillé", "Justification entrée/maintien de la relation"],
-        mandataire: "Trace vérification pouvoirs du mandataire + lien avec l'entité"
-      },
-
-      // v7.4: PPE - Documents et vérifications supplémentaires
-      PPE: {
-        infos: ["Fonction/mandat exercé(e)", "Période d'exercice du mandat", "Lien avec le client (si proche/associé)"],
-        documents: ["Déclaration d'origine de patrimoine", "Justificatifs des sources de revenus/patrimoine"],
-        verifications: ["Screening PEP renforcé (bases dédiées)", "Validation hiérarchique documentée", "Revue du profil de risque"],
-        evidences: ["Preuve validation hiérarchique (email/PV)", "Rapport screening PEP détaillé", "Note de synthèse risque PPE"]
-      },
-
-      // v7.4: Mandataire - KYC complet
-      mandataire: {
-        infos: ["Identité complète du mandataire", "Fonction au sein de l'entité", "Périmètre des pouvoirs délégués"],
-        documents: ["PI du mandataire en cours de validité", "Pouvoir/délégation spécifique signé", "Justificatif du lien avec l'entité (contrat, organigramme)"],
-        verifications: ["Screening sanctions/PEP du mandataire", "Vérification authenticité du pouvoir", "Cohérence avec les statuts/Kbis"],
-        evidences: ["Copie pouvoir daté et signé", "Rapport screening mandataire", "Trace vérification du lien"]
-      },
-
-      // v7.4: Mode révision périodique - Éléments à actualiser
-      revision: {
-        infosPF: ["Vérifier adresse actuelle", "Confirmer situation professionnelle", "Actualiser revenus/patrimoine si significatif"],
-        infosPM: ["Vérifier dirigeants actuels", "Confirmer actionnariat/BE", "Actualiser activité si évolution"],
-        documentsPF: ["PI si expirée ou bientôt expirée", "Actualisation justificatif de domicile (pratique de place)"],
-        documentsPM: ["Kbis/extrait registre récent (< 3 mois — pratique de place, non imposé par les textes)", "PI si expirée ou bientôt expirée", "Actualisation justificatif de siège (pratique de place)"],
-        documentsTRUST: ["PI du trustee si expirée", "Acte constitutif actualisé (si modification)", "Actualisation identité des bénéficiaires"],
-        verifications: ["Re-screening sanctions/PEP (tous)", "Vérifier évolution pays à risque", "Contrôle cohérence activité/opérations"],
-        evidences: ["Rapport screening actualisé", "Note de revue périodique", "Historique des changements identifiés"]
-      },
-
-      pointsACPR: [
-        "Distinguer identification et vérification",
-        "Documenter les mesures prises",
-        "Conserver copies et preuves (5 ans)",
-        "Adapter l'intensité au risque (L.561-4-1 CMF)",
-        "PPE : maintenir la vigilance renforcée au moins 12 mois après la fin du mandat (L.561-46 CMF)",
-        "En cas de doute : ne pas entrer en relation"
-      ],
-      noteAssoFondation: "Association/Fondation : pas d'actionnariat. Documenter dirigeants, pouvoirs de signature et contrôle effectif.",
     };
 
     // ========================================
@@ -1062,8 +659,7 @@
     }
 
     function buildACPRPoints(v) {
-      const points = [...CONFIG.pointsACPR];
-      return points;
+      return getRuleItems('info', v, { section: 'acpr' });
     }
 
     // ========================================
@@ -1111,9 +707,9 @@
           li.setAttribute('aria-checked', 'true');
         }
 
-        const source = CONFIG.sources && CONFIG.sources[item];
-    const sourceIcon = source
-      ? `<a href="${source.url}" target="_blank" rel="noopener" class="source-icon" title="${source.ref}" aria-label="Source : ${source.ref}">ⓘ</a>`
+        const ruleItem = RULES?.find(r => r.label === item);
+    const sourceIcon = ruleItem?.ref
+      ? `<a href="${ruleItem.url}" target="_blank" rel="noopener" class="source-icon" title="${ruleItem.ref}" aria-label="Source : ${ruleItem.ref}">ⓘ</a>`
       : '';
     li.innerHTML = `<span class="check-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text">${item}</span>${sourceIcon}`;
         el.appendChild(li);
@@ -1185,7 +781,10 @@
       
       // Add notes (asso/fondation + user notes)
       const allNotes = [];
-      if (currentResults.showAssoFondationNote) allNotes.push(CONFIG.noteAssoFondation);
+      if (currentResults.showAssoFondationNote) {
+        const noteItem = RULES?.find(r => r.id === 'note-asso-fondation');
+        if (noteItem) allNotes.push(noteItem.label);
+      }
       if (dossierNotes) allNotes.push(dossierNotes);
       if (allNotes.length) data.notes = allNotes;
 
@@ -1231,7 +830,10 @@
 
       currentResults.socle.forEach(i => csv += `A1-Socle,"${sanitizeCSV(i)}"\n`);
       currentResults.complements.forEach(i => csv += `A2-Complements,"${sanitizeCSV(i)}"\n`);
-      if (currentResults.showAssoFondationNote) csv += `A2-Note,"${sanitizeCSV(CONFIG.noteAssoFondation)}"\n`;
+      if (currentResults.showAssoFondationNote) {
+        const noteItem = RULES?.find(r => r.id === 'note-asso-fondation');
+        if (noteItem) csv += `A2-Note,"${sanitizeCSV(noteItem.label)}"\n`;
+      }
       currentResults.documents.forEach(i => csv += `B-Documents,"${sanitizeCSV(i)}"\n`);
       currentResults.gel.forEach(i => csv += `C1-Sanctions-Gel,"${sanitizeCSV(i)}"\n`);
       currentResults.verifications.forEach(i => csv += `C2-Verifications,"${sanitizeCSV(i)}"\n`);
