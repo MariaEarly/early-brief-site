@@ -139,7 +139,7 @@ function exportBrandedPDF() {
 
   const v = typeof getFormValues === 'function' ? getFormValues() : {};
   const contextLines = [
-    `Organisation: ${v.organisation || '-'} | Canal: ${v.canal || '-'} | Relation: ${v.relation || '-'}`,
+    `Organisation: ${v.organisation || '-'} | Canal: ${v.canal || '-'}`,
     `Type client: ${v.clientType || '-'} | Pays: ${v.pays || '-'} | PPE: ${v.ppeStatus || 'Non'}`
   ];
 
@@ -163,7 +163,8 @@ function exportBrandedPDF() {
     { id: 'socleChecklist', title: 'INFOS 1 - Identification' },
     { id: 'complementsChecklist', title: 'INFOS 2 - Connaissance relation' },
     { id: 'docsChecklist', title: 'DOCS - Pièces justificatives' },
-    { id: 'verificationsChecklist', title: 'CONTRÔLES - Vérifications' },
+    { id: 'gelChecklist', title: 'SANCTIONS & GEL DES AVOIRS' },
+    { id: 'verificationsChecklist', title: 'CONTRÔLES - Vérifications BE/PEP' },
     { id: 'evidencesChecklist', title: 'PREUVES - Audit trail' }
   ];
 
