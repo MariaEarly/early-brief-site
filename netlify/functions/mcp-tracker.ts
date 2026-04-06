@@ -615,8 +615,8 @@ const TOOLS_LIST = [
 function corsHeaders() {
   return {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, Mcp-Session-Id",
     "Content-Type": "application/json",
   };
 }
@@ -647,6 +647,20 @@ export const handler = async (event: {
 }) => {
   if (event.httpMethod === "OPTIONS") {
     return { statusCode: 204, headers: corsHeaders() };
+  }
+
+  // GET: Streamable HTTP SSE endpoint (required by claude.ai connectors)
+  if (event.httpMethod === "GET") {
+    return {
+      statusCode: 200,
+      headers: { ...corsHeaders(), "Content-Type": "text/event-stream", "Cache-Control": "no-cache" },
+      body: "event: endpoint\ndata: /mcp\n\n",
+    };
+  }
+
+  // DELETE: session cleanup (stateless, always OK)
+  if (event.httpMethod === "DELETE") {
+    return { statusCode: 200, headers: corsHeaders(), body: "{}" };
   }
 
   if (event.httpMethod !== "POST") {
