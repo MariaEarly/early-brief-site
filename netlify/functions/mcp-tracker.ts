@@ -434,11 +434,23 @@ async function autresPubDeleteEntry(params: Record<string, unknown>) {
 
 // ── Tool dispatch ────────────────────────────────────────
 
+const WRITE_TOOLS = new Set([
+  "tracker_add_entry", "tracker_update_entry", "tracker_delete_entry",
+  "autres_pub_add_entry", "autres_pub_update_entry", "autres_pub_delete_entry",
+]);
+
 async function handleToolCall(
   rpcId: string | number,
   name: string,
-  args: Record<string, unknown>
+  args: Record<string, unknown>,
+  authed: boolean
 ) {
+  if (WRITE_TOOLS.has(name) && !authed) {
+    return jsonrpcResult(rpcId, {
+      content: [{ type: "text", text: "Écriture refusée : authentification requise (secret manquant)." }],
+      isError: true,
+    });
+  }
   const handlers: Record<string, (args: Record<string, unknown>) => Promise<unknown>> = {
     tracker_get_entries: trackerGetEntries,
     tracker_get_stats: () => trackerGetStats(),
@@ -667,18 +679,11 @@ export const handler = async (event: {
     return { statusCode: 405, headers: corsHeaders(), body: "Method Not Allowed" };
   }
 
-  // Auth: header OR query param
+  // Auth: header OR query param (required for writes, optional for reads)
   const authHeader = event.headers["authorization"] ?? event.headers["Authorization"] ?? "";
   const querySecret = event.queryStringParameters?.secret ?? "";
   const validSecret = process.env.MCP_SECRET ?? "";
   const isAuthed = authHeader === `Bearer ${validSecret}` || querySecret === validSecret;
-  if (!isAuthed) {
-    return {
-      statusCode: 401,
-      headers: corsHeaders(),
-      body: JSON.stringify({ jsonrpc: "2.0", id: null, error: { code: -32000, message: "Unauthorized" } }),
-    };
-  }
 
   // Parse
   let body: { jsonrpc?: string; id?: string | number; method?: string; params?: Record<string, unknown> };
@@ -713,7 +718,8 @@ export const handler = async (event: {
       return handleToolCall(
         id ?? 0,
         String((params as { name?: string })?.name || ""),
-        ((params as { arguments?: Record<string, unknown> })?.arguments) || {}
+        ((params as { arguments?: Record<string, unknown> })?.arguments) || {},
+        isAuthed
       );
 
     default:
