@@ -10,3 +10,8 @@
   from = "/api/chat-rts"
   to = "/.netlify/functions/chat-rts"
   status = 200
+
+[[redirects]]
+  from = "/mcp"
+  to = "/.netlify/functions/mcp-tracker"
+  status = 200
