@@ -643,6 +643,7 @@ export const handler = async (event: {
   httpMethod: string;
   headers: Record<string, string>;
   body: string | null;
+  queryStringParameters?: Record<string, string>;
 }) => {
   if (event.httpMethod === "OPTIONS") {
     return { statusCode: 204, headers: corsHeaders() };
@@ -652,9 +653,12 @@ export const handler = async (event: {
     return { statusCode: 405, headers: corsHeaders(), body: "Method Not Allowed" };
   }
 
-  // Auth
-  const auth = event.headers["authorization"] || event.headers["Authorization"] || "";
-  if (auth !== `Bearer ${process.env.MCP_SECRET}`) {
+  // Auth: header OR query param
+  const authHeader = event.headers["authorization"] ?? event.headers["Authorization"] ?? "";
+  const querySecret = event.queryStringParameters?.secret ?? "";
+  const validSecret = process.env.MCP_SECRET ?? "";
+  const isAuthed = authHeader === `Bearer ${validSecret}` || querySecret === validSecret;
+  if (!isAuthed) {
     return {
       statusCode: 401,
       headers: corsHeaders(),
