@@ -154,6 +154,17 @@
     "type": "TEXTE"
   },
   {
+    "id": "2026-03-18-dgttrsoracpr-n0uh",
+    "date": "18/03/2026",
+    "source": "DGT Trésor / ACPR",
+    "titre": "Lignes directrices conjointes DGT-ACPR sur la mise en œuvre des mesures de gel des avoirs",
+    "description": "Mise à jour des lignes directrices conjointes DGT-ACPR encadrant les obligations des établissements financiers en matière de gel des avoirs. Le document précise les modalités opérationnelles de mise en œuvre des mesures de gel dans le cadre LCB-FT.",
+    "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-la-direction-generale-du-tresor-et-de-lautorite-de-controle",
+    "type_source": "officielle",
+    "statut": "en vigueur",
+    "type": "TEXTE"
+  },
+  {
     "id": "95f59bcf-645b-46c4-8131-290620ef0f33",
     "date": "18/03/2026",
     "source": "OFAC",
