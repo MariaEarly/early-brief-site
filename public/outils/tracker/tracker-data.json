@@ -187,6 +187,17 @@
     "type": "TEXTE"
   },
   {
+    "id": "2026-03-17-ofac-y7ce",
+    "date": "17/03/2026",
+    "source": "OFAC",
+    "titre": "Settlement Agreement OFAC / TradeStation Securities",
+    "description": "Accord de règlement entre l OFAC et TradeStation Securities Inc pour violations de sanctions.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260317",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "f7ff5644-7495-4692-b1c8-ca58aff8c2a7",
     "date": "17/03/2026",
     "source": "EBA",
