@@ -154,6 +154,17 @@
     "type": "TEXTE"
   },
   {
+    "id": "2026-03-18-ofac-yezh",
+    "date": "18/03/2026",
+    "source": "OFAC",
+    "titre": "Russia-related Designations Removals",
+    "description": "Retraits de désignations liées à la Russie de la liste SDN.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260318_33",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "2026-03-18-dgttrsoracpr-n0uh",
     "date": "18/03/2026",
     "source": "DGT Trésor / ACPR",
