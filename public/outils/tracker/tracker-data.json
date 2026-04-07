@@ -169,7 +169,7 @@
     "date": "18/03/2026",
     "source": "DGT Trésor / ACPR",
     "titre": "Lignes directrices conjointes DGT-ACPR sur la mise en œuvre des mesures de gel des avoirs",
-    "description": "Mise à jour des lignes directrices conjointes DGT-ACPR encadrant les obligations des établissements financiers en matière de gel des avoirs. Le document précise les modalités opérationnelles de mise en œuvre des mesures de gel dans le cadre LCB-FT.",
+    "description": "Mise à jour des lignes directrices conjointes DGT-ACPR sur la mise en œuvre des mesures de gel des avoirs (remplace la version du 16/06/2021). Nouveautés : intégration des crypto-actifs (PSCA/PSAN, filtrage obligatoire des transferts sous MiCA), nouvelle section sur la détection des violations et tentatives de contournement de sanctions (Directive UE 2024/1226). Obligation de résultat maintenue.",
     "url": "https://acpr.banque-france.fr/fr/publications-et-statistiques/publications/lignes-directrices-conjointes-de-la-direction-generale-du-tresor-et-de-lautorite-de-controle",
     "type_source": "officielle",
     "statut": "en vigueur",
