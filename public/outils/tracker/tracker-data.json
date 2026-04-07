@@ -363,6 +363,17 @@
     "type": "DECISION"
   },
   {
+    "id": "2026-03-06-ofac-9lci",
+    "date": "06/03/2026",
+    "source": "OFAC",
+    "titre": "Russia-related Designation Removal",
+    "description": "Retrait d une désignation liée à la Russie de la liste SDN.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260306",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "8c543f13-8fbd-464f-9e9a-49fd485c0430",
     "date": "06/03/2026",
     "source": "FinCEN",
