@@ -275,6 +275,17 @@
     "type": "DECISION"
   },
   {
+    "id": "2026-03-13-ofac-xyuj",
+    "date": "13/03/2026",
+    "source": "OFAC",
+    "titre": "Cyber-related Designations Removals",
+    "description": "Retraits de désignations liées aux cyberattaques de la liste SDN.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260313",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "e09c77c1-e84c-42b4-87ca-798fadc0dd48",
     "date": "13/03/2026",
     "source": "AMF",
