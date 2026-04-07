@@ -429,17 +429,6 @@
     "type": "TEXTE"
   },
   {
-    "id": "fb544298-1bfa-4b1b-9fc5-d82ee23f0e6f",
-    "date": "04/03/2026",
-    "source": "Conseil UE",
-    "titre": "Liste de l'UE en matière de terrorisme: le Conseil désigne le Corps des gardiens de la révolution islamique comme organisation terroriste",
-    "description": "Le Conseil de l'UE inscrit le Corps des gardiens de la révolution islamique sur la liste terroriste",
-    "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/02/19/eu-terrorist-list-council-designates-the-islamic-revolutionary-guard-corps-as-a-terrorist-organisation/",
-    "type_source": "officielle",
-    "statut": "publie",
-    "type": "DECISION"
-  },
-  {
     "id": "c692dc72-1529-4fd1-a130-339adbaee02b",
     "date": "04/03/2026",
     "source": "AMF",
@@ -558,6 +547,17 @@
     "url": "https://www.amf-france.org/fr/reglementation/doctrine/doctrine-en-vigueur",
     "type_source": "officielle",
     "statut": "publié",
+    "type": "DECISION"
+  },
+  {
+    "id": "fb544298-1bfa-4b1b-9fc5-d82ee23f0e6f",
+    "date": "19/02/2026",
+    "source": "Conseil UE",
+    "titre": "Liste de l'UE en matière de terrorisme: le Conseil désigne le Corps des gardiens de la révolution islamique comme organisation terroriste",
+    "description": "Le Conseil inscrit formellement le CGRI d'Iran sur la liste terroriste UE (Décision PESC 2026/421, Règlement UE 2026/420 du 19/02/2026). Gel des avoirs et interdiction pour les opérateurs UE de mettre des fonds à disposition du CGRI. 13 personnes et 23 groupes/entités sous régime antiterroriste UE.",
+    "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/02/19/eu-terrorist-list-council-designates-the-islamic-revolutionary-guard-corps-as-a-terrorist-organisation/",
+    "type_source": "officielle",
+    "statut": "publie",
     "type": "DECISION"
   },
   {
