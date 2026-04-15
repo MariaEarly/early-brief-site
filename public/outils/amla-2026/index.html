@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide de remplissage — Exercice de testing & calibration AMLA 2026, Section B — Early Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F4F0E6;
+  --ink: #1A1814;
+  --muted: #4A4540;
+  --ghost: #8A8480;
+  --green: #2C4A2E;
+  --terra: #9E3D1B;
+  --rule: rgba(26,24,20,.14);
+  --sans: "Hanken Grotesk", sans-serif;
+  --display: "Cormorant", serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* HEADER */
+header{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 60px;border-bottom:1px solid var(--rule);max-width:900px;margin:0 auto;width:100%;}
+header nav{display:flex;gap:1.75rem;}
+header nav a{font-size:.8rem;color:var(--muted);letter-spacing:.02em;transition:color .15s;}
+header nav a:hover,header nav a.active{color:var(--terra);}
+.logo{font-size:13px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink);}
+.logo:hover{opacity:.8;}
+.logo em{font-style:normal;color:var(--terra);}
+
+/* PAGE */
+.page{max-width:900px;margin:0 auto;padding:48px 60px 72px;}
+
+.breadcrumb{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ghost);margin-bottom:2rem;}
+.breadcrumb a{color:var(--ghost);}
+.breadcrumb a:hover{color:var(--terra);text-decoration:none;}
+
+.page-head{margin-bottom:2rem;}
+.page-head h1{font-family:var(--display);font-size:1.75rem;font-weight:400;line-height:1.2;margin-bottom:.5rem;}
+.page-head .sub{font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:580px;}
+
+/* SEARCH */
+.search-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;}
+.search-bar input{flex:1;max-width:380px;padding:.5rem .8rem;border:1px solid var(--rule);font-family:var(--sans);font-size:.82rem;font-weight:300;background:rgba(255,255,255,.6);color:var(--ink);outline:none;transition:border-color .15s;}
+.search-bar input:focus{border-color:var(--terra);}
+.search-bar input::placeholder{color:var(--ghost);}
+.search-count{font-family:var(--mono);font-size:.65rem;color:var(--ghost);letter-spacing:.04em;}
+
+/* INFO */
+.info-block{border-left:2px solid var(--green);padding:.7rem 1.1rem;margin-bottom:2rem;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.7;}
+.info-block strong{font-weight:500;color:var(--ink);}
+
+/* TOGGLE ALL */
+.toggle-all{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ghost);background:none;border:none;padding:0;margin:0 0 .75rem;cursor:pointer;transition:color .12s;}
+.toggle-all:hover{color:var(--terra);}
+
+/* SECTION CARD */
+.section-card{border:1px solid var(--rule);margin-bottom:.65rem;scroll-margin-top:20px;}
+.section-card:hover{border-color:rgba(26,24,20,.22);}
+.section-card.open{border-color:rgba(26,24,20,.22);}
+
+.section-header{display:grid;grid-template-columns:44px 12px 1fr auto;align-items:center;gap:1.25rem;padding:1.1rem 1.5rem;cursor:pointer;user-select:none;background:rgba(255,255,255,.5);transition:background .1s;}
+.section-header:hover,.section-card.open .section-header{background:rgba(255,255,255,.8);}
+
+.s-num{font-family:var(--mono);font-size:.68rem;color:var(--ghost);letter-spacing:.04em;}
+.s-dot{width:8px;height:8px;border-radius:50%;background:var(--terra);flex-shrink:0;}
+.s-info{}
+.s-code-main{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--terra);letter-spacing:.04em;margin-bottom:.2rem;}
+.s-title{font-family:var(--display);font-size:1.1rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:.15rem;}
+.s-sub{font-family:var(--mono);font-size:.6rem;color:var(--ghost);letter-spacing:.04em;}
+.s-right{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
+.s-count{font-family:var(--mono);font-size:.68rem;color:var(--ghost);letter-spacing:.02em;}
+.s-arrow{font-family:var(--mono);font-size:.75rem;color:var(--ghost);transition:transform .2s;line-height:1;}
+.section-card.open .s-arrow{transform:rotate(90deg);}
+
+/* SECTION BODY */
+.section-body{display:none;border-top:1px solid var(--rule);}
+.section-card.open .section-body{display:block;}
+
+
+
+/* QLB CONCORDANCE */
+.dp-qlb{
+  display:flex;
+  align-items:baseline;
+  gap:.5rem;
+  margin-top:.55rem;
+  padding:.4rem .75rem;
+  background:#2c4a2e07;
+  border-left:2px solid var(--green);
+  font-size:.75rem;
+}
+.dp-qlb.partial{
+  background:#9e3d1b07;
+  border-left-color:var(--terra);
+}
+.dp-qlb.none{
+  background:rgba(26,24,20,.04);
+  border-left-color:rgba(26,24,20,.2);
+}
+.dp-qlb-lbl{
+  font-family:var(--mono);
+  font-size:.58rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ghost);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.dp-qlb-val{
+  font-family:var(--mono);
+  font-size:.68rem;
+  color:var(--ink);
+  line-height:1.5;
+}
+.dp-qlb-note{
+  font-family:var(--sans);
+  font-size:.72rem;
+  color:var(--ghost);
+  font-weight:300;
+}
+.dp-qlb.none .dp-qlb-val{
+  color:var(--terra);
+  font-family:var(--mono);
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.62rem;
+  font-style:normal;
+}
+
+
+/* ARTICLE INLINE POPOVER */
+.art-ref {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--terra);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  letter-spacing: .03em;
+  transition: color .12s;
+}
+.art-ref:hover { color: var(--ink); }
+.art-ref.open { color: var(--ink); font-weight: 600; }
+
+.art-popover {
+  display: none;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--green);
+  padding: .75rem 1rem;
+  margin: .35rem 0 .25rem;
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.75;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.art-popover.open { display: block; }
+.art-popover strong { font-weight: 500; color: var(--ink); }
+.art-popover p { margin-bottom: .5rem; }
+.art-popover p:last-child { margin-bottom: 0; }
+.art-popover .art-source {
+  font-family: var(--mono);
+  font-size: .58rem;
+  color: var(--ghost);
+  margin-top: .5rem;
+  padding-top: .4rem;
+  border-top: 1px dashed var(--rule);
+  letter-spacing: .03em;
+}
+.art-popover .art-source a { color: var(--terra); text-decoration: none; }
+.art-popover .art-source a:hover { text-decoration: underline; }
+
+/* SECTION REMARK */
+.section-remark{
+  border-left:2px solid var(--terra);
+  background:#9e3d1b07;
+  padding:.75rem 1.25rem;
+  margin:0;
+  font-size:.82rem;
+  color:var(--muted);
+  font-weight:300;
+  line-height:1.75;
+  border-bottom:1px solid var(--rule);
+}
+.section-remark-lbl{
+  display:block;
+  font-family:var(--mono);
+  font-size:.58rem;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--terra);
+  margin-bottom:.35rem;
+}
+.section-remark strong{font-weight:500;color:var(--ink);}
+
+/* DATAPOINT ROW (list level) */
+.dp-row{
+  display:grid;
+  grid-template-columns:80px 1fr auto;
+  align-items:center;
+  gap:1rem;
+  padding:.75rem 1.5rem;
+  border-bottom:1px solid var(--rule);
+  cursor:pointer;
+  transition:background .1s;
+  user-select:none;
+}
+.dp-row:last-child{border-bottom:none;}
+.dp-row:hover{background:rgba(26,24,20,.02);}
+.dp-row.open{background:rgba(26,24,20,.02);}
+.dp-row.hidden{display:none !important;}
+
+.dp-code{font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--terra);letter-spacing:.04em;flex-shrink:0;}
+.dp-row-info{}
+.dp-name{font-size:.83rem;font-weight:400;color:var(--ink);line-height:1.35;margin-bottom:.1rem;}
+.dp-type{font-family:var(--mono);font-size:.58rem;color:var(--ghost);letter-spacing:.03em;}
+.dp-arrow{font-family:var(--mono);font-size:.7rem;color:var(--ghost);transition:transform .2s;flex-shrink:0;}
+.dp-row.open .dp-arrow{transform:rotate(90deg);}
+
+/* DATAPOINT DETAIL (expanded) */
+.dp-detail{
+  display:none;
+  padding:.9rem 1.5rem 1.1rem calc(80px + 1rem + 1.5rem);
+  border-bottom:1px solid var(--rule);
+  background:rgba(255,255,255,.4);
+}
+.dp-row.open + .dp-detail{display:block;}
+
+/* Explanation */
+.dp-explain{font-size:.845rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:.65rem;}
+.dp-explain strong{font-weight:500;color:var(--ink);}
+
+/* Rule blocks */
+.dp-rule{border-left:2px solid var(--rule);padding:.5rem .9rem;margin:.6rem 0;font-size:.8rem;color:var(--muted);font-weight:300;line-height:1.7;}
+.dp-rule.g{border-left-color:var(--green);background:#2c4a2e07;}
+.dp-rule.w{border-left-color:var(--terra);background:#9e3d1b07;}
+.dp-rule strong{font-weight:500;color:var(--ink);}
+.dp-rule-lbl{font-family:var(--mono);font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);display:block;margin-bottom:.25rem;}
+.dp-rule.g .dp-rule-lbl{color:var(--green);}
+.dp-rule.w .dp-rule-lbl{color:var(--terra);}
+
+/* Format */
+.dp-format{font-family:var(--mono);font-size:.63rem;color:var(--ghost);letter-spacing:.03em;margin:.5rem 0 .65rem;display:block;}
+.dp-format .fmt{background:rgba(26,24,20,.07);padding:1px 5px;border-radius:2px;color:var(--ink);}
+
+/* Chips */
+.dp-scope{display:flex;flex-wrap:wrap;gap:4px;margin:.5rem 0;}
+.dp-chip{font-family:var(--mono);font-size:.6rem;padding:1px 7px;border:1px solid var(--rule);color:var(--ghost);letter-spacing:.03em;}
+.dp-chip.x{border-color:rgba(158,61,27,.3);color:var(--terra);}
+
+/* FAQ inside detail */
+.dp-faq{margin-top:.75rem;border-top:1px dashed var(--rule);padding-top:.65rem;}
+.faq-q-label{font-family:var(--mono);font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ghost);margin-bottom:.45rem;}
+.faq-qa{margin-bottom:.55rem;}
+.faq-qa:last-child{margin-bottom:0;}
+.faq-question{font-size:.83rem;font-weight:500;color:var(--ink);line-height:1.45;margin-bottom:.25rem;cursor:pointer;display:flex;align-items:flex-start;gap:.5rem;}
+.faq-question::before{content:"Q.";font-family:var(--mono);font-size:.58rem;font-weight:600;color:var(--terra);flex-shrink:0;padding-top:3px;letter-spacing:.03em;}
+.faq-question:hover{color:var(--terra);}
+.faq-answer{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.75;padding-left:1.35rem;display:none;}
+.faq-answer.open{display:block;}
+.faq-answer strong{font-weight:500;color:var(--ink);}
+
+/* ref */
+.dp-ref{font-family:var(--mono);font-size:.62rem;color:var(--ghost);margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--rule);letter-spacing:.03em;line-height:1.6;}
+
+/* Table */
+.t{width:100%;border-collapse:collapse;font-size:.8rem;margin:.6rem 0;}
+.t th{background:var(--ink);color:#f5f2eb;padding:5px 10px;text-align:left;font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.t td{padding:5px 10px;border-bottom:1px solid var(--rule);color:var(--muted);font-size:.8rem;font-weight:300;}
+.t tr.g td{background:rgba(26,24,20,.04);font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--ghost);letter-spacing:.05em;text-transform:uppercase;}
+
+/* ref */
+.dp-ref{font-family:var(--mono);font-size:.62rem;color:var(--ghost);margin-top:.75rem;padding-top:.6rem;border-top:1px solid var(--rule);letter-spacing:.03em;line-height:1.6;}
+
+/* No results */
+.no-results{padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--ghost);display:none;}
+
+/* Bottom */
+.subscribe{border:1px solid var(--rule);padding:1.5rem 2rem;margin-top:2.5rem;}
+.subscribe h3{font-family:var(--display);font-size:1.1rem;font-weight:400;margin-bottom:.4rem;}
+.subscribe p{font-size:.83rem;color:var(--muted);font-weight:300;margin-bottom:.9rem;}
+.subscribe a{display:inline-block;background:var(--terra);color:#faf9f6;font-family:var(--mono);font-size:.62rem;letter-spacing:2px;text-transform:uppercase;padding:.6rem 1.4rem;transition:background .15s;}
+.subscribe a:hover{background:#7a2e14;text-decoration:none;}
+
+.page-footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.page-footer a{font-family:var(--mono);font-size:.65rem;color:var(--ghost);letter-spacing:.04em;}
+.page-footer a:hover{color:var(--terra);text-decoration:none;}
+.page-footer-right{font-family:var(--mono);font-size:.6rem;color:var(--ghost);letter-spacing:.03em;line-height:1.7;text-align:right;}
+
+footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;margin-top:4rem;}
+.footer-inner{max-width:72rem;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:.9rem;text-align:center;}
+.footer-brand{font-family:var(--display);font-size:1.2rem;font-weight:700;}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:.82rem;color:var(--muted);}
+.footer-links a:hover{color:var(--ink);text-decoration:none;}
+.footer-legal{display:flex;gap:1.25rem;}
+.footer-legal a{font-size:.72rem;color:var(--ghost);}
+.footer-copy{font-size:.75rem;color:var(--ghost);}
+
+@media(max-width:800px){
+  header{padding:1rem 24px;flex-direction:column;align-items:flex-start;gap:.5rem;}
+  header nav{gap:1rem;flex-wrap:wrap;}
+  .page{padding:32px 24px 56px;}
+  .section-header{grid-template-columns:32px 10px 1fr auto;gap:.75rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="https://early-brief.com/" class="logo">Early <em>Brief</em></a>
+  <nav>
+    <a href="https://early-brief.com/ressources/" class="active">Ressources</a>
+    <a href="https://early-brief.com/reglementations/">Base réglementaire</a>
+    <a href="https://early-brief.com/offre/">Offre</a>
+    <a href="https://early-brief.com/a-propos/">À propos</a>
+    <a href="https://early-brief.com/newsletter/">Newsletter</a>
+    <a href="https://early-brief.com/contact/">Contact</a>
+  </nav>
+</header>
+
+<div class="page">
+
+  <div class="breadcrumb">
+    <a href="https://early-brief.com/ressources/">Ressources</a> &rsaquo; Guide de remplissage — Exercice de testing &amp; calibration AMLA 2026
+  </div>
+
+  <div class="page-head">
+    <h1>Guide de remplissage — Section B Contrôles LCB-FT</h1>
+    <p class="sub">Pour chaque datapoint : ce qu'il mesure, comment le calculer, et les précisions pratiques. Template AMLA v1.0 · Note interprétative du 16 mars 2026.</p>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="sq" placeholder="Rechercher un datapoint ou une question..." oninput="search()">
+    <span class="search-count" id="sc">39 datapoints</span>
+  </div>
+
+  <div class="info-block">
+    <strong>Note :</strong> document fourni à titre informatif — ne constitue pas un conseil juridique. Période de référence : 1er janv. – 31 déc. 2025. Base légale : Art. 12(7) AMLAR · Art. 40(2) AMLD VI.
+  </div>
+
+  <button class="toggle-all" id="toggleAll" onclick="toggleAllSections()">[Tout fermer]</button>
+
+  <div id="sections">
+
+  <!-- ════════════════════════════════════
+       AML.07.01 — GOUVERNANCE
+  ════════════════════════════════════ -->
+  <div class="section-card open" id="s01">
+    <div class="section-header" onclick="toggleSection('s01')">
+      <span class="s-num">01</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.01</div>
+        <div class="s-title">Gouvernance, culture &amp; fonction conformité</div>
+        <div class="s-sub">Applicable à tous les secteurs</div>
+      </div>
+      <div class="s-right"><span class="s-count">6 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+      <div class="section-remark">
+        <span class="section-remark-lbl">Remarque générale — applicable à tous les datapoints de cet onglet</span>
+        Le terme <strong>« personnel »</strong> désigne l'ensemble des employés travaillant pour l'entité déclarante. Sont exclus : les prestataires indépendants, le personnel d'une autre société du même groupe, les consultants et les fournisseurs de services externes. Lorsqu'un membre du personnel n'est que partiellement dédié aux tâches à reporter, l'entité ne reporte que la proportion de son temps allouée à ces tâches, dans la mesure du raisonnable.
+      </div>
+
+      <!-- C0010 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Last AML/CFT Compliance Check</div>
+          <div class="dp-type">Date · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">Last AML/CFT Compliance Check</span>
+          <span class="dp-type">Date · Stock</span>
+      </div>
+        <p class="dp-explain">Date à laquelle les procédures couvrant au moins une partie significative du cadre LCB-FT — CDD initial et continu, monitoring des relations d'affaires, DS, screening des sanctions — ont été vérifiées par la <strong>fonction conformité (deuxième ligne de défense)</strong> comme étant conformes au droit applicable à cette date.</p>
+        <div class="dp-format">Format : <span class="fmt">AAAA-MM-JJ</span> &nbsp;·&nbsp; Ex : <span class="fmt">2025-02-01</span></div>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Plusieurs contrôles ont eu lieu en 2025 — quelle date retenir ?</div>
+            <div class="faq-answer">La <strong>date la plus récente</strong>. Si plusieurs contrôles ont été conduits sur des périmètres différents du cadre LCB-FT au cours de l'exercice, c'est la date du dernier en date qui est reportée.</div>
+          </div>
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_9')">Art. 9 AMLR</button> · AML.07.01</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas de date de dernier contrôle de conformité</span>
+        </div>
+      </div>
+
+      <!-- C0020 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Dedicated AML/CFT Staff (FTE)</div>
+          <div class="dp-type">Décimal · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020</span>
+          <span class="dp-name">Dedicated AML/CFT Staff (FTE)</span>
+          <span class="dp-type">Décimal · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre d'équivalents temps plein (ETP) dédiés à la conformité LCB-FT au sein de la fonction conformité, à fin d'exercice. Couvre le personnel <strong>principalement focalisé</strong> sur les tâches LCB-FT, incluant au minimum : le responsable conformité (Art. 11 AMLR) et ses collaborateurs, le personnel chargé de l'analyse préalable aux DS (Art. 69(2) AMLR), le personnel rédacteur des politiques internes (Art. 9 AMLR), et tout autre spécialiste LCB-FT.</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Exclus</span>
+          Prestataires indépendants · personnel d'une autre entité du groupe · consultants · fournisseurs de services externes. En cas de temps partiel : reporter uniquement la proportion du temps consacrée aux tâches LCB-FT.
+        </div>
+        <div class="dp-format">Format : décimal (ex : <span class="fmt">2.5</span>) · sans séparateur de milliers</div>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Les prestataires et le personnel d'autres entités du groupe comptent-ils ?</div>
+            <div class="faq-answer">Non. Seuls les <strong>employés directs</strong> de l'entité déclarante sont pris en compte, dans la proportion de leur temps alloué aux tâches LCB-FT.</div>
+          </div>
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_11')">Art. 11 AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_69')">Art. 69(2) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_9')">Art. 9 AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_20')">Art. 20 AMLR</button></div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.016 + 8.040</span><span class="dp-qlb-note"> — EATP spécialisés LCB-FT + estimation élargie · Correspondance partielle : AMLA inclut tout ETP dédié ; QLB ventile employés directs et personnels mis à disposition</span>
+        </div>
+      </div>
+
+      <!-- C0030 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0030</span>
+        <div class="dp-row-info">
+          <div class="dp-name">AML Training — Compliance Staff (%)</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0030</span>
+          <span class="dp-name">AML Training — Compliance Staff (%)</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Pourcentage du <strong>personnel de conformité LCB-FT</strong> (même périmètre que C0020) ayant suivi une formation LCB-FT interne ou externe pendant l'exercice. La formation LCB-FT couvre toute instruction structurée visant à faire comprendre les obligations légales, les politiques internes et les procédures pratiques de prévention du BC/FT (Art. 12 AMLR).</p>
+        <div class="dp-format">Format : décimal ex : 54 % → <span class="fmt">0.54</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_12')">Art. 12 AMLR</button> · AML.07.01</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.012 / 8.016</span><span class="dp-qlb-note"> — ratio personnes formées parmi EATP spécialisés · Correspondance partielle : périmètre « personnel conformité » non strictement identique</span>
+        </div>
+      </div>
+
+      <!-- C0040 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0040</span>
+        <div class="dp-row-info">
+          <div class="dp-name">AML Training — Non-AML/CFT Compliance Personnel (%)</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0040</span>
+          <span class="dp-name">AML Training — Non-AML/CFT Compliance Personnel (%)</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Pourcentage du personnel <strong>non spécialisé LCB-FT</strong> ayant reçu une formation LCB-FT pendant l'exercice. Vise tous les collaborateurs sans fonction conformité dédiée mais exposés au risque BC/FT : front-office, relation client, auditeurs internes, direction générale — toute personne susceptible de contribuer à la détection de faits relevant de l'Art. 69 AMLR.</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Quelle différence avec C0030 ?</div>
+            <div class="faq-answer"><strong>C0030</strong> = personnel dont la fonction principale est la conformité LCB-FT (RCCI, analystes DS, spécialistes). <strong>C0040</strong> = tous les autres collaborateurs qui ne sont pas LCB-FT de métier mais qui sont exposés au risque.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : décimal ex : 54 % → <span class="fmt">0.54</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_12')">Art. 12 AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_69')">Art. 69 AMLR</button> · AML.07.01</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.011 / 8.012</span><span class="dp-qlb-note"> — « personnes exposées au risque de BC-FT » et « dont formées » · Correspondance partielle</span>
+        </div>
+      </div>
+
+      <!-- C0050 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0050</span>
+        <div class="dp-row-info">
+          <div class="dp-name">AML Training — Agents and Distributors (%)</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0050</span>
+          <span class="dp-name">AML Training — Agents and Distributors (%)</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Pourcentage des agents et distributeurs ayant reçu une formation LCB-FT pendant l'exercice.</p>
+        <div class="dp-rule">
+          <span class="dp-rule-lbl">Définitions</span>
+          <strong>Agents :</strong> intermédiaires placés sous la pleine responsabilité de l'entité. <strong>Distributeurs :</strong> personnes physiques ou morales qui distribuent et remboursent de la monnaie électronique (Art. 3(4) Directive EME 2009/110/CE).
+        </div>
+        <div class="dp-format">Format : décimal ex : 54 % → <span class="fmt">0.54</span></div>
+        <div class="dp-ref">Directive 2009/110/CE Art. 3(4) · <button class="art-ref" onclick="toggleArt(this,'art_12')">Art. 12 AMLR</button></div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.030 / 8.031</span><span class="dp-qlb-note"> — « effectifs agents/distributeurs » et « dont formés » · Correspondance directe</span>
+        </div>
+      </div>
+
+      <!-- C0060 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0060</span>
+        <div class="dp-row-info">
+          <div class="dp-name">AML Training — Members of the Management Body (%)</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0060</span>
+          <span class="dp-name">AML Training — Members of the Management Body (%)</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Pourcentage des membres de l'<strong>organe de direction</strong> ayant reçu une formation LCB-FT pendant l'exercice. Couvre les deux fonctions : fonction de gestion ET fonction de surveillance.</p>
+        <div class="dp-rule">
+          <span class="dp-rule-lbl">Définition — organe de direction (Art. 2(1)(37) AMLR)</span>
+          L'organe ou les organes de l'entité, désignés conformément au droit national, habilités à définir la stratégie, les objectifs et l'orientation générale, et qui supervisent les décisions de gestion — y compris les personnes qui dirigent effectivement l'activité.
+        </div>
+        <div class="dp-format">Format : décimal ex : 54 % → <span class="fmt">0.54</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_2_37')">Art. 2(1)(37) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_12')">Art. 12 AMLR</button> · AML.07.01</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas de taux de formation spécifique à l'organe de direction</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.02 — CONTRÔLES INTERNES
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s02">
+    <div class="section-header" onclick="toggleSection('s02')">
+      <span class="s-num">02</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.02</div>
+        <div class="s-title">Contrôles internes, externalisation &amp; audit</div>
+        <div class="s-sub">Applicable à tous les secteurs</div>
+      </div>
+      <div class="s-right"><span class="s-count">11 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <!-- C0010 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Frequency of AML Reporting to the Management Body</div>
+          <div class="dp-type">Liste · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">Frequency of AML Reporting to the Management Body</span>
+          <span class="dp-type">Liste · —</span>
+      </div>
+        <p class="dp-explain">Fréquence à laquelle la fonction conformité LCB-FT reporte à l'organe de direction (Art. 11(6) AMLR). Le reporting visé est écrit ou documenté. Valeurs possibles : <strong>jamais / mensuel / trimestriel / semestriel / annuel</strong>.</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">L'entité reporte à plusieurs fréquences selon les destinataires — laquelle saisir ?</div>
+            <div class="faq-answer">La <strong>fréquence la plus élevée</strong> — l'intervalle le plus court parmi les fréquences pratiquées. Sélection via liste déroulante uniquement.</div>
+          </div>
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_11')">Art. 11(6) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_2_37')">Art. 2(1)(37) AMLR</button></div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas la fréquence de reporting à l'organe de direction</span>
+        </div>
+      </div>
+
+      <!-- C0020–C0080 Externalisation -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020 – C0080</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Outsourcing — CDD / Formation / TM / DS / Sanctions / PPE / Contrôles</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020 – C0080</span>
+          <span class="dp-name">Outsourcing — CDD / Formation / TM / DS / Sanctions / PPE / Contrôles</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Pour chacune des 7 tâches suivantes, indiquer si elle est externalisée (en totalité ou en partie) ou non :</p>
+        <ul class="dp-explain" style="margin-top:.4rem;padding-left:1.1rem;">
+          <li><strong>C0020</strong> — Mesures de vigilance à l'égard de la clientèle au sens de l'Art. 20 AMLR : identification du client, vérification de l'identité, identification du bénéficiaire effectif, connaissance de l'objet et de la nature de la relation d'affaires</li>
+          <li><strong>C0030</strong> — Formation LCB-FT au sens de l'<button class="art-ref" onclick="toggleArt(this,'art_12')">Art. 12 AMLR</button></li>
+          <li><strong>C0040</strong> — Monitoring transactionnel : surveillance continue des transactions (hors screening de sanctions financières ciblées (SFC) ou PPE autonome)</li>
+          <li><strong>C0050</strong> — Tâches préparatoires aux déclarations de soupçon transmises à la CRF</li>
+          <li><strong>C0060</strong> — Screening sanctions : filtrage des clients et contreparties pour la mise en œuvre des sanctions financières ciblées</li>
+          <li><strong>C0070</strong> — Détection PPE : processus de détermination du statut de Personne Politiquement Exposée</li>
+          <li><strong>C0080</strong> — Contrôles de conformité : contrôles internes et évaluations de l'audit interne sur la conformité aux politiques LCB-FT internes (Art. 9(2)(a)(vii) AMLR)</li>
+        </ul>
+        <div class="dp-rule g">
+          <span class="dp-rule-lbl">Pas d'externalisation — Considérant 47 AMLR</span>
+          L'utilisation d'un logiciel tiers, d'une base de données ou d'un service de screening n'est <strong>pas</strong> de l'externalisation si c'est l'entité qui réalise elle-même l'exigence AMLR en s'appuyant sur ces outils.
+        </div>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Externalisation — à déclarer</span>
+          Lorsqu'un prestataire réalise effectivement la tâche. <strong>L'externalisation intragroupe (centres de services partagés) est visée.</strong>
+        </div>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Que couvrent les « contrôles de conformité » de C0080 ?</div>
+            <div class="faq-answer">Les <em>Compliance Monitoring Checks</em> : contrôles internes et évaluations de l'audit interne mis en place pour surveiller la conformité de l'entité avec ses politiques et procédures LCB-FT (Art. 9(2)(a)(vii) et Art. 9(2)(b) AMLR).</div>
+          </div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Une plateforme e-learning proposée par une société externe compte-t-elle comme externalisation de la formation (C0030) ?</div>
+            <div class="faq-answer">La Note interprétative ne traite pas explicitement du e-learning. Par analogie avec la règle générale du template (commentaire A2 · AML.07.02) — qui exclut de l'externalisation l'utilisation d'un <em>logiciel, d'une base de données ou d'un service</em> lorsque l'entité reste celle qui réalise l'exigence — la distinction suivante peut être appliquée :<br><br>Plateforme ou modules e-learning fournis par un prestataire, formation délivrée par l'entité à ses propres collaborateurs = <strong>probablement pas d'externalisation</strong> (logique outil/logiciel).<br>Prestataire qui gère, délivre et certifie le programme de formation <strong>à la place</strong> de l'entité = <strong>probablement externalisation</strong>.<br><br><em>Inférence — non confirmée explicitement par la Note interprétative. En cas de doute, commenter dans AML.01.02.</em></div>
+          </div>
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_18')">Art. 18 AMLR</button> · Considérant 47 AMLR · <button class="art-ref" onclick="toggleArt(this,'art_9')">Art. 9(2)(a)(vii) AMLR</button></div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B3 — Q. 3.410 / 3.420 / 3.431–3.437</span><span class="dp-qlb-note"> — Q. 3.410 : question filtre sur le recours à des prestataires pour les activités opérationnelles LCB-FT · Q. 3.420 : prestataires situés à l'étranger · Q. 3.431–3.437 : méthodes de contrôle appliquées aux prestataires · Correspondance partielle : le QLB confirme l'existence de l'externalisation mais ne ventile pas par type de tâche (CDD, formation, TM…) comme AMLA le fait colonne par colonne</span>
+        </div>
+      </div>
+
+      <!-- C0090–C0100 Externalisation pays tiers -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0090 – C0100</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Outsourcing — Third Country (Non-group / Intra-group)</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0090 – C0100</span>
+          <span class="dp-name">Outsourcing — Third Country (Non-group / Intra-group)</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Préciser si les tâches externalisées (C0020–C0080) le sont auprès d'un prestataire établi dans un <strong>pays hors EEE</strong> — en distinguant prestataires extérieurs au groupe (C0090) et prestataires intragroupe (C0100).</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_18')">Art. 18 AMLR</button></div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B3 — Q. 3.420</span><span class="dp-qlb-note"> — « Votre organisme fait-il appel à des prestataires situés à l'étranger ? » · Correspondance partielle : le QLB pose une question Oui/Non globale ; AMLA distingue prestataires hors groupe (C0090) et intragroupe (C0100)</span>
+        </div>
+      </div>
+
+      <!-- C0110–C0190 Dates d'audit -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0110 – C0190</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Last Audit — 9 domaines LCB-FT</div>
+          <div class="dp-type">Date · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0110 – C0190</span>
+          <span class="dp-name">Last Audit — 9 domaines LCB-FT</span>
+          <span class="dp-type">Date · —</span>
+      </div>
+        <p class="dp-explain">Date du dernier rapport d'audit interne (ou contrôle par expert externe, Art. 9(2)(b) AMLR) pour chacun des 9 domaines : BWRA — Business-Wide Risk Assessment (C0110) · Profil LCB-FT clients (C0120) · Formation (C0130) · Identification/vérification (C0140) · Monitoring des relations d'affaires (C0150) · DS (C0160) · Conservation des données (C0170) · Ressources LCB-FT (C0180) · Organisation / gouvernance / reporting (C0190).</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Quelle date retenir — début, fin de mission ou signature du rapport ?</div>
+            <div class="faq-answer"><strong>1er choix :</strong> date de signature du rapport. <strong>2e choix :</strong> date de fin de la période d'audit. <strong>Si audit en cours :</strong> date de début.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : <span class="fmt">AAAA-MM-JJ</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_9')">Art. 9(2)(b) AMLR</button></div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B3 — Q. 3.200 à 3.280</span><span class="dp-qlb-note"> — correspondance directe sur les 9 domaines : 3.200 (classification des risques) · 3.210 (profil de risque clients) · 3.220 (formation) · 3.230 (identification/vérification) · 3.240 (suivi et analyse des relations d'affaires) · 3.250 (DS) · 3.260 (conservation) · 3.270 (ressources LCB-FT) · 3.280 (organisation, gouvernance, reporting). Le QLB collecte la date du dernier rapport d'audit pour chacun de ces domaines — même périmètre qu'AMLA C0110–C0190</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.03 — ÉVALUATION DES RISQUES
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s03">
+    <div class="section-header" onclick="toggleSection('s03')">
+      <span class="s-num">03</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.03</div>
+        <div class="s-title">Évaluation des risques — BWRA &amp; CRA</div>
+        <div class="s-sub">BWRA : Business-Wide Risk Assessment · CRA : Customer Risk Assessment · Applicable à tous les secteurs</div>
+      </div>
+      <div class="s-right"><span class="s-count">7 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <div class="section-remark">
+        <span class="section-remark-lbl">Remarques générales — applicables à tout l'onglet</span>
+        <strong>BWRA :</strong> les données reportées décrivent l'état du Business-Wide Risk Assessment (Art. 10 AMLR) <strong>à la fin de la période de référence</strong>, soit au 31 décembre 2025.<br><br>
+        <strong>CRA — 4 catégories :</strong> les clients doivent être répartis en <strong>quatre catégories de risque</strong> pour cet exercice : risque faible · risque moyen-faible · risque moyen-élevé · risque élevé. Si votre entité utilise un nombre différent de catégories, appliquer le tableau de correspondance suivant :<br><br>
+        <em>3 niveaux :</em> Faible → Faible · Moyen → Moyen-faible · Élevé → Élevé<br>
+        <em>5 niveaux :</em> Faible → Faible · Moyen-faible → Faible · Moyen-élevé → Moyen-faible · Élevé → Moyen-élevé · Très élevé → Élevé
+      </div>
+
+      <!-- C0010 BWRA date -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Last Approval Date of the BWRA</div>
+          <div class="dp-type">Date · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">Last Approval Date of the BWRA</span>
+          <span class="dp-type">Date · —</span>
+      </div>
+        <p class="dp-explain">Date exacte de la dernière approbation du BWRA par l'organe de direction dans sa <strong>fonction de gestion</strong> (Art. 10(2) AMLR). Cette date peut être antérieure à 2025.</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Cas des entités non-mères</span>
+          Le BWRA est généralement approuvé par l'entreprise mère pour l'ensemble du groupe. Les entités non-mères reportent la même date que l'entreprise mère.
+        </div>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Dans quel ordre remplir C0010 et C0020 ?</div>
+            <div class="faq-answer"><strong>C0020 d'abord :</strong> vérifier si l'organe de direction a approuvé le BWRA (Oui/Non). <strong>C0010 ensuite :</strong> si C0020 = Oui, indiquer la date exacte.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : <span class="fmt">AAAA-MM-JJ</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_10')">Art. 10(2) AMLR</button></div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B1 — Q. 1.190</span><span class="dp-qlb-note"> — « Précisez la date de la dernière mise à jour de la classification des risques de votre organisme » · Correspondance partielle : le QLB collecte une date de mise à jour ; AMLA demande spécifiquement la date d'approbation par l'organe de direction (Art. 10(2) AMLR). Les deux peuvent coïncider si la mise à jour et l'approbation sont concomitantes</span>
+        </div>
+      </div>
+
+      <!-- C0020 Senior approval -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Senior Management Approval (BWRA)</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020</span>
+          <span class="dp-name">Senior Management Approval (BWRA)</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Indiquer si le BWRA a été approuvé par l'organe de direction dans sa fonction de gestion. Sélection via liste déroulante.</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_10')">Art. 10(2) AMLR</button></div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B1 — Q. 1.200</span><span class="dp-qlb-note"> — « La classification des risques a-t-elle été communiquée à l'organe de surveillance au cours de l'année écoulée, en cas de mise à jour ? » · Correspondance partielle : le QLB demande la communication à l'organe de surveillance (fonction de surveillance) ; AMLA demande l'approbation par l'organe de direction dans sa fonction de gestion — deux corps de gouvernance distincts</span>
+        </div>
+      </div>
+
+      <!-- C0030 CRA date -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0030</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Date of the Last Update of the CRA</div>
+          <div class="dp-type">Date · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0030</span>
+          <span class="dp-name">Date of the Last Update of the CRA</span>
+          <span class="dp-type">Date · —</span>
+      </div>
+        <p class="dp-explain">Date de la dernière mise à jour de la <strong>méthodologie CRA</strong> — pas du recalcul de chaque score client. Les ajustements mineurs ne comptent pas. En cas d'externalisation, reporter la date de mise à jour de la méthodologie par le prestataire.</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Un recalcul des scores clients constitue-t-il une mise à jour à reporter ?</div>
+            <div class="faq-answer">Non. Seule une modification de la <strong>méthodologie</strong> elle-même (critères, pondérations, règles de scoring) doit être reportée.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : <span class="fmt">AAAA-MM-JJ</span></div>
+        <div class="dp-ref">Commentaire D5 · AML.07.03</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas de date de mise à jour de la méthodologie CRA</span>
+        </div>
+      </div>
+
+      <!-- C0040–C0070 Distribution risque -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0040 – C0070</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers by LCB-FT Risk Category</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0040 – C0070</span>
+          <span class="dp-name">Customers by LCB-FT Risk Category</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de clients classés dans chacune des 4 catégories de risque à fin 2025 : Faible (C0040) · Moyen-faible (C0050) · Moyen-élevé (C0060) · Élevé (C0070). La somme doit en principe couvrir l'ensemble du portefeuille clients déclaré en AML.02.01.</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Notre entité utilise 3 ou 5 niveaux — comment mapper vers les 4 catégories AMLA ?</div>
+            <div class="faq-answer">
+              <table class="t" style="margin-top:.5rem;">
+                <thead><tr><th>Votre nomenclature</th><th>Catégorie AMLA</th></tr></thead>
+                <tbody>
+                  <tr class="g"><td colspan="2">Si 3 niveaux</td></tr>
+                  <tr><td>Faible</td><td>Faible (C0040)</td></tr>
+                  <tr><td>Moyen</td><td>Moyen-faible (C0050)</td></tr>
+                  <tr><td>Élevé</td><td>Élevé (C0070)</td></tr>
+                  <tr class="g"><td colspan="2">Si 5 niveaux</td></tr>
+                  <tr><td>Faible</td><td>Faible (C0040)</td></tr>
+                  <tr><td>Moyen-faible</td><td>Faible (C0040)</td></tr>
+                  <tr><td>Moyen-élevé</td><td>Moyen-faible (C0050)</td></tr>
+                  <tr><td>Élevé</td><td>Moyen-élevé (C0060)</td></tr>
+                  <tr><td>Très élevé</td><td>Élevé (C0070)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">La somme doit-elle égaler le total clients de AML.02.01 ?</div>
+            <div class="faq-answer">En principe oui. Tout écart doit être justifié dans AML.01.02. Les clients sans profil de risque assigné sont reportés en C0050 de AML.07.04.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : entier sans décimale. Ex : 1 000 → <span class="fmt">1000</span></div>
+        <div class="dp-ref">Commentaire A2 · AML.07.03</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.210 / 8.220 / 8.230 / 8.235</span><span class="dp-qlb-note"> — répartition par catégorie de risque · Correspondance partielle : QLB collecte des %, AMLA demande des nombres absolus</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.04 — CDD
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s04">
+    <div class="section-header" onclick="toggleSection('s04')">
+      <span class="s-num">04</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.04</div>
+        <div class="s-title">Vigilance clientèle (CDD) &amp; monitoring continu</div>
+        <div class="s-sub">Applicable à tous les secteurs</div>
+      </div>
+      <div class="s-right"><span class="s-count">7 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <!-- C0010 BE non identifié -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — LE/Trusts with BO Not Identified</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">Customers — LE/Trusts with BO Not Identified</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de clients personnes morales, arrangements juridiques ou trusts dont les <strong>bénéficiaires effectifs n'ont pas été identifiés</strong> à fin 2025. La consultation d'un registre public ou d'un système national fiable suffit à considérer le BE comme identifié. <strong>Règle du tout-ou-rien :</strong> si un seul BE parmi plusieurs n'est pas identifié, la PM entre intégralement dans ce comptage.</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Dirigeants substitués (SMO) — exclus</span>
+          Les dirigeants désignés faute de BE identifiable (Art. 22(2) AMLR) ne sont pas des BE et ne se comptent pas ici — Considérant 125 AMLR.
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_2_28')">Art. 2(1)(28) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_22')">Art. 22(2) AMLR</button> · Considérant 125 AMLR</div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.180</span><span class="dp-qlb-note"> — % clients PM avec BE dans base filtrée · Correspondance indirecte : indicateur inverse (QLB mesure la conformité, AMLA mesure les lacunes)</span>
+        </div>
+      </div>
+
+      <!-- C0020 BE identifié non vérifié -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — LE/Trusts With BO Identified Not Verified</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020</span>
+          <span class="dp-name">Customers — LE/Trusts With BO Identified Not Verified</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de PM/trusts dont les BE ont été identifiés mais dont l'identité n'a pas encore été <strong>vérifiée</strong> par des documents, données ou informations fiables (Art. 20(1)(b) et Art. 22 AMLR). La vérification inclut la consultation du registre central (Art. 22(7) AMLR).</p>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Quelle différence entre C0010 (non identifié) et C0020 (identifié mais non vérifié) ?</div>
+            <div class="faq-answer"><strong>C0010 :</strong> on ne sait pas qui est le BE. <strong>C0020 :</strong> on sait qui est le BE, mais on n'a pas encore obtenu les documents/données permettant de le vérifier. Les deux sont des défaillances CDD distinctes.</div>
+          </div>
+        </div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_20')">Art. 20(1)(b) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_22')">Art. 22 AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_22')">Art. 22(7) AMLR</button> · Considérant 125 AMLR</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne distingue pas BE identifié non vérifié de BE non identifié</span>
+        </div>
+      </div>
+
+      <!-- C0030 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0030</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — Missing ID/Verification Documentation</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0030</span>
+          <span class="dp-name">Customers — Missing ID/Verification Documentation</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de clients — personnes physiques et personnes morales — pour lesquels aucun document d'identité — ou mesure équivalente en contexte non-face-à-face — n'est enregistré à fin 2025. Inclut : documents périmés · copies illisibles ou corrompues.</p>
+        <div class="dp-ref">Commentaire D5 · AML.07.04</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.190</span><span class="dp-qlb-note"> — % clients NP avec données individualisées et pièce d'identité accessible · Correspondance partielle : indicateur inverse, périmètre NP uniquement</span>
+        </div>
+      </div>
+
+      <!-- C0040 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0040</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — CDD Not Compliant with Article 20 AMLR</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0040</span>
+          <span class="dp-name">Customers — CDD Not Compliant with Article 20 AMLR</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de clients — personnes physiques et personnes morales — dont le dossier de vigilance clientèle n'est pas encore conforme aux exigences de l'<button class="art-ref" onclick="toggleArt(this,'art_20')">Art. 20 AMLR</button> à fin 2025, au regard des éléments listés dans la Section B de l'Annexe I du reporting package.</p>
+        <p class="dp-explain">Concrètement, un client entre dans ce comptage si son dossier présente une lacune sur au moins l'un des quatre éléments suivants :</p>
+        <ul class="dp-explain" style="margin-top:.4rem;padding-left:1.1rem;">
+          <li><strong>Art. 20(1)(a)</strong> — identification et vérification de l'identité du client insuffisante ou absente</li>
+          <li><strong>Art. 20(1)(b)</strong> — bénéficiaire effectif non identifié ou non vérifié</li>
+          <li><strong>Art. 20(1)(c)</strong> — objet et nature de la relation d'affaires non documentés</li>
+          <li><strong>Art. 20(1)(d)</strong> — surveillance continue insuffisante ou dossier non mis à jour conformément aux obligations de revue</li>
+        </ul>
+        <p class="dp-explain" style="margin-top:.6rem;"><strong>⚠ Attention :</strong> ce datapoint ne sera <strong>pas utilisé</strong> pour le processus de sélection des entités visé à l'Art. 13(4) AMLAR (collecte de sélection 2027). Il sert uniquement à la calibration.</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Attention — non utilisé pour la sélection 2027</span>
+          Ce datapoint <strong>ne sera pas utilisé</strong> pour le premier processus de sélection AMLA (Art. 13(4) AMLAR). Il sert uniquement à l'exercice de testing et calibration 2026.
+        </div>
+        <div class="dp-ref">Art. 13(4) AMLAR · AML.07.04</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0050 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0050</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — Without LCB-FT Risk Profile</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0050</span>
+          <span class="dp-name">Customers — Without LCB-FT Risk Profile</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre de clients en relation d'affaires pour lesquels aucun profil de risque LCB-FT n'a encore été attribué à fin 2025. Exclut les personnes sans relation d'affaires établie.</p>
+        <div class="dp-ref">Commentaire F5 · AML.07.04</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0060 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0060</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — Information Reviews Due</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0060</span>
+          <span class="dp-name">Customers — Information Reviews Due</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre de clients pour lesquels une revue d'informations était due pendant l'exercice, conformément aux politiques internes de l'entité. Couvre les deux types de revues prévues par l'Art. 26(2)–(3) AMLR : revues <strong>périodiques</strong> (risk-based) et revues <strong>événementielles</strong> (déclenchées par un changement ou une nouvelle information pertinente).</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26(2)–(3) AMLR</button> · AML.07.04</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.250 / 8.260</span><span class="dp-qlb-note"> — périodicité de revue KYC et taux de conformité (risque élevé) · Correspondance partielle : QLB limité aux clients risque élevé</span>
+        </div>
+      </div>
+
+      <!-- C0070 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0070</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Customers — Information Updates Completed</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0070</span>
+          <span class="dp-name">Customers — Information Updates Completed</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Sous-ensemble de C0060 : clients pour lesquels la revue due pendant l'exercice a été effectivement réalisée et les informations mises à jour le cas échéant. <strong>L'écart C0060 − C0070</strong> révèle le backlog de conformité — indicateur clé pour AMLA.</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26(2)–(3) AMLR</button> · AML.07.04</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.260</span><span class="dp-qlb-note"> — taux de conformité dossiers clients risque élevé · Correspondance partielle : même restriction périmètre</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.05 — MONITORING & DS
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s05">
+    <div class="section-header" onclick="toggleSection('s05')">
+      <span class="s-num">05</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.05</div>
+        <div class="s-title">Monitoring transactionnel &amp; déclarations de soupçon</div>
+        <div class="s-sub">Applicable à tous les secteurs (C0130 : CI, EMI, PI, IF, CASP uniquement)</div>
+      </div>
+      <div class="s-right"><span class="s-count">15 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <!-- C0010 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">The Obliged Entity Has a Transaction Monitoring System in Place</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">The Obliged Entity Has a Transaction Monitoring System in Place</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Indiquer si l'entité conduit un monitoring continu des relations d'affaires, incluant les transactions effectuées par les clients (Art. 26 AMLR). Le système peut être automatisé, manuel ou externalisé.</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26 AMLR</button></div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0020 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Transaction/Activity Monitoring System Type</div>
+          <div class="dp-type">Liste · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020</span>
+          <span class="dp-name">Transaction/Activity Monitoring System Type</span>
+          <span class="dp-type">Liste · —</span>
+      </div>
+        <p class="dp-explain">Type de système de monitoring : <strong>(a) non automatisé</strong> — les alertes sont générées manuellement ; <strong>(b) au moins partiellement automatisé</strong> — le système génère automatiquement des alertes, même partiellement. L'automatisation partielle suffit pour cocher (b).</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26 AMLR</button> · AML.07.05</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0030 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0030</span>
+        <div class="dp-row-info">
+          <div class="dp-name">If Manual System: Average Alert Analysis Time (Days)</div>
+          <div class="dp-type">Décimal · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0030</span>
+          <span class="dp-name">If Manual System: Average Alert Analysis Time (Days)</span>
+          <span class="dp-type">Décimal · Flux</span>
+      </div>
+        <p class="dp-explain">Si le système est non automatisé : délai moyen en jours calendaires entre le moment où la transaction survient et la fin de l'analyse. Pour les entités utilisant un monitoring événementiel, le délai court à partir de la mise à disposition de l'activité pour revue.</p>
+        <div class="dp-ref">Commentaire D5 · AML.07.05</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0040–C0080 Alertes automatisées -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0040 – C0080</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Automated System — Alert Capabilities (5 dimensions)</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0040 – C0080</span>
+          <span class="dp-name">Automated System — Alert Capabilities (5 dimensions)</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Si le système de monitoring est au moins partiellement automatisé, indiquer s'il peut générer des alertes lorsque l'activité réelle du client est incohérente avec son profil attendu (objet de la relation d'affaires, dossier CDD). Une colonne par type d'incohérence détectable :</p>
+        <ul class="dp-explain" style="margin-top:.4rem;padding-left:1.1rem;">
+          <li><strong>C0040 — Nombre de transactions</strong> : le système détecte-t-il un nombre de transactions anormalement élevé ou faible par rapport au profil attendu du client sur la période de monitoring ?</li>
+          <li><strong>C0050 — Valeur agrégée</strong> : le système détecte-t-il un montant total de transactions incohérent avec le profil attendu sur la période de monitoring ?</li>
+          <li><strong>C0060 — Valeur unitaire</strong> : le système détecte-t-il des transactions individuelles dont le montant unitaire est incohérent avec le profil attendu ?</li>
+          <li><strong>C0070 — Contreparties</strong> : le système détecte-t-il des transactions avec des contreparties inattendues, non conformes au profil d'activité déclaré du client ?</li>
+          <li><strong>C0080 — Pays</strong> : le système détecte-t-il des transactions avec des pays non cohérents avec l'exposition géographique attendue du client (pays de résidence, pays d'activité déclarés dans le dossier CDD) ?</li>
+        </ul>
+        <div class="dp-ref">Commentaires E5–I5 · AML.07.05</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0090 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0090</span>
+        <div class="dp-row-info">
+          <div class="dp-name">If Automated System: Alerts Pending</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0090</span>
+          <span class="dp-name">If Automated System: Alerts Pending</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Nombre d'alertes générées par le système automatisé restant ouvertes ou en attente d'analyse à fin 2025. Une alerte est considérée comme <strong>non analysée</strong> tant qu'aucune décision finale n'a été prise : clôture ou escalade vers une DS.</p>
+        <div class="dp-ref">Commentaire J5 · AML.07.05</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.100 / 8.110 — dérivé</span><span class="dp-qlb-note"> — alertes en attente = QLB 8.100 (alertes générées) − QLB 8.110 (alertes clôturées) · Correspondance partielle : le QLB ne collecte pas les alertes en attente comme stock à fin d'exercice mais la différence entre les deux flux permet de l'approximer</span>
+        </div>
+      </div>
+
+      <!-- C0100 -->
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0100</span>
+        <div class="dp-row-info">
+          <div class="dp-name">If Automated System: Average Alert Analysis Time (Days)</div>
+          <div class="dp-type">Décimal · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0100</span>
+          <span class="dp-name">If Automated System: Average Alert Analysis Time (Days)</span>
+          <span class="dp-type">Décimal · Flux</span>
+      </div>
+        <p class="dp-explain">Délai moyen en jours entre la génération d'une alerte et sa clôture (décision prise), sur l'ensemble de l'exercice.</p>
+        <div class="dp-ref">Commentaire K5 · AML.07.05</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span>
+        </div>
+      </div>
+
+      <!-- C0110 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0110</span>
+        <div class="dp-row-info">
+          <div class="dp-name">If Automated System: Total Number of Alerts</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0110</span>
+          <span class="dp-name">If Automated System: Total Number of Alerts</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre total d'alertes générées par le système de monitoring transactionnel (Art. 26(1) AMLR) pendant 2025. <strong>Exclus :</strong> alertes de systèmes exclusivement dédiés à la détection des sanctions financières ciblées (SFC) ou des PPE. Inclut les alertes dont les DS éventuels ont été soumis en 2026.</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26(1) AMLR</button> · AML.07.05</div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.100</span><span class="dp-qlb-note"> — « nombre d'alertes générées par le dispositif de détection » (automatisé ou non) · Correspondance directe — noter que QLB 8.100 inclut les alertes manuelles contrairement à C0110</span>
+        </div>
+      </div>
+
+      <!-- C0120 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0120</span>
+        <div class="dp-row-info">
+          <div class="dp-name">If Automated System: Total Number of STRs Submitted to the FIU</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0120</span>
+          <span class="dp-name">If Automated System: Total Number of STRs Submitted to the FIU</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">DS initialement soumises à la CRF <strong>pendant 2025</strong> et résultant d'alertes du système automatisé — même si les alertes ont été générées en 2024. À noter : C0110 (alertes) et C0120 (DS) ont des périmètres temporels asymétriques, c'est intentionnel.</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26(1) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_69')">Art. 69(1)(a) AMLR</button> · AML.07.05</div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.380 (partiel)</span><span class="dp-qlb-note"> — QLB 8.380 = total DS toutes origines ; C0120 = DS issus du système automatisé uniquement · Concordance exacte avec AMLA C0150 (total DS)</span>
+        </div>
+      </div>
+
+      <!-- C0130 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0130</span>
+        <div class="dp-row-info">
+          <div class="dp-name">DLT/Blockchain Analysis Tool</div>
+          <div class="dp-type">Liste Oui/Non · —</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0130</span>
+          <span class="dp-name">DLT/Blockchain Analysis Tool</span>
+          <span class="dp-type">Liste Oui/Non · —</span>
+      </div>
+        <p class="dp-explain">Indiquer si l'entité a mis en place un outil d'analyse des informations disponibles sur les registres distribués, capable de générer des alertes en cas de schémas inhabituels ou de facteurs de risque identifiés dans les transactions des clients.</p>
+        <div class="dp-scope">
+          <span class="dp-chip">CI</span><span class="dp-chip">EMI</span><span class="dp-chip">PI</span><span class="dp-chip">IF</span><span class="dp-chip">CASP</span>
+          <span class="dp-chip x">Non applicable aux autres secteurs</span>
+        </div>
+        <div class="dp-ref">Commentaire N5 · AML.07.05</div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 7.3015</span><span class="dp-qlb-note"> — « recours à un outil d'analyse transactionnelle de la blockchain » (tableau B7-3, CASP uniquement) · Correspondance directe pour CASP</span>
+        </div>
+      </div>
+
+      <!-- C0140 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0140</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Average STR Processing Time (Days)</div>
+          <div class="dp-type">Décimal · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0140</span>
+          <span class="dp-name">Average STR Processing Time (Days)</span>
+          <span class="dp-type">Décimal · Flux</span>
+      </div>
+        <p class="dp-explain">Délai moyen en jours entre <strong>(1)</strong> la date à laquelle une transaction a été identifiée pour la première fois comme incohérente avec la connaissance du client (Art. 26(1) AMLR) — avant l'évaluation de l'Art. 69(2) AMLR — et <strong>(2)</strong> la date de déclaration à la CRF.</p>
+        <div class="dp-format">Format : décimal. Ex : 7,5 jours → <span class="fmt">7.5</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_26')">Art. 26(1) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_69')">Art. 69(2) AMLR</button> · AML.07.05</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.460 / 8.470</span><span class="dp-qlb-note"> — délai détection→déclaration (8.460) et exécution→déclaration (8.470) · Correspondance partielle : périmètres temporels non identiques</span>
+        </div>
+      </div>
+
+      <!-- C0150 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0150</span>
+        <div class="dp-row-info">
+          <div class="dp-name">STRs Submitted (Total)</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0150</span>
+          <span class="dp-name">STRs Submitted (Total)</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre total de DS et SAR soumis à la CRF pendant 2025, incluant les déclarations manuelles (pas uniquement celles issues du système automatisé).</p>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_69')">Art. 69(1)(a) AMLR</button> · AML.07.05</div>
+        <div class="dp-qlb">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.380</span><span class="dp-qlb-note"> — « nombre total de déclarations de soupçon » · Correspondance directe</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.06 — SANCTIONS
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s06">
+    <div class="section-header" onclick="toggleSection('s06')">
+      <span class="s-num">06</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.06</div>
+        <div class="s-title">Sanctions financières ciblées &amp; règlement sur les virements</div>
+        <div class="s-sub">C0010 : tous secteurs · C0020–C0040 : CI, CP, EMI, PI, CASP, O</div>
+      </div>
+      <div class="s-right"><span class="s-count">4 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <!-- C0010 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010</span>
+        <div class="dp-row-info">
+          <div class="dp-name">TFS Implementation Time (Hours)</div>
+          <div class="dp-type">Entier · Stock</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010</span>
+          <span class="dp-name">TFS Implementation Time (Hours)</span>
+          <span class="dp-type">Entier · Stock</span>
+      </div>
+        <p class="dp-explain">Délai maximal observé sur 2025 entre la publication d'une sanction financière ciblée (SFC) au JOUE (convention : <strong>23h59 du jour de publication</strong>) et son application effective dans les outils de screening de l'entité. Le délai reflète le moment où les sanctions mises à jour sont réellement opérationnelles en pratique — pas seulement reçues du fournisseur.</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Délais fournisseurs — inclus</span>
+          Les délais imputables aux prestataires externes doivent être comptabilisés. Reporter le <strong>délai maximal</strong> de l'exercice, pas la moyenne.
+        </div>
+        <div class="dp-format">Format : entier (heures)</div>
+        <div class="dp-ref">Commentaire B5 · AML.07.06</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 8.620</span><span class="dp-qlb-note"> — « délai moyen de traitement des alertes gel base clientèle » · Correspondance partielle : QLB = délai traitement alertes ; AMLA = délai intégration nouvelles désignations dans outils de screening</span>
+        </div>
+      </div>
+
+      <!-- C0020 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0020</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Outbound Transfers with Information Requests (RFI)</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0020</span>
+          <span class="dp-name">Outbound Transfers with Information Requests (RFI)</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre de virements <strong>sortants</strong> pour lesquels une contrepartie dans la chaîne de virement a demandé des informations manquantes, incomplètes ou en caractères inadmissibles pendant 2025. Un virement sortant est tout virement non interne à l'entité.</p>
+        <div class="dp-scope">
+          <span class="dp-chip">CI</span><span class="dp-chip">CP</span><span class="dp-chip">EMI</span><span class="dp-chip">PI</span><span class="dp-chip">CASP</span><span class="dp-chip">O</span>
+          <span class="dp-chip x">Non : LI · IF · AMC · BC</span>
+        </div>
+        <div class="dp-ref">Commentaire C5 · AML.07.06</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 7.080</span><span class="dp-qlb-note"> — nombre d'opérations sortantes sur comptes dépôt/paiement · Correspondance partielle : QLB ne ventile pas les virements avec RFI</span>
+        </div>
+      </div>
+
+      <!-- C0030 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0030</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Total Outbound Transfers</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0030</span>
+          <span class="dp-name">Total Outbound Transfers</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre total de virements sortants pendant 2025. Même définition que C0020 : tout virement non interne à l'entité.</p>
+        <div class="dp-scope">
+          <span class="dp-chip">CI</span><span class="dp-chip">CP</span><span class="dp-chip">EMI</span><span class="dp-chip">PI</span><span class="dp-chip">CASP</span><span class="dp-chip">O</span>
+        </div>
+        <div class="dp-ref">Commentaire D5 · AML.07.06</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB 7.080</span><span class="dp-qlb-note"> — nombre d'opérations sortantes · Correspondance partielle : périmètre QLB restreint aux comptes dépôt/paiement</span>
+        </div>
+      </div>
+
+      <!-- C0040 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0040</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Rejected/Returned Outbound Transfers (%)</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0040</span>
+          <span class="dp-name">Rejected/Returned Outbound Transfers (%)</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Part des virements sortants rejetés ou retournés par la contrepartie dans la chaîne en raison d'informations manquantes, incomplètes ou en caractères inadmissibles pendant 2025.</p>
+        <div class="dp-scope">
+          <span class="dp-chip">CI</span><span class="dp-chip">CP</span><span class="dp-chip">EMI</span><span class="dp-chip">PI</span><span class="dp-chip">CASP</span><span class="dp-chip">O</span>
+        </div>
+        <div class="dp-format">Format : décimal. Ex : 54 % → <span class="fmt">0.54</span></div>
+        <div class="dp-ref">Commentaire E5 · AML.07.06</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas de taux de rejet/retour de virements</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       AML.07.07 — CADRE GROUPE
+  ════════════════════════════════════ -->
+  <div class="section-card" id="s07">
+    <div class="section-header" onclick="toggleSection('s07')">
+      <span class="s-num">07</span>
+      <span class="s-dot"></span>
+      <div class="s-info">
+        <div class="s-code-main">AML.07.07</div>
+        <div class="s-title">Cadre LCB-FT groupe</div>
+        <div class="s-sub">Entreprises mères uniquement — Art. 2(1)(42) AMLR</div>
+      </div>
+      <div class="s-right"><span class="s-count">8 datapoints</span><span class="s-arrow">›</span></div>
+    </div>
+    <div class="section-body">
+
+      <!-- C0010–C0050 Reporting groupe -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0010 – C0050</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Group Reporting — % d'entités reportant sur 5 domaines</div>
+          <div class="dp-type">Pourcentage · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0010 – C0050</span>
+          <span class="dp-name">Group Reporting — % d'entités reportant sur 5 domaines</span>
+          <span class="dp-type">Pourcentage · Flux</span>
+      </div>
+        <p class="dp-explain">Pour chacun des 5 domaines suivants, indiquer le pourcentage d'entités du groupe ayant fourni des rapports à la fonction conformité groupe pendant 2025 : CDD (C0010) · Monitoring continu (C0020) · DS (C0030) · Informations individuelles sur clients à haut risque (C0040) · Défaillances (C0050).</p>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">C0040 — cas particulier</span>
+          C0040 ne mesure pas du reporting agrégé (KPIs) mais le <strong>partage d'informations individualisées</strong> : données au niveau d'un client ou d'une transaction spécifiques — par exemple pour des investigations transversales au groupe.
+        </div>
+        <div class="dp-faq">
+          <div class="faq-q-label">Questions pratiques</div>
+          <div class="faq-qa">
+            <div class="faq-question" onclick="toggleA(this)">Qui doit remplir cet onglet ?</div>
+            <div class="faq-answer">Les <strong>entreprises mères uniquement</strong> au sens de l'Art. 2(1)(42) AMLR. Les filiales et succursales ne le remplissent pas, même si elles sont elles-mêmes des entités assujetties. Les entités du groupe qui ne sont pas des entités assujetties au sens de l'AMLR sont exclues du périmètre.</div>
+          </div>
+        </div>
+        <div class="dp-format">Format : décimal. Ex : 75 % → <span class="fmt">0.75</span></div>
+        <div class="dp-ref"><button class="art-ref" onclick="toggleArt(this,'art_2_41')">Art. 2(1)(41)–(42) AMLR</button> · <button class="art-ref" onclick="toggleArt(this,'art_16')">Art. 16 AMLR</button> · Commentaires B5–F5 · AML.07.07</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B4 — Q. 4.050 / 4.150 / 4.160</span><span class="dp-qlb-note"> — partage d'informations et remontée des DS vers l'entreprise mère · Correspondance partielle : QLB pose des questions Oui/Non ; AMLA collecte des pourcentages d'entités</span>
+        </div>
+      </div>
+
+      <!-- C0060 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0060</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Jurisdictions Subject to Compliance Reviews (%)</div>
+          <div class="dp-type">Pourcentage · Flux (3 ans)</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0060</span>
+          <span class="dp-name">Jurisdictions Subject to Compliance Reviews (%)</span>
+          <span class="dp-type">Pourcentage · Flux (3 ans)</span>
+      </div>
+        <p class="dp-explain">Pourcentage de juridictions où le groupe est établi, ayant fait l'objet d'une revue de conformité par la fonction conformité groupe au cours des 3 dernières années (2023–2025). <strong>Dénominateur :</strong> total des juridictions avec des entités assujetties. <strong>Numérateur :</strong> juridictions où au moins une revue a été conduite — si une revue couvre plusieurs juridictions, toutes sont comptées.</p>
+        <div class="dp-rule">
+          <span class="dp-rule-lbl">Définition — revue de conformité groupe</span>
+          Évaluation couvrant au moins une partie significative du cadre LCB-FT, avec accès aux données clients et transactionnelles : CDD · monitoring · DS · screening sanctions. Conduite par la <strong>fonction conformité</strong>, pas l'audit.
+        </div>
+        <div class="dp-rule w">
+          <span class="dp-rule-lbl">Condition d'applicabilité</span>
+          Groupes existant depuis plus de 3 ans avant le début de la période triennale uniquement.
+        </div>
+        <div class="dp-format">Format : décimal. Ex : 75 % → <span class="fmt">0.75</span></div>
+        <div class="dp-ref">Commentaire G5 · AML.07.07</div>
+        <div class="dp-qlb partial">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">QLB B4-1</span><span class="dp-qlb-note"> — liste des entités étrangères avec date du dernier audit groupe LCB-FT · Correspondance partielle : QLB = liste nominative ; AMLA = % de couverture juridictions</span>
+        </div>
+      </div>
+
+      <!-- C0070–C0080 -->
+      
+      <div class="dp-row" onclick="toggleDp(this)">
+        <span class="dp-code">C0070 – C0080</span>
+        <div class="dp-row-info">
+          <div class="dp-name">Group Entities with Deficiencies (EU/EEA · Outside EU/EEA)</div>
+          <div class="dp-type">Entier · Flux</div>
+        </div>
+        <span class="dp-arrow">›</span>
+      </div>
+      <div class="dp-detail">
+        <div class="dp-header">
+          <span class="dp-code">C0070 – C0080</span>
+          <span class="dp-name">Group Entities with Deficiencies (EU/EEA · Outside EU/EEA)</span>
+          <span class="dp-type">Entier · Flux</span>
+      </div>
+        <p class="dp-explain">Nombre d'entités du groupe pour lesquelles des défaillances LCB-FT ont été identifiées par des superviseurs compétents pendant 2025 — dans l'UE/EEE (C0070) et hors UE/EEE (C0080). Inclut notamment : mises en demeure écrites · avertissements · sanctions administratives.</p>
+        <div class="dp-ref">Commentaires H5–I5 · AML.07.07</div>
+        <div class="dp-qlb none">
+          <span class="dp-qlb-lbl">Concordance QLB ACPR</span>
+          <span class="dp-qlb-val">Sans équivalent</span><span class="dp-qlb-note"> — le QLB ne collecte pas de données sur les défaillances identifiées par les superviseurs au niveau des entités groupe</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="no-results" id="nr">Aucun datapoint ne correspond à votre recherche.</div>
+
+  </div><!-- /sections -->
+
+  <div class="subscribe">
+    <h3>Recevez les mises à jour réglementaires</h3>
+    <p>Décryptages LCB-FT, AMLA, MiCA, DORA — directement dans votre boîte mail.</p>
+    <a href="https://mariaiaciancio.substack.com" target="_blank" rel="noopener">S'abonner à la newsletter</a>
+  </div>
+
+  <div class="page-footer">
+    <a href="https://early-brief.com/ressources/">← Toutes les ressources</a>
+    <div class="page-footer-right">Mis à jour — Avril 2026<br>Template AMLA v1.0 · Note interprétative 16/03/2026<br>Art. 12(7) AMLAR · Art. 40(2) AMLD VI</div>
+  </div>
+
+</div><!-- /page -->
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">Early Brief</p>
+    <nav class="footer-links">
+      <a href="https://early-brief.com/">Accueil</a>
+      <a href="https://early-brief.com/ressources/">Ressources</a>
+      <a href="https://early-brief.com/offre/">Offre</a>
+      <a href="https://early-brief.com/a-propos/">À propos</a>
+      <a href="https://early-brief.com/newsletter/">Newsletter</a>
+      <a href="https://early-brief.com/contact/">Contact</a>
+    </nav>
+    <nav class="footer-legal">
+      <a href="https://early-brief.com/mentions-legales/">Mentions légales</a>
+      <a href="https://early-brief.com/politique-confidentialite/">Confidentialité</a>
+      <a href="https://www.linkedin.com/in/maria-garcia-5481808b" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <p class="footer-copy">© 2026 Early Brief. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+function toggleSection(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleAllSections() {
+  const cards = document.querySelectorAll('.section-card');
+  const btn = document.getElementById('toggleAll');
+  const anyClosed = Array.from(cards).some(c => !c.classList.contains('open'));
+  cards.forEach(c => c.classList.toggle('open', anyClosed));
+  btn.textContent = anyClosed ? '[Tout fermer]' : '[Tout ouvrir]';
+}
+
+function toggleDp(row) {
+  // Close siblings in same section
+  const siblings = row.closest('.section-body').querySelectorAll('.dp-row.open');
+  siblings.forEach(s => { if (s !== row) s.classList.remove('open'); });
+  row.classList.toggle('open');
+}
+
+function toggleA(el) {
+  el.nextElementSibling.classList.toggle('open');
+}
+
+function search() {
+  const q = document.getElementById('sq').value.toLowerCase().trim();
+  let count = 0;
+
+  document.querySelectorAll('.section-card').forEach(card => {
+    const rows = card.querySelectorAll('.dp-row');
+    let visible = 0;
+    rows.forEach(row => {
+      const detail = row.nextElementSibling;
+      const text = (row.textContent + (detail ? detail.textContent : '')).toLowerCase();
+      const match = !q || text.includes(q);
+      row.classList.toggle('hidden', !match);
+      if (detail) detail.style.display = match ? '' : 'none';
+      if (match) { visible++; count++; }
+    });
+    if (q && visible > 0) card.classList.add('open');
+    else if (q && visible === 0) card.classList.remove('open');
+    card.style.display = (!q || visible > 0) ? '' : 'none';
+  });
+
+  const total = q ? count : document.querySelectorAll('.dp-row').length;
+  document.getElementById('sc').textContent = total + ' datapoint' + (total > 1 ? 's' : '');
+  document.getElementById('nr').style.display = (q && count === 0) ? 'block' : 'none';
+}
+</script>
+
+<script id="art-toggle-script">
+function toggleArt(btn, artId) {
+  var container = btn.closest('.dp-ref') || btn.closest('li') || btn.closest('p') || btn.parentElement;
+  var pop = container.querySelector('.art-popover[data-art="' + artId + '"]');
+  if (!pop) {
+    var data = window._artData[artId];
+    if (!data) return;
+    pop = document.createElement('div');
+    pop.className = 'art-popover';
+    pop.setAttribute('data-art', artId);
+    pop.innerHTML = '<strong>' + data.label + '</strong>' + data.text +
+      '<div class="art-source">Règlement (UE) 2024/1624 · <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1624" target="_blank" rel="noopener">EUR-Lex 32024R1624</a></div>';
+    btn.insertAdjacentElement('afterend', pop);
+  }
+  var isOpen = pop.classList.contains('open');
+  document.querySelectorAll('.art-popover.open').forEach(function(p) {
+    p.classList.remove('open');
+  });
+  document.querySelectorAll('.art-ref.open').forEach(function(b) {
+    b.classList.remove('open');
+  });
+  if (!isOpen) {
+    pop.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+window._artData = {"art_9": {"label": "Art. 9 AMLR — Politiques, procédures et contrôles internes", "text": "<p>Les entités assujetties mettent en place des politiques, procédures et contrôles internes proportionnés à la nature des activités, à leur complexité et à la taille de l'entité.</p><p><strong>§2 — Contenu minimal :</strong> (a) Politiques internes couvrant : BWRA, vigilance clientèle, déclarations de soupçons, sous-traitance, conservation, formation du personnel. (b) Contrôles internes et <strong>fonction d'audit indépendante</strong> chargée de tester les politiques — ou expert externe en l'absence de fonction d'audit.</p><p>Les politiques sont consignées par écrit et approuvées par l'organe de direction. Les procédures et contrôles sont approuvés au moins au niveau du gestionnaire de la conformité.</p>"}, "art_10": {"label": "Art. 10 AMLR — Évaluation des risques à l'échelle de l'entité (BWRA)", "text": "<p>Les entités assujetties identifient et évaluent les risques de BC/FT auxquels elles sont exposées, en tenant compte des variables de l'annexe I, des évaluations nationales et supranationales des risques, des publications AMLA et des informations sur la clientèle.</p><p><strong>§2 — Documentation et approbation :</strong> L'évaluation est documentée, tenue à jour et régulièrement réexaminée. Elle est <strong>établie par le responsable de la conformité et approuvée par l'organe de direction dans sa fonction de direction</strong>. Elle est mise à disposition des superviseurs sur demande.</p>"}, "art_11": {"label": "Art. 11 AMLR — Fonctions de conformité", "text": "<p><strong>§1 — Gestionnaire de la conformité :</strong> Membre de l'organe de direction dans sa fonction de direction, chargé de garantir la conformité. Il veille à la cohérence des politiques, procédures et contrôles et à l'allocation de ressources suffisantes.</p><p><strong>§2 — Responsable de la conformité :</strong> Nommé par l'organe de direction, chargé de l'application quotidienne des exigences LBC/FT. Point de contact pour les autorités compétentes. Chargé de signaler les transactions suspectes à la CRF (Art. 69§6).</p><p><strong>§3 :</strong> Les fonctions de conformité reçoivent des ressources adéquates (personnel et technologies) proportionnelles à la taille, la nature et les risques de l'entité.</p><p><strong>§6 :</strong> Le gestionnaire de la conformité fait régulièrement rapport à l'organe de direction de la mise en œuvre des politiques, procédures et contrôles internes.</p>"}, "art_12": {"label": "Art. 12 AMLR — Formation et sensibilisation du personnel", "text": "<p>Les entités assujetties mettent en place des mesures pour que le personnel ainsi que leurs agents et distributeurs comprennent les exigences LBC/FT ainsi que les politiques, procédures et contrôles internes de l'entité.</p><p>Ces mesures comprennent la participation à des <strong>programmes spécifiques de formation continue</strong> visant à aider à reconnaître les opérations susceptibles d'être liées au BC/FT et à instruire sur la marche à suivre. Ces programmes sont adaptés aux fonctions ou activités et aux risques BC/FT de l'entité, et sont <strong>dûment documentés</strong>.</p>"}, "art_16": {"label": "Art. 16 AMLR — Politiques et procédures à l'échelle du groupe", "text": "<p>Les entreprises mères adoptent et mettent en œuvre des politiques, procédures et contrôles à l'échelle du groupe, incluant des politiques de protection des données, de partage d'informations et de LBC/FT. Les entités du groupe mettent en œuvre ces politiques en tenant compte de leurs spécificités.</p><p><strong>§2 :</strong> Les fonctions de conformité sont établies au niveau du groupe. Le gestionnaire de la conformité de groupe fait rapport à l'organe de direction de l'entreprise mère, <strong>au minimum une fois par an</strong>.</p><p><strong>§3 :</strong> Les politiques relatives au partage d'informations imposent aux entités du groupe d'échanger des informations pertinentes aux fins de la vigilance clientèle et de la gestion des risques BC/FT.</p>"}, "art_18": {"label": "Art. 18 AMLR — Externalisation", "text": "<p>Les entités assujetties peuvent externaliser des tâches liées à leurs obligations LBC/FT. Elles restent <strong>pleinement responsables</strong> du respect de toutes les obligations qui leur incombent et maintiennent le contrôle effectif des tâches externalisées.</p><p><strong>Considérant 47 AMLR — distinction clé :</strong> L'utilisation d'un logiciel, d'une base de données ou d'un service par une entité qui réalise elle-même l'exigence AMLR n'est <strong>pas</strong> de l'externalisation. Il y a externalisation lorsqu'un prestataire réalise effectivement la tâche.</p>"}, "art_20": {"label": "Art. 20 AMLR — Mesures de vigilance à l'égard de la clientèle (CDD standard)", "text": "<p>Les entités assujetties appliquent les mesures de vigilance lors de : l'établissement d'une relation d'affaires, des transactions occasionnelles dépassant 10 000 €, d'un soupçon de BC/FT, ou d'un doute sur l'exactitude des données d'identification.</p><p><strong>§1 — Mesures CDD comprenant :</strong> (a) Identification et vérification de l'identité du client ; (b) Identification et vérification du bénéficiaire effectif (Art. 22) ; (c) Évaluation de l'objet et de la nature envisagée de la relation d'affaires ; (d) Surveillance continue de la relation d'affaires (Art. 26).</p>"}, "art_22": {"label": "Art. 22 AMLR — Identification et vérification des bénéficiaires effectifs", "text": "<p>Les entités assujetties identifient le(s) bénéficiaire(s) effectif(s) du client et prennent des mesures raisonnables pour vérifier leur identité. Pour les personnes morales, cela inclut l'obtention d'informations sur la structure de propriété et de contrôle.</p><p><strong>§2 — Dirigeants substitués (SMO) :</strong> Lorsqu'aucun bénéficiaire effectif ne peut être identifié, les membres de la direction de haut niveau du client sont tenus pour bénéficiaires effectifs — <strong>à titre de dernier recours uniquement</strong> (Considérant 125 AMLR).</p><p><strong>§7 :</strong> Les entités assujetties peuvent consulter les registres centraux de bénéficiaires effectifs. Cette consultation ne dispense pas d'une vérification fondée sur les risques par d'autres moyens.</p>"}, "art_26": {"label": "Art. 26 AMLR — Surveillance continue de la relation d'affaires", "text": "<p>Les entités assujetties exercent une <strong>surveillance continue</strong> des relations d'affaires afin de veiller à ce que les transactions soient cohérentes avec leur connaissance du client, de ses activités et de son profil de risque, et de déceler les transactions à analyser de manière plus approfondie (Art. 69§2).</p><p><strong>§2 — Mise à jour des informations :</strong> La période entre mises à jour ne dépasse pas : (a) <strong>1 an</strong> pour les clients à risque élevé ; (b) <strong>5 ans</strong> pour tous les autres clients.</p><p><strong>§3 — Revues événementielles :</strong> Réexamen et mise à jour des informations lorsque des éléments pertinents changent, ou lorsqu'un fait pertinent est porté à la connaissance de l'entité.</p>"}, "art_69": {"label": "Art. 69 AMLR — Déclarations de transactions suspectes", "text": "<p><strong>§1 :</strong> Les entités assujetties <strong>déclarent sans délai à la CRF</strong> tout fait, transaction ou tentative de transaction lorsqu'elles savent, soupçonnent ou ont des raisons suffisantes de soupçonner que des fonds proviennent d'activités criminelles ou sont liés au financement du terrorisme.</p><p><strong>§2 :</strong> Les entités assujetties examinent, dans la mesure du raisonnable, le contexte et l'objet de toute transaction complexe, anormalement élevée, effectuée selon un schéma inhabituel, ou sans objet économique ou licite apparent.</p><p><strong>§6 :</strong> Le responsable de la conformité est chargé de transmettre les déclarations à la CRF.</p>"}, "art_2_28": {"label": "Art. 2(1)(28) AMLR — Définition du bénéficiaire effectif", "text": "<p>Toute <strong>personne physique</strong> qui, en dernier ressort, possède ou contrôle le client ou pour le compte de laquelle une transaction ou une activité est menée.</p><p>Pour les <strong>personnes morales</strong> : la ou les personnes physiques qui détiennent ou contrôlent directement ou indirectement plus de <strong>25 % des droits de vote ou des parts du capital</strong>, ou qui exercent le contrôle par d'autres moyens.</p><p>Pour les <strong>constructions juridiques</strong> (trusts, fiducies, etc.) : le ou les constituants, le ou les trustees, le protecteur, les bénéficiaires, et toute autre personne physique exerçant le contrôle en dernier ressort.</p>"}, "art_2_37": {"label": "Art. 2(1)(37) AMLR — Définition de l'organe de direction", "text": "<p>L'organe ou les organes d'une entité assujettie, désignés conformément au droit national, <strong>habilités à définir la stratégie, les objectifs et l'orientation générale de l'entité</strong>, et qui supervisent et contrôlent les décisions prises en matière de gestion, et qui comprennent les personnes qui dirigent effectivement l'activité de l'entité assujettie.</p><p>Le terme couvre à la fois la <strong>fonction de gestion</strong> (exécutive) et la <strong>fonction de surveillance</strong> (non exécutive), selon la structure applicable à l'entité.</p>"}, "art_2_41": {"label": "Art. 2(1)(41)–(42) AMLR — Groupe et entreprise mère", "text": "<p><strong>§41 — Groupe :</strong> Un groupe d'entreprises composé d'une entreprise mère, de ses filiales, et des entités dans lesquelles l'entreprise mère ou ses filiales détiennent une participation, conformément à l'article 22 de la directive 2013/34/UE.</p><p><strong>§42 — Entreprise mère :</strong> Une entreprise qui contrôle une ou plusieurs filiales et qui est responsable de l'application des politiques et procédures LBC/FT à l'échelle du groupe.</p>"}};
+</script>
+</body>
+</html>
