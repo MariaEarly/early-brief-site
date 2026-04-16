@@ -46,13 +46,6 @@ header nav a:hover,header nav a.active{color:var(--terra);}
 .page-head h1{font-family:var(--display);font-size:1.75rem;font-weight:400;line-height:1.2;margin-bottom:.5rem;}
 .page-head .sub{font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:580px;}
 
-/* SEARCH */
-.search-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;}
-.search-bar input{flex:1;max-width:380px;padding:.5rem .8rem;border:1px solid var(--rule);font-family:var(--sans);font-size:.82rem;font-weight:300;background:rgba(255,255,255,.6);color:var(--ink);outline:none;transition:border-color .15s;}
-.search-bar input:focus{border-color:var(--terra);}
-.search-bar input::placeholder{color:var(--ghost);}
-.search-count{font-family:var(--mono);font-size:.65rem;color:var(--ghost);letter-spacing:.04em;}
-
 /* INFO */
 .info-block{border-left:2px solid var(--green);padding:.7rem 1.1rem;margin-bottom:2rem;font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.7;}
 .info-block strong{font-weight:500;color:var(--ink);}
@@ -288,9 +281,6 @@ header nav a:hover,header nav a.active{color:var(--terra);}
 /* ref */
 .dp-ref{font-family:var(--mono);font-size:.62rem;color:var(--ghost);margin-top:.75rem;padding-top:.6rem;border-top:1px solid var(--rule);letter-spacing:.03em;line-height:1.6;}
 
-/* No results */
-.no-results{padding:2.5rem 0;text-align:center;font-size:.85rem;color:var(--ghost);display:none;}
-
 /* Bottom */
 .subscribe{border:1px solid var(--rule);padding:1.5rem 2rem;margin-top:2.5rem;}
 .subscribe h3{font-family:var(--display);font-size:1.1rem;font-weight:400;margin-bottom:.4rem;}
@@ -346,23 +336,18 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;margin-top:4rem;}
     <p class="sub">Pour chaque datapoint : ce qu'il mesure, comment le calculer, et les précisions pratiques. Template AMLA v1.0 · Note interprétative du 16 mars 2026.</p>
   </div>
 
-  <div class="search-bar">
-    <input type="text" id="sq" placeholder="Rechercher un datapoint ou une question..." oninput="search()">
-    <span class="search-count" id="sc">39 datapoints</span>
-  </div>
-
   <div class="info-block">
     <strong>Note :</strong> document fourni à titre informatif — ne constitue pas un conseil juridique. Période de référence : 1er janv. – 31 déc. 2025. Base légale : Art. 12(7) AMLAR · Art. 40(2) AMLD VI.
   </div>
 
-  <button class="toggle-all" id="toggleAll" onclick="toggleAllSections()">[Tout fermer]</button>
+  <button class="toggle-all" id="toggleAll" onclick="toggleAllSections()">[Tout ouvrir]</button>
 
   <div id="sections">
 
   <!-- ════════════════════════════════════
        AML.07.01 — GOUVERNANCE
   ════════════════════════════════════ -->
-  <div class="section-card open" id="s01">
+  <div class="section-card" id="s01">
     <div class="section-header" onclick="toggleSection('s01')">
       <span class="s-num">01</span>
       <span class="s-dot"></span>
@@ -1641,7 +1626,6 @@ footer{border-top:1px solid var(--rule);padding:2.5rem 2rem;margin-top:4rem;}
     </div>
   </div>
 
-  <div class="no-results" id="nr">Aucun datapoint ne correspond à votre recherche.</div>
 
   </div><!-- /sections -->
 
@@ -1702,30 +1686,6 @@ function toggleA(el) {
   el.nextElementSibling.classList.toggle('open');
 }
 
-function search() {
-  const q = document.getElementById('sq').value.toLowerCase().trim();
-  let count = 0;
-
-  document.querySelectorAll('.section-card').forEach(card => {
-    const rows = card.querySelectorAll('.dp-row');
-    let visible = 0;
-    rows.forEach(row => {
-      const detail = row.nextElementSibling;
-      const text = (row.textContent + (detail ? detail.textContent : '')).toLowerCase();
-      const match = !q || text.includes(q);
-      row.classList.toggle('hidden', !match);
-      if (detail) detail.style.display = match ? '' : 'none';
-      if (match) { visible++; count++; }
-    });
-    if (q && visible > 0) card.classList.add('open');
-    else if (q && visible === 0) card.classList.remove('open');
-    card.style.display = (!q || visible > 0) ? '' : 'none';
-  });
-
-  const total = q ? count : document.querySelectorAll('.dp-row').length;
-  document.getElementById('sc').textContent = total + ' datapoint' + (total > 1 ? 's' : '');
-  document.getElementById('nr').style.display = (q && count === 0) ? 'block' : 'none';
-}
 </script>
 
 <script id="art-toggle-script">
