@@ -33,6 +33,17 @@
     "type": "INTELLIGENCE"
   },
   {
+    "id": "2026-04-12-europeanparliamentecon-aa09",
+    "date": "12/04/2026",
+    "source": "European Parliament ECON",
+    "titre": "Briefing - International comparison of Anti-Money Laundering frameworks - PE 779.866 - Committee on Economic and Monetary Affairs",
+    "description": "<div>This briefing provides a comparative analysis of anti-money laundering (AML) frameworks in five major financial jurisdictions: the European Union, the United States, the United Kingdom, Japan and Singapore. Although these jurisdictions broadly follow international standards developed by the Financial Action Task Force (FATF), their institutional architectures and supervisory approaches differ significantly. The analysis examines several key dimensions of AML governance framework, including the legal foundations of AML obligations, supervisory structures, beneficial ownership transparency, the scope of obliged entities, the regulation of crypto-assets, and enforcement mechanisms. Particular attention is given to how different institutional designs influence the credibility and effectiveness of AML supervision.</div><br />Source : <a href=\"https://www.europarl.europa.eu/privacy-policy/en\">© European Union, 2026 - EP</a>",
+    "url": "https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/779866/ECTI_BRI(2026)779866_EN.pdf",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "INTELLIGENCE"
+  },
+  {
     "id": "04c252b7-b9ec-463c-b060-ebb0fef63a99",
     "date": "30/03/2026",
     "source": "EIOPA",
