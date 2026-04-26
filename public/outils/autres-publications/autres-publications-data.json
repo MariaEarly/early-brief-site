@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-23-banquedefrance-txot",
+    "date": "23/04/2026",
+    "source": "Banque de France",
+    "titre": "Efficacité des sanctions, développement et type de régime : les suspensions d’aide et les sanctions économiques sont elles pareilles ?",
+    "description": "",
+    "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/efficacite-des-sanctions-developpement-et-type-de-regime-les-suspensions-daide-et-les-sanctions",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "INTELLIGENCE"
+  },
+  {
     "id": "2026-04-22-europeanparliamentecon-mfvi",
     "date": "22/04/2026",
     "source": "European Parliament ECON",
