@@ -44,6 +44,17 @@
     "type": "INTELLIGENCE"
   },
   {
+    "id": "2026-04-23-ofac-axf1",
+    "date": "23/04/2026",
+    "source": "OFAC",
+    "titre": "Désignations antiterrorisme, stupéfiants et cyber ; émission de la licence générale Cyber 2 (Anco Water Supply)",
+    "description": "L'OFAC désigne plusieurs personnes et entités sous les programmes antiterrorisme, stupéfiants et cyber, dont des individus liés au cartel de Sinaloa au Mexique et une désignation cyber visant AIK Paung (alias EK Pong, Cambodge). Des entités de blanchiment associées au Mexique, Guatemala, Cambodge et Inde sont visées. La licence générale Cyber 2 est émise pour autoriser certaines transactions avec Anco Water Supply Co. Ltd. liées au traitement et à la distribution d'eau potable. Impact métier : Banques, PSP et CASP — mise à jour du screening SDN pour les nouvelles désignations (cartel Sinaloa, cyber Cambodge) ; vérifier l'éligibilité à la GL Cyber 2 pour les transactions existantes impliquant Anco Water Supply.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260423",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "2026-04-23-eusanctions-3k70",
     "date": "23/04/2026",
     "source": "EU Sanctions",
