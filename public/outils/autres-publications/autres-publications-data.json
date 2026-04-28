@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-28-test-cnqh",
+    "date": "28/04/2026",
+    "source": "TEST",
+    "titre": "Test connexion MCP - à supprimer",
+    "description": "Entrée de test pour vérifier l'auth MCP après reconfiguration du connecteur Claude Desktop. Cette entrée doit être supprimée immédiatement après validation.",
+    "url": "https://example.com/mcp-auth-test",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "INTELLIGENCE"
+  },
+  {
     "id": "2026-04-24-esma-sw7y",
     "date": "24/04/2026",
     "source": "ESMA",
