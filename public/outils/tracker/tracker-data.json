@@ -66,6 +66,17 @@
     "type": "TEXTE"
   },
   {
+    "id": "2026-04-15-legifrancejo-f9ks",
+    "date": "15/04/2026",
+    "source": "Legifrance JO",
+    "titre": "Mise à jour de la liste française des États et territoires non coopératifs (ETNC) — art. 238-0 A CGI",
+    "description": "L'arrêté du 15 avril 2026 modifie la liste française des États et territoires non coopératifs en matière fiscale (article 238-0 A CGI). Le Vietnam est ajouté à la liste en application du 2° du 2 bis. Les Fidji, Samoa et Trinité-et-Tobago sont retirés. Liste consolidée 2026 (11 États/territoires) : Antigua-et-Barbuda, Anguilla, Îles Turques-et-Caïques, Vanuatu, Vietnam, Guam, Îles Vierges américaines, Palaos, Panama, Russie, Samoa américaines. Effets dans le temps : pour le Vietnam (ajout), les mesures fiscales restrictives (retenue à la source majorée à 75%, exclusion du régime mère-fille, limitation de déductibilité art. 238 A, durcissement prix de transfert) s'appliquent à compter du 1er juillet 2026 (1er jour du 3e mois suivant publication). Pour les retraits, effet immédiat à compter du 16/04/2026. Impact métier : PSP, CASP, EME et banques opérant des flux Vietnam — vigilance renforcée à mettre en place avant le 01/07/2026 (mise à jour cartographies risques, screenings, politiques EDD, procédures Tracfin) ; retrait des contrôles renforcés pour Fidji, Samoa, Trinité-et-Tobago effet immédiat.",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053958847",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "TEXTE"
+  },
+  {
     "id": "fe0d0ea0-63cb-42ac-96b9-cfc3d353b260",
     "date": "30/03/2026",
     "source": "FinCEN",
