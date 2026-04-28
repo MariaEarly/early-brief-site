@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-24-amf-kqan",
+    "date": "24/04/2026",
+    "source": "AMF",
+    "titre": "Synthèse des inspections SPOT — Parcours client digital",
+    "description": "L'AMF publie la synthèse d'inspections SPOT menées auprès de quatre établissements de crédit prestataires de services d'investissement, dans le cadre de ses priorités de supervision 2025. Les inspections portaient sur les parcours clients digitaux pour la souscription et la passation d'ordres sur instruments financiers. L'AMF met en avant la qualité de l'information fournie aux investisseurs particuliers tout au long du parcours numérique comme enjeu central. Impact métier : Banques et PSI proposant des services d'investissement digitaux — les inspections SPOT AMF sur ce thème constituent un signal de supervision ; vigilance sur la complétude et la clarté de l'information client dans les tunnels de souscription en ligne.",
+    "url": "https://www.amf-france.org/en/news-publications/publications/spot-inspection-campaigns/summary-spot-inspections-digital-client-journey",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "RAPPORT"
+  },
+  {
     "id": "2026-04-24-amfdoctrinepsan-hfto",
     "date": "24/04/2026",
     "source": "AMF Doctrine PSAN",
