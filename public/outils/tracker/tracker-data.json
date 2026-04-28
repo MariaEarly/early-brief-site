@@ -834,5 +834,16 @@
     "type": "TEXTE",
     "type_source": "officielle",
     "statut": "publié"
+  },
+  {
+    "id": "2025-10-24-legifrancejo-lcj1",
+    "date": "24/10/2025",
+    "source": "Legifrance JO",
+    "titre": "Gel des avoirs L562-3 — TECHNOLAB et ALLOUCH (sanctions Syrie)",
+    "description": "L'arrêté du 24 octobre 2025 ordonne le gel des avoirs pour 6 mois sur TECHNOLAB (Liban) et ALLOUCH Aziz Ahmad (né en 1977, Deir el Zaharani) au titre des articles L. 562-3 et suivants du CMF, en application de la décision PESC 2013/255 (sanctions UE Syrie). Impact métier : Banques, PSP, CASP, EME — mise à jour du screening sur la liste nationale française des gels d'avoirs (registre des gels Trésor) ; sanctions en vigueur jusqu'à mi-avril 2026 sauf renouvellement à vérifier.",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052520842",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
   }
 ]
