@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-28-test-x1pj",
+    "date": "28/04/2026",
+    "source": "Test",
+    "titre": "Test minimal MCP",
+    "description": "Test",
+    "url": "https://example.com",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "TEXTE"
+  },
+  {
     "id": "2026-04-24-esma-sw7y",
     "date": "24/04/2026",
     "source": "ESMA",
