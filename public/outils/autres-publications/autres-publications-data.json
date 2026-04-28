@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-28-europol-wmsm",
+    "date": "28/04/2026",
+    "source": "Europol",
+    "titre": "IOCTA 2026 — Internet Organised Crime Threat Assessment",
+    "description": "Rapport stratégique annuel d'Europol sur la criminalité organisée en ligne dans l'UE. Sous-titre : 'How encryption, proxies and AI are expanding cybercrime'. Points clés pour LCB-FT des PSP/CASP/EME/fintechs : (1) cryptos restent moyen de paiement préféré des cybercriminels — coins haute opacité + mixing services complexifient le tracing ; (2) Online Fraud Schemes = secteur du crime organisé à plus forte croissance — investment fraud crypto, BEC, fraude paiement, phishing, SIM boxes ; (3) Crime-as-a-Service externalise le vol crypto ; (4) Ransomware : 120 brands actifs en 2025, bascule du chiffrement vers exfiltration/extorsion ; (5) IA générative personnalise le social engineering, escalade attendue de la fraude. Document de référence à intégrer dans la cartographie des risques numériques. Date de publication exacte à confirmer.",
+    "url": "https://www.europol.europa.eu/cms/sites/default/files/documents/IOCTA-2026.pdf",
+    "type_source": "officielle",
+    "statut": "rapport",
+    "type": "RAPPORT"
+  },
+  {
     "id": "2026-04-24-esma-sw7y",
     "date": "24/04/2026",
     "source": "ESMA",
