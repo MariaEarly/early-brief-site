@@ -154,6 +154,17 @@
     "type": "DECISION"
   },
   {
+    "id": "2026-03-24-legifrancejo-uj3q",
+    "date": "24/03/2026",
+    "source": "Legifrance JO",
+    "titre": "Gel des avoirs L562-2 — Mohammed MOHAMED AL HASHEM (liste nationale FT)",
+    "description": "L'arrêté du 24 mars 2026 ordonne le gel des avoirs pour 6 mois sur Mohammed MOHAMED AL HASHEM (né le 12/08/1976 à Alep, Syrie) au titre des articles L. 562-2 et suivants du CMF — liste nationale française du financement du terrorisme (distincte de la liste UE/ONU visée par L562-3). Impact métier : Banques, PSP, CASP, EME — ajout immédiat au screening sur la liste nationale française des gels d'avoirs (registre du Trésor) ; obligation de signalement à Tracfin si lien identifié.",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053717098",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "fe680c4a-d137-45f7-a78f-fa1c67b965c2",
     "date": "24/03/2026",
     "source": "OFAC",
