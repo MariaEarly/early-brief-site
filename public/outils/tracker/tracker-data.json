@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-24-amfdoctrinepsan-hfto",
+    "date": "24/04/2026",
+    "source": "AMF Doctrine PSAN",
+    "titre": "Fin de la période transitoire MiCA — précisions ESMA",
+    "description": "L'ESMA rappelle que la période transitoire MiCA expire le 1er juillet 2026. Après cette date, tout prestataire de services sur crypto-actifs (PSCA) sans agrément MiCA doit cesser ses activités envers les clients UE. Les entités non agréées doivent maintenir un plan de cessation ordonnée immédiatement exécutable (transferts vers PSCA agréés ou wallets self-hosted) et n'effectuer que les opérations strictement nécessaires au règlement de leur situation. L'AMF rappelle que les protections MiCA ne s'appliquent qu'aux entités agréées dans l'UE. Impact métier : CASP — délai impératif avant le 01/07/2026 pour obtenir l'agrément MiCA ou mettre en œuvre un plan de cessation ordonnée. PSP opérant sur crypto-actifs : même obligation.",
+    "url": "https://www.amf-france.org/fr/actualites-publications/actualites/fin-de-la-periode-transitoire-mica-lesma-precise-ses-attentes-envers-les-professionnels-et-alerte",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "INTELLIGENCE"
+  },
+  {
     "id": "2026-04-24-amfdoctrinepsan-ygcv",
     "date": "24/04/2026",
     "source": "AMF Doctrine PSAN",
