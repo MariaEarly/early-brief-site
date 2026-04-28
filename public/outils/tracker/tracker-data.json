@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-24-ofac-91nm",
+    "date": "24/04/2026",
+    "source": "OFAC",
+    "titre": "Désignations Iran et antiterrorisme ; émission de la licence générale Iran V (Hengli Petrochemical)",
+    "description": "L'OFAC désigne 20 entités et 19 navires sous EO13902 (Iran), ciblant un réseau de transport maritime du pétrole iranien opérant via Hong Kong, Chine, Panama et Îles Marshall, dont Hengli Petrochemical (Dalian) raffinage. La Banque centrale d'Iran (Bank Markazi) est mise à jour avec deux adresses de portefeuilles TRON. La licence générale Iran V autorise un wind-down ordonné des transactions impliquant Hengli Petrochemical (durée et conditions dans le texte de la GL). Impact métier : Banques, CASP et PSP — screening SDN à mettre à jour pour les 20 entités et 19 navires désignés ; vigilance spécifique sur les transactions crypto TRON liées à Bank Markazi ; vérifier l'applicabilité de la GL V pour les expositions existantes sur Hengli.",
+    "url": "https://ofac.treasury.gov/recent-actions/20260424",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "DECISION"
+  },
+  {
     "id": "2026-04-24-amf-kqan",
     "date": "24/04/2026",
     "source": "AMF",
