@@ -44,6 +44,17 @@
     "type": "INTELLIGENCE"
   },
   {
+    "id": "2026-04-23-eusanctions-3k70",
+    "date": "23/04/2026",
+    "source": "EU Sanctions",
+    "titre": "20e paquet de sanctions UE contre la Russie : énergie, complexe militaro-industriel, services financiers et crypto",
+    "description": "Le Conseil de l'UE adopte le 20e paquet de mesures restrictives contre la Russie : 120 nouvelles inscriptions individuelles, 36 désignations dans le secteur énergétique, 46 nouveaux navires soumis à l'interdiction d'accès aux ports (total : 632), extension de l'exclusion du marché UE à 20 banques russes supplémentaires (total : 70). Pour la première fois : interdiction totale des PSCA russes et des plateformes décentralisées, interdiction des transactions en RUBx et de tout soutien au rouble numérique, et activation du mécanisme anti-contournement contre un pays tiers. Les transactions de netting avec des agents russes sont également interdites. (Source : communiqué Conseil UE 23/04/2026 ; règlement à paraître au JO UE.) Impact métier : Établissements financiers, CASP et PSP — mise à jour immédiate des listes de screening (120 nouvelles inscriptions) ; interdiction d'accès aux PSCA russes et aux plateformes DeFi russes à vérifier dans les politiques d'onboarding ; vigilance sur les transactions de netting.",
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/russia-s-war-of-aggression-against-ukraine-20th-round-of-stern-eu-sanctions-hits-energy-military-industrial-complex-trade-and-financial-services-including-crypto/",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "TEXTE"
+  },
+  {
     "id": "fe0d0ea0-63cb-42ac-96b9-cfc3d353b260",
     "date": "30/03/2026",
     "source": "FinCEN",
