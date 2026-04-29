@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-28-legifrancejo-6vms",
+    "date": "28/04/2026",
+    "source": "Legifrance JO",
+    "titre": "Arrêté du 24 avril 2026 — tarifs du Fichier national des comptes signalés pour risque de fraude (FNC-RF)",
+    "description": "Arrêté tarifaire complémentaire à l'arrêté ECOT2611141A (modalités techniques). Fixe les tarifs d'accès et d'inscription des PSP au Fichier national des comptes signalés pour risque de fraude (FNC-RF) géré par la Banque de France, en application de l'art. L.521-6-1 CMF (loi 2025-1058 anti-fraude bancaire). Impact PSP/EME : intégrer le coût FNC-RF dans le budget compliance/anti-fraude.",
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053969437",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "TEXTE"
+  },
+  {
     "id": "2026-04-28-legifrancejo-crhy",
     "date": "28/04/2026",
     "source": "Legifrance JO",
