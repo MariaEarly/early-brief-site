@@ -22,6 +22,17 @@
     "type": "RAPPORT"
   },
   {
+    "id": "2026-04-24-amf-smoq",
+    "date": "24/04/2026",
+    "source": "AMF",
+    "titre": "Synthèse des inspections SPOT — Parcours client digital",
+    "description": "L'AMF publie la synthèse d'inspections SPOT auprès de quatre établissements de crédit PSI, sur les parcours clients digitaux pour la souscription d'instruments financiers. Enjeu central : qualité de l'information fournie aux investisseurs particuliers tout au long du parcours numérique. Impact : banques et PSI proposant des services d'investissement digitaux — vigilance complétude et clarté de l'information client dans les tunnels de souscription en ligne.",
+    "url": "https://www.amf-france.org/en/news-publications/publications/spot-inspection-campaigns/summary-spot-inspections-digital-client-journey",
+    "type_source": "officielle",
+    "statut": "rapport",
+    "type": "RAPPORT"
+  },
+  {
     "id": "2026-04-24-amf-oei4",
     "date": "24/04/2026",
     "source": "AMF",
