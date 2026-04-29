@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-04-28-legifrancejo-crhy",
+    "date": "28/04/2026",
+    "source": "Legifrance JO",
+    "titre": "Arrêté du 24 avril 2026 — modalités techniques du Fichier national des comptes signalés pour risque de fraude (FNC-RF)",
+    "description": "Arrêté pris en application du VI de l'art. L.521-6-1 CMF (loi 2025-1058 du 6/11/2025 anti-fraude bancaire). Définit les modalités techniques du Fichier national des comptes signalés pour risque de fraude (FNC-RF), géré par la Banque de France. Concerne PSP/EME/EC en France. Déclaration obligatoire des comptes suspects (IBAN/BBAN, BIC, date détection, canal, source, catégorie de fraude). Conservation 13 mois. Entrée en vigueur lendemain publication. Sanctions L.612-39 CMF. Impact : intégrer FNC-RF aux dispositifs anti-fraude PSP/EME, articulation avec obligations LCB-FT.",
+    "url": "https://www.legifrance.gouv.fr/download/pdf?id=kHr1TLwuRwcEmMSCu5XI9peTuSRjr6ijQ4_gLmAUUtg=",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "TEXTE"
+  },
+  {
     "id": "2026-04-28-legifrancejo-1bd1",
     "date": "28/04/2026",
     "source": "Legifrance JO",
