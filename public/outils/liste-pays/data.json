@@ -5,7 +5,7 @@
         "v": "2026-01-29"
       },
       "fatf": {
-        "v": "2026-02-13"
+        "v": "2026-06-19"
       },
       "sanctions": {
         "v": "2026-02-13"
@@ -48,7 +48,7 @@
       "a2": "DZ",
       "a3": "DZA",
       "rg": "Afrique",
-      "fatf": "grey",
+      "fatf": "",
       "eu": 1,
       "euD": "2025-08-05",
       "sUE": "",
@@ -66,6 +66,10 @@
         {
           "d": "2025-08-05",
           "e": "Ajout PTHR UE"
+        },
+        {
+          "d": "2026-06-19",
+          "e": "Retrait GAFI grey - plénière 19/06/2026 (reste PTHR UE)"
         }
       ]
     },
@@ -123,7 +127,7 @@
         },
         {
           "d": "2010-02-12",
-          "e": "ETNC - Arrêté 12/02/2010 (liste initiale, art. 238-0 A)"
+          "e": "Inscription ETNC - arrêté du 12/02/2010 (liste initiale, art. 238-0 A)"
         },
         {
           "d": "2012-04-04",
@@ -131,7 +135,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 b)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 b)"
         },
         {
           "d": "2026-02-17",
@@ -163,7 +167,7 @@
         },
         {
           "d": "2024-02-16",
-          "e": "ETNC - Arrêté 16/02/2024 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 16/02/2024 (art. 238-0 A, 2 bis 2°)"
         }
       ]
     },
@@ -236,6 +240,26 @@
         {
           "d": "2026-01-29",
           "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Bosnie-Herzégovine",
+      "a2": "BA",
+      "a3": "BIH",
+      "rg": "Europe",
+      "fatf": "grey",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2026-06-19",
+          "e": "Ajout GAFI grey - plénière 19/06/2026"
         }
       ]
     },
@@ -451,11 +475,15 @@
       "sUE": "",
       "ofac": "",
       "tax": null,
-      "etnc": 1,
+      "etnc": 0,
       "bas": 4.73,
       "cpi": 55,
       "cpir": 50,
       "h": [
+        {
+          "d": "2026-04-15",
+          "e": "Retrait ETNC France - arrêté 15/04/2026 (JO 26/04/2026)"
+        },
         {
           "d": "2026-02-17",
           "e": "Retrait Annexe I UE - Conseil 17/02/2026"
@@ -466,7 +494,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         }
       ]
     },
@@ -510,7 +538,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2026-02-17",
@@ -546,6 +574,26 @@
         {
           "d": "2022-03-13",
           "e": "Ajout PTHR UE"
+        }
+      ]
+    },
+    {
+      "n": "Irak",
+      "a2": "IQ",
+      "a3": "IRQ",
+      "rg": "Moyen-Orient",
+      "fatf": "grey",
+      "eu": 0,
+      "sUE": "",
+      "ofac": "",
+      "tax": null,
+      "etnc": 0,
+      "bas": null,
+      "cpi": null,
+      "h": [
+        {
+          "d": "2026-06-19",
+          "e": "Ajout GAFI grey - plénière 19/06/2026"
         }
       ]
     },
@@ -752,7 +800,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2026-02-17",
@@ -813,7 +861,7 @@
         },
         {
           "d": "2011-04-14",
-          "e": "ETNC - Arrêté 14/04/2011 (art. 238-0 A, 2 b)"
+          "e": "Inscription ETNC - arrêté du 14/04/2011 (art. 238-0 A, 2 b)"
         },
         {
           "d": "2012-04-04",
@@ -821,7 +869,7 @@
         },
         {
           "d": "2023-02-03",
-          "e": "ETNC - Arrêté 03/02/2023 (art. 238-0 A, 2 bis 1°)"
+          "e": "Inscription ETNC - arrêté du 03/02/2023 (art. 238-0 A, 2 bis 1°)"
         },
         {
           "d": "2026-02-17",
@@ -959,7 +1007,7 @@
       "a2": "NA",
       "a3": "NAM",
       "rg": "Afrique",
-      "fatf": "grey",
+      "fatf": "",
       "eu": 1,
       "euD": "2025-08-05",
       "sUE": "",
@@ -977,6 +1025,10 @@
         {
           "d": "2025-08-05",
           "e": "Ajout PTHR UE"
+        },
+        {
+          "d": "2026-06-19",
+          "e": "Retrait GAFI grey - plénière 19/06/2026 (reste PTHR UE)"
         }
       ]
     },
@@ -1052,7 +1104,7 @@
         },
         {
           "d": "2021-02-26",
-          "e": "ETNC - Arrêté 26/02/2021 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 26/02/2021 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2026-02-17",
@@ -1089,7 +1141,7 @@
         },
         {
           "d": "2010-02-12",
-          "e": "ETNC - Arrêté 12/02/2010 (liste initiale, art. 238-0 A)"
+          "e": "Inscription ETNC - arrêté du 12/02/2010 (liste initiale, art. 238-0 A)"
         },
         {
           "d": "2012-04-04",
@@ -1097,7 +1149,7 @@
         },
         {
           "d": "2016-04-08",
-          "e": "ETNC - Arrêté 08/04/2016 (art. 238-0 A, 2 b) - Panama Papers"
+          "e": "Inscription ETNC - arrêté du 08/04/2016 (art. 238-0 A, 2 b) - Panama Papers"
         },
         {
           "d": "2026-02-17",
@@ -1177,7 +1229,7 @@
       "h": [
         {
           "d": "2024-02-16",
-          "e": "ETNC - Arrêté 16/02/2024 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 16/02/2024 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2014-07-31",
@@ -1211,10 +1263,14 @@
       "sUE": "",
       "ofac": "",
       "tax": null,
-      "etnc": 1,
+      "etnc": 0,
       "bas": 4.56,
       "cpi": null,
       "h": [
+        {
+          "d": "2026-04-15",
+          "e": "Retrait ETNC France - arrêté 15/04/2026 (JO 26/04/2026)"
+        },
         {
           "d": "2026-02-17",
           "e": "Retrait Annexe I UE - Conseil 17/02/2026"
@@ -1225,7 +1281,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         }
       ]
     },
@@ -1249,7 +1305,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2026-02-17",
@@ -1404,11 +1460,15 @@
       "sUE": "",
       "ofac": "",
       "tax": null,
-      "etnc": 1,
+      "etnc": 0,
       "bas": 4.12,
       "cpi": 41,
       "cpir": 82,
       "h": [
+        {
+          "d": "2026-04-15",
+          "e": "Retrait ETNC France - arrêté 15/04/2026 (JO 26/04/2026)"
+        },
         {
           "d": "2026-02-17",
           "e": "Retrait Annexe I UE - Conseil 17/02/2026"
@@ -1419,7 +1479,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 2°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 2°)"
         },
         {
           "d": "2018-03-06",
@@ -1470,7 +1530,7 @@
         },
         {
           "d": "2020-01-06",
-          "e": "ETNC - Arrêté 06/01/2020 (art. 238-0 A, 2 bis 1°)"
+          "e": "Inscription ETNC - arrêté du 06/01/2020 (art. 238-0 A, 2 bis 1°)"
         },
         {
           "d": "2026-02-17",
@@ -1529,11 +1589,15 @@
       "sUE": "",
       "ofac": "",
       "tax": "I",
-      "etnc": 0,
+      "etnc": 1,
       "bas": 6.69,
       "cpi": 40,
       "cpir": 88,
       "h": [
+        {
+          "d": "2026-04-15",
+          "e": "Ajout ETNC France - arrêté 15/04/2026 (JO 26/04/2026), mesures FR au 01/07/2026"
+        },
         {
           "d": "2026-02-17",
           "e": "Ajout Annexe I UE - Conseil 17/02/2026"
