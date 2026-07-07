@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import reglementations from '../../data/reglementations.json';
 ---
 
 <BaseLayout
@@ -78,7 +79,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <a href="/reglementations/" class="ressources-card">
         <div class="ressources-card-tag">Dashboard</div>
         <h2 class="ressources-card-title">Base réglementaire</h2>
-        <p class="ressources-card-desc">57 textes référencés — LCB-FT, MiCA, DORA, PSD2, sanctions. Filtrable par catégorie, autorité et statut.</p>
+        <p class="ressources-card-desc">{reglementations.textes.length} textes référencés — LCB-FT, MiCA, DORA, PSD2, sanctions. Filtrable par catégorie, autorité et statut.</p>
         <div class="ressources-card-link">Explorer la base →</div>
       </a>
       <a href="/ressources/textes-applicables-france/" class="ressources-card">

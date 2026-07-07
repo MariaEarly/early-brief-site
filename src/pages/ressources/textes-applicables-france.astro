@@ -56,7 +56,7 @@ const statusBadge = (statut: string) => {
 ---
 <BaseLayout
   title="Textes applicables en France — Early Brief"
-  description="57 textes réglementaires classés par niveau normatif : règlements UE, directives transposées, droit national, soft law. Conformité financière."
+  description={`${textes.length} textes réglementaires classés par niveau normatif : règlements UE, directives transposées, droit national, soft law. Conformité financière.`}
   canonicalUrl="https://early-brief.com/ressources/textes-applicables-france/"
   ogImage="/og/og-textes-applicables-france.png"
 >
@@ -162,7 +162,7 @@ const statusBadge = (statut: string) => {
   <a href="/ressources/" class="taf-breadcrumb">Ressources › Textes applicables en France</a>
 
   <h1 class="taf-title">Textes applicables en France</h1>
-  <p class="taf-subtitle">57 textes réglementaires classés par niveau normatif — du droit européen directement applicable à la soft law internationale.</p>
+  <p class="taf-subtitle">{textes.length} textes réglementaires classés par niveau normatif — du droit européen directement applicable à la soft law internationale.</p>
 
   <div class="taf-note">
     <p><strong>Comply or explain</strong> — Les guidelines EBA/ESMA ne sont pas juridiquement contraignantes, mais les autorités nationales (ACPR, AMF) doivent déclarer si elles s'y conforment. En pratique, elles sont traitées comme des obligations par les superviseurs français.</p>

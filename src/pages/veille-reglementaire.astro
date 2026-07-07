@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import reglementations from '../data/reglementations.json';
 ---
 
 <BaseLayout
@@ -59,7 +60,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="ressource-bloc">
       <h3>Base réglementaire</h3>
       <p>
-        57 textes réglementaires centralisés, filtrables par domaine
+        {reglementations.textes.length} textes réglementaires centralisés, filtrables par domaine
         (LCB-FT, DORA, MiCA, sanctions, AI Act, PSD2-PSR), autorité
         émettrice et statut. Chaque texte inclut sa référence officielle,
         son statut exact et sa date clé étiquetée — entrée en vigueur,
