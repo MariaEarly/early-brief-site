@@ -338,7 +338,7 @@
     <div class="stats-row" id="dash-stats"></div>
 
     <!-- Répartition par statut -->
-    <div class="section-title">Textes entrés en vigueur — Mars 2026</div>
+    <div class="section-title" id="dash-applicable-titre">Textes entrés en vigueur</div>
     <div id="dash-applicable" class="signal-list"></div>
 
     <!-- Répartition par source -->
@@ -644,6 +644,8 @@
 
     tbody.appendChild(fragment);
 
+    // Expose les entrées brutes pour le dashboard (bilan calculé côté client, zéro maintenance)
+    window.TRACKER_ENTRIES = entries;
     // Dispatch event so downstream scripts know data is loaded
     document.dispatchEvent(new CustomEvent('tracker-loaded', { detail: { count: entries.length } }));
   } catch (err) {
@@ -654,119 +656,98 @@
 })();
 </script>
 <script>
-// ── DONNÉES ÉDITORIALES — À METTRE À JOUR CHAQUE MOIS ───────────────────
-// Modifier uniquement ce bloc pour la mise à jour mensuelle
-const BILAN_MOIS = "Mars 2026";
-const EVENEMENTS_MARQUANTS = [
-  {
-    num: "01",
-    titre: "EBA — fin de la no-action letter DSP2/MiCA",
-    texte: "02/03 — Les CASP traitant des EMT sans agrément DSP2 n'ont plus de tolérance. Cessation immédiate requise sans dossier en cours."
-  },
-  {
-    num: "02",
-    titre: "AMF — deux transactions disciplinaires en une semaine",
-    texte: "02 et 04/03 — TRA-2026-03 : manipulation de marché, 350 000 €. TRA-2026-04 : obligations SGP, 550 000 €."
-  },
-  {
-    num: "03",
-    titre: "Gel des avoirs — mise à jour des lignes directrices ACPR/DGT",
-    texte: "16/03 — Première révision depuis 2021 : intégration des crypto-actifs, virements instantanés et nouveaux régimes de sanctions."
-  },
-  {
-    num: "04",
-    titre: "AMLA — exercice de collecte de données",
-    texte: "16/03 — Calibrage des modèles d'évaluation du risque pour la sélection des 40 entités sous supervision directe à partir de 2028. Deadline : 22 avril 2026."
-  }
-];
-// ── FIN DONNÉES ÉDITORIALES ──────────────────────────────────────────────
+// ── BILAN AUTO — dérivé de tracker-data.json, ZÉRO maintenance manuelle ──
+// (plus de bloc éditorial figé : mois, événements et compteurs sont calculés)
+const MOIS_FR_LONG = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const TYPE_PRIORITE = { DECISION: 0, TEXTE: 1, CONSULTATION: 2 }; // "marquant" : décision > texte > consultation
+const STATUT_LABEL_DASH = { 'en vigueur':'En vigueur','publié':'Publié','publie':'Publié','consultation':'Consultation','rapport':'Rapport','décision':'Décision','programme':'Programme' };
+// "DD/MM/YYYY" → { ym:"YYYY-MM", y, m, d, label:"Mois AAAA", moisSeul:"Mois", ddmm:"DD/MM" } | null si invalide
+function parseDateFr(s) {
+  const p = (s || '').split('/');
+  if (p.length !== 3) return null;
+  const mi = parseInt(p[1], 10);
+  if (!(mi >= 1 && mi <= 12)) return null;
+  return { ym: `${p[2]}-${p[1].padStart(2,'0')}`, y: +p[2], m: mi, d: +p[0],
+           label: `${MOIS_FR_LONG[mi-1]} ${p[2]}`, moisSeul: MOIS_FR_LONG[mi-1],
+           ddmm: `${p[0].padStart(2,'0')}/${p[1].padStart(2,'0')}` };
+}
 
 // ── DASHBOARD RETROSPECTIVE ──────────────────────────────────────────────
 function buildDashboard() {
-  const rows = document.querySelectorAll('#tab-veille .veille-table tbody tr:not(.month-separator):not(.row-hidden)');
+  const entries = (window.TRACKER_ENTRIES || []).map(e => ({ ...e, _d: parseDateFr(e.date) })).filter(e => e && e._d);
   
-  let total = 0, janCount = 0, fevCount = 0, marsCount = 0;
+  const total = entries.length;
+  const esc = s => (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const setTxt = (id, t) => { const el = document.getElementById(id); if (el) el.textContent = t; };
+
+  // Sources + répartition statuts (labels), sur tout le corpus
   const sources = {}, statuts = {};
-  const applicableMars = [];
-
-  rows.forEach(row => {
-    const cells = row.querySelectorAll('td');
-    if (cells.length < 6) return;
-    total++;
-
-    const dateRaw = cells[0].textContent.trim(); // "08/01" or "14/02"
-    const month = dateRaw.includes('/') ? dateRaw.split('/')[1] : '';
-    if (month === '01') janCount++;
-    else if (month === '02') fevCount++;
-    else if (month === '03') marsCount++;
-
-    const source = cells[1].textContent.trim();
-    sources[source] = (sources[source] || 0) + 1;
-
-    const badge = cells[3].querySelector('.badge');
-    const statut = badge ? badge.textContent.trim() : 'Autre';
-    statuts[statut] = (statuts[statut] || 0) + 1;
-
-    // Items applicables en février
-    if (month === '03' && statut === 'En vigueur') {
-      const sujet = cells[2].textContent.trim();
-      const synth = cells[4].textContent.trim();
-      applicableMars.push({ date: dateRaw, source, sujet, synth });
-    }
+  entries.forEach(e => {
+    sources[e.source] = (sources[e.source] || 0) + 1;
+    const s = STATUT_LABEL_DASH[e.statut] || e.statut;
+    statuts[s] = (statuts[s] || 0) + 1;
   });
 
-  // Stats cards
-  // Calcul plage de dates depuis les données
+  // Dernier mois COMPLET écoulé = mois présent le plus récent < mois courant (fallback : dernier présent)
+  const now = new Date();
+  const curYM = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+  const monthsPresent = [...new Set(entries.map(e => e._d.ym))].sort();
+  const complete = monthsPresent.filter(ym => ym < curYM);
+  const lastYM = (complete.length ? complete : monthsPresent).slice(-1)[0] || '';
+  const ofLast = entries.filter(e => e._d.ym === lastYM);
+  const lastLabel = ofLast[0] ? ofLast[0]._d.label : '';
+
+  // Plage de mois (sur tout le corpus)
   const MOIS_FR = ['','Jan.','Fév.','Mars','Avr.','Mai','Juin','Juil.','Août','Sept.','Oct.','Nov.','Déc.'];
-  const allMonths = new Set();
-  document.querySelectorAll('#tab-veille .veille-table tbody tr:not(.month-separator) .col-date').forEach(td => {
-    const parts = td.textContent.trim().split('/');
-    if (parts[1]) allMonths.add(parseInt(parts[1]));
-  });
-  const sortedMonths = Array.from(allMonths).sort((a,b) => a-b);
-  const plage = sortedMonths.length > 1
-    ? MOIS_FR[sortedMonths[0]] + ' à ' + MOIS_FR[sortedMonths[sortedMonths.length-1]]
-    : MOIS_FR[sortedMonths[0]] || '';
+  const monthNums = [...new Set(entries.map(e => e._d.m))].sort((a, b) => a - b);
+  const plage = monthNums.length > 1
+    ? MOIS_FR[monthNums[0]] + ' à ' + MOIS_FR[monthNums[monthNums.length - 1]]
+    : (MOIS_FR[monthNums[0]] || '');
   
-  // Mettre à jour les titres
-  const tabLabel = document.getElementById('tab-veille-label');
-  if (tabLabel) tabLabel.textContent = 'Veille 2026 — ' + plage;
-  const veilleTitle = document.getElementById('veille-titre');
-  if (veilleTitle) veilleTitle.textContent = 'Veille réglementaire 2026 — ' + plage;
+  // Titres dynamiques (dernier mois complet + plage)
+  setTxt('tab-veille-label', 'Veille 2026 — ' + plage);
+  setTxt('veille-titre', 'Veille réglementaire 2026 — ' + plage);
+  setTxt('dash-mois-titre', 'Événements marquants — ' + lastLabel);
+  setTxt('dash-applicable-titre', 'Textes entrés en vigueur — ' + lastLabel);
 
-  // Titre mois
-  const titreMoisEl = document.getElementById('dash-mois-titre');
-  if (titreMoisEl) titreMoisEl.textContent = 'Événements marquants — ' + BILAN_MOIS;
-
-  // Événements marquants
+  // Événements marquants : top 4 du dernier mois complet ; tri type (DECISION > TEXTE > CONSULTATION) puis jour décroissant
+  const top = ofLast.slice().sort((a, b) => {
+    const pa = TYPE_PRIORITE[a.type] ?? 9, pb = TYPE_PRIORITE[b.type] ?? 9;
+    return pa !== pb ? pa - pb : b._d.d - a._d.d;
+  }).slice(0, 4);
   const eventsEl = document.getElementById('dash-events');
   if (eventsEl) {
-    eventsEl.innerHTML = EVENEMENTS_MARQUANTS.map(e => `
+    eventsEl.innerHTML = top.length ? top.map((e, i) => `
       <div class="event-item">
-        <div class="event-num">${e.num}</div>
-        <div class="event-titre">${e.titre}</div>
-        <div class="event-texte">${e.texte}</div>
-      </div>`).join('');
+        <div class="event-num">${String(i + 1).padStart(2, '0')}</div>
+        <div class="event-titre">${esc(e.titre.length > 80 ? e.titre.slice(0, 80).trimEnd() + '…' : e.titre)}</div>
+        <div class="event-texte">${e._d.ddmm} · ${esc(e.source)} · ${esc(e.type)}${e.url ? ' · <a href="' + e.url + '" target="_blank" rel="noopener">source ↗</a>' : ''}</div>
+      </div>`).join('') : '<p style="font-size:12px;color:var(--light);font-style:italic;">Aucune entrée pour ce mois.</p>';
   }
 
+  // Compteurs : cumul + 3 derniers mois présents (dynamique), du plus récent au plus ancien
+  const countByYM = {};
+  entries.forEach(e => { countByYM[e._d.ym] = (countByYM[e._d.ym] || 0) + 1; });
+  const recentMonths = monthsPresent.slice(-3).reverse();
   const statsEl = document.getElementById('dash-stats');
-  statsEl.innerHTML = `
-    <div class="stat-card"><div class="number">${total}</div><div class="label">items suivis (cumul)</div></div>
-    <div class="stat-card"><div class="number">${fevCount}</div><div class="label">items février</div></div>
-    <div class="stat-card"><div class="number">${marsCount}</div><div class="label">items mars</div></div>
-  `;
+  if (statsEl) {
+    statsEl.innerHTML = [`<div class="stat-card"><div class="number">${total}</div><div class="label">items suivis (cumul)</div></div>`]
+      .concat(recentMonths.map(ym => {
+        const mo = entries.find(e => e._d.ym === ym)._d.moisSeul.toLowerCase();
+        return `<div class="stat-card"><div class="number">${countByYM[ym]}</div><div class="label">items ${mo}</div></div>`;
+      })).join('');
+  }
 
-  // Applicable en février
+  // Textes entrés en vigueur — dernier mois complet, statut brut "en vigueur"
   const appEl = document.getElementById('dash-applicable');
-  if (applicableMars.length === 0) {
-    appEl.innerHTML = '<p style="font-size:12px;color:var(--light);font-style:italic;">Aucun nouveau texte normatif contraignant publié en mars 2026.</p>';
-  } else {
-    appEl.innerHTML = applicableMars.map(item => `
+  const applicable = ofLast.filter(e => e.statut === 'en vigueur');
+  if (appEl) {
+    appEl.innerHTML = applicable.length ? applicable.map(item => `
       <div class="signal-item">
-        <div class="signal-date">${item.date}/2026</div>
-        <div class="signal-source">${item.source}</div>
-        <div class="signal-text">${item.sujet}</div>
-      </div>`).join('');
+        <div class="signal-date">${item._d.ddmm}</div>
+        <div class="signal-source">${esc(item.source)}</div>
+        <div class="signal-text">${esc(item.titre)}</div>
+      </div>`).join('') : `<p style="font-size:12px;color:var(--light);font-style:italic;">Aucun texte entré en vigueur en ${lastLabel.toLowerCase()}.</p>`;
   }
 
   // Sources top 8
