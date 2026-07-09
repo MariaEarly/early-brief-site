@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-07-09-test-o6a9",
+    "date": "09/07/2026",
+    "source": "TEST",
+    "titre": "[TEST TOKEN — À SUPPRIMER] vérification finale post-redeploy Netlify",
+    "description": "Test après Trigger deploy Netlify avec token Production corrigé. Suppression immédiate.",
+    "url": "https://early-brief.com",
+    "type_source": "officielle",
+    "statut": "publié",
+    "type": "INTELLIGENCE"
+  },
+  {
     "id": "2026-07-03-conseilue-hsco",
     "date": "03/07/2026",
     "source": "Conseil UE",
