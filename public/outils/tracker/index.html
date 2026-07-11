@@ -180,7 +180,6 @@
   .col-source { font-size:12px; font-weight:700; color:var(--gray-900); width:110px; line-height:1.35; }
   .col-sujet { font-family:var(--font-serif); font-size:14px; font-weight:400; color:var(--gray-900); width:260px; line-height:1.35; }
   .col-statut { width:110px; text-align:center; vertical-align:middle; white-space:nowrap; }
-  .col-change { font-size:12px; color:var(--gray-600); line-height:1.5; width:260px; overflow:hidden; }
   .col-concerne { display:none; }
   .col-action { display:none; }
   .col-lien { width:110px; text-align:left; vertical-align:middle; white-space:nowrap; }
@@ -385,7 +384,6 @@
           <th>Source</th>
           <th>Sujet</th>
           <th>Statut</th>
-          <th>Synthèse</th>
           <th>Lien</th>
         </tr>
       </thead>
@@ -623,6 +621,9 @@
     entries.forEach((entry, i) => {
       const tr = document.createElement('tr');
       tr.className = i % 2 === 0 ? 'odd' : 'even';
+      // Synthèse retirée de l'affichage (registre de références) mais conservée
+      // ici pour l'export CSV — découple l'export du DOM des colonnes visibles.
+      tr.dataset.description = entry.description || '';
 
       const dateParts = entry.date.split('/');
       const dateShort = dateParts[0] + '/' + dateParts[1];
@@ -636,7 +637,6 @@
         '<td class="col-source">' + esc(entry.source) + '</td>' +
         '<td class="col-sujet">' + esc(entry.titre) + '</td>' +
         '<td class="col-statut"><span class="badge ' + badgeClass + '">' + esc(statutLabel) + '</span></td>' +
-        '<td class="col-change">' + esc(entry.description) + '</td>' +
         '<td class="col-lien">' + (entry.url ? '<a href="' + entry.url + '" target="_blank" rel="noopener" class="link-btn">Voir la source ↗</a>' : '') + '</td>';
 
       fragment.appendChild(tr);
@@ -651,7 +651,7 @@
   } catch (err) {
     console.error('Tracker: erreur chargement données', err);
     document.getElementById('tracker-tbody').innerHTML =
-      '<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--light);">Erreur de chargement des données.</td></tr>';
+      '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--light);">Erreur de chargement des données.</td></tr>';
   }
 })();
 </script>
@@ -947,21 +947,23 @@ function exportCSV() {
   const headers = ['Date','Source','Sujet','Statut','Synthèse','Lien'];
   const lines = [headers.join(sep)];
 
+  // Affichage web : 5 colonnes (Date, Source, Sujet, Statut, Lien). L'export garde
+  // 6 colonnes : la Synthèse, retirée du DOM, est lue depuis tr.dataset.description
+  // (découplé du DOM des colonnes visibles).
   document.querySelectorAll('.veille-table tbody tr').forEach(row => {
     if (row.classList.contains('month-separator') || row.classList.contains('row-hidden')) return;
     const cells = row.querySelectorAll('td');
-    if (cells.length < 6) return;
-    const vals = Array.from(cells).map((cell, i) => {
-      if (i === 5) {
-        const a = cell.querySelector('a');
-        return a ? a.href : '';
-      }
-      if (i === 3) {
-        const badge = cell.querySelector('.badge');
-        return badge ? badge.textContent.trim() : '';
-      }
-      return cell.textContent.trim();
-    });
+    if (cells.length < 5) return;
+    const badge = cells[3].querySelector('.badge');
+    const link = cells[4].querySelector('a');
+    const vals = [
+      cells[0].textContent.trim(),                     // Date
+      cells[1].textContent.trim(),                     // Source
+      cells[2].textContent.trim(),                     // Sujet
+      badge ? badge.textContent.trim() : '',           // Statut
+      row.dataset.description || '',                    // Synthèse (hors DOM affiché)
+      link ? link.href : '',                            // Lien
+    ];
     lines.push(vals.map(v => '"' + v.replace(/"/g, '""') + '"').join(sep));
   });
 
